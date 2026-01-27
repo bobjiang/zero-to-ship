@@ -5,7 +5,7 @@ import { BlogPost } from '@/types/blog';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 const COURSES_DIR = path.join(CONTENT_DIR, 'courses');
-const BLOG_DIR = path.join(CONTENT_DIR, 'blog');
+// const BLOG_DIR = path.join(CONTENT_DIR, 'blog'); // TODO: implement blog parsing
 
 export async function getAllSeries(): Promise<Series[]> {
   try {
