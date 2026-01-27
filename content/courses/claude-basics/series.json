@@ -1,0 +1,8 @@
+{
+  "slug": "claude-basics",
+  "title": "02ship Claude Basics",
+  "description": "A foundational bootcamp teaching non-programmers how to ship a product from scratch (0→1) using Claude. No coding experience required.",
+  "thumbnail": "/images/claude-basics-thumbnail.jpg",
+  "order": 2,
+  "lessons": []
+}

@@ -1,0 +1,152 @@
+{
+  "slug": "getting-started",
+  "title": "Getting Started with Claude for Building Apps",
+  "description": "Learn what Claude is, set up your environment, and write your first app-building prompt that produces a runnable starter project.",
+  "duration": "2-3 hours",
+  "order": 1,
+  "learningObjectives": [
+    "Understand what Claude is and what 'AI-assisted product building' means for non-programmers",
+    "Set up the minimum environment required to follow the course (accounts/tools)",
+    "Write and refine a first 'app-building prompt' that produces a runnable starter project"
+  ],
+  "videos": [
+    {
+      "title": "What Claude Is (and Isn't) for Building Products",
+      "description": "Clarifies Claude's strengths and limitations, and how to think about it as a building partner for non-programmers.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "10 minutes",
+      "scriptOutline": [
+        "What is Claude? (AI assistant by Anthropic)",
+        "What Claude can do: generate code, explain concepts, iterate on ideas",
+        "What Claude can't do: run code for you, deploy apps, access the internet (without tools)",
+        "Mindset shift: Claude as a collaborator, not a magic button"
+      ],
+      "talkingPoints": [
+        "Think of Claude as a very smart intern who can code — you provide direction, it executes",
+        "You don't need to understand the code; you need to understand what you want",
+        "Iteration is key: your first prompt won't be perfect, and that's okay"
+      ]
+    },
+    {
+      "title": "Setup Checklist: Accounts, Workspace, and Safety Basics",
+      "description": "Walks through required accounts/tools and safe practices for working with AI-generated code.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "8 minutes",
+      "scriptOutline": [
+        "Create Claude account (or verify existing)",
+        "Recommended: Claude Pro for extended usage",
+        "Basic workspace setup: where to save prompts and outputs",
+        "Safety basics: don't share API keys, verify code before running"
+      ],
+      "talkingPoints": [
+        "You only need a Claude account to get started — nothing else required today",
+        "Create a simple folder structure: /prompts, /outputs, /projects",
+        "Golden rule: always read what Claude generates before running it"
+      ]
+    },
+    {
+      "title": "Your First Build Prompt: From Idea → Starter App Plan",
+      "description": "Demonstrates a prompt structure that yields a project plan, file list, and step-by-step build instructions.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "Anatomy of a good 'build prompt': goal, constraints, tech preference, success criteria",
+        "Live demo: writing a prompt for a simple app idea",
+        "Reviewing Claude's response: what to look for",
+        "Quick iteration: making one improvement to the prompt"
+      ],
+      "talkingPoints": [
+        "A good prompt has four parts: what you want, what constraints exist, what tech to use, and how you'll know it worked",
+        "Always ask Claude to 'ask clarifying questions first' — this improves output quality",
+        "Don't accept the first response; one round of iteration makes a big difference"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Prompt Skeleton for Beginners",
+      "content": "I want to build [app type] that helps [user] to [solve problem].\n\nConstraints:\n- [Constraint 1]\n- [Constraint 2]\n\nTech preference: [e.g., 'something simple I can run in a browser' or 'no preference']\n\nSuccess criteria:\n- [Criterion 1]\n- [Criterion 2]\n\nBefore generating anything, please ask me clarifying questions."
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Prompt:** The instructions you give to Claude\n\n**Iteration:** Refining your prompt or Claude's output through multiple rounds\n\n**Artifact:** A file or piece of code Claude generates for you"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Being too vague",
+      "explanation": "'Make me an app' gives poor results. Be specific about the problem and user."
+    },
+    {
+      "mistake": "Accepting the first response",
+      "explanation": "Always iterate at least once; ask Claude to improve or clarify."
+    },
+    {
+      "mistake": "Not reading outputs",
+      "explanation": "Running code without understanding what it does can cause problems."
+    },
+    {
+      "mistake": "Overcomplicating the first project",
+      "explanation": "Start with something tiny (1-2 features max)."
+    }
+  ],
+  "reflectionQuestions": [
+    "What part of using Claude felt most unclear: setup, prompting, or understanding outputs?",
+    "What's one thing you'd change about your first prompt now that you've seen Claude's response?"
+  ],
+  "exercises": [
+    {
+      "title": "Create Your Project Brief",
+      "description": "Write a one-page brief for a tiny app idea you want to build.",
+      "output": "Document containing: problem statement, target user, 3 features max, success criteria",
+      "successCriteria": [
+        "Problem is specific (not 'help people')",
+        "Target user is defined (not 'everyone')",
+        "Features are limited to 3 or fewer",
+        "Success criteria are measurable"
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Write Your First Claude Build Prompt",
+      "description": "Using the prompt skeleton provided, write a complete prompt for your app idea.",
+      "output": "A saved prompt document ready to paste into Claude",
+      "successCriteria": [
+        "All four sections filled in (goal, constraints, tech, success criteria)",
+        "Includes 'ask clarifying questions first'",
+        "Specific enough that another person could understand your app idea"
+      ],
+      "estimatedTime": "25 minutes"
+    },
+    {
+      "title": "Run Your Prompt and Capture Outputs",
+      "description": "Paste your prompt into Claude, answer any clarifying questions, and capture the results.",
+      "output": "Document containing: Claude's clarifying questions + your answers, project plan, file list, first-step instructions",
+      "successCriteria": "Open-ended exploration: Reflect on what surprised you about Claude's response.",
+      "estimatedTime": "45 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Anthropic Learn - Getting Started",
+      "url": "https://www.anthropic.com/learn"
+    },
+    {
+      "title": "Claude Documentation - Prompting Basics",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+    },
+    {
+      "title": "Anthropic Documentation Home",
+      "url": "https://docs.anthropic.com"
+    }
+  ],
+  "instructorNotes": [
+    "For live sessions: Have learners share their app ideas with a partner before writing prompts — peer feedback improves prompt quality.",
+    "Common questions: 'Can Claude actually make my app work?' — Reassure that this lesson is about planning; running code comes later.",
+    "Self-paced tip: Encourage learners to screenshot their Claude conversation for later reference.",
+    "Time check: Exercise 3 often takes longer than expected; consider making it optional homework for time-constrained sessions."
+  ]
+}
