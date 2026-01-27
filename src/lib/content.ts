@@ -67,9 +67,6 @@ export async function getLessonBySlug(
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
-    const files = await fs.readdir(BLOG_DIR);
-    const mdxFiles = files.filter(f => f.endsWith('.mdx'));
-
     // For now, return empty array - we'll implement MDX parsing later
     return [];
   } catch (error) {
