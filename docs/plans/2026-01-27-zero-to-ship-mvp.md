@@ -1,4 +1,4 @@
-# Zero to Ship MVP Implementation Plan
+# 02Ship MVP Implementation Plan
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
@@ -170,7 +170,7 @@ Create: `content/courses/zero-to-ship/series.json`
 ```json
 {
   "slug": "zero-to-ship",
-  "title": "Zero to Ship: Building with Claude Code",
+  "title": "02Ship: Building with Claude Code",
   "description": "Learn to build and ship your ideas using Claude Code, even with zero coding experience.",
   "thumbnail": "/images/zero-to-ship-thumbnail.jpg",
   "order": 1,
@@ -495,7 +495,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-xl font-bold text-gray-900">
-              Zero to Ship
+              02Ship
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/courses" className="text-sm font-medium text-gray-700 hover:text-gray-900">
@@ -574,7 +574,7 @@ export function Footer() {
         <div className="py-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div>
-              <h3 className="text-sm font-semibold text-gray-900">Zero to Ship</h3>
+              <h3 className="text-sm font-semibold text-gray-900">02Ship</h3>
               <p className="mt-4 text-sm text-gray-600">
                 Learn to build and ship your ideas using AI coding tools.
               </p>
@@ -632,7 +632,7 @@ export function Footer() {
           </div>
           <div className="mt-8 border-t border-gray-200 pt-8">
             <p className="text-sm text-gray-600">
-              © {currentYear} Zero to Ship. All rights reserved.
+              © {currentYear} 02Ship. All rights reserved.
             </p>
           </div>
         </div>
@@ -680,7 +680,7 @@ import { Footer } from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zero to Ship - Learn AI Coding",
+  title: "02Ship - Learn AI Coding",
   description: "Learn to build and ship your ideas using Claude Code and AI tools, even with zero coding experience.",
 };
 
@@ -934,7 +934,7 @@ import { SeriesCard } from '@/components/courses/SeriesCard';
 import { getAllSeries } from '@/lib/content';
 
 export const metadata = {
-  title: 'Courses - Zero to Ship',
+  title: 'Courses - 02Ship',
   description: 'Browse our courses and start learning to build with AI tools.',
 };
 
@@ -1057,12 +1057,12 @@ export async function generateMetadata({ params }: SeriesPageProps) {
 
   if (!series) {
     return {
-      title: 'Series Not Found - Zero to Ship',
+      title: 'Series Not Found - 02Ship',
     };
   }
 
   return {
-    title: `${series.title} - Zero to Ship`,
+    title: `${series.title} - 02Ship`,
     description: series.description,
   };
 }
@@ -1194,12 +1194,12 @@ export async function generateMetadata({ params }: LessonPageProps) {
 
   if (!lesson) {
     return {
-      title: 'Lesson Not Found - Zero to Ship',
+      title: 'Lesson Not Found - 02Ship',
     };
   }
 
   return {
-    title: `${lesson.title} - Zero to Ship`,
+    title: `${lesson.title} - 02Ship`,
     description: lesson.description,
   };
 }
@@ -1310,7 +1310,7 @@ import { Container } from '@/components/ui/Container';
 import { getAllBlogPosts } from '@/lib/content';
 
 export const metadata = {
-  title: 'Blog - Zero to Ship',
+  title: 'Blog - 02Ship',
   description: 'Tips, tutorials, and insights on building with AI tools.',
 };
 
@@ -1388,8 +1388,8 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 
 export const metadata = {
-  title: 'About - Zero to Ship',
-  description: 'Learn more about Zero to Ship and our mission to make AI coding accessible to everyone.',
+  title: 'About - 02Ship',
+  description: 'Learn more about 02Ship and our mission to make AI coding accessible to everyone.',
 };
 
 export default function AboutPage() {
@@ -1398,12 +1398,12 @@ export default function AboutPage() {
       <Container>
         <div className="mx-auto max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            About Zero to Ship
+            About 02Ship
           </h1>
 
           <div className="mt-8 space-y-6 text-lg text-gray-600">
             <p>
-              Zero to Ship is a learning platform designed to help absolute beginners build and ship
+              02Ship is a learning platform designed to help absolute beginners build and ship
               their ideas using AI coding tools like Claude Code.
             </p>
 
@@ -1528,7 +1528,7 @@ Create: `content/courses/zero-to-ship/lesson-01-introduction.json`
   "youtubeId": "dQw4w9WgXcQ",
   "duration": "5:30",
   "order": 1,
-  "transcript": "Welcome to Zero to Ship!\n\nIn this course, you'll learn how to use Claude Code to build and ship your ideas, even if you've never written a line of code before.\n\nClaude Code is an AI-powered coding assistant that helps you write code through natural conversation. Instead of memorizing syntax and programming concepts, you can describe what you want to build in plain English, and Claude Code will help you create it.\n\nThroughout this course, we'll build real projects together, and by the end, you'll have shipped your first application to the web.\n\nLet's get started!"
+  "transcript": "Welcome to 02Ship!\n\nIn this course, you'll learn how to use Claude Code to build and ship your ideas, even if you've never written a line of code before.\n\nClaude Code is an AI-powered coding assistant that helps you write code through natural conversation. Instead of memorizing syntax and programming concepts, you can describe what you want to build in plain English, and Claude Code will help you create it.\n\nThroughout this course, we'll build real projects together, and by the end, you'll have shipped your first application to the web.\n\nLet's get started!"
 }
 ```
 
@@ -1538,7 +1538,7 @@ Modify: `content/courses/zero-to-ship/series.json`
 ```json
 {
   "slug": "zero-to-ship",
-  "title": "Zero to Ship: Building with Claude Code",
+  "title": "02Ship: Building with Claude Code",
   "description": "Learn to build and ship your ideas using Claude Code, even with zero coding experience.",
   "thumbnail": "/images/zero-to-ship-thumbnail.jpg",
   "order": 1,
@@ -1667,7 +1667,7 @@ git commit -m "feat: add Vercel deployment configuration"
 
 Modify: `README.md`
 ```markdown
-# Zero to Ship
+# 02Ship
 
 A learning portal for non-programmers to build and ship their ideas using Claude Code and AI tools.
 

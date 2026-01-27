@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zero to Ship - Learn AI Coding",
+  title: "02Ship - Learn AI Coding",
   description: "Learn to build and ship your ideas using Claude Code and AI tools, even with zero coding experience.",
 };
 

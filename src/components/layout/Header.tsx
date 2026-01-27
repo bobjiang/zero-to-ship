@@ -8,7 +8,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-xl font-bold text-gray-900">
-              Zero to Ship
+              02Ship
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/courses" className="text-sm font-medium text-gray-700 hover:text-gray-900">

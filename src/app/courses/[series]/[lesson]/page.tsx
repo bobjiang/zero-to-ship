@@ -34,12 +34,12 @@ export async function generateMetadata({ params }: LessonPageProps) {
 
   if (!lesson) {
     return {
-      title: 'Lesson Not Found - Zero to Ship',
+      title: 'Lesson Not Found - 02Ship',
     };
   }
 
   return {
-    title: `${lesson.title} - Zero to Ship`,
+    title: `${lesson.title} - 02Ship`,
     description: lesson.description,
   };
 }

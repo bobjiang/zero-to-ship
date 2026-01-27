@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Zero to Ship** is a learning portal for non-programmers to build and ship their ideas using Claude Code and similar AI coding tools. The platform provides step-by-step courses, instructional videos (YouTube embeds), and community support.
+**02Ship** is a learning portal for non-programmers to build and ship their ideas using Claude Code and similar AI coding tools. The platform provides step-by-step courses, instructional videos (YouTube embeds), and community support.
 
 **Target audience:** Absolute beginners with no coding experience.
 

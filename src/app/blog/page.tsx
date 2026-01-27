@@ -2,7 +2,7 @@ import { Container } from '@/components/ui/Container';
 import { getAllBlogPosts } from '@/lib/content';
 
 export const metadata = {
-  title: 'Blog - Zero to Ship',
+  title: 'Blog - 02Ship',
   description: 'Tips, tutorials, and insights on building with AI tools.',
 };
 

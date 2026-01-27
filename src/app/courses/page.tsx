@@ -3,7 +3,7 @@ import { SeriesCard } from '@/components/courses/SeriesCard';
 import { getAllSeries } from '@/lib/content';
 
 export const metadata = {
-  title: 'Courses - Zero to Ship',
+  title: 'Courses - 02Ship',
   description: 'Browse our courses and start learning to build with AI tools.',
 };
 

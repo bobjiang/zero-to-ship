@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: SeriesPageProps) {
 
   if (!series) {
     return {
-      title: 'Series Not Found - Zero to Ship',
+      title: 'Series Not Found - 02Ship',
     };
   }
 
   return {
-    title: `${series.title} - Zero to Ship`,
+    title: `${series.title} - 02Ship`,
     description: series.description,
   };
 }

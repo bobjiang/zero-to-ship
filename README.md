@@ -1,4 +1,4 @@
-# Zero to Ship
+# 02Ship
 
 A learning portal for non-programmers to build and ship their ideas using Claude Code and AI tools.
 

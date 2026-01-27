@@ -10,7 +10,7 @@ export function Footer() {
         <div className="py-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div>
-              <h3 className="text-sm font-semibold text-gray-900">Zero to Ship</h3>
+              <h3 className="text-sm font-semibold text-gray-900">02Ship</h3>
               <p className="mt-4 text-sm text-gray-600">
                 Learn to build and ship your ideas using AI coding tools.
               </p>
@@ -68,7 +68,7 @@ export function Footer() {
           </div>
           <div className="mt-8 border-t border-gray-200 pt-8">
             <p className="text-sm text-gray-600">
-              © {currentYear} Zero to Ship. All rights reserved.
+              © {currentYear} 02Ship. All rights reserved.
             </p>
           </div>
         </div>

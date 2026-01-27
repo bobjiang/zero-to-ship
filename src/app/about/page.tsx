@@ -2,8 +2,8 @@ import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 
 export const metadata = {
-  title: 'About - Zero to Ship',
-  description: 'Learn more about Zero to Ship and our mission to make AI coding accessible to everyone.',
+  title: 'About - 02Ship',
+  description: 'Learn more about 02Ship and our mission to make AI coding accessible to everyone.',
 };
 
 export default function AboutPage() {
@@ -12,12 +12,12 @@ export default function AboutPage() {
       <Container>
         <div className="mx-auto max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            About Zero to Ship
+            About 02Ship
           </h1>
 
           <div className="mt-8 space-y-6 text-lg text-gray-600">
             <p>
-              Zero to Ship is a learning platform designed to help absolute beginners build and ship
+              02Ship is a learning platform designed to help absolute beginners build and ship
               their ideas using AI coding tools like Claude Code.
             </p>
 
