@@ -48,31 +48,43 @@
     },
     {
       "title": "Your First Build Prompt: From Idea → Starter App Plan",
-      "description": "Demonstrates a prompt structure that yields a project plan, file list, and step-by-step build instructions.",
+      "description": "Demonstrates a prompt structure that yields a project plan, file list, and step-by-step build instructions. Uses the actual 02Ship platform as a real-world example.",
       "youtubeId": "[To be recorded]",
       "maxLength": "15 minutes",
       "estimatedDuration": "14 minutes",
       "scriptOutline": [
         "Anatomy of a good 'build prompt': goal, constraints, tech preference, success criteria",
-        "Live demo: writing a prompt for a simple app idea",
+        "Real example: How the 02Ship platform was built (the platform you're learning on!)",
+        "Breaking down the original requirements into a clear prompt",
+        "Live demo: Showing what Claude generates from the 02Ship prompt",
         "Reviewing Claude's response: what to look for",
         "Quick iteration: making one improvement to the prompt"
       ],
       "talkingPoints": [
         "A good prompt has four parts: what you want, what constraints exist, what tech to use, and how you'll know it worked",
+        "Real example: '02Ship started with just a simple idea: a portal for everyone to learn AI coding'",
         "Always ask Claude to 'ask clarifying questions first' — this improves output quality",
+        "The platform you're using right now was built exactly this way - we'll show you how!",
         "Don't accept the first response; one round of iteration makes a big difference"
       ]
     }
   ],
   "textSections": [
     {
+      "title": "Real-World Example: Building the 02Ship Platform",
+      "content": "Throughout this course, we'll use a real example: building this very platform you're learning on!\n\n**The Original Idea (from our requirements document):**\n\n\"This is a portal for everyone to learn AI (to build on your own idea). The goal is to use Claude code to build this product. This platform is a Claude learning platform built with Claude.\"\n\n**Components needed:**\n- A landing page\n- A blog\n- Learning videos (YouTube embeds)\n- Discord server integration\n- Online forum (GitHub Discussions)\n- Course series display on the home page\n\n**Tech stack decisions:**\n- Web UI design tool: Google Stitch\n- Version control: GitHub\n- Website host: Vercel\n- DNS: Namecheap or Cloudflare\n- AI assistant: Claude.ai\n\nThis is a perfect example of going from a simple idea to a working product using Claude!"
+    },
+    {
       "title": "Prompt Skeleton for Beginners",
       "content": "I want to build [app type] that helps [user] to [solve problem].\n\nConstraints:\n- [Constraint 1]\n- [Constraint 2]\n\nTech preference: [e.g., 'something simple I can run in a browser' or 'no preference']\n\nSuccess criteria:\n- [Criterion 1]\n- [Criterion 2]\n\nBefore generating anything, please ask me clarifying questions."
     },
     {
+      "title": "Example Prompt: Building 02Ship",
+      "content": "Here's how the actual prompt for building this platform might look:\n\n**Prompt:**\nI want to build a learning portal that helps non-programmers to learn AI coding and ship their ideas using Claude.\n\nConstraints:\n- Target audience: absolute beginners with no coding experience\n- Must include: landing page, blog, video courses (YouTube embeds), Discord + forum links\n- Should display course series on the home page\n- Content managed through simple files (no complex CMS needed initially)\n\nTech preference: Next.js with TypeScript, Tailwind CSS for styling, deployed on Vercel\n\nSuccess criteria:\n- Users can browse and watch course videos\n- Users can navigate between lessons easily\n- Site loads fast and looks professional\n- Easy to add new courses and lessons\n\nBefore generating anything, please ask me clarifying questions."
+    },
+    {
       "title": "Key Definitions",
-      "content": "**Prompt:** The instructions you give to Claude\n\n**Iteration:** Refining your prompt or Claude's output through multiple rounds\n\n**Artifact:** A file or piece of code Claude generates for you"
+      "content": "**Prompt:** The instructions you give to Claude\n\n**Iteration:** Refining your prompt or Claude's output through multiple rounds\n\n**Artifact:** A file or piece of code Claude generates for you\n\n**MVP (Minimum Viable Product):** The simplest version of your product that works"
     }
   ],
   "commonMistakes": [
@@ -94,42 +106,51 @@
     }
   ],
   "reflectionQuestions": [
-    "What part of using Claude felt most unclear: setup, prompting, or understanding outputs?",
-    "What's one thing you'd change about your first prompt now that you've seen Claude's response?"
+    "After seeing how 02Ship was built with Claude, what surprised you most about the process?",
+    "Looking at the 02Ship requirements, what would you ask Claude differently to get better results?",
+    "What part of using Claude felt most unclear: setup, prompting, or understanding outputs?"
   ],
   "exercises": [
     {
-      "title": "Create Your Project Brief",
-      "description": "Write a one-page brief for a tiny app idea you want to build.",
-      "output": "Document containing: problem statement, target user, 3 features max, success criteria",
+      "title": "Analyze the 02Ship Requirements",
+      "description": "Study the actual requirements document that started this platform. Identify what makes it a good (or improvable) project brief.",
+      "output": "Notes document containing: What's clear in the requirements, what's missing, what questions you'd ask to clarify",
       "successCriteria": [
-        "Problem is specific (not 'help people')",
-        "Target user is defined (not 'everyone')",
-        "Features are limited to 3 or fewer",
-        "Success criteria are measurable"
+        "Identified at least 3 things that are clear (e.g., target audience, components needed)",
+        "Identified at least 2 things that need clarification (e.g., specific features, design preferences)",
+        "Listed 3-5 questions you would ask before building"
       ],
       "estimatedTime": "20 minutes"
     },
     {
       "title": "Write Your First Claude Build Prompt",
-      "description": "Using the prompt skeleton provided, write a complete prompt for your app idea.",
+      "description": "Using the 02Ship example as reference, write a complete prompt for your own app idea (or practice by rewriting the 02Ship prompt in your own words).",
       "output": "A saved prompt document ready to paste into Claude",
       "successCriteria": [
         "All four sections filled in (goal, constraints, tech, success criteria)",
         "Includes 'ask clarifying questions first'",
-        "Specific enough that another person could understand your app idea"
+        "Specific enough that another person could understand your app idea",
+        "Inspired by but not identical to the 02Ship example"
       ],
       "estimatedTime": "25 minutes"
     },
     {
       "title": "Run Your Prompt and Capture Outputs",
-      "description": "Paste your prompt into Claude, answer any clarifying questions, and capture the results.",
-      "output": "Document containing: Claude's clarifying questions + your answers, project plan, file list, first-step instructions",
-      "successCriteria": "Open-ended exploration: Reflect on what surprised you about Claude's response.",
+      "description": "Paste your prompt into Claude, answer any clarifying questions, and capture the results. Compare Claude's response to what actually got built for 02Ship.",
+      "output": "Document containing: Your prompt, Claude's clarifying questions + your answers, project plan Claude generated, observations comparing to the real 02Ship platform",
+      "successCriteria": "Open-ended exploration: Reflect on what surprised you about Claude's response. What did Claude suggest that matches 02Ship? What was different? What would you do next?",
       "estimatedTime": "45 minutes"
     }
   ],
   "resources": [
+    {
+      "title": "02Ship Platform GitHub Repository (See the Real Code!)",
+      "url": "https://github.com/bobjiang/zero-to-ship"
+    },
+    {
+      "title": "Original Requirements Document (Req-thoughts.md)",
+      "url": "https://github.com/bobjiang/zero-to-ship/blob/main/Req-thoughts.md"
+    },
     {
       "title": "Anthropic Learn - Getting Started",
       "url": "https://www.anthropic.com/learn"
@@ -144,9 +165,11 @@
     }
   ],
   "instructorNotes": [
+    "Meta-learning moment: Emphasize that learners are using a platform built exactly the way they're learning to build. This is powerful for showing what's possible!",
     "For live sessions: Have learners share their app ideas with a partner before writing prompts — peer feedback improves prompt quality.",
-    "Common questions: 'Can Claude actually make my app work?' — Reassure that this lesson is about planning; running code comes later.",
-    "Self-paced tip: Encourage learners to screenshot their Claude conversation for later reference.",
-    "Time check: Exercise 3 often takes longer than expected; consider making it optional homework for time-constrained sessions."
+    "Common questions: 'Can Claude actually make my app work?' — Point to 02Ship as proof! Show the GitHub repo and explain it was built following this exact process.",
+    "Self-paced tip: Encourage learners to screenshot their Claude conversation for later reference. Suggest they compare their results to the actual 02Ship build.",
+    "Time check: Exercise 3 often takes longer than expected; consider making it optional homework for time-constrained sessions.",
+    "Bonus activity: Show learners the actual GitHub repository (github.com/bobjiang/zero-to-ship) to see what Claude generated."
   ]
 }
