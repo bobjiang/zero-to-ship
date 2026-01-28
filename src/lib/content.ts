@@ -86,6 +86,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
           date: data.date || '',
           author: data.author || '',
           content,
+          keywords: data.keywords,
         } as BlogPost;
       })
     );
@@ -110,6 +111,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
       date: data.date || '',
       author: data.author || '',
       content,
+      keywords: data.keywords,
     } as BlogPost;
   } catch (error) {
     console.error(`Error loading blog post ${slug}:`, error);

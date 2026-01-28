@@ -27,9 +27,33 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const url = `${siteUrl}/blog/${slug}`;
+
   return {
     title: `${post.title} - 02Ship`,
     description: post.excerpt,
+    keywords: post.keywords || 'AI coding, Claude AI, build with AI, learning platform',
+    authors: [{ name: post.author }],
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: url,
+      siteName: '02Ship',
+      locale: 'en_US',
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      creator: '@02ship',
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
@@ -41,10 +65,40 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const url = `${siteUrl}/blog/${slug}`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '02Ship',
+      url: siteUrl,
+    },
+    url: url,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+  };
+
   return (
-    <div className="py-20">
-      <Container>
-        <div className="mx-auto max-w-3xl">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="py-20">
+        <Container>
+          <div className="mx-auto max-w-3xl">
           <div className="mb-6">
             <Link
               href="/blog"
@@ -82,5 +136,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </Container>
     </div>
+    </>
   );
 }
