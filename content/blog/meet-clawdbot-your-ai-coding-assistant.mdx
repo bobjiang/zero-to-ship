@@ -1,0 +1,268 @@
+---
+title: "Meet Clawdbot: Your 24/7 AI Coding Assistant"
+excerpt: "Discover how Clawdbot (also known as Moltbot) transforms Claude into a powerful automation partner that can code, deploy, and ship while you sleep."
+date: "2026-01-29"
+author: "Bob Jiang"
+---
+
+# Meet Clawdbot: Your 24/7 AI Coding Assistant
+
+Remember when I told you we built 02Ship by having conversations with Claude? Well, what if I told you there's a way to take that collaboration even further—to the point where Claude becomes a **fully autonomous coding partner** that can work on your projects 24/7?
+
+Meet **Clawdbot** (also known as **Moltbot**)—the AI assistant that's changing how we build and ship products.
+
+## What Is Clawdbot?
+
+Clawdbot is an open-source automation platform that connects Claude to your entire development workflow. Think of it as giving Claude:
+
+- **Hands:** It can read, write, and edit files directly
+- **Eyes:** It can browse the web, search for solutions, and monitor your systems
+- **Memory:** It remembers your preferences, past decisions, and project context
+- **Tools:** It can run commands, manage GitHub, post to social media, and more
+- **Persistence:** It keeps working even when you're not actively chatting
+
+In short: Clawdbot turns Claude from a helpful chatbot into a **capable teammate**.
+
+## Why This Matters for Your Projects
+
+When you're building with Claude through the standard interface, you're limited to copy-pasting code back and forth. You ask for a feature, Claude gives you code, you paste it into your editor, test it, report back...
+
+It works, but it's manual. Tedious. Slow.
+
+With Clawdbot, this changes completely:
+
+**Before (Standard Claude):**
+- You: "Can you add a contact form to my website?"
+- Claude: "Sure! Here's the code..."
+- You: *copy-paste into editor, test, find bugs, report back*
+- Repeat 5-10 times until it works
+
+**After (With Clawdbot):**
+- You: "Add a contact form to my website"
+- Clawdbot: *reads your project, writes the form component, updates the routing, tests it locally, commits the changes*
+- You: "Perfect! Ship it."
+- Clawdbot: *deploys to production*
+
+See the difference?
+
+## Real-World Example: How We Use Clawdbot for 02Ship
+
+Let me show you how Clawdbot helps us manage 02Ship itself.
+
+### Morning Check-In
+Every morning, Clawdbot:
+- Checks for new issues or PRs on GitHub
+- Scans our Discord for common questions
+- Reviews site analytics for errors
+- Summarizes everything in a brief report
+
+### Content Updates
+When we want to add a new lesson:
+- I describe what I want in plain English
+- Clawdbot creates the lesson JSON file with proper structure
+- It adds the video metadata, timestamps, and description
+- It updates the course index
+- It commits the changes with a clear message
+- It opens a PR for review
+
+### Bug Fixes
+When someone reports a bug:
+- Clawdbot reads the issue
+- Investigates the codebase
+- Proposes a fix
+- Tests it locally
+- Creates a PR with the solution
+
+**Total time:** Minutes instead of hours.
+
+## The Skills System: Teaching Clawdbot New Tricks
+
+Here's where it gets even better. Clawdbot has a **skills system**—modular capabilities you can add to expand what it can do.
+
+Out of the box, Clawdbot knows how to:
+- Read and write files
+- Run shell commands
+- Search the web
+- Manage browser automation
+
+But you can teach it **skills** like:
+
+**GitHub Skill:**
+- Create/review PRs
+- Manage issues
+- Track CI/CD pipelines
+- Review code changes
+
+**Twitter/X Skill:**
+- Post updates
+- Search mentions
+- Engage with your community
+- Schedule tweets
+
+**Google Workspace Skill:**
+- Manage emails
+- Update calendars
+- Create/edit documents
+- Sync with Drive
+
+**Notion Skill:**
+- Create pages and databases
+- Update project boards
+- Archive completed work
+- Generate reports
+
+**Want a custom skill?** Clawdbot can help you build it. Seriously.
+
+## Memory: The Game-Changer
+
+Unlike standard chatbots that forget everything between sessions, Clawdbot has **persistent memory**.
+
+It keeps track of:
+- **Your preferences:** "I prefer TypeScript over JavaScript"
+- **Project context:** "This repo uses Tailwind for styling"
+- **Past decisions:** "We decided not to use that library because..."
+- **Recurring patterns:** "Every Monday, check analytics and summarize trends"
+
+This means you don't waste time re-explaining things. Clawdbot learns your workflow and adapts.
+
+## Proactive Work: The Heartbeat System
+
+Here's my favorite feature: **heartbeats**.
+
+You can configure Clawdbot to periodically check on things and alert you only when something needs attention.
+
+**Example heartbeat tasks:**
+- "Check my inbox for urgent emails"
+- "Monitor the production server for errors"
+- "Scan GitHub for new issues tagged 'bug'"
+- "Remind me if I haven't committed code in 3 days"
+
+If everything's fine, Clawdbot stays quiet. If something needs action, it pings you.
+
+It's like having a personal assistant who knows what matters.
+
+## Multi-Channel: Work Where You Work
+
+Clawdbot isn't locked to one interface. You can talk to it via:
+- **Web chat** (browser-based)
+- **Telegram** (mobile-friendly)
+- **Discord** (community-integrated)
+- **Slack** (team collaboration)
+- **WhatsApp** (personal messaging)
+- **iMessage** (if you're on Mac/iOS)
+
+Start a conversation on your phone during your commute, continue it on your laptop at home—seamlessly.
+
+## Security & Privacy
+
+Before you ask: "Is it safe?"
+
+**Yes.** Here's how:
+
+1. **Local-first:** Clawdbot runs on YOUR machine, not some cloud server
+2. **Your keys:** You provide your own Claude API key—no sharing, no middlemen
+3. **Full control:** You approve what tools it can access
+4. **Open source:** The code is public—no hidden behavior
+5. **Private by default:** Memory files stay on your machine
+
+You're in control. Always.
+
+## Getting Started with Clawdbot
+
+Ready to try it? Here's the quick-start:
+
+**1. Install Clawdbot**
+```bash
+npm install -g clawdbot
+```
+
+**2. Set up your Claude API key**
+```bash
+export ANTHROPIC_API_KEY="your-key-here"
+```
+
+**3. Start the gateway**
+```bash
+clawdbot gateway start
+```
+
+**4. Open the web interface**
+Visit `http://localhost:3000` and start chatting!
+
+**Full guide:** [https://docs.clawd.bot](https://docs.clawd.bot)
+
+## Use Cases: What Can You Build?
+
+Here are just a few things people are using Clawdbot for:
+
+**Solo Developers:**
+- Automate repetitive coding tasks
+- Manage multiple projects
+- Deploy updates on schedule
+- Monitor production systems
+
+**Content Creators:**
+- Draft blog posts
+- Schedule social media
+- Manage content calendars
+- Research trending topics
+
+**Product Managers:**
+- Track issues across repos
+- Summarize team progress
+- Generate status reports
+- Coordinate releases
+
+**Students & Learners:**
+- Get 24/7 coding help
+- Debug errors instantly
+- Learn best practices
+- Build portfolio projects
+
+## The Future: What's Coming
+
+Clawdbot is evolving fast. Here's what's on the roadmap:
+
+- **Voice input/output:** Talk to Clawdbot naturally
+- **Collaborative sessions:** Multiple humans + Clawdbot working together
+- **Sub-agents:** Spawn specialized AI assistants for specific tasks
+- **Extended memory:** Long-term knowledge graphs
+- **Plugin marketplace:** Share and discover new skills
+
+## Why We're Excited
+
+At 02Ship, we believe everyone should be able to build and ship their ideas. Clawdbot is a **massive step toward that vision**.
+
+It removes the tedious parts of development—the copy-pasting, the context-switching, the repetitive tasks—and lets you focus on **what matters: your idea**.
+
+You still make the decisions. You still guide the direction. But now you have a teammate who never sleeps, never complains, and learns your preferences.
+
+## Try It Today
+
+Clawdbot is open-source and free to use (you just need a Claude API key, which costs pennies for typical use).
+
+**Resources:**
+- [Clawdbot GitHub Repo](https://github.com/clawdbot/clawdbot)
+- [Documentation](https://docs.clawd.bot)
+- [Discord Community](https://discord.com/invite/clawd)
+- [Skill Hub](https://clawdhub.com)
+
+**Want to see it in action?** Join our Discord and ask! We're happy to demo real workflows.
+
+## The Bottom Line
+
+Building with AI doesn't mean you stop being a builder. It means you **build faster, smarter, and with less friction**.
+
+Clawdbot is the bridge between "I have an idea" and "I shipped it."
+
+Ready to ship faster? Give Clawdbot a try.
+
+---
+
+**About the Author:** Bob Jiang is the founder of 02Ship and an advocate for AI-assisted development. He uses Clawdbot daily to manage 02Ship and other projects.
+
+**Join the Journey:**
+- [Start the Claude Basics Course](/courses/claude-basics)
+- [Join our Discord Community](https://discord.gg/btqaA3hzKp)
+- [Explore Clawdbot Skills](https://clawdhub.com)
+- [Try Clawdbot](https://github.com/clawdbot/clawdbot)
