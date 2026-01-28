@@ -1,11 +1,12 @@
 import fs from 'fs/promises';
 import path from 'path';
+import matter from 'gray-matter';
 import { Series, Lesson } from '@/types/course';
 import { BlogPost } from '@/types/blog';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 const COURSES_DIR = path.join(CONTENT_DIR, 'courses');
-// const BLOG_DIR = path.join(CONTENT_DIR, 'blog'); // TODO: implement blog parsing
+const BLOG_DIR = path.join(CONTENT_DIR, 'blog');
 
 export async function getAllSeries(): Promise<Series[]> {
   try {
@@ -67,10 +68,51 @@ export async function getLessonBySlug(
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
-    // For now, return empty array - we'll implement MDX parsing later
-    return [];
+    const files = await fs.readdir(BLOG_DIR);
+    const mdxFiles = files.filter(f => f.endsWith('.mdx'));
+
+    const posts = await Promise.all(
+      mdxFiles.map(async (file) => {
+        const filePath = path.join(BLOG_DIR, file);
+        const fileContent = await fs.readFile(filePath, 'utf-8');
+        const { data, content } = matter(fileContent);
+
+        const slug = file.replace('.mdx', '');
+
+        return {
+          slug,
+          title: data.title || '',
+          excerpt: data.excerpt || '',
+          date: data.date || '',
+          author: data.author || '',
+          content,
+        } as BlogPost;
+      })
+    );
+
+    return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } catch (error) {
     console.error('Error loading blog posts:', error);
     return [];
+  }
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  try {
+    const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const { data, content } = matter(fileContent);
+
+    return {
+      slug,
+      title: data.title || '',
+      excerpt: data.excerpt || '',
+      date: data.date || '',
+      author: data.author || '',
+      content,
+    } as BlogPost;
+  } catch (error) {
+    console.error(`Error loading blog post ${slug}:`, error);
+    return null;
   }
 }

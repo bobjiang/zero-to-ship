@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { getAllBlogPosts } from '@/lib/content';
 
@@ -26,13 +27,21 @@ export default async function BlogPage() {
             <div className="space-y-8">
               {posts.map((post) => (
                 <article key={post.slug} className="border-b border-gray-200 pb-8">
-                  <h2 className="text-2xl font-bold text-gray-900">
-                    {post.title}
-                  </h2>
+                  <Link href={`/blog/${post.slug}`}>
+                    <h2 className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                      {post.title}
+                    </h2>
+                  </Link>
                   <p className="mt-2 text-sm text-gray-600">
                     {post.date} • {post.author}
                   </p>
                   <p className="mt-4 text-gray-600">{post.excerpt}</p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-700"
+                  >
+                    Read more →
+                  </Link>
                 </article>
               ))}
             </div>
