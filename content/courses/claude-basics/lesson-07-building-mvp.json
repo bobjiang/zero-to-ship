@@ -1,0 +1,215 @@
+{
+  "slug": "building-mvp",
+  "title": "Building and Deploying Your MVP",
+  "description": "Capstone lesson: Plan, build, and deploy a complete minimum viable product from scratch using everything you've learned. Ship your first product.",
+  "duration": "2-3 hours",
+  "order": 7,
+  "learningObjectives": [
+    "Plan a realistic MVP scope using the lessons learned framework",
+    "Build a complete project from idea to deployed product",
+    "Deploy your MVP to production and share it publicly",
+    "Create a post-launch plan for iteration and growth"
+  ],
+  "videos": [
+    {
+      "title": "MVP Planning: Scope, Tech Stack, and Timeline",
+      "description": "How to plan a minimum viable product that's actually viable — small enough to ship quickly, valuable enough to matter.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "What makes an MVP 'minimum' and 'viable'?",
+        "The 1-feature rule: can you describe it in one sentence?",
+        "Choosing your tech stack (recommendation: Next.js + Vercel for beginners)",
+        "Timeline reality check: first MVP should take 3-7 days, not months",
+        "The planning template: problem, solution, 3 features max, success criteria",
+        "Real example: planning the 02Ship MVP from scratch"
+      ],
+      "talkingPoints": [
+        "MVP doesn't mean 'broken' — it means 'focused on one core value'",
+        "If you can't describe your MVP in one sentence, it's too complex",
+        "Tech stack choice matters less than shipping — pick what Claude knows well",
+        "Week 1 goal: working but imperfect. Month 1 goal: improved based on feedback",
+        "Your first MVP will be nothing like your final product — that's expected"
+      ]
+    },
+    {
+      "title": "Build Workflow: From Prompt to Production Code",
+      "description": "The complete workflow for building an MVP with Claude: planning, implementing, testing, debugging, iterating.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "Phase 1: Planning session with Claude (Project setup, requirements)",
+        "Phase 2: Generate initial codebase (file structure, core features)",
+        "Phase 3: Run locally and test (inevitable first bugs)",
+        "Phase 4: Iterate and refine (2-3 rounds minimum)",
+        "Phase 5: Polish for launch (responsive, error handling, UX)",
+        "Live demo: building a simple SaaS landing page end-to-end",
+        "Common roadblocks and how to overcome them"
+      ],
+      "talkingPoints": [
+        "Expect to iterate 3-5 times from first code to 'ready to deploy'",
+        "Test after every major change — don't wait until the end",
+        "First version will have rough edges — that's OK for MVP",
+        "Save iterations in Git commits — your undo button",
+        "When stuck for >30 min, ask in community or start fresh with clearer prompt"
+      ]
+    },
+    {
+      "title": "Deployment and Launch: Ship It to the World",
+      "description": "Deploy your MVP to production, set up your domain, and execute a simple launch strategy.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "12 minutes",
+      "scriptOutline": [
+        "Deployment options: Vercel (recommended), Netlify, Render",
+        "Connecting a custom domain (optional but recommended)",
+        "Pre-launch checklist: analytics, error tracking, basic SEO",
+        "Simple launch strategy: Twitter, LinkedIn, Product Hunt, Reddit",
+        "Post-launch: responding to feedback, monitoring metrics",
+        "Real story: how 02Ship launched and learned from day 1 users",
+        "Celebrating: you're now a builder who ships"
+      ],
+      "talkingPoints": [
+        "Deployment is scary the first time, routine the 10th time — just do it",
+        "Custom domain makes it feel 'real' — worth the $10-15/year",
+        "Your first users will be forgiving — they know it's new",
+        "Ship before you feel ready — that's when everyone ships",
+        "Feedback from 5 real users beats theory from 500 imaginary ones",
+        "Today you become a builder who ships, not just learns"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "The MVP Planning Template",
+      "content": "Use this template to plan your MVP:\n\n---\n\n**Project Name:** [Your product name]\n\n**One-Sentence Pitch:**\n[Product name] helps [target user] to [do something] by [key differentiator].\n\n**Example:** \"02Ship helps non-programmers learn to build products by teaching them to use AI coding tools through hands-on courses.\"\n\n**The Problem:**\n- Who has this problem? [Be specific: 'non-technical founders', not 'everyone']\n- How do they solve it today? [What's the alternative?]\n- Why is that solution insufficient? [The pain point]\n\n**The Solution (Your MVP):**\n- Core value proposition: [The ONE thing your MVP does really well]\n- How it works: [3-5 sentence explanation a 10-year-old could understand]\n\n**Key Features (3 Maximum):**\n1. [Feature 1 - the absolute minimum to deliver value]\n2. [Feature 2 - necessary for feature 1 to work]\n3. [Feature 3 - nice to have if time permits]\n\n**NOT in the MVP (Save for V2):**\n- [Feature you want but don't strictly need]\n- [Polish that can wait]\n- [Integration that's not critical]\n\n**Success Criteria:**\n- Technical: [App runs, core flow works, no critical bugs]\n- User: [Can complete main task without confusion]\n- Metric: [Get X users to complete Y action]\n\n**Tech Stack:**\n- Frontend: [e.g., Next.js 14 + TypeScript + Tailwind]\n- Backend: [e.g., Supabase, or none (static site)]\n- Deployment: [e.g., Vercel]\n- Other: [Any critical integrations]\n\n**Timeline:**\n- Planning: [1 day]\n- Building: [3-5 days]\n- Testing & polish: [1-2 days]\n- Launch: [1 day]\n- **Total: 1 week maximum for first MVP**\n\n**Known Risks:**\n- [Technical challenge you're unsure about]\n- [Assumption that might be wrong]\n- [Resource you might not have]\n\n---\n\n**After filling this out, ask yourself:**\n1. Could I explain this to someone in 30 seconds?\n2. Can I build this in a week without burning out?\n3. Would even 10 people find this useful?\n\nIf all yes → start building. If any no → simplify further."
+    },
+    {
+      "title": "Recommended Tech Stack for First MVP",
+      "content": "**Best for Absolute Beginners:**\n\n**Option 1: Static Website**\n- HTML + CSS + vanilla JavaScript\n- Deployment: Netlify (drag & drop)\n- Best for: Landing pages, portfolios, simple tools\n- Pros: Simplest possible, no build process\n- Cons: Limited functionality, harder to scale\n\n**Option 2: Next.js + Vercel (Recommended)**\n- Next.js 14 (App Router) + TypeScript + Tailwind CSS\n- Deployment: Vercel (GitHub integration)\n- Best for: Most web apps, SaaS products, content sites\n- Pros: Claude knows it well, scales to complex apps, great docs\n- Cons: Steeper learning curve than plain HTML\n\n**Option 3: No-Code Tools**\n- Webflow, Framer, Carrd (for landing pages)\n- Bubble, FlutterFlow (for apps)\n- Best for: Maximum speed, no coding at all\n- Pros: Ship even faster, visual editing\n- Cons: Less control, harder to customize, costs add up\n\n**What NOT to Choose for First MVP:**\n❌ Custom backend from scratch (use Supabase/Firebase instead)\n❌ Mobile app (web first, mobile later)\n❌ Blockchain/crypto integrations (complexity nightmare)\n❌ Microservices architecture (you're not Netflix)\n❌ Cutting-edge frameworks (stick to what Claude knows)\n\n**Our Recommendation:**\nNext.js + Vercel. Why?\n- Claude has excellent Next.js knowledge\n- Free hosting on Vercel\n- Scales from simple to complex\n- Huge community for help\n- Used by professionals (you're learning a real skill)\n\n**If Next.js feels too complex:**\nStart with plain HTML/CSS, ship that, then rebuild in Next.js for V2. Shipping imperfectly > not shipping perfectly."
+    },
+    {
+      "title": "Build Phase: Step-by-Step Workflow",
+      "content": "**Day 1: Planning & Setup**\n\n1. Fill out MVP Planning Template\n2. Create a Project in Claude with your plan as custom instructions\n3. Ask Claude: 'Review my MVP plan and suggest improvements'\n4. Refine based on feedback\n5. Create GitHub repo (optional but recommended)\n6. Set up local dev environment (Lesson 4)\n\n**Day 2-3: Core Features**\n\n1. Prompt Claude: 'Generate the initial project structure for [MVP]'\n2. Run code locally, verify it works\n3. For each core feature:\n   - Prompt: 'Add [feature]: [specific requirements]'\n   - Test the feature\n   - Iterate if needed (simplify, expand, debug)\n4. Commit working code after each feature\n\n**Day 4: Polish & Test**\n\n1. Mobile responsiveness check (test on phone)\n2. Add error handling ('what if user does X wrong?')\n3. Basic loading states (spinners, skeletons)\n4. Accessibility check (keyboard navigation, screen reader labels)\n5. Copy/content review (fix typos, improve clarity)\n6. Ask 1-2 people to test and give feedback\n\n**Day 5: Deployment Prep**\n\n1. Add basic analytics (Vercel Analytics or Google Analytics)\n2. Set up error tracking (optional: Sentry free tier)\n3. Add meta tags for SEO and social sharing\n4. Create README with setup instructions\n5. Final test: does it work in production mode? (`npm run build && npm start`)\n\n**Day 6: Deploy & Launch**\n\n1. Deploy to Vercel (connect GitHub repo)\n2. Set up custom domain (optional)\n3. Test live site on multiple devices\n4. Fix any production bugs\n5. Write launch post (Twitter, LinkedIn, relevant communities)\n6. Share with 5-10 people directly for initial feedback\n\n**Day 7: Respond & Plan**\n\n1. Respond to all feedback\n2. Log bugs and feature requests\n3. Prioritize what to fix vs. what to defer\n4. Plan V1.1 improvements\n5. Celebrate: you shipped! 🎉\n\n**If You Get Stuck:**\n- Stuck <30 min: Debug with Claude\n- Stuck 30-60 min: Ask in Discord/community\n- Stuck 60+ min: Simplify the feature or skip it for V2\n- Really stuck: Take a break, come back fresh\n\nRemember: Done is better than perfect."
+    },
+    {
+      "title": "Pre-Launch Checklist",
+      "content": "**Technical Must-Haves:**\n- [ ] App runs without errors in production mode\n- [ ] Core user flow works end-to-end\n- [ ] Works on mobile (at least readable/usable)\n- [ ] No sensitive data (API keys) hardcoded\n- [ ] Basic error handling (not crashing on bad input)\n\n**Content Must-Haves:**\n- [ ] Clear value proposition on landing page\n- [ ] How-to instructions or onboarding\n- [ ] Contact or support info\n- [ ] About page or footer with context\n\n**SEO Basics:**\n- [ ] Title tags on all pages\n- [ ] Meta descriptions\n- [ ] Open Graph tags (for social sharing)\n- [ ] Favicon\n\n**Analytics:**\n- [ ] Basic analytics set up (Vercel Analytics or GA4)\n- [ ] Can track key user action (signup, usage, etc.)\n\n**Nice-to-Haves (Not Blockers):**\n- [ ] Custom domain (vs. yourapp.vercel.app)\n- [ ] Email capture for updates\n- [ ] Pricing page (if applicable)\n- [ ] Testimonials or social proof\n- [ ] Privacy policy (required if collecting data)\n\n**Launch Day:**\n- [ ] Announce on Twitter/LinkedIn with screenshot\n- [ ] Share in relevant communities (Reddit, Discord, forums)\n- [ ] Tell friends and ask for feedback\n- [ ] Post on Product Hunt (optional, can wait for V1.1)\n- [ ] Respond to every comment/message within 24 hours\n\n**Post-Launch (Week 1):**\n- [ ] Fix critical bugs immediately\n- [ ] Thank early users publicly\n- [ ] Document feedback (bugs, features, questions)\n- [ ] Prioritize what to build next\n- [ ] Plan V1.1 for 1-2 weeks out\n\n**Mental Checklist:**\n- [ ] I'm OK with this being imperfect\n- [ ] I'm shipping to learn, not to impress\n- [ ] Feedback is a gift, even when harsh\n- [ ] I can always improve it after launch\n- [ ] Today I'm a builder who ships"
+    },
+    {
+      "title": "Simple Launch Strategy",
+      "content": "**Goal:** Get 10-50 people to try your MVP in the first week.\n\n**Where to Share:**\n\n**Twitter/X:**\n- Post with screenshot\n- Tell the story: 'Built this in X days using Claude'\n- Use hashtags: #BuildInPublic #IndieHacker #AI\n- Tag relevant accounts (but don't spam)\n\n**LinkedIn:**\n- Professional angle: 'Learning to build products with AI'\n- Share lessons learned\n- Ask your network for feedback\n\n**Reddit:**\n- r/SideProject (feedback focus)\n- r/IMadeThis (show and tell)\n- Niche subreddits related to your product\n- Follow sub rules (some ban self-promotion)\n\n**Discord/Slack Communities:**\n- Share in relevant channels\n- Ask for feedback, not just promotion\n- Offer to help others in return\n\n**Product Hunt:**\n- Wait until V1.1 (not bare MVP)\n- Or launch immediately for early feedback\n- Prepare: good description, screenshots, first comment\n\n**Indie Hackers:**\n- Post in 'Show IH' section\n- Share your build story\n- Engaged community, constructive feedback\n\n**Direct Outreach:**\n- Message 5-10 people who fit your target user\n- Ask for specific feedback: 'Does this solve [problem] for you?'\n- Offer beta access or free use\n\n**Launch Post Template:**\n\n🚀 I just shipped [Product Name]!\n\n[One-sentence value prop]\n\nBuilt in [X days] using Claude + [tech stack]. Zero coding experience before this course.\n\n✨ What it does:\n- [Key feature 1]\n- [Key feature 2]\n- [Key feature 3]\n\n🔗 Try it: [yourproduct.com]\n\nI'd love your feedback! What works? What's confusing? What's missing?\n\n#BuildInPublic [other relevant hashtags]\n\n**What NOT to Do:**\n- Don't spam multiple subreddits in one hour\n- Don't claim it's 'perfect' or 'revolutionary'\n- Don't ignore negative feedback\n- Don't pay for fake upvotes/traffic\n- Don't compare yourself to others' launches\n\n**Success Metrics (Week 1):**\n- 10+ people tried it\n- 5+ pieces of feedback received\n- 1+ bug fixed based on real usage\n- Learned something that will inform V1.1\n\n**Remember:**\nYour first launch won't go viral. That's not the goal. The goal is: ship, learn, iterate."
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**MVP (Minimum Viable Product):** Smallest version of your product that delivers core value and can be tested with real users\n\n**Deployment:** Publishing your app so others can access it via the internet\n\n**Production:** The live environment where real users interact with your app (vs. development/testing)\n\n**Launch:** Making your product public and announcing it to get initial users\n\n**Iteration:** Cycle of shipping → learning → improving → shipping again\n\n**V1 / V2:** Version numbers (V1 = first launch, V2 = major update)\n\n**Analytics:** Tools that track how users interact with your product\n\n**Feedback Loop:** Process of collecting user feedback and using it to improve"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Trying to build too many features for MVP",
+      "explanation": "3 features maximum. If you have more, split them into V1 and V2. Ship small, iterate fast."
+    },
+    {
+      "mistake": "Waiting for perfection before launching",
+      "explanation": "If you're not a little embarrassed by V1, you launched too late. Ship and improve based on real feedback."
+    },
+    {
+      "mistake": "Not testing on mobile before launch",
+      "explanation": "50%+ of users will be on mobile. Test on your phone, not just your laptop."
+    },
+    {
+      "mistake": "Ignoring or getting defensive about feedback",
+      "explanation": "Feedback is data, not personal attack. Even harsh feedback often contains useful insights."
+    },
+    {
+      "mistake": "Launching and disappearing",
+      "explanation": "Respond to every user in week 1. Engagement matters more than perfection for early traction."
+    }
+  ],
+  "reflectionQuestions": [
+    "What's the smallest version of your product idea that would still be useful to someone?",
+    "What scares you more: building it or launching it? Why?",
+    "If you shipped your MVP next week, what would you learn that you don't know now?"
+  ],
+  "exercises": [
+    {
+      "title": "Plan Your MVP (Capstone Project Brief)",
+      "description": "Create a complete MVP plan using the template provided. This becomes your capstone project.",
+      "output": "Completed MVP Planning Template including: one-sentence pitch, problem/solution, 3 features max, tech stack, timeline, success criteria",
+      "successCriteria": [
+        "Can explain the MVP in one sentence",
+        "Problem and solution are specific (not vague)",
+        "Limited to 3 features maximum",
+        "Timeline is realistic (3-7 days total)",
+        "Tech stack chosen (preferably Next.js + Vercel)",
+        "Success criteria are measurable",
+        "Asked Claude to review and incorporated feedback"
+      ],
+      "estimatedTime": "60 minutes"
+    },
+    {
+      "title": "Build Your MVP",
+      "description": "Build your planned MVP from scratch using Claude. Follow the day-by-day workflow provided.",
+      "output": "Working MVP project (runnable locally) with: core features implemented, basic polish, tested functionality, documented code",
+      "successCriteria": [
+        "All 3 core features implemented and working",
+        "Runs without critical errors",
+        "Mobile-responsive (at least usable on phone)",
+        "Committed to Git with clear commit messages",
+        "README explains what the project does and how to run it",
+        "At least one other person tested it and gave feedback",
+        "Iterated at least once based on testing feedback"
+      ],
+      "estimatedTime": "Multiple days (3-7 days recommended)"
+    },
+    {
+      "title": "Deploy and Launch Your MVP",
+      "description": "Deploy your MVP to production and execute a simple launch strategy.",
+      "output": "Live product with: deployed site (custom domain optional), launch posts on 2+ platforms, proof of initial users/feedback",
+      "successCriteria": [
+        "Deployed to Vercel (or equivalent) and accessible via public URL",
+        "Analytics set up (can track visitors)",
+        "Launched on at least 2 platforms (Twitter, LinkedIn, Reddit, etc.)",
+        "Got at least 5 people to try it",
+        "Received and documented at least 3 pieces of feedback",
+        "Responded to all feedback within 24 hours",
+        "Created a V1.1 improvement plan based on learnings",
+        "Celebrated shipping! 🎉"
+      ],
+      "estimatedTime": "2-3 hours (deployment + launch posts)"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Vercel Deployment Guide",
+      "url": "https://vercel.com/docs/deployments/overview"
+    },
+    {
+      "title": "The MVP is Dead. Long Live the RAT (Riskiest Assumption Test)",
+      "url": "https://hackernoon.com/the-mvp-is-dead-long-live-the-rat-233d5d16ab02"
+    },
+    {
+      "title": "How to Launch on Product Hunt",
+      "url": "https://www.producthunt.com/stories/how-to-launch-on-product-hunt-tips-from-the-community"
+    },
+    {
+      "title": "Indie Hackers - First Launch Playbook",
+      "url": "https://www.indiehackers.com/post/launching-your-product-a-complete-guide-8e7e3f0f98"
+    }
+  ],
+  "instructorNotes": [
+    "This is the capstone lesson — brings together everything from previous lessons. Emphasize: this is where theory meets practice.",
+    "For live sessions: This can be a multi-week 'build sprint' where students work on MVPs and check in weekly. Not a 3-hour single session.",
+    "Common anxiety: 'My idea isn't good enough.' Reframe: MVP is a learning tool, not a billion-dollar product. Ship to learn.",
+    "Self-paced tip: Create a #shipped channel in Discord where students share their deployed MVPs. Public accountability helps.",
+    "Time check: Exercise 2 (building) takes days, not hours. Set expectation: this is the main work of the course.",
+    "Bonus: Feature the best student MVPs on the 02Ship website/blog. Motivation through recognition.",
+    "Celebration moment: Make a big deal about first-time launchers. Certificate, badge, shoutout — something memorable.",
+    "Real-world connection: Professional builders ship MVPs constantly. Students are now doing what pros do, just faster with AI.",
+    "Key mindset: Perfect is the enemy of shipped. Drum this home throughout the lesson.",
+    "Support structure: Have instructor or TAs available during build sprint for quick unblocking. Momentum matters."
+  ]
+}

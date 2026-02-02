@@ -1,0 +1,203 @@
+{
+  "slug": "artifacts-code",
+  "title": "Working with Code and Artifacts",
+  "description": "Learn to work with Claude's code artifacts: understanding what's generated, running code locally, making modifications, and building runnable projects without deep programming knowledge.",
+  "duration": "2-3 hours",
+  "order": 4,
+  "learningObjectives": [
+    "Understand what artifacts are and how to use them effectively",
+    "Set up a basic local environment to run Claude-generated code",
+    "Read and modify code artifacts without deep programming knowledge",
+    "Test and troubleshoot Claude-generated code independently"
+  ],
+  "videos": [
+    {
+      "title": "Artifacts Explained: Your Code Workspace",
+      "description": "What artifacts are, how they work, and how to think about code Claude generates for you.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "12 minutes",
+      "scriptOutline": [
+        "What are artifacts? (Separate panel for code, documents, diagrams)",
+        "How artifacts differ from regular text responses",
+        "Types of artifacts: code, React components, documents, SVGs, Mermaid diagrams",
+        "Downloading, copying, and versioning artifacts",
+        "Live demo: generating a simple HTML artifact and opening it"
+      ],
+      "talkingPoints": [
+        "Artifacts are Claude's way of giving you 'finished products' — ready-to-use files",
+        "You don't need to understand every line — you need to know how to use it",
+        "Think of artifacts like IKEA furniture: Claude gives you the parts, you assemble",
+        "Artifacts are versioned — Claude updates them when you ask for changes"
+      ]
+    },
+    {
+      "title": "Setting Up Your Dev Environment (The Minimum)",
+      "description": "What tools you actually need to run code locally — no fancy IDE required.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "The minimum setup: text editor (VS Code) + terminal + browser",
+        "Installing Node.js for running modern web projects",
+        "Understanding package.json and npm install",
+        "Running Claude's code: npm run dev, opening localhost",
+        "When you don't need setup: HTML files, simple scripts",
+        "Live demo: running a Next.js project Claude generated"
+      ],
+      "talkingPoints": [
+        "You don't need to be a developer to run code — just follow the recipe",
+        "VS Code is free, beginner-friendly, and handles most projects",
+        "npm install is like 'download the dependencies' — always run it first",
+        "localhost:3000 means 'your computer is hosting a website, only you can see it'",
+        "If something doesn't work, the error message tells you what's missing"
+      ]
+    },
+    {
+      "title": "Reading Code for Non-Programmers",
+      "description": "How to navigate code files, understand structure, and make simple changes without breaking things.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "File structure: what src/, components/, pages/ mean",
+        "Reading code top-to-bottom: imports → logic → exports",
+        "What you can safely change: text, colors, numbers, URLs",
+        "What NOT to change: syntax, brackets, imports (unless Claude tells you)",
+        "Using Claude to explain specific parts: 'What does this function do?'",
+        "Live demo: changing text and colors in a React component"
+      ],
+      "talkingPoints": [
+        "Code is just text — you can't 'break' it permanently, you can always undo",
+        "Focus on what's in quotes — that's usually content you can edit",
+        "Numbers often control size, spacing, timing — experiment safely",
+        "When in doubt, ask Claude: 'How do I change X in this code?'",
+        "Save before every change, test after every change"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Types of Artifacts and When to Use Each",
+      "content": "**1. CODE (HTML/JavaScript/React)**\nBest for: Interactive web pages, apps, UIs\nHow to use: Save as .html or follow Claude's setup instructions\nExample prompt: 'Create an interactive todo list I can run in my browser'\n\n**2. REACT COMPONENT**\nBest for: Reusable UI pieces for web apps\nHow to use: Copy into your React project's components folder\nExample prompt: 'Create a signup form component with email validation'\n\n**3. DOCUMENT (Markdown)**\nBest for: Documentation, guides, content\nHow to use: Copy to a .md file or use as-is\nExample prompt: 'Create a README for my project'\n\n**4. DIAGRAM (SVG/Mermaid)**\nBest for: Flowcharts, architecture diagrams, visualizations\nHow to use: Download SVG or render Mermaid in a viewer\nExample prompt: 'Create a flowchart for my user onboarding process'\n\n**5. TEXT/SCRIPTS**\nBest for: Utilities, configurations, data files\nHow to use: Save with appropriate extension (.json, .sh, .py)\nExample prompt: 'Create a script to rename all my image files'\n\n**Choosing:**\n- Want something interactive? → Code/React\n- Want to document? → Document\n- Want to visualize? → Diagram\n- Want to automate? → Script"
+    },
+    {
+      "title": "The Basic Dev Environment Checklist",
+      "content": "**Essential Tools (one-time setup):**\n\n1. **Text Editor: VS Code**\n   - Download: https://code.visualstudio.com/\n   - Why: Free, beginner-friendly, works for any language\n   - Install extensions: Prettier (auto-format), ESLint (catch errors)\n\n2. **Node.js + npm**\n   - Download: https://nodejs.org/ (get LTS version)\n   - Why: Runs modern JavaScript projects\n   - Test install: Open terminal, type `node -v`\n\n3. **Web Browser**\n   - Chrome or Firefox (you probably already have this)\n   - Why: See your projects running\n\n4. **Terminal/Command Line**\n   - Mac: Built-in Terminal app\n   - Windows: Command Prompt or PowerShell\n   - Why: Run commands Claude gives you\n\n**Optional but Helpful:**\n- Git (for version control): https://git-scm.com/\n- GitHub Desktop (easier Git): https://desktop.github.com/\n\n**That's it!** You don't need XCode, Android Studio, or fancy IDEs.\n\n**First-Time Setup Workflow:**\n1. Install VS Code\n2. Install Node.js\n3. Open VS Code terminal (View → Terminal)\n4. You're ready to run Claude's code!"
+    },
+    {
+      "title": "Running Claude's Code: Step-by-Step",
+      "content": "**For Simple HTML Files:**\n1. Copy Claude's code\n2. Paste into a new file, save as `index.html`\n3. Double-click the file → opens in browser\n4. Done!\n\n**For Node.js/React Projects:**\n1. Copy all of Claude's code into appropriately named files\n2. Open terminal in the project folder\n3. Run: `npm install` (downloads dependencies)\n   - Wait for it to finish (can take 1-2 minutes)\n4. Run: `npm run dev` (or `npm start`, Claude will tell you)\n5. Open browser to `http://localhost:3000`\n6. See your app running!\n\n**Making Changes:**\n1. Edit the file in VS Code\n2. Save (Cmd+S / Ctrl+S)\n3. Refresh browser (most modern setups auto-refresh)\n4. See changes immediately\n\n**If Something Breaks:**\n1. Check terminal for error messages\n2. Copy the full error\n3. Ask Claude: 'I got this error: [paste error]. How do I fix it?'\n4. Apply Claude's fix\n5. Try again\n\n**Pro tip:** Keep the terminal open while developing. Errors appear there first."
+    },
+    {
+      "title": "What You Can Safely Change in Code",
+      "content": "**✅ SAFE TO EDIT:**\n\n**Text in Quotes:**\n```javascript\n<h1>\"Welcome!\"</h1>  // Change to \"Hello!\"\nconst message = \"Hi there\"  // Change to any text\n```\n\n**Numbers (spacing, sizes, delays):**\n```javascript\nwidth: 300  // Try 400, 500, etc.\nsetTimeout(() => {}, 1000)  // 1000 = 1 second, try 2000\npadding: 20px  // Try 10px, 30px\n```\n\n**Colors (hex codes or names):**\n```javascript\nbackground: \"#3498db\"  // Try \"#e74c3c\" or \"blue\"\ncolor: \"white\"  // Try \"black\", \"red\", etc.\n```\n\n**URLs and Paths:**\n```javascript\nfetch(\"https://api.example.com\")  // Change to your API\nimage src=\"/logo.png\"  // Change to your image path\n```\n\n**Boolean flags (true/false):**\n```javascript\nconst isVisible = true  // Try false\n<Component disabled={false} />  // Try true\n```\n\n**⚠️ BE CAREFUL WITH:**\n\n**Brackets and Syntax:**\n```javascript\nfunction doThing() {  // Don't delete { or }\n  return \"value\"  // Don't forget closing }\n}\n```\n\n**Imports:**\n```javascript\nimport React from 'react'  // Don't edit unless you know why\n```\n\n**Variable Names:**\nChanging `userName` to `name` might break other code that references it.\n\n**When in doubt:**\n'Claude, how do I change [X] in this code?' → Safer than guessing!"
+    },
+    {
+      "title": "Troubleshooting Common Issues",
+      "content": "**Error: 'node' is not recognized**\n→ Node.js not installed or not in PATH\n→ Fix: Install Node.js, restart terminal\n\n**Error: 'npm install' fails**\n→ Network issue or permission problem\n→ Fix: Try `npm install --force` or check internet connection\n\n**Error: Port 3000 already in use**\n→ Another app is using that port\n→ Fix: Stop other dev servers, or use a different port with `PORT=3001 npm run dev`\n\n**Error: Module not found**\n→ Missing dependency\n→ Fix: Run `npm install [missing-module]`\n\n**Error: Syntax error in browser**\n→ Code has a typo or bracket mismatch\n→ Fix: Check VS Code for red squiggly lines, or ask Claude to review\n\n**Nothing appears in browser**\n→ Check terminal for errors\n→ Check browser console (F12 → Console tab)\n→ Make sure you're on the right URL (localhost:3000)\n\n**Changes don't appear**\n→ Hard refresh: Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows)\n→ Check if file is saved (dot on VS Code tab means unsaved)\n\n**General debugging process:**\n1. Read the error message fully\n2. Google '[error message] + [technology]' (e.g., 'module not found react')\n3. Ask Claude with full error text\n4. If still stuck, ask in community (Discord, Stack Overflow)"
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Artifact:** A discrete output from Claude (code, document, diagram) shown in a separate panel\n\n**Localhost:** A web address (http://localhost:3000) that means 'this computer' — only you can access it\n\n**npm (Node Package Manager):** Tool for installing JavaScript libraries/dependencies\n\n**Dependencies:** External code libraries your project needs to run\n\n**Terminal/Command Line:** Text-based interface for running commands\n\n**Package.json:** File listing your project's dependencies and scripts\n\n**Source Code (src/):** The folder containing your app's main code\n\n**Dev Server:** A local server that runs your project for testing"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Not running 'npm install' before 'npm start'",
+      "explanation": "Dependencies must be downloaded first. Always run npm install after getting new code."
+    },
+    {
+      "mistake": "Editing code in the browser instead of VS Code",
+      "explanation": "Browser changes are temporary. Edit the actual files in VS Code, then refresh."
+    },
+    {
+      "mistake": "Deleting brackets or quotes while changing text",
+      "explanation": "Keep the syntax intact. Only change what's inside quotes, not the quotes themselves."
+    },
+    {
+      "mistake": "Not checking the terminal for errors",
+      "explanation": "Terminal shows errors first. If something breaks, look there before Googling."
+    },
+    {
+      "mistake": "Running random commands without understanding",
+      "explanation": "If Claude says 'run X', ask 'What does this command do?' before running it."
+    }
+  ],
+  "reflectionQuestions": [
+    "What feels more intimidating: writing code from scratch or modifying Claude's code? Why?",
+    "Think of a simple change you'd want to make to a website you use. Could you make that change in Claude's code?",
+    "How confident do you feel running terminal commands? What would help you feel more comfortable?"
+  ],
+  "exercises": [
+    {
+      "title": "Setup and Run Your First Artifact",
+      "description": "Set up your dev environment and successfully run a Claude-generated code artifact.",
+      "output": "A running local project (screenshot of it in your browser at localhost:3000) plus documentation of setup steps you followed",
+      "successCriteria": [
+        "Installed VS Code and Node.js",
+        "Generated a simple web project with Claude (HTML or React)",
+        "Successfully ran npm install (if needed)",
+        "Got the project running in browser",
+        "Screenshot shows working project",
+        "Documented any issues encountered and how you solved them"
+      ],
+      "estimatedTime": "60 minutes"
+    },
+    {
+      "title": "Customize an Artifact",
+      "description": "Take a Claude-generated artifact and make 5 meaningful changes without breaking it.",
+      "output": "Before/after screenshots showing your changes, plus the modified code and a list of what you changed",
+      "successCriteria": [
+        "Made at least 5 distinct changes (text, colors, sizes, etc.)",
+        "Project still runs after changes",
+        "Changes are visible and intentional (not random)",
+        "Can explain what each change does",
+        "Tested after each change to catch breaks early"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    {
+      "title": "Debug and Fix",
+      "description": "Intentionally break a working artifact, then use Claude to help you fix it.",
+      "output": "Debug log showing: (1) What you broke, (2) Error message, (3) Prompt you used to ask Claude for help, (4) Claude's fix, (5) Proof it works again",
+      "successCriteria": [
+        "Intentionally introduced a clear break (deleted a bracket, typo'd a variable, etc.)",
+        "Captured the full error message from terminal/browser",
+        "Asked Claude a good debugging question (included error + context)",
+        "Applied Claude's fix successfully",
+        "Project works again (screenshot proof)",
+        "Learned one lesson about what NOT to do"
+      ],
+      "estimatedTime": "30 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "VS Code for Beginners",
+      "url": "https://code.visualstudio.com/docs/introvideos/basics"
+    },
+    {
+      "title": "Node.js Getting Started",
+      "url": "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"
+    },
+    {
+      "title": "MDN Web Docs - HTML Basics",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"
+    },
+    {
+      "title": "Terminal Cheat Sheet",
+      "url": "https://github.com/0nn0/terminal-mac-cheatsheet"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson is standalone — works even if students skipped earlier lessons. Quick recap of 'what is Claude?' may help.",
+    "For live sessions: Screen-share the full setup process. Students WILL have install issues — budget time for troubleshooting.",
+    "Common anxiety: 'I'll break something.' Emphasize: you can't break your computer, only the project, and Cmd+Z exists!",
+    "Self-paced tip: Create a #setup-help channel in Discord where students post error messages. Community often solves faster than instructor.",
+    "Time check: Exercise 1 can take 90+ minutes if students hit Node.js install issues on Windows. Consider making this async homework.",
+    "Bonus: Create a 'gallery' of customized artifacts students make in Exercise 2. Shows creativity and removes fear.",
+    "Platform note: Mac vs. Windows commands differ (terminal vs. PowerShell). Provide both in examples.",
+    "Key mindset shift: You're not learning to code, you're learning to USE code Claude generates. Big difference!"
+  ]
+}

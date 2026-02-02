@@ -1,0 +1,195 @@
+{
+  "slug": "projects-context",
+  "title": "Projects: Persistent Context Management",
+  "description": "Master Claude's Projects feature to maintain context across sessions, organize complex builds, and work more efficiently with custom instructions and knowledge bases.",
+  "duration": "2-3 hours",
+  "order": 5,
+  "learningObjectives": [
+    "Create and configure Claude Projects with custom instructions",
+    "Upload and manage knowledge base files effectively",
+    "Maintain context across multiple conversations within a Project",
+    "Organize work using Projects for different products or features"
+  ],
+  "videos": [
+    {
+      "title": "Why Projects Matter: Solving the Context Problem",
+      "description": "Understanding the limitations of regular conversations and how Projects solve persistent context needs.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "11 minutes",
+      "scriptOutline": [
+        "The context problem: repeating yourself every conversation",
+        "What Projects are: workspaces with memory",
+        "Key features: custom instructions, knowledge base, conversation history",
+        "Projects vs. regular chats: when to use each",
+        "Real example: building 02Ship with and without Projects"
+      ],
+      "talkingPoints": [
+        "Without Projects, you start from zero every time — exhausting and inefficient",
+        "Projects remember your tech stack, style preferences, and project goals permanently",
+        "Think of Projects as dedicated workspaces — one per product you're building",
+        "Claude Pro required for Projects, but worth it for serious builders",
+        "Projects save hours of context-setting over the life of a project"
+      ]
+    },
+    {
+      "title": "Setting Up Your Project: Instructions and Knowledge",
+      "description": "Step-by-step guide to creating a Project, writing custom instructions, and uploading knowledge files.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "Creating a new Project (UI walkthrough)",
+        "Writing effective custom instructions (template provided)",
+        "What to include: tech stack, constraints, code style, current status",
+        "Uploading knowledge files: README, requirements, docs, code samples",
+        "Testing your Project: does Claude reference your instructions?",
+        "Live demo: setting up a Project for a sample app"
+      ],
+      "talkingPoints": [
+        "Custom instructions are like a contract with Claude — consistent behavior every time",
+        "Be specific: 'Use TypeScript + React + Tailwind' not 'modern web stack'",
+        "Upload key documents, not everything — quality over quantity",
+        "Test by asking Claude to 'describe this project' — it should reference your instructions",
+        "Update instructions as your project evolves — they're not set in stone"
+      ]
+    },
+    {
+      "title": "Multi-Session Workflows: Building Across Days",
+      "description": "How to leverage Projects for building complex features across multiple sessions without losing context.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "Conversation organization within Projects",
+        "Referencing previous work: 'In our conversation about X...'",
+        "The power of persistent context: picking up where you left off",
+        "When to start a new conversation vs. continue existing",
+        "Real workflow: adding 3 features across 3 days using one Project",
+        "Archiving and managing completed work"
+      ],
+      "talkingPoints": [
+        "Claude remembers EVERYTHING in a Project — across all conversations",
+        "You can say 'improve the auth system we built last week' and Claude knows",
+        "Start new conversations for new features — keeps history organized",
+        "Projects eliminate 90% of context-setting overhead",
+        "Archive old conversations when features ship to keep workspace clean"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Custom Instructions Template",
+      "content": "**Copy this template and customize for your project:**\n\n---\n\n**Project Name:** [Your project name]\n\n**What I'm Building:**\n[2-3 sentence description of your product/app]\n\n**Tech Stack:**\n- Frontend: [e.g., Next.js 14, React, TypeScript]\n- Styling: [e.g., Tailwind CSS, shadcn/ui]\n- Backend: [e.g., Supabase, tRPC, none yet]\n- Deployment: [e.g., Vercel]\n- Other: [e.g., Stripe for payments, Auth0 for auth]\n\n**Code Style Preferences:**\n- [e.g., 'Use functional components in React']\n- [e.g., 'Prefer named exports over default exports']\n- [e.g., 'Add TypeScript types for all functions']\n- [e.g., 'Include helpful comments for complex logic']\n\n**Project Constraints:**\n- [e.g., 'Must be mobile-responsive']\n- [e.g., 'Accessibility: WCAG 2.1 AA compliance']\n- [e.g., 'Performance: page load under 2 seconds']\n- [e.g., 'No external API dependencies unless discussed']\n\n**When Generating Code:**\n- Explain what each new file does before showing code\n- Include error handling and loading states\n- Suggest testing approaches for new features\n- Point out potential edge cases\n\n**Target Audience:**\n[Who will use this? E.g., 'Non-technical founders learning to build products']\n\n**Current Status:**\n[Where are you now? E.g., 'MVP launched, working on v2 features' or 'Just starting, no code yet']\n\n---\n\n**Example (02Ship):**\n\n**Project Name:** 02Ship Learning Platform\n\n**What I'm Building:**\nA course platform teaching non-programmers to build products using Claude AI. Includes video lessons, exercises, and progress tracking.\n\n**Tech Stack:**\n- Frontend: Next.js 14 (App Router), TypeScript, Tailwind CSS\n- Content: MDX (blog), JSON (courses)\n- Deployment: Vercel\n- Analytics: Vercel Analytics\n\n**Code Style Preferences:**\n- Use TypeScript strict mode\n- Prefer named exports\n- Mobile-first responsive design\n- Accessibility: include ARIA labels\n\n**Project Constraints:**\n- All content must be beginner-friendly (no jargon without explanation)\n- Fast page loads (Lighthouse score 90+)\n- No authentication initially (public course content)\n\n**When Generating Code:**\n- Explain file structure before showing code\n- Include accessibility attributes\n- Suggest SEO improvements\n- Keep components small and focused\n\n**Target Audience:**\nNon-programmers (founders, PMs, students) with zero coding experience\n\n**Current Status:**\nMVP live, building out course lesson structure"
+    },
+    {
+      "title": "What to Upload as Knowledge Files",
+      "content": "**Essential Documents (Priority 1):**\n\n1. **README.md** - Project overview, setup instructions, architecture\n2. **Requirements/PRD** - Original project brief, goals, scope\n3. **Design Docs** - Wireframes (as PDF), design system, UI guidelines\n4. **API Documentation** - For any external services you're integrating\n\n**Helpful Context (Priority 2):**\n\n5. **package.json** - So Claude knows your dependencies\n6. **Key Code Files** - Main components or utilities (not entire codebase)\n7. **Database Schema** - ER diagrams, table structures, migrations\n8. **Brand Guidelines** - Tone, voice, color palette, logo usage\n\n**Optional but Useful:**\n\n9. **User Research** - Pain points, interview quotes, personas\n10. **Competitor Analysis** - What exists, how yours is different\n11. **Changelog** - Major decisions and their reasoning\n\n**File Format Tips:**\n- Markdown (.md) works best for text documents\n- PDFs for complex layouts (wireframes, presentations)\n- Code files (.ts, .tsx, .json) for technical references\n- Images (PNG/JPG) for UI mockups or diagrams\n\n**Size Limits:**\n- Individual files: 10 MB max\n- Total knowledge base: 100 MB per Project\n- If over limit, split into smaller files or summarize\n\n**What NOT to Upload:**\n❌ Your entire codebase (too large, use Git instead)\n❌ Secrets/API keys (use environment variables)\n❌ Binary files unless necessary (use text when possible)\n❌ Outdated docs (keep knowledge base current)"
+    },
+    {
+      "title": "Projects vs. Regular Chats Decision Tree",
+      "content": "**Use a PROJECT when:**\n✅ Building a specific product over days/weeks\n✅ You have requirements that should persist (tech stack, style)\n✅ Iterating on the same codebase across sessions\n✅ Need Claude to reference specific docs repeatedly\n✅ Working with a team (can share Project access)\n✅ Want conversation history for later reference\n\n**Use REGULAR CHAT when:**\n🔹 Quick one-off questions ('How do I deploy to Vercel?')\n🔹 Exploring ideas before committing to build\n🔹 Learning/research without a specific project\n🔹 Testing different approaches before choosing\n🔹 General productivity (writing emails, summaries)\n🔹 Don't have Claude Pro (Projects require Pro)\n\n**Project Organization Strategy:**\n\n**Option A: One Project Per Product**\n- Project: \"MyApp\" → all features, conversations, docs\n- Best for: Small-medium projects, solo builders\n\n**Option B: Main + Feature Projects**\n- Project: \"MyApp - Core\"\n- Project: \"MyApp - Auth System\"\n- Project: \"MyApp - Payment Integration\"\n- Best for: Large projects, team collaboration\n\n**Option C: Stage-Based Projects**\n- Project: \"MyApp - MVP\"\n- Project: \"MyApp - V2\"\n- Best for: Versioned development, major refactors\n\n**Pro tip:** Start with Option A (one Project). Split into more only when it gets messy."
+    },
+    {
+      "title": "Conversation Organization Best Practices",
+      "content": "**Naming Conversations:**\n\n✅ Good:\n- 'Build user profile page'\n- 'Debug Stripe payment integration'\n- 'Add dark mode toggle'\n- 'Refactor auth flow'\n\n❌ Bad:\n- 'Help' (too vague)\n- 'Untitled' (default, always rename!)\n- 'Fix' (fix what?)\n- '12/25 work' (use descriptive names, not dates)\n\n**When to Start a New Conversation:**\n- Beginning a distinct feature or task\n- Previous conversation exceeded 50+ messages (gets unwieldy)\n- Switching to different part of the codebase\n- Starting a new sprint or development phase\n\n**When to Continue Existing Conversation:**\n- Iterating on the same feature\n- Debugging issues from the same work session\n- Following up on a question from earlier\n- Making related changes to what you just built\n\n**Archiving Strategy:**\n1. After a feature ships → archive that conversation\n2. After a major refactor → archive old implementation discussions\n3. Monthly cleanup → archive anything older than 30 days you won't reference\n4. Keep important decision logs even if old (tag them clearly)\n\n**Referencing Previous Conversations:**\nClaude can reference past conversations within a Project:\n- 'In our conversation about the login flow, you suggested...'\n- 'Remember the dark mode feature we built last week?'\n- 'Update the header component we created in the previous conversation'\n\nThis works because Projects maintain full history!"
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Project (Claude):** A workspace with persistent custom instructions, knowledge files, and conversation history\n\n**Custom Instructions:** Standing guidelines Claude follows in every conversation within a Project\n\n**Knowledge Base:** Uploaded files (docs, code, designs) that Claude can reference\n\n**Conversation History:** All past chats within a Project — Claude remembers them\n\n**Context Window:** Amount of text Claude can process at once (Projects help manage this across sessions)\n\n**Artifact:** Code/documents Claude generates (visible across all Project conversations)\n\n**Pro Tier:** Paid Claude subscription required for Projects feature"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Creating too many Projects (one per feature)",
+      "explanation": "Start with one Project per product. Only split when it becomes genuinely hard to manage."
+    },
+    {
+      "mistake": "Never updating custom instructions",
+      "explanation": "Review and update instructions as your project evolves. Outdated instructions cause confusion."
+    },
+    {
+      "mistake": "Uploading entire codebase as knowledge",
+      "explanation": "Too much information overwhelms Claude. Upload key docs and reference files only."
+    },
+    {
+      "mistake": "Not naming conversations descriptively",
+      "explanation": "Future you won't remember what 'Untitled conversation 8' was about. Name clearly from the start."
+    },
+    {
+      "mistake": "Using Projects for quick questions",
+      "explanation": "Projects are for sustained work. Quick questions work fine in regular chats."
+    }
+  ],
+  "reflectionQuestions": [
+    "Think about your current project: what context do you repeat to Claude every time? How would Projects eliminate that repetition?",
+    "If Claude could remember 3 things permanently about your project, what would they be? (Those go in custom instructions!)",
+    "How would your workflow change if you could pick up exactly where you left off yesterday with no context-setting?"
+  ],
+  "exercises": [
+    {
+      "title": "Create and Configure Your Project",
+      "description": "Set up a Project for your product with complete custom instructions and knowledge files.",
+      "output": "Configured Project showing: custom instructions, at least 2 uploaded knowledge files, proof that Claude references them",
+      "successCriteria": [
+        "Project created with clear, descriptive name",
+        "Custom instructions include: tech stack, code style, constraints, current status",
+        "Uploaded at least 2 relevant files (README, requirements, or design docs)",
+        "Started a test conversation and confirmed Claude references your instructions",
+        "Asked Claude 'What is this project about?' and got accurate answer based on your setup"
+      ],
+      "estimatedTime": "60 minutes"
+    },
+    {
+      "title": "Multi-Day Build Simulation",
+      "description": "Use your Project to build a feature across two separate conversations (simulating different days).",
+      "output": "Two conversation logs: (1) Day 1 - Planning, (2) Day 2 - Implementation that references Day 1 without re-explaining",
+      "successCriteria": [
+        "Conversation 1: Planned a feature with Claude, got initial code",
+        "Closed conversation, started fresh conversation (simulating next day)",
+        "Conversation 2: Referenced previous work ('the login feature we started yesterday')",
+        "Claude successfully recalled context from previous conversation",
+        "Completed the feature building on previous work",
+        "Both conversations clearly named and organized"
+      ],
+      "estimatedTime": "90 minutes"
+    },
+    {
+      "title": "Organize Your Workspace",
+      "description": "Audit and organize your Claude workspace — Projects, conversations, archiving.",
+      "output": "Organization report showing: current Project structure, renamed conversations, archived old work, documented strategy",
+      "successCriteria": [
+        "Created at least one Project for active work",
+        "Renamed all conversations in Project with descriptive titles",
+        "Archived or deleted at least 3 old/irrelevant conversations",
+        "Documented your Project organization strategy (how you'll use Projects going forward)",
+        "Can find any past conversation quickly by name"
+      ],
+      "estimatedTime": "30 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Claude Projects Documentation",
+      "url": "https://support.anthropic.com/en/articles/9517075-what-are-projects"
+    },
+    {
+      "title": "System Prompts and Custom Instructions",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts"
+    },
+    {
+      "title": "Managing Long Contexts",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/long-context-tips"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson is standalone but benefits from artifact/code experience (Lesson 4). Quick recap of 'why context matters' helps.",
+    "For live sessions: Screen-share Project setup process. Common confusion: where to find Projects in the UI.",
+    "Common question: 'Do I need Claude Pro?' — Yes for Projects. Offer trial info or suggest pairing with someone who has Pro.",
+    "Self-paced tip: Encourage students to migrate existing work into a Project immediately to feel the benefit.",
+    "Time check: Exercise 1 setup can take longer if students are perfecting instructions. Remind them: instructions evolve, ship v1.",
+    "Bonus: Share your own 02Ship Project setup as real-world example (screenshot or video).",
+    "Key insight: Projects are like workspaces in Figma or branches in Git — organizational tools that save massive time.",
+    "Platform note: Projects are Claude-specific. ChatGPT has 'GPTs', Gemini has different features. Explain transferable concepts."
+  ]
+}
