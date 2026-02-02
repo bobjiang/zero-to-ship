@@ -1,0 +1,170 @@
+{
+  "slug": "understanding-responses",
+  "title": "Understanding Claude's Responses",
+  "description": "Learn how to read and interpret Claude's code, identify what to focus on, and know when a response is good enough to use.",
+  "duration": "2-3 hours",
+  "order": 2,
+  "learningObjectives": [
+    "Read Claude-generated code without needing to understand every line",
+    "Identify the key components: files, structure, dependencies",
+    "Recognize red flags and quality issues in responses",
+    "Ask effective follow-up questions to improve output"
+  ],
+  "videos": [
+    {
+      "title": "Anatomy of a Claude Response",
+      "description": "Breaks down what Claude typically generates and what each part means for non-programmers.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "12 minutes",
+      "scriptOutline": [
+        "Typical response structure: explanation + file tree + code blocks",
+        "What to read first: the explanation and file tree",
+        "Understanding file extensions (.js, .tsx, .css, .json)",
+        "Key markers: 'npm install', 'create these files', 'run this command'"
+      ],
+      "talkingPoints": [
+        "You don't need to understand the code line-by-line — focus on the structure",
+        "Claude often explains what each file does — read those summaries",
+        "File tree shows you the skeleton of your project",
+        "Commands are usually at the end — these are action items"
+      ]
+    },
+    {
+      "title": "Quality Checklist: Is This Response Good?",
+      "description": "Teaches you to spot good vs. problematic responses before wasting time implementing them.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "Good signs: clear file structure, step-by-step instructions, explanations for each part",
+        "Red flags: vague instructions, missing files, 'figure it out yourself' tone",
+        "When Claude says 'I can't do that' — what it means and how to rephrase",
+        "The iteration cycle: good enough → ship → improve later"
+      ],
+      "talkingPoints": [
+        "A good response feels like a recipe — clear steps, all ingredients listed",
+        "Bad responses leave you confused about where to start",
+        "If you're stuck, it's usually the prompt that needs fixing, not you",
+        "Perfect is the enemy of shipped — aim for 'works' first"
+      ]
+    },
+    {
+      "title": "Follow-Up Questions That Improve Results",
+      "description": "Demonstrates how to iterate on Claude's responses with targeted questions.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "The power of 'Can you explain [specific part] for a beginner?'",
+        "Asking for alternatives: 'Is there a simpler way to do this?'",
+        "Debugging unclear instructions: 'Walk me through step 3 in more detail'",
+        "Real example: iterating on the 02Ship file structure"
+      ],
+      "talkingPoints": [
+        "Claude gets better the more specific your questions are",
+        "Don't accept 'create a config file' — ask what goes in it",
+        "If something seems too complex, ask for a simpler version",
+        "Good follow-ups: 'Why?', 'What does this do?', 'Can you simplify?'"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "File Structure 101",
+      "content": "When Claude generates a project, it typically creates:\n\n**Configuration files** (package.json, tsconfig.json, .env):\n- These tell tools how to run your project\n- You rarely edit these manually\n- Follow Claude's instructions for these exactly\n\n**Source code** (src/, app/, components/):\n- This is the actual app logic\n- Organized by feature or page\n- You'll iterate on these most\n\n**Assets** (public/, images/):\n- Images, fonts, static files\n- You can add your own here easily\n\n**Documentation** (README.md, .md files):\n- Instructions for running the project\n- Always read the README first!"
+    },
+    {
+      "title": "Common Response Patterns",
+      "content": "**Pattern 1: The Full Build**\n'Here's a complete Next.js app with...' → Expect 10-20 files, setup instructions\n\n**Pattern 2: The Feature Addition**\n'Add this component to your existing...' → Expect 1-5 new files, modification instructions\n\n**Pattern 3: The Fix/Debug**\n'The error is caused by...' → Expect explanation + specific code changes\n\n**Pattern 4: The Explanation**\n'Let me explain how this works...' → No code, just concepts\n\nKnowing which pattern you're getting helps you know what to expect next."
+    },
+    {
+      "title": "Reading Code as a Non-Programmer",
+      "content": "You don't need to understand every line. Focus on:\n\n**Function names:** `getUserData()` tells you it gets user data\n**Comments:** Lines starting with // or /* explain what's happening\n**Structure:** Indentation shows what's inside what\n**Imports:** Top of the file shows what tools it's using\n\n**Skip:**\n- Complex logic inside functions (trust it works)\n- Type definitions (TypeScript syntax)\n- Advanced patterns (hooks, contexts, etc.)\n\nYour job is to understand WHAT it does, not HOW it does it."
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Dependency:** A tool or library your project needs (listed in package.json)\n\n**Component:** A reusable piece of UI (like a button or card)\n\n**Route:** A page in your app (e.g., /about, /blog)\n\n**API:** A way for different parts of your app (or other services) to talk to each other\n\n**Environment variable:** Secret values (API keys, passwords) stored separately from code"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Trying to understand every line of code",
+      "explanation": "You don't need to! Focus on the structure and what each file does."
+    },
+    {
+      "mistake": "Accepting confusing responses",
+      "explanation": "If you're confused, Claude will clarify — just ask!"
+    },
+    {
+      "mistake": "Not checking for missing files",
+      "explanation": "Make sure Claude listed all files mentioned in the explanation."
+    },
+    {
+      "mistake": "Ignoring setup instructions",
+      "explanation": "The 'npm install' and 'create .env' steps are critical — don't skip them."
+    }
+  ],
+  "reflectionQuestions": [
+    "Looking at Claude's response for your Lesson 1 prompt, what parts were clearest? What was confusing?",
+    "Can you identify the file structure Claude proposed? Which files are config vs. source code?",
+    "What follow-up question would you ask to improve the response you got?"
+  ],
+  "exercises": [
+    {
+      "title": "Decode a Response",
+      "description": "Take Claude's response from your Lesson 1 exercise and break it down into components.",
+      "output": "A document listing: (1) All files Claude mentioned, (2) What each file does (in your own words), (3) Setup commands needed, (4) One thing you'd ask Claude to clarify",
+      "successCriteria": [
+        "Identified at least 5 different files",
+        "Described each file's purpose without copying Claude's exact words",
+        "Listed all npm/setup commands in order",
+        "Formulated at least one specific follow-up question"
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    {
+      "title": "Quality Audit",
+      "description": "Evaluate whether Claude's response from Lesson 1 meets quality standards.",
+      "output": "Checklist with Y/N answers: Does it have clear file structure? Step-by-step instructions? Explanations for each part? Any red flags?",
+      "successCriteria": [
+        "Completed checklist with honest assessments",
+        "Identified at least one strength and one weakness",
+        "If weaknesses found, wrote a follow-up prompt to address them"
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Iterate on Your Prompt",
+      "description": "Based on what you learned, ask Claude a follow-up question to improve your Lesson 1 response.",
+      "output": "A new conversation with Claude containing: (1) Your follow-up question, (2) Claude's improved response, (3) Notes on what got better",
+      "successCriteria": [
+        "Asked a specific, targeted question (not 'make it better')",
+        "Got a response that clarified or improved something",
+        "Documented what changed and why it's an improvement"
+      ],
+      "estimatedTime": "40 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Understanding File Extensions",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web"
+    },
+    {
+      "title": "Reading Code for Non-Programmers",
+      "url": "https://www.codecademy.com/article/what-is-code"
+    },
+    {
+      "title": "Anthropic Prompt Engineering Guide",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+    }
+  ],
+  "instructorNotes": [
+    "Common issue: Students get overwhelmed by code volume. Remind them they're managing the project, not writing it.",
+    "For live sessions: Do a live 'response audit' with a volunteer's Claude output. Crowd-source follow-up questions.",
+    "Self-paced tip: Encourage students to screenshot their file tree and annotate it with 'what this does' notes.",
+    "Time check: Exercise 3 is where real learning happens — budget extra time for Q&A.",
+    "Bonus: Show a side-by-side of a bad vs. good response to the same prompt."
+  ]
+}

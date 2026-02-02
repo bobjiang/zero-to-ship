@@ -1,0 +1,193 @@
+{
+  "slug": "iterating-debugging",
+  "title": "Iterating and Debugging with Claude",
+  "description": "Learn how to troubleshoot errors, iterate on your project, and work through common roadblocks using Claude as your debugging partner.",
+  "duration": "3-4 hours",
+  "order": 3,
+  "learningObjectives": [
+    "Interpret common error messages and know what to share with Claude",
+    "Use Claude to debug issues without understanding the underlying code",
+    "Iterate on features based on user feedback or your own ideas",
+    "Know when to start over vs. when to keep iterating"
+  ],
+  "videos": [
+    {
+      "title": "Error Messages: What to Copy and Paste",
+      "description": "Teaches you to recognize different types of errors and share the right information with Claude for quick fixes.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "11 minutes",
+      "scriptOutline": [
+        "Types of errors: syntax, runtime, build, deployment",
+        "What to copy: the full error message + the file/line number",
+        "What NOT to send: your entire codebase (unless asked)",
+        "The debugging prompt template: 'I got this error... here's what I was trying to do...'",
+        "Real example: debugging a common Next.js error"
+      ],
+      "talkingPoints": [
+        "Red text in your terminal? That's an error — copy all of it",
+        "Error messages look scary but Claude reads them fluently",
+        "Always include: what you were doing, what you expected, what happened instead",
+        "Most errors are simple fixes — typos, missing imports, wrong versions"
+      ]
+    },
+    {
+      "title": "Iteration Cycles: Making Your Project Better",
+      "description": "Shows how to take a working project and improve it feature-by-feature using Claude.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "The iteration mindset: ship first, perfect later",
+        "How to describe changes: 'I want to add...', 'Can we make this...', 'Users are asking for...'",
+        "Breaking big changes into small iterations",
+        "Real example: how 02Ship evolved from the first version",
+        "When to refactor vs. when to rebuild"
+      ],
+      "talkingPoints": [
+        "Your first version won't be perfect — that's expected",
+        "Each iteration makes it 10% better — that compounds quickly",
+        "Ship small improvements weekly rather than one big update monthly",
+        "User feedback is gold — even 'I don't like this color' is useful"
+      ]
+    },
+    {
+      "title": "When Things Break: The Debug Workflow",
+      "description": "Walks through a real debugging session: from error to solution using Claude.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "20 minutes",
+      "estimatedDuration": "18 minutes",
+      "scriptOutline": [
+        "Step 1: Read the error (what broke?)",
+        "Step 2: Check recent changes (what did you just do?)",
+        "Step 3: Ask Claude with full context",
+        "Step 4: Apply the fix and test",
+        "Step 5: If still broken, share the new error",
+        "Live debug: fixing a real issue from 02Ship development"
+      ],
+      "talkingPoints": [
+        "Debugging is a skill — you get better with practice",
+        "Most bugs are recent changes — undo works!",
+        "Claude can debug anything if you give it the error message",
+        "Git commits are your time machine — commit often",
+        "When really stuck, take a break — fresh eyes help"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "The Debug Prompt Template",
+      "content": "Use this template every time you hit an error:\n\n---\n\nI'm building [brief description of your project].\n\nI was trying to [what you were doing — e.g., 'run npm run dev'].\n\nI expected [what should have happened — e.g., 'the site to load at localhost:3000'].\n\nInstead, I got this error:\n\n```\n[paste the full error message here]\n```\n\nHere's the relevant code (if applicable):\n\n```\n[paste the file or section mentioned in the error]\n```\n\nCan you help me fix this?\n\n---\n\nThis gives Claude everything it needs to diagnose the issue."
+    },
+    {
+      "title": "Common Errors and What They Mean",
+      "content": "**'Module not found'** → You're missing a dependency. Run `npm install [package-name]`\n\n**'Port 3000 is already in use'** → Something's already running. Close other terminals or use a different port.\n\n**'Unexpected token'** → Syntax error (usually a typo). Check the line number mentioned.\n\n**'Cannot read property of undefined'** → You're trying to use data that doesn't exist yet. Claude will show you how to add a safety check.\n\n**Build errors (during `npm run build`)** → Often TypeScript type issues or missing environment variables.\n\n**Deployment errors (Vercel/Netlify)** → Usually environment variables or build commands."
+    },
+    {
+      "title": "Iteration Best Practices",
+      "content": "**1. One change at a time**\nDon't add 5 features at once — you won't know what broke what.\n\n**2. Test immediately**\nAfter each change, run the app and verify it works.\n\n**3. Commit working states**\n`git commit -m 'Added user login'` — now you can always go back.\n\n**4. Keep a changelog**\nNote what you changed and why. Future you will thank you.\n\n**5. Ask users**\nEven just 1-2 people using your app will give you better ideas than you had alone."
+    },
+    {
+      "title": "When to Start Over",
+      "content": "**Keep iterating if:**\n- The core structure is sound\n- You're just tweaking features or design\n- The codebase still makes sense to you\n\n**Consider rebuilding if:**\n- You've lost track of what does what\n- Every change breaks 3 other things\n- Your initial prompt was way too vague\n- You've learned so much that you'd build it differently now\n\n**The 02Ship rule:** If it takes longer to fix than to rebuild, rebuild. Your prompts are better now anyway!"
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Error:** Something went wrong — the code can't run\n\n**Warning:** Something might be wrong — the code runs but could be better\n\n**Debugging:** The process of finding and fixing errors\n\n**Iteration:** Making incremental improvements to a working project\n\n**Refactor:** Rewriting code to be cleaner/better without changing what it does\n\n**Rollback:** Reverting to a previous working version (via git)"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Only sharing part of the error message",
+      "explanation": "Claude needs the FULL error including stack trace to diagnose properly."
+    },
+    {
+      "mistake": "Making multiple changes before testing",
+      "explanation": "You won't know which change caused the issue. One at a time!"
+    },
+    {
+      "mistake": "Not committing working versions",
+      "explanation": "Git is your safety net — commit every time something works."
+    },
+    {
+      "mistake": "Giving up too quickly",
+      "explanation": "Most errors are solvable in 1-2 Claude exchanges. Stick with it."
+    },
+    {
+      "mistake": "Rebuilding instead of debugging",
+      "explanation": "Starting over means losing all your progress. Debug first, rebuild only if truly stuck."
+    }
+  ],
+  "reflectionQuestions": [
+    "Think about the last time something broke (in life, not just code). What was your debugging process? How is it similar to debugging code?",
+    "What's the most useful error message you've encountered so far? What made it helpful?",
+    "When you hit a roadblock, do you tend to push through or take a break? What works better for you?"
+  ],
+  "exercises": [
+    {
+      "title": "Break It on Purpose",
+      "description": "Intentionally create an error in your project, then use Claude to fix it. This builds confidence in debugging.",
+      "output": "Documentation of: (1) What you broke, (2) The error message, (3) Your debug prompt to Claude, (4) How you fixed it",
+      "successCriteria": [
+        "Successfully created an error (e.g., deleted an import, typo'd a variable)",
+        "Copied the full error message",
+        "Wrote a debug prompt using the template",
+        "Fixed the issue based on Claude's response",
+        "Verified the app works again"
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    {
+      "title": "Feature Iteration",
+      "description": "Take your working project from Lesson 1 and add one small improvement using Claude.",
+      "output": "A git commit showing: (1) What you added, (2) The prompt you used, (3) Testing notes (does it work?)",
+      "successCriteria": [
+        "Chose a small, specific improvement (e.g., 'add a footer', 'change button color')",
+        "Wrote a clear prompt describing the change",
+        "Applied Claude's changes",
+        "Tested to confirm it works",
+        "Committed the working version"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    {
+      "title": "Debug a Real Issue",
+      "description": "If you have a real error in your project, debug it with Claude. If not, use a provided error scenario.",
+      "output": "Debug journal containing: (1) The error, (2) Your hypothesis about the cause, (3) Claude exchange, (4) The solution, (5) What you learned",
+      "successCriteria": [
+        "Documented the full error message",
+        "Made an educated guess about the cause (even if wrong!)",
+        "Worked with Claude through at least one iteration",
+        "Resolved the issue or identified next steps",
+        "Reflected on what this taught you about your project"
+      ],
+      "estimatedTime": "60 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "How to Debug Anything",
+      "url": "https://jvns.ca/blog/2022/12/08/a-debugging-manifesto/"
+    },
+    {
+      "title": "Git Basics for Non-Programmers",
+      "url": "https://docs.github.com/en/get-started/start-your-journey/hello-world"
+    },
+    {
+      "title": "Reading Stack Traces",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools"
+    },
+    {
+      "title": "Claude Debugging Best Practices",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/debugging"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson builds real confidence — students who debug successfully feel empowered.",
+    "For live sessions: Do a 'debug along' where everyone breaks their project in the same way, then races to fix it.",
+    "Common anxiety: 'I broke everything!' Reassure them git exists for this reason.",
+    "Self-paced tip: Encourage students to keep a 'debug log' — future reference gold.",
+    "Time check: Exercise 3 can run long if they hit a hard bug — budget buffer time or make it async homework.",
+    "Bonus: Create a 'hall of fame' for the most creative intentional bugs in Exercise 1."
+  ]
+}
