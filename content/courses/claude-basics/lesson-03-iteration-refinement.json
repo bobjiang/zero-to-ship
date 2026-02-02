@@ -1,0 +1,193 @@
+{
+  "slug": "iteration-refinement",
+  "title": "Iteration and Refinement Techniques",
+  "description": "Learn how to improve Claude's outputs through iteration, follow-up prompts, and refinement strategies. Turn good responses into great ones.",
+  "duration": "2-3 hours",
+  "order": 3,
+  "learningObjectives": [
+    "Evaluate Claude's responses for quality and completeness",
+    "Use follow-up prompts to refine and improve outputs iteratively",
+    "Apply specific refinement techniques (simplify, expand, restructure, combine)",
+    "Know when to iterate vs. when to start fresh with a new prompt"
+  ],
+  "videos": [
+    {
+      "title": "Why First Responses Aren't Final",
+      "description": "Understanding that iteration is normal and expected when working with Claude — the best results come from refinement, not one-shot prompts.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "11 minutes",
+      "scriptOutline": [
+        "The myth of the 'perfect prompt' — even experts iterate",
+        "How Claude learns from feedback within a conversation",
+        "Real example: first attempt vs. final result after 3 iterations",
+        "The economics of iteration: 2 minutes of follow-up > 20 minutes writing the perfect prompt"
+      ],
+      "talkingPoints": [
+        "Claude gets better as you refine — it's learning what you want in real-time",
+        "First response is a starting point, not the finish line",
+        "Iteration is faster than trying to write a perfect prompt upfront",
+        "Professional AI users iterate constantly — you're doing it right"
+      ]
+    },
+    {
+      "title": "The Refinement Toolkit: 8 Follow-Up Techniques",
+      "description": "Specific, actionable techniques for improving any Claude response through targeted follow-ups.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "1. Simplify: 'Make this simpler' or 'Explain like I'm 5'",
+        "2. Expand: 'Add more detail about X' or 'Elaborate on Y'",
+        "3. Restructure: 'Format as a table' or 'Break into steps'",
+        "4. Combine: 'Merge these two ideas' or 'Give me a hybrid approach'",
+        "5. Constrain: 'Keep it under 200 words' or 'Remove technical jargon'",
+        "6. Exemplify: 'Show me an example' or 'Give a code snippet'",
+        "7. Alternative: 'Give me 3 other ways to do this'",
+        "8. Critique: 'What's wrong with this approach?' or 'Point out weaknesses'",
+        "When to use each technique"
+      ],
+      "talkingPoints": [
+        "Each technique solves a specific problem — learn to recognize which one you need",
+        "You can chain techniques: 'Simplify AND give an example'",
+        "The question 'Can you...' is your friend — Claude responds well to polite, specific requests",
+        "These work for any output: code, text, ideas, analysis"
+      ]
+    },
+    {
+      "title": "Conversation Flow: Building on Previous Responses",
+      "description": "How to maintain context across multiple exchanges and build toward a final polished result.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "Claude's memory within a conversation vs. across conversations",
+        "Referencing previous responses: 'In your last answer, you mentioned...'",
+        "The refinement cycle: prompt → evaluate → refine → evaluate → done",
+        "Knowing when to stop: diminishing returns of over-iteration",
+        "Live demo: refining a code snippet from rough to production-ready in 4 steps"
+      ],
+      "talkingPoints": [
+        "Claude remembers everything in the current conversation — use that memory",
+        "Build incrementally: start broad, refine to specifics",
+        "You'll know you're done when the next iteration doesn't add value",
+        "Save particularly good conversations as examples for future prompts"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "The Refinement Cycle",
+      "content": "**Step 1: Initial Prompt**\nStart with a clear prompt using what you learned in Lesson 2 (4 Cs).\n\n**Step 2: Evaluate the Response**\nAsk yourself:\n- Does this answer my question?\n- Is it the right level of detail?\n- Is the format what I need?\n- Are there any errors or gaps?\n- Would I use this as-is, or does it need work?\n\n**Step 3: Choose a Refinement Technique**\n- Too complex? → Simplify\n- Too vague? → Expand or Exemplify\n- Wrong format? → Restructure\n- Multiple options needed? → Alternative\n- Not sure if it's good? → Critique\n\n**Step 4: Follow-Up Prompt**\nBe specific: 'Can you simplify step 3?' not 'Make it better'\n\n**Step 5: Repeat or Finish**\n- If improved, evaluate again\n- If perfect, you're done\n- If stuck, consider starting fresh\n\nMost refinements take 1-3 iterations. If you're at 5+, you might need a fresh start."
+    },
+    {
+      "title": "The 8 Refinement Techniques (Detailed)",
+      "content": "**1. SIMPLIFY**\nWhen to use: Output is too complex, uses jargon, or feels overwhelming.\nPrompts:\n- 'Simplify this for someone who's never coded before'\n- 'Explain this using everyday language'\n- 'Remove the technical terms and use analogies'\n\n**2. EXPAND**\nWhen to use: Output is too brief, lacks detail, or skips important parts.\nPrompts:\n- 'Add more detail about how [specific part] works'\n- 'Elaborate on step 3 — what exactly do I do?'\n- 'Provide more context about when to use this'\n\n**3. RESTRUCTURE**\nWhen to use: Right content, wrong format.\nPrompts:\n- 'Format this as a table with columns: [X, Y, Z]'\n- 'Break this into numbered steps'\n- 'Organize this as a bulleted list by category'\n- 'Rewrite this as a FAQ'\n\n**4. COMBINE**\nWhen to use: Multiple responses that need merging.\nPrompts:\n- 'Combine your first answer and second answer into one cohesive response'\n- 'Take the best parts of these 3 options and create a hybrid'\n\n**5. CONSTRAIN**\nWhen to use: Output is too long, unfocused, or includes unnecessary parts.\nPrompts:\n- 'Keep this under 100 words'\n- 'Focus only on the [specific aspect], remove the rest'\n- 'Remove anything not essential for beginners'\n\n**6. EXEMPLIFY**\nWhen to use: Theory without practice, or you need to see it in action.\nPrompts:\n- 'Show me a concrete example of this'\n- 'Give me code that demonstrates this concept'\n- 'Walk through a real-world scenario'\n\n**7. ALTERNATIVE**\nWhen to use: You want options, or the first suggestion doesn't feel right.\nPrompts:\n- 'Give me 3 other ways to approach this'\n- 'What's a simpler alternative to this solution?'\n- 'Show me the pros and cons of different approaches'\n\n**8. CRITIQUE**\nWhen to use: You want Claude to self-evaluate or identify weaknesses.\nPrompts:\n- 'What are the limitations of this approach?'\n- 'Critique your own answer — what's missing?'\n- 'Play devil's advocate: why might this not work?'\n- 'Review this code for potential bugs or edge cases'"
+    },
+    {
+      "title": "Follow-Up Prompt Templates",
+      "content": "**For Clarity:**\n- 'Can you explain [specific part] in simpler terms?'\n- 'I don't understand [X]. Can you rephrase it?'\n- 'What does [term] mean in this context?'\n\n**For Completeness:**\n- 'This is helpful, but can you also cover [missing aspect]?'\n- 'What about [edge case or scenario]?'\n- 'Are there any gotchas or things I should watch out for?'\n\n**For Format:**\n- 'Can you reformat this as [desired format]?'\n- 'Break this into sections: [section 1], [section 2], [section 3]'\n- 'Make this more scannable — use headings and bullets'\n\n**For Options:**\n- 'What are 2-3 alternatives to this approach?'\n- 'Which option would you recommend and why?'\n- 'Compare these approaches in a table'\n\n**For Improvement:**\n- 'This is good, but can you make it [more concise/detailed/beginner-friendly]?'\n- 'Optimize this for [specific goal: speed, simplicity, etc.]'\n- 'What would you change if this were for [different audience]?'\n\n**For Validation:**\n- 'Is this the best practice, or are there newer/better ways?'\n- 'What could go wrong with this approach?'\n- 'Review this for errors or oversights'"
+    },
+    {
+      "title": "When to Iterate vs. Start Fresh",
+      "content": "**Keep Iterating When:**\n✅ The core response is good, just needs refinement\n✅ You're making progress with each follow-up\n✅ You're within 1-3 iterations\n✅ Claude understands your context and goal\n✅ Small tweaks will get you to done\n\n**Start Fresh When:**\n🔄 You're on iteration 5+ with no end in sight\n🔄 Claude clearly misunderstood your original intent\n🔄 The conversation has drifted off-topic\n🔄 You've learned what you actually need (different from what you asked)\n🔄 The response is fundamentally wrong (not just rough)\n\n**How to Start Fresh Effectively:**\n1. Review what worked and what didn't in the previous attempt\n2. Write a new, more specific prompt incorporating lessons learned\n3. Optionally: Start a new conversation to clear context\n4. Reference the old attempt if helpful: 'Previously you suggested X, but I actually need Y'\n\n**Pro tip:** Keep a 'drafts' document where you paste iterations. Helps you see progress and avoid going in circles."
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Iteration:** The process of repeatedly refining something to improve it\n\n**Follow-up Prompt:** A subsequent prompt in the same conversation that builds on previous responses\n\n**Refinement:** Making targeted improvements to an existing output\n\n**Context:** The shared understanding built up over a conversation\n\n**Diminishing Returns:** When additional iterations stop adding meaningful value\n\n**Conversation Thread:** A series of related prompts and responses within one Claude session"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Accepting the first response without evaluation",
+      "explanation": "First responses are rarely perfect. Always ask 'Could this be better?' before using it."
+    },
+    {
+      "mistake": "Vague follow-ups like 'Make it better'",
+      "explanation": "Be specific: 'Make it more concise' or 'Add examples' tells Claude exactly what to improve."
+    },
+    {
+      "mistake": "Over-iterating past the point of value",
+      "explanation": "If you're on iteration 6 and still not happy, the prompt (not the iteration) is the problem. Start fresh."
+    },
+    {
+      "mistake": "Starting fresh too quickly",
+      "explanation": "Give iteration a chance! 80% of improvements come from 1-2 good follow-ups."
+    },
+    {
+      "mistake": "Not saving good iterations",
+      "explanation": "If iteration 3 was perfect and iteration 4 made it worse, you can't go back unless you saved it."
+    }
+  ],
+  "reflectionQuestions": [
+    "Think about something you've written or created recently. How many drafts did it take to get right? How is that similar to iterating with Claude?",
+    "Which refinement technique (simplify, expand, exemplify, etc.) do you think you'll use most often? Why?",
+    "Have you ever over-edited something and made it worse? How will you know when to stop iterating with Claude?"
+  ],
+  "exercises": [
+    {
+      "title": "The Iteration Challenge",
+      "description": "Start with a mediocre response and refine it to excellent through targeted follow-ups.",
+      "output": "A documented iteration log showing: (1) Initial prompt, (2) Claude's first response, (3) 3-5 follow-up prompts with refinement technique used, (4) Final polished result, (5) Before/after comparison",
+      "successCriteria": [
+        "Started with intentionally basic prompt that produces mediocre output",
+        "Used at least 3 different refinement techniques (labeled)",
+        "Each iteration shows measurable improvement",
+        "Final result is significantly better than first response",
+        "Documented which technique had the biggest impact"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    {
+      "title": "Build Your Refinement Cheat Sheet",
+      "description": "Create a personal reference guide of follow-up prompts you'll actually use.",
+      "output": "A cheat sheet document with 10-15 follow-up prompt templates organized by situation, personalized for tasks you do often",
+      "successCriteria": [
+        "At least 10 different follow-up prompts covering multiple techniques",
+        "Organized by use case (e.g., 'For code', 'For writing', 'For ideas')",
+        "Includes at least one example of each technique (simplify, expand, etc.)",
+        "Templates are specific enough to be useful but reusable",
+        "Saved somewhere accessible for quick reference during real work"
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    {
+      "title": "Real-World Refinement",
+      "description": "Take a real task you have this week and use Claude with intentional iteration to complete it.",
+      "output": "Case study documenting: (1) The task, (2) Initial prompt and response, (3) Full iteration log with reasoning for each follow-up, (4) Final output, (5) Reflection on what worked",
+      "successCriteria": [
+        "Chose a real task (work, learning, or personal project)",
+        "Documented the complete conversation flow",
+        "Used at least 2 iterations (follow-up prompts)",
+        "Explained reasoning for each refinement choice",
+        "Reflected honestly on whether iteration improved the outcome",
+        "Identified one lesson learned for future iterations"
+      ],
+      "estimatedTime": "60 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Anthropic Guide - Iterating and Improving",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-iteration"
+    },
+    {
+      "title": "Prompt Engineering - Refinement Strategies",
+      "url": "https://learnprompting.org/docs/basics/iterating"
+    },
+    {
+      "title": "OpenAI Cookbook - Iteration Techniques",
+      "url": "https://cookbook.openai.com/"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson is standalone — no dependency on previous lessons. If students haven't done Lesson 2, do a 2-minute recap of good prompting basics.",
+    "For live sessions: Pair students up and have them iterate on each other's prompts. Seeing someone else refine teaches faster than solo work.",
+    "Common question: 'How many iterations is too many?' Answer: If you're past 3-4, the problem is usually the initial prompt or unclear goal.",
+    "Self-paced tip: Encourage students to share their best before/afters in Discord — seeing peer improvements motivates.",
+    "Time check: Exercise 3 is open-ended and can run long if students pick complex tasks. Suggest time-boxing to 60 minutes.",
+    "Bonus activity: 'Iteration race' — who can get from vague to excellent in fewest iterations?",
+    "Key insight to emphasize: Iteration is a superpower. Humans draft and redraft constantly — now you can do it collaboratively with AI.",
+    "Note: Students may feel 'dumb' for needing iteration. Normalize it! Show examples of professional AI users iterating 5+ times."
+  ]
+}

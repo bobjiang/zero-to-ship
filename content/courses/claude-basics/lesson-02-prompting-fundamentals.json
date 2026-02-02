@@ -1,0 +1,192 @@
+{
+  "slug": "prompting-fundamentals",
+  "title": "Prompting Fundamentals",
+  "description": "Master the core principles of effective prompting: clarity, context, constraints, and examples. Learn to craft prompts that get high-quality results consistently.",
+  "duration": "2-3 hours",
+  "order": 2,
+  "learningObjectives": [
+    "Apply the 4 Cs of effective prompting (Clear, Contextual, Constrained, with Examples)",
+    "Structure prompts for different use cases (code generation, explanation, brainstorming)",
+    "Use Claude for both productivity tasks and product building",
+    "Evaluate prompt quality and predict Claude's response effectiveness"
+  ],
+  "videos": [
+    {
+      "title": "The 4 Cs of Effective Prompting",
+      "description": "Learn the universal framework for crafting prompts that work: Clear, Contextual, Constrained, with Examples.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "12 minutes",
+      "scriptOutline": [
+        "Why prompting is a skill, not magic",
+        "The 4 Cs framework: Clear (specificity), Contextual (background), Constrained (boundaries), Examples (patterns)",
+        "Before and after: transforming a vague prompt using the 4 Cs",
+        "When to use short prompts vs. detailed prompts"
+      ],
+      "talkingPoints": [
+        "Great prompts are clear about what you want, why you want it, what limits exist, and what good looks like",
+        "Context is king — Claude performs better when it understands the bigger picture",
+        "Constraints aren't limits, they're guidance: 'under 500 words', 'beginner-friendly', 'using TypeScript'",
+        "Examples teach Claude your style faster than explanations"
+      ]
+    },
+    {
+      "title": "Prompting for Different Goals",
+      "description": "How to adjust your prompting approach based on whether you're generating code, getting explanations, or brainstorming ideas.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "Code generation prompts: what to specify (language, framework, style, tests)",
+        "Explanation prompts: asking for analogies, step-by-step breakdowns, ELI5",
+        "Brainstorming prompts: quantity vs. quality, divergent thinking",
+        "Productivity prompts: writing, research, analysis, summarization",
+        "Live examples of each type"
+      ],
+      "talkingPoints": [
+        "Code prompts need technical constraints; brainstorming needs freedom",
+        "For explanations, specify your knowledge level: 'Explain X like I'm 5' vs 'Explain X for a PM'",
+        "Productivity uses: drafting emails, summarizing articles, analyzing data, creating outlines",
+        "You can mix goals: 'Generate code AND explain each function'"
+      ]
+    },
+    {
+      "title": "Prompt Recipes: Templates You Can Steal",
+      "description": "Ready-to-use prompt templates for common scenarios, customizable for your needs.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "Recipe 1: Build a feature (for adding to existing projects)",
+        "Recipe 2: Explain this concept (for learning)",
+        "Recipe 3: Review my work (for feedback)",
+        "Recipe 4: Brainstorm solutions (for problem-solving)",
+        "Recipe 5: Create a plan (for project planning)",
+        "How to adapt recipes to your specific needs"
+      ],
+      "talkingPoints": [
+        "Good prompts are reusable — save your best ones as templates",
+        "Change the bracketed parts, keep the structure",
+        "These recipes work for Claude, ChatGPT, and most LLMs",
+        "Build your own recipe book over time"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "The 4 Cs Framework Explained",
+      "content": "**1. CLEAR (Specificity)**\n❌ Vague: 'Make a website'\n✅ Clear: 'Create a single-page portfolio website with a hero section, about me, and contact form'\n\n**2. CONTEXTUAL (Background)**\n❌ No context: 'Write a function to process payments'\n✅ With context: 'I'm building an e-commerce checkout for a Next.js app. Write a server function to process Stripe payments'\n\n**3. CONSTRAINED (Boundaries)**\n❌ Unlimited: 'Build a todo app'\n✅ Constrained: 'Build a todo app using React + localStorage (no backend), with max 3 features, mobile-friendly'\n\n**4. EXAMPLES (Patterns)**\n❌ No examples: 'Write in a friendly tone'\n✅ With examples: 'Write in a friendly tone. Good example: \"Hey! Let's build this together.\" Bad example: \"Greetings. We shall proceed with construction.\"'\n\n**Combined Example:**\n\nI'm building a learning platform for non-programmers (CONTEXT). Create a lesson card component that displays: title, duration, difficulty badge, and a \"Start Lesson\" button (CLEAR). Use React + TypeScript + Tailwind CSS. Keep it under 50 lines. Make it accessible (ARIA labels) (CONSTRAINED). Style it like cards on Udemy or Coursera — clean, minimal, lots of whitespace (EXAMPLE)."
+    },
+    {
+      "title": "Prompt Recipes Library",
+      "content": "**Recipe 1: Build a Feature**\n```\nI'm working on [project description]. I want to add [feature name] that allows users to [action].\n\nTech stack: [languages/frameworks]\nConstraints: [performance, accessibility, etc.]\n\nThe feature should:\n1. [Requirement 1]\n2. [Requirement 2]\n3. [Requirement 3]\n\nBefore coding, please ask clarifying questions about:\n- Data structure\n- Edge cases\n- Integration points\n```\n\n**Recipe 2: Explain This Concept**\n```\nI'm learning about [concept] for [context/purpose].\n\nMy current knowledge level: [beginner/intermediate/advanced in relevant area]\n\nPlease explain [concept] by:\n1. Using an analogy from everyday life\n2. Breaking it into 3-5 key points\n3. Showing a simple code example (if applicable)\n4. Explaining one common mistake people make with this concept\n```\n\n**Recipe 3: Review My Work**\n```\nI wrote [code/document/design] for [purpose]. Please review it and provide feedback on:\n\n1. [Specific aspect 1 — e.g., code quality, clarity, accessibility]\n2. [Specific aspect 2 — e.g., performance, user experience]\n3. [Specific aspect 3 — e.g., edge cases, security]\n\nMy skill level: [beginner/intermediate]\nBe honest but constructive — I'm here to learn.\n\n[Paste your work here]\n```\n\n**Recipe 4: Brainstorm Solutions**\n```\nProblem: [Describe the problem in 1-2 sentences]\n\nContext:\n- Target users: [who]\n- Constraints: [time, budget, technical limitations]\n- What I've tried: [previous attempts, if any]\n\nPlease generate:\n1. 10 creative solutions (quantity over quality)\n2. Then pick the top 3 and explain pros/cons of each\n3. Recommend one with reasoning\n```\n\n**Recipe 5: Create a Plan**\n```\nGoal: [What you want to achieve]\n\nCurrent state: [Where you are now]\nDesired state: [Where you want to be]\nTimeline: [How long you have]\n\nPlease create a step-by-step plan that:\n- Breaks the goal into weekly milestones\n- Identifies potential roadblocks\n- Suggests resources or learning needed\n- Keeps scope realistic for [timeline]\n```"
+    },
+    {
+      "title": "Prompting for Productivity (Beyond Code)",
+      "content": "Claude isn't just for building apps — use it to supercharge your daily work:\n\n**Writing:**\n- 'Draft a project proposal for [topic] targeted at [audience]'\n- 'Rewrite this paragraph to be more concise and persuasive'\n- 'Generate 10 headlines for a blog post about [topic]'\n\n**Research:**\n- 'Summarize the key arguments in this article: [paste text]'\n- 'Compare and contrast [A] vs [B] in a table format'\n- 'What are the top 5 trends in [industry] for 2024?'\n\n**Analysis:**\n- 'Analyze this data and identify patterns: [paste CSV or numbers]'\n- 'What's missing from this project plan? [paste plan]'\n- 'SWOT analysis for [business idea]'\n\n**Learning:**\n- 'Create a 30-day learning plan for [skill]'\n- 'Quiz me on [topic] with 10 questions, reveal answers after I respond'\n- 'Explain the difference between [X] and [Y]'\n\n**Pro tip:** Use Claude for meta-tasks like 'Help me write a better prompt for [goal]'"
+    },
+    {
+      "title": "Common Prompt Patterns",
+      "content": "**The Persona Pattern:**\n'You are [role/expert]. [Task]'\nExample: 'You are a senior UX designer. Review this user flow for accessibility issues.'\n\n**The Template Pattern:**\n'Fill in this template: [structure]'\nExample: 'Fill in this template: Problem: ___ | Solution: ___ | Impact: ___'\n\n**The Chain-of-Thought Pattern:**\n'Think through this step-by-step: [problem]'\nForces Claude to show reasoning, improves complex answers.\n\n**The Few-Shot Pattern:**\n'Here are 3 examples: [examples]. Now do this: [task]'\nTeaches by example instead of explanation.\n\n**The Constraint Pattern:**\n'[Task] BUT [constraint]'\nExample: 'Explain quantum computing BUT use only words a 10-year-old knows'\n\n**The Refinement Pattern:**\n'[Task]. Then critique your answer and improve it.'\nMakes Claude self-edit for better quality.\n\n**Combine patterns:**\n'You are a product manager (Persona). Think step-by-step (Chain). Create a feature spec BUT keep it under 200 words (Constraint).'"
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Prompt:** The input/instruction you give to Claude\n\n**Prompt Engineering:** The skill of crafting effective prompts\n\n**Token:** Unit of text Claude processes (roughly 4 characters)\n\n**Context Window:** How much text Claude can remember in one conversation\n\n**Few-Shot Learning:** Teaching by example (show 2-3 examples, Claude infers the pattern)\n\n**Zero-Shot:** Giving a task without examples (relies on Claude's training)\n\n**Temperature:** Setting that controls randomness (higher = more creative, lower = more deterministic)"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Assuming Claude knows your context",
+      "explanation": "Claude can't read your mind. Always provide background, even if it feels obvious to you."
+    },
+    {
+      "mistake": "Using jargon without defining it",
+      "explanation": "If you use domain-specific terms, either define them or ask Claude to ask about anything unclear."
+    },
+    {
+      "mistake": "One-size-fits-all prompting",
+      "explanation": "Adjust your approach based on the task. Code generation needs detail; brainstorming needs freedom."
+    },
+    {
+      "mistake": "Not specifying output format",
+      "explanation": "Want a table? Bullet points? Code? Say so upfront. 'Format as a markdown table' gets better results."
+    },
+    {
+      "mistake": "Giving up after one bad response",
+      "explanation": "Refine your prompt instead of starting over. 'Can you make that more concise?' often works."
+    }
+  ],
+  "reflectionQuestions": [
+    "Think about a task you did this week. How could you have used Claude to do it faster or better?",
+    "Which of the 4 Cs (Clear, Contextual, Constrained, Examples) do you naturally include? Which do you forget?",
+    "What's one prompt you wrote in Lesson 1 that you'd improve now using what you learned today?"
+  ],
+  "exercises": [
+    {
+      "title": "The 4 Cs Practice",
+      "description": "Take a vague prompt and transform it using the 4 Cs framework.",
+      "output": "A before/after document showing: original vague prompt, improved prompt with all 4 Cs labeled, and Claude's responses to both (screenshot or text)",
+      "successCriteria": [
+        "Original prompt is intentionally vague (e.g., 'make an app')",
+        "Improved prompt clearly demonstrates all 4 Cs with labels",
+        "Tested both prompts with Claude and captured responses",
+        "Reflected on quality difference between responses",
+        "Identified which C had the biggest impact"
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    {
+      "title": "Build Your Prompt Recipe Book",
+      "description": "Create 5 reusable prompt templates for tasks you do regularly (work, learning, or building).",
+      "output": "A personal prompt library document with 5 templates, each including: use case, template text with [brackets] for customization, example of filled template",
+      "successCriteria": [
+        "At least 5 different templates covering different use cases",
+        "Templates use [bracket placeholders] for easy customization",
+        "Each template includes one filled example",
+        "At least one template is for productivity (not just coding)",
+        "Templates can be reused without modification except brackets"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    {
+      "title": "Productivity Challenge",
+      "description": "Use Claude for 3 different non-coding tasks today (writing, research, or analysis).",
+      "output": "A log of 3 tasks showing: (1) what you needed, (2) prompt you used, (3) Claude's output, (4) how you used it, (5) time saved estimate",
+      "successCriteria": [
+        "Completed 3 distinct tasks (not variations of the same thing)",
+        "At least one task you'd normally do manually without AI",
+        "Documented the full prompt-to-output flow for each",
+        "Honestly estimated time saved vs. doing it manually",
+        "Identified one task where Claude surprised you positively"
+      ],
+      "estimatedTime": "60 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Anthropic Prompt Engineering Guide",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+    },
+    {
+      "title": "Anthropic Prompt Library",
+      "url": "https://docs.anthropic.com/en/prompt-library/library"
+    },
+    {
+      "title": "Learn Prompting - Free Course",
+      "url": "https://learnprompting.org/"
+    },
+    {
+      "title": "OpenAI Prompt Engineering Guide",
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson is standalone — works even if students haven't done Lesson 1. Start with a quick 'what is Claude?' recap if needed.",
+    "For live sessions: Do a 'prompt battle' where students compete to get the best response from the same vague starting prompt.",
+    "Common question: 'Do these recipes work for ChatGPT?' — Yes! Prompting principles are universal across LLMs.",
+    "Self-paced tip: Encourage students to save their best prompts in a Notion page or Google Doc for reuse.",
+    "Time check: Exercise 3 is highly variable depending on chosen tasks. Some students will get excited and do more than 3 — celebrate that!",
+    "Bonus: Create a shared class 'prompt library' where students contribute their best templates.",
+    "Note: This lesson focuses on fundamentals, not advanced techniques (those come in advanced courses). Keep it beginner-friendly."
+  ]
+}

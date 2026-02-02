@@ -6,11 +6,11 @@
   "order": 1,
   "lessons": [
     "getting-started",
-    "understanding-responses",
-    "iterating-debugging",
-    "building-first-feature",
-    "publishing-project",
+    "prompting-fundamentals",
+    "iteration-refinement",
+    "artifacts-code",
     "projects-context",
-    "growing-and-help"
+    "analysis-research",
+    "building-mvp"
   ]
 }
