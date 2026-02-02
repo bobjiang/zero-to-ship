@@ -1,0 +1,207 @@
+{
+  "slug": "growing-and-help",
+  "title": "Growing Your Product & Getting Help",
+  "description": "Learn how to iterate on your launched product, find help when stuck, engage with communities, and plan your roadmap from MVP to v2 and beyond.",
+  "duration": "2-3 hours",
+  "order": 7,
+  "learningObjectives": [
+    "Prioritize post-launch improvements based on user feedback",
+    "Find and engage with developer communities for help and support",
+    "Use effective strategies to get unstuck when Claude can't solve a problem",
+    "Plan a roadmap from MVP to version 2 and beyond"
+  ],
+  "videos": [
+    {
+      "title": "From Launch to V2: Prioritizing What's Next",
+      "description": "How to analyze feedback, prioritize improvements, and plan your next iteration without getting overwhelmed.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "12 minutes",
+      "scriptOutline": [
+        "The post-launch reality: feedback overload",
+        "Categorizing feedback: bugs, quick wins, features, nice-to-haves",
+        "The 80/20 rule: which 20% of changes deliver 80% of value?",
+        "Creating a simple roadmap: sprints vs. continuous delivery",
+        "Real example: how 02Ship prioritized post-launch improvements",
+        "When to say no: feature creep vs. focused iteration"
+      ],
+      "talkingPoints": [
+        "Not all feedback is created equal — prioritize ruthlessly",
+        "Fix critical bugs immediately, batch small improvements",
+        "Ask: 'Will this make the product 10x better or just 5% better?'",
+        "Your roadmap should fit on one page — if it's longer, you're planning too far ahead",
+        "Version 2 doesn't mean rebuilding everything — it's MVP + lessons learned"
+      ]
+    },
+    {
+      "title": "Finding Help: Communities, Forums, and Resources",
+      "description": "Where to go when you're stuck, how to ask good questions, and how to engage with developer communities.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "13 minutes",
+      "scriptOutline": [
+        "When Claude can't help: recognizing the limits",
+        "Key communities: Discord servers, Reddit, Stack Overflow, GitHub Discussions",
+        "How to ask questions that get answered (MCVE principle)",
+        "Giving back: answering questions once you know the answer",
+        "Finding mentors and accountability partners",
+        "Real communities for Claude users and no-code builders"
+      ],
+      "talkingPoints": [
+        "Claude is powerful but not omniscient — community fills the gaps",
+        "A good question includes: what you tried, what happened, what you expected",
+        "Screenshots and code snippets get faster responses than vague descriptions",
+        "Teaching others solidifies your own learning — answer beginner questions",
+        "Join 02Ship Discord, Anthropic community, and relevant tool-specific servers"
+      ]
+    },
+    {
+      "title": "Staying Motivated and Shipping Consistently",
+      "description": "Strategies to maintain momentum, avoid burnout, and keep shipping improvements over time.",
+      "youtubeId": "[To be recorded]",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "14 minutes",
+      "scriptOutline": [
+        "The motivation curve: high at launch, dips after feedback",
+        "Setting sustainable goals: weekly small wins vs. monthly big releases",
+        "Building in public: sharing progress for accountability",
+        "Celebrating milestones: first 10 users, first paying customer, etc.",
+        "When to pivot vs. when to persist",
+        "Real stories: student projects that grew into businesses"
+      ],
+      "talkingPoints": [
+        "Motivation follows action, not the other way around — ship something small to get momentum back",
+        "Public accountability works: tweet your weekly goals, post in Discord",
+        "Every bug fixed, every feature shipped is progress — celebrate it",
+        "If no one's using it after 3 months, ask why — don't just keep building",
+        "Many successful products started as side projects built with AI help"
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Feedback Prioritization Framework",
+      "content": "**Step 1: Categorize all feedback**\n\n| Category | Description | Timeline |\n|----------|-------------|----------|\n| 🚨 Critical Bugs | App crashes, data loss, security issues | Fix immediately |\n| 🐛 Minor Bugs | UI glitches, broken links, typos | Batch and fix weekly |\n| ⚡ Quick Wins | Small improvements, < 2 hours work | Do 2-3 per week |\n| ✨ Features | New functionality users requested | Plan for next version |\n| 💭 Nice-to-Haves | 'Would be cool if...' ideas | Backlog, maybe later |\n\n**Step 2: Apply the ICE Framework**\n\nFor each feature/improvement, score 1-10 on:\n- **Impact:** How much will this improve the product?\n- **Confidence:** How sure are you this is the right solution?\n- **Ease:** How easy is this to implement?\n\nICE Score = (Impact × Confidence × Ease) / 3\n\nPrioritize highest ICE scores first.\n\n**Step 3: Create a Simple Roadmap**\n\n**This Week:**\n- [ ] Fix critical bug: [describe]\n- [ ] Quick win: [describe]\n- [ ] Quick win: [describe]\n\n**Next 2 Weeks:**\n- [ ] Feature: [describe]\n- [ ] Minor bugs batch fix\n\n**Next Month:**\n- [ ] Major feature: [describe]\n- [ ] Performance optimization\n\n**Future Backlog:**\n- [Nice-to-have ideas]\n\nReview and update weekly based on new feedback."
+    },
+    {
+      "title": "How to Ask Questions That Get Answered",
+      "content": "**The MCVE Principle: Minimal, Complete, Verifiable Example**\n\n❌ Bad Question:\n'My app doesn't work. Help!'\n\n✅ Good Question:\n\n**Title:** Next.js deployment fails on Vercel with 'Module not found' error\n\n**Context:**\nI'm deploying a Next.js 14 app to Vercel. It works locally but fails during build.\n\n**What I tried:**\n1. Checked package.json — all dependencies listed\n2. Ran `npm run build` locally — succeeds\n3. Cleared Vercel cache and redeployed — same error\n\n**Error message:**\n```\nError: Cannot find module '@/components/Header'\n```\n\n**Relevant code:**\n```typescript\n// app/page.tsx\nimport Header from '@/components/Header';\n```\n\n**Question:**\nIs this a case-sensitivity issue? My local file is `header.tsx` not `Header.tsx`. Does Vercel's Linux environment treat this differently?\n\n---\n\n**Why this works:**\n- Specific, searchable title\n- Clear context (what, where, when)\n- Shows what you already tried\n- Includes actual error message\n- Provides relevant code\n- Proposes a hypothesis\n\nThis gets answered in minutes, not hours."
+    },
+    {
+      "title": "Developer Communities for AI Builders",
+      "content": "**Claude & Anthropic:**\n- Official Discord: [discord.gg/anthropic]\n- Anthropic Community Forum: [community.anthropic.com]\n- Twitter/X: Follow @AnthropicAI, #ClaudeAI\n\n**02Ship Community:**\n- Discord: https://discord.gg/btqaA3hzKp\n- GitHub Discussions: https://github.com/bobjiang/zero-to-ship/discussions\n- Share your projects, get feedback, find collaborators\n\n**General AI/No-Code Building:**\n- r/ClaudeAI (Reddit)\n- r/ChatGPT (Reddit)\n- r/ArtificialIntelligence (Reddit)\n- Indie Hackers: [indiehackers.com]\n- Product Hunt: [producthunt.com]\n\n**Tech-Specific:**\n- Next.js Discord: For Next.js questions\n- Vercel Community: Deployment help\n- Supabase Discord: Database/backend\n\n**Local Communities:**\n- Check Meetup.com for AI/tech meetups in your city\n- Attend hackathons — great for learning and networking\n\n**How to engage:**\n1. Lurk for a week to understand the culture\n2. Introduce yourself in the #introductions channel\n3. Ask thoughtful questions (use MCVE principle)\n4. Answer questions you know the answer to\n5. Share your wins and learnings\n6. Don't spam, don't self-promote without adding value"
+    },
+    {
+      "title": "When Claude Can't Help: Escalation Strategies",
+      "content": "**Situation 1: Claude gives wrong/outdated information**\n→ Check official documentation (docs.anthropic.com, framework docs)\n→ Search GitHub issues for your specific error\n→ Ask in community with 'Claude suggested X, but Y happened'\n\n**Situation 2: Claude doesn't understand your domain**\n→ Provide more context via Projects (upload domain-specific docs)\n→ Break the problem into smaller pieces\n→ Consult a domain expert (human)\n\n**Situation 3: Complex debugging beyond Claude's scope**\n→ Use traditional debugging tools (browser DevTools, logging)\n→ Rubber duck debugging (explain the problem out loud)\n→ Pair with a developer (remotely or in-person)\n\n**Situation 4: You need human judgment**\n→ Design decisions: Ask in design communities (Dribbble, Designer News)\n→ Business decisions: Talk to potential users, not Claude\n→ Ethical questions: Consult ethics guidelines or human advisors\n\n**Situation 5: Performance or scaling issues**\n→ Use profiling tools (Lighthouse, Vercel Analytics)\n→ Consult performance-specific resources (web.dev)\n→ Consider hiring a specialist for complex optimization\n\n**General rule:**\nClaude is great for 80% of building. For the other 20%, lean on:\n- Official documentation\n- Human communities\n- Specialized tools\n- Your own judgment"
+    },
+    {
+      "title": "Building in Public: A Strategy for Accountability",
+      "content": "**What is Building in Public?**\nSharing your progress, challenges, and learnings publicly (Twitter, blog, Discord) as you build.\n\n**Benefits:**\n- Accountability: Public commitment motivates consistency\n- Feedback: Early users find you and give input\n- Network: Connect with other builders\n- Portfolio: Your journey becomes your resume\n- Learning: Teaching others solidifies your knowledge\n\n**What to share:**\n- Weekly updates: What you shipped, what you learned\n- Challenges: 'Stuck on X, tried Y and Z' (often gets help)\n- Wins: 'First 10 users!' (people celebrate with you)\n- Metrics: 'Traffic doubled this week!'\n- Lessons: 'Learned that X doesn't work, trying Y instead'\n\n**Where to share:**\n- Twitter/X: Short updates, screenshots, metrics\n- LinkedIn: Professional angle, project milestones\n- Dev.to or Hashnode: Longer blog posts, tutorials\n- Discord/Slack communities: Daily check-ins\n- YouTube/Loom: Screen recordings of features\n\n**How often:**\n- Daily: Quick wins or progress notes (optional)\n- Weekly: Summary of what shipped\n- Monthly: Bigger reflections, metrics, roadmap\n\n**What NOT to share:**\n- Proprietary code or trade secrets\n- User data or private information\n- Unvalidated ideas you're protective of (unless you want feedback)\n\n**Example weekly update template:**\n\n🚀 Week 12 of building [Your Product]\n\nShipped:\n✅ Feature X\n✅ Bug fixes (list)\n\nLearned:\n💡 Lesson about [topic]\n\nNext week:\n🎯 Goal 1\n🎯 Goal 2\n\nLink: [yourproduct.com]\n\n#BuildInPublic #IndieHacker"
+    },
+    {
+      "title": "Key Definitions",
+      "content": "**Roadmap:** A plan showing what features/improvements you'll build and when\n\n**Technical Debt:** Code that works but is messy/inefficient and will slow you down later\n\n**Pivot:** Changing your product direction based on what you learned\n\n**Iteration:** Incremental improvement cycles (ship → learn → improve → repeat)\n\n**Backlog:** A list of ideas/features you might build someday (not committed)\n\n**Building in Public:** Sharing your product development journey publicly\n\n**MCVE:** Minimal, Complete, Verifiable Example — best way to ask technical questions"
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Trying to build every requested feature",
+      "explanation": "Most requests aren't needed by most users. Prioritize ruthlessly."
+    },
+    {
+      "mistake": "Asking vague questions in communities",
+      "explanation": "Vague questions get ignored. Use the MCVE principle for fast, helpful answers."
+    },
+    {
+      "mistake": "Working in isolation without sharing progress",
+      "explanation": "You miss valuable feedback and accountability. Build in public or join communities."
+    },
+    {
+      "mistake": "Giving up after the first user criticism",
+      "explanation": "Negative feedback is data, not a personal attack. Iterate based on patterns, not one-offs."
+    },
+    {
+      "mistake": "Planning 6 months ahead for a 2-week-old product",
+      "explanation": "Your roadmap will change constantly. Plan 2-4 weeks out, not months."
+    }
+  ],
+  "reflectionQuestions": [
+    "What's the one piece of feedback you've received that you're most excited to implement? Why?",
+    "Think about a time you got stuck on a problem. What helped you get unstuck? How can you apply that strategy again?",
+    "If you had to pick just one improvement to ship next week, what would have the biggest impact on your users?"
+  ],
+  "exercises": [
+    {
+      "title": "Prioritize Your Roadmap",
+      "description": "Collect all feedback and feature ideas for your project, categorize them, and create a prioritized roadmap for the next 4 weeks.",
+      "output": "A roadmap document showing: categorized feedback (bugs, quick wins, features), ICE scores for top 5 items, and a 4-week plan",
+      "successCriteria": [
+        "Collected at least 5 pieces of feedback (real or hypothetical)",
+        "Categorized each item (critical, minor bug, quick win, feature, nice-to-have)",
+        "Scored top 5 items using ICE framework",
+        "Created a concrete 4-week plan with specific tasks",
+        "Identified at least one thing you're NOT going to build (and why)"
+      ],
+      "estimatedTime": "45 minutes"
+    },
+    {
+      "title": "Ask a Great Question",
+      "description": "Identify a problem you're currently facing, then craft a well-formatted question and post it in a relevant community.",
+      "output": "A posted question (screenshot or link) following MCVE principles, plus documentation of the response you received",
+      "successCriteria": [
+        "Chose an appropriate community for your question",
+        "Question includes: clear title, context, what you tried, error message/code, hypothesis",
+        "Actually posted (not just drafted) the question",
+        "Waited for and documented the response (even if it takes a day)",
+        "Followed up with 'this worked!' or clarifying questions"
+      ],
+      "estimatedTime": "60 minutes (spread over 1-2 days for responses)"
+    },
+    {
+      "title": "Build in Public - Week 1",
+      "description": "Share your project and progress publicly for one week using at least two platforms.",
+      "output": "A summary of your week including: what you shared, where you shared it, engagement you received, and what you learned",
+      "successCriteria": [
+        "Shared on at least 2 platforms (Twitter, LinkedIn, Discord, Dev.to, etc.)",
+        "Posted at least 3 updates throughout the week (start, mid, end)",
+        "Included at least one screenshot, metric, or demo",
+        "Engaged with at least 2 other builders' posts",
+        "Reflected on how public accountability affected your motivation"
+      ],
+      "estimatedTime": "2 hours total (spread across 7 days)"
+    }
+  ],
+  "resources": [
+    {
+      "title": "02Ship Community Discord",
+      "url": "https://discord.gg/btqaA3hzKp"
+    },
+    {
+      "title": "How to Ask Questions on Stack Overflow",
+      "url": "https://stackoverflow.com/help/how-to-ask"
+    },
+    {
+      "title": "Indie Hackers - Build in Public",
+      "url": "https://www.indiehackers.com/group/build-in-public"
+    },
+    {
+      "title": "The Mom Test (How to Talk to Users)",
+      "url": "https://www.momtestbook.com/"
+    },
+    {
+      "title": "Anthropic Community Forum",
+      "url": "https://community.anthropic.com"
+    }
+  ],
+  "instructorNotes": [
+    "This is the 'graduation' lesson — emphasize that learners now have the skills to keep going independently.",
+    "For live sessions: Do a 'roadmap workshop' where everyone shares their post-course plans and gets peer feedback.",
+    "Common anxiety: 'What if my project fails?' Reframe as 'every shipped project is a success, regardless of users.'",
+    "Self-paced tip: Encourage learners to schedule a 'check-in' with themselves 30 days post-course to assess progress.",
+    "Time check: Exercise 3 spans a week — make it async and create a dedicated channel for public updates.",
+    "Bonus: Feature standout student projects in 02Ship blog or showcase page.",
+    "Meta celebration: By completing this course, students are now part of the AI builder community — welcome them officially!",
+    "Closing message: 'You've gone from zero to shipped. Everything from here is iteration. Keep building!'"
+  ]
+}
