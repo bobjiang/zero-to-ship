@@ -1,6 +1,6 @@
 {
   "slug": "artifacts-code",
-  "title": "Working with Code and Artifacts",
+  "title": "Lesson 4 - Working with Code and Artifacts",
   "description": "Learn to work with Claude's code artifacts: understanding what's generated, running code locally, making modifications, and building runnable projects without deep programming knowledge.",
   "duration": "2-3 hours",
   "order": 4,
