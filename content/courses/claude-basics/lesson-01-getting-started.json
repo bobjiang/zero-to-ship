@@ -1,6 +1,6 @@
 {
   "slug": "getting-started",
-  "title": "Getting Started with Claude for Building Apps",
+  "title": "Lesson 1 - Getting Started with Claude for Building Apps",
   "description": "Learn what Claude is, set up your environment, and write your first app-building prompt that produces a runnable starter project.",
   "duration": "2-3 hours",
   "order": 1,
