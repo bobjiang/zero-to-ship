@@ -5,4 +5,5 @@ export interface BlogPost {
   date: string;
   author: string;
   content: string;
+  keywords?: string;
 }
