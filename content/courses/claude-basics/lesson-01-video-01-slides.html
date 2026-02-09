@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1: What Claude Is (and Isn't) for Building Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Slide 1: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Slide 2: Hook */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-hook .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .platform-preview {
+            background: #252530;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .platform-preview .browser-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .platform-preview .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .platform-preview .dot.red { background: #ff5f56; }
+        .platform-preview .dot.yellow { background: #ffbd2e; }
+        .platform-preview .dot.green { background: #27ca40; }
+
+        .platform-preview .screen {
+            background: linear-gradient(135deg, #2a2a3a, #1a1a24);
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent-teal);
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .slide-hook h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .floating-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Slide 3: What is Claude */
+        .slide-definition {
+            text-align: center;
+        }
+
+        .slide-definition .logo-container {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-teal));
+            border-radius: 24px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .slide-definition h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-definition .tagline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .definition-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .definition-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .definition-item .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .definition-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide 4: Conversation Demo */
+        .slide-conversation {
+            padding: 2rem 3rem;
+        }
+
+        .slide-conversation h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .chat-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            max-width: 70%;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Slide 5-7: Three Capabilities */
+        .slide-capability {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .capability-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .capability-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent-coral);
+            opacity: 0.3;
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+        }
+
+        .capability-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .capability-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .tag { color: #ff79c6; }
+        .code-block .attr { color: #50fa7b; }
+
+        /* Slide 8: All Three Capabilities */
+        .slide-all-capabilities {
+            text-align: center;
+        }
+
+        .slide-all-capabilities h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .capability-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-teal);
+        }
+
+        .capability-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .capability-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .capability-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide 9-10: Limitations */
+        .slide-limitations {
+            text-align: center;
+        }
+
+        .slide-limitations h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-limitations .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .limitations-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .limitation-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .limitation-item .status {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .limitation-item .status.yes {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .limitation-item .status.no {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        .limitation-item span {
+            font-size: 1.1rem;
+        }
+
+        /* Slide 11: Chef Analogy */
+        .slide-analogy {
+            text-align: center;
+        }
+
+        .analogy-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analogy-item {
+            text-align: center;
+        }
+
+        .analogy-item .emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .analogy-item p {
+            color: var(--text-secondary);
+        }
+
+        .analogy-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        .slide-analogy blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        /* Slide 12: Mindset Shift */
+        .slide-mindset {
+            text-align: center;
+        }
+
+        .slide-mindset h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .mindset-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mindset-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .mindset-box.wrong {
+            background: rgba(255, 85, 85, 0.1);
+            border: 2px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .mindset-box.right {
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .mindset-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mindset-box p {
+            color: var(--text-secondary);
+        }
+
+        .mindset-vs {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        /* Slide 13: Collaboration Flow */
+        .slide-flow {
+            text-align: center;
+        }
+
+        .slide-flow h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .flow-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-step {
+            background: rgba(255,255,255,0.08);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .flow-step .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-step p {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+
+        .flow-loop {
+            margin-top: 1.5rem;
+            color: var(--accent-coral);
+            font-size: 1rem;
+        }
+
+        /* Slide 14: 02Ship Example */
+        .slide-example {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .example-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .example-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .example-quote {
+            background: rgba(78, 205, 196, 0.1);
+            border-left: 4px solid var(--accent-teal);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .example-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .example-visual h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .requirements-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .requirements-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .requirements-list li::before {
+            content: "→";
+            color: var(--accent-teal);
+        }
+
+        /* Slide 15: Proof */
+        .slide-proof {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-proof h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-proof .subtext {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .proof-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Slide 16: Recap */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Slide 17: Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* Instructions */
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 1: What Claude Is (and Isn't) for Building Products</h1>
+        <p>02Ship Claude Basics Course • Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>📋 How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts from your shooting guide</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder screenshots with actual 02Ship and Claude.ai screenshots</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>What Claude Is (and Isn't) for Building Products</h1>
+            <p class="subtitle">02Ship Claude Basics • Lesson 1</p>
+            <span class="badge">Built entirely with Claude AI</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening • 0:00</span>
+            <div class="content">
+                <div class="text-content">
+                    <h2>This platform was built through <span class="highlight-text">conversations</span></h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1rem;">No team of developers. Just AI-assisted building.</p>
+                    <div class="floating-badge">Built entirely with Claude AI</div>
+                </div>
+                <div class="platform-preview">
+                    <div class="browser-bar">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="screen">
+                        [02Ship Homepage Screenshot]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: What is Claude -->
+        <div class="slide slide-definition" data-slide-number="3">
+            <span class="slide-section">Section 1 • 1:00</span>
+            <div class="logo-container">C</div>
+            <h2>Claude by Anthropic</h2>
+            <p class="tagline">An AI assistant designed for conversations, not commands</p>
+            <div class="definition-grid">
+                <div class="definition-item">
+                    <div class="icon">💬</div>
+                    <p>Conversational</p>
+                </div>
+                <div class="definition-item">
+                    <div class="icon">🤝</div>
+                    <p>Helpful & Honest</p>
+                </div>
+                <div class="definition-item">
+                    <div class="icon">🌐</div>
+                    <p>Web & API Access</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Conversation Example -->
+        <div class="slide slide-conversation" data-slide-number="4">
+            <span class="slide-section">Section 1 • 2:00</span>
+            <h2>It's a Conversation, Not a Command</h2>
+            <div class="chat-container">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">I want a landing page with a hero section and a sign-up form</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">I'll create that for you! Here's a modern landing page with a hero section featuring a headline, subtext, and a clean sign-up form...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Capability 1 - Generate Code -->
+        <div class="slide slide-capability" data-slide-number="5">
+            <span class="slide-section">Section 2 • 3:00</span>
+            <div class="capability-number">1</div>
+            <div class="capability-content">
+                <h2>Generate Code</h2>
+                <p>Creates complete, working code from your descriptions. Handles multiple programming languages and frameworks. Builds entire project structures, not just snippets.</p>
+            </div>
+            <div class="capability-visual">
+                <div class="code-block">
+<span class="comment">// Your prompt: "landing page with hero"</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"hero"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Welcome to 02Ship<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Build products with AI<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;form</span> <span class="attr">class</span>=<span class="string">"signup"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;button&gt;</span>Get Started<span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;/section&gt;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Capability 2 - Explain Concepts -->
+        <div class="slide slide-capability" data-slide-number="6">
+            <span class="slide-section">Section 2 • 3:45</span>
+            <div class="capability-number">2</div>
+            <div class="capability-content">
+                <h2>Explain Concepts</h2>
+                <p>Breaks down technical concepts in plain English. Answers "why" questions, not just "how". Helps you understand without becoming a programmer.</p>
+            </div>
+            <div class="capability-visual">
+                <div class="chat-container" style="gap: 0.75rem;">
+                    <div class="chat-message user" style="flex-direction: row;">
+                        <div class="chat-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">You</div>
+                        <div class="chat-bubble" style="font-size: 0.9rem;">What does this part do?</div>
+                    </div>
+                    <div class="chat-message assistant" style="flex-direction: row;">
+                        <div class="chat-avatar" style="width: 32px; height: 32px; font-size: 0.8rem;">C</div>
+                        <div class="chat-bubble" style="font-size: 0.9rem;">This section creates a container that centers your content on the page...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Capability 3 - Iterate -->
+        <div class="slide slide-capability" data-slide-number="7">
+            <span class="slide-section">Section 2 • 4:30</span>
+            <div class="capability-number">3</div>
+            <div class="capability-content">
+                <h2>Iterate on Ideas</h2>
+                <p>Takes feedback and refines the code. Doesn't get frustrated with changes. Helps you explore different approaches.</p>
+            </div>
+            <div class="capability-visual">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 0.8rem; color: var(--accent-coral); margin-bottom: 0.5rem;">BEFORE</div>
+                        <div style="background: #0d0d12; padding: 1rem; border-radius: 8px; font-size: 0.85rem;">Basic course page</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 0.8rem; color: var(--success); margin-bottom: 0.5rem;">AFTER</div>
+                        <div style="background: #0d0d12; padding: 1rem; border-radius: 8px; font-size: 0.85rem;">+ Learning objectives<br>+ Multiple videos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: All Three Capabilities -->
+        <div class="slide slide-all-capabilities" data-slide-number="8">
+            <span class="slide-section">Section 2 • 5:00</span>
+            <h2>Claude's Three Superpowers</h2>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="icon">⚡</div>
+                    <h3>Generate Code</h3>
+                    <p>Complete, working code from descriptions</p>
+                </div>
+                <div class="capability-card">
+                    <div class="icon">💡</div>
+                    <h3>Explain Concepts</h3>
+                    <p>Plain English breakdowns of technical ideas</p>
+                </div>
+                <div class="capability-card">
+                    <div class="icon">🔄</div>
+                    <h3>Iterate on Ideas</h3>
+                    <p>Refine and improve through feedback</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Limitations Header -->
+        <div class="slide slide-limitations" data-slide-number="9">
+            <span class="slide-section">Section 3 • 5:30</span>
+            <h2>What Claude Can't Do</h2>
+            <p class="subtitle">Understanding limits is just as important as knowing strengths</p>
+            <div class="limitations-list">
+                <div class="limitation-item">
+                    <div class="status yes">✓</div>
+                    <span>Generate code</span>
+                </div>
+                <div class="limitation-item">
+                    <div class="status no">✗</div>
+                    <span>Run code on your computer</span>
+                </div>
+                <div class="limitation-item">
+                    <div class="status no">✗</div>
+                    <span>Deploy apps automatically</span>
+                </div>
+                <div class="limitation-item">
+                    <div class="status no">✗</div>
+                    <span>Browse the internet by default</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Chef Analogy -->
+        <div class="slide slide-analogy" data-slide-number="10">
+            <span class="slide-section">Section 3 • 6:15</span>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">👨‍🍳</div>
+                    <p>Claude writes<br>the recipe</p>
+                </div>
+                <div class="analogy-arrow">→</div>
+                <div class="analogy-item">
+                    <div class="emoji">📝</div>
+                    <p>You get<br>the code</p>
+                </div>
+                <div class="analogy-arrow">→</div>
+                <div class="analogy-item">
+                    <div class="emoji">🍳</div>
+                    <p>You cook it<br>in your kitchen</p>
+                </div>
+            </div>
+            <blockquote>
+                "Claude can write the code, but it can't execute it on your computer. Think of it like a chef giving you a recipe—you still need to cook it in your own kitchen."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 11: Mindset Shift -->
+        <div class="slide slide-mindset" data-slide-number="11">
+            <span class="slide-section">Section 4 • 7:00</span>
+            <h2>The Mindset Shift</h2>
+            <div class="mindset-comparison">
+                <div class="mindset-box wrong">
+                    <h3>❌ Magic Button</h3>
+                    <p>One click builds everything</p>
+                </div>
+                <div class="mindset-vs">VS</div>
+                <div class="mindset-box right">
+                    <h3>✓ Collaborator</h3>
+                    <p>Work together to build</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Collaboration Flow -->
+        <div class="slide slide-flow" data-slide-number="12">
+            <span class="slide-section">Section 4 • 7:45</span>
+            <h2>The Collaboration Loop</h2>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="icon">👤</div>
+                    <p>You</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="icon">🤖</div>
+                    <p>Claude</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="icon">💻</div>
+                    <p>Code</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="icon">💬</div>
+                    <p>Feedback</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="icon">✨</div>
+                    <p>Improved</p>
+                </div>
+            </div>
+            <p class="flow-loop">↺ Repeat until perfect</p>
+        </div>
+
+        <!-- SLIDE 13: Director Analogy -->
+        <div class="slide slide-analogy" data-slide-number="13">
+            <span class="slide-section">Section 4 • 8:15</span>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">🎬</div>
+                    <p>You're the<br><strong>Director</strong></p>
+                </div>
+                <div class="analogy-arrow">+</div>
+                <div class="analogy-item">
+                    <div class="emoji">🎥</div>
+                    <p>Claude is the<br><strong>Film Crew</strong></p>
+                </div>
+            </div>
+            <blockquote>
+                "You don't need to know how to operate the camera, but you do need to know what scene you want to shoot. Claude handles the technical execution; you handle the creative direction."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 14: 02Ship Example -->
+        <div class="slide slide-example" data-slide-number="14">
+            <span class="slide-section">Section 5 • 9:00</span>
+            <div class="example-content">
+                <h2>Real-World Example: 02Ship</h2>
+                <p>Started with zero code. Just a conversation.</p>
+                <div class="example-quote">
+                    "I want to build a learning portal that helps non-programmers learn to use AI coding tools..."
+                </div>
+            </div>
+            <div class="example-visual">
+                <h4>Original Requirements</h4>
+                <ul class="requirements-list">
+                    <li>Landing page</li>
+                    <li>Courses with video lessons</li>
+                    <li>Blog section</li>
+                    <li>No user accounts initially</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Proof -->
+        <div class="slide slide-proof" data-slide-number="15">
+            <span class="slide-section">Section 5 • 9:30</span>
+            <h2>You're Looking at the Proof</h2>
+            <p class="subtext">This platform was built the exact way I'm teaching you</p>
+            <div class="proof-badge">Built with Claude AI</div>
+        </div>
+
+        <!-- SLIDE 16: Recap -->
+        <div class="slide slide-recap" data-slide-number="16">
+            <span class="slide-section">Closing • 9:45</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p>Claude is a <strong>conversational AI assistant</strong></p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p>Think of it as a <strong>smart intern who codes</strong></p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p>You don't need to understand code—just <strong>what you want</strong></p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Iteration is normal</strong>—first prompt won't be perfect</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Next Steps -->
+        <div class="slide slide-next" data-slide-number="17">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing • 10:00</span>
+            <h2>Next: Setup & Your First Prompt</h2>
+            <p>Get your Claude account, workspace, and safety basics ready</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">📺</div>
+                    <p>Watch Video 2</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">💬</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">✍️</div>
+                    <p>Try Lesson 1</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
