@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2: Data Analysis for Non-Analysts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Slide Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Hook slide */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Two-column data types */
+        .data-types-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .data-type-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .data-type-box.quantitative {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .data-type-box.qualitative {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .data-type-box .type-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .data-type-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-type-box .definition {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .data-type-box .examples {
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .data-type-box .examples li {
+            padding: 0.2rem 0;
+            list-style: none;
+        }
+
+        .data-type-box .examples li::before {
+            content: "- ";
+            color: var(--accent-teal);
+        }
+
+        .data-type-box.qualitative .examples li::before {
+            color: var(--accent-coral);
+        }
+
+        /* CSV mockup */
+        .csv-mockup {
+            background: #0d0d12;
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .csv-mockup .csv-header {
+            color: var(--accent-teal);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 0.75rem;
+        }
+
+        .csv-mockup .csv-row {
+            color: var(--text-secondary);
+            padding: 0.3rem 0;
+        }
+
+        /* Data format cards */
+        .format-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .format-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .format-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .format-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .format-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .format-card.recommended {
+            border-color: rgba(80, 250, 123, 0.4);
+            background: rgba(80, 250, 123, 0.05);
+        }
+
+        .format-card .rec-badge {
+            display: inline-block;
+            background: var(--success);
+            color: var(--bg-dark);
+            padding: 0.2rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Question type cards */
+        .question-types-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .question-type-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .question-type-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .question-type-card .q-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .question-type-card .q-icon.patterns { background: rgba(78, 205, 196, 0.2); }
+        .question-type-card .q-icon.trends { background: rgba(255, 217, 61, 0.2); }
+        .question-type-card .q-icon.outliers { background: rgba(255, 107, 107, 0.2); }
+        .question-type-card .q-icon.recs { background: rgba(80, 250, 123, 0.2); }
+
+        .question-type-card .prompts {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .question-type-card .prompts p {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Demo timeline */
+        .demo-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .demo-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .demo-step .time-badge {
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .demo-step .step-content {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            flex: 1;
+        }
+
+        .demo-step .step-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .demo-step .step-content p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Survey data mockup table */
+        .survey-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .survey-table th {
+            background: rgba(78, 205, 196, 0.15);
+            color: var(--accent-teal);
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .survey-table td {
+            padding: 0.6rem 1rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .survey-table tr:hover td {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .rating-bar {
+            display: inline-block;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--accent-teal);
+        }
+
+        /* Claude vs Expert split */
+        .split-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .split-box {
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .split-box.claude-enough {
+            background: rgba(80, 250, 123, 0.08);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .split-box.expert-needed {
+            background: rgba(255, 217, 61, 0.08);
+            border: 2px solid rgba(255, 217, 61, 0.3);
+        }
+
+        .split-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .split-box ul {
+            list-style: none;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .split-box li {
+            padding: 0.35rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .split-box li::before {
+            content: ">";
+            color: var(--success);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .split-box.expert-needed li::before {
+            content: ">";
+            color: var(--accent-gold);
+        }
+
+        /* Prompt toolkit */
+        .toolkit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .toolkit-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .toolkit-item .use-case {
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+
+        .toolkit-item .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .toolkit-item.highlighted {
+            border-color: rgba(255, 217, 61, 0.4);
+            background: rgba(255, 217, 61, 0.05);
+        }
+
+        .toolkit-item.highlighted .use-case {
+            color: var(--accent-gold);
+        }
+
+        /* Recap */
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Takeaway */
+        .slide-takeaway {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-takeaway h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Next slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Funnel diagram */
+        .funnel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .funnel-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .funnel-step:nth-child(1) { width: 100%; background: rgba(255, 107, 107, 0.2); border: 1px solid rgba(255, 107, 107, 0.3); }
+        .funnel-step:nth-child(2) { width: 85%; background: rgba(255, 217, 61, 0.2); border: 1px solid rgba(255, 217, 61, 0.3); }
+        .funnel-step:nth-child(3) { width: 70%; background: rgba(78, 205, 196, 0.2); border: 1px solid rgba(78, 205, 196, 0.3); }
+        .funnel-step:nth-child(4) { width: 55%; background: rgba(80, 250, 123, 0.2); border: 1px solid rgba(80, 250, 123, 0.3); }
+
+        .funnel-arrow {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Prompt box */
+        .prompt-box {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .prompt-box .prompt-label {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+
+        .prompt-box .prompt-text-mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 2: Data Analysis for Non-Analysts</h1>
+        <p>02Ship Claude Basics Course - Lesson 6 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Video 2 of Lesson 6</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder data with actual 02Ship survey screenshots when available</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Data Analysis for Non-Analysts</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 6, Video 2</p>
+            <span class="badge">No Formulas. No Pivot Tables. No Experience Required.</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>You have data. It holds answers.<br>You just don't know how to <span class="highlight-text">find them</span>.</h2>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 1rem auto 0;">Survey responses, spreadsheet numbers, customer feedback -- Claude turns it all into clear insights. No statistics required.</p>
+        </div>
+
+        <!-- SLIDE 3: Two Types of Data -->
+        <div class="slide" data-slide-number="3" style="text-align: center;">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Two Types of Data You'll Encounter</h2>
+            <div class="data-types-grid">
+                <div class="data-type-box quantitative">
+                    <div class="type-icon">&#128290;</div>
+                    <h3 style="color: var(--accent-teal);">Quantitative</h3>
+                    <p class="definition">= Numbers</p>
+                    <ul class="examples">
+                        <li>Page views & sign-up counts</li>
+                        <li>Conversion rates</li>
+                        <li>Survey ratings (1-5 scale)</li>
+                        <li>Revenue & time on page</li>
+                    </ul>
+                </div>
+                <div class="data-type-box qualitative">
+                    <div class="type-icon">&#128172;</div>
+                    <h3 style="color: var(--accent-coral);">Qualitative</h3>
+                    <p class="definition">= Words & Opinions</p>
+                    <ul class="examples">
+                        <li>User feedback & reviews</li>
+                        <li>Interview transcripts</li>
+                        <li>Support tickets</li>
+                        <li>Discord & forum comments</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="color: var(--accent-gold); font-size: 1rem; margin-top: 1.5rem;">Claude handles both. You just need different questions.</p>
+        </div>
+
+        <!-- SLIDE 4: Getting Data Into Claude -->
+        <div class="slide" data-slide-number="4" style="text-align: center;">
+            <span class="slide-section">Section 2 - 2:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">How to Get Your Data Into Claude</h2>
+            <div class="format-cards">
+                <div class="format-card recommended">
+                    <div class="rec-badge">RECOMMENDED</div>
+                    <div class="icon">&#128196;</div>
+                    <h3>CSV Format</h3>
+                    <p>Export from Google Sheets or Excel. Copy and paste the text into Claude. The gold standard for numerical data.</p>
+                </div>
+                <div class="format-card">
+                    <div class="icon">&#128203;</div>
+                    <h3>Tables</h3>
+                    <p>Copy-paste tables directly from spreadsheets or web pages. Claude handles them well.</p>
+                </div>
+                <div class="format-card">
+                    <div class="icon">&#128221;</div>
+                    <h3>Plain Text</h3>
+                    <p>Describe your data in words: "I have 50 responses. Average score is 4.2." Works for smaller datasets.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: CSV Example -->
+        <div class="slide" data-slide-number="5" style="text-align: center;">
+            <span class="slide-section">Section 2 - 3:15</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">What CSV Looks Like</h2>
+            <div class="csv-mockup">
+                <div class="csv-header">Name, Score, Difficulty, Feedback</div>
+                <div class="csv-row">User1, 4, Easy, "Loved the video format"</div>
+                <div class="csv-row">User2, 3, Medium, "Need more hands-on exercises"</div>
+                <div class="csv-row">User3, 5, Easy, "Best beginner course I've found"</div>
+                <div class="csv-row">User4, 2, Hard, "Got stuck on the setup step"</div>
+                <div class="csv-row">User5, 4, Medium, "Great but could use more examples"</div>
+                <div class="csv-row" style="color: var(--text-secondary); opacity: 0.5;">... (50-100 rows for best results)</div>
+            </div>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem;">
+                <div style="background: rgba(255, 217, 61, 0.1); padding: 0.75rem 1.25rem; border-radius: 8px; font-size: 0.85rem; color: var(--accent-gold);">
+                    Large datasets? Paste a sample of 50-100 rows
+                </div>
+                <div style="background: rgba(78, 205, 196, 0.1); padding: 0.75rem 1.25rem; border-radius: 8px; font-size: 0.85rem; color: var(--accent-teal);">
+                    Tell Claude the total dataset size
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: The Wrong Way vs Right Way -->
+        <div class="slide" data-slide-number="6" style="text-align: center;">
+            <span class="slide-section">Section 3 - 4:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Asking the Right Analysis Questions</h2>
+            <div class="data-types-grid">
+                <div class="data-type-box" style="background: rgba(255, 85, 85, 0.1); border: 2px solid rgba(255, 85, 85, 0.3);">
+                    <div class="type-icon" style="font-size: 2.5rem;">&#10060;</div>
+                    <h3 style="color: var(--error); font-size: 1.3rem;">The Wrong Way</h3>
+                    <p class="definition" style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem;">"Analyze this."</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem;">Like handing someone a book and saying "read this" -- they won't know what you're looking for.</p>
+                </div>
+                <div class="data-type-box" style="background: rgba(80, 250, 123, 0.1); border: 2px solid rgba(80, 250, 123, 0.3);">
+                    <div class="type-icon" style="font-size: 2.5rem;">&#9989;</div>
+                    <h3 style="color: var(--success); font-size: 1.3rem;">The Right Way</h3>
+                    <p class="definition" style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem;">Ask specific questions</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem;">Patterns, trends, outliers, and recommendations -- each unlocks different insights.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Four Question Types -->
+        <div class="slide" data-slide-number="7" style="text-align: center;">
+            <span class="slide-section">Section 3 - 4:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Four Types of Analysis Questions</h2>
+            <div class="question-types-grid">
+                <div class="question-type-card">
+                    <h3><span class="q-icon patterns">&#128270;</span> Pattern Questions</h3>
+                    <div class="prompts">
+                        <p>"What patterns do you see?"</p>
+                        <p>"What's the most common response?"</p>
+                        <p>"How do numbers change over time?"</p>
+                    </div>
+                </div>
+                <div class="question-type-card">
+                    <h3><span class="q-icon trends">&#128200;</span> Trend Questions</h3>
+                    <div class="prompts">
+                        <p>"Are numbers going up or down?"</p>
+                        <p>"Is satisfaction improving?"</p>
+                        <p>"Which feature gets more mentions?"</p>
+                    </div>
+                </div>
+                <div class="question-type-card">
+                    <h3><span class="q-icon outliers">&#128308;</span> Outlier Questions</h3>
+                    <div class="prompts">
+                        <p>"What's unusual in this data?"</p>
+                        <p>"Which responses stand out?"</p>
+                        <p>"What doesn't fit the pattern?"</p>
+                    </div>
+                </div>
+                <div class="question-type-card">
+                    <h3><span class="q-icon recs">&#127919;</span> Recommendation Questions</h3>
+                    <div class="prompts">
+                        <p>"What should I prioritize?"</p>
+                        <p>"If I can fix one thing, what?"</p>
+                        <p>"What should I do next?"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Live Demo - Survey Data -->
+        <div class="slide" data-slide-number="8" style="text-align: center;">
+            <span class="slide-section">Section 4 - 6:00</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Live Demo: Analyzing User Survey Results</h2>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.5rem;">Imagine 30 learners completed Lesson 5 and gave this feedback:</p>
+            <table class="survey-table">
+                <thead>
+                    <tr>
+                        <th>Learner</th>
+                        <th>Satisfaction</th>
+                        <th>Difficulty</th>
+                        <th>Completed?</th>
+                        <th>Feedback</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Learner 1</td>
+                        <td>4/5 <span class="rating-bar" style="width: 80%;"></span></td>
+                        <td>Medium</td>
+                        <td style="color: var(--success);">Yes</td>
+                        <td>"Videos were great, wanted more practice"</td>
+                    </tr>
+                    <tr>
+                        <td>Learner 2</td>
+                        <td>5/5 <span class="rating-bar" style="width: 100%;"></span></td>
+                        <td>Easy</td>
+                        <td style="color: var(--success);">Yes</td>
+                        <td>"Best course for beginners, loved it"</td>
+                    </tr>
+                    <tr>
+                        <td>Learner 3</td>
+                        <td>2/5 <span class="rating-bar" style="width: 40%;"></span></td>
+                        <td>Hard</td>
+                        <td style="color: var(--error);">No</td>
+                        <td>"Got stuck on setup, couldn't continue"</td>
+                    </tr>
+                    <tr>
+                        <td>Learner 4</td>
+                        <td>4/5 <span class="rating-bar" style="width: 80%;"></span></td>
+                        <td>Medium</td>
+                        <td style="color: var(--success);">Yes</td>
+                        <td>"Good pace, but needs more examples"</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="text-align: center; color: var(--text-secondary); font-style: italic;">... 26 more rows of survey data</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SLIDE 9: Demo Analysis Flow -->
+        <div class="slide" data-slide-number="9">
+            <span class="slide-section">Section 4 - 6:30</span>
+            <h2 style="font-size: 2rem; text-align: center; margin-bottom: 2rem;">Demo: Step-by-Step Analysis</h2>
+            <div class="demo-timeline">
+                <div class="demo-step">
+                    <div class="time-badge">6:00</div>
+                    <div class="step-content">
+                        <h4>Step 1: Set Context</h4>
+                        <p>"I run 02Ship, a learning platform for non-programmers. Here are survey results from 30 learners..."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">6:30</div>
+                    <div class="step-content">
+                        <h4>Step 2: Pattern Analysis</h4>
+                        <p>"What patterns do you see in satisfaction and difficulty ratings? Group feedback into themes."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">7:15</div>
+                    <div class="step-content">
+                        <h4>Step 3: Dig Deeper</h4>
+                        <p>"What are the top 3 pain points? Quote specific responses that illustrate each one."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">8:15</div>
+                    <div class="step-content">
+                        <h4>Step 4: Get Recommendations</h4>
+                        <p>"What are the 3 most impactful changes? Prioritize by learners affected and impact on experience."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">9:00</div>
+                    <div class="step-content">
+                        <h4>Step 5: Sense-Check</h4>
+                        <p>Compare Claude's analysis with what you hear from learners directly. Blend AI + human judgment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Analysis to Action Funnel -->
+        <div class="slide" data-slide-number="10" style="text-align: center;">
+            <span class="slide-section">Section 4 - 8:15</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">From Raw Data to Action Items</h2>
+            <div class="funnel-container">
+                <div class="funnel-step">Raw Survey Data (30 responses)</div>
+                <div class="funnel-arrow">&#8595;</div>
+                <div class="funnel-step">Patterns & Themes Identified</div>
+                <div class="funnel-arrow">&#8595;</div>
+                <div class="funnel-step">Top 3 Pain Points with Evidence</div>
+                <div class="funnel-arrow">&#8595;</div>
+                <div class="funnel-step">3 Prioritized Action Items</div>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1.5rem; font-size: 0.95rem;">Spreadsheet to action items in ~5 minutes</p>
+        </div>
+
+        <!-- SLIDE 11: Quote Evidence Technique -->
+        <div class="slide" data-slide-number="11" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <span class="slide-section">Section 4 - 8:30</span>
+            <div>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Pro Tip: Ask Claude to Quote Evidence</h2>
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">Asking Claude to quote specific responses prevents unsupported generalizations. You see the "why" behind patterns, not just conclusions.</p>
+                <div style="background: rgba(255, 217, 61, 0.1); padding: 1rem 1.25rem; border-radius: 8px; border-left: 4px solid var(--accent-gold);">
+                    <p style="font-size: 0.95rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 0.5rem;">Key Technique</p>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Always ask: "Quote specific responses that illustrate each point."</p>
+                </div>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-label">Example Output</div>
+                <div class="prompt-text-mono" style="font-size: 0.8rem;">
+                    <span style="color: var(--accent-teal); font-weight: 600;">Pain Point #1: Setup Difficulty</span><br>
+                    <span style="color: var(--text-secondary);">- "Got stuck on setup, couldn't continue"</span><br>
+                    <span style="color: var(--text-secondary);">- "The installation steps were confusing"</span><br>
+                    <span style="color: var(--text-secondary);">- "Took 2 hours just to get started"</span><br><br>
+                    <span style="color: var(--accent-gold);">Affects: 8 of 30 learners (27%)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Sense-Check -->
+        <div class="slide" data-slide-number="12" style="text-align: center;">
+            <span class="slide-section">Section 4 - 9:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Always Sense-Check</h2>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; max-width: 700px; margin: 0 auto;">
+                <div style="background: rgba(78, 205, 196, 0.1); padding: 2rem; border-radius: 16px; border: 1px solid rgba(78, 205, 196, 0.3); flex: 1; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">&#129302;</div>
+                    <h3 style="color: var(--accent-teal); margin-bottom: 0.5rem;">Claude Sees</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Patterns in data, statistical trends, text themes</p>
+                </div>
+                <div style="font-size: 2rem; color: var(--accent-gold); font-weight: 700;">+</div>
+                <div style="background: rgba(255, 107, 107, 0.1); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255, 107, 107, 0.3); flex: 1; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">&#128100;</div>
+                    <h3 style="color: var(--accent-coral); margin-bottom: 0.5rem;">You Bring</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Context, user relationships, real-world experience</p>
+                </div>
+                <div style="font-size: 2rem; color: var(--accent-gold); font-weight: 700;">=</div>
+                <div style="background: rgba(80, 250, 123, 0.1); padding: 2rem; border-radius: 16px; border: 1px solid rgba(80, 250, 123, 0.3); flex: 1; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">&#11088;</div>
+                    <h3 style="color: var(--success); margin-bottom: 0.5rem;">Best Decision</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Data-informed, context-aware, human-verified</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Claude vs Expert -->
+        <div class="slide" data-slide-number="13" style="text-align: center;">
+            <span class="slide-section">Section 5 - 10:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">When Claude Is Enough vs. When You Need an Expert</h2>
+            <div class="split-comparison">
+                <div class="split-box claude-enough">
+                    <h3 style="color: var(--success);">Claude Is Enough For...</h3>
+                    <ul>
+                        <li>Identifying themes in user feedback</li>
+                        <li>Spotting general trends in metrics</li>
+                        <li>Quick survey analysis</li>
+                        <li>Early-stage product decisions</li>
+                        <li>Generating hypotheses to test</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--success); font-weight: 600;">Covers 90% of beginner needs</p>
+                </div>
+                <div class="split-box expert-needed">
+                    <h3 style="color: var(--accent-gold);">Get Expert Help When...</h3>
+                    <ul>
+                        <li>High-stakes financial decisions</li>
+                        <li>Statistically rigorous A/B tests</li>
+                        <li>Regulated data (medical, legal)</li>
+                        <li>Patterns are confusing/contradictory</li>
+                        <li>Compliance requirements apply</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent-gold); font-weight: 600;">The other 10% -- important but rare</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Prompt Toolkit -->
+        <div class="slide" data-slide-number="14">
+            <span class="slide-section">Section 6 - 11:30</span>
+            <h2 style="font-size: 2rem; text-align: center; margin-bottom: 2rem;">Your Data Analysis Prompt Toolkit</h2>
+            <div class="toolkit-list">
+                <div class="toolkit-item">
+                    <div class="use-case">Survey</div>
+                    <div class="prompt-text">"Analyze this user feedback and group into themes"</div>
+                </div>
+                <div class="toolkit-item">
+                    <div class="use-case">Metrics</div>
+                    <div class="prompt-text">"What trends do you see in this time-series data?"</div>
+                </div>
+                <div class="toolkit-item">
+                    <div class="use-case">Funnel</div>
+                    <div class="prompt-text">"Where are people dropping off and why?"</div>
+                </div>
+                <div class="toolkit-item">
+                    <div class="use-case">Feedback</div>
+                    <div class="prompt-text">"What are the top three pain points mentioned?"</div>
+                </div>
+                <div class="toolkit-item highlighted">
+                    <div class="use-case">Swiss Army</div>
+                    <div class="prompt-text">"Analyze this data: What are the key patterns? What's surprising? What's most important? What should I do about it?"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Recap -->
+        <div class="slide" data-slide-number="15" style="text-align: center;">
+            <span class="slide-section">Closing - 12:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Two data types:</strong> quantitative (numbers) and qualitative (words) -- Claude handles both</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>CSV is best,</strong> but tables and plain text work too</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Ask specific questions:</strong> patterns, trends, outliers, recommendations</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Ask Claude to quote evidence</strong> -- prevents unsupported generalizations</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">5</div>
+                    <p><strong>Always sense-check</strong> -- blend Claude's analysis with your own judgment</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">6</div>
+                    <p><strong>Claude covers 90%</strong> of early-stage analysis needs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Key Takeaway -->
+        <div class="slide slide-takeaway" data-slide-number="16">
+            <span class="slide-section">Closing - 12:30</span>
+            <h2>Right Questions > Statistics Knowledge</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">You don't need to understand statistics to understand your data. You just need to ask the right questions.</p>
+            <div class="takeaway-badge">Data Analysis Without the Math</div>
+        </div>
+
+        <!-- SLIDE 17: Next Steps -->
+        <div class="slide slide-next" data-slide-number="17">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 12:45</span>
+            <h2>Next: Brainstorming & Ideation</h2>
+            <p>Use Claude as a tireless brainstorming partner who never runs out of ideas</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128161;</div>
+                    <p>Watch Video 3</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128202;</div>
+                    <p>Try the Toolkit</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

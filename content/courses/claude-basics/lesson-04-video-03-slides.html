@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3: Reading Code for Non-Programmers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Hook Slide */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Code block */
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.7;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .tag { color: #ff79c6; }
+        .code-block .attr { color: #50fa7b; }
+        .code-block .value { color: #bd93f9; }
+        .code-block .func { color: #8be9fd; }
+        .code-block .component { color: #50fa7b; }
+
+        /* File Tree */
+        .file-tree {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .file-tree .folder {
+            color: var(--accent-gold);
+        }
+
+        .file-tree .file {
+            color: var(--text-secondary);
+        }
+
+        .file-tree .highlight-file {
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .file-tree .indent {
+            padding-left: 1.5rem;
+        }
+
+        .file-tree .indent2 {
+            padding-left: 3rem;
+        }
+
+        .file-tree-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-coral);
+            margin-bottom: 0.75rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Detail Slide */
+        .slide-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .detail-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-number {
+            font-size: 4rem;
+            font-weight: 700;
+            opacity: 0.3;
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+        }
+
+        .detail-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Code Anatomy */
+        .code-anatomy {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .anatomy-section {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-teal);
+        }
+
+        .anatomy-section.imports {
+            border-left-color: var(--accent-coral);
+        }
+
+        .anatomy-section.logic {
+            border-left-color: var(--accent-gold);
+        }
+
+        .anatomy-section.exports {
+            border-left-color: var(--success);
+        }
+
+        .anatomy-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .anatomy-label .label-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .anatomy-label .label-tag.import-tag {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--accent-coral);
+        }
+
+        .anatomy-label .label-tag.logic-tag {
+            background: rgba(255, 217, 61, 0.2);
+            color: var(--accent-gold);
+        }
+
+        .anatomy-label .label-tag.export-tag {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .anatomy-label .label-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .anatomy-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Safe & Danger Zones */
+        .zones-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .zone-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .zone-card.safe {
+            border-color: rgba(80, 250, 123, 0.3);
+        }
+
+        .zone-card.danger {
+            border-color: rgba(255, 85, 85, 0.3);
+        }
+
+        .zone-card .zone-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .zone-card .zone-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .zone-card.safe .zone-icon {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .zone-card.danger .zone-icon {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        .zone-card h3 {
+            font-size: 1.05rem;
+        }
+
+        .zone-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .zone-example {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.05);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+
+        .zone-example .safe-highlight {
+            background: rgba(80, 250, 123, 0.2);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: var(--success);
+        }
+
+        .zone-example .danger-highlight {
+            background: rgba(255, 85, 85, 0.2);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: var(--error);
+        }
+
+        /* Annotated Code */
+        .annotated-code {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .annotated-code .code-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.3rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .annotated-code .line-num {
+            color: var(--text-secondary);
+            opacity: 0.5;
+            width: 24px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .annotated-code .line-content {
+            flex: 1;
+        }
+
+        .annotated-code .line-annotation {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .annotation-safe {
+            background: rgba(80, 250, 123, 0.15);
+            color: var(--success);
+        }
+
+        .annotation-danger {
+            background: rgba(255, 85, 85, 0.15);
+            color: var(--error);
+        }
+
+        .annotation-info {
+            background: rgba(78, 205, 196, 0.15);
+            color: var(--accent-teal);
+        }
+
+        /* Chat Mockup */
+        .chat-mockup {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            max-width: 75%;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Demo Before/After */
+        .demo-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .demo-panel {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .demo-panel .panel-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .demo-panel .panel-label.before { color: var(--accent-coral); }
+        .demo-panel .panel-label.after { color: var(--success); }
+
+        .demo-preview {
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .demo-preview h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-preview p {
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .demo-preview .btn-mock {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Change List */
+        .change-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .change-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.05);
+            padding: 0.75rem 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .change-item .change-num {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .change-item .change-desc {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+
+        .change-item .change-type {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .change-type.text-type {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent-teal);
+        }
+
+        .change-type.color-type {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--accent-coral);
+        }
+
+        .change-type.number-type {
+            background: rgba(255, 217, 61, 0.2);
+            color: var(--accent-gold);
+        }
+
+        /* Recap Slide */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Analogy Slide */
+        .slide-analogy {
+            text-align: center;
+        }
+
+        .slide-analogy blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        /* Milestone Slide */
+        .slide-milestone {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-milestone h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-milestone .subtext {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .milestone-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 3: Reading Code for Non-Programmers</h1>
+        <p>02Ship Claude Basics Course - Lesson 4 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 4, Video 3</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder code with actual VS Code screenshots during production</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Reading Code for Non-Programmers</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 4</p>
+            <span class="badge">Code Is Just Text</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>You don't need to <em>understand</em> code to <span class="highlight-text">use it</span></h2>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem;">But learning to read it enough to make changes, spot problems, and feel confident? That's today's goal.</p>
+            <div style="display: inline-block; background: rgba(78, 205, 196, 0.2); border: 1px solid var(--accent-teal); color: var(--accent-teal); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">By the end: you'll change text and colors in a React component</div>
+        </div>
+
+        <!-- SLIDE 3: File Structure -->
+        <div class="slide slide-detail" data-slide-number="3">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <div class="detail-content">
+                <h2>Folders Are Like Filing Cabinets</h2>
+                <p>Code is organized in a folder structure. It looks complex at first, but follows logical patterns.</p>
+                <div style="margin-top: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                        <span style="color: var(--accent-coral); font-weight: 600;">src/</span>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary);">= Source code (the main drawer)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                        <span style="color: var(--accent-teal); font-weight: 600;">components/</span>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary);">= Reusable building blocks (LEGO pieces)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--accent-gold); font-weight: 600;">app/</span>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary);">= Website pages (mirrors your URLs)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-visual">
+                <div class="file-tree">
+                    <div class="file-tree-label">Project Structure</div>
+                    <div class="folder">my-project/</div>
+                    <div class="indent"><span class="highlight-file">src/</span> <span style="color: var(--accent-coral); font-size: 0.75rem;">&#8592; main code</span></div>
+                    <div class="indent2"><span class="highlight-file">app/</span> <span style="color: var(--accent-gold); font-size: 0.75rem;">&#8592; pages</span></div>
+                    <div class="indent2" style="padding-left: 4.5rem;"><span class="file">page.tsx</span></div>
+                    <div class="indent2" style="padding-left: 4.5rem;"><span class="folder">about/</span></div>
+                    <div class="indent2" style="padding-left: 4.5rem;"><span class="folder">blog/</span></div>
+                    <div class="indent2"><span class="highlight-file">components/</span> <span style="color: var(--accent-teal); font-size: 0.75rem;">&#8592; blocks</span></div>
+                    <div class="indent2" style="padding-left: 4.5rem;"><span class="file">Header.tsx</span></div>
+                    <div class="indent2" style="padding-left: 4.5rem;"><span class="file">Button.tsx</span></div>
+                    <div class="indent"><span class="file">package.json</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Three Parts of Every Code File -->
+        <div class="slide" data-slide-number="4" style="text-align: center;">
+            <span class="slide-section">Section 2 - 3:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Every Code File Has Three Parts</h2>
+            <div class="code-anatomy">
+                <div class="anatomy-section imports">
+                    <div class="anatomy-label">
+                        <span class="label-tag import-tag">1. Imports</span>
+                        <span class="label-desc">Ingredient list -- what this file needs</span>
+                    </div>
+                    <div class="anatomy-code">
+                        <span style="color: var(--keyword);">import</span> <span style="color: var(--func);">React</span> <span style="color: var(--keyword);">from</span> <span style="color: var(--string);">'react'</span>;<br>
+                        <span style="color: var(--keyword);">import</span> <span style="color: var(--func);">Button</span> <span style="color: var(--keyword);">from</span> <span style="color: var(--string);">'./Button'</span>;
+                    </div>
+                </div>
+                <div class="anatomy-section logic">
+                    <div class="anatomy-label">
+                        <span class="label-tag logic-tag">2. Logic</span>
+                        <span class="label-desc">The working instructions and what appears on screen</span>
+                    </div>
+                    <div class="anatomy-code">
+                        <span style="color: #ff79c6;">export default function</span> <span style="color: #8be9fd;">Hero</span>() {<br>
+                        &nbsp;&nbsp;<span style="color: #ff79c6;">return</span> (<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #ff79c6;">h1</span>&gt;<span style="color: #f1fa8c;">"Welcome"</span>&lt;/<span style="color: #ff79c6;">h1</span>&gt;<br>
+                        &nbsp;&nbsp;);<br>
+                        }
+                    </div>
+                </div>
+                <div class="anatomy-section exports">
+                    <div class="anatomy-label">
+                        <span class="label-tag export-tag">3. Export</span>
+                        <span class="label-desc">Label on the box -- makes it available to others</span>
+                    </div>
+                    <div class="anatomy-code">
+                        <span style="color: #ff79c6;">export default</span> <span style="color: #8be9fd;">Hero</span>;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: The Return Statement -->
+        <div class="slide slide-detail" data-slide-number="5">
+            <span class="slide-section">Section 2 - 4:30</span>
+            <div class="detail-content">
+                <h2>The Return Statement</h2>
+                <p>The <strong style="color: var(--accent-gold);">return</strong> statement is the most important part for you. It contains what actually appears on screen.</p>
+                <p>Everything inside <code style="background: rgba(255,255,255,0.1); padding: 0.15rem 0.5rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">return (...)</code> is what the user sees.</p>
+                <div style="margin-top: 1rem; background: rgba(255, 217, 61, 0.1); border: 1px solid rgba(255, 217, 61, 0.3); padding: 0.75rem 1.25rem; border-radius: 8px;">
+                    <p style="color: var(--accent-gold); font-size: 0.9rem; font-weight: 600;">return = What you see on screen</p>
+                </div>
+            </div>
+            <div class="detail-visual">
+                <div class="code-block" style="font-size: 0.8rem;">
+<span class="keyword">export default function</span> <span class="func">HeroSection</span>() {
+  <span class="comment">// Logic goes here (ignore for now)</span>
+  <span class="keyword">const</span> title = <span class="string">"Welcome"</span>;
+
+  <span class="keyword">return</span> (  <span class="comment">&#8592; THIS is what matters</span>
+    &lt;<span class="tag">section</span>&gt;
+      &lt;<span class="tag">h1</span>&gt;{title}&lt;/<span class="tag">h1</span>&gt;
+      &lt;<span class="tag">p</span>&gt;<span class="string">Build your ideas</span>&lt;/<span class="tag">p</span>&gt;
+      &lt;<span class="component">Button</span>&gt;Get Started&lt;/<span class="component">Button</span>&gt;
+    &lt;/<span class="tag">section</span>&gt;
+  );
+}
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Safe Zones Overview -->
+        <div class="slide" data-slide-number="6" style="text-align: center;">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">What You Can Safely Change</h2>
+            <div class="zones-grid">
+                <div class="zone-card safe">
+                    <div class="zone-header">
+                        <div class="zone-icon">&#10003;</div>
+                        <h3>Text in Quotes</h3>
+                    </div>
+                    <p>Content displayed to users</p>
+                    <div class="zone-example">
+                        &lt;h1&gt;<span class="safe-highlight">"Welcome to 02Ship"</span>&lt;/h1&gt;
+                    </div>
+                </div>
+                <div class="zone-card safe">
+                    <div class="zone-header">
+                        <div class="zone-icon">&#10003;</div>
+                        <h3>Numbers</h3>
+                    </div>
+                    <p>Size, spacing, timing, quantity</p>
+                    <div class="zone-example">
+                        fontSize: <span class="safe-highlight">24</span> &#8594; fontSize: <span class="safe-highlight">36</span>
+                    </div>
+                </div>
+                <div class="zone-card safe">
+                    <div class="zone-header">
+                        <div class="zone-icon">&#10003;</div>
+                        <h3>Colors</h3>
+                    </div>
+                    <p>Hex codes (#3498db) or names</p>
+                    <div class="zone-example">
+                        color: <span class="safe-highlight">"#3498db"</span> &#8594; <span class="safe-highlight">"#e67e22"</span>
+                    </div>
+                </div>
+                <div class="zone-card safe">
+                    <div class="zone-header">
+                        <div class="zone-icon">&#10003;</div>
+                        <h3>URLs and Paths</h3>
+                    </div>
+                    <p>Image sources, links, file paths</p>
+                    <div class="zone-example">
+                        src=<span class="safe-highlight">"/logo.png"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Danger Zones -->
+        <div class="slide" data-slide-number="7" style="text-align: center;">
+            <span class="slide-section">Section 4 - 7:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">What NOT to Change</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+                <div class="zone-card danger">
+                    <div class="zone-header">
+                        <div class="zone-icon">&#10007;</div>
+                        <h3>Brackets &amp; Syntax</h3>
+                    </div>
+                    <p>The grammar of code. Delete one and the file stops working.</p>
+                    <div class="zone-example">
+                        <span class="danger-highlight">{ } ( ) [ ] &lt; /&gt; ;</span>
+                    </div>
+                </div>
+                <div class="zone-card danger">
+                    <div class="zone-header">
+                        <div class="zone-icon">&#10007;</div>
+                        <h3>Imports</h3>
+                    </div>
+                    <p>Removing an import is like removing a recipe ingredient.</p>
+                    <div class="zone-example">
+                        <span class="danger-highlight">import</span> React from 'react'
+                    </div>
+                </div>
+                <div class="zone-card danger">
+                    <div class="zone-header">
+                        <div class="zone-icon">&#10007;</div>
+                        <h3>Variable Names</h3>
+                    </div>
+                    <p>Renaming breaks every reference. Like renaming your street.</p>
+                    <div class="zone-example">
+                        const <span class="danger-highlight">userName</span> = "Bob"
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--text-secondary); font-size: 1rem;">Broke something? Press <strong style="color: var(--accent-gold);">Cmd+Z / Ctrl+Z</strong> to undo</p>
+        </div>
+
+        <!-- SLIDE 8: Annotated Code Example -->
+        <div class="slide" data-slide-number="8" style="padding: 2rem 3rem;">
+            <span class="slide-section">Section 3 - 6:30</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem;">Safe vs. Danger Zones in Real Code</h2>
+            <div class="annotated-code">
+                <div class="code-line">
+                    <span class="line-num">1</span>
+                    <span class="line-content"><span style="color: #ff79c6;">import</span> <span style="color: #8be9fd;">React</span> <span style="color: #ff79c6;">from</span> <span style="color: #f1fa8c;">'react'</span>;</span>
+                    <span class="line-annotation annotation-danger">Leave alone</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">2</span>
+                    <span class="line-content"></span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">3</span>
+                    <span class="line-content"><span style="color: #ff79c6;">export default function</span> <span style="color: #8be9fd;">Hero</span>() {</span>
+                    <span class="line-annotation annotation-danger">Leave alone</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">4</span>
+                    <span class="line-content">&nbsp;&nbsp;<span style="color: #ff79c6;">return</span> (</span>
+                    <span class="line-annotation annotation-info">Start of visible content</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">5</span>
+                    <span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #ff79c6;">h1</span>&gt;<span style="color: #f1fa8c; background: rgba(80,250,123,0.15); padding: 0 0.2rem; border-radius: 2px;">Welcome to Our App</span>&lt;/<span style="color: #ff79c6;">h1</span>&gt;</span>
+                    <span class="line-annotation annotation-safe">Change text</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">6</span>
+                    <span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #ff79c6;">p</span> <span style="color: #50fa7b;">style</span>={{ <span style="color: #8be9fd;">color</span>: <span style="color: #f1fa8c; background: rgba(80,250,123,0.15); padding: 0 0.2rem; border-radius: 2px;">"#3498db"</span> }}&gt;</span>
+                    <span class="line-annotation annotation-safe">Change color</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">7</span>
+                    <span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f1fa8c; background: rgba(80,250,123,0.15); padding: 0 0.2rem; border-radius: 2px;">Get started by editing</span></span>
+                    <span class="line-annotation annotation-safe">Change text</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">8</span>
+                    <span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span style="color: #ff79c6;">p</span>&gt;</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">9</span>
+                    <span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #ff79c6;">button</span> <span style="color: #50fa7b;">style</span>={{ <span style="color: #8be9fd;">fontSize</span>: <span style="color: #bd93f9; background: rgba(80,250,123,0.15); padding: 0 0.2rem; border-radius: 2px;">24</span> }}&gt;</span>
+                    <span class="line-annotation annotation-safe">Change number</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">10</span>
+                    <span class="line-content">&nbsp;&nbsp;);</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-num">11</span>
+                    <span class="line-content">}</span>
+                    <span class="line-annotation annotation-danger">Leave alone</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Ask Claude -->
+        <div class="slide" data-slide-number="9" style="padding: 2rem 3rem;">
+            <span class="slide-section">Section 5 - 9:00</span>
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1.5rem;">Your Built-In Code Tutor</h2>
+            <div class="chat-mockup">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">What does this function do?<br><br><code style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 3px;">export default function Hero() { return (&lt;h1&gt;Welcome&lt;/h1&gt;); }</code></div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">This creates a <strong>Hero component</strong> that displays a heading saying "Welcome." It's a reusable building block. To change the heading text, just edit the text between the &lt;h1&gt; tags.</div>
+                </div>
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">How do I change the heading text in this component?</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">Find the text <strong>"Welcome"</strong> between the &lt;h1&gt; tags and replace it with whatever you'd like. For example: <code style="font-size: 0.8rem;">&lt;h1&gt;Hello from 02Ship&lt;/h1&gt;</code></div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem; color: var(--accent-teal); font-weight: 600;">When in doubt, ask Claude</p>
+        </div>
+
+        <!-- SLIDE 10: Live Demo - The Five Changes -->
+        <div class="slide" data-slide-number="10" style="text-align: center;">
+            <span class="slide-section">Section 6 - 10:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Live Demo: Five Changes</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1rem;">The golden rule: save after every change, test after every change</p>
+            <div class="change-list">
+                <div class="change-item">
+                    <div class="change-num">1</div>
+                    <div class="change-desc">Change <strong>heading text</strong>: "Welcome to Our App" &#8594; "Hello from 02Ship"</div>
+                    <span class="change-type text-type">Text</span>
+                </div>
+                <div class="change-item">
+                    <div class="change-num">2</div>
+                    <div class="change-desc">Change <strong>paragraph text</strong>: "Get started by editing..." &#8594; "Build your ideas with Claude AI"</div>
+                    <span class="change-type text-type">Text</span>
+                </div>
+                <div class="change-item">
+                    <div class="change-num">3</div>
+                    <div class="change-desc">Change <strong>background color</strong>: #3498db &#8594; #e67e22 (blue to orange)</div>
+                    <span class="change-type color-type">Color</span>
+                </div>
+                <div class="change-item">
+                    <div class="change-num">4</div>
+                    <div class="change-desc">Change <strong>button color</strong>: green &#8594; #8e44ad (purple)</div>
+                    <span class="change-type color-type">Color</span>
+                </div>
+                <div class="change-item">
+                    <div class="change-num">5</div>
+                    <div class="change-desc">Change <strong>font size</strong>: 24 &#8594; 36 (bigger heading)</div>
+                    <span class="change-type number-type">Number</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Demo - Text Change -->
+        <div class="slide slide-detail" data-slide-number="11">
+            <span class="slide-section">Section 6 - 10:30</span>
+            <div class="detail-content">
+                <h2>Changes 1 &amp; 2: Text</h2>
+                <p>Find text inside quotes. Change the words. Save. Check browser.</p>
+                <div style="margin-top: 1rem;">
+                    <div style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+                        <span style="color: var(--error); text-decoration: line-through;">"Welcome to Our App"</span><br>
+                        <span style="color: var(--success);">"Hello from 02Ship"</span>
+                    </div>
+                    <div style="font-size: 0.85rem;">
+                        <span style="color: var(--error); text-decoration: line-through;">"Get started by editing this page."</span><br>
+                        <span style="color: var(--success);">"Build your ideas with Claude AI."</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1.25rem; background: rgba(80, 250, 123, 0.1); border: 1px solid rgba(80, 250, 123, 0.3); padding: 0.75rem 1rem; border-radius: 8px;">
+                    <p style="color: var(--success); font-size: 0.9rem; font-weight: 600;">In quotes? You can change it!</p>
+                </div>
+            </div>
+            <div class="detail-visual">
+                <div class="code-block" style="font-size: 0.8rem;">
+<span class="comment">// Before:</span>
+&lt;<span class="tag">h1</span>&gt;<span style="color: var(--error); text-decoration: line-through;">Welcome to Our App</span>&lt;/<span class="tag">h1</span>&gt;
+&lt;<span class="tag">p</span>&gt;<span style="color: var(--error); text-decoration: line-through;">Get started by editing</span>&lt;/<span class="tag">p</span>&gt;
+
+<span class="comment">// After:</span>
+&lt;<span class="tag">h1</span>&gt;<span style="color: var(--success);">Hello from 02Ship</span>&lt;/<span class="tag">h1</span>&gt;
+&lt;<span class="tag">p</span>&gt;<span style="color: var(--success);">Build your ideas with Claude AI</span>&lt;/<span class="tag">p</span>&gt;
+                </div>
+                <p style="text-align: center; margin-top: 0.75rem; font-size: 0.85rem; color: var(--accent-gold);">Save: Cmd+S / Ctrl+S</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Demo - Color Change -->
+        <div class="slide slide-detail" data-slide-number="12">
+            <span class="slide-section">Section 6 - 11:15</span>
+            <div class="detail-content">
+                <h2>Changes 3 &amp; 4: Colors</h2>
+                <p>Find hex codes (# followed by 6 characters). Swap them out for new colors.</p>
+                <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: #3498db; border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--error); text-decoration: line-through;">#3498db</span>
+                    </div>
+                    <div style="display: flex; align-items: center; color: var(--accent-teal); font-size: 1.5rem;">&#8594;</div>
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: #e67e22; border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--success);">#e67e22</span>
+                    </div>
+                    <div style="width: 2rem;"></div>
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: #27ae60; border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--error); text-decoration: line-through;">#27ae60</span>
+                    </div>
+                    <div style="display: flex; align-items: center; color: var(--accent-teal); font-size: 1.5rem;">&#8594;</div>
+                    <div style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: #8e44ad; border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--success);">#8e44ad</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem;">Not sure what hex to use? Ask Claude or search "color picker" online.</p>
+            </div>
+            <div class="detail-visual">
+                <div class="code-block" style="font-size: 0.8rem;">
+<span class="comment">// Background: blue to orange</span>
+background: <span style="color: var(--error); text-decoration: line-through;">"#3498db"</span>
+background: <span style="color: var(--success);">"#e67e22"</span>
+
+<span class="comment">// Button: green to purple</span>
+background: <span style="color: var(--error); text-decoration: line-through;">"#27ae60"</span>
+background: <span style="color: var(--success);">"#8e44ad"</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Demo - Number Change -->
+        <div class="slide slide-detail" data-slide-number="13">
+            <span class="slide-section">Section 6 - 11:45</span>
+            <div class="detail-content">
+                <h2>Change 5: Numbers</h2>
+                <p>Find numbers controlling size. Change them to see the difference instantly.</p>
+                <div style="margin-top: 1rem; display: flex; gap: 2rem; align-items: flex-end;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 24px; color: var(--text-primary); margin-bottom: 0.5rem;">Hello</div>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--error);">fontSize: 24</span>
+                    </div>
+                    <div style="color: var(--accent-teal); font-size: 1.5rem; padding-bottom: 0.5rem;">&#8594;</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 36px; color: var(--text-primary); margin-bottom: 0.5rem;">Hello</div>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--success);">fontSize: 36</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem; background: rgba(255, 217, 61, 0.1); border: 1px solid rgba(255, 217, 61, 0.3); padding: 0.75rem 1rem; border-radius: 8px;">
+                    <p style="color: var(--accent-gold); font-size: 0.9rem;">Common number properties: width, height, padding, margin, fontSize, gap</p>
+                </div>
+            </div>
+            <div class="detail-visual">
+                <div class="code-block" style="font-size: 0.8rem;">
+<span class="comment">// Heading font size</span>
+&lt;<span class="tag">h1</span> <span class="attr">style</span>={{
+  fontSize: <span style="color: var(--error); text-decoration: line-through;">24</span><span style="color: var(--success);"> 36</span>,
+  padding: <span class="value">20</span>,
+  margin: <span class="value">16</span>
+}}&gt;
+  Hello from 02Ship
+&lt;/<span class="tag">h1</span>&gt;
+
+<span class="comment">// Numbers are great for experimenting</span>
+<span class="comment">// Just note the original value!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Before and After -->
+        <div class="slide" data-slide-number="14" style="text-align: center;">
+            <span class="slide-section">Section 6 - 12:00</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Before &amp; After: 5 Changes, Zero Code Written</h2>
+            <div class="demo-comparison">
+                <div class="demo-panel">
+                    <div class="panel-label before">Original</div>
+                    <div class="demo-preview" style="background: #3498db; color: white;">
+                        <h3 style="font-size: 1rem; color: white;">Welcome to Our App</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Get started by editing this page.</p>
+                        <span class="btn-mock" style="background: #27ae60; color: white; padding: 0.4rem 1rem; border-radius: 6px; display: inline-block;">Click Here</span>
+                    </div>
+                </div>
+                <div class="demo-panel">
+                    <div class="panel-label after">Customized</div>
+                    <div class="demo-preview" style="background: #e67e22; color: white;">
+                        <h3 style="font-size: 1.3rem; color: white;">Hello from 02Ship</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Build your ideas with Claude AI.</p>
+                        <span class="btn-mock" style="background: #8e44ad; color: white; padding: 0.4rem 1rem; border-radius: 6px; display: inline-block;">Click Here</span>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--accent-gold); font-weight: 600; font-size: 1.2rem;">5 changes. Zero code written. 100% yours.</p>
+        </div>
+
+        <!-- SLIDE 15: Golden Workflow -->
+        <div class="slide slide-analogy" data-slide-number="15">
+            <span class="slide-section">Section 6 - 12:15</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 2rem;">The Golden Workflow</h2>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="background: rgba(255,255,255,0.08); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; min-width: 130px;">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#128221;</div>
+                    <p style="font-size: 0.9rem; font-weight: 500;">Make a change</p>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="background: rgba(255,255,255,0.08); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; min-width: 130px;">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#128190;</div>
+                    <p style="font-size: 0.9rem; font-weight: 500;">Save the file</p>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="background: rgba(255,255,255,0.08); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; min-width: 130px;">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#127760;</div>
+                    <p style="font-size: 0.9rem; font-weight: 500;">Check browser</p>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="background: rgba(255,255,255,0.08); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; min-width: 130px;">
+                    <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#128260;</div>
+                    <p style="font-size: 0.9rem; font-weight: 500;">Repeat</p>
+                </div>
+            </div>
+            <blockquote>
+                "Save before, test after. That's the golden workflow for making changes to any code file."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 16: Lesson 4 Complete -->
+        <div class="slide slide-milestone" data-slide-number="16">
+            <span class="slide-section">Closing - 12:30</span>
+            <h2>Lesson 4 Complete!</h2>
+            <p class="subtext">You're not just directing Claude anymore -- you're working alongside it.</p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 700px; margin: 0 auto 2rem;">
+                <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 0.75rem; color: var(--accent-coral); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Video 1</div>
+                    <p style="font-size: 0.9rem;">Artifacts</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 0.75rem; color: var(--accent-teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Video 2</div>
+                    <p style="font-size: 0.9rem;">Dev Setup</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 0.75rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Video 3</div>
+                    <p style="font-size: 0.9rem;">Reading Code</p>
+                </div>
+            </div>
+            <div class="milestone-badge">You can read and modify code!</div>
+        </div>
+
+        <!-- SLIDE 17: Recap -->
+        <div class="slide slide-recap" data-slide-number="17">
+            <span class="slide-section">Closing - 12:30</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Code is just text</strong> -- words, numbers, and symbols arranged in a pattern</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Three parts:</strong> imports (top), logic (middle), exports (bottom)</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Safe zones:</strong> text in quotes, numbers, colors, URLs</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Danger zones:</strong> brackets, imports, variable names</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">5</div>
+                    <p><strong>Ask Claude</strong> -- your built-in code tutor is always available</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">6</div>
+                    <p><strong>Save, test, repeat</strong> -- the golden workflow for making changes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 18: Next Steps -->
+        <div class="slide slide-next" data-slide-number="18">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 12:45</span>
+            <h2>Next: Lesson 5 - Projects &amp; Context</h2>
+            <p>Managing projects, keeping context across conversations, and building something complex</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128194;</div>
+                    <p>Start Lesson 5</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#127912;</div>
+                    <p>Customize Code!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

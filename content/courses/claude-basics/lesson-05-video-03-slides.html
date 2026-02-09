@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3: Multi-Session Workflows: Building Across Days</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Conversation Sidebar Mockup */
+        .project-sidebar {
+            background: #12121a;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 280px;
+            overflow: hidden;
+        }
+
+        .project-sidebar .sidebar-header {
+            background: #1a1a24;
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .project-sidebar .sidebar-header h4 {
+            font-size: 0.95rem;
+            color: var(--accent-teal);
+        }
+
+        .project-sidebar .sidebar-header .new-btn {
+            font-size: 0.75rem;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .convo-list {
+            padding: 0.5rem;
+        }
+
+        .convo-item {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .convo-item.active {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .convo-item .convo-name {
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .convo-item .convo-date {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .convo-item.good .convo-name { color: var(--accent-teal); }
+        .convo-item.bad .convo-name { color: var(--error); }
+
+        /* Rule Card */
+        .rule-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .rule-card .rule-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .rule-card h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .rule-card p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Chat Messages */
+        .chat-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            max-width: 75%;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .slide-conversation {
+            padding: 2rem 3rem;
+        }
+
+        .slide-conversation h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        /* Reference Comparison */
+        .reference-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .reference-box {
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .reference-box.vague {
+            background: rgba(255, 215, 61, 0.08);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+        }
+
+        .reference-box.specific {
+            background: rgba(80, 250, 123, 0.08);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .reference-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .reference-box.vague h3 { color: var(--accent-gold); }
+        .reference-box.specific h3 { color: var(--success); }
+
+        .reference-box .example-prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        /* Decision Tree */
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .decision-question {
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .decision-branches {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .decision-branch {
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .decision-branch.continue {
+            background: rgba(78, 205, 196, 0.08);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .decision-branch.new {
+            background: rgba(255, 107, 107, 0.08);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .decision-branch h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .decision-branch.continue h3 { color: var(--accent-teal); }
+        .decision-branch.new h3 { color: var(--accent-coral); }
+
+        .decision-branch ul {
+            list-style: none;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .decision-branch li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .decision-branch li::before {
+            content: ">";
+            font-weight: 700;
+        }
+
+        .decision-branch.continue li::before { color: var(--accent-teal); }
+        .decision-branch.new li::before { color: var(--accent-coral); }
+
+        /* Day Cards for the 3-Day Demo */
+        .day-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .day-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .day-card .day-header {
+            padding: 0.75rem 1.25rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .day-card:nth-child(1) .day-header {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--accent-coral);
+        }
+
+        .day-card:nth-child(2) .day-header {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent-teal);
+        }
+
+        .day-card:nth-child(3) .day-header {
+            background: rgba(255, 215, 61, 0.2);
+            color: var(--accent-gold);
+        }
+
+        .day-card .day-body {
+            padding: 1.25rem;
+        }
+
+        .day-card .day-convo-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+        }
+
+        .day-card .day-prompt {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .day-card .day-note {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        /* Day Feature Slide (individual day details) */
+        .day-detail {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            align-items: start;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .day-detail .prompt-section {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .day-detail .prompt-section h4 {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .day-detail .prompt-section .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .day-detail .prompt-section .context-note {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            font-style: italic;
+        }
+
+        /* Cross-Reference Visual */
+        .cross-reference {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cross-ref-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .cross-ref-convo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .cross-ref-convo .convo-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 0.75rem 1.25rem;
+            flex: 1;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .cross-ref-convo .arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+            flex-shrink: 0;
+        }
+
+        .cross-ref-merge {
+            width: 60px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 0.5rem auto;
+        }
+
+        .cross-ref-result {
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Archive Visual */
+        .archive-visual {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .archive-panel {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .archive-panel .panel-header {
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .archive-panel.active .panel-header {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent-teal);
+        }
+
+        .archive-panel.archived .panel-header {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+        }
+
+        .archive-panel .panel-body {
+            padding: 0.75rem;
+            background: #1a1a24;
+        }
+
+        .archive-convo {
+            padding: 0.6rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-bottom: 0.25rem;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .archive-convo.current {
+            border-left: 3px solid var(--accent-teal);
+        }
+
+        .archive-convo.done {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        .archive-arrow {
+            font-size: 2rem;
+            color: var(--text-secondary);
+            padding-top: 3rem;
+        }
+
+        /* Recap */
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .recap-item .recap-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .recap-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recap-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Lesson Complete Banner */
+        .lesson-complete {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .lesson-complete .big-stat {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .lesson-complete .stat-label {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .video-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .video-summary-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .video-summary-item .vid-num {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .video-summary-item h4 {
+            font-size: 0.9rem;
+        }
+
+        /* Next Slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 3: Multi-Session Workflows: Building Across Days</h1>
+        <p>02Ship Claude Basics Course - Lesson 5 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 5, Video 3</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Target duration: 13 minutes (max 15 minutes)</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Multi-Session Workflows</h1>
+            <p class="subtitle">Building Across Days</p>
+            <span class="badge">02Ship Claude Basics - Lesson 5</span>
+        </div>
+
+        <!-- SLIDE 2: Hook - Real Projects Take Multiple Sessions -->
+        <div class="slide" data-slide-number="2" style="text-align: center; background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Real Projects Are Built Over <span class="highlight-text">Days, Not Minutes</span></h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 650px; margin: 0 auto 2rem;">
+                Your Project is set up. Now comes the real magic: building something across days while keeping everything organized.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem;">
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem 1.5rem; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📅</div>
+                    <p style="font-size: 0.9rem;">Day 1</p>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal); align-self: center;">&#x27A1;</div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem 1.5rem; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📅</div>
+                    <p style="font-size: 0.9rem;">Day 2</p>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal); align-self: center;">&#x27A1;</div>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1rem 1.5rem; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📅</div>
+                    <p style="font-size: 0.9rem;">Day 3</p>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal); align-self: center;">&#x27A1;</div>
+                <div style="background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 1rem 1.5rem; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚀</div>
+                    <p style="font-size: 0.9rem; color: var(--accent-teal); font-weight: 600;">Ship</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: One Feature, One Conversation -->
+        <div class="slide" data-slide-number="3">
+            <span class="slide-section">Section 1 - 0:45</span>
+            <div class="rule-card">
+                <div class="rule-icon">1:1</div>
+                <h2>One Feature = One Conversation</h2>
+                <p>Each conversation should focus on a single task. This keeps things organized, focused, and easy to find later.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Good vs Bad Naming -->
+        <div class="slide" data-slide-number="4">
+            <span class="slide-section">Section 1 - 1:30</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">Name Your Conversations Clearly</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 700px; margin: 0 auto;">
+                <div>
+                    <h3 style="color: var(--error); margin-bottom: 1rem; font-size: 1.1rem;">Bad Names</h3>
+                    <div class="project-sidebar" style="width: 100%;">
+                        <div class="convo-list">
+                            <div class="convo-item bad">
+                                <div class="convo-name">Chat 1</div>
+                                <div class="convo-date">2 days ago</div>
+                            </div>
+                            <div class="convo-item bad">
+                                <div class="convo-name">Help</div>
+                                <div class="convo-date">3 days ago</div>
+                            </div>
+                            <div class="convo-item bad">
+                                <div class="convo-name">Code</div>
+                                <div class="convo-date">4 days ago</div>
+                            </div>
+                            <div class="convo-item bad">
+                                <div class="convo-name">Untitled</div>
+                                <div class="convo-date">5 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color: var(--success); margin-bottom: 1rem; font-size: 1.1rem;">Good Names</h3>
+                    <div class="project-sidebar" style="width: 100%;">
+                        <div class="convo-list">
+                            <div class="convo-item good">
+                                <div class="convo-name">Add Contact Form</div>
+                                <div class="convo-date">2 days ago</div>
+                            </div>
+                            <div class="convo-item good">
+                                <div class="convo-name">Redesign Navigation</div>
+                                <div class="convo-date">3 days ago</div>
+                            </div>
+                            <div class="convo-item good">
+                                <div class="convo-name">Fix Course Player Bug</div>
+                                <div class="convo-date">4 days ago</div>
+                            </div>
+                            <div class="convo-item good">
+                                <div class="convo-name">Add Blog Search</div>
+                                <div class="convo-date">5 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary);">Good names = finding what you need in 2 seconds</p>
+        </div>
+
+        <!-- SLIDE 5: Referencing Previous Work -->
+        <div class="slide slide-conversation" data-slide-number="5">
+            <span class="slide-section">Section 2 - 2:30</span>
+            <h2>Reference Previous Work Naturally</h2>
+            <div class="chat-container">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Improve the header component we built last week.</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">I can see the header component from our previous conversation. It uses a responsive nav with Tailwind. Here are some improvements I'd suggest...</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--accent-teal); font-weight: 600;">No copy-pasting needed. Claude remembers within the Project.</p>
+        </div>
+
+        <!-- SLIDE 6: Vague vs Specific References -->
+        <div class="slide" data-slide-number="6">
+            <span class="slide-section">Section 2 - 3:30</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">How to Reference Effectively</h2>
+            <div class="reference-comparison">
+                <div class="reference-box vague">
+                    <h3>OK (if only one)</h3>
+                    <div class="example-prompt">
+                        "The auth system we built"
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Works if you have one auth conversation</p>
+                </div>
+                <div class="reference-box specific">
+                    <h3>Better (always clear)</h3>
+                    <div class="example-prompt">
+                        "The login form with email validation from our user authentication conversation"
+                    </div>
+                    <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-secondary);">Specific enough to find the exact context</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 1rem;">The more conversations you have, the more specific you should be.</p>
+        </div>
+
+        <!-- SLIDE 7: Picking Up Where You Left Off -->
+        <div class="slide slide-conversation" data-slide-number="7">
+            <span class="slide-section">Section 3 - 4:30</span>
+            <h2>Pick Up Where You Left Off</h2>
+            <div class="chat-container">
+                <div class="chat-message" style="justify-content: center;">
+                    <div style="background: rgba(255, 215, 61, 0.1); border: 1px solid rgba(255, 215, 61, 0.3); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; color: var(--accent-gold);">
+                        Monday: built basic structure. Closed laptop...
+                    </div>
+                </div>
+                <div class="chat-message" style="justify-content: center;">
+                    <div style="background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.3); border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem; color: var(--accent-teal);">
+                        Wednesday: reopened the same conversation
+                    </div>
+                </div>
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Let's continue. Where were we?</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">We were building the newsletter signup form for the footer. The basic HTML structure and Tailwind styling are done. Next steps: add form validation and the submit handler...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Continue vs Start New - Decision Tree -->
+        <div class="slide" data-slide-number="8">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">Continue or Start New?</h2>
+            <div class="decision-tree">
+                <div class="decision-question">Should I continue this conversation?</div>
+                <div style="display: flex; gap: 2rem; width: 100%; max-width: 600px;">
+                    <div style="flex: 1; text-align: center;">
+                        <div style="font-size: 1.5rem; color: var(--accent-teal); margin-bottom: 0.5rem;">&#x2193;</div>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <div style="font-size: 1.5rem; color: var(--accent-coral); margin-bottom: 0.5rem;">&#x2193;</div>
+                    </div>
+                </div>
+                <div class="decision-branches">
+                    <div class="decision-branch continue">
+                        <h3>Continue</h3>
+                        <ul>
+                            <li>Same feature in progress</li>
+                            <li>Conversation still manageable</li>
+                            <li>Building on previous responses</li>
+                        </ul>
+                    </div>
+                    <div class="decision-branch new">
+                        <h3>Start New</h3>
+                        <ul>
+                            <li>Different feature or topic</li>
+                            <li>Conversation got very long</li>
+                            <li>Want a fresh approach</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">Think of each conversation like a chapter in a book. New topic = new chapter.</p>
+        </div>
+
+        <!-- SLIDE 9: Three-Day Demo Overview -->
+        <div class="slide" data-slide-number="9">
+            <span class="slide-section">Section 4 - 7:00</span>
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Real Workflow: 3 Features, 3 Days</h2>
+            <div class="day-cards">
+                <div class="day-card">
+                    <div class="day-header">Day 1</div>
+                    <div class="day-body">
+                        <div class="day-convo-name">Add Newsletter Signup to Footer</div>
+                        <div class="day-prompt">"Add an email newsletter signup form to the site footer with an email input, subscribe button, and a brief message."</div>
+                        <div class="day-note">Short prompt. Project knows the rest.</div>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-header">Day 2</div>
+                    <div class="day-body">
+                        <div class="day-convo-name">Add Social Sharing to Blog Posts</div>
+                        <div class="day-prompt">"Add social media sharing buttons to blog posts. Include Twitter, LinkedIn, and copy-link. Place at bottom of each post."</div>
+                        <div class="day-note">New feature, new conversation.</div>
+                    </div>
+                </div>
+                <div class="day-card">
+                    <div class="day-header">Day 3</div>
+                    <div class="day-body">
+                        <div class="day-convo-name">Unify Newsletter and Social Styles</div>
+                        <div class="day-prompt">"Review the newsletter signup and social sharing buttons. Suggest updates so they feel like the same design system."</div>
+                        <div class="day-note">References both previous conversations!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Day 1 Detail -->
+        <div class="slide" data-slide-number="10">
+            <span class="slide-section">Section 4 - 7:30</span>
+            <h2 style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem;">Day 1: Newsletter Signup</h2>
+            <div class="day-detail">
+                <div class="project-sidebar">
+                    <div class="sidebar-header">
+                        <h4>02Ship</h4>
+                        <div class="new-btn">+ New</div>
+                    </div>
+                    <div class="convo-list">
+                        <div class="convo-item active">
+                            <div class="convo-name" style="color: var(--accent-teal);">Add Newsletter Signup</div>
+                            <div class="convo-date">Just now</div>
+                        </div>
+                        <div class="convo-item">
+                            <div class="convo-name">Previous Work...</div>
+                            <div class="convo-date">Last week</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prompt-section">
+                    <h4>Your Prompt</h4>
+                    <div class="prompt-text">
+                        I want to add an email newsletter signup form to the site footer. It should have an email input field, a subscribe button, and a brief message explaining what subscribers get. Match our existing Tailwind styling.
+                    </div>
+                    <div class="context-note">
+                        Notice: no need to explain tech stack, styling approach, or project structure. The Project already knows.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Day 2 Detail -->
+        <div class="slide" data-slide-number="11">
+            <span class="slide-section">Section 4 - 8:30</span>
+            <h2 style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem;">Day 2: Social Sharing Buttons</h2>
+            <div class="day-detail">
+                <div class="project-sidebar">
+                    <div class="sidebar-header">
+                        <h4>02Ship</h4>
+                        <div class="new-btn">+ New</div>
+                    </div>
+                    <div class="convo-list">
+                        <div class="convo-item active">
+                            <div class="convo-name" style="color: var(--accent-teal);">Add Social Sharing</div>
+                            <div class="convo-date">Just now</div>
+                        </div>
+                        <div class="convo-item">
+                            <div class="convo-name">Add Newsletter Signup</div>
+                            <div class="convo-date">Yesterday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="prompt-section">
+                    <h4>Your Prompt</h4>
+                    <div class="prompt-text">
+                        Add social media sharing buttons to blog posts. Include Twitter, LinkedIn, and a copy-link button. Place them at the bottom of each post.
+                    </div>
+                    <div class="context-note">
+                        Claude knows the blog uses MDX, knows the component structure, and knows the styling conventions. All from the Project context.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Day 3 - Cross-Reference Magic -->
+        <div class="slide" data-slide-number="12">
+            <span class="slide-section">Section 4 - 9:30</span>
+            <h2 style="text-align: center; font-size: 1.6rem; margin-bottom: 2rem;">Day 3: Connecting the Dots</h2>
+            <div class="cross-reference">
+                <div class="cross-ref-diagram">
+                    <div class="cross-ref-convo">
+                        <div class="convo-box" style="border-color: rgba(255, 107, 107, 0.3);">
+                            <span style="color: var(--accent-coral); font-weight: 600;">Day 1:</span> Newsletter Signup
+                        </div>
+                        <div class="arrow">&#x2198;</div>
+                    </div>
+                    <div class="cross-ref-result">
+                        "Review both components and suggest updates so they feel like the same design system"
+                    </div>
+                    <div class="cross-ref-convo" style="flex-direction: row-reverse;">
+                        <div class="convo-box" style="border-color: rgba(78, 205, 196, 0.3);">
+                            <span style="color: var(--accent-teal); font-weight: 600;">Day 2:</span> Social Sharing
+                        </div>
+                        <div class="arrow">&#x2197;</div>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 1rem;">Claude pulls context from both conversations and gives a unified approach.</p>
+                <p style="margin-top: 0.5rem; color: var(--accent-gold); font-weight: 600; font-size: 1.1rem;">This is the real power of Projects.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: 3 Features, 3 Days, 1 Workspace -->
+        <div class="slide" data-slide-number="13" style="text-align: center;">
+            <span class="slide-section">Section 4 - 10:30</span>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: var(--accent-coral);">3</div>
+                    <div style="font-size: 1rem; color: var(--text-secondary);">Features</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: var(--accent-teal);">3</div>
+                    <div style="font-size: 1rem; color: var(--text-secondary);">Days</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 3.5rem; font-weight: 700; color: var(--accent-gold);">1</div>
+                    <div style="font-size: 1rem; color: var(--text-secondary);">Workspace</div>
+                </div>
+            </div>
+            <p style="font-size: 1.3rem; color: var(--text-primary); max-width: 650px; margin: 0 auto 1rem;">
+                Each conversation is focused, but they all share the same context.
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 550px; margin: 0 auto;">
+                Like having a team where everyone shares the same knowledge base.
+            </p>
+        </div>
+
+        <!-- SLIDE 14: Archiving Conversations -->
+        <div class="slide" data-slide-number="14">
+            <span class="slide-section">Section 5 - 11:00</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">Keep Your Workspace Clean</h2>
+            <div class="archive-visual">
+                <div class="archive-panel active">
+                    <div class="panel-header">Active Conversations</div>
+                    <div class="panel-body">
+                        <div class="archive-convo current">Unify Newsletter and Social Styles</div>
+                        <div class="archive-convo current">Add Social Sharing</div>
+                        <div class="archive-convo current">Add Newsletter Signup</div>
+                        <div class="archive-convo done">Fix Course Player Bug</div>
+                        <div class="archive-convo done">Add Contact Form</div>
+                        <div class="archive-convo done">Redesign Navigation</div>
+                    </div>
+                </div>
+                <div class="archive-arrow">&#x27A1;</div>
+                <div class="archive-panel archived">
+                    <div class="panel-header">Archived</div>
+                    <div class="panel-body">
+                        <div class="archive-convo done">Fix Course Player Bug</div>
+                        <div class="archive-convo done">Add Contact Form</div>
+                        <div class="archive-convo done">Redesign Navigation</div>
+                        <div style="text-align: center; padding: 0.5rem; font-size: 0.75rem; color: var(--text-secondary);">Retrievable anytime</div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 1rem;">
+                Built, tested, shipped = archive it. You can always un-archive later.
+            </p>
+        </div>
+
+        <!-- SLIDE 15: Lesson 5 Complete Recap -->
+        <div class="slide" data-slide-number="15" style="text-align: center;">
+            <span class="slide-section">Closing - 12:15</span>
+            <div class="lesson-complete">
+                <div class="big-stat">Lesson 5</div>
+                <div class="stat-label">Complete!</div>
+                <div class="video-summary">
+                    <div class="video-summary-item">
+                        <div class="vid-num">Video 1</div>
+                        <h4>Why Projects Matter</h4>
+                    </div>
+                    <div class="video-summary-item">
+                        <div class="vid-num">Video 2</div>
+                        <h4>Setting Up Your Project</h4>
+                    </div>
+                    <div class="video-summary-item">
+                        <div class="vid-num">Video 3</div>
+                        <h4>Multi-Session Workflows</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Key Takeaways -->
+        <div class="slide" data-slide-number="16" style="text-align: center;">
+            <span class="slide-section">Closing - 12:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="recap-icon">🧠</div>
+                    <h4>Claude Remembers</h4>
+                    <p>Everything within a Project is accessible across conversations</p>
+                </div>
+                <div class="recap-item">
+                    <div class="recap-icon">1:1</div>
+                    <h4>One Feature Per Chat</h4>
+                    <p>Focused conversations produce better, more organized results</p>
+                </div>
+                <div class="recap-item">
+                    <div class="recap-icon">🔗</div>
+                    <h4>Reference Naturally</h4>
+                    <p>Just describe past work and Claude finds the context</p>
+                </div>
+                <div class="recap-item">
+                    <div class="recap-icon">📖</div>
+                    <h4>Chapters Not Novels</h4>
+                    <p>Continue for same feature, new chat for new topic</p>
+                </div>
+                <div class="recap-item">
+                    <div class="recap-icon">📊</div>
+                    <h4>90% Less Overhead</h4>
+                    <p>Set context once and just build</p>
+                </div>
+                <div class="recap-item">
+                    <div class="recap-icon">🗄️</div>
+                    <h4>Archive Completed Work</h4>
+                    <p>Keep your workspace clean and focused</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Next Steps -->
+        <div class="slide slide-next" data-slide-number="17">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 12:45</span>
+            <h2>Next: Lesson 6 - Analysis and Research</h2>
+            <p>Market research, competitive analysis, and planning with Claude</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">🔬</div>
+                    <p>Lesson 6</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">💬</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">🛠️</div>
+                    <p>Set Up Your Project</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

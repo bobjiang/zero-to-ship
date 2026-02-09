@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3: Conversation Flow - Building on Previous Responses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Highlight text */
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Centered slide */
+        .slide-centered {
+            text-align: center;
+        }
+
+        .slide-centered h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .slide-centered p.lead {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .floating-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Memory Comparison Slide */
+        .memory-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .memory-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .memory-box.within {
+            background: rgba(80, 250, 123, 0.08);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .memory-box.across {
+            background: rgba(255, 85, 85, 0.08);
+            border: 2px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .memory-box .memory-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .memory-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .memory-box.within h3 { color: var(--success); }
+        .memory-box.across h3 { color: var(--error); }
+
+        .memory-box p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Conversation Thread Visual */
+        .thread-visual {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .thread-visual::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-coral), var(--accent-teal), var(--success));
+        }
+
+        .thread-message {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .thread-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 0.5rem;
+            margin-left: 14px;
+            z-index: 1;
+        }
+
+        .thread-dot.user { background: var(--accent-coral); }
+        .thread-dot.claude { background: var(--accent-teal); }
+        .thread-dot.improved { background: var(--success); }
+
+        .thread-content {
+            background: rgba(255,255,255,0.05);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            flex: 1;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .thread-content .thread-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .thread-content .thread-label.user { color: var(--accent-coral); }
+        .thread-content .thread-label.claude { color: var(--accent-teal); }
+
+        /* Decision Tree */
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .decision-question {
+            background: rgba(255, 215, 61, 0.15);
+            border: 2px solid rgba(255, 215, 61, 0.3);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--accent-gold);
+        }
+
+        .decision-branches {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .decision-branch {
+            padding: 1.25rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .decision-branch.stay {
+            background: rgba(80, 250, 123, 0.08);
+            border: 1px solid rgba(80, 250, 123, 0.25);
+        }
+
+        .decision-branch.fresh {
+            background: rgba(255, 107, 107, 0.08);
+            border: 1px solid rgba(255, 107, 107, 0.25);
+        }
+
+        .decision-branch h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .decision-branch.stay h4 { color: var(--success); }
+        .decision-branch.fresh h4 { color: var(--accent-coral); }
+
+        .decision-branch p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .decision-arrow {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Reference Phrases */
+        .phrases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .phrase-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 1rem 1.25rem;
+            background: rgba(78, 205, 196, 0.08);
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            border-radius: 10px;
+            color: var(--accent-teal);
+        }
+
+        /* Cycle Diagram */
+        .cycle-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cycle-step {
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 110px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cycle-step.active {
+            background: rgba(78, 205, 196, 0.15);
+            border-color: var(--accent-teal);
+        }
+
+        .cycle-step .step-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cycle-step p {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .cycle-arrow {
+            font-size: 1.3rem;
+            color: var(--accent-teal);
+            flex-shrink: 0;
+        }
+
+        .cycle-loop {
+            margin-top: 1rem;
+            color: var(--accent-coral);
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Evaluation Checklist */
+        .eval-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .eval-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .eval-number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .eval-text {
+            flex: 1;
+            font-size: 1rem;
+        }
+
+        .eval-technique {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Diminishing Returns Graph */
+        .returns-graph {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .graph-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 1.5rem;
+            height: 200px;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            justify-content: center;
+        }
+
+        .graph-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .graph-bar {
+            width: 60px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 0.5rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .graph-bar.iter1 {
+            height: 180px;
+            background: linear-gradient(to top, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+        }
+
+        .graph-bar.iter2 {
+            height: 120px;
+            background: linear-gradient(to top, var(--accent-teal), var(--accent-gold));
+            color: var(--bg-dark);
+        }
+
+        .graph-bar.iter3 {
+            height: 60px;
+            background: rgba(78, 205, 196, 0.6);
+            color: var(--text-primary);
+        }
+
+        .graph-bar.iter4 {
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+
+        .graph-bar.iter5 {
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .graph-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Three Signs Slide */
+        .signs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .sign-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sign-number {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .sign-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .sign-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Demo Steps */
+        .demo-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .demo-step {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .demo-step-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .demo-step-num.s1 { background: var(--accent-coral); color: var(--bg-dark); }
+        .demo-step-num.s2 { background: var(--accent-teal); color: var(--bg-dark); }
+        .demo-step-num.s3 { background: var(--accent-gold); color: var(--bg-dark); }
+        .demo-step-num.s4 { background: var(--success); color: var(--bg-dark); }
+
+        .demo-step-header h4 {
+            font-size: 0.95rem;
+        }
+
+        .demo-step .technique-used {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-step p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Chat bubbles */
+        .chat-container {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user { flex-direction: row-reverse; }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
+        .chat-message.user .chat-avatar { background: var(--accent-coral); }
+        .chat-message.assistant .chat-avatar { background: var(--accent-teal); }
+
+        .chat-bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 14px;
+            max-width: 75%;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Code block */
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: #0d0d12;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .tag { color: #ff79c6; }
+        .code-block .attr { color: #50fa7b; }
+        .code-block .func { color: #8be9fd; }
+
+        /* Before/After Comparison */
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .side-panel {
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .side-panel.step1 {
+            background: rgba(255, 107, 107, 0.08);
+            border: 1px solid rgba(255, 107, 107, 0.25);
+        }
+
+        .side-panel.step4 {
+            background: rgba(80, 250, 123, 0.08);
+            border: 1px solid rgba(80, 250, 123, 0.25);
+        }
+
+        .side-panel .side-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .side-panel.step1 .side-label { color: var(--accent-coral); }
+        .side-panel.step4 .side-label { color: var(--success); }
+
+        .side-panel ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .side-panel li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .side-panel.step1 li::before {
+            content: "~";
+            color: var(--accent-coral);
+            font-weight: 600;
+        }
+
+        .side-panel.step4 li::before {
+            content: "+";
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* Lesson 3 Recap */
+        .lesson-recap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .lesson-recap-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .lesson-recap-card .video-num {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-recap-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-recap-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Save Tip */
+        .save-tip {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .save-icon {
+            font-size: 4rem;
+        }
+
+        .save-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .save-content p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Next Steps Slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Celebration badge */
+        .celebration {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 3: Conversation Flow &mdash; Building on Previous Responses</h1>
+        <p>02Ship Claude Basics Course &bull; Lesson 3 &bull; Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 3, Video 3</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>The live demo section (slides 10-14) should be paired with actual Claude.ai screen recordings</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Conversation Flow</h1>
+            <p class="subtitle">Building on Previous Responses</p>
+            <span class="badge">02Ship Claude Basics &bull; Lesson 3 &bull; Video 3</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-centered" data-slide-number="2">
+            <span class="slide-section">Opening &bull; 0:00</span>
+            <h2>The Final Piece: <span class="highlight-text">Conversation Flow</span></h2>
+            <p class="lead">You know why to iterate and you have 8 techniques. Now learn how conversations flow with Claude.</p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+                <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1F9E0;</div>
+                    <div style="font-size: 0.85rem;">Claude's Memory</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1F504;</div>
+                    <div style="font-size: 0.85rem;">Refinement Cycle</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.25rem;">&#x1F3AC;</div>
+                    <div style="font-size: 0.85rem;">Live Demo</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Memory - Within vs Across -->
+        <div class="slide slide-centered" data-slide-number="3">
+            <span class="slide-section">Section 1 &bull; 0:45</span>
+            <h2>Claude's Memory: Two Rules</h2>
+            <div class="memory-comparison">
+                <div class="memory-box within">
+                    <div class="memory-icon">&#x2705;</div>
+                    <h3>Within a Conversation</h3>
+                    <p>Claude remembers everything. Every prompt, every response, every detail you've shared. This is why iteration works so well.</p>
+                </div>
+                <div class="memory-box across">
+                    <div class="memory-icon">&#x274C;</div>
+                    <h3>Across Conversations</h3>
+                    <p>Claude starts with a blank slate. Each new conversation is like meeting Claude for the first time. No memory of yesterday.</p>
+                </div>
+            </div>
+            <div class="floating-badge" style="margin-top: 1.5rem;">One conversation = Full memory. New conversation = Fresh start.</div>
+        </div>
+
+        <!-- SLIDE 4: Conversation Thread Visual -->
+        <div class="slide" data-slide-number="4" style="padding: 2rem 3rem;">
+            <span class="slide-section">Section 1 &bull; 1:30</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">How Context Builds in a Conversation</h2>
+            <div class="thread-visual">
+                <div class="thread-message">
+                    <div class="thread-dot user"></div>
+                    <div class="thread-content">
+                        <div class="thread-label user">You (Prompt 1)</div>
+                        "Help me build a course page for my learning platform."
+                    </div>
+                </div>
+                <div class="thread-message">
+                    <div class="thread-dot claude"></div>
+                    <div class="thread-content">
+                        <div class="thread-label claude">Claude (Response 1)</div>
+                        Creates a basic course page with title and description...
+                    </div>
+                </div>
+                <div class="thread-message">
+                    <div class="thread-dot user"></div>
+                    <div class="thread-content">
+                        <div class="thread-label user">You (Prompt 2)</div>
+                        "Make the header match the style from our landing page."
+                    </div>
+                </div>
+                <div class="thread-message">
+                    <div class="thread-dot claude"></div>
+                    <div class="thread-content">
+                        <div class="thread-label claude">Claude (Response 2)</div>
+                        Updates the header using context from the whole conversation...
+                    </div>
+                </div>
+                <div class="thread-message">
+                    <div class="thread-dot improved"></div>
+                    <div class="thread-content" style="border-color: rgba(80, 250, 123, 0.3); background: rgba(80, 250, 123, 0.05);">
+                        <div class="thread-label" style="color: var(--success);">Result</div>
+                        Each response builds on everything before it.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: When to Stay vs Start Fresh -->
+        <div class="slide slide-centered" data-slide-number="5">
+            <span class="slide-section">Section 1 &bull; 2:15</span>
+            <h2>Stay or Start Fresh?</h2>
+            <div class="decision-tree">
+                <div class="decision-question">Should I keep this conversation going?</div>
+                <div class="decision-arrow">&darr;</div>
+                <div class="decision-branches">
+                    <div class="decision-branch stay">
+                        <h4>Stay in the Conversation</h4>
+                        <p>You're iterating on the same task.<br>Claude understands your context.<br>The conversation is focused.</p>
+                    </div>
+                    <div class="decision-branch fresh">
+                        <h4>Start Fresh</h4>
+                        <p>The conversation is confused or messy.<br>You're switching to a different topic.<br>You've learned what you actually need.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-badge" style="margin-top: 1rem;">One project = One conversation</div>
+        </div>
+
+        <!-- SLIDE 6: Reference Phrases -->
+        <div class="slide slide-centered" data-slide-number="6">
+            <span class="slide-section">Section 2 &bull; 3:00</span>
+            <h2>Your Conversation Shortcuts</h2>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.5rem;">Point Claude back to earlier parts of the conversation:</p>
+            <div class="phrases-grid">
+                <div class="phrase-item">"In your last answer, you mentioned..."</div>
+                <div class="phrase-item">"Based on what you suggested above..."</div>
+                <div class="phrase-item">"Using the same approach as before..."</div>
+                <div class="phrase-item">"Can you apply that same logic to..."</div>
+                <div class="phrase-item">"The code you wrote for the header..."</div>
+                <div class="phrase-item">"You mentioned X, can you go deeper?"</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1.5rem;">These save time &mdash; no need to repeat context Claude already has.</p>
+        </div>
+
+        <!-- SLIDE 7: The Refinement Cycle -->
+        <div class="slide slide-centered" data-slide-number="7">
+            <span class="slide-section">Section 3 &bull; 4:30</span>
+            <h2>The Refinement Cycle</h2>
+            <div class="cycle-diagram">
+                <div class="cycle-step">
+                    <div class="step-icon">&#x1F4DD;</div>
+                    <p>Prompt</p>
+                </div>
+                <div class="cycle-arrow">&rarr;</div>
+                <div class="cycle-step active">
+                    <div class="step-icon">&#x1F50D;</div>
+                    <p>Evaluate</p>
+                </div>
+                <div class="cycle-arrow">&rarr;</div>
+                <div class="cycle-step">
+                    <div class="step-icon">&#x1F527;</div>
+                    <p>Refine</p>
+                </div>
+                <div class="cycle-arrow">&rarr;</div>
+                <div class="cycle-step active">
+                    <div class="step-icon">&#x1F50D;</div>
+                    <p>Evaluate</p>
+                </div>
+                <div class="cycle-arrow">&rarr;</div>
+                <div class="cycle-step" style="border-color: var(--success); background: rgba(80, 250, 123, 0.1);">
+                    <div class="step-icon">&#x2705;</div>
+                    <p>Done</p>
+                </div>
+            </div>
+            <div class="cycle-loop">&#x21BA; Repeat the Evaluate &rarr; Refine loop until satisfied</div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">Evaluation is the critical step most beginners skip.</p>
+        </div>
+
+        <!-- SLIDE 8: Four Evaluation Questions -->
+        <div class="slide slide-centered" data-slide-number="8">
+            <span class="slide-section">Section 3 &bull; 5:30</span>
+            <h2>The 10-Second Evaluation</h2>
+            <div class="eval-checklist">
+                <div class="eval-item">
+                    <div class="eval-number">1</div>
+                    <div class="eval-text">Does this <strong>answer my question</strong>?</div>
+                    <div class="eval-technique" style="background: rgba(255, 107, 107, 0.2); color: var(--accent-coral);">No &rarr; Rephrase</div>
+                </div>
+                <div class="eval-item">
+                    <div class="eval-number">2</div>
+                    <div class="eval-text">Is it the <strong>right level of detail</strong>?</div>
+                    <div class="eval-technique" style="background: rgba(78, 205, 196, 0.2); color: var(--accent-teal);">No &rarr; Expand / Constrain</div>
+                </div>
+                <div class="eval-item">
+                    <div class="eval-number">3</div>
+                    <div class="eval-text">Is the <strong>format useful</strong>?</div>
+                    <div class="eval-technique" style="background: rgba(255, 215, 61, 0.2); color: var(--accent-gold);">No &rarr; Restructure</div>
+                </div>
+                <div class="eval-item">
+                    <div class="eval-number">4</div>
+                    <div class="eval-text">Would I <strong>use this as-is</strong>?</div>
+                    <div class="eval-technique" style="background: rgba(80, 250, 123, 0.2); color: var(--success);">Yes &rarr; Done!</div>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1.5rem;">This takes 10 seconds but saves minutes of aimless iteration.</p>
+        </div>
+
+        <!-- SLIDE 9: Diminishing Returns -->
+        <div class="slide slide-centered" data-slide-number="9">
+            <span class="slide-section">Section 4 &bull; 6:30</span>
+            <h2>Know When to Stop</h2>
+            <div class="returns-graph">
+                <div class="graph-bars">
+                    <div class="graph-bar-wrapper">
+                        <div class="graph-bar iter1">Big</div>
+                        <div class="graph-label">Iter 1</div>
+                    </div>
+                    <div class="graph-bar-wrapper">
+                        <div class="graph-bar iter2">Good</div>
+                        <div class="graph-label">Iter 2</div>
+                    </div>
+                    <div class="graph-bar-wrapper">
+                        <div class="graph-bar iter3">Fine</div>
+                        <div class="graph-label">Iter 3</div>
+                    </div>
+                    <div class="graph-bar-wrapper">
+                        <div class="graph-bar iter4"></div>
+                        <div class="graph-label">Iter 4</div>
+                    </div>
+                    <div class="graph-bar-wrapper">
+                        <div class="graph-bar iter5"></div>
+                        <div class="graph-label">Iter 5</div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">Improvement per iteration &uarr;</div>
+            </div>
+            <div class="floating-badge">Most tasks are done in 2-3 iterations</div>
+        </div>
+
+        <!-- SLIDE 10: Three Signs You're Done -->
+        <div class="slide slide-centered" data-slide-number="10">
+            <span class="slide-section">Section 4 &bull; 7:15</span>
+            <h2>Three Signs You're Done</h2>
+            <div class="signs-list">
+                <div class="sign-item">
+                    <div class="sign-number">1</div>
+                    <div class="sign-content">
+                        <h4>Changes are cosmetic, not substantive</h4>
+                        <p>You're tweaking word choices, not fixing real problems.</p>
+                    </div>
+                </div>
+                <div class="sign-item">
+                    <div class="sign-number">2</div>
+                    <div class="sign-content">
+                        <h4>You're going back and forth</h4>
+                        <p>You change something, then change it back. You were happy two iterations ago.</p>
+                    </div>
+                </div>
+                <div class="sign-item">
+                    <div class="sign-number">3</div>
+                    <div class="sign-content">
+                        <h4>You read it and think "I'd use this"</h4>
+                        <p>Trust that feeling. If it answers your question and you'd use it, stop iterating.</p>
+                    </div>
+                </div>
+            </div>
+            <p style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 1.5rem;">5+ iterations with no progress? Start fresh with a better prompt.</p>
+        </div>
+
+        <!-- SLIDE 11: Live Demo Setup -->
+        <div class="slide slide-centered" data-slide-number="11" style="background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);">
+            <span class="slide-section">Live Demo &bull; 8:00</span>
+            <h2>Live Demo: Rough to <span class="highlight-text">Production-Ready</span> in 4 Steps</h2>
+            <p class="lead">Building a "Lesson Complete" button for 02Ship. Watch how each iteration builds on the last using techniques from Video 2.</p>
+            <div class="demo-steps" style="margin-top: 1rem;">
+                <div class="demo-step">
+                    <div class="demo-step-header">
+                        <div class="demo-step-num s1">1</div>
+                        <h4>Initial Prompt</h4>
+                    </div>
+                    <div class="technique-used">Starting point</div>
+                    <p>Basic button that changes color when clicked. Functional but minimal.</p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-header">
+                        <div class="demo-step-num s2">2</div>
+                        <h4>Expand + Exemplify</h4>
+                    </div>
+                    <div class="technique-used">Techniques 2 + 6</div>
+                    <p>Add smooth animation and show both visual states (before/after clicking).</p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-header">
+                        <div class="demo-step-num s3">3</div>
+                        <h4>Critique</h4>
+                    </div>
+                    <div class="technique-used">Technique 8</div>
+                    <p>Claude identifies: no persistence, missing accessibility, no loading state.</p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-header">
+                        <div class="demo-step-num s4">4</div>
+                        <h4>Constrain + Restructure</h4>
+                    </div>
+                    <div class="technique-used">Techniques 5 + 3</div>
+                    <p>Fix top 2 issues: localStorage persistence and accessibility attributes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Demo Step 1 Detail -->
+        <div class="slide" data-slide-number="12" style="padding: 2rem 3rem;">
+            <span class="slide-section">Live Demo Step 1 &bull; 8:30</span>
+            <h2 style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem;">Step 1: The Initial Prompt</h2>
+            <div class="chat-container">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">I need a lesson completion button for my learning platform. When a student finishes a video, they click it and it changes to show the lesson is complete. Write this as a React component with Tailwind CSS styling.</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">
+                        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">
+                            <span style="color: #ff79c6;">function</span> <span style="color: #8be9fd;">LessonComplete</span>() {<br>
+                            &nbsp;&nbsp;<span style="color: #ff79c6;">const</span> [done, setDone] = <span style="color: #8be9fd;">useState</span>(<span style="color: #ff79c6;">false</span>);<br>
+                            &nbsp;&nbsp;<span style="color: #ff79c6;">return</span> &lt;<span style="color: #ff79c6;">button</span> <span style="color: #50fa7b;">onClick</span>=...&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{done ? <span style="color: #f1fa8c;">"Completed"</span> : <span style="color: #f1fa8c;">"Mark Complete"</span>}<br>
+                            &nbsp;&nbsp;&lt;/<span style="color: #ff79c6;">button</span>&gt;;<br>
+                            }
+                        </div>
+                        <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: var(--accent-gold);">
+                            Evaluate: Works, but basic. No animation, no persistence, minimal styling.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Demo Steps 2-4 Summary -->
+        <div class="slide" data-slide-number="13" style="padding: 2rem 3rem;">
+            <span class="slide-section">Live Demo Steps 2-4 &bull; 9:30</span>
+            <h2 style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem;">The Refinement Journey</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 700px; margin: 0 auto;">
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div class="demo-step-num s2" style="width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0;">2</div>
+                    <div style="flex: 1; padding: 0.75rem 1rem; background: rgba(78, 205, 196, 0.08); border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 10px;">
+                        <div style="font-size: 0.7rem; color: var(--accent-teal); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 0.25rem;">Expand + Exemplify</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">"Add smooth animation for the transition. Show me both states."</div>
+                        <div style="font-size: 0.8rem; color: var(--success); margin-top: 0.5rem;">+ Transition animation, clear visual states for both modes</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div class="demo-step-num s3" style="width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0;">3</div>
+                    <div style="flex: 1; padding: 0.75rem 1rem; background: rgba(255, 215, 61, 0.08); border: 1px solid rgba(255, 215, 61, 0.2); border-radius: 10px;">
+                        <div style="font-size: 0.7rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 0.25rem;">Critique</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">"Critique your own code. What's missing? What would a pro add?"</div>
+                        <div style="font-size: 0.8rem; color: var(--accent-coral); margin-top: 0.5rem;">Found: No persistence, no accessibility, no loading state</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div class="demo-step-num s4" style="width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0;">4</div>
+                    <div style="flex: 1; padding: 0.75rem 1rem; background: rgba(80, 250, 123, 0.08); border: 1px solid rgba(80, 250, 123, 0.2); border-radius: 10px;">
+                        <div style="font-size: 0.7rem; color: var(--success); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 0.25rem;">Constrain + Restructure</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">"Fix the first two issues. Keep the code concise and well-commented."</div>
+                        <div style="font-size: 0.8rem; color: var(--success); margin-top: 0.5rem;">+ localStorage persistence, accessibility attrs, clean comments</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Before/After Comparison -->
+        <div class="slide slide-centered" data-slide-number="14">
+            <span class="slide-section">Live Demo Result &bull; 11:30</span>
+            <h2>4 Steps: The Transformation</h2>
+            <div class="side-by-side">
+                <div class="side-panel step1">
+                    <div class="side-label">Step 1 (Basic)</div>
+                    <ul>
+                        <li>Simple color change on click</li>
+                        <li>No animation</li>
+                        <li>State lost on refresh</li>
+                        <li>No accessibility</li>
+                        <li>Minimal styling</li>
+                    </ul>
+                </div>
+                <div class="side-panel step4">
+                    <div class="side-label">Step 4 (Production-Ready)</div>
+                    <ul>
+                        <li>Smooth transition animation</li>
+                        <li>Clear visual state indicators</li>
+                        <li>localStorage persistence</li>
+                        <li>Accessibility attributes</li>
+                        <li>Clean, commented code</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-gold);">4</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Steps</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-gold);">~5 min</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Total Time</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-gold);">Pro</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Quality</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Save Your Work -->
+        <div class="slide slide-centered" data-slide-number="15">
+            <span class="slide-section">Section 6 &bull; 12:00</span>
+            <h2>Save Your Best Conversations</h2>
+            <div class="save-tip">
+                <div class="save-icon">&#x1F4BE;</div>
+                <div class="save-content">
+                    <h3>Your Personal Playbook</h3>
+                    <p>Copy final results to your outputs folder. Save prompts that worked well. Next time you need something similar, paste a previous result and say: "I built something like this before. Now I need a similar component for a different feature."</p>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">Save the output</div>
+                <div style="color: var(--accent-teal);">&rarr;</div>
+                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">Save the prompts</div>
+                <div style="color: var(--accent-teal);">&rarr;</div>
+                <div style="background: rgba(78, 205, 196, 0.1); padding: 0.75rem 1.25rem; border-radius: 8px; border: 1px solid rgba(78, 205, 196, 0.25); font-size: 0.9rem; color: var(--accent-teal);">Reuse for future work</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Lesson 3 Complete Recap -->
+        <div class="slide slide-centered" data-slide-number="16">
+            <span class="slide-section">Closing &bull; 12:30</span>
+            <h2>Lesson 3 Complete</h2>
+            <div class="lesson-recap">
+                <div class="lesson-recap-card">
+                    <div class="video-num">Video 1</div>
+                    <h4>Why Iterate</h4>
+                    <p>Perfect prompt is a myth. Iteration is normal, expected, and faster than perfection.</p>
+                </div>
+                <div class="lesson-recap-card">
+                    <div class="video-num">Video 2</div>
+                    <h4>8 Techniques</h4>
+                    <p>Simplify, Expand, Restructure, Combine, Constrain, Exemplify, Alternative, Critique.</p>
+                </div>
+                <div class="lesson-recap-card">
+                    <div class="video-num">Video 3</div>
+                    <h4>Conversation Flow</h4>
+                    <p>Memory, evaluation, knowing when to stop, and the full refinement cycle in action.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <div class="celebration">You have a genuine, professional-level skill.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Next Steps -->
+        <div class="slide slide-next" data-slide-number="17">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing &bull; 12:45</span>
+            <h2>Next: Lesson 4 &mdash; Artifacts &amp; Code</h2>
+            <p>Start working with real code outputs. The building gets very real.</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#x1F4BB;</div>
+                    <p>Real Code</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#x1F4AC;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#x1F3C6;</div>
+                    <p>Share Progress</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

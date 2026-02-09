@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1: Claude as Your Research Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Slide 1: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Hook slide */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-hook .hook-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .hook-stat {
+            text-align: center;
+        }
+
+        .hook-stat .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-coral);
+        }
+
+        .hook-stat .label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Before/After slide */
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .before-box, .after-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .before-box {
+            background: rgba(255, 85, 85, 0.1);
+            border: 2px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .after-box {
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .before-box h3 {
+            color: var(--error);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .after-box h3 {
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .before-box ul, .after-box ul {
+            list-style: none;
+            text-align: left;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .before-box li, .after-box li {
+            padding: 0.3rem 0;
+        }
+
+        .vs-divider {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        /* Four questions slide */
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .question-card .q-number {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-coral);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .question-card p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        /* Superpowers slide */
+        .superpowers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .superpower-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .superpower-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .superpower-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-teal);
+        }
+
+        .superpower-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Summary vs Synthesis slide */
+        .comparison-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .comparison-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .comparison-box.summarize {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .comparison-box.synthesize {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .comparison-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .comparison-box .definition {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .comparison-box .visual {
+            font-size: 0.95rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+
+        /* Workflow diagram */
+        .workflow-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem auto;
+            flex-wrap: wrap;
+        }
+
+        .workflow-step {
+            background: rgba(255,255,255,0.08);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .workflow-step .step-number {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .workflow-step .step-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .workflow-step p {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .workflow-step .step-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+            font-weight: 400;
+        }
+
+        .workflow-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+
+        /* Phase detail slide */
+        .phase-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .phase-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-content .phase-label {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .phase-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-box {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .prompt-box .prompt-label {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+
+        .prompt-box .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+        }
+
+        /* Research types grid */
+        .research-types-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .research-type-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .research-type-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .research-type-card .type-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .research-type-card .type-icon.market { background: rgba(255, 107, 107, 0.2); }
+        .research-type-card .type-icon.competitor { background: rgba(78, 205, 196, 0.2); }
+        .research-type-card .type-icon.user { background: rgba(255, 217, 61, 0.2); }
+        .research-type-card .type-icon.tech { background: rgba(80, 250, 123, 0.2); }
+
+        .research-type-card .prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Demo timeline */
+        .demo-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .demo-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .demo-step .time-badge {
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .demo-step .step-content {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            flex: 1;
+        }
+
+        .demo-step .step-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .demo-step .step-content p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Caveat box */
+        .caveat-box {
+            max-width: 700px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .caveat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .caveat-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .caveat-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .caveat-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .caveat-item.good {
+            border-color: rgba(80, 250, 123, 0.3);
+        }
+
+        .caveat-item.caution {
+            border-color: rgba(255, 217, 61, 0.3);
+        }
+
+        /* Recap grid */
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Key takeaway slide */
+        .slide-takeaway {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-takeaway h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Next slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Chat messages for demo */
+        .chat-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            max-width: 70%;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Sources flow diagram */
+        .sources-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem auto;
+        }
+
+        .source-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .source-item {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .flow-arrow-big {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        .insight-box {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .insight-box h4 {
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-box p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 1: Claude as Your Research Assistant</h1>
+        <p>02Ship Claude Basics Course - Lesson 6 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Video 1 of Lesson 6</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder screenshots with actual 02Ship and Claude.ai screenshots</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Claude as Your Research Assistant</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 6, Video 1</p>
+            <span class="badge">Research in Minutes, Not Days</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>What if you could research an entire market in <span class="highlight-text">under ten minutes</span>?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 0 auto;">Before AI, this kind of research meant hiring a consultant or spending days doing it yourself.</p>
+            <div class="hook-stats">
+                <div class="hook-stat">
+                    <div class="number">10</div>
+                    <div class="label">Minutes of research</div>
+                </div>
+                <div class="hook-stat">
+                    <div class="number">4</div>
+                    <div class="label">Phase workflow</div>
+                </div>
+                <div class="hook-stat">
+                    <div class="number">1</div>
+                    <div class="label">Clear report</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Why Research Matters -->
+        <div class="slide" data-slide-number="3" style="text-align: center;">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 2rem;">Why Research Matters for Product Building</h2>
+            <div class="before-after">
+                <div class="before-box">
+                    <h3>Without Research</h3>
+                    <ul>
+                        <li>Build something nobody wants</li>
+                        <li>Discover competitors too late</li>
+                        <li>Waste months of effort</li>
+                        <li>Guess at user needs</li>
+                    </ul>
+                </div>
+                <div class="vs-divider">VS</div>
+                <div class="after-box">
+                    <h3>With Research</h3>
+                    <ul>
+                        <li>Validate before building</li>
+                        <li>Know the competitive landscape</li>
+                        <li>Build with confidence</li>
+                        <li>Understand real user needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Four Critical Questions -->
+        <div class="slide" data-slide-number="4" style="text-align: center;">
+            <span class="slide-section">Section 1 - 1:45</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Four Critical Questions Research Answers</h2>
+            <div class="questions-grid">
+                <div class="question-card">
+                    <div class="q-number">1</div>
+                    <p><strong>Who are my users?</strong><br><span style="color: var(--text-secondary); font-size: 0.9rem;">Understanding who you are building for</span></p>
+                </div>
+                <div class="question-card">
+                    <div class="q-number">2</div>
+                    <p><strong>What do they actually need?</strong><br><span style="color: var(--text-secondary); font-size: 0.9rem;">Real needs, not assumptions</span></p>
+                </div>
+                <div class="question-card">
+                    <div class="q-number">3</div>
+                    <p><strong>Who else is solving this?</strong><br><span style="color: var(--text-secondary); font-size: 0.9rem;">Knowing the competition</span></p>
+                </div>
+                <div class="question-card">
+                    <div class="q-number">4</div>
+                    <p><strong>What makes my approach different?</strong><br><span style="color: var(--text-secondary); font-size: 0.9rem;">Your unique value proposition</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Claude's Research Superpowers -->
+        <div class="slide" data-slide-number="5" style="text-align: center;">
+            <span class="slide-section">Section 2 - 2:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Claude's Research Superpowers</h2>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem;">Google gives you links. Claude gives you <em>understanding</em>.</p>
+            <div class="superpowers-grid">
+                <div class="superpower-card">
+                    <div class="icon">&#9889;</div>
+                    <h3>Speed</h3>
+                    <p>Analyze multiple sources in seconds instead of hours</p>
+                </div>
+                <div class="superpower-card">
+                    <div class="icon">&#128279;</div>
+                    <h3>Synthesis</h3>
+                    <p>Connect ideas across sources into a coherent picture</p>
+                </div>
+                <div class="superpower-card">
+                    <div class="icon">&#128269;</div>
+                    <h3>Pattern-Finding</h3>
+                    <p>Spot themes, contradictions, and gaps you might miss</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Summarize vs Synthesize -->
+        <div class="slide" data-slide-number="6" style="text-align: center;">
+            <span class="slide-section">Section 2 - 3:15</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">The Key Distinction</h2>
+            <div class="comparison-boxes">
+                <div class="comparison-box summarize">
+                    <h3 style="color: var(--accent-coral);">Summarize</h3>
+                    <p class="definition">Make shorter</p>
+                    <div class="visual">
+                        <p style="color: var(--text-secondary);">5 articles &#8594; 5 shorter versions</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">Each source compressed separately</p>
+                    </div>
+                </div>
+                <div class="comparison-box synthesize">
+                    <h3 style="color: var(--accent-teal);">Synthesize</h3>
+                    <p class="definition">Connect the dots</p>
+                    <div class="visual">
+                        <p style="color: var(--text-secondary);">5 articles &#8594; 1 unified insight</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">Patterns and themes across all sources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Four-Phase Workflow Overview -->
+        <div class="slide" data-slide-number="7" style="text-align: center;">
+            <span class="slide-section">Section 3 - 4:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">The Four-Phase Research Workflow</h2>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.5rem;">A structured process that works every time</p>
+            <div class="workflow-flow">
+                <div class="workflow-step">
+                    <div class="step-number">Phase 1</div>
+                    <div class="step-icon">&#128218;</div>
+                    <p>Gather</p>
+                    <div class="step-desc">Find 3-5 sources</div>
+                </div>
+                <div class="workflow-arrow">&#8594;</div>
+                <div class="workflow-step">
+                    <div class="step-number">Phase 2</div>
+                    <div class="step-icon">&#128196;</div>
+                    <p>Summarize</p>
+                    <div class="step-desc">Key points per source</div>
+                </div>
+                <div class="workflow-arrow">&#8594;</div>
+                <div class="workflow-step">
+                    <div class="step-number">Phase 3</div>
+                    <div class="step-icon">&#128161;</div>
+                    <p>Synthesize</p>
+                    <div class="step-desc">Find patterns & themes</div>
+                </div>
+                <div class="workflow-arrow">&#8594;</div>
+                <div class="workflow-step">
+                    <div class="step-number">Phase 4</div>
+                    <div class="step-icon">&#127919;</div>
+                    <p>Insights</p>
+                    <div class="step-desc">Actionable takeaways</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Phase Details - Gather & Summarize -->
+        <div class="slide phase-detail" data-slide-number="8">
+            <span class="slide-section">Section 3 - 4:30</span>
+            <div class="phase-content">
+                <div class="phase-label">Phases 1 & 2</div>
+                <h2>Gather & Summarize</h2>
+                <p><strong>Gather:</strong> Find 3-5 articles, reports, blog posts, or Reddit threads. Copy key paragraphs into Claude -- it cannot browse the web.</p>
+                <p><strong>Summarize:</strong> Ask Claude to summarize each source with a specific focus so the summaries are useful, not generic.</p>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-label">Example Prompt</div>
+                <div class="prompt-text">
+                    "Summarize each of these sources in 3-5 bullet points, focusing on <span style="color: var(--accent-gold);">user adoption trends</span>."
+                </div>
+                <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(255, 217, 61, 0.1); border-radius: 8px; font-size: 0.85rem; color: var(--accent-gold);">
+                    Key: Tell Claude WHAT to focus on. That focus makes summaries useful.
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Phase Details - Synthesize & Insights -->
+        <div class="slide phase-detail" data-slide-number="9">
+            <span class="slide-section">Section 3 - 5:15</span>
+            <div class="phase-content">
+                <div class="phase-label">Phases 3 & 4</div>
+                <h2>Synthesize & Insights</h2>
+                <p><strong>Synthesize:</strong> This is where the magic happens. Claude finds common themes, disagreements, and gaps across your sources.</p>
+                <p><strong>Insights:</strong> Ask for actionable takeaways -- not just understanding, but "what should I do about it?"</p>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-label">Synthesis Prompt</div>
+                <div class="prompt-text">
+                    "Synthesize these summaries. What are the <span style="color: var(--accent-teal);">common themes</span>? Where do sources <span style="color: var(--accent-coral);">disagree</span>? What's <span style="color: var(--accent-gold);">missing</span>?"
+                </div>
+                <div style="margin-top: 1rem;">
+                    <div class="prompt-label">Insights Prompt</div>
+                    <div class="prompt-text">
+                        "What are the top 3 insights for someone building a <span style="color: var(--accent-gold);">learning platform for beginners</span>? What should I do next?"
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Four Types of Research -->
+        <div class="slide" data-slide-number="10" style="text-align: center;">
+            <span class="slide-section">Section 4 - 6:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Research Prompts for Different Situations</h2>
+            <div class="research-types-grid">
+                <div class="research-type-card">
+                    <h3><span class="type-icon market">&#128200;</span> Market Research</h3>
+                    <div class="prompt">"Based on these articles about the online education market, what's the market size, who are the main players, and what trends should I pay attention to?"</div>
+                </div>
+                <div class="research-type-card">
+                    <h3><span class="type-icon competitor">&#9878;&#65039;</span> Competitor Research</h3>
+                    <div class="prompt">"Create a comparison table showing pricing, features, target audience, strengths, and weaknesses. Then tell me where the gap is."</div>
+                </div>
+                <div class="research-type-card">
+                    <h3><span class="type-icon user">&#128101;</span> User Research</h3>
+                    <div class="prompt">"What are their top frustrations? What do they wish existed? What language do they use to describe their problems?"</div>
+                </div>
+                <div class="research-type-card">
+                    <h3><span class="type-icon tech">&#128736;&#65039;</span> Technical Research</h3>
+                    <div class="prompt">"What are the pros and cons for a beginner-focused learning platform? What alternatives should I consider?"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Synthesis Visual -->
+        <div class="slide" data-slide-number="11" style="text-align: center;">
+            <span class="slide-section">Section 4 - 7:00</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">How Synthesis Works Visually</h2>
+            <div class="sources-flow">
+                <div class="source-group">
+                    <div class="source-item">Article: Ed-Tech Trends</div>
+                    <div class="source-item">Report: AI Adoption</div>
+                    <div class="source-item">Reddit: User Frustrations</div>
+                    <div class="source-item">Blog: Platform Comparison</div>
+                </div>
+                <div class="flow-arrow-big">&#8594;</div>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: center;">
+                    <div style="font-size: 2.5rem;">&#129302;</div>
+                    <div style="font-size: 0.85rem; color: var(--accent-teal); font-weight: 600;">CLAUDE</div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">Patterns + Themes</div>
+                </div>
+                <div class="flow-arrow-big">&#8594;</div>
+                <div class="insight-box">
+                    <h4>Unified Insight</h4>
+                    <p>"Most platforms assume coding knowledge. Growing audience of non-technical builders. Gap: beginner-first AI platform."</p>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem; font-style: italic;">Multiple sources become one coherent story</p>
+        </div>
+
+        <!-- SLIDE 12: Live Demo Timeline -->
+        <div class="slide" data-slide-number="12">
+            <span class="slide-section">Section 5 - 7:30</span>
+            <h2 style="font-size: 2rem; text-align: center; margin-bottom: 2rem;">Live Demo: Research in 10 Minutes</h2>
+            <div class="demo-timeline">
+                <div class="demo-step">
+                    <div class="time-badge">7:30</div>
+                    <div class="step-content">
+                        <h4>Step 1: Gather Sources</h4>
+                        <p>Paste 2-3 pre-prepared source excerpts about online education and AI tools</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">8:00</div>
+                    <div class="step-content">
+                        <h4>Step 2: Summarize</h4>
+                        <p>"Summarize each source in 3-5 bullet points, focusing on what this means for a learning platform"</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">8:45</div>
+                    <div class="step-content">
+                        <h4>Step 3: Synthesize</h4>
+                        <p>"What are the common themes? Where do sources disagree? What's missing?"</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">9:30</div>
+                    <div class="step-content">
+                        <h4>Step 4: Extract Insights</h4>
+                        <p>"What are the top 3 insights? What should I prioritize, and what should I avoid?"</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">10:15</div>
+                    <div class="step-content">
+                        <h4>Step 5: Wrap-Up</h4>
+                        <p>Review the full research output, save to workspace, verify key facts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Important Caveats -->
+        <div class="slide" data-slide-number="13" style="text-align: center;">
+            <span class="slide-section">Section 5 - 10:15</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Important Caveats</h2>
+            <div class="caveat-box">
+                <div class="caveat-item good">
+                    <div class="icon">&#9989;</div>
+                    <h3 style="color: var(--success);">Claude Excels At</h3>
+                    <p>Pattern recognition, synthesis, theme identification, connecting ideas across sources</p>
+                </div>
+                <div class="caveat-item caution">
+                    <div class="icon">&#9888;&#65039;</div>
+                    <h3 style="color: var(--accent-gold);">Always Verify</h3>
+                    <p>Specific numbers, dates, statistics, and factual claims. Claude's knowledge has a cutoff date.</p>
+                </div>
+                <div class="caveat-item good">
+                    <div class="icon">&#128218;</div>
+                    <h3 style="color: var(--success);">You Provide</h3>
+                    <p>The source material. Claude cannot browse the internet -- you paste content in for analysis.</p>
+                </div>
+                <div class="caveat-item caution">
+                    <div class="icon">&#128161;</div>
+                    <h3 style="color: var(--accent-gold);">Best Practice</h3>
+                    <p>Use Claude for patterns and insights, then spot-check the critical facts yourself.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Recap -->
+        <div class="slide" data-slide-number="14" style="text-align: center;">
+            <span class="slide-section">Closing - 11:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Research prevents wasted time</strong> -- understand the market before you build</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Four-phase workflow:</strong> Gather, Summarize, Synthesize, Extract Insights</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Claude cannot browse the web</strong> -- you paste content in, it analyzes</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Synthesize, don't just summarize</strong> -- connecting dots is the real value</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">5</div>
+                    <p><strong>Always verify key facts</strong> -- Claude is great for patterns, spot-check specifics</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">6</div>
+                    <p><strong>Anyone can do quality research</strong> -- you don't need to be a professional</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Key Takeaway -->
+        <div class="slide slide-takeaway" data-slide-number="15">
+            <span class="slide-section">Closing - 11:30</span>
+            <h2>Synthesize, Don't Just Summarize</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">The difference between getting a shorter version of what you already read and getting genuine new understanding.</p>
+            <div class="takeaway-badge">Research in Minutes, Not Days</div>
+        </div>
+
+        <!-- SLIDE 16: Next Steps -->
+        <div class="slide slide-next" data-slide-number="16">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 11:45</span>
+            <h2>Next: Data Analysis for Non-Analysts</h2>
+            <p>Turn raw data into clear insights -- no statistics required</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128202;</div>
+                    <p>Watch Video 2</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128221;</div>
+                    <p>Try the Workflow</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

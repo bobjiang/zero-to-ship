@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2: Setup Checklist: Accounts, Workspace, and Safety Basics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-gold) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--bg-dark);
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            color: var(--bg-dark);
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Slide: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-coral);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Slide: Hook */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-hook p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .checklist-preview {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .checklist-preview-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .checklist-preview-item .icon {
+            font-size: 1.5rem;
+        }
+
+        .checklist-preview-item span {
+            font-weight: 500;
+        }
+
+        /* Slide: Account Setup */
+        .slide-account {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .account-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .account-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .browser-mockup {
+            background: #252530;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .browser-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27ca40; }
+
+        .browser-url {
+            margin-left: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .browser-screen {
+            background: linear-gradient(135deg, #2a2a3a, #1a1a24);
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent-teal);
+        }
+
+        .steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .steps-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* Slide: Pro Plan */
+        .slide-pro {
+            text-align: center;
+        }
+
+        .slide-pro h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .plan-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .plan-card.free {
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .plan-card.pro {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.15);
+        }
+
+        .plan-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-card .price {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: left;
+        }
+
+        .plan-card ul li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .plan-card.free .recommended {
+            display: inline-block;
+            background: var(--success);
+            color: var(--bg-dark);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Slide: Workspace */
+        .slide-workspace {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .workspace-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .workspace-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .folder-tree {
+            background: #0d0d12;
+            border-radius: 12px;
+            padding: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            line-height: 2;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .folder-tree .folder {
+            color: var(--accent-gold);
+        }
+
+        .folder-tree .subfolder {
+            color: var(--accent-teal);
+        }
+
+        .folder-tree .comment {
+            color: #6272a4;
+            font-size: 0.85rem;
+        }
+
+        /* Slide: Saving Work */
+        .slide-saving {
+            text-align: center;
+        }
+
+        .slide-saving h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .saving-tips {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .saving-tip {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .saving-tip .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .saving-tip h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .saving-tip p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Golden Rule */
+        .slide-golden-rule {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-golden-rule h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .golden-rule-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .slide-golden-rule .explanation {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Slide: API Keys */
+        .slide-api-keys {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .api-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .api-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .api-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .api-key-example {
+            background: #0d0d12;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            color: var(--error);
+            word-break: break-all;
+        }
+
+        .api-rules {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .api-rules li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .api-rules .status {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .api-rules .status.no {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        .warning-box {
+            background: rgba(255, 85, 85, 0.1);
+            border: 1px solid rgba(255, 85, 85, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 0.95rem;
+            color: var(--error);
+            font-weight: 500;
+        }
+
+        /* Slide: Checklist */
+        .slide-checklist {
+            text-align: center;
+        }
+
+        .slide-checklist h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-checklist .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+
+        .checklist-item .number {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .checklist-item span {
+            font-size: 1.05rem;
+        }
+
+        /* Slide: Recap */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .recap-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .recap-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recap-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-gold) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            color: var(--bg-dark);
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+            color: var(--bg-dark);
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* Instructions */
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 2: Setup Checklist: Accounts, Workspace & Safety</h1>
+        <p>02Ship Claude Basics Course - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts from your shooting guide</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder screenshots with actual Claude.ai and OS screenshots</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Setup Checklist</h1>
+            <p class="subtitle">Accounts, Workspace & Safety Basics</p>
+            <span class="badge">02Ship Claude Basics - Lesson 1</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>You only need <span class="highlight-text">one thing</span> to get started</h2>
+            <p>Before we build anything, let's get your workspace ready. It's simpler than you think.</p>
+            <div class="checklist-preview">
+                <div class="checklist-preview-item">
+                    <span class="icon">1</span>
+                    <span>Account</span>
+                </div>
+                <div class="checklist-preview-item">
+                    <span class="icon">2</span>
+                    <span>Workspace</span>
+                </div>
+                <div class="checklist-preview-item">
+                    <span class="icon">3</span>
+                    <span>Safety</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Create Your Account -->
+        <div class="slide slide-account" data-slide-number="3">
+            <span class="slide-section">Section 1 - 0:30</span>
+            <div class="account-content">
+                <h2>Step 1: Create Your Claude Account</h2>
+                <p>Head to claude.ai and sign up. It's free to start and takes less than a minute.</p>
+                <ul class="steps-list">
+                    <li><span class="step-number">1</span> Go to claude.ai</li>
+                    <li><span class="step-number">2</span> Click "Sign Up"</li>
+                    <li><span class="step-number">3</span> Use email or Google account</li>
+                    <li><span class="step-number">4</span> You're in!</li>
+                </ul>
+            </div>
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <span class="browser-url">claude.ai</span>
+                </div>
+                <div class="browser-screen">
+                    [Claude.ai Sign-Up Page]
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Claude Pro (Optional) -->
+        <div class="slide slide-pro" data-slide-number="4">
+            <span class="slide-section">Section 1 - 1:30</span>
+            <h2>Free vs. Pro: Which Do You Need?</h2>
+            <div class="plan-comparison">
+                <div class="plan-card free">
+                    <h3>Free Plan</h3>
+                    <p class="price">$0 / month</p>
+                    <ul>
+                        <li>Access to Claude</li>
+                        <li>Standard message limits</li>
+                        <li>Enough for this course</li>
+                    </ul>
+                    <span class="recommended">Start here</span>
+                </div>
+                <div class="plan-card pro">
+                    <h3>Claude Pro</h3>
+                    <p class="price">$20 / month</p>
+                    <ul>
+                        <li>More messages per day</li>
+                        <li>Access to latest models</li>
+                        <li>Upgrade later if needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Workspace Setup -->
+        <div class="slide slide-workspace" data-slide-number="5">
+            <span class="slide-section">Section 2 - 2:30</span>
+            <div class="workspace-content">
+                <h2>Step 2: Set Up Your Workspace</h2>
+                <p>Create a simple folder structure on your computer. Think of it like setting up a desk before you start working.</p>
+            </div>
+            <div class="folder-tree">
+                <span class="folder">my-ai-projects/</span><br>
+                &nbsp;&nbsp;<span class="subfolder">prompts/</span> <span class="comment">&nbsp;# what you type</span><br>
+                &nbsp;&nbsp;<span class="subfolder">outputs/</span> <span class="comment">&nbsp;# what Claude gives back</span><br>
+                &nbsp;&nbsp;<span class="subfolder">projects/</span> <span class="comment"># your actual apps</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Saving Your Work -->
+        <div class="slide slide-saving" data-slide-number="6">
+            <span class="slide-section">Section 2 - 3:45</span>
+            <h2>Save Your Prompts</h2>
+            <div class="saving-tips">
+                <div class="saving-tip">
+                    <div class="icon">1</div>
+                    <h3>Copy Before Sending</h3>
+                    <p>Save your prompt to a text file before you send it to Claude</p>
+                </div>
+                <div class="saving-tip">
+                    <div class="icon">2</div>
+                    <h3>Name Descriptively</h3>
+                    <p>e.g., landing-page-prompt-v1.txt</p>
+                </div>
+                <div class="saving-tip">
+                    <div class="icon">3</div>
+                    <h3>Build a Library</h3>
+                    <p>Good prompts are reusable. Future you will thank you.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Golden Rule -->
+        <div class="slide slide-golden-rule" data-slide-number="7">
+            <span class="slide-section">Section 3 - 5:00</span>
+            <h2>The Golden Rule of AI Code</h2>
+            <div class="golden-rule-badge">Read Before You Run</div>
+            <p class="explanation">You don't need to understand every line. Just look for things that seem off: file deletions, unknown network requests, or password prompts. When in doubt, ask Claude to explain.</p>
+        </div>
+
+        <!-- SLIDE 8: API Keys -->
+        <div class="slide slide-api-keys" data-slide-number="8">
+            <span class="slide-section">Section 3 - 6:00</span>
+            <div class="api-content">
+                <h2>Protect Your API Keys</h2>
+                <p>API keys are like passwords for services. If someone gets yours, they can use your account and charge you money.</p>
+                <div class="warning-box">If Claude ever asks for your password, something is wrong. Claude doesn't need your passwords to help you.</div>
+            </div>
+            <div class="api-visual">
+                <div class="api-key-example">
+                    sk-ant-xxxxx-XXXXXXXXXX<br>
+                    <span style="color: var(--text-secondary); font-size: 0.8rem;">[Never share this publicly]</span>
+                </div>
+                <ul class="api-rules">
+                    <li>
+                        <span class="status no">X</span>
+                        <span>Don't share on GitHub or forums</span>
+                    </li>
+                    <li>
+                        <span class="status no">X</span>
+                        <span>Don't paste into screenshots</span>
+                    </li>
+                    <li>
+                        <span class="status no">X</span>
+                        <span>Don't paste into Claude conversations</span>
+                    </li>
+                    <li>
+                        <span class="status no">X</span>
+                        <span>If leaked, revoke immediately</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Beginner Code Review Checklist -->
+        <div class="slide slide-checklist" data-slide-number="9">
+            <span class="slide-section">Section 3 - 6:45</span>
+            <h2>Beginner Code Review Checklist</h2>
+            <p class="subtitle">You don't need to be a security expert. Just use common sense.</p>
+            <div class="checklist-items">
+                <div class="checklist-item">
+                    <span class="number">1</span>
+                    <span>Does Claude's explanation match what you asked for?</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="number">2</span>
+                    <span>Are there file operations you didn't request?</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="number">3</span>
+                    <span>Does the code reference websites or services you didn't mention?</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="number">4</span>
+                    <span>When in doubt: "Can you explain what this code does step by step?"</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Recap -->
+        <div class="slide slide-recap" data-slide-number="10">
+            <span class="slide-section">Closing - 7:30</span>
+            <h2>Setup Complete!</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="icon">1</div>
+                    <h3>Claude Account</h3>
+                    <p>Free plan is all you need to start</p>
+                </div>
+                <div class="recap-item">
+                    <div class="icon">2</div>
+                    <h3>Workspace Ready</h3>
+                    <p>Three folders: prompts, outputs, projects</p>
+                </div>
+                <div class="recap-item">
+                    <div class="icon">3</div>
+                    <h3>Safety Habits</h3>
+                    <p>Read before you run. Protect your keys.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Next Steps -->
+        <div class="slide slide-next" data-slide-number="11">
+            <span class="slide-section" style="color: rgba(15,15,20,0.5);">Closing - 7:45</span>
+            <h2>Next: Your First Build Prompt</h2>
+            <p>You'll go from an idea to a starter app plan in one conversation</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">1</div>
+                    <p>Watch Video 3</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">2</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">3</div>
+                    <p>Try Lesson 1</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

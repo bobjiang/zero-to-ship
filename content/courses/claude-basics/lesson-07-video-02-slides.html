@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2: Build Workflow: From Prompt to Production Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Title slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Five-phase pipeline */
+        .slide-pipeline {
+            text-align: center;
+        }
+
+        .slide-pipeline h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .pipeline {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .pipeline-phase {
+            flex: 1;
+            padding: 1.5rem 0.75rem;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .pipeline-phase:first-child {
+            border-radius: 12px 0 0 12px;
+        }
+
+        .pipeline-phase:last-child {
+            border-radius: 0 12px 12px 0;
+        }
+
+        .pipeline-phase .phase-num {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .pipeline-phase .phase-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .pipeline-phase .phase-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .pipeline-phase:nth-child(1) { background: rgba(255, 107, 107, 0.12); }
+        .pipeline-phase:nth-child(1) .phase-num { color: var(--accent-coral); }
+        .pipeline-phase:nth-child(2) { background: rgba(78, 205, 196, 0.12); }
+        .pipeline-phase:nth-child(2) .phase-num { color: var(--accent-teal); }
+        .pipeline-phase:nth-child(3) { background: rgba(255, 215, 61, 0.12); }
+        .pipeline-phase:nth-child(3) .phase-num { color: var(--accent-gold); }
+        .pipeline-phase:nth-child(4) { background: rgba(80, 250, 123, 0.12); }
+        .pipeline-phase:nth-child(4) .phase-num { color: var(--success); }
+        .pipeline-phase:nth-child(5) { background: rgba(189, 147, 249, 0.12); }
+        .pipeline-phase:nth-child(5) .phase-num { color: #bd93f9; }
+
+        /* Phase detail slide */
+        .slide-phase-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .phase-content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-content .phase-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .phase-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .phase-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Chat interface mockup */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            max-width: 80%;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Terminal mockup */
+        .terminal {
+            background: #0d0d12;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .terminal-bar {
+            background: #1a1a24;
+            padding: 0.5rem 1rem;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca40; }
+
+        .terminal-body {
+            padding: 1rem 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .terminal-body .prompt { color: var(--accent-teal); }
+        .terminal-body .cmd { color: var(--text-primary); }
+        .terminal-body .output { color: var(--text-secondary); }
+        .terminal-body .success { color: var(--success); }
+
+        /* Code block */
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.5;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .tag { color: #ff79c6; }
+        .code-block .attr { color: #50fa7b; }
+        .code-block .folder { color: var(--accent-gold); }
+        .code-block .file { color: var(--text-secondary); }
+
+        /* Browser mockup */
+        .browser-mockup {
+            background: #252530;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .browser-bar {
+            display: flex;
+            gap: 6px;
+            padding: 0.75rem 1rem;
+            background: #1a1a24;
+            align-items: center;
+        }
+
+        .browser-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .browser-dot.red { background: #ff5f56; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #27ca40; }
+
+        .browser-url {
+            margin-left: 12px;
+            background: rgba(255,255,255,0.08);
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .browser-content {
+            padding: 1.5rem;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .browser-content .page-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .browser-content .page-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .browser-content .page-btn {
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* Iteration comparison slide */
+        .slide-iteration-demo {
+            text-align: center;
+        }
+
+        .slide-iteration-demo h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .iteration-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .iteration-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .iteration-card .iter-header {
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .iteration-card:nth-child(1) .iter-header {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--accent-coral);
+        }
+
+        .iteration-card:nth-child(2) .iter-header {
+            background: rgba(255, 215, 61, 0.2);
+            color: var(--accent-gold);
+        }
+
+        .iteration-card:nth-child(3) .iter-header {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .iteration-card .iter-body {
+            padding: 1.25rem;
+        }
+
+        .iteration-card .iter-label {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .iteration-card .iter-prompt {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .iteration-card .iter-result {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        /* Polish checklist slide */
+        .slide-checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .checklist-content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .checklist-content .phase-tag {
+            display: inline-block;
+            background: rgba(189, 147, 249, 0.2);
+            color: #bd93f9;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .checklist-content p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .checklist-visual {
+            background: #1a1a24;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .checklist-visual h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .check-item .check-box {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        /* Roadblocks slide */
+        .slide-roadblocks {
+            text-align: center;
+        }
+
+        .slide-roadblocks h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .roadblocks-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .roadblock-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+
+        .roadblock-card .problem {
+            color: var(--error);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .roadblock-card .solution {
+            color: var(--success);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Recap slide */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-phases {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            flex-wrap: wrap;
+        }
+
+        .recap-phase {
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .recap-phase .phase-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .recap-phase .phase-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .recap-arrow {
+            font-size: 1.2rem;
+            color: var(--accent-teal);
+        }
+
+        .recap-note {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Next slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Key message callout */
+        .callout-box {
+            background: rgba(78, 205, 196, 0.1);
+            border-left: 4px solid var(--accent-teal);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: var(--accent-teal);
+            font-style: italic;
+        }
+
+        /* Prompt structure */
+        .prompt-structure {
+            background: #0d0d12;
+            border-radius: 8px;
+            padding: 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .prompt-structure .label { color: var(--accent-gold); font-weight: 600; }
+        .prompt-structure .value { color: var(--text-secondary); }
+
+        /* Git commit visual */
+        .git-commits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .git-commit {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        .git-commit .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .git-commit .hash {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+        }
+
+        .git-commit .msg {
+            color: var(--text-secondary);
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 2: Build Workflow: From Prompt to Production Code</h1>
+        <p>02Ship Claude Basics Course - Lesson 7 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 7, Video 2</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder areas with actual screen recordings during production</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>From Prompt to Production Code</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 7, Video 2</p>
+            <span class="badge">The Build Workflow</span>
+        </div>
+
+        <!-- SLIDE 2: Five-Phase Overview -->
+        <div class="slide slide-pipeline" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>The 5-Phase Build Workflow</h2>
+            <div class="pipeline">
+                <div class="pipeline-phase">
+                    <div class="phase-num">1</div>
+                    <div class="phase-name">Plan</div>
+                    <div class="phase-desc">Talk with Claude</div>
+                </div>
+                <div class="pipeline-phase">
+                    <div class="phase-num">2</div>
+                    <div class="phase-name">Generate</div>
+                    <div class="phase-desc">Get initial code</div>
+                </div>
+                <div class="pipeline-phase">
+                    <div class="phase-num">3</div>
+                    <div class="phase-name">Test</div>
+                    <div class="phase-desc">Run locally</div>
+                </div>
+                <div class="pipeline-phase">
+                    <div class="phase-num">4</div>
+                    <div class="phase-name">Iterate</div>
+                    <div class="phase-desc">Refine 3-5 rounds</div>
+                </div>
+                <div class="pipeline-phase">
+                    <div class="phase-num">5</div>
+                    <div class="phase-name">Polish</div>
+                    <div class="phase-desc">Final checks</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Phase 1 - Plan with Claude -->
+        <div class="slide slide-phase-detail" data-slide-number="3">
+            <span class="slide-section">Phase 1 - 1:00</span>
+            <div class="phase-content">
+                <div class="phase-tag" style="background: rgba(255, 107, 107, 0.2); color: var(--accent-coral);">Phase 1</div>
+                <h2>Plan with Claude</h2>
+                <p>Turn your MVP template into a conversation. Use the four-part prompt structure: goal, constraints, tech preference, success criteria.</p>
+                <div class="callout-box">Always include: "Ask me clarifying questions first"</div>
+            </div>
+            <div class="phase-visual">
+                <div class="prompt-structure">
+                    <span class="label">Goal:</span> <span class="value">Build a landing page for FocusFlow</span><br>
+                    <span class="label">Product:</span> <span class="value">Helps remote workers block distractions</span><br>
+                    <span class="label">Sections:</span> <span class="value">Hero, features, pricing, signup</span><br>
+                    <span class="label">Stack:</span> <span class="value">Next.js + Tailwind, deploy on Vercel</span><br><br>
+                    <span class="label" style="color: var(--accent-coral);">&#8594; Before generating, ask me clarifying questions.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Claude Asking Questions -->
+        <div class="slide" data-slide-number="4" style="padding: 2rem 3rem;">
+            <span class="slide-section">Phase 1 - 2:00</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem;">Claude Clarifies Before Building</h2>
+            <div class="chat-container" style="max-width: 700px; margin: 0 auto;">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Build a landing page for FocusFlow -- a productivity app for remote workers. Hero, features, pricing, signup. Next.js + Tailwind. Ask me clarifying questions first.</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">Great project! Before I start, a few questions:<br><br>1. How many pricing tiers? Free + paid, or multiple plans?<br>2. Color scheme or brand direction?<br>3. Should the signup form collect just email, or name + email?<br>4. Any specific features to highlight?</div>
+                </div>
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Three tiers: Free, Pro, Team. Blue/purple color scheme. Just email for now. Three features: Focus Timer, Distraction Blocker, Analytics Dashboard.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Phase 2 - Generate Code -->
+        <div class="slide slide-phase-detail" data-slide-number="5">
+            <span class="slide-section">Phase 2 - 3:00</span>
+            <div class="phase-content">
+                <div class="phase-tag" style="background: rgba(78, 205, 196, 0.2); color: var(--accent-teal);">Phase 2</div>
+                <h2>Generate Initial Code</h2>
+                <p>After the planning conversation, Claude generates the full project. Expect functional but rough. Check for: logical file structure, code matching the plan, and setup instructions.</p>
+                <div class="callout-box">First version = functional, not perfect. That's normal.</div>
+            </div>
+            <div class="phase-visual">
+                <div class="code-block">
+<span class="comment">// Project structure Claude generates</span>
+<span class="folder">focusflow/</span>
+  <span class="folder">src/</span>
+    <span class="folder">app/</span>
+      <span class="file">layout.tsx</span>
+      <span class="file">page.tsx</span>
+      <span class="file">globals.css</span>
+    <span class="folder">components/</span>
+      <span class="file">Hero.tsx</span>
+      <span class="file">Features.tsx</span>
+      <span class="file">Pricing.tsx</span>
+      <span class="file">SignupForm.tsx</span>
+  <span class="file">package.json</span>
+  <span class="file">tailwind.config.ts</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Phase 3 - Run & Test -->
+        <div class="slide slide-phase-detail" data-slide-number="6">
+            <span class="slide-section">Phase 3 - 5:30</span>
+            <div class="phase-content">
+                <div class="phase-tag" style="background: rgba(255, 215, 61, 0.2); color: var(--accent-gold);">Phase 3</div>
+                <h2>Run Locally &amp; Test</h2>
+                <p>Take the generated code, install dependencies, start the dev server, and see your MVP in the browser for the first time.</p>
+                <p style="color: var(--accent-coral); font-weight: 600;">Test after every major change -- don't batch untested work.</p>
+            </div>
+            <div class="phase-visual">
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                    </div>
+                    <div class="terminal-body">
+                        <span class="prompt">$</span> <span class="cmd">npm install</span><br>
+                        <span class="output">added 247 packages in 12s</span><br><br>
+                        <span class="prompt">$</span> <span class="cmd">npm run dev</span><br>
+                        <span class="output">  &#9656; ready started server on 0.0.0.0:3000</span><br>
+                        <span class="success">  &#9656; url: http://localhost:3000</span><br><br>
+                        <span class="success">&#10003; Your MVP is alive in the browser!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: First Render -->
+        <div class="slide" data-slide-number="7" style="text-align: center;">
+            <span class="slide-section">Phase 3 - 6:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">First Render: It's Alive!</h2>
+            <div class="browser-mockup" style="max-width: 700px; margin: 0 auto;">
+                <div class="browser-bar">
+                    <div class="browser-dot red"></div>
+                    <div class="browser-dot yellow"></div>
+                    <div class="browser-dot green"></div>
+                    <div class="browser-url">localhost:3000</div>
+                </div>
+                <div class="browser-content" style="min-height: 220px; background: linear-gradient(135deg, #1a1a3e, #0d0d20);">
+                    <div class="page-title" style="color: #8b9cf7;">FocusFlow</div>
+                    <div class="page-subtitle">Block distractions. Track deep work.</div>
+                    <div class="page-btn">Get Started Free</div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem;">[Spacing off, hero needs work, pricing cards rough -- but it's real]</div>
+                </div>
+            </div>
+            <p style="color: var(--accent-teal); margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">Is it perfect? No. Does it exist? Yes. Now we iterate.</p>
+        </div>
+
+        <!-- SLIDE 8: Phase 4 - Iterate -->
+        <div class="slide slide-phase-detail" data-slide-number="8">
+            <span class="slide-section">Phase 4 - 7:30</span>
+            <div class="phase-content">
+                <div class="phase-tag" style="background: rgba(80, 250, 123, 0.2); color: var(--success);">Phase 4</div>
+                <h2>Iterate &amp; Refine</h2>
+                <p>This is where the magic happens. Look at what you have, identify what needs to change, and tell Claude specifically what to fix.</p>
+                <p style="font-weight: 600; color: var(--accent-gold);">Expect 3-5 iterations. That's not a failure -- it's the process.</p>
+            </div>
+            <div class="phase-visual">
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(255, 85, 85, 0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--error); flex-shrink: 0;">&#10007;</div>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary);">"Make it better"</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(80, 250, 123, 0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--success); flex-shrink: 0;">&#10003;</div>
+                        <span style="font-size: 0.9rem; color: var(--text-primary);">"Make the hero text larger and center the CTA button"</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(80, 250, 123, 0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--success); flex-shrink: 0;">&#10003;</div>
+                        <span style="font-size: 0.9rem; color: var(--text-primary);">"Add three feature cards in a grid layout with icons"</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(80, 250, 123, 0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: var(--success); flex-shrink: 0;">&#10003;</div>
+                        <span style="font-size: 0.9rem; color: var(--text-primary);">"Make the Pro plan stand out with a 'Most Popular' badge"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Iteration Demo -->
+        <div class="slide slide-iteration-demo" data-slide-number="9">
+            <span class="slide-section">Phase 4 - 8:30</span>
+            <h2>Three Iterations: Rough to Professional</h2>
+            <div class="iteration-grid">
+                <div class="iteration-card">
+                    <div class="iter-header">Iteration 1: Layout</div>
+                    <div class="iter-body">
+                        <div class="iter-label">Prompt</div>
+                        <div class="iter-prompt">"Larger headline, more padding, add subtitle below the hero text"</div>
+                        <div class="iter-label">Result</div>
+                        <div class="iter-result">Hero section feels spacious and impactful. Clear hierarchy.</div>
+                    </div>
+                </div>
+                <div class="iteration-card">
+                    <div class="iter-header">Iteration 2: Content</div>
+                    <div class="iter-body">
+                        <div class="iter-label">Prompt</div>
+                        <div class="iter-prompt">"Three feature cards in a grid with icon placeholder, title, description"</div>
+                        <div class="iter-label">Result</div>
+                        <div class="iter-result">Features section is scannable, organized, and compelling.</div>
+                    </div>
+                </div>
+                <div class="iteration-card">
+                    <div class="iter-header">Iteration 3: Polish</div>
+                    <div class="iter-body">
+                        <div class="iter-label">Prompt</div>
+                        <div class="iter-prompt">"Highlight recommended plan with border and 'Most Popular' badge"</div>
+                        <div class="iter-label">Result</div>
+                        <div class="iter-result">Pricing section has clear visual hierarchy. Looks professional.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Git Saves -->
+        <div class="slide" data-slide-number="10" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <span class="slide-section">Phase 4 - 9:30</span>
+            <div>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Save Every Iteration with Git</h2>
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">After each successful iteration, commit your changes. If something breaks, you can always go back to the last working version.</p>
+                <div class="callout-box">Think of Git as save points in a video game. Save often.</div>
+            </div>
+            <div style="background: #1a1a24; border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                <div class="git-commits">
+                    <div class="git-commit">
+                        <div class="dot" style="background: var(--success);"></div>
+                        <div class="hash">a3f2d1c</div>
+                        <div class="msg">Initial code from Claude</div>
+                    </div>
+                    <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin-left: 5px;"></div>
+                    <div class="git-commit">
+                        <div class="dot" style="background: var(--accent-coral);"></div>
+                        <div class="hash">b7e4f2a</div>
+                        <div class="msg">Fix hero layout and spacing</div>
+                    </div>
+                    <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin-left: 5px;"></div>
+                    <div class="git-commit">
+                        <div class="dot" style="background: var(--accent-gold);"></div>
+                        <div class="hash">c9d1e3b</div>
+                        <div class="msg">Add feature cards grid</div>
+                    </div>
+                    <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin-left: 5px;"></div>
+                    <div class="git-commit">
+                        <div class="dot" style="background: var(--accent-teal);"></div>
+                        <div class="hash">d2f5a4c</div>
+                        <div class="msg">Polish pricing section</div>
+                    </div>
+                    <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin-left: 5px;"></div>
+                    <div class="git-commit">
+                        <div class="dot" style="background: #bd93f9;"></div>
+                        <div class="hash">e8g2b5d</div>
+                        <div class="msg">Ready to deploy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Phase 5 - Polish -->
+        <div class="slide slide-checklist" data-slide-number="11">
+            <span class="slide-section">Phase 5 - 10:30</span>
+            <div class="checklist-content">
+                <div class="phase-tag">Phase 5</div>
+                <h2>Polish for Launch</h2>
+                <p>Not adding features. Making sure everything that exists works cleanly. Like proofreading before you hit publish.</p>
+            </div>
+            <div class="checklist-visual">
+                <h4>Launch Polish Checklist</h4>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>All links and navigation work</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Mobile responsive (resize browser)</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>No placeholder text remaining</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Images load properly</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Core user flow works end to end</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Page loads feel snappy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Roadblocks -->
+        <div class="slide slide-roadblocks" data-slide-number="12">
+            <span class="slide-section">Section 6 - 12:00</span>
+            <h2>Common Roadblocks (and Solutions)</h2>
+            <div class="roadblocks-grid">
+                <div class="roadblock-card">
+                    <div class="problem">&#9888; Code doesn't run</div>
+                    <div class="solution">Paste the error into Claude: "I'm getting this error: [error]. Can you fix it?"</div>
+                </div>
+                <div class="roadblock-card">
+                    <div class="problem">&#9888; Design doesn't look right</div>
+                    <div class="solution">Be specific: "The header overlaps the hero section" -- describe what you see, not just "it's wrong."</div>
+                </div>
+                <div class="roadblock-card">
+                    <div class="problem">&#9888; Stuck for 30+ minutes</div>
+                    <div class="solution">Stop. Ask the Discord community. Or tell Claude: "Let's try a completely different approach."</div>
+                </div>
+                <div class="roadblock-card">
+                    <div class="problem">&#9888; Feature creep</div>
+                    <div class="solution">Go back to your 3-feature list. If it's not there, it's V2. Repeat: "Ship first, improve later."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Key Messages -->
+        <div class="slide" data-slide-number="13" style="text-align: center;">
+            <span class="slide-section">Section 6 - 13:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">The Builder's Mindset</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto;">
+                <div style="background: rgba(255, 107, 107, 0.1); border: 1px solid rgba(255, 107, 107, 0.3); padding: 1.5rem; border-radius: 16px;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128736;</div>
+                    <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">3-5 Iterations</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">is the process, not a failure</div>
+                </div>
+                <div style="background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.3); padding: 1.5rem; border-radius: 16px;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#127919;</div>
+                    <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">Be Specific</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">not "better" but "larger headline"</div>
+                </div>
+                <div style="background: rgba(255, 215, 61, 0.1); border: 1px solid rgba(255, 215, 61, 0.3); padding: 1.5rem; border-radius: 16px;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128190;</div>
+                    <div style="font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;">Save in Git</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">you can always go back</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Recap -->
+        <div class="slide slide-recap" data-slide-number="14">
+            <span class="slide-section">Closing - 13:30</span>
+            <h2>The 5-Phase Build Workflow</h2>
+            <div class="recap-phases">
+                <div class="recap-phase">
+                    <div class="phase-icon">&#128172;</div>
+                    <div class="phase-label">1. Plan</div>
+                </div>
+                <div class="recap-arrow">&#8594;</div>
+                <div class="recap-phase">
+                    <div class="phase-icon">&#9889;</div>
+                    <div class="phase-label">2. Generate</div>
+                </div>
+                <div class="recap-arrow">&#8594;</div>
+                <div class="recap-phase">
+                    <div class="phase-icon">&#128187;</div>
+                    <div class="phase-label">3. Test</div>
+                </div>
+                <div class="recap-arrow">&#8594;</div>
+                <div class="recap-phase">
+                    <div class="phase-icon">&#128260;</div>
+                    <div class="phase-label">4. Iterate</div>
+                </div>
+                <div class="recap-arrow">&#8594;</div>
+                <div class="recap-phase">
+                    <div class="phase-icon">&#10024;</div>
+                    <div class="phase-label">5. Polish</div>
+                </div>
+            </div>
+            <p class="recap-note">You just saw a SaaS landing page go from nothing to deploy-ready. You can do the same thing.</p>
+        </div>
+
+        <!-- SLIDE 15: Next Video -->
+        <div class="slide slide-next" data-slide-number="15">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 14:00</span>
+            <h2>Next: Ship It to the World</h2>
+            <p>The final video of the entire course. We deploy, launch, and celebrate.</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128640;</div>
+                    <p>Deploy Your MVP</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#127758;</div>
+                    <p>Go Live</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

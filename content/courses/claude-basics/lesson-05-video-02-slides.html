@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2: Setting Up Your Project: Instructions and Knowledge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* UI Mockup: Claude Projects Interface */
+        .claude-ui {
+            background: #1a1a24;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .claude-ui .browser-bar {
+            display: flex;
+            gap: 6px;
+            padding: 0.75rem 1rem;
+            background: #252530;
+            align-items: center;
+        }
+
+        .claude-ui .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .claude-ui .dot.red { background: #ff5f56; }
+        .claude-ui .dot.yellow { background: #ffbd2e; }
+        .claude-ui .dot.green { background: #27ca40; }
+
+        .claude-ui .url-bar {
+            margin-left: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .claude-ui .ui-body {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            min-height: 250px;
+        }
+
+        .claude-ui .sidebar {
+            background: #12121a;
+            padding: 1rem;
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .claude-ui .sidebar-item {
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+            cursor: pointer;
+        }
+
+        .claude-ui .sidebar-item.active {
+            background: rgba(78, 205, 196, 0.15);
+            color: var(--accent-teal);
+        }
+
+        .claude-ui .sidebar-item.projects {
+            background: rgba(78, 205, 196, 0.1);
+            color: var(--accent-teal);
+            font-weight: 600;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .claude-ui .sidebar-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            opacity: 0.5;
+            margin: 0.75rem 0 0.5rem 0.75rem;
+        }
+
+        .claude-ui .main-area {
+            padding: 1.5rem;
+        }
+
+        .claude-ui .new-project-btn {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .claude-ui .input-field {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 0.6rem 0.9rem;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            width: 100%;
+            margin-bottom: 0.75rem;
+        }
+
+        .claude-ui .input-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.35rem;
+        }
+
+        /* Template Sections */
+        .template-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .template-section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .template-section .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-section .section-number {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .template-section .section-title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .template-section .section-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-left: 2.75rem;
+        }
+
+        .template-section.highlighted {
+            border-color: var(--accent-coral);
+            background: rgba(255, 107, 107, 0.08);
+        }
+
+        /* Code / Instructions Editor Mockup */
+        .editor-mockup {
+            background: #1a1a24;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+
+        .editor-mockup .editor-header {
+            background: #252530;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .editor-mockup .editor-body {
+            padding: 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .editor-mockup .editor-body .section-label {
+            color: var(--accent-coral);
+            font-weight: 600;
+        }
+
+        .editor-mockup .editor-body .value {
+            color: var(--text-primary);
+        }
+
+        .editor-mockup .editor-body .comment {
+            color: #6272a4;
+        }
+
+        /* Comparison: Vague vs Specific */
+        .specificity-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .specificity-box {
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .specificity-box.vague {
+            background: rgba(255, 85, 85, 0.08);
+            border: 1px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .specificity-box.specific {
+            background: rgba(80, 250, 123, 0.08);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .specificity-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .specificity-box.vague h3 { color: var(--error); }
+        .specificity-box.specific h3 { color: var(--success); }
+
+        .specificity-box .example {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+        }
+
+        /* Upload Checklist */
+        .upload-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .upload-panel {
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .upload-panel.do {
+            background: rgba(80, 250, 123, 0.08);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .upload-panel.dont {
+            background: rgba(255, 85, 85, 0.08);
+            border: 1px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .upload-panel h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .upload-panel.do h3 { color: var(--success); }
+        .upload-panel.dont h3 { color: var(--error); }
+
+        .upload-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .upload-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .upload-list li .check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .upload-panel.do .check {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .upload-panel.dont .check {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        /* Test Chat Mockup */
+        .chat-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            max-width: 75%;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .chat-bubble .highlight {
+            background: rgba(255, 215, 61, 0.2);
+            padding: 0 0.25rem;
+            border-radius: 3px;
+        }
+
+        /* Living Document Slide */
+        .timeline-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-step {
+            text-align: center;
+            padding: 1rem;
+            flex: 1;
+        }
+
+        .timeline-step .step-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(78, 205, 196, 0.15);
+            border: 2px solid var(--accent-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .timeline-step h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-step p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .timeline-connector {
+            width: 40px;
+            height: 2px;
+            background: var(--accent-teal);
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        /* Recap */
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Next Slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Conversation slide */
+        .slide-conversation {
+            padding: 2rem 3rem;
+        }
+
+        .slide-conversation h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 2: Setting Up Your Project: Instructions and Knowledge</h1>
+        <p>02Ship Claude Basics Course - Lesson 5 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 5, Video 2</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Target duration: 14 minutes (max 15 minutes)</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Setting Up Your Project</h1>
+            <p class="subtitle">Instructions and Knowledge</p>
+            <span class="badge">02Ship Claude Basics - Lesson 5</span>
+        </div>
+
+        <!-- SLIDE 2: Hook - Connect to Video 1 -->
+        <div class="slide" data-slide-number="2" style="text-align: center; background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">From Problem to <span class="highlight-text">Solution</span></h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">
+                In Video 1 you saw the problem. Now let's fix it.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
+                <div style="background: rgba(255, 85, 85, 0.1); border: 1px solid rgba(255, 85, 85, 0.3); border-radius: 12px; padding: 1.25rem 1.75rem; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">😩</div>
+                    <p style="color: var(--error); font-weight: 600;">Re-explaining<br>every time</p>
+                </div>
+                <div style="font-size: 2rem; color: var(--accent-teal);">&#x27A1;</div>
+                <div style="background: rgba(80, 250, 123, 0.1); border: 1px solid rgba(80, 250, 123, 0.3); border-radius: 12px; padding: 1.25rem 1.75rem; text-align: center;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛠️</div>
+                    <p style="color: var(--success); font-weight: 600;">Fully configured<br>workspace</p>
+                </div>
+            </div>
+            <p style="color: var(--accent-gold); margin-top: 1.5rem; font-weight: 600;">Hands-on: Follow along and set up yours!</p>
+        </div>
+
+        <!-- SLIDE 3: Step 1 - Creating a New Project UI -->
+        <div class="slide" data-slide-number="3">
+            <span class="slide-section">Section 1 - 0:45</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem;">Step 1: Create Your Project</h2>
+            <div class="claude-ui">
+                <div class="browser-bar">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <span class="url-bar">claude.ai</span>
+                </div>
+                <div class="ui-body">
+                    <div class="sidebar">
+                        <div class="sidebar-label">Main</div>
+                        <div class="sidebar-item">New Chat</div>
+                        <div class="sidebar-item">Recent Chats</div>
+                        <div class="sidebar-label">Projects</div>
+                        <div class="sidebar-item projects">+ New Project</div>
+                        <div class="sidebar-item active">02Ship</div>
+                        <div class="sidebar-item">Practice</div>
+                    </div>
+                    <div class="main-area">
+                        <div class="new-project-btn">+ New Project</div>
+                        <div class="input-label">Project Name</div>
+                        <div class="input-field" style="color: var(--accent-teal);">02Ship</div>
+                        <div class="input-label">Description (optional)</div>
+                        <div class="input-field">A learning portal for non-programmers to build apps with AI tools.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Custom Instructions - Briefing Document Concept -->
+        <div class="slide" data-slide-number="4" style="text-align: center;">
+            <span class="slide-section">Section 2 - 2:30</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Custom Instructions</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">
+                A briefing document you hand to Claude before every conversation. Write it once, Claude reads it every time.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem 2rem; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📋</div>
+                    <p>You write <strong>once</strong></p>
+                </div>
+                <div style="font-size: 2rem; color: var(--accent-teal);">&#x27A1;</div>
+                <div style="background: rgba(78, 205, 196, 0.08); border: 1px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 1.5rem 2rem; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤖</div>
+                    <p>Claude reads <strong>every time</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: The Five-Section Template Overview -->
+        <div class="slide" data-slide-number="5">
+            <span class="slide-section">Section 2 - 3:00</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem;">The Five-Section Template</h2>
+            <div class="template-container">
+                <div class="template-section">
+                    <div class="section-header">
+                        <div class="section-number">1</div>
+                        <div class="section-title">Project Overview</div>
+                    </div>
+                    <div class="section-desc">What you are building and who it is for (2-3 sentences)</div>
+                </div>
+                <div class="template-section">
+                    <div class="section-header">
+                        <div class="section-number">2</div>
+                        <div class="section-title">Tech Stack</div>
+                    </div>
+                    <div class="section-desc">Every technology and framework with version numbers</div>
+                </div>
+                <div class="template-section">
+                    <div class="section-header">
+                        <div class="section-number">3</div>
+                        <div class="section-title">Coding Conventions</div>
+                    </div>
+                    <div class="section-desc">How you want the code to look and be organized</div>
+                </div>
+                <div class="template-section">
+                    <div class="section-header">
+                        <div class="section-number">4</div>
+                        <div class="section-title">Current Status</div>
+                    </div>
+                    <div class="section-desc">What is built, in progress, and planned next</div>
+                </div>
+                <div class="template-section">
+                    <div class="section-header">
+                        <div class="section-number">5</div>
+                        <div class="section-title">Important Rules</div>
+                    </div>
+                    <div class="section-desc">Hard constraints and guardrails Claude must follow</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Sections 1 & 2 - Project Overview + Tech Stack -->
+        <div class="slide" data-slide-number="6">
+            <span class="slide-section">Section 2 - 3:30</span>
+            <h2 style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem;">Sections 1-2: Overview and Tech Stack</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto;">
+                <div class="editor-mockup">
+                    <div class="editor-header">
+                        <span>Section 1: Project Overview</span>
+                    </div>
+                    <div class="editor-body">
+                        <span class="section-label">## Project Overview</span><br><br>
+                        <span class="value">02Ship is a learning portal for non-programmers to build and ship their ideas using Claude Code and AI coding tools.</span><br><br>
+                        <span class="value">Target audience: absolute beginners with no coding experience.</span><br><br>
+                        <span class="comment">// What + who + purpose</span>
+                    </div>
+                </div>
+                <div class="editor-mockup">
+                    <div class="editor-header">
+                        <span>Section 2: Tech Stack</span>
+                    </div>
+                    <div class="editor-body">
+                        <span class="section-label">## Tech Stack</span><br><br>
+                        <span class="value">- Next.js 14 (App Router)</span><br>
+                        <span class="value">- TypeScript (strict mode)</span><br>
+                        <span class="value">- Tailwind CSS</span><br>
+                        <span class="value">- MDX for blog content</span><br>
+                        <span class="value">- JSON for course data</span><br>
+                        <span class="value">- Deployed on Vercel</span><br><br>
+                        <span class="comment">// Be specific with versions!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Sections 3 & 4 - Conventions + Status -->
+        <div class="slide" data-slide-number="7">
+            <span class="slide-section">Section 2 - 4:30</span>
+            <h2 style="text-align: center; font-size: 1.6rem; margin-bottom: 1.5rem;">Sections 3-4: Conventions and Status</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto;">
+                <div class="editor-mockup">
+                    <div class="editor-header">
+                        <span>Section 3: Coding Conventions</span>
+                    </div>
+                    <div class="editor-body">
+                        <span class="section-label">## Conventions</span><br><br>
+                        <span class="value">- Named exports (not default)</span><br>
+                        <span class="value">- Use cn() for Tailwind classes</span><br>
+                        <span class="value">- Components in src/components/</span><br>
+                        <span class="value">- Mobile-first responsive</span><br><br>
+                        <span class="comment">// Capture patterns you like</span>
+                    </div>
+                </div>
+                <div class="editor-mockup">
+                    <div class="editor-header">
+                        <span>Section 4: Current Status</span>
+                    </div>
+                    <div class="editor-body">
+                        <span class="section-label">## Current Status</span><br><br>
+                        <span class="value" style="color: var(--success);">Done: Landing page, course system (3 lessons)</span><br>
+                        <span class="value" style="color: var(--accent-gold);">In progress: Blog search</span><br>
+                        <span class="value" style="color: var(--text-secondary);">Planned: Community links in nav</span><br><br>
+                        <span class="comment">// Update regularly!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Section 5 - Important Rules -->
+        <div class="slide" data-slide-number="8">
+            <span class="slide-section">Section 2 - 5:30</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem;">Section 5: Important Rules (Guardrails)</h2>
+            <div class="editor-mockup" style="max-width: 700px; margin: 0 auto;">
+                <div class="editor-header">
+                    <span>Section 5: Important Rules</span>
+                    <span style="color: var(--error); font-size: 0.75rem;">HARD CONSTRAINTS</span>
+                </div>
+                <div class="editor-body">
+                    <span class="section-label">## Important Rules</span><br><br>
+                    <span class="value" style="color: var(--error);">- All content is public (no auth required yet)</span><br>
+                    <span class="value" style="color: var(--error);">- Do NOT modify content file structure without asking</span><br>
+                    <span class="value" style="color: var(--error);">- Always use TypeScript strict mode</span><br>
+                    <span class="value" style="color: var(--error);">- Never remove existing functionality when adding new</span><br><br>
+                    <span class="comment">// These protect your project from unintended changes</span><br>
+                    <span class="comment">// Think of these as guardrails</span>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 1rem;">
+                Guardrails prevent Claude from making decisions that break your project.
+            </p>
+        </div>
+
+        <!-- SLIDE 9: Be Specific - Comparison -->
+        <div class="slide" data-slide-number="9">
+            <span class="slide-section">Section 2 - 6:15</span>
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Be Specific: <span class="highlight-text">Specificity Wins</span></h2>
+            <div class="specificity-comparison">
+                <div class="specificity-box vague">
+                    <h3>Vague Instructions</h3>
+                    <div class="example">
+                        Use TypeScript.<br>
+                        Make it look nice.<br>
+                        Use components.
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">Claude has to guess what you mean. Results vary wildly.</p>
+                </div>
+                <div class="specificity-box specific">
+                    <h3>Specific Instructions</h3>
+                    <div class="example">
+                        Use TypeScript strict mode<br>
+                        with named exports.<br>
+                        Use cn() for conditional<br>
+                        Tailwind classes.<br>
+                        Mobile-first responsive.
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">Consistent code that feels like one person wrote it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Knowledge Base - What to Upload -->
+        <div class="slide" data-slide-number="10">
+            <span class="slide-section">Section 3 - 7:00</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">Knowledge Base: What to Upload</h2>
+            <div class="upload-grid">
+                <div class="upload-panel do">
+                    <h3>Upload These</h3>
+                    <ul class="upload-list">
+                        <li><span class="check">&#10003;</span> README or project overview</li>
+                        <li><span class="check">&#10003;</span> Requirements documents</li>
+                        <li><span class="check">&#10003;</span> Key code samples (layouts, models)</li>
+                        <li><span class="check">&#10003;</span> Style guides or design references</li>
+                        <li><span class="check">&#10003;</span> Type definitions</li>
+                    </ul>
+                </div>
+                <div class="upload-panel dont">
+                    <h3>Skip These</h3>
+                    <ul class="upload-list">
+                        <li><span class="check">&#10007;</span> Entire codebase</li>
+                        <li><span class="check">&#10007;</span> API keys or passwords</li>
+                        <li><span class="check">&#10007;</span> .env files</li>
+                        <li><span class="check">&#10007;</span> Massive log files</li>
+                        <li><span class="check">&#10007;</span> Generated/temporary files</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--accent-teal); font-weight: 600; font-size: 1rem;">Quality over quantity. Upload key docs, not everything.</p>
+        </div>
+
+        <!-- SLIDE 11: Knowledge Base Upload UI -->
+        <div class="slide" data-slide-number="11">
+            <span class="slide-section">Section 3 - 8:00</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem;">Uploading Files: Live Demo</h2>
+            <div class="claude-ui" style="max-width: 750px;">
+                <div class="browser-bar">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <span class="url-bar">claude.ai/project/02ship</span>
+                </div>
+                <div class="ui-body" style="grid-template-columns: 1fr;">
+                    <div class="main-area">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--accent-gold);">Knowledge Base</h3>
+                            <div style="background: var(--accent-teal); color: var(--bg-dark); padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">+ Upload Files</div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+                            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">
+                                <span style="font-size: 1.2rem;">📄</span>
+                                <div>
+                                    <div style="font-size: 0.85rem; font-weight: 600;">README.md</div>
+                                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Project overview</div>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">
+                                <span style="font-size: 1.2rem;">📐</span>
+                                <div>
+                                    <div style="font-size: 0.85rem; font-weight: 600;">types/course.ts</div>
+                                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Type definitions</div>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">
+                                <span style="font-size: 1.2rem;">📋</span>
+                                <div>
+                                    <div style="font-size: 0.85rem; font-weight: 600;">lesson-01.json</div>
+                                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Sample lesson data</div>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); padding: 0.75rem 1rem; border-radius: 8px; display: flex; align-items: center; gap: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">
+                                <span style="font-size: 1.2rem;">🗂️</span>
+                                <div>
+                                    <div style="font-size: 0.85rem; font-weight: 600;">project-structure.txt</div>
+                                    <div style="font-size: 0.7rem; color: var(--text-secondary);">File tree overview</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: The Verification Test -->
+        <div class="slide slide-conversation" data-slide-number="12">
+            <span class="slide-section">Section 4 - 9:30</span>
+            <h2>The Verification Test</h2>
+            <div class="chat-container">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble" style="font-weight: 600;">Describe this project in your own words.</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">
+                        02Ship is a <span class="highlight">learning portal for non-programmers</span> built with <span class="highlight">Next.js 14, TypeScript, and Tailwind CSS</span>. It features <span class="highlight">video courses</span>, an <span class="highlight">MDX blog</span>, and community links. The target audience is <span class="highlight">absolute beginners</span> with no coding experience. It's deployed on <span class="highlight">Vercel</span>.
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--success); font-weight: 600;">If Claude gets this right, your setup is working!</p>
+        </div>
+
+        <!-- SLIDE 13: Follow-Up Tests -->
+        <div class="slide" data-slide-number="13">
+            <span class="slide-section">Section 4 - 10:30</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">Follow-Up Test Prompts</h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 700px; margin: 0 auto;">
+                <div style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 36px; height: 36px; background: var(--accent-teal); color: var(--bg-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">"What tech stack are we using?"</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Should list your exact technologies and versions</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 36px; height: 36px; background: var(--accent-teal); color: var(--bg-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">"What coding conventions should I follow?"</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Should reference your style preferences</div>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 36px; height: 36px; background: var(--accent-teal); color: var(--bg-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">"What's the current status of the project?"</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Should know what is done and what is in progress</div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">Incorrect answers? Go back and update your custom instructions.</p>
+        </div>
+
+        <!-- SLIDE 14: Living Document Timeline -->
+        <div class="slide" data-slide-number="14">
+            <span class="slide-section">Section 5 - 12:00</span>
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2.5rem;">Instructions Are a <span class="highlight-text">Living Document</span></h2>
+            <div class="timeline-visual">
+                <div class="timeline-step">
+                    <div class="step-icon">📝</div>
+                    <h4>Write</h4>
+                    <p>Initial setup with<br>what you know</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">
+                    <div class="step-icon">🔨</div>
+                    <h4>Build</h4>
+                    <p>Work on features<br>and ship</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">
+                    <div class="step-icon">🔄</div>
+                    <h4>Update</h4>
+                    <p>Update status and<br>conventions</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step">
+                    <div class="step-icon">🚀</div>
+                    <h4>Repeat</h4>
+                    <p>Keep in sync as<br>project evolves</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary); font-size: 1.1rem;">
+                A 2-minute update saves hours of re-explaining later.
+            </p>
+        </div>
+
+        <!-- SLIDE 15: Recap -->
+        <div class="slide" data-slide-number="15" style="text-align: center;">
+            <span class="slide-section">Closing - 13:15</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">What You Just Built</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p>Created a <strong>Claude Project</strong> with name and description</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p>Wrote <strong>custom instructions</strong> using the 5-section template</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p>Uploaded <strong>key knowledge files</strong> for Claude to reference</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Tested the setup</strong> to verify Claude understands your project</p>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--accent-teal); font-weight: 600; font-size: 1.1rem;">Your Project is ready for real building!</p>
+        </div>
+
+        <!-- SLIDE 16: Next Steps -->
+        <div class="slide slide-next" data-slide-number="16">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 13:30</span>
+            <h2>Next: Multi-Session Workflows</h2>
+            <p>Build across multiple days, reference previous work, and keep organized</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">📺</div>
+                    <p>Watch Video 3</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">💬</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">📋</div>
+                    <p>Download Template</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

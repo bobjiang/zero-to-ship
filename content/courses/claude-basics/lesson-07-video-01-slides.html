@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1: MVP Planning: Scope, Tech Stack, and Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Slide 1: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Capstone banner */
+        .capstone-banner {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Journey slide */
+        .slide-journey {
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-journey h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.75rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .journey-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 0.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .journey-item .lesson-num {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+        }
+
+        .journey-item .lesson-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .journey-item .check {
+            color: var(--success);
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .journey-arrow {
+            display: block;
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--accent-coral);
+            margin-top: 1rem;
+        }
+
+        .journey-current {
+            background: rgba(255, 107, 107, 0.15);
+            border: 2px solid var(--accent-coral);
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* MVP Definition slide */
+        .slide-mvp-define {
+            text-align: center;
+        }
+
+        .slide-mvp-define h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .venn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 2rem;
+            position: relative;
+            height: 200px;
+        }
+
+        .venn-circle {
+            width: 220px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .venn-circle.minimum {
+            background: rgba(255, 107, 107, 0.2);
+            border: 2px solid var(--accent-coral);
+            margin-right: -50px;
+            z-index: 1;
+        }
+
+        .venn-circle.viable {
+            background: rgba(78, 205, 196, 0.2);
+            border: 2px solid var(--accent-teal);
+            margin-left: -50px;
+            z-index: 1;
+        }
+
+        .venn-center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-teal));
+            color: var(--bg-dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .mvp-tagline {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* MVP Myths slide */
+        .slide-mvp-myths {
+            text-align: center;
+        }
+
+        .slide-mvp-myths h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .myths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .myth-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .myth-card.wrong {
+            background: rgba(255, 85, 85, 0.1);
+            border: 1px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .myth-card.right {
+            background: rgba(80, 250, 123, 0.1);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .myth-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .myth-card.wrong h3 { color: var(--error); }
+        .myth-card.right h3 { color: var(--success); }
+
+        .myth-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Famous MVPs slide */
+        .slide-famous-mvps {
+            text-align: center;
+        }
+
+        .slide-famous-mvps h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .mvp-examples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mvp-example-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mvp-example-card .brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--accent-gold);
+        }
+
+        .mvp-example-card .mvp-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .mvp-example-card .not-included {
+            font-size: 0.8rem;
+            color: var(--error);
+            opacity: 0.7;
+        }
+
+        /* One-sentence test slide */
+        .slide-one-sentence {
+            text-align: center;
+        }
+
+        .slide-one-sentence h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .sentence-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sentence-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .sentence-item.good {
+            background: rgba(80, 250, 123, 0.1);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .sentence-item.bad {
+            background: rgba(255, 85, 85, 0.1);
+            border: 1px solid rgba(255, 85, 85, 0.3);
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .sentence-item .status-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .sentence-item.good .status-icon {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .sentence-item.bad .status-icon {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        .sentence-item span {
+            font-size: 1rem;
+        }
+
+        /* Tech stack slide */
+        .slide-tech-stack {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .tech-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-quote {
+            background: rgba(78, 205, 196, 0.1);
+            border-left: 4px solid var(--accent-teal);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--accent-teal);
+        }
+
+        .tech-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tech-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tech-table td {
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .tech-table .recommended {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .tech-table .alternative {
+            color: var(--text-secondary);
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: rgba(80, 250, 123, 0.15);
+            color: var(--success);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Timeline slide */
+        .slide-timeline {
+            text-align: center;
+        }
+
+        .slide-timeline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-timeline .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-visual {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .timeline-phase {
+            flex: 1;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-phase:first-child {
+            border-radius: 12px 0 0 12px;
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .timeline-phase:nth-child(2) {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .timeline-phase:last-child {
+            border-radius: 0 12px 12px 0;
+            background: rgba(255, 215, 61, 0.15);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+        }
+
+        .timeline-phase .days {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-phase:first-child .days { color: var(--accent-coral); }
+        .timeline-phase:nth-child(2) .days { color: var(--accent-teal); }
+        .timeline-phase:last-child .days { color: var(--accent-gold); }
+
+        .timeline-phase .phase-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .timeline-warning {
+            display: inline-block;
+            background: rgba(255, 85, 85, 0.1);
+            border: 1px solid rgba(255, 85, 85, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--error);
+        }
+
+        /* Iteration cycle slide */
+        .slide-iteration {
+            text-align: center;
+        }
+
+        .slide-iteration h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .iteration-cycle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .cycle-step {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 110px;
+        }
+
+        .cycle-step .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cycle-step p {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .cycle-arrow {
+            font-size: 1.3rem;
+            color: var(--accent-teal);
+        }
+
+        .cycle-note {
+            color: var(--accent-coral);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Planning template slide */
+        .slide-template {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .template-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .template-card {
+            background: #1a1a24;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .template-card h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-field {
+            margin-bottom: 1.25rem;
+        }
+
+        .template-field:last-child {
+            margin-bottom: 0;
+        }
+
+        .template-field .label {
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .template-field .value {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Filled template slide */
+        .slide-filled-template {
+            text-align: center;
+        }
+
+        .slide-filled-template h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .filled-template {
+            background: #1a1a24;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--accent-teal);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .filled-template h4 {
+            text-align: center;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .filled-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            align-items: baseline;
+        }
+
+        .filled-row .field-label {
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filled-row .field-value {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        /* Features list */
+        .features-numbered {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .features-numbered li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .features-numbered li .num {
+            background: var(--accent-coral);
+            color: var(--bg-dark);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Three features slide */
+        .slide-three-features {
+            text-align: center;
+        }
+
+        .slide-three-features h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-three-features .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .features-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .features-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: left;
+        }
+
+        .features-box.ship {
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .features-box.later {
+            background: rgba(255, 85, 85, 0.1);
+            border: 2px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .features-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .features-box.ship h3 { color: var(--success); }
+        .features-box.later h3 { color: var(--error); }
+
+        .features-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-box ul li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-vs {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            padding-top: 2rem;
+        }
+
+        /* Split screen slide */
+        .slide-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .split-left h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .split-left p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .split-right {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Platform preview */
+        .platform-preview {
+            background: #252530;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .platform-preview .browser-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .platform-preview .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .platform-preview .dot.red { background: #ff5f56; }
+        .platform-preview .dot.yellow { background: #ffbd2e; }
+        .platform-preview .dot.green { background: #27ca40; }
+
+        .platform-preview .screen {
+            background: linear-gradient(135deg, #2a2a3a, #1a1a24);
+            height: 180px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--accent-teal);
+        }
+
+        /* Proof slide */
+        .slide-proof {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-proof h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-proof .subtext {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .proof-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Recap slide */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 0.95rem;
+        }
+
+        /* Next steps slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Success criteria slide */
+        .slide-success {
+            text-align: center;
+        }
+
+        .slide-success h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .slide-success .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .success-card {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .success-card .criteria {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-teal);
+            margin-bottom: 1rem;
+        }
+
+        .success-card .explanation {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Concerns slide */
+        .slide-concerns {
+            text-align: center;
+        }
+
+        .slide-concerns h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .concerns-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .concern-item {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+        }
+
+        .concern-item .worry {
+            font-size: 0.9rem;
+            color: var(--error);
+            text-align: right;
+            opacity: 0.8;
+        }
+
+        .concern-item .arrow {
+            color: var(--accent-teal);
+            font-size: 1.2rem;
+        }
+
+        .concern-item .answer {
+            font-size: 0.9rem;
+            color: var(--success);
+            text-align: left;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 1: MVP Planning: Scope, Tech Stack, and Timeline</h1>
+        <p>02Ship Claude Basics Course - Lesson 7 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 7, Video 1</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder screenshots with actual 02Ship and Claude screenshots</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <div class="capstone-banner">Lesson 7 - The Capstone</div>
+            <h1>MVP Planning: Scope, Tech Stack & Timeline</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 7, Video 1</p>
+            <span class="badge">Plan. Build. Ship.</span>
+        </div>
+
+        <!-- SLIDE 2: Journey So Far -->
+        <div class="slide slide-journey" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>You've Made It to the <span class="highlight-text">Grand Finale</span></h2>
+            <div class="journey-grid">
+                <div class="journey-item">
+                    <div class="check">&#10003;</div>
+                    <div class="lesson-num">Lesson 1</div>
+                    <div class="lesson-label">Prompts</div>
+                </div>
+                <div class="journey-item">
+                    <div class="check">&#10003;</div>
+                    <div class="lesson-num">Lesson 2</div>
+                    <div class="lesson-label">Debugging</div>
+                </div>
+                <div class="journey-item">
+                    <div class="check">&#10003;</div>
+                    <div class="lesson-num">Lesson 3</div>
+                    <div class="lesson-label">Pages</div>
+                </div>
+                <div class="journey-item">
+                    <div class="check">&#10003;</div>
+                    <div class="lesson-num">Lesson 4</div>
+                    <div class="lesson-label">Databases</div>
+                </div>
+                <div class="journey-item">
+                    <div class="check">&#10003;</div>
+                    <div class="lesson-num">Lesson 5</div>
+                    <div class="lesson-label">Research</div>
+                </div>
+                <div class="journey-item">
+                    <div class="check">&#10003;</div>
+                    <div class="lesson-num">Lesson 6</div>
+                    <div class="lesson-label">Integration</div>
+                </div>
+            </div>
+            <div class="journey-arrow">&#11015;</div>
+            <div class="journey-current">Lesson 7: Build &amp; Deploy Your MVP</div>
+        </div>
+
+        <!-- SLIDE 3: Three Video Arc -->
+        <div class="slide" data-slide-number="3" style="text-align: center;">
+            <span class="slide-section">Opening - 0:45</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">The Capstone: Three Videos, One Product</h2>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; max-width: 800px; margin: 0 auto;">
+                <div style="flex: 1; padding: 2rem 1.5rem; background: rgba(255, 107, 107, 0.15); border: 2px solid rgba(255, 107, 107, 0.4); border-radius: 16px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">1</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--accent-coral); margin-bottom: 0.3rem;">Plan</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Scope, stack, timeline</div>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="flex: 1; padding: 2rem 1.5rem; background: rgba(78, 205, 196, 0.15); border: 2px solid rgba(78, 205, 196, 0.4); border-radius: 16px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">2</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--accent-teal); margin-bottom: 0.3rem;">Build</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Prompt to production</div>
+                </div>
+                <div style="font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="flex: 1; padding: 2rem 1.5rem; background: rgba(255, 215, 61, 0.15); border: 2px solid rgba(255, 215, 61, 0.4); border-radius: 16px; text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">3</div>
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 0.3rem;">Ship</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Deploy to the world</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: MVP Definition -->
+        <div class="slide slide-mvp-define" data-slide-number="4">
+            <span class="slide-section">Section 1 - 1:30</span>
+            <h2>What is an <span class="highlight-text">MVP</span>?</h2>
+            <div class="venn-container">
+                <div class="venn-circle minimum">Minimum</div>
+                <div class="venn-center">MVP</div>
+                <div class="venn-circle viable">Viable</div>
+            </div>
+            <p class="mvp-tagline">The <strong>smallest possible version</strong> that still <strong>delivers real value</strong></p>
+        </div>
+
+        <!-- SLIDE 5: MVP Myths -->
+        <div class="slide slide-mvp-myths" data-slide-number="5">
+            <span class="slide-section">Section 1 - 2:30</span>
+            <h2>MVP: Myth vs. Reality</h2>
+            <div class="myths-grid">
+                <div class="myth-card wrong">
+                    <h3>&#10007; MVP does NOT mean...</h3>
+                    <p>Broken, embarrassing, low-quality, or half-baked. It is not an excuse to ship garbage.</p>
+                </div>
+                <div class="myth-card right">
+                    <h3>&#10003; MVP DOES mean...</h3>
+                    <p>Focused. One core value proposition. Ruthlessly prioritized. Small but genuinely useful.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Famous MVPs -->
+        <div class="slide slide-famous-mvps" data-slide-number="6">
+            <span class="slide-section">Section 1 - 3:00</span>
+            <h2>Every Great Product Started Small</h2>
+            <div class="mvp-examples-grid">
+                <div class="mvp-example-card">
+                    <div class="brand">Instagram</div>
+                    <div class="mvp-desc">Photo sharing + filters</div>
+                    <div class="not-included">No Stories, Reels, or shopping</div>
+                </div>
+                <div class="mvp-example-card">
+                    <div class="brand">Twitter</div>
+                    <div class="mvp-desc">Short text posts</div>
+                    <div class="not-included">No threads, spaces, or media</div>
+                </div>
+                <div class="mvp-example-card">
+                    <div class="brand">02Ship</div>
+                    <div class="mvp-desc">Video courses for beginners</div>
+                    <div class="not-included">No accounts, tracking, or certs</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: One-Sentence Test -->
+        <div class="slide slide-one-sentence" data-slide-number="7">
+            <span class="slide-section">Section 2 - 3:30</span>
+            <h2>The One-Sentence Test</h2>
+            <div class="sentence-examples">
+                <div class="sentence-item good">
+                    <div class="status-icon">&#10003;</div>
+                    <span>"A website where beginners watch video courses about building with AI"</span>
+                </div>
+                <div class="sentence-item good">
+                    <div class="status-icon">&#10003;</div>
+                    <span>"A landing page that collects emails for my newsletter"</span>
+                </div>
+                <div class="sentence-item good">
+                    <div class="status-icon">&#10003;</div>
+                    <span>"A simple tool that converts recipes into shopping lists"</span>
+                </div>
+                <div class="sentence-item bad">
+                    <div class="status-icon">&#10007;</div>
+                    <span>"A platform with courses, certificates, social features, marketplace, and AI tutoring"</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Tech Stack -->
+        <div class="slide slide-tech-stack" data-slide-number="8">
+            <span class="slide-section">Section 3 - 5:00</span>
+            <div class="tech-content">
+                <h2>Choose Your Tech Stack</h2>
+                <p>Your tech stack choice matters way less than actually shipping. Pick something reasonable and go.</p>
+                <div class="tech-quote">"The best tech stack is the one you ship with"</div>
+            </div>
+            <div class="tech-visual">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="recommended">Next.js + Vercel <span class="tech-badge">Recommended</span></td>
+                            <td>What 02Ship uses. One-click deploy.</td>
+                        </tr>
+                        <tr>
+                            <td class="alternative">Astro</td>
+                            <td>Great for content sites</td>
+                        </tr>
+                        <tr>
+                            <td class="alternative">Remix</td>
+                            <td>Full-stack React alternative</td>
+                        </tr>
+                        <tr>
+                            <td class="alternative">Plain HTML</td>
+                            <td>Simplest possible approach</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Timeline -->
+        <div class="slide slide-timeline" data-slide-number="9">
+            <span class="slide-section">Section 4 - 7:00</span>
+            <h2>3-7 Days, <span class="highlight-text">Not Months</span></h2>
+            <p class="subtitle">Your first MVP should be fast. You have Claude.</p>
+            <div class="timeline-visual">
+                <div class="timeline-phase">
+                    <div class="days">Day 1-2</div>
+                    <div class="phase-label">Plan</div>
+                </div>
+                <div class="timeline-phase">
+                    <div class="days">Day 3-5</div>
+                    <div class="phase-label">Build</div>
+                </div>
+                <div class="timeline-phase">
+                    <div class="days">Day 6-7</div>
+                    <div class="phase-label">Polish &amp; Ship</div>
+                </div>
+            </div>
+            <div class="timeline-warning">If it's taking longer than a week, you're building too much. Cut features.</div>
+        </div>
+
+        <!-- SLIDE 10: Iteration Mindset -->
+        <div class="slide slide-iteration" data-slide-number="10">
+            <span class="slide-section">Section 4 - 8:00</span>
+            <h2>Ship, Learn, Improve, Repeat</h2>
+            <div class="iteration-cycle">
+                <div class="cycle-step">
+                    <div class="icon">&#128640;</div>
+                    <p>Ship Small</p>
+                </div>
+                <div class="cycle-arrow">&#8594;</div>
+                <div class="cycle-step">
+                    <div class="icon">&#128172;</div>
+                    <p>Get Feedback</p>
+                </div>
+                <div class="cycle-arrow">&#8594;</div>
+                <div class="cycle-step">
+                    <div class="icon">&#128161;</div>
+                    <p>Learn</p>
+                </div>
+                <div class="cycle-arrow">&#8594;</div>
+                <div class="cycle-step">
+                    <div class="icon">&#128736;</div>
+                    <p>Improve</p>
+                </div>
+                <div class="cycle-arrow">&#8594;</div>
+                <div class="cycle-step">
+                    <div class="icon">&#128640;</div>
+                    <p>Ship Again</p>
+                </div>
+            </div>
+            <p class="cycle-note">&#8634; Your first MVP will look nothing like your final product -- and that's the whole point</p>
+        </div>
+
+        <!-- SLIDE 11: Planning Template -->
+        <div class="slide slide-template" data-slide-number="11">
+            <span class="slide-section">Section 5 - 8:30</span>
+            <div class="template-content">
+                <h2>The MVP Planning Template</h2>
+                <p>Four sections. That's all you need to plan your MVP. Fill this out before you write a single line of code.</p>
+            </div>
+            <div class="template-card">
+                <h4>MVP Planning Template</h4>
+                <div class="template-field">
+                    <div class="label">1. Problem</div>
+                    <div class="value">What problem are you solving? Write from the user's perspective.</div>
+                </div>
+                <div class="template-field">
+                    <div class="label">2. Solution</div>
+                    <div class="value">One sentence describing how you solve it.</div>
+                </div>
+                <div class="template-field">
+                    <div class="label">3. Features (Max 3)</div>
+                    <div class="value">The three most important features. No more.</div>
+                </div>
+                <div class="template-field">
+                    <div class="label">4. Success Criteria</div>
+                    <div class="value">How do you know it worked? 2-3 measurable things.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Three Features Maximum -->
+        <div class="slide slide-three-features" data-slide-number="12">
+            <span class="slide-section">Section 5 - 9:30</span>
+            <h2>Three Features. Ship It.</h2>
+            <p class="subtitle">Ruthless prioritization is a superpower</p>
+            <div class="features-comparison">
+                <div class="features-box ship">
+                    <h3>&#10003; Ship in V1</h3>
+                    <ul>
+                        <li>&#128994; Course pages with video lessons</li>
+                        <li>&#128994; Landing page</li>
+                        <li>&#128994; Blog for tips and updates</li>
+                    </ul>
+                </div>
+                <div class="features-vs">VS</div>
+                <div class="features-box later">
+                    <h3>&#10007; Save for V2+</h3>
+                    <ul>
+                        <li>&#128308; User accounts</li>
+                        <li>&#128308; Progress tracking</li>
+                        <li>&#128308; Certificates</li>
+                        <li>&#128308; Quizzes</li>
+                        <li>&#128308; Marketplace</li>
+                        <li>&#128308; Social features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Success Criteria -->
+        <div class="slide slide-success" data-slide-number="13">
+            <span class="slide-section">Section 5 - 10:00</span>
+            <h2>Define Success Before You Build</h2>
+            <p class="subtitle">Simple, measurable, focused on real users</p>
+            <div class="success-card">
+                <div class="criteria">"5 people complete at least one lesson and tell me it was helpful."</div>
+                <div class="explanation">That's it. Simple. Measurable. Focused on user behavior, not vanity metrics. This becomes your north star for what to build and what to skip.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Filled Template -->
+        <div class="slide slide-filled-template" data-slide-number="14">
+            <span class="slide-section">Section 6 - 10:30</span>
+            <h2>The Complete 02Ship MVP Plan</h2>
+            <div class="filled-template">
+                <h4>02Ship - MVP Planning Template (Completed)</h4>
+                <div class="filled-row">
+                    <div class="field-label">Problem</div>
+                    <div class="field-value">Non-programmers can't build their ideas because existing resources are too technical.</div>
+                </div>
+                <div class="filled-row">
+                    <div class="field-label">Solution</div>
+                    <div class="field-value">A step-by-step video course teaching non-programmers to build with Claude.</div>
+                </div>
+                <div class="filled-row">
+                    <div class="field-label">Features</div>
+                    <div class="field-value">
+                        <ol class="features-numbered">
+                            <li><span class="num">1</span> Course pages with video lessons</li>
+                            <li><span class="num">2</span> Landing page</li>
+                            <li><span class="num">3</span> Blog</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="filled-row">
+                    <div class="field-label">Success</div>
+                    <div class="field-value">5 people complete a lesson and find it helpful.</div>
+                </div>
+                <div class="filled-row">
+                    <div class="field-label">Tech Stack</div>
+                    <div class="field-value">Next.js + TypeScript + Tailwind + Vercel</div>
+                </div>
+                <div class="filled-row">
+                    <div class="field-label">Timeline</div>
+                    <div class="field-value">One week</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: This Plan Became This Platform -->
+        <div class="slide slide-split" data-slide-number="15">
+            <span class="slide-section">Section 6 - 11:30</span>
+            <div class="split-left">
+                <h2>This Plan Became <span class="highlight-text">This Platform</span></h2>
+                <p>The 02Ship you're learning on right now was built from exactly this planning template. You don't need a hundred features to create something valuable. You need three good ones, shipped to real people.</p>
+            </div>
+            <div class="split-right">
+                <div class="platform-preview">
+                    <div class="browser-bar">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="screen">
+                        [02Ship Platform - Live]
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Common Concerns -->
+        <div class="slide slide-concerns" data-slide-number="16">
+            <span class="slide-section">Closing - 12:00</span>
+            <h2>You Might Be Thinking...</h2>
+            <div class="concerns-list">
+                <div class="concern-item">
+                    <div class="worry">"My idea isn't good enough"</div>
+                    <div class="arrow">&#8594;</div>
+                    <div class="answer">Ship it and learn. V1 is never the final product.</div>
+                </div>
+                <div class="concern-item">
+                    <div class="worry">"Three features is too few"</div>
+                    <div class="arrow">&#8594;</div>
+                    <div class="answer">Three shipped beats thirty planned.</div>
+                </div>
+                <div class="concern-item">
+                    <div class="worry">"A week isn't enough time"</div>
+                    <div class="arrow">&#8594;</div>
+                    <div class="answer">With Claude, you'd be surprised.</div>
+                </div>
+                <div class="concern-item">
+                    <div class="worry">"What if nobody uses it?"</div>
+                    <div class="arrow">&#8594;</div>
+                    <div class="answer">5 users with feedback > months perfecting alone.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Recap -->
+        <div class="slide slide-recap" data-slide-number="17">
+            <span class="slide-section">Closing - 12:30</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>MVP means focused, not broken</strong> -- minimum scope, maximum value</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>One-sentence test</strong> -- if you can't describe it simply, simplify it</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Tech stack matters less than shipping</strong> -- pick one and go</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>3-7 days, not months</strong> -- your first MVP should be fast</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">5</div>
+                    <p><strong>Three features maximum</strong> -- ruthless prioritization wins</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">6</div>
+                    <p><strong>02Ship is the proof</strong> -- planned and built exactly this way</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 18: Next Video -->
+        <div class="slide slide-next" data-slide-number="18">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 13:00</span>
+            <h2>Next: From Prompt to Production Code</h2>
+            <p>Your assignment: fill out the planning template for your own MVP. The building starts now.</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128221;</div>
+                    <p>Fill Out Template</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128250;</div>
+                    <p>Watch Video 2</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

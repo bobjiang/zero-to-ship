@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1: The 4 Cs of Effective Prompting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Slide: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Slide: Hook with two-column */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-hook .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .floating-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Slide: Skill Mindset */
+        .slide-mindset {
+            text-align: center;
+        }
+
+        .slide-mindset h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .mindset-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mindset-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .mindset-box.wrong {
+            background: rgba(255, 85, 85, 0.1);
+            border: 2px solid rgba(255, 85, 85, 0.3);
+        }
+
+        .mindset-box.right {
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .mindset-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mindset-box p {
+            color: var(--text-secondary);
+        }
+
+        .mindset-vs {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Vague vs Specific Prompt */
+        .slide-comparison {
+            padding: 2rem 3rem;
+        }
+
+        .slide-comparison h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .comparison-card.bad {
+            border-color: rgba(255, 85, 85, 0.4);
+        }
+
+        .comparison-card.good {
+            border-color: rgba(80, 250, 123, 0.4);
+        }
+
+        .comparison-card .label {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-card.bad .label {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        .comparison-card.good .label {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .comparison-card .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .comparison-card .result-text {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Slide: Framework Overview / 4 Cs Grid */
+        .slide-framework {
+            text-align: center;
+        }
+
+        .slide-framework h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .slide-framework .tagline {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .four-cs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .four-c-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.75rem 1.25rem;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .four-c-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .four-c-card .c-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .four-c-card:nth-child(1) .c-number { color: var(--accent-coral); }
+        .four-c-card:nth-child(2) .c-number { color: var(--accent-teal); }
+        .four-c-card:nth-child(3) .c-number { color: var(--accent-gold); }
+        .four-c-card:nth-child(4) .c-number { color: var(--success); }
+
+        .four-c-card:nth-child(1) { border-color: rgba(255, 107, 107, 0.3); }
+        .four-c-card:nth-child(2) { border-color: rgba(78, 205, 196, 0.3); }
+        .four-c-card:nth-child(3) { border-color: rgba(255, 217, 61, 0.3); }
+        .four-c-card:nth-child(4) { border-color: rgba(80, 250, 123, 0.3); }
+
+        .four-c-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .four-c-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Individual C deep-dive */
+        .slide-deep-dive {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .deep-dive-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .deep-dive-content .c-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .c-label.c1 { background: rgba(255, 107, 107, 0.2); color: var(--accent-coral); }
+        .c-label.c2 { background: rgba(78, 205, 196, 0.2); color: var(--accent-teal); }
+        .c-label.c3 { background: rgba(255, 217, 61, 0.2); color: var(--accent-gold); }
+        .c-label.c4 { background: rgba(80, 250, 123, 0.2); color: var(--success); }
+
+        .deep-dive-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .deep-dive-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .deep-dive-visual h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-box {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .prompt-box .highlight-coral { color: var(--accent-coral); font-weight: 500; }
+        .prompt-box .highlight-teal { color: var(--accent-teal); font-weight: 500; }
+        .prompt-box .highlight-gold { color: var(--accent-gold); font-weight: 500; }
+        .prompt-box .highlight-green { color: var(--success); font-weight: 500; }
+
+        /* Slide: Analogy */
+        .slide-analogy {
+            text-align: center;
+        }
+
+        .analogy-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analogy-item {
+            text-align: center;
+        }
+
+        .analogy-item .emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .analogy-item p {
+            color: var(--text-secondary);
+        }
+
+        .analogy-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        .slide-analogy blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        /* Slide: Trick / Tip */
+        .slide-tip {
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-tip h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tip-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 217, 61, 0.1);
+            border: 1px solid rgba(255, 217, 61, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .tip-box p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .tip-box .tip-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Slide: Constraint Phrases */
+        .slide-phrases {
+            text-align: center;
+        }
+
+        .slide-phrases h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .phrases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .phrase-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+        }
+
+        .phrase-item::before {
+            content: "\"";
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            opacity: 0.5;
+        }
+
+        /* Slide: Before & After Transformation */
+        .slide-transform {
+            padding: 2rem 3rem;
+        }
+
+        .slide-transform h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .transform-layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .transform-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+            margin-top: 4rem;
+        }
+
+        .transform-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .transform-card .label {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .transform-card.before .label {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        .transform-card.after .label {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .transform-card .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .transform-card .prompt-text .c-tag {
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-right: 0.25rem;
+        }
+
+        .c-tag.clear { background: rgba(255, 107, 107, 0.3); color: var(--accent-coral); }
+        .c-tag.context { background: rgba(78, 205, 196, 0.3); color: var(--accent-teal); }
+        .c-tag.constrain { background: rgba(255, 217, 61, 0.3); color: var(--accent-gold); }
+        .c-tag.example { background: rgba(80, 250, 123, 0.3); color: var(--success); }
+
+        /* Slide: When to Use */
+        .slide-when {
+            text-align: center;
+        }
+
+        .slide-when h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .when-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .when-card {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .when-card.quick {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .when-card.full {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .when-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .when-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .when-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Recap */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            color: var(--bg-dark);
+        }
+
+        .recap-item:nth-child(1) .number { background: var(--accent-coral); }
+        .recap-item:nth-child(2) .number { background: var(--accent-teal); }
+        .recap-item:nth-child(3) .number { background: var(--accent-gold); }
+        .recap-item:nth-child(4) .number { background: var(--success); }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Slide: Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 1: The 4 Cs of Effective Prompting</h1>
+        <p>02Ship Claude Basics Course &bull; Lesson 2 &bull; Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Video 1 of Lesson 2</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Color coding: <code>#ff6b6b</code> Clear, <code>#4ecdc4</code> Contextual, <code>#ffd93d</code> Constrained, <code>#50fa7b</code> Examples</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>The 4 Cs of Effective Prompting</h1>
+            <p class="subtitle">02Ship Claude Basics &bull; Lesson 2</p>
+            <span class="badge">A framework that transforms your prompts</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening &bull; 0:00</span>
+            <div class="content">
+                <div class="text-content">
+                    <h2>Have you ever given directions and they went to the <span class="highlight-text">completely wrong place</span>?</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1rem;">That's what happens with bad prompts. The difference between "close enough" and "nails it" is a learnable skill.</p>
+                    <div class="floating-badge">Prompting is a skill, not magic</div>
+                </div>
+                <div style="background: #252530; border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="display: flex; gap: 6px; margin-bottom: 1rem;">
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #27ca40;"></div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <div style="background: rgba(255,85,85,0.1); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,85,85,0.2);">
+                            <div style="font-size: 0.65rem; color: var(--error); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1px;">Bad prompt</div>
+                            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-secondary);">Make me a website</div>
+                        </div>
+                        <div style="background: rgba(80,250,123,0.1); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(80,250,123,0.2);">
+                            <div style="font-size: 0.65rem; color: var(--success); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 1px;">Good prompt</div>
+                            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-secondary);">Create a portfolio with hero, about, and contact sections...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Skill Mindset -->
+        <div class="slide slide-mindset" data-slide-number="3">
+            <span class="slide-section">Section 1 &bull; 1:15</span>
+            <h2>Prompting Is a Skill, Not Magic</h2>
+            <div class="mindset-comparison">
+                <div class="mindset-box wrong">
+                    <h3>Mysterious Art</h3>
+                    <p>"You either get it or you don't"</p>
+                </div>
+                <div class="mindset-vs">VS</div>
+                <div class="mindset-box right">
+                    <h3>Learnable Skill</h3>
+                    <p>Like writing emails or giving directions</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Vague Input = Vague Output -->
+        <div class="slide slide-comparison" data-slide-number="4">
+            <span class="slide-section">Section 1 &bull; 2:00</span>
+            <h2>Vague Input = Vague Output</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card bad">
+                    <div class="label">Vague Prompt</div>
+                    <div class="prompt-text">"Make me a website"</div>
+                    <div class="result-text">Claude guesses everything: layout, content, style, purpose... and probably gets it wrong.</div>
+                </div>
+                <div class="comparison-card good">
+                    <div class="label">Specific Prompt</div>
+                    <div class="prompt-text">"Create a single-page portfolio with a hero section, about-me section, and contact form"</div>
+                    <div class="result-text">Claude knows exactly what to build. Less guessing, better results.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: The 4 Cs Framework Overview -->
+        <div class="slide slide-framework" data-slide-number="5">
+            <span class="slide-section">Section 2 &bull; 3:00</span>
+            <h2>The 4 Cs Framework</h2>
+            <p class="tagline">Every great prompt has four ingredients</p>
+            <div class="four-cs-grid">
+                <div class="four-c-card">
+                    <div class="c-number">C1</div>
+                    <h3>Clear</h3>
+                    <p>Be specific about what you want</p>
+                </div>
+                <div class="four-c-card">
+                    <div class="c-number">C2</div>
+                    <h3>Contextual</h3>
+                    <p>Give the bigger picture</p>
+                </div>
+                <div class="four-c-card">
+                    <div class="c-number">C3</div>
+                    <h3>Constrained</h3>
+                    <p>Set boundaries that guide</p>
+                </div>
+                <div class="four-c-card">
+                    <div class="c-number">C4</div>
+                    <h3>Examples</h3>
+                    <p>Show what good looks like</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Restaurant Analogy -->
+        <div class="slide slide-analogy" data-slide-number="6">
+            <span class="slide-section">Section 2 &bull; 3:30</span>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">🍽️</div>
+                    <p>"Give me<br><strong>food</strong>"</p>
+                </div>
+                <div class="analogy-arrow">vs</div>
+                <div class="analogy-item">
+                    <div class="emoji">🍔</div>
+                    <p>"Medium-rare burger,<br><strong>no onions, brioche bun</strong>"</p>
+                </div>
+            </div>
+            <blockquote>
+                "Ordering food is like prompting AI. Vague orders get random results. Specific orders get exactly what you want."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 7: C1 - Clear (Deep Dive) -->
+        <div class="slide slide-deep-dive" data-slide-number="7">
+            <span class="slide-section">Section 3 &bull; 4:30</span>
+            <div class="deep-dive-content">
+                <div class="c-label c1">C1 &mdash; Clear</div>
+                <h2>Be Specific About What You Want</h2>
+                <p>Specificity does not require technical knowledge. Just describe what you want to see, what it should do, and what it should look like.</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 107, 107, 0.1); border-radius: 8px; border-left: 3px solid var(--accent-coral);">
+                    <p style="font-size: 0.95rem; color: var(--accent-coral); font-weight: 600;">The Misunderstand Test</p>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">"Could someone misunderstand this?" If yes, add more detail.</p>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: var(--accent-coral);">Before vs After</h4>
+                <div class="prompt-box" style="margin-bottom: 0.75rem;">
+                    <span style="color: var(--error);">Vague:</span> "Make a website"
+                </div>
+                <div class="prompt-box">
+                    <span class="highlight-coral">Clear:</span> "Create a <span class="highlight-coral">single-page portfolio</span> website with a <span class="highlight-coral">hero section</span> that has my name and tagline, an <span class="highlight-coral">about-me section</span>, and a <span class="highlight-coral">contact form</span> at the bottom."
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: C2 - Contextual (Deep Dive) -->
+        <div class="slide slide-deep-dive" data-slide-number="8">
+            <span class="slide-section">Section 4 &bull; 6:00</span>
+            <div class="deep-dive-content">
+                <div class="c-label c2">C2 &mdash; Contextual</div>
+                <h2>Give Claude the Bigger Picture</h2>
+                <p>Claude performs dramatically better when it understands the "why" and "where." Think of context as answering the questions Claude would ask if it could.</p>
+                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <span style="color: var(--accent-teal);">&#9654;</span> Project type
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <span style="color: var(--accent-teal);">&#9654;</span> Tech stack
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <span style="color: var(--accent-teal);">&#9654;</span> Who the users are
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <span style="color: var(--accent-teal);">&#9654;</span> What already exists
+                    </div>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: var(--accent-teal);">Context Is King</h4>
+                <div class="prompt-box" style="margin-bottom: 0.75rem;">
+                    <span style="color: var(--error);">No context:</span> "Write a function to process payments"
+                </div>
+                <div class="prompt-box">
+                    <span class="highlight-teal">With context:</span> "<span class="highlight-teal">I'm building an e-commerce checkout page for a Next.js app. I'm using Stripe for payments.</span> Write a server-side function to handle the payment process."
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: C3 - Constrained (Deep Dive) -->
+        <div class="slide slide-deep-dive" data-slide-number="9">
+            <span class="slide-section">Section 5 &bull; 7:30</span>
+            <div class="deep-dive-content">
+                <div class="c-label c3">C3 &mdash; Constrained</div>
+                <h2>Set Boundaries That Guide</h2>
+                <p>Constraints are guidance, not limitations. Think of them like guardrails on a bowling lane -- they keep the ball out of the gutter.</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 217, 61, 0.1); border-radius: 8px; border-left: 3px solid var(--accent-gold);">
+                    <p style="font-size: 0.95rem; color: var(--accent-gold); font-weight: 600;">02Ship Example</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">"Use TypeScript and Tailwind CSS, keep components under 100 lines, and make everything mobile-responsive."</p>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: var(--accent-gold);">Constraint Phrases You Can Steal</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-gold);">"Keep it simple"</div>
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-gold);">"Under 500 words"</div>
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-gold);">"No external libraries"</div>
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-gold);">"Make it accessible"</div>
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-gold);">"Mobile-responsive"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: C4 - Examples (Deep Dive) -->
+        <div class="slide slide-deep-dive" data-slide-number="10">
+            <span class="slide-section">Section 6 &bull; 9:00</span>
+            <div class="deep-dive-content">
+                <div class="c-label c4">C4 &mdash; Examples</div>
+                <h2>Show Claude What Good Looks Like</h2>
+                <p>Examples teach Claude your style faster than any amount of explanation. You can give "good" examples and "bad" examples -- both are useful.</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(80, 250, 123, 0.1); border-radius: 8px; border-left: 3px solid var(--success);">
+                    <p style="font-size: 0.95rem; color: var(--success); font-weight: 600;">Show, Don't Just Tell</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">One example is worth a paragraph of description.</p>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: var(--success);">Example in Action</h4>
+                <div class="prompt-box" style="margin-bottom: 0.75rem;">
+                    <span style="color: var(--error);">Vague:</span> "Write in a friendly tone"
+                </div>
+                <div class="prompt-box">
+                    <span class="highlight-green">With example:</span><br><br>
+                    <span style="color: var(--success);">Good:</span> "Hey! Let's build this together."<br><br>
+                    <span style="color: var(--error);">Bad:</span> "Greetings, user. Construction shall proceed."
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Full Before & After Transformation -->
+        <div class="slide slide-transform" data-slide-number="11">
+            <span class="slide-section">Section 7 &bull; 10:30</span>
+            <h2>Putting All 4 Cs Together</h2>
+            <div class="transform-layout">
+                <div class="transform-card before">
+                    <div class="label">Before</div>
+                    <div class="prompt-text">"Make me a landing page."</div>
+                    <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--error); font-style: italic;">Generic, unfocused result</div>
+                </div>
+                <div class="transform-arrow">&#10132;</div>
+                <div class="transform-card after">
+                    <div class="label">After: All 4 Cs Applied</div>
+                    <div class="prompt-text">
+                        <span class="c-tag clear">Clear</span> "Create a landing page with a hero section, three feature cards, a testimonials section, and a CTA button."<br><br>
+                        <span class="c-tag context">Context</span> "This is for a learning platform that teaches non-programmers to build with AI."<br><br>
+                        <span class="c-tag constrain">Constrain</span> "Use React and Tailwind CSS. Mobile-responsive. Under 200 lines."<br><br>
+                        <span class="c-tag example">Example</span> "Style it like the Vercel homepage -- minimal, clean, dark mode."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Transformation Result -->
+        <div class="slide slide-comparison" data-slide-number="12">
+            <span class="slide-section">Section 7 &bull; 11:00</span>
+            <h2>Watch the Difference</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card bad">
+                    <div class="label">Without 4 Cs</div>
+                    <div style="background: #0d0d12; border-radius: 8px; padding: 1rem; margin-top: 0.5rem;">
+                        <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: 'JetBrains Mono', monospace; line-height: 1.6;">
+                            Generic template<br>
+                            Random color scheme<br>
+                            Desktop-only layout<br>
+                            No brand personality<br>
+                            Placeholder content
+                        </div>
+                    </div>
+                    <div class="result-text">Claude guessed at everything and got most of it wrong.</div>
+                </div>
+                <div class="comparison-card good">
+                    <div class="label">With 4 Cs</div>
+                    <div style="background: #0d0d12; border-radius: 8px; padding: 1rem; margin-top: 0.5rem;">
+                        <div style="font-size: 0.8rem; color: var(--text-secondary); font-family: 'JetBrains Mono', monospace; line-height: 1.6;">
+                            Hero + features + testimonials<br>
+                            Dark mode, clean aesthetic<br>
+                            Mobile-responsive design<br>
+                            React + Tailwind CSS code<br>
+                            Targeted for learning platform
+                        </div>
+                    </div>
+                    <div class="result-text">Claude delivered exactly what was specified -- first try.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: When to Use Short vs Detailed Prompts -->
+        <div class="slide slide-when" data-slide-number="13">
+            <span class="slide-section">Section 8 &bull; 11:30</span>
+            <h2>Short Prompts vs. Full 4 Cs</h2>
+            <div class="when-grid">
+                <div class="when-card quick">
+                    <div class="icon">&#9889;</div>
+                    <h3>Quick Questions</h3>
+                    <p>"What does TypeScript do?"<br>"Explain CSS flexbox"<br>"How do I install Node.js?"</p>
+                    <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent-teal); font-weight: 600;">Short prompt is fine</div>
+                </div>
+                <div class="when-card full">
+                    <div class="icon">&#128736;</div>
+                    <h3>Big Tasks</h3>
+                    <p>Building features<br>Creating content<br>Complex projects</p>
+                    <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent-coral); font-weight: 600;">Use the full 4 Cs</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Recap -->
+        <div class="slide slide-recap" data-slide-number="14">
+            <span class="slide-section">Closing &bull; 12:00</span>
+            <h2>The 4 Cs of Effective Prompting</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">C</div>
+                    <div>
+                        <p><strong>Clear</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Be specific about what you want</p>
+                    </div>
+                </div>
+                <div class="recap-item">
+                    <div class="number">C</div>
+                    <div>
+                        <p><strong>Contextual</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Give Claude the bigger picture</p>
+                    </div>
+                </div>
+                <div class="recap-item">
+                    <div class="number">C</div>
+                    <div>
+                        <p><strong>Constrained</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Set boundaries that guide the response</p>
+                    </div>
+                </div>
+                <div class="recap-item">
+                    <div class="number">C</div>
+                    <div>
+                        <p><strong>Examples</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Show Claude what good looks like</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Next Steps -->
+        <div class="slide slide-next" data-slide-number="15">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing &bull; 12:15</span>
+            <h2>Next: Prompting for Different Goals</h2>
+            <p>Learn how to adjust your prompts for code, explanations, brainstorming, and more</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128250;</div>
+                    <p>Watch Video 2</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#9997;&#65039;</div>
+                    <p>Practice the 4 Cs</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

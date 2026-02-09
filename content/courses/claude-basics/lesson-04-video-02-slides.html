@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2: Setting Up Your Dev Environment (The Minimum)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Hook Slide */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-hook h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Three Tools */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tool-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-teal);
+        }
+
+        .tool-card .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .tool-card .tool-tag {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tool-tag.free {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .tool-tag.installed {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent-teal);
+        }
+
+        /* Detail Slide */
+        .slide-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .detail-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-number {
+            font-size: 4rem;
+            font-weight: 700;
+            opacity: 0.3;
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+        }
+
+        .detail-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* VS Code Mockup */
+        .vscode-mockup {
+            background: #1e1e2e;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .vscode-titlebar {
+            background: #2d2d3f;
+            padding: 0.5rem 0.75rem;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .vscode-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .vscode-dot.red { background: #ff5f56; }
+        .vscode-dot.yellow { background: #ffbd2e; }
+        .vscode-dot.green { background: #27ca40; }
+
+        .vscode-body {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            min-height: 180px;
+        }
+
+        .vscode-sidebar {
+            background: #252535;
+            padding: 0.75rem;
+        }
+
+        .vscode-sidebar .label {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .vscode-file {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            margin-bottom: 0.15rem;
+            color: var(--text-secondary);
+        }
+
+        .vscode-file.active {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent-teal);
+        }
+
+        .vscode-editor {
+            padding: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .vscode-terminal {
+            background: #0d0d12;
+            padding: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            grid-column: 1 / -1;
+        }
+
+        .vscode-terminal .term-label {
+            font-size: 0.6rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .vscode-terminal .prompt {
+            color: var(--accent-teal);
+        }
+
+        .vscode-terminal .command {
+            color: var(--text-primary);
+        }
+
+        .vscode-terminal .output {
+            color: var(--text-secondary);
+        }
+
+        /* Terminal Mockup */
+        .terminal-mockup {
+            background: #0d0d12;
+            border-radius: 8px;
+            padding: 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .terminal-mockup .prompt {
+            color: var(--accent-teal);
+        }
+
+        .terminal-mockup .command {
+            color: var(--text-primary);
+        }
+
+        .terminal-mockup .output {
+            color: var(--text-secondary);
+        }
+
+        .terminal-mockup .success-output {
+            color: var(--success);
+        }
+
+        .terminal-mockup .error-output {
+            color: var(--error);
+        }
+
+        /* Analogy Slide */
+        .slide-analogy {
+            text-align: center;
+        }
+
+        .analogy-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analogy-item {
+            text-align: center;
+        }
+
+        .analogy-item .emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .analogy-item p {
+            color: var(--text-secondary);
+        }
+
+        .analogy-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        .slide-analogy blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        /* Package JSON Mockup */
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .key { color: #8be9fd; }
+        .code-block .value { color: #f1fa8c; }
+        .code-block .tag { color: #ff79c6; }
+        .code-block .attr { color: #50fa7b; }
+        .code-block .bracket { color: var(--text-secondary); }
+
+        /* Comparison Slide */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .comparison-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .comparison-box.simple {
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .comparison-box.full {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .comparison-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-box .file-list {
+            text-align: left;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .comparison-box .action-label {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .action-label.open {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .action-label.npm {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent-teal);
+        }
+
+        /* Decision Tree */
+        .decision-tree {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .decision-node {
+            background: rgba(255, 217, 61, 0.15);
+            border: 1px solid rgba(255, 217, 61, 0.4);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .decision-branches {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .decision-branch {
+            text-align: center;
+        }
+
+        .decision-branch .branch-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .decision-branch .branch-label.yes { color: var(--success); }
+        .decision-branch .branch-label.no { color: var(--error); }
+
+        .decision-branch .branch-result {
+            background: rgba(255,255,255,0.05);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Error Handling */
+        .error-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .error-card {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .error-card .error-msg {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--error);
+        }
+
+        .error-card .error-arrow {
+            color: var(--accent-teal);
+            font-size: 1.2rem;
+        }
+
+        .error-card .error-fix {
+            font-size: 0.9rem;
+            color: var(--success);
+        }
+
+        /* Workflow Recap */
+        .workflow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .workflow-step {
+            background: rgba(255,255,255,0.08);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .workflow-step .step-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .workflow-step p {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .workflow-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+
+        /* Recap Slide */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Browser Mockup */
+        .browser-mockup {
+            background: #252530;
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .browser-bar {
+            display: flex;
+            gap: 6px;
+            padding: 0.75rem 1rem;
+            background: #2d2d3f;
+            align-items: center;
+        }
+
+        .browser-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .browser-dot.red { background: #ff5f56; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #27ca40; }
+
+        .browser-url {
+            margin-left: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .browser-content {
+            padding: 1.5rem;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 2: Setting Up Your Dev Environment (The Minimum)</h1>
+        <p>02Ship Claude Basics Course - Lesson 4 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 4, Video 2</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder elements with actual VS Code, Terminal, and Node.js screenshots</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Setting Up Your Dev Environment</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 4</p>
+            <span class="badge">The Minimum Setup</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <h2>Simple HTML? <span class="highlight-text">Just open it.</span></h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1rem;">But real projects need a kitchen to cook in. Today: the minimum setup to bring Claude's code to life.</p>
+                    <div style="display: inline-block; background: rgba(78, 205, 196, 0.2); border: 1px solid var(--accent-teal); color: var(--accent-teal); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">Not a CS course. Just enough to build.</div>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; width: 120px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128221;</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Editor</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; width: 120px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128187;</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Terminal</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center; width: 120px;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#127760;</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Browser</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Three Tools Overview -->
+        <div class="slide" data-slide-number="3" style="text-align: center;">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">You Need Exactly Three Things</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">&#128221;</div>
+                    <h3>Text Editor</h3>
+                    <p>Read and edit code files</p>
+                    <span class="tool-tag free">Free</span>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">&#9000;&#65039;</div>
+                    <h3>Terminal</h3>
+                    <p>Run commands to launch projects</p>
+                    <span class="tool-tag free">Built-in</span>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">&#127760;</div>
+                    <h3>Browser</h3>
+                    <p>See the results of your work</p>
+                    <span class="tool-tag installed">Already Have It</span>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--accent-gold); font-weight: 600;">Text Editor + Terminal + Browser = Ready</p>
+        </div>
+
+        <!-- SLIDE 4: VS Code -->
+        <div class="slide slide-detail" data-slide-number="4">
+            <span class="slide-section">Section 1 - 1:30</span>
+            <div class="detail-number" style="color: var(--accent-coral);">1</div>
+            <div class="detail-content">
+                <h2>VS Code</h2>
+                <p>Visual Studio Code. Free, made by Microsoft, used by most developers.</p>
+                <p><strong style="color: var(--accent-teal);">Beginner-friendly:</strong> Color-codes files, built-in terminal, catches mistakes with red underlines.</p>
+                <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--accent-gold);">code.visualstudio.com</p>
+            </div>
+            <div class="detail-visual">
+                <div class="vscode-mockup">
+                    <div class="vscode-titlebar">
+                        <div class="vscode-dot red"></div>
+                        <div class="vscode-dot yellow"></div>
+                        <div class="vscode-dot green"></div>
+                        <span style="font-size: 0.7rem; color: var(--text-secondary); margin-left: 0.5rem;">Visual Studio Code</span>
+                    </div>
+                    <div class="vscode-body">
+                        <div class="vscode-sidebar">
+                            <div class="label">Explorer</div>
+                            <div class="vscode-file active">page.tsx</div>
+                            <div class="vscode-file">layout.tsx</div>
+                            <div class="vscode-file">globals.css</div>
+                        </div>
+                        <div class="vscode-editor">
+                            <span style="color: #ff79c6;">export default</span> <span style="color: #50fa7b;">function</span> <span style="color: #8be9fd;">Page</span>() {<br>
+                            &nbsp;&nbsp;<span style="color: #ff79c6;">return</span> (<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span style="color: #ff79c6;">h1</span>&gt;Hello!&lt;/<span style="color: #ff79c6;">h1</span>&gt;<br>
+                            &nbsp;&nbsp;)<br>
+                            }
+                        </div>
+                        <div class="vscode-terminal">
+                            <div class="term-label">Terminal</div>
+                            <span class="prompt">$ </span><span class="command">npm run dev</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Terminal -->
+        <div class="slide slide-detail" data-slide-number="5">
+            <span class="slide-section">Section 1 - 2:15</span>
+            <div class="detail-number" style="color: var(--accent-teal);">2</div>
+            <div class="detail-content">
+                <h2>Terminal</h2>
+                <p>A text-based way to talk to your computer. Instead of clicking buttons, you type commands.</p>
+                <p><strong style="color: var(--accent-teal);">Good news:</strong> VS Code has one built right in. Go to View &#8594; Terminal.</p>
+                <div style="margin-top: 1rem;">
+                    <span style="display: inline-block; background: rgba(255,255,255,0.08); padding: 0.3rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-right: 0.5rem;">Mac: Terminal</span>
+                    <span style="display: inline-block; background: rgba(255,255,255,0.08); padding: 0.3rem 0.75rem; border-radius: 4px; font-size: 0.85rem;">Windows: PowerShell</span>
+                </div>
+            </div>
+            <div class="detail-visual">
+                <div class="terminal-mockup">
+                    <div style="font-size: 0.7rem; color: var(--accent-teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem;">Terminal</div>
+                    <span class="prompt">$ </span><span class="command">pwd</span><br>
+                    <span class="output">/Users/you/my-project</span><br><br>
+                    <span class="prompt">$ </span><span class="command">ls</span><br>
+                    <span class="output">node_modules/  package.json  src/</span><br><br>
+                    <span class="prompt">$ </span><span style="color: var(--text-secondary); opacity: 0.5;">&#9612;</span>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">Typing commands instead of clicking buttons</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Browser + localhost -->
+        <div class="slide slide-detail" data-slide-number="6">
+            <span class="slide-section">Section 1 - 2:45</span>
+            <div class="detail-number" style="color: var(--accent-gold);">3</div>
+            <div class="detail-content">
+                <h2>Browser</h2>
+                <p>Chrome, Firefox, Safari, Edge -- any modern browser works. You already have one.</p>
+                <p><strong style="color: var(--accent-teal);">localhost:3000</strong> is the address for local projects. Think of it as your computer's private website.</p>
+                <p style="font-size: 0.95rem; color: var(--text-secondary);">Only you can see it. It's not on the internet.</p>
+            </div>
+            <div class="detail-visual">
+                <div class="browser-mockup">
+                    <div class="browser-bar">
+                        <div class="browser-dot red"></div>
+                        <div class="browser-dot yellow"></div>
+                        <div class="browser-dot green"></div>
+                        <div class="browser-url">localhost:3000</div>
+                    </div>
+                    <div class="browser-content" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+                        <div style="text-align: center;">
+                            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Your Project Is Running!</h3>
+                            <p style="font-size: 0.85rem; opacity: 0.8;">Only visible on your computer</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">localhost = your computer, 3000 = the port (door number)</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Node.js Analogy -->
+        <div class="slide slide-analogy" data-slide-number="7">
+            <span class="slide-section">Section 2 - 3:00</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">One More Thing: Node.js</h2>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">&#128161;</div>
+                    <p>Your project<br><strong>is the lamp</strong></p>
+                </div>
+                <div class="analogy-arrow">+</div>
+                <div class="analogy-item">
+                    <div class="emoji">&#128268;</div>
+                    <p>Node.js is<br><strong>the power outlet</strong></p>
+                </div>
+                <div class="analogy-arrow">=</div>
+                <div class="analogy-item">
+                    <div class="emoji">&#10024;</div>
+                    <p>Your project<br><strong>turns on</strong></p>
+                </div>
+            </div>
+            <blockquote>
+                "Node.js is what makes modern web projects run on your computer. Without it, most projects Claude generates can't turn on."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 8: Installing Node.js -->
+        <div class="slide slide-detail" data-slide-number="8">
+            <span class="slide-section">Section 2 - 3:45</span>
+            <div class="detail-content">
+                <h2>Installing Node.js</h2>
+                <p>Go to <strong style="color: var(--accent-gold);">nodejs.org</strong> and pick the <strong style="color: var(--success);">LTS</strong> version (Long-Term Support = stable and tested).</p>
+                <p>Download, run installer, accept defaults. One-time install -- then forget about it.</p>
+                <div style="margin-top: 1.5rem; background: rgba(80, 250, 123, 0.1); border: 1px solid rgba(80, 250, 123, 0.3); padding: 1rem 1.5rem; border-radius: 8px;">
+                    <p style="color: var(--success); font-weight: 600; font-size: 0.9rem;">Always choose LTS (Long-Term Support)</p>
+                </div>
+            </div>
+            <div class="detail-visual">
+                <div class="terminal-mockup">
+                    <div style="font-size: 0.7rem; color: var(--accent-teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem;">Verify Installation</div>
+                    <span class="prompt">$ </span><span class="command">node -v</span><br>
+                    <span class="success-output">v20.11.0</span><br><br>
+                    <span class="prompt">$ </span><span class="command">npm -v</span><br>
+                    <span class="success-output">10.2.4</span><br><br>
+                    <span class="output" style="font-size: 0.75rem;">// Both show versions? You're set!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: package.json -->
+        <div class="slide slide-detail" data-slide-number="9">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <div class="detail-content">
+                <h2>package.json</h2>
+                <p>Your project's <strong style="color: var(--accent-gold);">recipe card</strong>. Lists the project name, commands, and dependencies (external libraries).</p>
+                <p>Claude creates this for you. You just need to know it exists.</p>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;">It tells npm what to download.</p>
+            </div>
+            <div class="detail-visual">
+                <div class="code-block" style="font-size: 0.8rem;">
+<span class="bracket">{</span>
+  <span class="key">"name"</span>: <span class="value">"my-project"</span>,
+  <span class="key">"scripts"</span>: <span class="bracket">{</span>
+    <span class="key">"dev"</span>: <span class="value">"next dev"</span>,
+    <span class="key">"build"</span>: <span class="value">"next build"</span>,
+    <span class="key">"start"</span>: <span class="value">"next start"</span>
+  <span class="bracket">}</span>,
+  <span class="key">"dependencies"</span>: <span class="bracket">{</span>
+    <span class="key">"next"</span>: <span class="value">"^14.0.0"</span>,
+    <span class="key">"react"</span>: <span class="value">"^18.2.0"</span>,
+    <span class="key">"react-dom"</span>: <span class="value">"^18.2.0"</span>
+  <span class="bracket">}</span>
+<span class="bracket">}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: npm install -->
+        <div class="slide slide-analogy" data-slide-number="10">
+            <span class="slide-section">Section 3 - 6:30</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">npm install = Grocery Shopping</h2>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">&#128220;</div>
+                    <p>package.json<br><strong>= the recipe</strong></p>
+                </div>
+                <div class="analogy-arrow">&#8594;</div>
+                <div class="analogy-item">
+                    <div class="emoji">&#128722;</div>
+                    <p>npm install<br><strong>= grocery run</strong></p>
+                </div>
+                <div class="analogy-arrow">&#8594;</div>
+                <div class="analogy-item">
+                    <div class="emoji">&#128230;</div>
+                    <p>node_modules<br><strong>= ingredients</strong></p>
+                </div>
+            </div>
+            <blockquote>
+                "When you get a new project from Claude, the first thing you always do is open the terminal and type npm install. It reads the recipe card and downloads everything the project needs."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 11: The Complete Workflow -->
+        <div class="slide" data-slide-number="11" style="text-align: center;">
+            <span class="slide-section">Section 3 - 7:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">The 5-Step Workflow</h2>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-icon">&#128194;</div>
+                    <p>Open folder<br>in VS Code</p>
+                </div>
+                <div class="workflow-arrow">&#8594;</div>
+                <div class="workflow-step">
+                    <div class="step-icon">&#9000;&#65039;</div>
+                    <p>Open<br>terminal</p>
+                </div>
+                <div class="workflow-arrow">&#8594;</div>
+                <div class="workflow-step">
+                    <div class="step-icon">&#128229;</div>
+                    <p>npm<br>install</p>
+                </div>
+                <div class="workflow-arrow">&#8594;</div>
+                <div class="workflow-step">
+                    <div class="step-icon">&#9654;&#65039;</div>
+                    <p>npm<br>run dev</p>
+                </div>
+                <div class="workflow-arrow">&#8594;</div>
+                <div class="workflow-step">
+                    <div class="step-icon">&#127760;</div>
+                    <p>Open<br>browser</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--accent-gold); font-weight: 600; font-size: 1.1rem;">Open folder &#8594; npm install &#8594; npm run dev &#8594; localhost:3000</p>
+        </div>
+
+        <!-- SLIDE 12: Simple vs Full Setup -->
+        <div class="slide" data-slide-number="12" style="text-align: center;">
+            <span class="slide-section">Section 4 - 8:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">When You Don't Need All This</h2>
+            <div class="comparison-grid">
+                <div class="comparison-box simple">
+                    <h3 style="color: var(--success);">Simple: Just Open It</h3>
+                    <div class="file-list">
+                        <p>greeting.html</p>
+                        <p style="opacity: 0.5; font-size: 0.75rem;">( one or two files )</p>
+                    </div>
+                    <span class="action-label open">Double-click to open</span>
+                </div>
+                <div class="comparison-box full">
+                    <h3 style="color: var(--accent-teal);">Full: npm install first</h3>
+                    <div class="file-list">
+                        <p>package.json</p>
+                        <p>src/</p>
+                        <p>node_modules/</p>
+                        <p style="opacity: 0.5; font-size: 0.75rem;">( folder structure )</p>
+                    </div>
+                    <span class="action-label npm">npm install + npm run dev</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Decision Tree -->
+        <div class="slide" data-slide-number="13" style="text-align: center;">
+            <span class="slide-section">Section 4 - 9:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">How to Know Which Setup You Need</h2>
+            <div class="decision-tree">
+                <div class="decision-node">Does it have package.json?</div>
+                <div style="font-size: 1.5rem; color: var(--text-secondary);">&#8595;</div>
+                <div class="decision-branches">
+                    <div class="decision-branch">
+                        <div class="branch-label yes">YES</div>
+                        <div style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.5rem;">&#8595;</div>
+                        <div class="branch-result">
+                            <div style="font-weight: 600; color: var(--accent-teal);">npm install</div>
+                            <div style="font-size: 0.8rem; color: var(--text-secondary);">then npm run dev</div>
+                        </div>
+                    </div>
+                    <div class="decision-branch">
+                        <div class="branch-label no">NO</div>
+                        <div style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.5rem;">&#8595;</div>
+                        <div class="branch-result">
+                            <div style="font-weight: 600; color: var(--success);">Just open it</div>
+                            <div style="font-size: 0.8rem; color: var(--text-secondary);">in your browser</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--text-secondary);">When in doubt: ask Claude <span style="color: var(--accent-gold);">"Do I need npm install for this?"</span></p>
+        </div>
+
+        <!-- SLIDE 14: Error Handling -->
+        <div class="slide" data-slide-number="14">
+            <span class="slide-section">Section 5 - 12:00</span>
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Errors Are Clues, Not Dead Ends</h2>
+            <div class="error-cards">
+                <div class="error-card">
+                    <div class="error-msg">"node is not recognized"</div>
+                    <div class="error-arrow">&#8594;</div>
+                    <div class="error-fix">Reinstall Node.js</div>
+                </div>
+                <div class="error-card">
+                    <div class="error-msg">"port 3000 already in use"</div>
+                    <div class="error-arrow">&#8594;</div>
+                    <div class="error-fix">Close other servers or use different port</div>
+                </div>
+                <div class="error-card">
+                    <div class="error-msg">"module not found"</div>
+                    <div class="error-arrow">&#8594;</div>
+                    <div class="error-fix">Run npm install again</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.3); padding: 1rem 2rem; border-radius: 8px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                <strong style="color: var(--accent-teal);">Best trick:</strong> Copy the error, paste it to Claude, ask for the fix.
+            </p>
+        </div>
+
+        <!-- SLIDE 15: Recap -->
+        <div class="slide slide-recap" data-slide-number="15">
+            <span class="slide-section">Closing - 13:00</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Three tools:</strong> VS Code, Terminal, Browser (+ Node.js as the power outlet)</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>npm install first, always</strong> -- download the ingredients before cooking</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>localhost:3000</strong> is your private preview that only you can see</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Errors are clues</strong> -- copy them, paste to Claude, get the fix</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Next Steps -->
+        <div class="slide slide-next" data-slide-number="16">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 13:30</span>
+            <h2>Setup Complete! Next: Reading Code</h2>
+            <p>Your kitchen is ready. Now learn to read the recipes.</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128187;</div>
+                    <p>Watch Video 3</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128295;</div>
+                    <p>Try the Setup!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

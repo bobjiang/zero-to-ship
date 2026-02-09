@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3: Prompt Recipes: Templates You Can Steal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Slide: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Slide: Hook */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Recipe list preview */
+        .recipe-preview-list {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .recipe-preview-item {
+            background: rgba(255,255,255,0.08);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .recipe-preview-item:nth-child(1) { border-color: rgba(255, 107, 107, 0.4); color: var(--accent-coral); }
+        .recipe-preview-item:nth-child(2) { border-color: rgba(78, 205, 196, 0.4); color: var(--accent-teal); }
+        .recipe-preview-item:nth-child(3) { border-color: rgba(255, 217, 61, 0.4); color: var(--accent-gold); }
+        .recipe-preview-item:nth-child(4) { border-color: rgba(255, 165, 0, 0.4); color: #ffa500; }
+        .recipe-preview-item:nth-child(5) { border-color: rgba(180, 130, 255, 0.4); color: #b482ff; }
+
+        /* Slide: Why Templates */
+        .slide-why-templates {
+            text-align: center;
+        }
+
+        .slide-why-templates h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .madlibs-visual {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .madlibs-visual .template-line {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+
+        .madlibs-visual .bracket {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px dashed var(--accent-coral);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            color: var(--accent-coral);
+            font-weight: 500;
+        }
+
+        .madlibs-visual .static {
+            color: var(--text-primary);
+        }
+
+        /* Slide: Recipe Template (two-column) */
+        .slide-recipe {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .recipe-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-content .recipe-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .recipe-content .recipe-number .num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .recipe-1 .recipe-number .num { background: var(--accent-coral); color: var(--bg-dark); }
+        .recipe-1 .recipe-number { color: var(--accent-coral); }
+
+        .recipe-2 .recipe-number .num { background: var(--accent-teal); color: var(--bg-dark); }
+        .recipe-2 .recipe-number { color: var(--accent-teal); }
+
+        .recipe-3 .recipe-number .num { background: var(--accent-gold); color: var(--bg-dark); }
+        .recipe-3 .recipe-number { color: var(--accent-gold); }
+
+        .recipe-4 .recipe-number .num { background: #ffa500; color: var(--bg-dark); }
+        .recipe-4 .recipe-number { color: #ffa500; }
+
+        .recipe-5 .recipe-number .num { background: #b482ff; color: var(--bg-dark); }
+        .recipe-5 .recipe-number { color: #b482ff; }
+
+        .recipe-content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .recipe-content p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .recipe-content .power-tip {
+            margin-top: 1.25rem;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .recipe-1 .power-tip {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 3px solid var(--accent-coral);
+        }
+        .recipe-1 .power-tip strong { color: var(--accent-coral); }
+
+        .recipe-2 .power-tip {
+            background: rgba(78, 205, 196, 0.1);
+            border-left: 3px solid var(--accent-teal);
+        }
+        .recipe-2 .power-tip strong { color: var(--accent-teal); }
+
+        .recipe-3 .power-tip {
+            background: rgba(255, 217, 61, 0.1);
+            border-left: 3px solid var(--accent-gold);
+        }
+        .recipe-3 .power-tip strong { color: var(--accent-gold); }
+
+        .recipe-4 .power-tip {
+            background: rgba(255, 165, 0, 0.1);
+            border-left: 3px solid #ffa500;
+        }
+        .recipe-4 .power-tip strong { color: #ffa500; }
+
+        .recipe-5 .power-tip {
+            background: rgba(180, 130, 255, 0.1);
+            border-left: 3px solid #b482ff;
+        }
+        .recipe-5 .power-tip strong { color: #b482ff; }
+
+        .recipe-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .recipe-visual h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .recipe-1 .recipe-visual h4 { color: var(--accent-coral); }
+        .recipe-2 .recipe-visual h4 { color: var(--accent-teal); }
+        .recipe-3 .recipe-visual h4 { color: var(--accent-gold); }
+        .recipe-4 .recipe-visual h4 { color: #ffa500; }
+        .recipe-5 .recipe-visual h4 { color: #b482ff; }
+
+        .template-box {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .template-box .bracket {
+            color: var(--accent-coral);
+            font-weight: 500;
+        }
+
+        .template-box .keyword {
+            color: var(--accent-teal);
+            font-weight: 500;
+        }
+
+        .template-box .instruction {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        /* Slide: Adapt Recipes */
+        .slide-adapt {
+            text-align: center;
+        }
+
+        .slide-adapt h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .adapt-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .adapt-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .adapt-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .adapt-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .adapt-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Slide: All Five Recap */
+        .slide-all-five {
+            text-align: center;
+        }
+
+        .slide-all-five h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .all-five-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .five-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 0.75rem;
+            border-radius: 14px;
+            border: 2px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .five-card .num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 auto 0.75rem;
+        }
+
+        .five-card:nth-child(1) .num { background: var(--accent-coral); color: var(--bg-dark); }
+        .five-card:nth-child(1) { border-color: rgba(255, 107, 107, 0.3); }
+        .five-card:nth-child(2) .num { background: var(--accent-teal); color: var(--bg-dark); }
+        .five-card:nth-child(2) { border-color: rgba(78, 205, 196, 0.3); }
+        .five-card:nth-child(3) .num { background: var(--accent-gold); color: var(--bg-dark); }
+        .five-card:nth-child(3) { border-color: rgba(255, 217, 61, 0.3); }
+        .five-card:nth-child(4) .num { background: #ffa500; color: var(--bg-dark); }
+        .five-card:nth-child(4) { border-color: rgba(255, 165, 0, 0.3); }
+        .five-card:nth-child(5) .num { background: #b482ff; color: var(--bg-dark); }
+        .five-card:nth-child(5) { border-color: rgba(180, 130, 255, 0.3); }
+
+        .five-card h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .five-card p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 3: Prompt Recipes -- Templates You Can Steal</h1>
+        <p>02Ship Claude Basics Course &bull; Lesson 2 &bull; Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Video 3 of Lesson 2</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Color coding per recipe: <code>#ff6b6b</code> R1, <code>#4ecdc4</code> R2, <code>#ffd93d</code> R3, <code>#ffa500</code> R4, <code>#b482ff</code> R5</li>
+            <li>Template brackets <code>[like this]</code> indicate the parts you customize</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Prompt Recipes: Templates You Can Steal</h1>
+            <p class="subtitle">02Ship Claude Basics &bull; Lesson 2</p>
+            <span class="badge">5 ready-to-use templates</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening &bull; 0:00</span>
+            <h2>Professional chefs don't start from scratch.<br>They have <span class="highlight-text">recipes</span>.</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto 2rem;">
+                Copy, paste, and customize. These are the exact templates used to build 02Ship.
+            </p>
+            <div class="recipe-preview-list">
+                <div class="recipe-preview-item">1. Build a Feature</div>
+                <div class="recipe-preview-item">2. Explain a Concept</div>
+                <div class="recipe-preview-item">3. Review My Work</div>
+                <div class="recipe-preview-item">4. Brainstorm Solutions</div>
+                <div class="recipe-preview-item">5. Create a Plan</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Why Templates Matter -->
+        <div class="slide slide-why-templates" data-slide-number="3">
+            <span class="slide-section">Section 1 &bull; 1:30</span>
+            <h2>Templates = Mad Libs for AI</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Same structure, different details. Change the brackets, keep the framework.
+            </p>
+            <div class="madlibs-visual">
+                <div class="template-line">
+                    <span class="static">I'm working on</span> <span class="bracket">[project]</span><span class="static">. I want to add</span> <span class="bracket">[feature]</span>
+                </div>
+                <div class="template-line">
+                    <span class="static">that allows users to</span> <span class="bracket">[action]</span><span class="static">.</span>
+                </div>
+                <div class="template-line">
+                    <span class="static">Tech stack:</span> <span class="bracket">[languages]</span><span class="static">. Constraints:</span> <span class="bracket">[limits]</span>
+                </div>
+            </div>
+            <p style="color: var(--accent-teal); font-size: 1rem; margin-top: 1.5rem; font-weight: 600;">Save your best prompts. Reuse the structure. Get consistent results.</p>
+        </div>
+
+        <!-- SLIDE 4: Recipe 1 - Build a Feature (Template) -->
+        <div class="slide slide-recipe recipe-1" data-slide-number="4">
+            <span class="slide-section">Section 2 &bull; 2:30</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">1</span> Recipe 1</div>
+                <h2>Build a Feature</h2>
+                <p>The workhorse template for adding anything new to a project. Used more than any other while creating 02Ship.</p>
+                <div class="power-tip">
+                    <strong>Power move:</strong> "Before coding, please ask clarifying questions about data structure, edge cases, and integration points."
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Template</h4>
+                <div class="template-box">
+                    I'm working on <span class="bracket">[project description]</span>.<br><br>
+                    I want to add <span class="bracket">[feature name]</span> that allows users to <span class="bracket">[action]</span>.<br><br>
+                    <span class="keyword">Tech stack:</span> <span class="bracket">[languages and frameworks]</span><br>
+                    <span class="keyword">Constraints:</span> <span class="bracket">[any limits]</span><br><br>
+                    The feature should:<br>
+                    1. <span class="bracket">[requirement]</span><br>
+                    2. <span class="bracket">[requirement]</span><br>
+                    3. <span class="bracket">[requirement]</span><br><br>
+                    <span class="instruction">Before coding, please ask clarifying questions about data structure, edge cases, and integration points.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Recipe 1 - Filled Example -->
+        <div class="slide slide-recipe recipe-1" data-slide-number="5">
+            <span class="slide-section">Section 2 &bull; 3:30</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">1</span> Recipe 1 &mdash; In Action</div>
+                <h2>Build a Feature: Live Example</h2>
+                <p>Filling in the template for a real 02Ship feature: a lesson progress tracker.</p>
+                <div class="power-tip">
+                    <strong>Watch for:</strong> Claude asks smart clarifying questions before writing any code. This one line changes everything.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Filled-In Example</h4>
+                <div class="template-box">
+                    I'm working on <span style="color: var(--accent-coral);">a learning platform for non-programmers</span>.<br><br>
+                    I want to add <span style="color: var(--accent-coral);">a lesson progress tracker</span> that allows users to <span style="color: var(--accent-coral);">mark lessons as complete</span>.<br><br>
+                    <span class="keyword">Tech stack:</span> React, TypeScript, Tailwind CSS, Next.js<br>
+                    <span class="keyword">Constraints:</span> No database yet -- use localStorage. Keep it simple.<br><br>
+                    The feature should:<br>
+                    1. Show a progress bar on each course page<br>
+                    2. Let users click to mark a lesson done<br>
+                    3. Remember progress when they come back<br><br>
+                    <span class="instruction">Before coding, please ask clarifying questions.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Recipe 2 - Explain This Concept (Template) -->
+        <div class="slide slide-recipe recipe-2" data-slide-number="6">
+            <span class="slide-section">Section 3 &bull; 5:00</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">2</span> Recipe 2</div>
+                <h2>Explain This Concept</h2>
+                <p>Your learning accelerator. Use this whenever you encounter something you don't understand -- coding concepts, business terms, or confusing Claude output.</p>
+                <div class="power-tip">
+                    <strong>The magic:</strong> You're not just asking "what is X?" -- you're telling Claude exactly HOW you want to learn.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Template</h4>
+                <div class="template-box">
+                    I'm learning about <span class="bracket">[concept]</span> for <span class="bracket">[context or purpose]</span>.<br><br>
+                    My current knowledge level: <span class="bracket">[beginner / intermediate / advanced]</span><br><br>
+                    Please explain <span class="bracket">[concept]</span> by:<br>
+                    1. <span class="instruction">Using an analogy from everyday life</span><br>
+                    2. <span class="instruction">Breaking it into 3-5 key points</span><br>
+                    3. <span class="instruction">Showing a simple code example if applicable</span><br>
+                    4. <span class="instruction">Explaining one common mistake people make</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Recipe 2 - Filled Example -->
+        <div class="slide slide-recipe recipe-2" data-slide-number="7">
+            <span class="slide-section">Section 3 &bull; 6:00</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">2</span> Recipe 2 &mdash; In Action</div>
+                <h2>Explain: Live Example</h2>
+                <p>Asking Claude to explain React components with a structured four-part response.</p>
+                <div class="power-tip">
+                    <strong>The "common mistake" element:</strong> This part is uniquely valuable for beginners -- it keeps you from tripping up before you even start.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Filled-In Example</h4>
+                <div class="template-box">
+                    I'm learning about <span style="color: var(--accent-teal);">React components</span> for <span style="color: var(--accent-teal);">building a web app</span>.<br><br>
+                    My current knowledge level: <span style="color: var(--accent-teal);">complete beginner in programming</span><br><br>
+                    Please explain React components by:<br>
+                    1. Using an analogy from everyday life<br>
+                    2. Breaking it into 3-5 key points<br>
+                    3. Showing a simple code example<br>
+                    4. Explaining one common mistake people make
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Recipe 3 - Review My Work (Template) -->
+        <div class="slide slide-recipe recipe-3" data-slide-number="8">
+            <span class="slide-section">Section 4 &bull; 7:00</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">3</span> Recipe 3</div>
+                <h2>Review My Work</h2>
+                <p>Your honest feedback partner. Most beginners never think to ask Claude for feedback -- but they should. Ask Claude to critique, not just create.</p>
+                <div class="power-tip">
+                    <strong>Key phrase:</strong> "Be honest but constructive -- I'm here to learn." This sets the perfect tone for useful feedback.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Template</h4>
+                <div class="template-box">
+                    I wrote <span class="bracket">[code / document / design]</span> for <span class="bracket">[purpose]</span>.<br><br>
+                    Please review it and provide feedback on:<br>
+                    1. <span class="bracket">[specific aspect: code quality, clarity]</span><br>
+                    2. <span class="bracket">[specific aspect: performance, UX]</span><br>
+                    3. <span class="bracket">[specific aspect: edge cases, security]</span><br><br>
+                    My skill level: <span class="bracket">[beginner / intermediate]</span><br><br>
+                    <span class="instruction">Be honest but constructive -- I'm here to learn.</span><br><br>
+                    <span class="bracket">[Paste your work here]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Recipe 3 - Filled Example -->
+        <div class="slide slide-recipe recipe-3" data-slide-number="9">
+            <span class="slide-section">Section 4 &bull; 8:00</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">3</span> Recipe 3 &mdash; In Action</div>
+                <h2>Review: Live Example</h2>
+                <p>Getting structured feedback on a React course card component with specific review criteria.</p>
+                <div class="power-tip">
+                    <strong>Two things make this powerful:</strong> 1) You tell Claude what to focus on (relevant feedback, not generic). 2) The "honest but constructive" tone instruction.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Filled-In Example</h4>
+                <div class="template-box">
+                    I wrote <span style="color: var(--accent-gold);">a React component for a course card</span> on my learning platform.<br><br>
+                    Please review it and provide feedback on:<br>
+                    1. Code readability and organization<br>
+                    2. Accessibility (can screen readers use it?)<br>
+                    3. Any obvious bugs or edge cases<br><br>
+                    My skill level: beginner<br><br>
+                    <span class="instruction">Be honest but constructive -- I'm here to learn.</span><br><br>
+                    <span style="color: var(--text-secondary); font-style: italic;">[component code pasted below]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Recipe 4 - Brainstorm Solutions (Template) -->
+        <div class="slide slide-recipe recipe-4" data-slide-number="10">
+            <span class="slide-section">Section 5 &bull; 9:00</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">4</span> Recipe 4</div>
+                <h2>Brainstorm Solutions</h2>
+                <p>The diverge-then-converge pattern baked into one prompt. Get a creative explosion AND structured evaluation in a single turn.</p>
+                <div class="power-tip">
+                    <strong>From Video 2:</strong> This is the three-step brainstorm pattern -- generate, evaluate, recommend -- all in one prompt.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Template</h4>
+                <div class="template-box">
+                    <span class="keyword">Problem:</span> <span class="bracket">[describe in 1-2 sentences]</span><br><br>
+                    <span class="keyword">Context:</span><br>
+                    - Target users: <span class="bracket">[who]</span><br>
+                    - Constraints: <span class="bracket">[time, budget, tech limits]</span><br>
+                    - What I've tried: <span class="bracket">[previous attempts]</span><br><br>
+                    Please generate:<br>
+                    1. <span class="instruction">10 creative solutions (quantity over quality)</span><br>
+                    2. <span class="instruction">Pick the top 3 -- pros and cons of each</span><br>
+                    3. <span class="instruction">Recommend one with your reasoning</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Recipe 4 - Filled Example -->
+        <div class="slide slide-recipe recipe-4" data-slide-number="11">
+            <span class="slide-section">Section 5 &bull; 10:00</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">4</span> Recipe 4 &mdash; In Action</div>
+                <h2>Brainstorm: Live Example</h2>
+                <p>Solving the real problem of students not practicing after watching videos.</p>
+                <div class="power-tip">
+                    <strong>Watch for:</strong> The unexpected, creative ideas that appear later in the list -- that's where the magic happens.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Filled-In Example</h4>
+                <div class="template-box">
+                    <span class="keyword">Problem:</span> <span style="color: #ffa500;">Students finish watching videos but don't practice what they learned.</span><br><br>
+                    <span class="keyword">Context:</span><br>
+                    - Target users: non-programmers<br>
+                    - Constraints: no budget for external tools<br>
+                    - What I've tried: adding exercises at the end<br><br>
+                    Please generate:<br>
+                    1. 10 creative solutions (quantity over quality)<br>
+                    2. Pick the top 3 -- pros and cons of each<br>
+                    3. Recommend one with your reasoning
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Recipe 5 - Create a Plan (Template) -->
+        <div class="slide slide-recipe recipe-5" data-slide-number="12">
+            <span class="slide-section">Section 6 &bull; 11:00</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">5</span> Recipe 5</div>
+                <h2>Create a Plan</h2>
+                <p>Your secret weapon for getting started on any project. Instead of staring at a blank page wondering where to begin, hand the planning to Claude.</p>
+                <div class="power-tip">
+                    <strong>Real example:</strong> This exact template was used to plan 02Ship's 4-week launch. Claude even warned that video production would be the bottleneck.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Template</h4>
+                <div class="template-box">
+                    <span class="keyword">Goal:</span> <span class="bracket">[what you want to achieve]</span><br>
+                    <span class="keyword">Current state:</span> <span class="bracket">[where you are now]</span><br>
+                    <span class="keyword">Desired state:</span> <span class="bracket">[where you want to be]</span><br>
+                    <span class="keyword">Timeline:</span> <span class="bracket">[how long you have]</span><br><br>
+                    Please create a step-by-step plan that:<br>
+                    - <span class="instruction">Breaks the goal into weekly milestones</span><br>
+                    - <span class="instruction">Identifies potential roadblocks</span><br>
+                    - <span class="instruction">Suggests resources or learning needed</span><br>
+                    - <span class="instruction">Keeps the scope realistic for <span class="bracket">[timeline]</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Recipe 5 - Filled Example -->
+        <div class="slide slide-recipe recipe-5" data-slide-number="13">
+            <span class="slide-section">Section 6 &bull; 11:45</span>
+            <div class="recipe-content">
+                <div class="recipe-number"><span class="num">5</span> Recipe 5 &mdash; In Action</div>
+                <h2>Plan: Live Example</h2>
+                <p>From "where do I start?" to a clear roadmap in 30 seconds.</p>
+                <div class="power-tip">
+                    <strong>Look for:</strong> The roadblock predictions -- this is proactive problem-solving that saves you days of frustration.
+                </div>
+            </div>
+            <div class="recipe-visual">
+                <h4>Filled-In Example</h4>
+                <div class="template-box">
+                    <span class="keyword">Goal:</span> <span style="color: #b482ff;">Launch a personal portfolio website</span><br>
+                    <span class="keyword">Current state:</span> <span style="color: #b482ff;">No website, never built one</span><br>
+                    <span class="keyword">Desired state:</span> <span style="color: #b482ff;">Live portfolio with 3 project pages, about page, and contact form</span><br>
+                    <span class="keyword">Timeline:</span> <span style="color: #b482ff;">2 weeks, about 1 hour per day</span><br><br>
+                    Please create a step-by-step plan that:<br>
+                    - Breaks the goal into daily milestones<br>
+                    - Identifies potential roadblocks<br>
+                    - Suggests resources or learning needed<br>
+                    - Keeps the scope realistic for 2 weeks
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: How to Adapt Recipes -->
+        <div class="slide slide-adapt" data-slide-number="14">
+            <span class="slide-section">Section 7 &bull; 12:30</span>
+            <h2>Make These Recipes Your Own</h2>
+            <div class="adapt-grid">
+                <div class="adapt-card">
+                    <div class="icon">&#9998;</div>
+                    <h3>Customize</h3>
+                    <p>Add or remove sections based on your needs. Don't need clarifying questions? Remove that line. Want a quiz? Add it.</p>
+                </div>
+                <div class="adapt-card">
+                    <div class="icon">&#128190;</div>
+                    <h3>Save Your Best</h3>
+                    <p>Every time Claude gives you an amazing response, save the prompt that generated it. Build your own recipe book.</p>
+                </div>
+                <div class="adapt-card">
+                    <div class="icon">&#127760;</div>
+                    <h3>Cross-Platform</h3>
+                    <p>These recipes work with Claude, ChatGPT, Gemini, and more. Good prompt structure is universal.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: All Five Recap -->
+        <div class="slide slide-all-five" data-slide-number="15">
+            <span class="slide-section">Closing &bull; 13:15</span>
+            <h2>Your 5 Prompt Recipes</h2>
+            <div class="all-five-grid">
+                <div class="five-card">
+                    <div class="num">1</div>
+                    <h3>Build a Feature</h3>
+                    <p>Your workhorse for adding anything to a project</p>
+                </div>
+                <div class="five-card">
+                    <div class="num">2</div>
+                    <h3>Explain a Concept</h3>
+                    <p>Your personal AI tutor on demand</p>
+                </div>
+                <div class="five-card">
+                    <div class="num">3</div>
+                    <h3>Review My Work</h3>
+                    <p>Your honest feedback partner</p>
+                </div>
+                <div class="five-card">
+                    <div class="num">4</div>
+                    <h3>Brainstorm Solutions</h3>
+                    <p>Your creative thinking engine</p>
+                </div>
+                <div class="five-card">
+                    <div class="num">5</div>
+                    <h3>Create a Plan</h3>
+                    <p>Your project planner for any goal</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Lesson 2 Complete -->
+        <div class="slide" data-slide-number="16" style="text-align: center; background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);">
+            <span class="slide-section">Closing &bull; 13:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Lesson 2 Complete: Prompting Fundamentals</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 600px; margin: 0 auto 2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                    <span style="color: var(--success); font-size: 1.1rem;">&#10003;</span>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Video 1: The 4 Cs Framework</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                    <span style="color: var(--success); font-size: 1.1rem;">&#10003;</span>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Video 2: Prompting for Different Goals</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                    <span style="color: var(--success); font-size: 1.1rem;">&#10003;</span>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Video 3: 5 Reusable Prompt Recipes</span>
+                </div>
+            </div>
+            <p style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 600;">Homework: Build Your Prompt Recipe Book</p>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">Create 5 of your own templates for tasks you do regularly</p>
+        </div>
+
+        <!-- SLIDE 17: Next Steps -->
+        <div class="slide slide-next" data-slide-number="17">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing &bull; 13:45</span>
+            <h2>Next Lesson: Iteration &amp; Refinement</h2>
+            <p>How to take Claude's first response and make it exactly what you want</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128250;</div>
+                    <p>Lesson 3</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128203;</div>
+                    <p>Copy Recipes</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Share on Discord</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

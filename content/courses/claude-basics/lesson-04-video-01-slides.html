@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1: Artifacts Explained: Your Code Workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Hook Slide */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-hook .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .floating-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Interface Mockup */
+        .interface-mockup {
+            background: #252530;
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .browser-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27ca40; }
+
+        .interface-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            height: 200px;
+        }
+
+        .interface-chat {
+            background: #1a1a24;
+            border-radius: 8px;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .interface-chat .label {
+            font-size: 0.65rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .chat-line {
+            background: rgba(255,255,255,0.05);
+            height: 8px;
+            border-radius: 4px;
+            width: 80%;
+        }
+
+        .chat-line.short { width: 50%; }
+
+        .interface-artifact {
+            background: #1a1a24;
+            border-radius: 8px;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .interface-artifact .label {
+            font-size: 0.65rem;
+            color: var(--accent-coral);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .artifact-preview {
+            background: linear-gradient(135deg, #2a2a3a, #1e1e2e);
+            flex: 1;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+        }
+
+        /* Analogy Slide */
+        .slide-analogy {
+            text-align: center;
+        }
+
+        .analogy-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analogy-item {
+            text-align: center;
+        }
+
+        .analogy-item .emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .analogy-item p {
+            color: var(--text-secondary);
+        }
+
+        .analogy-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        .slide-analogy blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        /* Artifact Types Grid */
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .type-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .type-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-teal);
+        }
+
+        .type-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .type-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .type-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .type-card .ext {
+            display: inline-block;
+            margin-top: 0.75rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+        }
+
+        /* Detailed Type Slide */
+        .slide-type-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .type-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .type-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .type-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .type-badge.code {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--accent-coral);
+        }
+
+        .type-badge.doc {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent-teal);
+        }
+
+        .type-badge.diagram {
+            background: rgba(255, 217, 61, 0.2);
+            color: var(--accent-gold);
+        }
+
+        .type-number {
+            font-size: 4rem;
+            font-weight: 700;
+            opacity: 0.3;
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+        }
+
+        .type-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .tag { color: #ff79c6; }
+        .code-block .attr { color: #50fa7b; }
+        .code-block .value { color: #bd93f9; }
+
+        /* Markdown Preview */
+        .markdown-preview {
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .markdown-preview .md-h1 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .markdown-preview .md-h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            margin-bottom: 0.25rem;
+            color: var(--accent-teal);
+        }
+
+        .markdown-preview .md-list {
+            padding-left: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .markdown-preview .md-list li {
+            margin-bottom: 0.2rem;
+        }
+
+        /* Diagram Preview */
+        .diagram-preview {
+            background: #0d0d12;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .diagram-box {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid var(--accent-teal);
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .diagram-box.alt {
+            background: rgba(255, 107, 107, 0.15);
+            border-color: var(--accent-coral);
+        }
+
+        .diagram-connector {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .diagram-row {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Decision Slide */
+        .slide-decision {
+            text-align: center;
+        }
+
+        .slide-decision h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .decision-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .decision-card .question {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .decision-card .arrow-down {
+            color: var(--accent-teal);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .decision-card .answer {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .decision-card .answer.code { color: var(--accent-coral); }
+        .decision-card .answer.doc { color: var(--accent-teal); }
+        .decision-card .answer.diag { color: var(--accent-gold); }
+
+        .decision-note {
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Actions Slide */
+        .slide-actions {
+            text-align: center;
+        }
+
+        .slide-actions h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .action-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .action-card .action-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(78, 205, 196, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .action-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .action-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Version Slide */
+        .slide-versioning {
+            text-align: center;
+        }
+
+        .slide-versioning h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .version-timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .version-step {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .version-step.active {
+            border-color: var(--accent-teal);
+            background: rgba(78, 205, 196, 0.1);
+        }
+
+        .version-step .v-label {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .version-step .v-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .version-arrow {
+            color: var(--accent-teal);
+            font-size: 1.5rem;
+        }
+
+        .version-note {
+            background: rgba(80, 250, 123, 0.1);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            display: inline-block;
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* Demo Slide */
+        .slide-demo {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-demo h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-demo .subtext {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-prompt {
+            background: #0d0d12;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .demo-prompt .prompt-label {
+            font-size: 0.75rem;
+            color: var(--accent-coral);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Workflow Slide */
+        .slide-workflow {
+            text-align: center;
+        }
+
+        .slide-workflow h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .workflow-step {
+            background: rgba(255,255,255,0.08);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .workflow-step .step-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .workflow-step p {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .workflow-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+
+        .workflow-loop {
+            margin-top: 1.5rem;
+            color: var(--accent-coral);
+            font-size: 1rem;
+        }
+
+        /* Iteration Demo */
+        .iteration-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .iteration-panel {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .iteration-panel .panel-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .iteration-panel .panel-label.before { color: var(--accent-coral); }
+        .iteration-panel .panel-label.after { color: var(--success); }
+
+        .iteration-panel .preview-box {
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .iteration-panel .preview-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .iteration-panel .preview-box p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .iteration-panel .preview-box .btn-mock {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .btn-mock.basic {
+            background: rgba(255,255,255,0.15);
+            color: var(--text-primary);
+        }
+
+        .btn-mock.fancy {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+        }
+
+        /* Save Workflow */
+        .save-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .save-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .save-step .step-num {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .save-step .step-text {
+            font-size: 1rem;
+        }
+
+        .save-step .step-text code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+        }
+
+        /* Recap Slide */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 1: Artifacts Explained: Your Code Workspace</h1>
+        <p>02Ship Claude Basics Course - Lesson 4 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 4, Video 1</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder elements with actual Claude.ai screenshots during production</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Artifacts Explained: Your Code Workspace</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 4</p>
+            <span class="badge">From Conversation to Working Code</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <div class="content">
+                <div class="text-content">
+                    <h2>What if Claude could <span class="highlight-text">make things</span> for you?</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1rem;">Not just explain things. Actually build finished, usable files right in the conversation.</p>
+                    <div class="floating-badge">Artifacts = Finished Products from Claude</div>
+                </div>
+                <div class="interface-mockup">
+                    <div class="browser-bar">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="interface-split">
+                        <div class="interface-chat">
+                            <div class="label">Conversation</div>
+                            <div class="chat-line"></div>
+                            <div class="chat-line short"></div>
+                            <div class="chat-line"></div>
+                            <div class="chat-line short"></div>
+                        </div>
+                        <div class="interface-artifact">
+                            <div class="label">Artifact Panel</div>
+                            <div class="artifact-preview">[Live Preview]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: What Are Artifacts? -->
+        <div class="slide slide-analogy" data-slide-number="3">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">What Are Artifacts?</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center; max-width: 800px; margin: 0 auto 2rem;">
+                <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💬</div>
+                    <h3 style="margin-bottom: 0.25rem;">Chat Panel</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Discussion, ideas, explanations</p>
+                </div>
+                <div style="font-size: 2rem; color: var(--accent-teal);">+</div>
+                <div style="background: rgba(78, 205, 196, 0.1); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(78, 205, 196, 0.3); text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📦</div>
+                    <h3 style="margin-bottom: 0.25rem;">Artifact Panel</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Finished products, ready to use</p>
+                </div>
+            </div>
+            <blockquote>
+                "The conversation is your workspace. The artifact panel is your workbench where finished products appear."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 4: IKEA Analogy -->
+        <div class="slide slide-analogy" data-slide-number="4">
+            <span class="slide-section">Section 1 - 2:00</span>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">🏭</div>
+                    <p>Claude<br><strong>manufactures</strong></p>
+                </div>
+                <div class="analogy-arrow">&#8594;</div>
+                <div class="analogy-item">
+                    <div class="emoji">📦</div>
+                    <p>You get<br><strong>the parts</strong></p>
+                </div>
+                <div class="analogy-arrow">&#8594;</div>
+                <div class="analogy-item">
+                    <div class="emoji">🔧</div>
+                    <p>You<br><strong>assemble</strong></p>
+                </div>
+            </div>
+            <blockquote>
+                "Artifacts are like IKEA furniture. Claude gives you the finished parts and you just need to know how to assemble them. You don't need to know how to manufacture a table to put one together."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 5: Three Artifact Types Overview -->
+        <div class="slide" data-slide-number="5" style="text-align: center;">
+            <span class="slide-section">Section 2 - 3:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">Three Types of Artifacts</h2>
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="icon">&#60;/&#62;</div>
+                    <h3>Code</h3>
+                    <p>Web pages, apps, tools, interactive elements</p>
+                    <span class="ext">.html .jsx .tsx</span>
+                </div>
+                <div class="type-card">
+                    <div class="icon">&#128196;</div>
+                    <h3>Documents</h3>
+                    <p>READMEs, plans, guides, formatted text</p>
+                    <span class="ext">.md</span>
+                </div>
+                <div class="type-card">
+                    <div class="icon">&#128202;</div>
+                    <h3>Diagrams</h3>
+                    <p>Flowcharts, architecture, process maps</p>
+                    <span class="ext">.svg / mermaid</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Code Artifacts Detail -->
+        <div class="slide slide-type-detail" data-slide-number="6">
+            <span class="slide-section">Section 2 - 3:30</span>
+            <div class="type-number" style="color: var(--accent-coral);">1</div>
+            <div class="type-content">
+                <span class="type-badge code">Code Artifact</span>
+                <h2>Code Artifacts</h2>
+                <p>The most common type. When you ask Claude to build something interactive, it generates working code. HTML you can open in your browser, or React components for larger projects.</p>
+                <p style="font-size: 0.95rem;"><strong style="color: var(--success);">Key point:</strong> Code artifacts are functional. They actually work.</p>
+            </div>
+            <div class="type-visual">
+                <div class="code-block">
+<span class="comment">/* Claude-generated HTML */</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;title&gt;</span><span class="string">My Page</span><span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Hello World!<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="string">"alert('Hi!')"</span><span class="tag">&gt;</span>
+    Click Me
+  <span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Document Artifacts Detail -->
+        <div class="slide slide-type-detail" data-slide-number="7">
+            <span class="slide-section">Section 2 - 4:00</span>
+            <div class="type-number" style="color: var(--accent-teal);">2</div>
+            <div class="type-content">
+                <span class="type-badge doc">Document Artifact</span>
+                <h2>Document Artifacts</h2>
+                <p>Structured text created in Markdown format. Perfect for READMEs, project plans, guides, and any formatted text content.</p>
+                <p style="font-size: 0.95rem;"><strong style="color: var(--success);">Key point:</strong> Markdown is simple formatting -- no coding required to read it.</p>
+            </div>
+            <div class="type-visual">
+                <div class="markdown-preview">
+                    <div class="md-h1"># Project README</div>
+                    <div class="md-h2">## Getting Started</div>
+                    <ul class="md-list">
+                        <li>Install dependencies</li>
+                        <li>Run the dev server</li>
+                        <li>Open in browser</li>
+                    </ul>
+                    <div class="md-h2">## Features</div>
+                    <ul class="md-list">
+                        <li>Responsive design</li>
+                        <li>Dark mode support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Diagram Artifacts Detail -->
+        <div class="slide slide-type-detail" data-slide-number="8">
+            <span class="slide-section">Section 2 - 4:45</span>
+            <div class="type-number" style="color: var(--accent-gold);">3</div>
+            <div class="type-content">
+                <span class="type-badge diagram">Diagram Artifact</span>
+                <h2>Diagram Artifacts</h2>
+                <p>Visual representations like flowcharts, process diagrams, and architecture overviews. Created as SVG images or Mermaid text diagrams.</p>
+                <p style="font-size: 0.95rem;"><strong style="color: var(--success);">Key point:</strong> Great for planning and visualizing your project structure.</p>
+            </div>
+            <div class="type-visual">
+                <div class="diagram-preview">
+                    <div class="diagram-box">User visits page</div>
+                    <div class="diagram-connector">&#8595;</div>
+                    <div class="diagram-row">
+                        <div class="diagram-box alt">Logged in?</div>
+                    </div>
+                    <div class="diagram-row" style="gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="color: var(--success); font-size: 0.75rem; margin-bottom: 0.25rem;">YES</div>
+                            <div class="diagram-box">Dashboard</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="color: var(--error); font-size: 0.75rem; margin-bottom: 0.25rem;">NO</div>
+                            <div class="diagram-box">Login Page</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: When to Use Each Type -->
+        <div class="slide slide-decision" data-slide-number="9">
+            <span class="slide-section">Section 2 - 5:15</span>
+            <h2>Which Type Do You Need?</h2>
+            <div class="decision-grid">
+                <div class="decision-card">
+                    <div class="question">"I want something interactive"</div>
+                    <div class="arrow-down">&#8595;</div>
+                    <div class="answer code">Code Artifact</div>
+                </div>
+                <div class="decision-card">
+                    <div class="question">"I want to document something"</div>
+                    <div class="arrow-down">&#8595;</div>
+                    <div class="answer doc">Document Artifact</div>
+                </div>
+                <div class="decision-card">
+                    <div class="question">"I want to visualize something"</div>
+                    <div class="arrow-down">&#8595;</div>
+                    <div class="answer diag">Diagram Artifact</div>
+                </div>
+            </div>
+            <p class="decision-note">Not sure? Just describe what you want and <strong style="color: var(--accent-teal);">Claude will pick the right type</strong></p>
+        </div>
+
+        <!-- SLIDE 10: Working with Artifacts - Copy & Download -->
+        <div class="slide slide-actions" data-slide-number="10">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <h2>Working with Artifacts</h2>
+            <div class="actions-grid">
+                <div class="action-card">
+                    <div class="action-icon">&#128203;</div>
+                    <div>
+                        <h3>Copy</h3>
+                        <p>Puts content on your clipboard. Paste into a text editor or code file.</p>
+                    </div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">&#128229;</div>
+                    <div>
+                        <h3>Download</h3>
+                        <p>Saves as a file directly to your computer. Great for images and diagrams.</p>
+                    </div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">&#128065;</div>
+                    <div>
+                        <h3>Preview</h3>
+                        <p>See a live render of code artifacts right in the Claude interface.</p>
+                    </div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">&#128260;</div>
+                    <div>
+                        <h3>Version</h3>
+                        <p>Navigate between versions when Claude updates your artifact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Versioning -->
+        <div class="slide slide-versioning" data-slide-number="11">
+            <span class="slide-section">Section 3 - 6:30</span>
+            <h2>Versioning: Undo on Steroids</h2>
+            <div class="version-timeline">
+                <div class="version-step">
+                    <div class="v-label">V1</div>
+                    <p style="font-weight: 600;">Basic page</p>
+                    <div class="v-desc">Initial creation</div>
+                </div>
+                <div class="version-arrow">&#8594;</div>
+                <div class="version-step">
+                    <div class="v-label">V2</div>
+                    <p style="font-weight: 600;">+ Gradient</p>
+                    <div class="v-desc">Color update</div>
+                </div>
+                <div class="version-arrow">&#8594;</div>
+                <div class="version-step active">
+                    <div class="v-label">V3</div>
+                    <p style="font-weight: 600;">+ Animations</p>
+                    <div class="v-desc">Current version</div>
+                </div>
+            </div>
+            <div class="version-note">Versioned = Safe to Experiment (you can always go back)</div>
+        </div>
+
+        <!-- SLIDE 12: Live Demo Intro -->
+        <div class="slide slide-demo" data-slide-number="12">
+            <span class="slide-section">Section 4 - 8:00</span>
+            <h2>Live Demo: Your First Artifact</h2>
+            <p class="subtext">Let's build a greeting card through conversation</p>
+            <div class="demo-prompt">
+                <div class="prompt-label">Our Prompt</div>
+                "Create a simple HTML greeting card page with a nice background color, a heading that says Welcome to My First Web Page, a short paragraph introducing myself, and a button that says Click Me that shows an alert when clicked."
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Demo - Reviewing the Result -->
+        <div class="slide" data-slide-number="13" style="padding: 2rem 3rem;">
+            <span class="slide-section">Section 4 - 9:00</span>
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem;">Reviewing the Artifact</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto;">
+                <div style="background: #1a1a24; border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.75rem; color: var(--accent-teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">Code View</div>
+                    <div class="code-block" style="font-size: 0.75rem;">
+<span class="tag">&lt;body</span> <span class="attr">style</span>=<span class="string">"background:#e8f4f8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Welcome to My First
+    Web Page<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Hi! I'm learning to
+    build with Claude AI.<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="string">"..."</span><span class="tag">&gt;</span>
+    Click Me
+  <span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+                    </div>
+                </div>
+                <div style="background: #1a1a24; border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(78, 205, 196, 0.3);">
+                    <div style="font-size: 0.75rem; color: var(--accent-coral); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">Live Preview</div>
+                    <div style="background: #e8f4f8; border-radius: 8px; padding: 1.5rem; text-align: center; color: #1a1a24;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #2c3e50;">Welcome to My First Web Page</h3>
+                        <p style="font-size: 0.85rem; color: #555; margin-bottom: 1rem;">Hi! I'm learning to build with Claude AI.</p>
+                        <div style="display: inline-block; background: #3498db; color: white; padding: 0.4rem 1rem; border-radius: 6px; font-size: 0.85rem;">Click Me</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Demo - Iteration -->
+        <div class="slide" data-slide-number="14" style="text-align: center;">
+            <span class="slide-section">Section 4 - 9:45</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Iterating: Prompt, Review, Iterate</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem;">Follow-up: "Change the background to a gradient, make the heading larger, and add an emoji to the button"</p>
+            <div class="iteration-demo">
+                <div class="iteration-panel">
+                    <div class="panel-label before">Version 1</div>
+                    <div class="preview-box" style="background: #e8f4f8; color: #1a1a24;">
+                        <h3 style="color: #2c3e50;">Welcome to My First Web Page</h3>
+                        <p>Hi! I'm learning to build with Claude AI.</p>
+                        <span class="btn-mock basic" style="background: #3498db; color: white;">Click Me</span>
+                    </div>
+                </div>
+                <div class="iteration-panel">
+                    <div class="panel-label after">Version 2</div>
+                    <div class="preview-box" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+                        <h3 style="font-size: 1.3rem; color: white;">Welcome to My First Web Page</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Hi! I'm learning to build with Claude AI.</p>
+                        <span class="btn-mock fancy">Click Me &#127881;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Saving the Artifact -->
+        <div class="slide" data-slide-number="15">
+            <span class="slide-section">Section 4 - 10:30</span>
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">From Claude to Your Computer</h2>
+            <div class="save-steps">
+                <div class="save-step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">Click the <strong>Copy</strong> button on the artifact</div>
+                </div>
+                <div class="save-step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">Open a text editor and <strong>Paste</strong></div>
+                </div>
+                <div class="save-step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">Save as <code>greeting.html</code></div>
+                </div>
+                <div class="save-step">
+                    <div class="step-num">4</div>
+                    <div class="step-text"><strong>Double-click</strong> the file to open in browser</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: var(--accent-gold); font-weight: 600; font-size: 1.2rem;">Your first web page -- built through conversation!</p>
+        </div>
+
+        <!-- SLIDE 16: Recap -->
+        <div class="slide slide-recap" data-slide-number="16">
+            <span class="slide-section">Closing - 11:00</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Artifacts are finished products</strong> -- actual usable files, not explanations</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Three types:</strong> Code (interactive), Documents (text), Diagrams (visual)</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Versioning is safe</strong> -- experiment freely, go back anytime</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Copy, save, open</strong> -- from conversation to working web page</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Next Steps -->
+        <div class="slide slide-next" data-slide-number="17">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 11:30</span>
+            <h2>Next: Setting Up Your Dev Environment</h2>
+            <p>Simple HTML files just open in a browser. But for real projects, you need a bit more setup.</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128187;</div>
+                    <p>Watch Video 2</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#9997;&#65039;</div>
+                    <p>Try an Artifact!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

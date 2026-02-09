@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1: Why Projects Matter: Solving the Context Problem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Hook Slide */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-hook .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .floating-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Contractor Analogy */
+        .analogy-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analogy-item {
+            text-align: center;
+        }
+
+        .analogy-item .emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .analogy-item p {
+            color: var(--text-secondary);
+        }
+
+        .analogy-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        .slide-analogy {
+            text-align: center;
+        }
+
+        .slide-analogy blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        /* Context Problem Chat Demo */
+        .chat-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 1rem 1.25rem;
+            border-radius: 16px;
+            max-width: 70%;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Blank Slate Slide */
+        .slide-blank-slate {
+            text-align: center;
+        }
+
+        .slide-blank-slate h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .blank-slate-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blank-day {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .blank-day .day-label {
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .blank-day .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blank-day p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .blank-day .reset-label {
+            display: inline-block;
+            margin-top: 0.5rem;
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Copy Paste Slide */
+        .slide-copypaste {
+            padding: 2rem 3rem;
+        }
+
+        .slide-copypaste h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .copypaste-visual {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .doc-panel {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .doc-panel h4 {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .doc-panel .doc-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .doc-line {
+            height: 8px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 4px;
+        }
+
+        .doc-line.highlight {
+            background: rgba(255, 107, 107, 0.3);
+        }
+
+        .copy-arrow {
+            font-size: 2.5rem;
+            color: var(--accent-coral);
+        }
+
+        .tedious-label {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--error);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* What Projects Are */
+        .slide-definition {
+            text-align: center;
+        }
+
+        .slide-definition .logo-container {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-teal));
+            border-radius: 24px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .slide-definition h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-definition .tagline {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Office vs Empty Room */
+        .office-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .room-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.1);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .room-box.empty {
+            border-color: rgba(255, 85, 85, 0.3);
+            background: rgba(255, 85, 85, 0.05);
+        }
+
+        .room-box.furnished {
+            border-color: rgba(80, 250, 123, 0.3);
+            background: rgba(80, 250, 123, 0.05);
+        }
+
+        .room-box .room-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .room-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .room-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .vs-divider {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        /* Three Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-teal);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .feature-card .feature-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            line-height: 28px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Comparison Slide: Regular Chats vs Projects */
+        .slide-comparison {
+            text-align: center;
+        }
+
+        .slide-comparison h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: start;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: left;
+        }
+
+        .comparison-box.regular {
+            background: rgba(255, 215, 61, 0.08);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+        }
+
+        .comparison-box.project {
+            background: rgba(78, 205, 196, 0.08);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .comparison-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-box .box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .comparison-box .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .comparison-list li {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-list li::before {
+            content: ">";
+            color: var(--accent-teal);
+            font-weight: 700;
+        }
+
+        .comparison-vs {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            padding-top: 3rem;
+        }
+
+        /* Pro Pricing Slide */
+        .slide-pricing {
+            text-align: center;
+        }
+
+        .slide-pricing h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid var(--accent-teal);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 400px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-card .period {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .value-prop {
+            font-size: 1rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .pricing-note {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Before/After Prompt Comparison */
+        .slide-before-after {
+            padding: 2rem 3rem;
+        }
+
+        .slide-before-after h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .prompt-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .prompt-panel {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .prompt-panel .panel-header {
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .prompt-panel.before .panel-header {
+            background: rgba(255, 85, 85, 0.2);
+            color: var(--error);
+        }
+
+        .prompt-panel.after .panel-header {
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .prompt-panel .panel-body {
+            background: #1a1a24;
+            padding: 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            min-height: 180px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-top: none;
+        }
+
+        .prompt-panel.after .panel-body .short-prompt {
+            color: var(--success);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .prompt-panel .panel-body .line-count {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* Time Savings Slide */
+        .slide-time {
+            text-align: center;
+        }
+
+        .slide-time h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .time-bars {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .time-bar {
+            display: grid;
+            grid-template-columns: 120px 1fr 80px;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .time-bar .label {
+            text-align: right;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .time-bar .bar-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .time-bar .bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .time-bar.without .bar-fill {
+            width: 100%;
+            background: linear-gradient(90deg, var(--error), rgba(255, 85, 85, 0.6));
+        }
+
+        .time-bar.with .bar-fill {
+            width: 10%;
+            background: linear-gradient(90deg, var(--success), rgba(80, 250, 123, 0.6));
+        }
+
+        .time-bar .time-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .time-bar.without .time-value {
+            color: var(--error);
+        }
+
+        .time-bar.with .time-value {
+            color: var(--success);
+        }
+
+        .savings-badge {
+            display: inline-block;
+            margin-top: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Five Words vs Five Paragraphs */
+        .word-count-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .word-count-panel {
+            text-align: center;
+        }
+
+        .word-count-panel .big-number {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .word-count-panel.words .big-number {
+            color: var(--success);
+        }
+
+        .word-count-panel.paragraphs .big-number {
+            color: var(--error);
+        }
+
+        .word-count-panel .unit {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+        }
+
+        /* Recap Slide */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Next Slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Conversation Slide */
+        .slide-conversation {
+            padding: 2rem 3rem;
+        }
+
+        .slide-conversation h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 1: Why Projects Matter: Solving the Context Problem</h1>
+        <p>02Ship Claude Basics Course - Lesson 5 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 5, Video 1</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Target duration: 11 minutes (max 15 minutes)</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Why Projects Matter</h1>
+            <p class="subtitle">Solving the Context Problem</p>
+            <span class="badge">02Ship Claude Basics - Lesson 5</span>
+        </div>
+
+        <!-- SLIDE 2: Hook - The Contractor Analogy -->
+        <div class="slide slide-analogy" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">🏠</div>
+                    <p>Your<br><strong>Renovation</strong></p>
+                </div>
+                <div class="analogy-arrow">+</div>
+                <div class="analogy-item">
+                    <div class="emoji">👷</div>
+                    <p>Contractor who<br><strong>forgets daily</strong></p>
+                </div>
+                <div class="analogy-arrow">=</div>
+                <div class="analogy-item">
+                    <div class="emoji">😩</div>
+                    <p>Constant<br><strong>re-explaining</strong></p>
+                </div>
+            </div>
+            <blockquote>
+                "Imagine hiring a contractor to renovate your house, and every morning they show up having forgotten everything. That's building with Claude without Projects."
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 3: The Context Problem - Blank Slate -->
+        <div class="slide slide-blank-slate" data-slide-number="3">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2>Every New Chat = <span style="color: var(--error);">Blank Slate</span></h2>
+            <div class="blank-slate-grid">
+                <div class="blank-day">
+                    <div class="day-label">Monday</div>
+                    <div class="icon">💬</div>
+                    <p>Explain tech stack, goals, style...</p>
+                    <span class="reset-label">Reset</span>
+                </div>
+                <div class="blank-day">
+                    <div class="day-label">Tuesday</div>
+                    <div class="icon">💬</div>
+                    <p>Explain tech stack, goals, style...</p>
+                    <span class="reset-label">Reset</span>
+                </div>
+                <div class="blank-day">
+                    <div class="day-label">Wednesday</div>
+                    <div class="icon">💬</div>
+                    <p>Explain tech stack, goals, style...</p>
+                    <span class="reset-label">Reset</span>
+                </div>
+                <div class="blank-day">
+                    <div class="day-label">Thursday</div>
+                    <div class="icon">💬</div>
+                    <p>Explain tech stack, goals, style...</p>
+                    <span class="reset-label">Reset</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Claude Asks Basic Questions -->
+        <div class="slide slide-conversation" data-slide-number="4">
+            <span class="slide-section">Section 1 - 1:30</span>
+            <h2>Without Context, Claude Has to Guess</h2>
+            <div class="chat-container">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Add a contact form to my website</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">I'd be happy to help! A few questions first:<br>- What framework are you using?<br>- What's your CSS approach?<br>- Do you have a backend set up?<br>- What's the site's purpose?</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--error); margin-top: 1.5rem; font-weight: 600;">Every. Single. Time.</p>
+        </div>
+
+        <!-- SLIDE 5: The Copy-Paste Workaround -->
+        <div class="slide slide-copypaste" data-slide-number="5">
+            <span class="slide-section">Section 1 - 2:00</span>
+            <h2>The Copy-Paste Workaround</h2>
+            <div class="copypaste-visual">
+                <div class="doc-panel">
+                    <h4>Project Notes.txt</h4>
+                    <div class="doc-lines">
+                        <div class="doc-line highlight" style="width: 90%;"></div>
+                        <div class="doc-line highlight" style="width: 75%;"></div>
+                        <div class="doc-line highlight" style="width: 85%;"></div>
+                        <div class="doc-line" style="width: 60%;"></div>
+                        <div class="doc-line highlight" style="width: 80%;"></div>
+                        <div class="doc-line" style="width: 70%;"></div>
+                        <div class="doc-line highlight" style="width: 65%;"></div>
+                        <div class="doc-line" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="copy-arrow">&#x27A1;</div>
+                <div class="doc-panel">
+                    <h4>New Claude Chat</h4>
+                    <div class="doc-lines">
+                        <div class="doc-line highlight" style="width: 90%;"></div>
+                        <div class="doc-line highlight" style="width: 75%;"></div>
+                        <div class="doc-line highlight" style="width: 85%;"></div>
+                        <div class="doc-line" style="width: 60%;"></div>
+                        <div class="doc-line highlight" style="width: 80%;"></div>
+                        <div class="doc-line" style="width: 70%;"></div>
+                        <div class="doc-line highlight" style="width: 65%;"></div>
+                        <div class="doc-line" style="width: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="tedious-label">Tedious. Error-prone. Hard to keep updated.</p>
+        </div>
+
+        <!-- SLIDE 6: What Projects Are - Office Analogy -->
+        <div class="slide" data-slide-number="6" style="text-align: center;">
+            <span class="slide-section">Section 2 - 3:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">Projects = Your Dedicated Office</h2>
+            <div class="office-comparison">
+                <div class="room-box empty">
+                    <div class="room-icon">🏚️</div>
+                    <h3>Regular Chat</h3>
+                    <p>Empty room. No notes on the wall. No tools. Start setup from scratch every time.</p>
+                </div>
+                <div class="vs-divider">VS</div>
+                <div class="room-box furnished">
+                    <div class="room-icon">🏢</div>
+                    <h3>Project</h3>
+                    <p>Your office. Notes on the wall, documents on the desk, tools ready. Just sit down and work.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Three Key Features -->
+        <div class="slide" data-slide-number="7" style="text-align: center;">
+            <span class="slide-section">Section 2 - 4:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">Three Features That Make Projects Powerful</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-number">1</div>
+                    <div class="icon">📋</div>
+                    <h3>Custom Instructions</h3>
+                    <p>Permanent notes that apply to every conversation. Tech stack, coding style, project goals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">2</div>
+                    <div class="icon">📂</div>
+                    <h3>Knowledge Base</h3>
+                    <p>Upload files Claude can reference. README, requirements, code samples, designs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-number">3</div>
+                    <div class="icon">💬</div>
+                    <h3>Conversation History</h3>
+                    <p>All chats organized together. Reference previous work easily.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Regular Chats vs Projects -->
+        <div class="slide slide-comparison" data-slide-number="8">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <h2>When to Use Each</h2>
+            <div class="comparison-grid">
+                <div class="comparison-box regular">
+                    <div class="box-icon">📝</div>
+                    <h3 style="color: var(--accent-gold);">Regular Chat</h3>
+                    <p class="subtitle">Like a sticky note</p>
+                    <ul class="comparison-list">
+                        <li>Quick questions</li>
+                        <li>One-off tasks</li>
+                        <li>Exploring ideas</li>
+                        <li>"What does this error mean?"</li>
+                        <li>"How do I center a div?"</li>
+                    </ul>
+                </div>
+                <div class="comparison-vs">VS</div>
+                <div class="comparison-box project">
+                    <div class="box-icon">🗄️</div>
+                    <h3 style="color: var(--accent-teal);">Project</h3>
+                    <p class="subtitle">Like a filing cabinet</p>
+                    <ul class="comparison-list">
+                        <li>Sustained multi-day work</li>
+                        <li>Building a specific product</li>
+                        <li>Persistent context needed</li>
+                        <li>Multiple related features</li>
+                        <li>One per app or goal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Claude Pro Note -->
+        <div class="slide slide-pricing" data-slide-number="9">
+            <span class="slide-section">Section 3 - 6:30</span>
+            <h2>A Quick Note on Claude Pro</h2>
+            <div class="pricing-card">
+                <div class="price">$20</div>
+                <div class="period">per month</div>
+                <div class="value-prop">Required for Projects</div>
+            </div>
+            <p class="pricing-note">
+                The time savings justify the cost for serious project work. Everything else in this course works with the free plan. Upgrade when you are ready for multi-session builds.
+            </p>
+        </div>
+
+        <!-- SLIDE 10: Before - Long Context Prompt -->
+        <div class="slide slide-before-after" data-slide-number="10">
+            <span class="slide-section">Section 4 - 7:00</span>
+            <h2>Without Projects: The Old Way</h2>
+            <div class="prompt-comparison">
+                <div class="prompt-panel before">
+                    <div class="panel-header">Without Projects</div>
+                    <div class="panel-body">
+                        I'm building a learning portal<br>
+                        called 02Ship using Next.js 14<br>
+                        with TypeScript and Tailwind CSS.<br>
+                        The site has a landing page, a<br>
+                        courses section with video lessons,<br>
+                        a blog using MDX, and community<br>
+                        links. I'm deploying on Vercel.<br>
+                        <br>
+                        Can you help me add a search<br>
+                        feature to the blog?<br>
+                        <span class="line-count">~10 lines of context before the actual question</span>
+                    </div>
+                </div>
+                <div class="prompt-panel after">
+                    <div class="panel-header">With Projects</div>
+                    <div class="panel-body">
+                        <span class="short-prompt">Add a search feature to the blog.</span>
+                        <br><br><br><br><br>
+                        <span class="line-count">5 words. Claude already knows the rest.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Five Words vs Five Paragraphs -->
+        <div class="slide" data-slide-number="11" style="text-align: center;">
+            <span class="slide-section">Section 4 - 8:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2.5rem;">The Difference Is Dramatic</h2>
+            <div class="word-count-visual">
+                <div class="word-count-panel words">
+                    <div class="big-number">5</div>
+                    <div class="unit">words with Projects</div>
+                </div>
+                <div class="word-count-panel paragraphs">
+                    <div class="big-number">5</div>
+                    <div class="unit">paragraphs without</div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; color: var(--text-secondary); font-size: 1.2rem;">Same task. Same result. Dramatically less effort.</p>
+        </div>
+
+        <!-- SLIDE 12: Time Savings -->
+        <div class="slide slide-time" data-slide-number="12">
+            <span class="slide-section">Section 4 - 9:00</span>
+            <h2>The Time Savings Add Up</h2>
+            <div class="time-bars">
+                <div class="time-bar without">
+                    <div class="label">Without</div>
+                    <div class="bar-container">
+                        <div class="bar-fill">Context setup</div>
+                    </div>
+                    <div class="time-value">5-10 min</div>
+                </div>
+                <div class="time-bar with">
+                    <div class="label">With</div>
+                    <div class="bar-container">
+                        <div class="bar-fill"></div>
+                    </div>
+                    <div class="time-value">~0 min</div>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 1rem;">Per conversation. Over dozens of conversations, that is hours saved.</p>
+            <div class="savings-badge">90% Less Context-Setting</div>
+        </div>
+
+        <!-- SLIDE 13: Recap -->
+        <div class="slide slide-recap" data-slide-number="13">
+            <span class="slide-section">Closing - 10:00</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p>Without Projects, every conversation <strong>starts from zero</strong></p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p>Projects are <strong>dedicated workspaces</strong> with persistent memory</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p>Three features: <strong>instructions, knowledge base, history</strong></p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p>Projects save <strong>90% of context-setting overhead</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Next Steps -->
+        <div class="slide slide-next" data-slide-number="14">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 10:30</span>
+            <h2>Next: Setting Up Your Project</h2>
+            <p>Write custom instructions, upload knowledge files, and test your setup</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">🛠️</div>
+                    <p>Watch Video 2</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">💬</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">💡</div>
+                    <p>Share Your Frustration</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3: Deployment and Launch: Ship It to the World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Title slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .finale-banner {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-coral));
+            color: var(--bg-dark);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Deployment options comparison */
+        .slide-deploy-options {
+            text-align: center;
+        }
+
+        .slide-deploy-options h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-deploy-options .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .deploy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .deploy-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .deploy-card.recommended {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid var(--accent-teal);
+            position: relative;
+        }
+
+        .deploy-card.recommended::after {
+            content: "RECOMMENDED";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.2rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .deploy-card .platform-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .deploy-card .platform-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .deploy-card .platform-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            justify-content: center;
+        }
+
+        .deploy-card .tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.08);
+            color: var(--text-secondary);
+        }
+
+        .deploy-card.recommended .tag {
+            background: rgba(78, 205, 196, 0.15);
+            color: var(--accent-teal);
+        }
+
+        /* Deployment workflow slide */
+        .slide-deploy-flow {
+            text-align: center;
+        }
+
+        .slide-deploy-flow h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .deploy-steps {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .deploy-step {
+            flex: 1;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .deploy-step:nth-child(1) {
+            background: rgba(255, 107, 107, 0.12);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 12px 0 0 12px;
+        }
+
+        .deploy-step:nth-child(2) {
+            background: rgba(78, 205, 196, 0.12);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .deploy-step:nth-child(3) {
+            background: rgba(255, 215, 61, 0.12);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .deploy-step .step-num {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .deploy-step:nth-child(1) .step-num { color: var(--accent-coral); }
+        .deploy-step:nth-child(2) .step-num { color: var(--accent-teal); }
+        .deploy-step:nth-child(3) .step-num { color: var(--accent-gold); }
+
+        .deploy-step .step-name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .deploy-step .step-detail {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Terminal mockup */
+        .terminal {
+            background: #0d0d12;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .terminal-bar {
+            background: #1a1a24;
+            padding: 0.5rem 1rem;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca40; }
+
+        .terminal-body {
+            padding: 1rem 1.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .terminal-body .prompt { color: var(--accent-teal); }
+        .terminal-body .cmd { color: var(--text-primary); }
+        .terminal-body .output { color: var(--text-secondary); }
+        .terminal-body .success { color: var(--success); }
+
+        /* Browser mockup */
+        .browser-mockup {
+            background: #252530;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .browser-bar {
+            display: flex;
+            gap: 6px;
+            padding: 0.75rem 1rem;
+            background: #1a1a24;
+            align-items: center;
+        }
+
+        .browser-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .browser-dot.red { background: #ff5f56; }
+        .browser-dot.yellow { background: #ffbd2e; }
+        .browser-dot.green { background: #27ca40; }
+
+        .browser-url {
+            margin-left: 12px;
+            background: rgba(255,255,255,0.08);
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .browser-content {
+            padding: 1.5rem;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        /* Live deployment moment */
+        .slide-live-moment {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, #0f1a15 100%);
+        }
+
+        .slide-live-moment h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(80, 250, 123, 0.15);
+            border: 2px solid var(--success);
+            color: var(--success);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .live-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        .live-url {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--accent-teal);
+            background: rgba(78, 205, 196, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Custom domain slide */
+        .slide-domain {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .domain-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .domain-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .domain-content .quote-box {
+            background: rgba(78, 205, 196, 0.1);
+            border-left: 4px solid var(--accent-teal);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--accent-teal);
+        }
+
+        .domain-visual {
+            background: #1a1a24;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .domain-visual h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .domain-comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .domain-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .domain-row .label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            width: 60px;
+            flex-shrink: 0;
+        }
+
+        .domain-row .url-box {
+            flex: 1;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+        }
+
+        .domain-row .url-box.before {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .domain-row .url-box.after {
+            background: rgba(80, 250, 123, 0.1);
+            color: var(--success);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .domain-cost {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 215, 61, 0.1);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-align: center;
+        }
+
+        /* Pre-launch checklist */
+        .slide-prelaunch {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .prelaunch-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .prelaunch-content p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .prelaunch-content .ship-quote {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .prelaunch-checklist {
+            background: #1a1a24;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .prelaunch-checklist h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.25rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .check-item .check-box {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        /* Launch strategy slide */
+        .slide-launch {
+            text-align: center;
+        }
+
+        .slide-launch h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-launch .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .launch-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .launch-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 0.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .launch-card .launch-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .launch-card .launch-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .launch-card .launch-tip {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .launch-card.highlight {
+            background: rgba(78, 205, 196, 0.1);
+            border-color: rgba(78, 205, 196, 0.3);
+        }
+
+        .launch-quote {
+            font-size: 1.1rem;
+            color: var(--accent-teal);
+            font-style: italic;
+        }
+
+        /* Post-launch slide */
+        .slide-postlaunch {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .postlaunch-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .postlaunch-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .postlaunch-section h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .postlaunch-section h3.feedback { color: var(--accent-coral); }
+        .postlaunch-section h3.metrics { color: var(--accent-teal); }
+
+        .postlaunch-section p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .postlaunch-visual {
+            background: #1a1a24;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feedback-cycle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .cycle-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 0.75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .cycle-item .cycle-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cycle-item .cycle-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .cycle-arrow {
+            font-size: 1.2rem;
+            color: var(--accent-teal);
+        }
+
+        .cycle-loop-note {
+            margin-top: 1rem;
+            text-align: center;
+            color: var(--accent-coral);
+            font-size: 0.85rem;
+        }
+
+        /* 02Ship story slide */
+        .slide-story {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-story h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-story .story-text {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .slide-story .proof-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Journey recap slide */
+        .slide-journey-recap {
+            text-align: center;
+        }
+
+        .slide-journey-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .journey-timeline {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .journey-lesson {
+            flex: 1;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+
+        .journey-lesson:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .journey-lesson:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        .journey-lesson .j-num {
+            font-size: 0.7rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .journey-lesson .j-name {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-top: 0.2rem;
+        }
+
+        .journey-lesson:nth-child(odd) { background: rgba(255,255,255,0.03); }
+        .journey-lesson:nth-child(even) { background: rgba(255,255,255,0.05); }
+
+        .journey-lesson:last-child {
+            background: rgba(80, 250, 123, 0.1);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+        }
+
+        .journey-lesson:last-child .j-num { color: var(--success); }
+
+        /* Graduation slide */
+        .slide-graduation {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1025 0%, #0f1420 50%, #0f1a15 100%);
+            position: relative;
+        }
+
+        .slide-graduation::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 215, 61, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .slide-graduation > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .graduation-crown {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-graduation h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold), var(--accent-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-graduation .grad-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grad-identity {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grad-message {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Final CTA slide */
+        .slide-final {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            position: relative;
+        }
+
+        .slide-final h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .slide-final .final-message {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+        }
+
+        .final-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .final-action {
+            background: rgba(255,255,255,0.2);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            min-width: 160px;
+        }
+
+        .final-action .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .final-action p {
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .final-action .link {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+            font-weight: 400;
+        }
+
+        /* Confetti decorations */
+        .confetti-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            opacity: 0.6;
+        }
+
+        .confetti:nth-child(1) { background: var(--accent-coral); top: 10%; left: 8%; transform: rotate(45deg); }
+        .confetti:nth-child(2) { background: var(--accent-teal); top: 15%; left: 20%; transform: rotate(-30deg); width: 6px; height: 12px; }
+        .confetti:nth-child(3) { background: var(--accent-gold); top: 8%; left: 35%; transform: rotate(15deg); }
+        .confetti:nth-child(4) { background: var(--success); top: 20%; left: 50%; transform: rotate(-45deg); width: 10px; height: 6px; }
+        .confetti:nth-child(5) { background: var(--accent-coral); top: 12%; left: 65%; transform: rotate(60deg); width: 6px; height: 10px; }
+        .confetti:nth-child(6) { background: var(--accent-gold); top: 18%; left: 78%; transform: rotate(-20deg); }
+        .confetti:nth-child(7) { background: var(--accent-teal); top: 6%; left: 90%; transform: rotate(30deg); width: 10px; height: 6px; }
+        .confetti:nth-child(8) { background: #bd93f9; top: 22%; left: 42%; transform: rotate(-60deg); width: 6px; height: 10px; }
+        .confetti:nth-child(9) { background: var(--accent-coral); top: 5%; left: 55%; transform: rotate(75deg); }
+        .confetti:nth-child(10) { background: var(--success); top: 25%; left: 15%; transform: rotate(-15deg); width: 8px; height: 5px; }
+        .confetti:nth-child(11) { background: var(--accent-gold); top: 28%; left: 85%; transform: rotate(40deg); width: 5px; height: 10px; }
+        .confetti:nth-child(12) { background: var(--accent-teal); top: 3%; left: 72%; transform: rotate(-50deg); }
+
+        /* Key messages slide */
+        .slide-key-messages {
+            text-align: center;
+        }
+
+        .slide-key-messages h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .message-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .message-card .msg-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .message-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .message-card strong {
+            color: var(--accent-teal);
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 3: Deployment &amp; Launch: Ship It to the World</h1>
+        <p>02Ship Claude Basics Course - Lesson 7 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 7, Video 3</li>
+            <li>This is the <strong>final video of the entire course</strong> -- make it feel like graduation</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholder areas with actual Vercel deployment screenshots</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <div class="finale-banner">The Final Video</div>
+            <h1>Ship It to the World</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 7, Video 3</p>
+            <span class="badge">Deploy. Launch. Celebrate.</span>
+        </div>
+
+        <!-- SLIDE 2: The Journey -->
+        <div class="slide slide-journey-recap" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>From "What is Claude?" to <span class="highlight-text">Deploying Your MVP</span></h2>
+            <div class="journey-timeline">
+                <div class="journey-lesson">
+                    <div class="j-num">L1</div>
+                    <div class="j-name">What is Claude</div>
+                </div>
+                <div class="journey-lesson">
+                    <div class="j-num">L2</div>
+                    <div class="j-name">Prompts</div>
+                </div>
+                <div class="journey-lesson">
+                    <div class="j-num">L3</div>
+                    <div class="j-name">Pages</div>
+                </div>
+                <div class="journey-lesson">
+                    <div class="j-num">L4</div>
+                    <div class="j-name">Data</div>
+                </div>
+                <div class="journey-lesson">
+                    <div class="j-num">L5</div>
+                    <div class="j-name">Research</div>
+                </div>
+                <div class="journey-lesson">
+                    <div class="j-num">L6</div>
+                    <div class="j-name">Integration</div>
+                </div>
+                <div class="journey-lesson">
+                    <div class="j-num">L7</div>
+                    <div class="j-name">Ship It</div>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 2rem;">When you started, you didn't know what Claude was. Now you're about to deploy a real product.</p>
+        </div>
+
+        <!-- SLIDE 3: Deployment Options -->
+        <div class="slide slide-deploy-options" data-slide-number="3">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2>Getting Your MVP on the Internet</h2>
+            <p class="subtitle">Deployment used to be hard. Today it can be one click.</p>
+            <div class="deploy-grid">
+                <div class="deploy-card recommended">
+                    <div class="platform-name" style="color: var(--accent-teal);">Vercel</div>
+                    <div class="platform-desc">Built by the Next.js team. Free for personal projects. What 02Ship runs on.</div>
+                    <div class="platform-tags">
+                        <span class="tag">Free tier</span>
+                        <span class="tag">One-click deploy</span>
+                        <span class="tag">Auto HTTPS</span>
+                        <span class="tag">Auto deploys</span>
+                    </div>
+                </div>
+                <div class="deploy-card">
+                    <div class="platform-name">Netlify</div>
+                    <div class="platform-desc">Similar to Vercel. Free tier, easy deployment. Great alternative.</div>
+                    <div class="platform-tags">
+                        <span class="tag">Free tier</span>
+                        <span class="tag">Easy deploy</span>
+                    </div>
+                </div>
+                <div class="deploy-card">
+                    <div class="platform-name">Render</div>
+                    <div class="platform-desc">Good for apps needing databases or backend services.</div>
+                    <div class="platform-tags">
+                        <span class="tag">Free tier</span>
+                        <span class="tag">Backend support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Three-Step Deployment -->
+        <div class="slide slide-deploy-flow" data-slide-number="4">
+            <span class="slide-section">Section 2 - 3:00</span>
+            <h2>Deployment in Three Steps</h2>
+            <div class="deploy-steps">
+                <div class="deploy-step">
+                    <div class="step-num">1</div>
+                    <div class="step-name">Push to GitHub</div>
+                    <div class="step-detail">git add, commit, push</div>
+                </div>
+                <div class="deploy-step">
+                    <div class="step-num">2</div>
+                    <div class="step-name">Connect to Vercel</div>
+                    <div class="step-detail">Import repo, click deploy</div>
+                </div>
+                <div class="deploy-step">
+                    <div class="step-num">3</div>
+                    <div class="step-name">Watch It Go Live</div>
+                    <div class="step-detail">~2 minutes to live URL</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Git Push -->
+        <div class="slide" data-slide-number="5" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <span class="slide-section">Section 2 - 3:30</span>
+            <div>
+                <div style="display: inline-block; background: rgba(255, 107, 107, 0.2); color: var(--accent-coral); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem;">Step 1</div>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Push to GitHub</h2>
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">GitHub is where your code lives online. Vercel reads from it to deploy your site. Three commands is all it takes.</p>
+            </div>
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <span class="prompt">$</span> <span class="cmd">git add .</span><br>
+                    <span class="output">Staging all files...</span><br><br>
+                    <span class="prompt">$</span> <span class="cmd">git commit -m "Ready to deploy"</span><br>
+                    <span class="output">[main a3f2d1c] Ready to deploy</span><br>
+                    <span class="output"> 12 files changed, 847 insertions(+)</span><br><br>
+                    <span class="prompt">$</span> <span class="cmd">git push</span><br>
+                    <span class="success">&#10003; Everything up-to-date</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Vercel Connect -->
+        <div class="slide" data-slide-number="6" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <span class="slide-section">Section 2 - 4:00</span>
+            <div>
+                <div style="display: inline-block; background: rgba(78, 205, 196, 0.2); color: var(--accent-teal); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem;">Step 2</div>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Connect to Vercel</h2>
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1rem;">Sign up at vercel.com. Click "New Project." Import from GitHub. Vercel auto-detects Next.js. Click "Deploy."</p>
+                <p style="color: var(--accent-teal); font-weight: 600;">That's it. Vercel handles everything else.</p>
+            </div>
+            <div style="background: #1a1a24; border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Vercel Dashboard</div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                        <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(80, 250, 123, 0.3); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--success);">&#10003;</div>
+                        <span style="font-size: 0.85rem;">Import from GitHub</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                        <div style="width: 20px; height: 20px; border-radius: 50%; background: rgba(80, 250, 123, 0.3); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--success);">&#10003;</div>
+                        <span style="font-size: 0.85rem;">Framework detected: Next.js</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.3); border-radius: 8px;">
+                        <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--accent-teal); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--bg-dark);">&#9654;</div>
+                        <span style="font-size: 0.85rem; font-weight: 600; color: var(--accent-teal);">Click: Deploy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: MVP is LIVE -->
+        <div class="slide slide-live-moment" data-slide-number="7">
+            <span class="slide-section">Section 2 - 5:00</span>
+            <h2>Your MVP is <span class="highlight-text">LIVE</span></h2>
+            <div class="live-badge">
+                <div class="live-dot"></div>
+                DEPLOYED
+            </div>
+            <div class="browser-mockup" style="max-width: 600px; margin: 0 auto 1.5rem;">
+                <div class="browser-bar">
+                    <div class="browser-dot red"></div>
+                    <div class="browser-dot yellow"></div>
+                    <div class="browser-dot green"></div>
+                    <div class="browser-url">focusflow.vercel.app</div>
+                </div>
+                <div class="browser-content" style="min-height: 150px; background: linear-gradient(135deg, #1a1a3e, #0d0d20);">
+                    <div style="font-size: 1.3rem; font-weight: 700; color: #8b9cf7;">FocusFlow</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Your MVP, live on the internet</div>
+                    <div style="background: var(--accent-teal); color: var(--bg-dark); padding: 0.4rem 1rem; border-radius: 6px; font-weight: 600; font-size: 0.8rem;">Get Started Free</div>
+                </div>
+            </div>
+            <div class="live-url">https://focusflow.vercel.app</div>
+        </div>
+
+        <!-- SLIDE 8: Custom Domain -->
+        <div class="slide slide-domain" data-slide-number="8">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <div class="domain-content">
+                <h2>Connect a Custom Domain</h2>
+                <p>A custom domain makes it feel real. When I connected 02ship.com and saw my platform load, it stopped being a project and became a product.</p>
+                <div class="quote-box">"It's just copying and pasting two values. Claude can walk you through it step by step."</div>
+            </div>
+            <div class="domain-visual">
+                <h4>Domain Transformation</h4>
+                <div class="domain-comparison">
+                    <div class="domain-row">
+                        <div class="label">Before:</div>
+                        <div class="url-box before">my-app.vercel.app</div>
+                    </div>
+                    <div style="text-align: center; font-size: 1.5rem; color: var(--accent-teal); padding: 0.5rem 0;">&#8595;</div>
+                    <div class="domain-row">
+                        <div class="label">After:</div>
+                        <div class="url-box after">www.focusflow.com</div>
+                    </div>
+                </div>
+                <div class="domain-cost">$10-15/year -- Namecheap, Google Domains, or Cloudflare</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Pre-Launch Checklist -->
+        <div class="slide slide-prelaunch" data-slide-number="9">
+            <span class="slide-section">Section 4 - 7:00</span>
+            <div class="prelaunch-content">
+                <h2>Pre-Launch Checklist</h2>
+                <p>Small things that make the difference between a side project and a real product. But don't let this hold you up.</p>
+                <div class="ship-quote">Ship before you feel ready.</div>
+            </div>
+            <div class="prelaunch-checklist">
+                <h4>Before You Tell the World</h4>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Analytics (Vercel Analytics -- free)</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Basic SEO (title, description, OG image)</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Test on mobile (resize browser)</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Core user flow works end to end</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-box">&#10003;</div>
+                    <span>Page loads quickly</span>
+                </div>
+                <div class="check-item" style="opacity: 0.5;">
+                    <div class="check-box" style="background: rgba(255,255,255,0.1); color: var(--text-secondary); border-color: rgba(255,255,255,0.2);">~</div>
+                    <span>Error tracking (optional -- Sentry)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Launch Strategy -->
+        <div class="slide slide-launch" data-slide-number="10">
+            <span class="slide-section">Section 5 - 8:30</span>
+            <h2>Tell the World</h2>
+            <p class="subtitle">A simple launch strategy anyone can execute</p>
+            <div class="launch-grid">
+                <div class="launch-card highlight">
+                    <div class="launch-icon">&#128172;</div>
+                    <div class="launch-name">Personal Network</div>
+                    <div class="launch-tip">Text 5 friends the link</div>
+                </div>
+                <div class="launch-card">
+                    <div class="launch-icon">&#120143;</div>
+                    <div class="launch-name">Twitter / X</div>
+                    <div class="launch-tip">Build in public thread</div>
+                </div>
+                <div class="launch-card">
+                    <div class="launch-icon">&#128188;</div>
+                    <div class="launch-name">LinkedIn</div>
+                    <div class="launch-tip">Share your story</div>
+                </div>
+                <div class="launch-card">
+                    <div class="launch-icon">&#128220;</div>
+                    <div class="launch-name">Reddit</div>
+                    <div class="launch-tip">Find relevant subreddit</div>
+                </div>
+                <div class="launch-card">
+                    <div class="launch-icon">&#128640;</div>
+                    <div class="launch-name">Product Hunt</div>
+                    <div class="launch-tip">When polished</div>
+                </div>
+            </div>
+            <p class="launch-quote">"Your first users will be forgiving. They're rooting for you."</p>
+        </div>
+
+        <!-- SLIDE 11: Post-Launch -->
+        <div class="slide slide-postlaunch" data-slide-number="11">
+            <span class="slide-section">Section 6 - 10:00</span>
+            <div class="postlaunch-content">
+                <h2>After You Ship</h2>
+                <div class="postlaunch-section">
+                    <h3 class="feedback">Respond to Feedback</h3>
+                    <p>Read every piece. Thank everyone. If 3 people say the same thing, prioritize that fix. Use Claude to implement improvements.</p>
+                </div>
+                <div class="postlaunch-section">
+                    <h3 class="metrics">Monitor Metrics</h3>
+                    <p>Check analytics daily for the first week. Look at visitors, sources, and clicks. Don't obsess -- look for patterns.</p>
+                </div>
+            </div>
+            <div class="postlaunch-visual">
+                <div class="feedback-cycle">
+                    <div class="cycle-item">
+                        <div class="cycle-icon">&#128640;</div>
+                        <div class="cycle-label">Ship</div>
+                    </div>
+                    <div class="cycle-arrow">&#8594;</div>
+                    <div class="cycle-item">
+                        <div class="cycle-icon">&#128172;</div>
+                        <div class="cycle-label">Feedback</div>
+                    </div>
+                    <div class="cycle-arrow">&#8594;</div>
+                    <div class="cycle-item">
+                        <div class="cycle-icon">&#128736;</div>
+                        <div class="cycle-label">Improve</div>
+                    </div>
+                    <div class="cycle-arrow">&#8594;</div>
+                    <div class="cycle-item">
+                        <div class="cycle-icon">&#128640;</div>
+                        <div class="cycle-label">Ship Again</div>
+                    </div>
+                </div>
+                <div class="cycle-loop-note">&#8634; The cycle never ends. Every product you love works this way.</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: 02Ship Story -->
+        <div class="slide slide-story" data-slide-number="12">
+            <span class="slide-section">Section 7 - 11:00</span>
+            <h2>The 02Ship Story</h2>
+            <p class="story-text">The first version had fewer lessons, rougher design, and things that didn't work perfectly. But I shipped it. The feedback from early users shaped every improvement since. The platform you're learning on exists because someone shipped an imperfect MVP and kept iterating.</p>
+            <div class="proof-badge">You're looking at the proof.</div>
+        </div>
+
+        <!-- SLIDE 13: Key Messages -->
+        <div class="slide slide-key-messages" data-slide-number="13">
+            <span class="slide-section">Closing - 11:30</span>
+            <h2>What You've Learned</h2>
+            <div class="messages-grid">
+                <div class="message-card">
+                    <div class="msg-icon">&#128161;</div>
+                    <p><strong>Deployment is scary the first time,</strong> routine the tenth</p>
+                </div>
+                <div class="message-card">
+                    <div class="msg-icon">&#9889;</div>
+                    <p><strong>Vercel makes it one click</strong> -- technology removed the barriers</p>
+                </div>
+                <div class="message-card">
+                    <div class="msg-icon">&#127760;</div>
+                    <p><strong>Custom domain makes it feel real</strong> -- small investment, huge impact</p>
+                </div>
+                <div class="message-card">
+                    <div class="msg-icon">&#128640;</div>
+                    <p><strong>Ship before you feel ready</strong> -- perfectionism kills MVPs</p>
+                </div>
+                <div class="message-card">
+                    <div class="msg-icon">&#129309;</div>
+                    <p><strong>First users will be forgiving</strong> -- they're rooting for you</p>
+                </div>
+                <div class="message-card">
+                    <div class="msg-icon">&#128200;</div>
+                    <p><strong>5 real users with feedback</strong> beats 500 imaginary ones</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Graduation -->
+        <div class="slide slide-graduation" data-slide-number="14">
+            <span class="slide-section" style="color: rgba(255,255,255,0.5);">Graduation - 11:30</span>
+            <div class="confetti-container">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+            <div class="graduation-crown">&#127891;</div>
+            <h2>You Did It.</h2>
+            <p class="grad-subtitle">Seven lessons. From "What is Claude?" to deploying your own MVP to the internet.</p>
+            <div class="grad-identity">You Are Now a Builder Who Ships</div>
+            <p class="grad-message">That's not a motivational phrase -- it's a statement of fact. You have the skills, the tools, and the process to take any idea and turn it into a working product.</p>
+        </div>
+
+        <!-- SLIDE 15: Final CTA - Keep Building -->
+        <div class="slide slide-final" data-slide-number="15">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 12:00</span>
+            <h2>Keep Shipping.</h2>
+            <p class="final-message">Congratulations. Now go build something amazing.</p>
+            <div class="final-actions">
+                <div class="final-action">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                    <div class="link">discord.gg/btqaA3hzKp</div>
+                </div>
+                <div class="final-action">
+                    <div class="icon">&#128736;</div>
+                    <p>Share Your Build</p>
+                    <div class="link">GitHub Discussions</div>
+                </div>
+                <div class="final-action">
+                    <div class="icon">&#127891;</div>
+                    <p>Full Course Playlist</p>
+                    <div class="link">02Ship Claude Basics</div>
+                </div>
+                <div class="final-action">
+                    <div class="icon">&#128150;</div>
+                    <p>Pay It Forward</p>
+                    <div class="link">Share with someone</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

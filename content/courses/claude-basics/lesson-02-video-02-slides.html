@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2: Prompting for Different Goals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Slide: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Slide: Hook / Intro */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Four Category Cards */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem 1rem;
+            border-radius: 14px;
+            border: 2px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .category-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .category-card.code { border-color: rgba(100, 149, 237, 0.4); }
+        .category-card.code .icon { color: #6495ed; }
+        .category-card.explain { border-color: rgba(80, 250, 123, 0.4); }
+        .category-card.explain .icon { color: var(--success); }
+        .category-card.brainstorm { border-color: rgba(255, 165, 0, 0.4); }
+        .category-card.brainstorm .icon { color: #ffa500; }
+        .category-card.productivity { border-color: rgba(180, 130, 255, 0.4); }
+        .category-card.productivity .icon { color: #b482ff; }
+
+        /* Slide: Deep Dive (two-column) */
+        .slide-deep-dive {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .deep-dive-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .deep-dive-content .type-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .type-label.code { background: rgba(100, 149, 237, 0.2); color: #6495ed; }
+        .type-label.explain { background: rgba(80, 250, 123, 0.2); color: var(--success); }
+        .type-label.brainstorm { background: rgba(255, 165, 0, 0.2); color: #ffa500; }
+        .type-label.productivity { background: rgba(180, 130, 255, 0.2); color: #b482ff; }
+
+        .deep-dive-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .deep-dive-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .deep-dive-visual h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-box {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .tag { color: #ff79c6; }
+        .code-block .attr { color: #50fa7b; }
+
+        /* Chat bubbles */
+        .chat-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 0.85rem 1.1rem;
+            border-radius: 14px;
+            max-width: 75%;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Slide: Three Explanation Formats */
+        .slide-formats {
+            text-align: center;
+        }
+
+        .slide-formats h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .format-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+
+        .format-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .format-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .format-card .example-prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            background: rgba(78, 205, 196, 0.1);
+            padding: 0.6rem;
+            border-radius: 6px;
+            line-height: 1.4;
+        }
+
+        /* Slide: Learning Loop */
+        .slide-loop {
+            text-align: center;
+        }
+
+        .slide-loop h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .loop-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .loop-step {
+            background: rgba(255,255,255,0.08);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .loop-step .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .loop-step p {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .loop-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+
+        .loop-note {
+            margin-top: 1.5rem;
+            color: var(--accent-coral);
+            font-size: 1rem;
+        }
+
+        /* Slide: Brainstorm Funnel */
+        .slide-funnel {
+            text-align: center;
+        }
+
+        .slide-funnel h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .funnel-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .funnel-layer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .funnel-layer.wide {
+            width: 600px;
+            background: rgba(255, 165, 0, 0.15);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            color: #ffa500;
+        }
+
+        .funnel-layer.medium {
+            width: 400px;
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            color: var(--accent-teal);
+        }
+
+        .funnel-layer.narrow {
+            width: 220px;
+            background: rgba(80, 250, 123, 0.15);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+            color: var(--success);
+        }
+
+        .funnel-arrow-down {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Productivity Grid */
+        .slide-productivity-grid {
+            text-align: center;
+        }
+
+        .slide-productivity-grid h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .productivity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .productivity-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 14px;
+            padding: 1.25rem;
+            border: 1px solid rgba(180, 130, 255, 0.2);
+            text-align: left;
+        }
+
+        .productivity-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #b482ff;
+        }
+
+        .productivity-card .example-prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: #0d0d12;
+            padding: 0.6rem;
+            border-radius: 6px;
+            line-height: 1.4;
+        }
+
+        /* Slide: Mix and Match */
+        .slide-mix {
+            text-align: center;
+        }
+
+        .slide-mix h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .mix-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mix-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+
+        .mix-item .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .mix-item .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .tag.code-tag { background: rgba(100, 149, 237, 0.2); color: #6495ed; }
+        .tag.explain-tag { background: rgba(80, 250, 123, 0.2); color: var(--success); }
+        .tag.brainstorm-tag { background: rgba(255, 165, 0, 0.2); color: #ffa500; }
+        .tag.plan-tag { background: rgba(180, 130, 255, 0.2); color: #b482ff; }
+
+        .mix-item .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Recap */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .icon-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .recap-item:nth-child(1) .icon-badge { background: rgba(100, 149, 237, 0.2); color: #6495ed; }
+        .recap-item:nth-child(2) .icon-badge { background: rgba(80, 250, 123, 0.2); color: var(--success); }
+        .recap-item:nth-child(3) .icon-badge { background: rgba(255, 165, 0, 0.2); color: #ffa500; }
+        .recap-item:nth-child(4) .icon-badge { background: rgba(180, 130, 255, 0.2); color: #b482ff; }
+
+        .recap-item p {
+            font-size: 0.95rem;
+        }
+
+        /* Slide: Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Slide: Cheat Sheet */
+        .slide-cheatsheet {
+            text-align: center;
+        }
+
+        .slide-cheatsheet h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cheatsheet-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .cheatsheet-box h3 {
+            color: var(--accent-teal);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .cheatsheet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cheatsheet-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .cheatsheet-list li::before {
+            content: ">";
+            color: var(--accent-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 2: Prompting for Different Goals</h1>
+        <p>02Ship Claude Basics Course &bull; Lesson 2 &bull; Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Video 2 of Lesson 2</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Color coding per category: <code>#6495ed</code> Code, <code>#50fa7b</code> Explain, <code>#ffa500</code> Brainstorm, <code>#b482ff</code> Productivity</li>
+            <li>Replace placeholder examples with actual Claude.ai screenshots during screen recording</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Prompting for Different Goals</h1>
+            <p class="subtitle">02Ship Claude Basics &bull; Lesson 2</p>
+            <span class="badge">Different goals, different prompts</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening &bull; 0:00</span>
+            <h2>Not every task needs the <span class="highlight-text">same kind of prompt</span></h2>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 0 auto 2rem;">Asking Claude to write code is very different from asking it to brainstorm ideas or explain a concept.</p>
+            <div class="categories-grid">
+                <div class="category-card code">
+                    <div class="icon">&#128187;</div>
+                    <h3>Code</h3>
+                    <p>Generate working code</p>
+                </div>
+                <div class="category-card explain">
+                    <div class="icon">&#128161;</div>
+                    <h3>Explain</h3>
+                    <p>Learn and understand</p>
+                </div>
+                <div class="category-card brainstorm">
+                    <div class="icon">&#127752;</div>
+                    <h3>Brainstorm</h3>
+                    <p>Generate creative ideas</p>
+                </div>
+                <div class="category-card productivity">
+                    <div class="icon">&#128640;</div>
+                    <h3>Productivity</h3>
+                    <p>Get everyday work done</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Code Generation Deep Dive -->
+        <div class="slide slide-deep-dive" data-slide-number="3">
+            <span class="slide-section">Section 1 &bull; 1:15</span>
+            <div class="deep-dive-content">
+                <div class="type-label code">Code Generation</div>
+                <h2>Specificity Matters Most</h2>
+                <p>Code prompts are where the 4 Cs shine brightest. Always specify four things:</p>
+                <div style="margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                        <span style="width: 24px; height: 24px; border-radius: 50%; background: rgba(100,149,237,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #6495ed; font-weight: 700; flex-shrink: 0;">1</span>
+                        <span>Language / Framework</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                        <span style="width: 24px; height: 24px; border-radius: 50%; background: rgba(100,149,237,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #6495ed; font-weight: 700; flex-shrink: 0;">2</span>
+                        <span>What the code should do</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                        <span style="width: 24px; height: 24px; border-radius: 50%; background: rgba(100,149,237,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #6495ed; font-weight: 700; flex-shrink: 0;">3</span>
+                        <span>How it should be structured</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem;">
+                        <span style="width: 24px; height: 24px; border-radius: 50%; background: rgba(100,149,237,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: #6495ed; font-weight: 700; flex-shrink: 0;">4</span>
+                        <span>Constraints (keep it simple, accessible)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: #6495ed;">Good Code Prompt</h4>
+                <div class="prompt-box">
+                    "Create a <span style="color: #6495ed;">responsive navigation bar</span> using <span style="color: #6495ed;">React and Tailwind CSS</span>. It should have: a logo on the left, 4 nav links in the center, and a dark mode toggle on the right. On mobile, collapse into a hamburger menu. Use <span style="color: #6495ed;">TypeScript</span>. Keep it <span style="color: #6495ed;">under 60 lines</span>."
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Code - Tech Stack Cheat Sheet -->
+        <div class="slide slide-cheatsheet" data-slide-number="4">
+            <span class="slide-section">Section 1 &bull; 3:00</span>
+            <h2>You Don't Need to Understand It to Use It</h2>
+            <div class="cheatsheet-box">
+                <h3>Your 02Ship Tech Stack Cheat Sheet</h3>
+                <ul class="cheatsheet-list">
+                    <li>React -- builds the user interface</li>
+                    <li>TypeScript -- adds safety to JavaScript</li>
+                    <li>Tailwind CSS -- styles everything fast</li>
+                    <li>Next.js -- powers the whole app</li>
+                </ul>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Just copy this line into your code prompts:<br>
+                <span style="font-family: 'JetBrains Mono', monospace; color: var(--accent-teal); font-size: 0.9rem;">"Use React, TypeScript, and Tailwind CSS"</span>
+            </p>
+        </div>
+
+        <!-- SLIDE 5: Explanation Prompts Deep Dive -->
+        <div class="slide slide-deep-dive" data-slide-number="5">
+            <span class="slide-section">Section 2 &bull; 4:00</span>
+            <div class="deep-dive-content">
+                <div class="type-label explain">Explanation Prompts</div>
+                <h2>Claude as Your Personal Tutor</h2>
+                <p>The key to great explanations is telling Claude your knowledge level. The same concept explained to a five-year-old sounds completely different from an explanation for a developer.</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(80, 250, 123, 0.1); border-radius: 8px; border-left: 3px solid var(--success);">
+                    <p style="font-size: 0.95rem; color: var(--success); font-weight: 600;">Tell Claude Your Level</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">If you're in this course, say "explain for a complete beginner"</p>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: var(--success);">Three Favorite Formats</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--success);">"Explain like I'm 5"</div>
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--success);">"Give me an analogy from everyday life"</div>
+                    <div style="background: #0d0d12; padding: 0.65rem 1rem; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--success);">"Walk me through this step by step"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Three Explanation Formats -->
+        <div class="slide slide-formats" data-slide-number="6">
+            <span class="slide-section">Section 2 &bull; 4:45</span>
+            <h2>Three Explanation Formats in Action</h2>
+            <div class="formats-grid">
+                <div class="format-card">
+                    <div class="icon">&#128118;</div>
+                    <h3>ELI5</h3>
+                    <div class="example-prompt">"Explain what an API is like I'm 5 years old"</div>
+                </div>
+                <div class="format-card">
+                    <div class="icon">&#127859;</div>
+                    <h3>Analogy-Based</h3>
+                    <div class="example-prompt">"Explain how React components work using an analogy from cooking"</div>
+                </div>
+                <div class="format-card">
+                    <div class="icon">&#128206;</div>
+                    <h3>Step-by-Step</h3>
+                    <div class="example-prompt">"Walk me through what this code does, step by step, assuming I've never programmed"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Build-Then-Explain Loop -->
+        <div class="slide slide-loop" data-slide-number="7">
+            <span class="slide-section">Section 2 &bull; 5:30</span>
+            <h2>The Build-Then-Explain Learning Loop</h2>
+            <div class="loop-diagram">
+                <div class="loop-step">
+                    <div class="icon">&#128187;</div>
+                    <p>Claude<br>Generates Code</p>
+                </div>
+                <div class="loop-arrow">&#10132;</div>
+                <div class="loop-step">
+                    <div class="icon">&#129300;</div>
+                    <p>You Ask:<br>"Explain This"</p>
+                </div>
+                <div class="loop-arrow">&#10132;</div>
+                <div class="loop-step">
+                    <div class="icon">&#128161;</div>
+                    <p>Claude<br>Teaches You</p>
+                </div>
+                <div class="loop-arrow">&#10132;</div>
+                <div class="loop-step">
+                    <div class="icon">&#128170;</div>
+                    <p>You<br>Level Up</p>
+                </div>
+            </div>
+            <p class="loop-note">&#8634; Build first, understand second -- repeat</p>
+        </div>
+
+        <!-- SLIDE 8: Brainstorming Deep Dive -->
+        <div class="slide slide-deep-dive" data-slide-number="8">
+            <span class="slide-section">Section 3 &bull; 6:30</span>
+            <div class="deep-dive-content">
+                <div class="type-label brainstorm">Brainstorming</div>
+                <h2>When You Need Ideas, Not Answers</h2>
+                <p>Brainstorming is the opposite of code prompts. Code needs tight constraints. Brainstorming needs freedom. Ask for quantity first, then narrow down.</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 165, 0, 0.1); border-radius: 8px; border-left: 3px solid #ffa500;">
+                    <p style="font-size: 0.95rem; color: #ffa500; font-weight: 600;">Quantity Over Quality</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">The magic usually happens in ideas 7 through 10.</p>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: #ffa500;">Brainstorm Prompt</h4>
+                <div class="prompt-box">
+                    "I'm building a learning platform for non-programmers. I need creative ways to <span style="color: #ffa500;">keep students engaged between lessons</span>. Give me <span style="color: #ffa500;">15 ideas</span>, ranging from conventional to wild and creative. <span style="color: #ffa500;">Don't filter yourself</span> -- quantity over quality."
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Diverge Then Converge -->
+        <div class="slide slide-funnel" data-slide-number="9">
+            <span class="slide-section">Section 3 &bull; 7:45</span>
+            <h2>Diverge, Then Converge</h2>
+            <div class="funnel-visual">
+                <div class="funnel-layer wide">
+                    &#127752; 15 creative ideas -- quantity over quality
+                </div>
+                <div class="funnel-arrow-down">&#9660;</div>
+                <div class="funnel-layer medium">
+                    &#128269; Top 3 with pros and cons
+                </div>
+                <div class="funnel-arrow-down">&#9660;</div>
+                <div class="funnel-layer narrow">
+                    &#9989; Final recommendation
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-top: 2rem;">Follow-up: "Pick the top 3 and explain the pros and cons of each. Then recommend one."</p>
+        </div>
+
+        <!-- SLIDE 10: Productivity Deep Dive -->
+        <div class="slide slide-deep-dive" data-slide-number="10">
+            <span class="slide-section">Section 4 &bull; 9:00</span>
+            <div class="deep-dive-content">
+                <div class="type-label productivity">Productivity</div>
+                <h2>Claude Beyond Code</h2>
+                <p>Claude isn't just for building apps. It's a productivity powerhouse for your everyday work: writing, research, analysis, and planning.</p>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(180, 130, 255, 0.1); border-radius: 8px; border-left: 3px solid #b482ff;">
+                    <p style="font-size: 0.95rem; color: #b482ff; font-weight: 600;">Immediate Value</p>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">The 4 Cs framework applies to all of these -- not just code.</p>
+                </div>
+            </div>
+            <div class="deep-dive-visual">
+                <h4 style="color: #b482ff;">Four Productivity Use Cases</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+                    <div style="background: #0d0d12; padding: 0.65rem; border-radius: 6px; text-align: center;">
+                        <div style="font-size: 1.25rem;">&#9997;&#65039;</div>
+                        <div style="font-size: 0.8rem; color: #b482ff;">Writing</div>
+                    </div>
+                    <div style="background: #0d0d12; padding: 0.65rem; border-radius: 6px; text-align: center;">
+                        <div style="font-size: 1.25rem;">&#128269;</div>
+                        <div style="font-size: 0.8rem; color: #b482ff;">Research</div>
+                    </div>
+                    <div style="background: #0d0d12; padding: 0.65rem; border-radius: 6px; text-align: center;">
+                        <div style="font-size: 1.25rem;">&#128200;</div>
+                        <div style="font-size: 0.8rem; color: #b482ff;">Analysis</div>
+                    </div>
+                    <div style="background: #0d0d12; padding: 0.65rem; border-radius: 6px; text-align: center;">
+                        <div style="font-size: 1.25rem;">&#128197;</div>
+                        <div style="font-size: 0.8rem; color: #b482ff;">Planning</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Productivity Examples Grid -->
+        <div class="slide slide-productivity-grid" data-slide-number="11">
+            <span class="slide-section">Section 4 &bull; 9:30</span>
+            <h2>Four Real Productivity Prompts</h2>
+            <div class="productivity-grid">
+                <div class="productivity-card">
+                    <h3>&#9997;&#65039; Writing</h3>
+                    <div class="example-prompt">"Draft a professional but friendly email to my team announcing that our project deadline is moving to next Friday. Positive tone. Under 150 words."</div>
+                </div>
+                <div class="productivity-card">
+                    <h3>&#128269; Research</h3>
+                    <div class="example-prompt">"Summarize this article in 5 bullet points. Focus on key arguments and data. Then tell me one thing the author might be wrong about."</div>
+                </div>
+                <div class="productivity-card">
+                    <h3>&#128200; Analysis</h3>
+                    <div class="example-prompt">"Do a SWOT analysis for an online learning platform that teaches non-programmers to build with AI tools. Be honest and critical."</div>
+                </div>
+                <div class="productivity-card">
+                    <h3>&#128197; Planning</h3>
+                    <div class="example-prompt">"Create a 4-week plan for launching a personal blog. I can spend 5 hours per week. Break into weekly milestones with specific tasks."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Mix and Match -->
+        <div class="slide slide-mix" data-slide-number="12">
+            <span class="slide-section">Section 5 &bull; 11:30</span>
+            <h2>Mix and Match Prompt Types</h2>
+            <div class="mix-examples">
+                <div class="mix-item">
+                    <div class="tags">
+                        <span class="tag code-tag">Code</span>
+                        <span class="tag explain-tag">Explain</span>
+                    </div>
+                    <div class="prompt-text">"Generate a React component for a newsletter signup form AND explain what each part of the code does in plain English."</div>
+                </div>
+                <div class="mix-item">
+                    <div class="tags">
+                        <span class="tag brainstorm-tag">Brainstorm</span>
+                        <span class="tag plan-tag">Plan</span>
+                    </div>
+                    <div class="prompt-text">"Brainstorm 10 feature ideas for my app, then pick the top 3, and create a one-week implementation plan for the best one."</div>
+                </div>
+            </div>
+            <p style="color: var(--accent-teal); font-size: 1.1rem; margin-top: 2rem; font-weight: 600;">You're not limited to one type at a time</p>
+        </div>
+
+        <!-- SLIDE 13: Decision Helper -->
+        <div class="slide" data-slide-number="13" style="text-align: center;">
+            <span class="slide-section">Section 5 &bull; 12:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Which Prompt Type Should I Use?</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; max-width: 550px; margin: 0 auto;">
+                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(100,149,237,0.1); padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid rgba(100,149,237,0.25);">
+                    <span style="color: #6495ed; font-weight: 700; font-size: 0.9rem; min-width: 100px;">Building?</span>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">&#10132; Code prompts</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(80,250,123,0.1); padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid rgba(80,250,123,0.25);">
+                    <span style="color: var(--success); font-weight: 700; font-size: 0.9rem; min-width: 100px;">Learning?</span>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">&#10132; Explanation prompts</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,165,0,0.1); padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid rgba(255,165,0,0.25);">
+                    <span style="color: #ffa500; font-weight: 700; font-size: 0.9rem; min-width: 100px;">Exploring?</span>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">&#10132; Brainstorming prompts</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem; background: rgba(180,130,255,0.1); padding: 0.85rem 1.25rem; border-radius: 10px; border: 1px solid rgba(180,130,255,0.25);">
+                    <span style="color: #b482ff; font-weight: 700; font-size: 0.9rem; min-width: 100px;">Getting done?</span>
+                    <span style="color: var(--text-secondary); font-size: 0.95rem;">&#10132; Productivity prompts</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Recap -->
+        <div class="slide slide-recap" data-slide-number="14">
+            <span class="slide-section">Closing &bull; 12:15</span>
+            <h2>Four Prompt Types Recap</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="icon-badge">&#128187;</div>
+                    <div>
+                        <p><strong>Code Generation</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Needs specificity: language, function, structure, constraints</p>
+                    </div>
+                </div>
+                <div class="recap-item">
+                    <div class="icon-badge">&#128161;</div>
+                    <div>
+                        <p><strong>Explanations</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Tell Claude your level: ELI5, analogy, or step-by-step</p>
+                    </div>
+                </div>
+                <div class="recap-item">
+                    <div class="icon-badge">&#127752;</div>
+                    <div>
+                        <p><strong>Brainstorming</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Quantity first, then narrow: diverge then converge</p>
+                    </div>
+                </div>
+                <div class="recap-item">
+                    <div class="icon-badge">&#128640;</div>
+                    <div>
+                        <p><strong>Productivity</strong></p>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">Writing, research, analysis, planning -- Claude does it all</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Next Steps -->
+        <div class="slide slide-next" data-slide-number="15">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing &bull; 12:30</span>
+            <h2>Next: Prompt Recipes You Can Steal</h2>
+            <p>Ready-to-use templates you can copy, paste, and customize</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128250;</div>
+                    <p>Watch Video 3</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#9997;&#65039;</div>
+                    <p>Try All 4 Types</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

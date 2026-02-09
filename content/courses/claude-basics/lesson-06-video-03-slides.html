@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3: Brainstorming and Ideation Techniques</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Title slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Hook slide */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Sticky notes comparison */
+        .sticky-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sticky-board {
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .sticky-board h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .sticky-notes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .sticky-note {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--bg-dark);
+            transform: rotate(-2deg);
+        }
+
+        .sticky-note:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .sticky-note:nth-child(3n) {
+            transform: rotate(-1deg);
+        }
+
+        .sticky-note.coral { background: #ff6b6b; }
+        .sticky-note.teal { background: #4ecdc4; }
+        .sticky-note.gold { background: #ffd93d; }
+        .sticky-note.green { background: #50fa7b; }
+        .sticky-note.purple { background: #bd93f9; }
+        .sticky-note.dim { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
+
+        .vs-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        /* Two-phase overview */
+        .two-phases {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .phase-box {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .phase-box.divergent {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .phase-box.convergent {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .phase-box .phase-icon {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .phase-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-box p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .phase-arrow {
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        /* Idea quality curve */
+        .idea-curve {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .idea-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 200px;
+            padding: 0 1rem;
+        }
+
+        .idea-bar {
+            flex: 1;
+            border-radius: 4px 4px 0 0;
+            min-width: 20px;
+            position: relative;
+        }
+
+        .idea-bar.obvious {
+            background: rgba(255, 107, 107, 0.4);
+            border: 1px solid rgba(255, 107, 107, 0.5);
+        }
+
+        .idea-bar.interesting {
+            background: rgba(255, 217, 61, 0.4);
+            border: 1px solid rgba(255, 217, 61, 0.5);
+        }
+
+        .idea-bar.creative {
+            background: rgba(80, 250, 123, 0.4);
+            border: 1px solid rgba(80, 250, 123, 0.5);
+        }
+
+        .bar-labels {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1rem 0;
+        }
+
+        .bar-label {
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .bar-label .range {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Prompt box */
+        .prompt-box {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .prompt-box .prompt-label {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+        }
+
+        .prompt-box .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+        }
+
+        /* Evaluation table mockup */
+        .eval-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .eval-table th {
+            background: rgba(78, 205, 196, 0.15);
+            color: var(--accent-teal);
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .eval-table td {
+            padding: 0.5rem 0.75rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .eval-table .score {
+            font-weight: 600;
+        }
+
+        .eval-table .score.high { color: var(--success); }
+        .eval-table .score.mid { color: var(--accent-gold); }
+        .eval-table .score.low { color: var(--error); }
+
+        /* Technique cards */
+        .technique-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .technique-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .technique-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .technique-card .tech-number {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-coral);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .technique-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .technique-card .example-prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-top: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .technique-card.featured {
+            border-color: rgba(255, 217, 61, 0.4);
+            background: rgba(255, 217, 61, 0.05);
+        }
+
+        .technique-card .fav-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 0.15rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Worst ideas flip */
+        .flip-demo {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .flip-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .flip-column h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .flip-item {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .flip-item.bad {
+            background: rgba(255, 85, 85, 0.15);
+            border: 1px solid rgba(255, 85, 85, 0.3);
+            color: var(--text-secondary);
+        }
+
+        .flip-item.good {
+            background: rgba(80, 250, 123, 0.15);
+            border: 1px solid rgba(80, 250, 123, 0.3);
+            color: var(--text-secondary);
+        }
+
+        .flip-arrows {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding-top: 2.5rem;
+        }
+
+        .flip-arrow {
+            color: var(--accent-teal);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
+        }
+
+        /* Narrowing funnel */
+        .narrowing-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .narrowing-step {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            flex: 1;
+        }
+
+        .narrowing-step .count {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .narrowing-step .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .narrowing-step .who {
+            font-size: 0.75rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .narrowing-step:nth-child(1) .count { color: var(--accent-coral); }
+        .narrowing-step:nth-child(3) .count { color: var(--accent-gold); }
+        .narrowing-step:nth-child(5) .count { color: var(--success); }
+
+        .narrowing-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+
+        /* Demo timeline */
+        .demo-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .demo-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .demo-step .time-badge {
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .demo-step .step-content {
+            background: rgba(255,255,255,0.05);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            flex: 1;
+        }
+
+        .demo-step .step-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .demo-step .step-content p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Role cards */
+        .role-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .role-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .role-card .role-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .role-card p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Your role diagram */
+        .your-role-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .role-box {
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .role-box.claude-role {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .role-box.your-role {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .role-box .role-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-box ul {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+
+        .role-box li {
+            padding: 0.2rem 0;
+        }
+
+        .role-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        /* Recap */
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Takeaway */
+        .slide-takeaway {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-takeaway h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .takeaway-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Next slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Celebration slide */
+        .slide-celebration {
+            text-align: center;
+            background: linear-gradient(135deg, #1e1e2e 0%, #0f0f14 100%);
+        }
+
+        .celebration-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .celebration-badge {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .celebration-badge .skill-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .celebration-badge p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .celebration-badge h4 {
+            font-size: 0.95rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 3: Brainstorming and Ideation Techniques</h1>
+        <p>02Ship Claude Basics Course - Lesson 6 - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Video 3 of Lesson 6</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>This is the final video in Lesson 6 -- keep the energy high and celebratory</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Brainstorming & Ideation Techniques</h1>
+            <p class="subtitle">02Ship Claude Basics - Lesson 6, Video 3</p>
+            <span class="badge">Never Run Out of Ideas</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>Ever stare at a blank page for <span class="highlight-text">twenty minutes</span>?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 0 auto 1.5rem;">What if you had a brainstorming partner who never runs out of ideas, never gets tired, and never judges your suggestions?</p>
+            <p style="color: var(--accent-teal); font-size: 1.1rem; font-weight: 600;">Claude doesn't replace your creativity. It supercharges it.</p>
+        </div>
+
+        <!-- SLIDE 3: Solo vs Claude-Assisted -->
+        <div class="slide" data-slide-number="3" style="text-align: center;">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Solo Brainstorming vs. Claude-Assisted</h2>
+            <div class="sticky-comparison">
+                <div class="sticky-board" style="background: rgba(255, 85, 85, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+                    <h3 style="color: var(--accent-coral);">Solo Brainstorm</h3>
+                    <div class="sticky-notes-grid">
+                        <div class="sticky-note coral">Idea 1</div>
+                        <div class="sticky-note gold">Idea 2</div>
+                        <div class="sticky-note teal">Idea 3</div>
+                        <div class="sticky-note dim">???</div>
+                        <div class="sticky-note dim">???</div>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 1rem;">3-5 ideas, similar patterns</p>
+                </div>
+                <div class="vs-arrow">&#8594;</div>
+                <div class="sticky-board" style="background: rgba(80, 250, 123, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+                    <h3 style="color: var(--success);">Claude-Assisted</h3>
+                    <div class="sticky-notes-grid">
+                        <div class="sticky-note coral">Idea 1</div>
+                        <div class="sticky-note gold">Idea 2</div>
+                        <div class="sticky-note teal">Idea 3</div>
+                        <div class="sticky-note green">Idea 4</div>
+                        <div class="sticky-note purple">Idea 5</div>
+                        <div class="sticky-note coral">Idea 6</div>
+                        <div class="sticky-note gold">Idea 7</div>
+                        <div class="sticky-note teal">Idea 8</div>
+                        <div class="sticky-note green">Idea 9</div>
+                        <div class="sticky-note purple">Idea 10</div>
+                        <div class="sticky-note coral">Idea 11</div>
+                        <div class="sticky-note gold">Idea 12</div>
+                        <div class="sticky-note teal">Idea 13</div>
+                        <div class="sticky-note green">Idea 14</div>
+                        <div class="sticky-note coral">Idea 15</div>
+                        <div class="sticky-note gold">Idea 16</div>
+                        <div class="sticky-note teal">Idea 17</div>
+                        <div class="sticky-note green">Idea 18</div>
+                        <div class="sticky-note purple">Idea 19</div>
+                        <div class="sticky-note gold">Idea 20</div>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 1rem;">20+ ideas, diverse perspectives</p>
+                </div>
+            </div>
+            <p style="color: var(--accent-gold); font-size: 0.95rem; margin-top: 1rem;">Your Creativity + Claude's Range = Better Ideas</p>
+        </div>
+
+        <!-- SLIDE 4: Two Phases -->
+        <div class="slide" data-slide-number="4" style="text-align: center;">
+            <span class="slide-section">Section 2 - 2:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Two Phases of Brainstorming</h2>
+            <div class="two-phases">
+                <div class="phase-box divergent">
+                    <div class="phase-icon">&#128165;</div>
+                    <h3 style="color: var(--accent-coral);">Divergent Thinking</h3>
+                    <p>Generate as many ideas as possible. Quantity first, quality later. Don't filter or evaluate -- just create.</p>
+                </div>
+                <div class="phase-arrow">then &#8594;</div>
+                <div class="phase-box convergent">
+                    <div class="phase-icon">&#127919;</div>
+                    <h3 style="color: var(--accent-teal);">Convergent Thinking</h3>
+                    <p>Evaluate and narrow down. Use criteria to pick the best ideas. Your judgment is the final filter.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: The Quantity Prompt + Idea Quality Curve -->
+        <div class="slide" data-slide-number="5" style="text-align: center;">
+            <span class="slide-section">Section 2 - 3:00</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Why Ask for 20 Ideas?</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">The first 5 are obvious. The last 5 are often the most creative.</p>
+            <div class="idea-curve">
+                <div class="idea-bars">
+                    <div class="idea-bar obvious" style="height: 40%;"></div>
+                    <div class="idea-bar obvious" style="height: 45%;"></div>
+                    <div class="idea-bar obvious" style="height: 35%;"></div>
+                    <div class="idea-bar obvious" style="height: 42%;"></div>
+                    <div class="idea-bar obvious" style="height: 38%;"></div>
+                    <div class="idea-bar interesting" style="height: 55%;"></div>
+                    <div class="idea-bar interesting" style="height: 60%;"></div>
+                    <div class="idea-bar interesting" style="height: 65%;"></div>
+                    <div class="idea-bar interesting" style="height: 58%;"></div>
+                    <div class="idea-bar interesting" style="height: 70%;"></div>
+                    <div class="idea-bar interesting" style="height: 62%;"></div>
+                    <div class="idea-bar interesting" style="height: 68%;"></div>
+                    <div class="idea-bar interesting" style="height: 72%;"></div>
+                    <div class="idea-bar interesting" style="height: 66%;"></div>
+                    <div class="idea-bar interesting" style="height: 75%;"></div>
+                    <div class="idea-bar creative" style="height: 82%;"></div>
+                    <div class="idea-bar creative" style="height: 90%;"></div>
+                    <div class="idea-bar creative" style="height: 95%;"></div>
+                    <div class="idea-bar creative" style="height: 88%;"></div>
+                    <div class="idea-bar creative" style="height: 100%;"></div>
+                </div>
+                <div class="bar-labels">
+                    <div class="bar-label">
+                        <div class="range" style="color: var(--accent-coral);">Ideas 1-5</div>
+                        <div style="color: var(--text-secondary); font-size: 0.75rem;">Obvious</div>
+                    </div>
+                    <div class="bar-label">
+                        <div class="range" style="color: var(--accent-gold);">Ideas 6-15</div>
+                        <div style="color: var(--text-secondary); font-size: 0.75rem;">Getting Interesting</div>
+                    </div>
+                    <div class="bar-label">
+                        <div class="range" style="color: var(--success);">Ideas 16-20</div>
+                        <div style="color: var(--text-secondary); font-size: 0.75rem;">Most Creative</div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 1rem; display: inline-block; background: rgba(255,255,255,0.05); padding: 0.5rem 1.25rem; border-radius: 8px;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-secondary);">"Generate 20 ideas. Don't filter or evaluate -- just generate."</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Category Brainstorming -->
+        <div class="slide" data-slide-number="6" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <span class="slide-section">Section 2 - 3:45</span>
+            <div>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">Add Categories for Variety</h2>
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">Use categories to prevent Claude from clustering around one type of idea. The wild card category is where the surprises live.</p>
+                <div style="background: rgba(255, 217, 61, 0.1); padding: 1rem 1.25rem; border-radius: 8px; border-left: 4px solid var(--accent-gold);">
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic;">From 02Ship brainstorming: the wild card idea "a prompt library where learners browse successful prompts" became a planned feature.</p>
+                </div>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-label">Category Prompt</div>
+                <div class="prompt-text">
+                    "Generate 20 feature ideas, split into groups:<br><br>
+                    <span style="color: var(--accent-coral);">5 for engagement</span><br>
+                    <span style="color: var(--accent-teal);">5 for learning outcomes</span><br>
+                    <span style="color: var(--success);">5 for community</span><br>
+                    <span style="color: var(--accent-gold);">5 wild cards</span> that don't fit any category"
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Convergent Thinking - Evaluation -->
+        <div class="slide" data-slide-number="7" style="text-align: center;">
+            <span class="slide-section">Section 3 - 4:30</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Evaluating: From 20 Ideas to the Best 3</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Ask Claude to rate each idea on criteria that matter to you</p>
+            <table class="eval-table">
+                <thead>
+                    <tr>
+                        <th>Feature Idea</th>
+                        <th>Impact</th>
+                        <th>Effort</th>
+                        <th>Uniqueness</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Interactive code playground</td>
+                        <td class="score high">5</td>
+                        <td class="score mid">3</td>
+                        <td class="score high">4</td>
+                        <td class="score high">12</td>
+                    </tr>
+                    <tr>
+                        <td>Prompt template library</td>
+                        <td class="score high">5</td>
+                        <td class="score high">4</td>
+                        <td class="score high">5</td>
+                        <td class="score high">14</td>
+                    </tr>
+                    <tr>
+                        <td>Community showcase wall</td>
+                        <td class="score mid">3</td>
+                        <td class="score high">4</td>
+                        <td class="score mid">3</td>
+                        <td class="score mid">10</td>
+                    </tr>
+                    <tr>
+                        <td>Weekly live coding sessions</td>
+                        <td class="score high">4</td>
+                        <td class="score low">2</td>
+                        <td class="score mid">3</td>
+                        <td class="score mid">9</td>
+                    </tr>
+                    <tr>
+                        <td>AI-powered progress tracker</td>
+                        <td class="score high">4</td>
+                        <td class="score mid">3</td>
+                        <td class="score high">5</td>
+                        <td class="score high">12</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="color: var(--accent-gold); font-size: 0.9rem; margin-top: 1.5rem;">Claude suggests. You decide.</p>
+        </div>
+
+        <!-- SLIDE 8: The Narrowing Process -->
+        <div class="slide" data-slide-number="8" style="text-align: center;">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">The Narrowing Process</h2>
+            <div class="narrowing-flow">
+                <div class="narrowing-step">
+                    <div class="count">20</div>
+                    <div class="label">Raw Ideas</div>
+                    <div class="who">Claude generates</div>
+                </div>
+                <div class="narrowing-arrow">&#8594;</div>
+                <div class="narrowing-step">
+                    <div class="count">5</div>
+                    <div class="label">Top Rated</div>
+                    <div class="who">Claude evaluates</div>
+                </div>
+                <div class="narrowing-arrow">&#8594;</div>
+                <div class="narrowing-step">
+                    <div class="count">3</div>
+                    <div class="label">Final Picks</div>
+                    <div class="who">You decide</div>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">You add context Claude doesn't have: your users, your resources, your vision, and what excites you. Excitement matters -- you'll work harder on ideas you care about.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Four Advanced Techniques -->
+        <div class="slide" data-slide-number="9" style="text-align: center;">
+            <span class="slide-section">Section 4 - 6:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Four Advanced Brainstorming Techniques</h2>
+            <div class="technique-cards">
+                <div class="technique-card">
+                    <h3><span class="tech-number">1</span> Role-Playing</h3>
+                    <p>Have Claude brainstorm as different people: frustrated beginner, marketing expert, skeptic, investor.</p>
+                    <div class="example-prompt">"Brainstorm 5 features from the perspective of a frustrated beginner who keeps getting stuck."</div>
+                </div>
+                <div class="technique-card">
+                    <h3><span class="tech-number">2</span> Constraints</h3>
+                    <p>Add limits to spark creativity: budget, time, technology constraints force unconventional solutions.</p>
+                    <div class="example-prompt">"Generate 10 feature ideas that cost zero dollars to build."</div>
+                </div>
+                <div class="technique-card featured">
+                    <h3><span class="tech-number">3</span> Worst Ideas <span class="fav-badge">FAVORITE</span></h3>
+                    <p>Generate deliberately bad ideas, analyze why they're bad, then invert each into a good idea.</p>
+                    <div class="example-prompt">"Generate the 10 worst feature ideas. Then invert each into a good idea."</div>
+                </div>
+                <div class="technique-card">
+                    <h3><span class="tech-number">4</span> Combination</h3>
+                    <p>Take 2-3 ideas and ask Claude to merge them. Two okay ideas often combine into one great idea.</p>
+                    <div class="example-prompt">"How could I combine these three ideas into one feature?"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Worst Ideas Flip Demo -->
+        <div class="slide" data-slide-number="10">
+            <span class="slide-section">Section 4 - 7:30</span>
+            <h2 style="font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem;">The Worst Ideas Flip in Action</h2>
+            <div class="flip-demo">
+                <div class="flip-column">
+                    <h3 style="color: var(--error);">Terrible Ideas</h3>
+                    <div class="flip-item bad">Make lessons 2 hours long with no breaks</div>
+                    <div class="flip-item bad">Hide all navigation menus</div>
+                    <div class="flip-item bad">Require a CS degree to enroll</div>
+                    <div class="flip-item bad">Only use technical jargon</div>
+                </div>
+                <div class="flip-arrows">
+                    <div class="flip-arrow">&#8594;</div>
+                    <div class="flip-arrow">&#8594;</div>
+                    <div class="flip-arrow">&#8594;</div>
+                    <div class="flip-arrow">&#8594;</div>
+                </div>
+                <div class="flip-column">
+                    <h3 style="color: var(--success);">Great Ideas (Inverted)</h3>
+                    <div class="flip-item good">Keep lessons short with regular checkpoints</div>
+                    <div class="flip-item good">Make navigation dead simple and always visible</div>
+                    <div class="flip-item good">Design for zero prerequisites</div>
+                    <div class="flip-item good">Explain everything in plain language first</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--accent-gold); font-size: 0.9rem; margin-top: 1.5rem;">Bad ideas, when flipped, reveal what users actually need</p>
+        </div>
+
+        <!-- SLIDE 11: Role-Playing Detail -->
+        <div class="slide" data-slide-number="11" style="text-align: center;">
+            <span class="slide-section">Section 4 - 7:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Role-Playing: Different Perspectives, Different Ideas</h2>
+            <div class="role-cards">
+                <div class="role-card">
+                    <div class="role-icon">&#128542;</div>
+                    <h4>Frustrated User</h4>
+                    <p>What features would reduce confusion and friction?</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">&#128188;</div>
+                    <h4>Marketing Expert</h4>
+                    <p>What's missing that would make this product sell?</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">&#129300;</div>
+                    <h4>Skeptic</h4>
+                    <p>Why might someone NOT use this? What's unconvincing?</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">&#128176;</div>
+                    <h4>Investor</h4>
+                    <p>What would make this a strong business opportunity?</p>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 1.5rem;">Each role produces a different type of insight. Great for uncovering blind spots.</p>
+        </div>
+
+        <!-- SLIDE 12: Live Demo Timeline -->
+        <div class="slide" data-slide-number="12">
+            <span class="slide-section">Section 5 - 8:30</span>
+            <h2 style="font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem;">Live Demo: Brainstorming Features for 02Ship</h2>
+            <div class="demo-timeline">
+                <div class="demo-step">
+                    <div class="time-badge">8:30</div>
+                    <div class="step-content">
+                        <h4>Step 1: Generate 20 Ideas</h4>
+                        <p>"Generate 20 feature ideas for 02Ship. Don't filter -- give me everything, including weird ideas."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">9:30</div>
+                    <div class="step-content">
+                        <h4>Step 2: Add Wild Cards</h4>
+                        <p>"Give me 5 wild card ideas -- things no other learning platform does. Be unconventional."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">10:00</div>
+                    <div class="step-content">
+                        <h4>Step 3: Worst Ideas Flip</h4>
+                        <p>"Generate the 5 worst feature ideas -- things that would make learners quit. Then invert each one."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">10:45</div>
+                    <div class="step-content">
+                        <h4>Step 4: Evaluate Top 10</h4>
+                        <p>"Evaluate top 10 on: user impact, ease of building with Claude Code, and uniqueness. Show a table."</p>
+                    </div>
+                </div>
+                <div class="demo-step">
+                    <div class="time-badge">11:45</div>
+                    <div class="step-content">
+                        <h4>Step 5: Pick Final 3</h4>
+                        <p>Combine Claude's ratings with your own judgment and user knowledge to select the winners.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Demo Result Summary -->
+        <div class="slide" data-slide-number="13" style="text-align: center;">
+            <span class="slide-section">Section 5 - 12:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">The Journey: Blank Page to 3 Features</h2>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem;">In ~15 minutes, using Claude as a brainstorming partner</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; align-items: stretch; max-width: 800px; margin: 0 auto;">
+                <div style="flex: 1; background: rgba(255, 107, 107, 0.1); border: 1px solid rgba(255, 107, 107, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128196;</div>
+                    <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Started</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Blank page</p>
+                </div>
+                <div style="display: flex; align-items: center; font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="flex: 1; background: rgba(255, 217, 61, 0.1); border: 1px solid rgba(255, 217, 61, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128161;</div>
+                    <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Generated</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">30 ideas total</p>
+                </div>
+                <div style="display: flex; align-items: center; font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="flex: 1; background: rgba(78, 205, 196, 0.1); border: 1px solid rgba(78, 205, 196, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128202;</div>
+                    <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Evaluated</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">3 criteria, ranked</p>
+                </div>
+                <div style="display: flex; align-items: center; font-size: 1.5rem; color: var(--accent-teal);">&#8594;</div>
+                <div style="flex: 1; background: rgba(80, 250, 123, 0.1); border: 1px solid rgba(80, 250, 123, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#11088;</div>
+                    <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Selected</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">3 best features</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Your Role in the Process -->
+        <div class="slide" data-slide-number="14" style="text-align: center;">
+            <span class="slide-section">Section 6 - 12:30</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Your Job in the Process</h2>
+            <div class="your-role-flow">
+                <div class="role-box claude-role">
+                    <div class="role-title">&#129302;</div>
+                    <h3 style="color: var(--accent-teal);">Claude Generates</h3>
+                    <ul>
+                        <li>- Volume and variety</li>
+                        <li>- Cross-domain patterns</li>
+                        <li>- Unconventional angles</li>
+                        <li>- Tireless output</li>
+                    </ul>
+                </div>
+                <div class="role-arrow">+</div>
+                <div class="role-box your-role">
+                    <div class="role-title">&#128100;</div>
+                    <h3 style="color: var(--accent-coral);">You Shape</h3>
+                    <ul>
+                        <li>- Evaluate with judgment</li>
+                        <li>- Combine good ideas</li>
+                        <li>- Refine to fit reality</li>
+                        <li>- Apply taste and context</li>
+                    </ul>
+                </div>
+                <div class="role-arrow">=</div>
+                <div style="background: rgba(80, 250, 123, 0.1); border: 2px solid rgba(80, 250, 123, 0.3); padding: 1.5rem 2rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#128640;</div>
+                    <h3 style="color: var(--success); font-size: 1.1rem;">Unstoppable</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Great ideas shaped by human judgment</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Recap -->
+        <div class="slide" data-slide-number="15" style="text-align: center;">
+            <span class="slide-section">Closing - 13:00</span>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Two phases:</strong> divergent thinking (quantity), then convergent thinking (quality)</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Ask for 20+ ideas</strong> -- the best ones are often at the end of the list</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Four techniques:</strong> role-playing, constraints, worst ideas flip, combinations</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Claude generates, you decide</strong> -- your judgment is the final filter</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">5</div>
+                    <p><strong>Constraints spark creativity</strong> -- add limits to unlock unconventional thinking</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">6</div>
+                    <p><strong>Combine ideas</strong> -- two okay ideas often merge into one great feature</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Lesson 6 Complete -->
+        <div class="slide slide-celebration" data-slide-number="16">
+            <span class="slide-section">Closing - 13:30</span>
+            <h2 style="font-size: 2.5rem; margin-bottom: 0.75rem; background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Lesson 6 Complete!</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">You've learned real professional skills that product managers, founders, and strategists use every day.</p>
+            <div class="celebration-badges">
+                <div class="celebration-badge">
+                    <div class="skill-icon">&#128218;</div>
+                    <h4>Research</h4>
+                    <p>Four-phase research workflow</p>
+                </div>
+                <div class="celebration-badge">
+                    <div class="skill-icon">&#128202;</div>
+                    <h4>Data Analysis</h4>
+                    <p>Insights without statistics</p>
+                </div>
+                <div class="celebration-badge">
+                    <div class="skill-icon">&#128161;</div>
+                    <h4>Brainstorming</h4>
+                    <p>Divergent + convergent thinking</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Key Takeaway -->
+        <div class="slide slide-takeaway" data-slide-number="17">
+            <span class="slide-section">Closing - 13:45</span>
+            <h2>Claude Is Your Tireless Brainstorming Partner</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">It never runs out of ideas, never judges yours, and is available whenever inspiration strikes.</p>
+            <div class="takeaway-badge">Never Run Out of Ideas</div>
+        </div>
+
+        <!-- SLIDE 18: Next Steps -->
+        <div class="slide slide-next" data-slide-number="18">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing - 13:50</span>
+            <h2>Next: Lesson 7 -- Building Your MVP</h2>
+            <p>Everything comes together. Your idea, built with Claude.</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#128640;</div>
+                    <p>Start Lesson 7</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128172;</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#128161;</div>
+                    <p>Brainstorm Now!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 2: The Refinement Toolkit - 8 Follow-Up Techniques</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Title Slide */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Highlight text */
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Technique Slide */
+        .slide-technique {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .technique-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .technique-number {
+            font-size: 4rem;
+            font-weight: 700;
+            opacity: 0.15;
+            position: absolute;
+            top: 1.5rem;
+            right: 3rem;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .technique-content h2 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .technique-content .technique-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .technique-content .when-to-use {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .technique-prompt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.25);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: var(--accent-coral);
+        }
+
+        .technique-visual {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Before/After inside technique slides */
+        .before-after {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .before-after-panel {
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .before-after-panel.before {
+            background: rgba(255, 85, 85, 0.08);
+            border: 1px solid rgba(255, 85, 85, 0.2);
+        }
+
+        .before-after-panel.after {
+            background: rgba(80, 250, 123, 0.08);
+            border: 1px solid rgba(80, 250, 123, 0.2);
+        }
+
+        .before-after-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .before-after-panel.before .before-after-label { color: var(--error); }
+        .before-after-panel.after .before-after-label { color: var(--success); }
+
+        .before-after-panel p {
+            color: var(--text-secondary);
+        }
+
+        /* Chat bubbles */
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user { flex-direction: row-reverse; }
+
+        .chat-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+        }
+
+        .chat-message.user .chat-avatar { background: var(--accent-coral); }
+        .chat-message.assistant .chat-avatar { background: var(--accent-teal); }
+
+        .chat-bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 14px;
+            max-width: 80%;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Merge Visual */
+        .merge-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .merge-option {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 0.85rem;
+        }
+
+        .merge-option.a {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.25);
+        }
+
+        .merge-option.b {
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.25);
+        }
+
+        .merge-option.combined {
+            background: rgba(255, 215, 61, 0.1);
+            border: 2px solid rgba(255, 215, 61, 0.4);
+        }
+
+        .merge-arrow {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        /* Cheat Sheet Slide */
+        .cheat-sheet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .cheat-sheet-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cheat-sheet-item .problem {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .cheat-sheet-item .arrow {
+            color: var(--accent-teal);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cheat-sheet-item .technique-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-coral);
+            flex-shrink: 0;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        /* Chaining Slide */
+        .chain-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .chain-example {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .chain-badge {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .chain-badge span {
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .chain-badge .t1 { background: rgba(255, 107, 107, 0.2); color: var(--accent-coral); }
+        .chain-badge .t2 { background: rgba(78, 205, 196, 0.2); color: var(--accent-teal); }
+        .chain-badge .t3 { background: rgba(255, 215, 61, 0.2); color: var(--accent-gold); }
+
+        .chain-example .prompt-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Universal Slide */
+        .universal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .universal-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .universal-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .universal-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Recap Grid */
+        .recap-techniques {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .recap-tech {
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .recap-tech .tech-num {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-coral);
+            margin-bottom: 0.25rem;
+        }
+
+        .recap-tech .tech-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .recap-tech .tech-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Next Steps Slide */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Centered heading */
+        .slide-centered {
+            text-align: center;
+        }
+
+        .slide-centered h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .floating-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Crop Visual */
+        .crop-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .crop-box {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .crop-box.full {
+            width: 200px;
+            height: 140px;
+            background: rgba(255, 85, 85, 0.08);
+            border: 2px dashed rgba(255, 85, 85, 0.3);
+        }
+
+        .crop-box.cropped {
+            width: 120px;
+            height: 80px;
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.4);
+        }
+
+        .crop-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 2: The Refinement Toolkit &mdash; 8 Follow-Up Techniques</h1>
+        <p>02Ship Claude Basics Course &bull; Lesson 3 &bull; Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts for Lesson 3, Video 2</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Each technique slide shows the technique name, when to use it, an example prompt, and a before/after visual</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>The Refinement Toolkit</h1>
+            <p class="subtitle">8 Follow-Up Techniques for Better Claude Responses</p>
+            <span class="badge">02Ship Claude Basics &bull; Lesson 3</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-centered" data-slide-number="2">
+            <span class="slide-section">Opening &bull; 0:00</span>
+            <h2>You know <span class="highlight-text">why</span> to iterate.<br>Now learn <span class="highlight-text">how</span>.</h2>
+            <p style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 1rem auto 2rem; line-height: 1.6;">Eight specific techniques. Eight follow-up moves you can use any time Claude's response needs work.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">1. Simplify</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">2. Expand</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">3. Restructure</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">4. Combine</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">5. Constrain</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">6. Exemplify</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">7. Alternative</span>
+                <span style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">8. Critique</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Technique 1 - Simplify -->
+        <div class="slide slide-technique" data-slide-number="3">
+            <span class="slide-section">Technique 1 &bull; 0:45</span>
+            <div class="technique-number">01</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 1</div>
+                <h2>Simplify</h2>
+                <div class="when-to-use">When the response is too complex, uses jargon, or feels overwhelming.</div>
+                <div class="technique-prompt">"Can you simplify this? Explain it like I've never coded before."</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"Explain this like I'm five."</div>
+            </div>
+            <div class="technique-visual">
+                <div class="before-after">
+                    <div class="before-after-panel before">
+                        <div class="before-after-label">Before</div>
+                        <p>"The HTTP request triggers DNS resolution, which maps the domain to an IP address. The server processes the request via server-side rendering..."</p>
+                    </div>
+                    <div class="before-after-panel after">
+                        <div class="before-after-label">After</div>
+                        <p>"Typing a web address is like mailing a letter to a specific house. Your browser finds the right house and brings back what's inside."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Technique 2 - Expand -->
+        <div class="slide slide-technique" data-slide-number="4">
+            <span class="slide-section">Technique 2 &bull; 2:15</span>
+            <div class="technique-number">02</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 2</div>
+                <h2>Expand</h2>
+                <div class="when-to-use">When the response is too brief, skips important details, or feels incomplete.</div>
+                <div class="technique-prompt">"Can you add more detail about step three?"</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"What does this step actually involve?"</div>
+                <p style="font-size: 0.85rem; color: var(--accent-gold); margin-top: 0.75rem;">Key: Be specific about WHICH part needs expanding.</p>
+            </div>
+            <div class="technique-visual">
+                <div class="before-after">
+                    <div class="before-after-panel before">
+                        <div class="before-after-label">Before</div>
+                        <p>"Step 3: Set up your workspace."</p>
+                    </div>
+                    <div class="before-after-panel after">
+                        <div class="before-after-label">After</div>
+                        <p>"Step 3: Set up your workspace. First, create a new folder called 'my-project'. Inside that folder, create three sub-folders: 'src' for your code, 'public' for images, and 'content' for your writing..."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Technique 3 - Restructure -->
+        <div class="slide slide-technique" data-slide-number="5">
+            <span class="slide-section">Technique 3 &bull; 3:30</span>
+            <div class="technique-number">03</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 3</div>
+                <h2>Restructure</h2>
+                <div class="when-to-use">When the content is right but the format is wrong. Paragraphs when you need a checklist, or a list when you need a table.</div>
+                <div class="technique-prompt">"Format this as a numbered step-by-step guide."</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"Turn this into a table with columns."</div>
+            </div>
+            <div class="technique-visual">
+                <div class="before-after">
+                    <div class="before-after-panel before">
+                        <div class="before-after-label">Before (Paragraph)</div>
+                        <p>"A feature should validate the user input, then save it to the database, then show a confirmation message, and also log the event..."</p>
+                    </div>
+                    <div class="before-after-panel after">
+                        <div class="before-after-label">After (Checklist)</div>
+                        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">
+                            &#9744; Validate user input<br>
+                            &#9744; Save to database<br>
+                            &#9744; Show confirmation message<br>
+                            &#9744; Log the event
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Technique 4 - Combine -->
+        <div class="slide slide-technique" data-slide-number="6">
+            <span class="slide-section">Technique 4 &bull; 4:45</span>
+            <div class="technique-number">04</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 4</div>
+                <h2>Combine</h2>
+                <div class="when-to-use">When you have multiple options and want the best of each. You're the creative director, picking what works.</div>
+                <div class="technique-prompt">"Combine the structure from option A with the tone from option B."</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"Take the best parts and create a hybrid version."</div>
+            </div>
+            <div class="technique-visual">
+                <div class="merge-visual">
+                    <div class="merge-option a">
+                        <span style="font-size: 0.75rem; color: var(--accent-coral); font-weight: 600;">OPTION A:</span>
+                        Great structure, too formal tone
+                    </div>
+                    <div class="merge-option b">
+                        <span style="font-size: 0.75rem; color: var(--accent-teal); font-weight: 600;">OPTION B:</span>
+                        Perfect casual tone, messy structure
+                    </div>
+                    <div class="merge-arrow">&darr; Combine &darr;</div>
+                    <div class="merge-option combined">
+                        <span style="font-size: 0.75rem; color: var(--accent-gold); font-weight: 600;">HYBRID:</span>
+                        Great structure + casual tone = Perfect
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Technique 5 - Constrain -->
+        <div class="slide slide-technique" data-slide-number="7">
+            <span class="slide-section">Technique 5 &bull; 5:45</span>
+            <div class="technique-number">05</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 5</div>
+                <h2>Constrain</h2>
+                <div class="when-to-use">When the response is too long, unfocused, or includes unnecessary complexity. Set boundaries on length, scope, or audience.</div>
+                <div class="technique-prompt">"Keep this under 100 words."</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"Remove anything a beginner wouldn't need."</div>
+            </div>
+            <div class="technique-visual">
+                <div class="crop-visual" style="flex-direction: column; gap: 1rem;">
+                    <div class="crop-box full">
+                        3 pages of detailed output<br>with advanced topics
+                    </div>
+                    <div class="crop-arrow">&darr; Constrain &darr;</div>
+                    <div class="crop-box cropped">
+                        Focused,<br>essential info
+                    </div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-top: 0.75rem;">Like cropping a photo to focus on what matters</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Technique 6 - Exemplify -->
+        <div class="slide slide-technique" data-slide-number="8">
+            <span class="slide-section">Technique 6 &bull; 7:00</span>
+            <div class="technique-number">06</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 6</div>
+                <h2>Exemplify</h2>
+                <div class="when-to-use">When you understand the theory but need to see it in practice. Examples turn abstract ideas into something tangible.</div>
+                <div class="technique-prompt">"Can you show me a concrete example?"</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"Show me what that looks like for /courses/claude-basics/lesson-1"</div>
+            </div>
+            <div class="technique-visual">
+                <div class="before-after">
+                    <div class="before-after-panel before">
+                        <div class="before-after-label">Theory</div>
+                        <p>"Routing in Next.js maps file paths to URL paths using a folder-based convention..."</p>
+                    </div>
+                    <div class="before-after-panel after">
+                        <div class="before-after-label">Example</div>
+                        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">
+                            src/app/courses/[series]/[lesson]/page.tsx<br>
+                            &rarr; /courses/claude-basics/lesson-1
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Technique 7 - Alternative -->
+        <div class="slide slide-technique" data-slide-number="9">
+            <span class="slide-section">Technique 7 &bull; 8:15</span>
+            <div class="technique-number">07</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 7</div>
+                <h2>Alternative</h2>
+                <div class="when-to-use">When the first suggestion doesn't feel right or you want to compare options before committing.</div>
+                <div class="technique-prompt">"Give me three other ways to do this."</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"What's a simpler alternative?"</div>
+                <p style="font-size: 0.85rem; color: var(--accent-gold); margin-top: 0.75rem;">Pairs well with Combine (Technique 4)!</p>
+            </div>
+            <div class="technique-visual">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div style="padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: var(--accent-coral); font-weight: 600; font-size: 0.8rem;">Option A:</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"> Simple file-based approach</span>
+                    </div>
+                    <div style="padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: var(--accent-teal); font-weight: 600; font-size: 0.8rem;">Option B:</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"> Database-driven approach</span>
+                    </div>
+                    <div style="padding: 0.75rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <span style="color: var(--accent-gold); font-weight: 600; font-size: 0.8rem;">Option C:</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"> Hybrid with JSON files</span>
+                    </div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-top: 0.75rem;">Like shopping: try a few before you decide</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Technique 8 - Critique -->
+        <div class="slide slide-technique" data-slide-number="10">
+            <span class="slide-section">Technique 8 &bull; 9:30</span>
+            <div class="technique-number">08</div>
+            <div class="technique-content">
+                <div class="technique-label">Technique 8</div>
+                <h2>Critique</h2>
+                <div class="when-to-use">When you want to validate quality or you're not sure if the response is good enough. Claude can honestly evaluate its own work.</div>
+                <div class="technique-prompt">"What are the weaknesses of this approach?"</div>
+                <div class="technique-prompt" style="margin-top: 0.5rem;">"Review this for potential problems."</div>
+            </div>
+            <div class="technique-visual">
+                <div class="chat-container">
+                    <div class="chat-message user">
+                        <div class="chat-avatar">You</div>
+                        <div class="chat-bubble">Critique your own answer. What did we miss?</div>
+                    </div>
+                    <div class="chat-message assistant">
+                        <div class="chat-avatar">C</div>
+                        <div class="chat-bubble">
+                            Good catches needed:<br>
+                            &bull; No error handling for failed saves<br>
+                            &bull; Missing accessibility attributes<br>
+                            &bull; No loading state for async operations
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-top: 0.75rem;">Your built-in quality checker</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Chaining Techniques -->
+        <div class="slide slide-centered" data-slide-number="11">
+            <span class="slide-section">Chaining &bull; 10:45</span>
+            <h2>Chain Techniques Together</h2>
+            <div class="chain-examples">
+                <div class="chain-example">
+                    <div class="chain-badge">
+                        <span class="t1">Simplify</span>
+                        <span class="t2">Exemplify</span>
+                    </div>
+                    <div class="prompt-text">"Simplify this AND give me an example."</div>
+                </div>
+                <div class="chain-example">
+                    <div class="chain-badge">
+                        <span class="t1">Alternative</span>
+                        <span class="t3">Combine</span>
+                    </div>
+                    <div class="prompt-text">"Give me 3 alternatives, then combine the best parts."</div>
+                </div>
+                <div class="chain-example">
+                    <div class="chain-badge">
+                        <span class="t2">Expand</span>
+                        <span class="t3">Restructure</span>
+                    </div>
+                    <div class="prompt-text">"Add more detail and format it as a numbered list."</div>
+                </div>
+            </div>
+            <div class="floating-badge">Keep it to 2-3 techniques per follow-up for clarity</div>
+        </div>
+
+        <!-- SLIDE 12: Cheat Sheet -->
+        <div class="slide slide-centered" data-slide-number="12">
+            <span class="slide-section">Reference &bull; 11:30</span>
+            <h2>Your Refinement Cheat Sheet</h2>
+            <div class="cheat-sheet-grid">
+                <div class="cheat-sheet-item">
+                    <span class="problem">Too complicated</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Simplify</span>
+                </div>
+                <div class="cheat-sheet-item">
+                    <span class="problem">Too short</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Expand</span>
+                </div>
+                <div class="cheat-sheet-item">
+                    <span class="problem">Wrong format</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Restructure</span>
+                </div>
+                <div class="cheat-sheet-item">
+                    <span class="problem">Want to merge</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Combine</span>
+                </div>
+                <div class="cheat-sheet-item">
+                    <span class="problem">Too long</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Constrain</span>
+                </div>
+                <div class="cheat-sheet-item">
+                    <span class="problem">Need an example</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Exemplify</span>
+                </div>
+                <div class="cheat-sheet-item">
+                    <span class="problem">Want options</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Alternative</span>
+                </div>
+                <div class="cheat-sheet-item">
+                    <span class="problem">Need validation</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="technique-name">Critique</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: Works for Everything -->
+        <div class="slide slide-centered" data-slide-number="13">
+            <span class="slide-section">Universal &bull; 12:00</span>
+            <h2>These Work for Everything</h2>
+            <div class="universal-grid">
+                <div class="universal-item">
+                    <div class="icon">&#x1F4BB;</div>
+                    <p>Code</p>
+                </div>
+                <div class="universal-item">
+                    <div class="icon">&#x270D;&#xFE0F;</div>
+                    <p>Writing</p>
+                </div>
+                <div class="universal-item">
+                    <div class="icon">&#x1F4A1;</div>
+                    <p>Brainstorming</p>
+                </div>
+                <div class="universal-item">
+                    <div class="icon">&#x1F4CA;</div>
+                    <p>Analysis</p>
+                </div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 2rem;">If Claude generates it, you can refine it with these 8 techniques.</p>
+            <div class="floating-badge">Start with Simplify, Expand, and Critique &mdash; add others as needed</div>
+        </div>
+
+        <!-- SLIDE 14: Recap -->
+        <div class="slide slide-centered" data-slide-number="14">
+            <span class="slide-section">Closing &bull; 12:30</span>
+            <h2>Your 8 Refinement Techniques</h2>
+            <div class="recap-techniques">
+                <div class="recap-tech">
+                    <div class="tech-num">1</div>
+                    <div class="tech-name">Simplify</div>
+                    <div class="tech-desc">Make it easier</div>
+                </div>
+                <div class="recap-tech">
+                    <div class="tech-num">2</div>
+                    <div class="tech-name">Expand</div>
+                    <div class="tech-desc">Add more detail</div>
+                </div>
+                <div class="recap-tech">
+                    <div class="tech-num">3</div>
+                    <div class="tech-name">Restructure</div>
+                    <div class="tech-desc">Change format</div>
+                </div>
+                <div class="recap-tech">
+                    <div class="tech-num">4</div>
+                    <div class="tech-name">Combine</div>
+                    <div class="tech-desc">Merge the best</div>
+                </div>
+                <div class="recap-tech">
+                    <div class="tech-num">5</div>
+                    <div class="tech-name">Constrain</div>
+                    <div class="tech-desc">Set boundaries</div>
+                </div>
+                <div class="recap-tech">
+                    <div class="tech-num">6</div>
+                    <div class="tech-name">Exemplify</div>
+                    <div class="tech-desc">Show examples</div>
+                </div>
+                <div class="recap-tech">
+                    <div class="tech-num">7</div>
+                    <div class="tech-name">Alternative</div>
+                    <div class="tech-desc">Explore options</div>
+                </div>
+                <div class="recap-tech">
+                    <div class="tech-num">8</div>
+                    <div class="tech-name">Critique</div>
+                    <div class="tech-desc">Find weaknesses</div>
+                </div>
+            </div>
+            <p style="color: var(--accent-gold); font-size: 1rem; margin-top: 1.5rem;">These 8 moves cover ~95% of the follow-ups you'll ever need.</p>
+        </div>
+
+        <!-- SLIDE 15: Next Steps -->
+        <div class="slide slide-next" data-slide-number="15">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing &bull; 13:30</span>
+            <h2>Next: Conversation Flow &amp; Live Demo</h2>
+            <p>How Claude's memory works, the refinement cycle, and a live code refinement demo</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">&#x1F9E0;</div>
+                    <p>Claude's Memory</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#x1F504;</div>
+                    <p>Refinement Cycle</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">&#x1F3AC;</div>
+                    <p>Live Demo</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

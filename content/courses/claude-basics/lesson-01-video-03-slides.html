@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 3: Your First Build Prompt: From Idea to Starter App Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--bg-dark);
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            color: var(--bg-dark);
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Slide: Title */
+        .slide-title {
+            background: linear-gradient(135deg, #1a1a24 0%, #0f0f14 100%);
+            text-align: center;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .badge {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Slide: Hook */
+        .slide-hook {
+            background: linear-gradient(135deg, #1e1e2e 0%, var(--bg-slide) 100%);
+            text-align: center;
+        }
+
+        .slide-hook h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-hook p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .slide-hook .floating-badge {
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        /* Slide: Four Parts Overview */
+        .slide-four-parts {
+            text-align: center;
+        }
+
+        .slide-four-parts h2 {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .part-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .part-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-teal);
+        }
+
+        .part-card .number {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-coral);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 auto 1rem;
+        }
+
+        .part-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .part-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slide: Individual Part Detail */
+        .slide-part-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .part-detail-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .part-detail-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .part-detail-content .part-label {
+            display: inline-block;
+            background: var(--accent-coral);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .part-number-bg {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--accent-coral);
+            opacity: 0.15;
+            position: absolute;
+            top: 1rem;
+            right: 3rem;
+        }
+
+        .example-box {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .example-box h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .example-box .prompt-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        .example-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .example-box ul li {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .example-box ul li::before {
+            content: ">";
+            color: var(--accent-teal);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Slide: Secret Weapon */
+        .slide-secret {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-secret h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-secret .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .secret-line {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 215, 61, 0.15));
+            border: 2px solid var(--accent-coral);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+
+        .slide-secret .explanation {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Slide: Complete Prompt */
+        .slide-complete-prompt {
+            padding: 2rem 3rem;
+        }
+
+        .slide-complete-prompt h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .prompt-display {
+            background: #0d0d12;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .prompt-display .section-label {
+            color: var(--accent-teal);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .prompt-display .prompt-text {
+            margin-bottom: 1rem;
+        }
+
+        .prompt-display .magic-line {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Slide: Clarifying Questions Demo */
+        .slide-clarifying {
+            padding: 2rem 3rem;
+        }
+
+        .slide-clarifying h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .chat-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--accent-coral);
+        }
+
+        .chat-message.assistant .chat-avatar {
+            background: var(--accent-teal);
+        }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            max-width: 75%;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* Slide: Review Checklist */
+        .slide-review {
+            text-align: center;
+        }
+
+        .slide-review h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-review .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .review-items {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .review-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+        }
+
+        .review-item .status {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+            background: rgba(80, 250, 123, 0.2);
+            color: var(--success);
+        }
+
+        .review-item span {
+            font-size: 1.05rem;
+        }
+
+        /* Slide: Blueprint Analogy */
+        .slide-analogy {
+            text-align: center;
+        }
+
+        .analogy-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .analogy-item {
+            text-align: center;
+        }
+
+        .analogy-item .emoji {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .analogy-item p {
+            color: var(--text-secondary);
+        }
+
+        .analogy-arrow {
+            font-size: 2rem;
+            color: var(--accent-teal);
+        }
+
+        .slide-analogy blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        /* Slide: Iteration */
+        .slide-iteration {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .iteration-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .iteration-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .iteration-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .iteration-version {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .iteration-version h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .iteration-version.before h4 {
+            color: var(--accent-coral);
+        }
+
+        .iteration-version.after h4 {
+            color: var(--success);
+        }
+
+        .iteration-version ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .iteration-version ul li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .iteration-version.before ul li::before {
+            content: "-";
+            color: var(--accent-coral);
+            position: absolute;
+            left: 0;
+        }
+
+        .iteration-version.after ul li::before {
+            content: "+";
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .iteration-tip {
+            background: rgba(78, 205, 196, 0.1);
+            border-left: 4px solid var(--accent-teal);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Slide: Exercise / Your Turn */
+        .slide-exercise {
+            text-align: center;
+        }
+
+        .slide-exercise h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exercise-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .exercise-option {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .exercise-option.option-a {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .exercise-option.option-b {
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid rgba(78, 205, 196, 0.3);
+        }
+
+        .exercise-option h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .exercise-option p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Slide: Prompt Template */
+        .slide-template {
+            padding: 2rem 3rem;
+        }
+
+        .slide-template h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .template-display {
+            background: #0d0d12;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.8;
+            border: 2px dashed rgba(255, 215, 61, 0.3);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .template-display .placeholder {
+            color: var(--accent-gold);
+        }
+
+        .template-display .label {
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .template-display .magic {
+            color: var(--accent-coral);
+            font-weight: 600;
+        }
+
+        /* Slide: Recap */
+        .slide-recap {
+            text-align: center;
+        }
+
+        .slide-recap h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* Slide: Celebration */
+        .slide-celebration {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-celebration h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-celebration .subtext {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .celebration-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Slide: Next Steps */
+        .slide-next {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+        }
+
+        .slide-next h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+
+        .slide-next p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            color: var(--bg-dark);
+        }
+
+        .next-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .next-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+            color: var(--bg-dark);
+        }
+
+        .next-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .next-item p {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* Instructions */
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255, 215, 61, 0.1);
+            border: 1px solid rgba(255, 215, 61, 0.3);
+            border-radius: 12px;
+        }
+
+        .instructions h2 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .instructions ul {
+            margin-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+        }
+
+        .instructions code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+            }
+
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>Video 3: Your First Build Prompt: From Idea to App Plan</h1>
+        <p>02Ship Claude Basics Course - Visual Slides Guide</p>
+    </header>
+
+    <div class="instructions">
+        <h2>How to Use This File</h2>
+        <ul>
+            <li>This HTML file contains all the visual slide layouts from your shooting guide</li>
+            <li>To create Google Slides: Copy each slide's content and recreate in Google Slides</li>
+            <li>Slide dimensions: Standard 16:9 ratio</li>
+            <li>Suggested fonts in Google Slides: <code>Poppins</code> or <code>Montserrat</code> (similar to DM Sans)</li>
+            <li>Use the color codes from this design for consistency</li>
+            <li>Replace placeholders with actual Claude.ai screenshots during the live demo</li>
+        </ul>
+    </div>
+
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide slide-title" data-slide-number="1">
+            <h1>Your First Build Prompt</h1>
+            <p class="subtitle">From Idea to Starter App Plan</p>
+            <span class="badge">02Ship Claude Basics - Lesson 1</span>
+        </div>
+
+        <!-- SLIDE 2: Hook -->
+        <div class="slide slide-hook" data-slide-number="2">
+            <span class="slide-section">Opening - 0:00</span>
+            <h2>This is where <span class="highlight-text">everything comes together</span></h2>
+            <p>You've got your account. Your workspace is set up. Now it's time to write your first real build prompt and turn an idea into a plan.</p>
+            <div class="floating-badge">The hands-on video</div>
+        </div>
+
+        <!-- SLIDE 3: Four-Part Structure Overview -->
+        <div class="slide slide-four-parts" data-slide-number="3">
+            <span class="slide-section">Section 1 - 1:00</span>
+            <h2>Anatomy of a Good Build Prompt</h2>
+            <div class="parts-grid">
+                <div class="part-card">
+                    <div class="number">1</div>
+                    <h3>Goal</h3>
+                    <p>What you want to build and who it's for</p>
+                </div>
+                <div class="part-card">
+                    <div class="number">2</div>
+                    <h3>Constraints</h3>
+                    <p>Boundaries, requirements, and limitations</p>
+                </div>
+                <div class="part-card">
+                    <div class="number">3</div>
+                    <h3>Tech Preference</h3>
+                    <p>Preferred technology or "no preference"</p>
+                </div>
+                <div class="part-card">
+                    <div class="number">4</div>
+                    <h3>Success Criteria</h3>
+                    <p>How you'll know the project worked</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Part 1 - The Goal -->
+        <div class="slide slide-part-detail" data-slide-number="4">
+            <span class="slide-section">Section 1 - 1:30</span>
+            <div class="part-number-bg">1</div>
+            <div class="part-detail-content">
+                <span class="part-label">Part 1</span>
+                <h2>The Goal</h2>
+                <p>One or two sentences describing what you want to build and who it's for. Be specific. "Build me an app" is too vague.</p>
+            </div>
+            <div class="example-box">
+                <h4>Example</h4>
+                <p class="prompt-text">"I want to build a learning portal that helps non-programmers learn AI coding and ship their ideas using Claude."</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Part 2 - The Constraints -->
+        <div class="slide slide-part-detail" data-slide-number="5">
+            <span class="slide-section">Section 1 - 2:00</span>
+            <div class="part-number-bg">2</div>
+            <div class="part-detail-content">
+                <span class="part-label">Part 2</span>
+                <h2>The Constraints</h2>
+                <p>Boundaries and requirements. What must be included? What's the target audience? Any limitations? Constraints help Claude make better decisions.</p>
+            </div>
+            <div class="example-box">
+                <h4>Example</h4>
+                <ul>
+                    <li>Target: absolute beginners, no coding experience</li>
+                    <li>Must include: landing page, blog, video courses</li>
+                    <li>Display course series on the home page</li>
+                    <li>Content managed through simple files</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Part 3 - Tech Preference -->
+        <div class="slide slide-part-detail" data-slide-number="6">
+            <span class="slide-section">Section 1 - 2:30</span>
+            <div class="part-number-bg">3</div>
+            <div class="part-detail-content">
+                <span class="part-label">Part 3</span>
+                <h2>Tech Preference</h2>
+                <p>It's okay to say "no preference" or "something simple." Claude will suggest technologies if you don't specify.</p>
+            </div>
+            <div class="example-box">
+                <h4>Example</h4>
+                <ul>
+                    <li>Next.js with TypeScript</li>
+                    <li>Tailwind CSS for styling</li>
+                    <li>Deployed on Vercel</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: rgba(80, 250, 123, 0.1); border-radius: 8px; font-size: 0.9rem; color: var(--success);">
+                    Or simply: "No preference - something simple I can run in a browser"
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Part 4 - Success Criteria -->
+        <div class="slide slide-part-detail" data-slide-number="7">
+            <span class="slide-section">Section 1 - 3:00</span>
+            <div class="part-number-bg">4</div>
+            <div class="part-detail-content">
+                <span class="part-label">Part 4</span>
+                <h2>Success Criteria</h2>
+                <p>How will you know the project worked? This is your checklist for "done." It prevents scope creep and keeps both you and Claude focused.</p>
+            </div>
+            <div class="example-box">
+                <h4>Example</h4>
+                <ul>
+                    <li>Users can browse and watch course videos</li>
+                    <li>Users can navigate between lessons easily</li>
+                    <li>Site loads fast and looks professional</li>
+                    <li>Easy to add new courses and lessons</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: The Secret Weapon -->
+        <div class="slide slide-secret" data-slide-number="8">
+            <span class="slide-section">Section 2 - 3:30</span>
+            <h2>The Secret Weapon</h2>
+            <p class="subtitle">One line that dramatically improves Claude's output</p>
+            <div class="secret-line">"Before generating anything, please ask me clarifying questions."</div>
+            <p class="explanation">Instead of guessing, Claude will ask you smart questions first. Your answers become additional context for much better results.</p>
+        </div>
+
+        <!-- SLIDE 9: Complete 02Ship Prompt -->
+        <div class="slide slide-complete-prompt" data-slide-number="9">
+            <span class="slide-section">Section 3 - 4:30</span>
+            <h2>The Complete 02Ship Prompt</h2>
+            <div class="prompt-display">
+                <div class="prompt-text">
+                    <span class="section-label">Goal:</span><br>
+                    I want to build a learning portal that helps non-programmers learn AI coding and ship their ideas using Claude.<br><br>
+                    <span class="section-label">Constraints:</span><br>
+                    - Target audience: absolute beginners<br>
+                    - Must include: landing page, blog, video courses<br>
+                    - Display course series on the home page<br>
+                    - Content managed through simple files<br><br>
+                    <span class="section-label">Tech Preference:</span><br>
+                    Next.js + TypeScript, Tailwind CSS, Vercel<br><br>
+                    <span class="section-label">Success Criteria:</span><br>
+                    - Users can browse and watch course videos<br>
+                    - Easy navigation between lessons<br>
+                    - Fast and professional-looking<br><br>
+                    <span class="magic-line">Before generating anything, please ask me clarifying questions.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Clarifying Questions Demo -->
+        <div class="slide slide-clarifying" data-slide-number="10">
+            <span class="slide-section">Section 3 - 5:30</span>
+            <h2>Claude Asks Smart Questions</h2>
+            <div class="chat-container">
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">How many courses will there be initially?</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">Do you need user authentication or accounts?</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">Should the blog support categories or tags?</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">What kind of navigation structure do you prefer?</div>
+                </div>
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Questions I hadn't even thought about yet!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Reviewing the Response -->
+        <div class="slide slide-review" data-slide-number="11">
+            <span class="slide-section">Section 4 - 7:00</span>
+            <h2>Reviewing Claude's Response</h2>
+            <p class="subtitle">You're reviewing the plan, not the engineering</p>
+            <div class="review-items">
+                <div class="review-item">
+                    <div class="status">1</div>
+                    <span>Does the project structure look logical?</span>
+                </div>
+                <div class="review-item">
+                    <div class="status">2</div>
+                    <span>Does the feature list match what you asked for?</span>
+                </div>
+                <div class="review-item">
+                    <div class="status">3</div>
+                    <span>Do the technology choices align with your preference?</span>
+                </div>
+                <div class="review-item">
+                    <div class="status">4</div>
+                    <span>Is there a clear step-by-step plan?</span>
+                </div>
+                <div class="review-item">
+                    <div class="status">5</div>
+                    <span>Is anything missing from your requirements?</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Blueprint Analogy -->
+        <div class="slide slide-analogy" data-slide-number="12">
+            <span class="slide-section">Section 4 - 8:30</span>
+            <div class="analogy-visual">
+                <div class="analogy-item">
+                    <div class="emoji">1</div>
+                    <p>Your<br><strong>Requirements</strong></p>
+                </div>
+                <div class="analogy-arrow">-></div>
+                <div class="analogy-item">
+                    <div class="emoji">2</div>
+                    <p>Claude's<br><strong>Blueprint</strong></p>
+                </div>
+                <div class="analogy-arrow">-></div>
+                <div class="analogy-item">
+                    <div class="emoji">3</div>
+                    <p>Your<br><strong>Review</strong></p>
+                </div>
+            </div>
+            <blockquote>
+                "Think of it like reviewing a blueprint for a house. You don't need to be an architect to say, 'Wait, where's the bathroom?' or 'I wanted three bedrooms, not two.'"
+            </blockquote>
+        </div>
+
+        <!-- SLIDE 13: Iteration -->
+        <div class="slide slide-iteration" data-slide-number="13">
+            <span class="slide-section">Section 5 - 10:00</span>
+            <div class="iteration-content">
+                <h2>The Power of Iteration</h2>
+                <p>No first response is perfect. Clear, specific feedback makes the next version better.</p>
+                <div class="iteration-tip">"This looks great, but I'd like the landing page to have a stronger hero section with a clear call-to-action."</div>
+            </div>
+            <div class="iteration-visual">
+                <div class="iteration-version before">
+                    <h4>Before</h4>
+                    <ul>
+                        <li>Basic landing page</li>
+                        <li>Simple course listing</li>
+                        <li>No community links</li>
+                    </ul>
+                </div>
+                <div class="iteration-version after">
+                    <h4>After One Round</h4>
+                    <ul>
+                        <li>Compelling hero section + CTA</li>
+                        <li>Lessons with learning objectives</li>
+                        <li>Discord + GitHub in nav and footer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 14: Your Turn -->
+        <div class="slide slide-exercise" data-slide-number="14">
+            <span class="slide-section">Section 6 - 12:30</span>
+            <h2>Now It's Your Turn</h2>
+            <div class="exercise-options">
+                <div class="exercise-option option-a">
+                    <h3>Option A</h3>
+                    <p>Write a prompt for <strong>your own app idea</strong> using the four-part structure</p>
+                </div>
+                <div class="exercise-option option-b">
+                    <h3>Option B</h3>
+                    <p>Rewrite the 02Ship prompt <strong>in your own words</strong> with different details</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: Prompt Template -->
+        <div class="slide slide-template" data-slide-number="15">
+            <span class="slide-section">Section 6 - 12:45</span>
+            <h2>Your Prompt Template</h2>
+            <div class="template-display">
+                I want to build <span class="placeholder">[app type]</span> that helps <span class="placeholder">[user]</span> to <span class="placeholder">[solve problem]</span>.<br><br>
+                <span class="label">Constraints:</span><br>
+                - <span class="placeholder">[Constraint 1]</span><br>
+                - <span class="placeholder">[Constraint 2]</span><br><br>
+                <span class="label">Tech preference:</span> <span class="placeholder">[preference or "no preference"]</span><br><br>
+                <span class="label">Success criteria:</span><br>
+                - <span class="placeholder">[Criterion 1]</span><br>
+                - <span class="placeholder">[Criterion 2]</span><br><br>
+                <span class="magic">Before generating anything, please ask me clarifying questions.</span>
+            </div>
+        </div>
+
+        <!-- SLIDE 16: Recap -->
+        <div class="slide slide-recap" data-slide-number="16">
+            <span class="slide-section">Closing - 13:30</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p>Good prompts have <strong>four parts</strong>: goal, constraints, tech, success criteria</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>"Ask clarifying questions"</strong> is the secret weapon</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p>Review the <strong>plan</strong>, not the code. Blueprint, not engineering.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Iteration</strong> is specific feedback, not "make it better"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 17: Lesson 1 Complete -->
+        <div class="slide slide-celebration" data-slide-number="17">
+            <span class="slide-section">Closing - 13:45</span>
+            <h2>Lesson 1 Complete!</h2>
+            <p class="subtext">You know what Claude is, your workspace is set up, and you've written your first build prompt</p>
+            <div class="celebration-badge">You're ready to build</div>
+        </div>
+
+        <!-- SLIDE 18: Next Steps -->
+        <div class="slide slide-next" data-slide-number="18">
+            <span class="slide-section" style="color: rgba(15,15,20,0.5);">Closing - 14:00</span>
+            <h2>Next: Building Your First Page</h2>
+            <p>Go from a prompt to a real, visible web page</p>
+            <div class="next-items">
+                <div class="next-item">
+                    <div class="icon">1</div>
+                    <p>Start Lesson 2</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">2</div>
+                    <p>Join Discord</p>
+                </div>
+                <div class="next-item">
+                    <div class="icon">3</div>
+                    <p>Share Your Prompt</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
