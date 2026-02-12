@@ -29,6 +29,7 @@ zero-to-ship/
 │   │   ├── layout.tsx          # Root layout
 │   │   ├── page.tsx            # Landing page (/)
 │   │   ├── globals.css         # Global styles
+│   │   ├── fonts/              # Local font files
 │   │   ├── courses/
 │   │   │   ├── page.tsx        # /courses
 │   │   │   └── [series]/
@@ -42,21 +43,24 @@ zero-to-ship/
 │   ├── components/
 │   │   ├── ui/                 # Button, Card, Container, etc.
 │   │   ├── layout/             # Header, Footer, Navigation
-│   │   └── courses/            # VideoPlayer, LessonCard, etc.
+│   │   └── courses/            # VideoPlayer, LessonCard, SeriesCard
 │   ├── lib/
-│   │   ├── utils.ts            # Helper functions
+│   │   ├── utils.ts            # Helper functions (cn() utility)
 │   │   └── content.ts          # Content fetching utilities
 │   └── types/
-│       ├── course.ts           # Series, Lesson types
+│       ├── course.ts           # Series, Lesson, Video, Exercise types
 │       └── blog.ts             # BlogPost type
 ├── content/                    # Content files (outside src/)
 │   ├── courses/
-│   │   ├── zero-to-ship/       # Series directory
-│   │   │   ├── series.json     # Series metadata
-│   │   │   └── lesson-*.json   # Lesson files
-│   │   └── claude-basics/
+│   │   └── claude-basics/      # Series directory
+│   │       ├── series.json     # Series metadata
+│   │       ├── lesson-*.json   # Lesson files (7 lessons)
+│   │       ├── lesson-*-video-*-slides.html      # Reveal.js slides
+│   │       ├── lesson-*-video-*-shooting-guide.md # Production guides
+│   │       └── video-gen/      # Video generation scripts
 │   └── blog/
 │       └── *.mdx               # Blog posts
+├── docs/plans/                 # Curriculum planning documents
 └── public/images/              # Static assets
 ```
 
@@ -73,15 +77,32 @@ interface Series {
   order: number;
 }
 
-// Individual lesson
+// Individual lesson (extended curriculum support)
 interface Lesson {
   slug: string;
   title: string;
   description: string;
-  youtubeId: string;
   duration: string;
-  transcript?: string;
   order: number;
+  youtubeId?: string;           // Legacy single video
+  transcript?: string;
+  learningObjectives?: string[];
+  videos?: Video[];             // Multiple videos per lesson
+  textSections?: TextSection[];
+  commonMistakes?: CommonMistake[];
+  reflectionQuestions?: string[];
+  exercises?: Exercise[];
+  resources?: Resource[];
+  instructorNotes?: string[];
+}
+
+// Video within a lesson
+interface Video {
+  title: string;
+  description: string;
+  youtubeId: string;
+  maxLength?: string;
+  estimatedDuration?: string;
 }
 
 // Blog post
@@ -92,6 +113,7 @@ interface BlogPost {
   date: string;
   author: string;
   content: string;
+  keywords?: string;
 }
 ```
 
@@ -137,7 +159,9 @@ npx tsc --noEmit
 ### Content
 - Course series: `content/courses/[series-slug]/`
 - Each series has `series.json` for metadata
-- Lessons are `lesson-XX-slug.json` files
+- Lessons are `lesson-XX-slug.json` files with extended curriculum fields
+- Each lesson can have multiple videos, each with slides (`.html`) and shooting guides (`.md`)
+- Video generation scripts live in `content/courses/[series]/video-gen/`
 - Blog posts are MDX files in `content/blog/`
 
 ### Styling
@@ -176,3 +200,4 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 3. **YouTube embeds** - Use `youtubeId` field, not full URLs
 4. **Transcripts** - Optional but recommended for accessibility
 5. **SEO** - Each page should have proper metadata (title, description, OG tags)
+6. **Lessons support multiple videos** - Each lesson can have up to 3 videos with structured curriculum data
