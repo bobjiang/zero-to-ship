@@ -14,9 +14,10 @@
     {
       "title": "Claude as Your Research Assistant",
       "description": "How to use Claude to quickly research topics, summarize sources, and synthesize information for decision-making.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "o05Yjk6plbg",
+      "slidesUrl": "/courses/claude-basics/lesson-06-video-01-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "12 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "Why research matters for product building (knowing your market, users, competitors)",
         "Claude's research superpowers: speed, synthesis, pattern-finding",
@@ -35,9 +36,10 @@
     {
       "title": "Data Analysis for Non-Analysts",
       "description": "How to analyze spreadsheets, user feedback, metrics, and other data using Claude without knowing statistics.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "68bNe_5YBFc",
+      "slidesUrl": "/courses/claude-basics/lesson-06-video-02-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "13 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "Types of data you'll encounter: quantitative (numbers) vs. qualitative (feedback)",
         "Prompts for data analysis: patterns, trends, outliers, recommendations",
@@ -57,9 +59,10 @@
     {
       "title": "Brainstorming and Ideation Techniques",
       "description": "Using Claude as a brainstorming partner to generate ideas, explore possibilities, and think through problems creatively.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "cf__q7K7VsY",
+      "slidesUrl": "/courses/claude-basics/lesson-06-video-03-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "14 minutes",
+      "estimatedDuration": "7 minutes",
       "scriptOutline": [
         "Solo brainstorming vs. Claude-assisted brainstorming",
         "Divergent thinking: generating quantity (10+ ideas quickly)",

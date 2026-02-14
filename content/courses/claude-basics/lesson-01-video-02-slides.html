@@ -301,13 +301,14 @@
         }
 
         .plan-card.free {
-            background: rgba(80, 250, 123, 0.1);
-            border: 2px solid rgba(80, 250, 123, 0.3);
+            background: rgba(255,255,255,0.03);
+            border: 2px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
         }
 
         .plan-card.pro {
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(80, 250, 123, 0.1);
+            border: 2px solid rgba(80, 250, 123, 0.3);
         }
 
         .plan-card h3 {
@@ -334,7 +335,7 @@
             color: var(--text-secondary);
         }
 
-        .plan-card.free .recommended {
+        .plan-card.pro .recommended {
             display: inline-block;
             background: var(--success);
             color: var(--bg-dark);
@@ -750,8 +751,8 @@
         <!-- SLIDE 2: Hook -->
         <div class="slide slide-hook" data-slide-number="2">
             <span class="slide-section">Opening - 0:00</span>
-            <h2>You only need <span class="highlight-text">one thing</span> to get started</h2>
-            <p>Before we build anything, let's get your workspace ready. It's simpler than you think.</p>
+            <h2>You need <span class="highlight-text">one account</span> to get started</h2>
+            <p>Before we build anything, let's get your Claude Pro account and workspace ready. It's simpler than you think.</p>
             <div class="checklist-preview">
                 <div class="checklist-preview-item">
                     <span class="icon">1</span>
@@ -773,12 +774,12 @@
             <span class="slide-section">Section 1 - 0:30</span>
             <div class="account-content">
                 <h2>Step 1: Create Your Claude Account</h2>
-                <p>Head to claude.ai and sign up. It's free to start and takes less than a minute.</p>
+                <p>Head to claude.ai and sign up. It takes less than a minute.</p>
                 <ul class="steps-list">
                     <li><span class="step-number">1</span> Go to claude.ai</li>
                     <li><span class="step-number">2</span> Click "Sign Up"</li>
                     <li><span class="step-number">3</span> Use email or Google account</li>
-                    <li><span class="step-number">4</span> You're in!</li>
+                    <li><span class="step-number">4</span> Upgrade to Pro for Claude Code</li>
                 </ul>
             </div>
             <div class="browser-mockup">
@@ -788,35 +789,47 @@
                     <div class="dot green"></div>
                     <span class="browser-url">claude.ai</span>
                 </div>
-                <div class="browser-screen">
-                    [Claude.ai Sign-Up Page]
+                <div class="browser-screen" style="flex-direction: column; gap: 0.6rem; padding: 1.5rem; height: auto; min-height: 220px;">
+                    <div style="width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent-teal), #a78bfa); border-radius: 50%; margin-bottom: 0.25rem;"></div>
+                    <div style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary);">Create your account</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Sign up to start using Claude</div>
+                    <div style="width: 85%; background: rgba(255,255,255,0.08); padding: 0.5rem 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); color: var(--text-secondary); font-size: 0.8rem; text-align: left;">Enter your email address</div>
+                    <div style="width: 85%; background: var(--accent-teal); color: var(--bg-dark); padding: 0.5rem 0.75rem; border-radius: 8px; font-weight: 600; font-size: 0.8rem; text-align: center; cursor: pointer;">Continue with email</div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; width: 85%;"><div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div><span style="font-size: 0.7rem; color: var(--text-secondary);">OR</span><div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div></div>
+                    <div style="width: 85%; background: rgba(255,255,255,0.08); padding: 0.5rem 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); font-size: 0.8rem; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Continue with Google
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 4: Claude Pro (Optional) -->
+        <!-- SLIDE 4: Claude Pro (Required for Claude Code) -->
         <div class="slide slide-pro" data-slide-number="4">
             <span class="slide-section">Section 1 - 1:30</span>
-            <h2>Free vs. Pro: Which Do You Need?</h2>
+            <h2>Why You Need Claude Pro</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem;">Claude Code &mdash; the tool we use to build real products &mdash; requires a paid plan</p>
             <div class="plan-comparison">
                 <div class="plan-card free">
                     <h3>Free Plan</h3>
                     <p class="price">$0 / month</p>
                     <ul>
-                        <li>Access to Claude</li>
-                        <li>Standard message limits</li>
-                        <li>Enough for this course</li>
+                        <li>Chat with Claude on the web</li>
+                        <li>Limited messages per day</li>
+                        <li style="color: var(--error);">&#10007; No Claude Code access</li>
+                        <li style="color: var(--error);">&#10007; Not enough to build apps</li>
                     </ul>
-                    <span class="recommended">Start here</span>
                 </div>
                 <div class="plan-card pro">
                     <h3>Claude Pro</h3>
                     <p class="price">$20 / month</p>
                     <ul>
-                        <li>More messages per day</li>
-                        <li>Access to latest models</li>
-                        <li>Upgrade later if needed</li>
+                        <li style="color: var(--success);">&#10003; Claude Code included</li>
+                        <li style="color: var(--success);">&#10003; Build real products</li>
+                        <li>More messages &amp; latest models</li>
+                        <li>How 02Ship was built</li>
                     </ul>
+                    <span class="recommended">Required for this course</span>
                 </div>
             </div>
         </div>
@@ -933,8 +946,8 @@
             <div class="recap-grid">
                 <div class="recap-item">
                     <div class="icon">1</div>
-                    <h3>Claude Account</h3>
-                    <p>Free plan is all you need to start</p>
+                    <h3>Claude Pro Account</h3>
+                    <p>Claude Code included &mdash; ready to build</p>
                 </div>
                 <div class="recap-item">
                     <div class="icon">2</div>

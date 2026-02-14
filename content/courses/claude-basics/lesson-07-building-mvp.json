@@ -14,9 +14,10 @@
     {
       "title": "MVP Planning: Scope, Tech Stack, and Timeline",
       "description": "How to plan a minimum viable product that's actually viable — small enough to ship quickly, valuable enough to matter.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "oPdtXCQbgjU",
+      "slidesUrl": "/courses/claude-basics/lesson-07-video-01-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "13 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "What makes an MVP 'minimum' and 'viable'?",
         "The 1-feature rule: can you describe it in one sentence?",
@@ -36,9 +37,10 @@
     {
       "title": "Build Workflow: From Prompt to Production Code",
       "description": "The complete workflow for building an MVP with Claude: planning, implementing, testing, debugging, iterating.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "GcOTc_IrdBU",
+      "slidesUrl": "/courses/claude-basics/lesson-07-video-02-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "14 minutes",
+      "estimatedDuration": "5 minutes",
       "scriptOutline": [
         "Phase 1: Planning session with Claude (Project setup, requirements)",
         "Phase 2: Generate initial codebase (file structure, core features)",
@@ -59,9 +61,10 @@
     {
       "title": "Deployment and Launch: Ship It to the World",
       "description": "Deploy your MVP to production, set up your domain, and execute a simple launch strategy.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "BTp3xWuvlCo",
+      "slidesUrl": "/courses/claude-basics/lesson-07-video-03-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "12 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "Deployment options: Vercel (recommended), Netlify, Render",
         "Connecting a custom domain (optional but recommended)",

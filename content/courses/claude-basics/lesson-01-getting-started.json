@@ -13,10 +13,10 @@
     {
       "title": "What Claude Is (and Isn't) for Building Products",
       "description": "Clarifies Claude's strengths and limitations, and how to think about it as a building partner for non-programmers.",
-      "youtubeId": "3mnQ5UXfX4k",
+      "youtubeId": "q-_oVqPSx2c",
       "slidesUrl": "/courses/claude-basics/lesson-01-video-01-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "10 minutes",
+      "estimatedDuration": "7 minutes",
       "scriptOutline": [
         "What is Claude? (AI assistant by Anthropic)",
         "What Claude can do: generate code, explain concepts, iterate on ideas",
@@ -32,9 +32,10 @@
     {
       "title": "Setup Checklist: Accounts, Workspace, and Safety Basics",
       "description": "Walks through required accounts/tools and safe practices for working with AI-generated code.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "ustI2hKCRxo",
+      "slidesUrl": "/courses/claude-basics/lesson-01-video-02-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "8 minutes",
+      "estimatedDuration": "5 minutes",
       "scriptOutline": [
         "Create Claude account (or verify existing)",
         "Recommended: Claude Pro for extended usage",
@@ -50,9 +51,10 @@
     {
       "title": "Your First Build Prompt: From Idea → Starter App Plan",
       "description": "Demonstrates a prompt structure that yields a project plan, file list, and step-by-step build instructions. Uses the actual 02Ship platform as a real-world example.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "THzmcaDo0Y4",
+      "slidesUrl": "/courses/claude-basics/lesson-01-video-03-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "14 minutes",
+      "estimatedDuration": "8 minutes",
       "scriptOutline": [
         "Anatomy of a good 'build prompt': goal, constraints, tech preference, success criteria",
         "Real example: How the 02Ship platform was built (the platform you're learning on!)",

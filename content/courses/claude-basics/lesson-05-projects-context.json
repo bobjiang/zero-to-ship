@@ -14,9 +14,10 @@
     {
       "title": "Why Projects Matter: Solving the Context Problem",
       "description": "Understanding the limitations of regular conversations and how Projects solve persistent context needs.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "zK8ZsgfeMHQ",
+      "slidesUrl": "/courses/claude-basics/lesson-05-video-01-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "11 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "The context problem: repeating yourself every conversation",
         "What Projects are: workspaces with memory",
@@ -35,9 +36,10 @@
     {
       "title": "Setting Up Your Project: Instructions and Knowledge",
       "description": "Step-by-step guide to creating a Project, writing custom instructions, and uploading knowledge files.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "7ZEFwTOsaJ0",
+      "slidesUrl": "/courses/claude-basics/lesson-05-video-02-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "14 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "Creating a new Project (UI walkthrough)",
         "Writing effective custom instructions (template provided)",
@@ -57,9 +59,10 @@
     {
       "title": "Multi-Session Workflows: Building Across Days",
       "description": "How to leverage Projects for building complex features across multiple sessions without losing context.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "1CChuzk6M14",
+      "slidesUrl": "/courses/claude-basics/lesson-05-video-03-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "13 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "Conversation organization within Projects",
         "Referencing previous work: 'In our conversation about X...'",

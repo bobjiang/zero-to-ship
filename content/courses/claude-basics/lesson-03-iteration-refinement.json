@@ -14,9 +14,10 @@
     {
       "title": "Why First Responses Aren't Final",
       "description": "Understanding that iteration is normal and expected when working with Claude — the best results come from refinement, not one-shot prompts.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "q3M4cMs4UEI",
+      "slidesUrl": "/courses/claude-basics/lesson-03-video-01-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "11 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "The myth of the 'perfect prompt' — even experts iterate",
         "How Claude learns from feedback within a conversation",
@@ -33,9 +34,10 @@
     {
       "title": "The Refinement Toolkit: 8 Follow-Up Techniques",
       "description": "Specific, actionable techniques for improving any Claude response through targeted follow-ups.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "X08wT0ImDN4",
+      "slidesUrl": "/courses/claude-basics/lesson-03-video-02-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "14 minutes",
+      "estimatedDuration": "7 minutes",
       "scriptOutline": [
         "1. Simplify: 'Make this simpler' or 'Explain like I'm 5'",
         "2. Expand: 'Add more detail about X' or 'Elaborate on Y'",
@@ -57,9 +59,10 @@
     {
       "title": "Conversation Flow: Building on Previous Responses",
       "description": "How to maintain context across multiple exchanges and build toward a final polished result.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "RCO9baXrR50",
+      "slidesUrl": "/courses/claude-basics/lesson-03-video-03-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "13 minutes",
+      "estimatedDuration": "8 minutes",
       "scriptOutline": [
         "Claude's memory within a conversation vs. across conversations",
         "Referencing previous responses: 'In your last answer, you mentioned...'",

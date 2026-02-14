@@ -14,9 +14,10 @@
     {
       "title": "Artifacts Explained: Your Code Workspace",
       "description": "What artifacts are, how they work, and how to think about code Claude generates for you.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "icT-fynZvuY",
+      "slidesUrl": "/courses/claude-basics/lesson-04-video-01-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "12 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "What are artifacts? (Separate panel for code, documents, diagrams)",
         "How artifacts differ from regular text responses",
@@ -34,9 +35,10 @@
     {
       "title": "Setting Up Your Dev Environment (The Minimum)",
       "description": "What tools you actually need to run code locally — no fancy IDE required.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "fpHzo39Kdg4",
+      "slidesUrl": "/courses/claude-basics/lesson-04-video-02-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "14 minutes",
+      "estimatedDuration": "6 minutes",
       "scriptOutline": [
         "The minimum setup: text editor (VS Code) + terminal + browser",
         "Installing Node.js for running modern web projects",
@@ -56,9 +58,10 @@
     {
       "title": "Reading Code for Non-Programmers",
       "description": "How to navigate code files, understand structure, and make simple changes without breaking things.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "ustI2hKCRxo",
+      "slidesUrl": "/courses/claude-basics/lesson-04-video-03-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "13 minutes",
+      "estimatedDuration": "7 minutes",
       "scriptOutline": [
         "File structure: what src/, components/, pages/ mean",
         "Reading code top-to-bottom: imports → logic → exports",

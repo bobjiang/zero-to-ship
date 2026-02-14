@@ -14,9 +14,10 @@
     {
       "title": "The 4 Cs of Effective Prompting",
       "description": "Learn the universal framework for crafting prompts that work: Clear, Contextual, Constrained, with Examples.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "M5DDNGILKkc",
+      "slidesUrl": "/courses/claude-basics/lesson-02-video-01-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "12 minutes",
+      "estimatedDuration": "7 minutes",
       "scriptOutline": [
         "Why prompting is a skill, not magic",
         "The 4 Cs framework: Clear (specificity), Contextual (background), Constrained (boundaries), Examples (patterns)",
@@ -33,9 +34,10 @@
     {
       "title": "Prompting for Different Goals",
       "description": "How to adjust your prompting approach based on whether you're generating code, getting explanations, or brainstorming ideas.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "5uarxttZmH8",
+      "slidesUrl": "/courses/claude-basics/lesson-02-video-02-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "13 minutes",
+      "estimatedDuration": "7 minutes",
       "scriptOutline": [
         "Code generation prompts: what to specify (language, framework, style, tests)",
         "Explanation prompts: asking for analogies, step-by-step breakdowns, ELI5",
@@ -53,9 +55,10 @@
     {
       "title": "Prompt Recipes: Templates You Can Steal",
       "description": "Ready-to-use prompt templates for common scenarios, customizable for your needs.",
-      "youtubeId": "[To be recorded]",
+      "youtubeId": "VCHk2OLQdeE",
+      "slidesUrl": "/courses/claude-basics/lesson-02-video-03-slides.html",
       "maxLength": "15 minutes",
-      "estimatedDuration": "14 minutes",
+      "estimatedDuration": "7 minutes",
       "scriptOutline": [
         "Recipe 1: Build a feature (for adding to existing projects)",
         "Recipe 2: Explain this concept (for learning)",
