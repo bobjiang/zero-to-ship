@@ -43,6 +43,8 @@ Read the PDF using the Read tool. Extract:
 - Key concepts per section
 - Logical ordering of content
 
+If the PDF lacks clear chapter/section structure, infer logical topic boundaries based on content shifts. Ask the user for guidance if the structure is ambiguous.
+
 ### Step 2: Plan the Curriculum
 
 Map the PDF content to lessons:
@@ -71,9 +73,11 @@ Create the course directory: `content/courses/<slug>/`
 
 If `--series` was provided:
 - Read the existing `content/courses/<slug>/series.json`
-- Determine the next lesson order number
+- Read existing lesson files to find the highest XX number in `lesson-XX-*.json` filenames
+- Start new lessons at XX+1 (e.g., if existing lessons go up to lesson-07, start at lesson-08)
+- Set the lesson `order` field to continue the existing sequence
 - Do NOT overwrite any existing files
-- Append new lesson slugs to the lessons array
+- Append new lesson slugs to the end of the `lessons` array in series.json
 
 #### series.json format:
 ```json
@@ -86,6 +90,8 @@ If `--series` was provided:
   "lessons": ["<lesson-1-slug>", "<lesson-2-slug>"]
 }
 ```
+
+Note: The `lessons` array contains slug strings on disk. The application loads full Lesson objects at runtime from the individual lesson JSON files.
 
 #### lesson-XX-<slug>.json format:
 ```json
@@ -175,6 +181,8 @@ Re-read all lesson JSON files from `content/courses/<slug>/` -- the user may hav
 For each video in each lesson, create `content/courses/<slug>/lesson-XX-video-YY-shooting-guide.md`.
 
 IMPORTANT: The shooting guide is the source of truth for all narration text. The SCRIPT blocks contain the exact words to be spoken.
+
+For each video, use the `scriptOutline` and `talkingPoints` from the lesson JSON as the structural foundation. Every item in `scriptOutline` should map to a section in the guide, and every item in `talkingPoints` should appear somewhere in the narration.
 
 Follow this structure EXACTLY:
 
@@ -406,6 +414,9 @@ Before rendering, verify consistency for EVERY video:
 4. Verify all three counts match
 5. Verify narration text in config matches SCRIPT blocks in shooting guide
 6. Verify slidesHtml path in config points to an existing file
+7. Count total words across all SCRIPT blocks in the shooting guide
+8. Verify total words / 150 < 10 (must fit under 10-minute target)
+9. If over budget, flag which sections are too long and trim them
 
 If ANY mismatch is found:
 - Report what's wrong
