@@ -60,6 +60,11 @@ zero-to-ship/
 │   │       └── video-gen/      # Video generation scripts
 │   └── blog/
 │       └── *.mdx               # Blog posts
+├── agents/
+│   └── video-gen/              # Shared video generation scripts
+│       └── generate-lesson-video.mjs  # Config-driven renderer
+├── .claude/skills/             # Claude Code custom skills
+│   └── generate-course/        # /generate-course skill
 ├── docs/plans/                 # Curriculum planning documents
 └── public/images/              # Static assets
 ```
@@ -147,6 +152,31 @@ npm run lint
 # Type check
 npx tsc --noEmit
 ```
+
+## Course Generation Agent
+
+Generate a complete video course from a PDF document:
+
+```bash
+# Create a new course from a PDF
+/generate-course path/to/document.pdf
+
+# Append lessons to an existing series
+/generate-course path/to/document.pdf --series existing-slug
+```
+
+The agent runs in two stages:
+1. **Stage 1:** Extracts curriculum from PDF, generates series.json + lesson JSONs, then pauses for review
+2. **Stage 2:** After approval, generates shooting guides, slides, video configs, and renders videos via TTS + ffmpeg
+
+### Requirements
+- `GOOGLE_TTS_API_KEY` in `.env.local`
+- `ffmpeg` and `ffprobe` on PATH
+- Playwright (installed in `agents/video-gen/`)
+
+### Shared Scripts
+- `agents/video-gen/generate-lesson-video.mjs` — config-driven video renderer (Gemini TTS + ffmpeg)
+- Accepts `--config <path>` and `--base-dir <course-dir>` flags
 
 ## Conventions
 
