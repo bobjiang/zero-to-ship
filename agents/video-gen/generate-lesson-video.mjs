@@ -1,11 +1,8 @@
 import { execSync } from 'child_process';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import { chromium } from 'playwright';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Parse --config argument
 const configArgIdx = process.argv.indexOf('--config');
@@ -18,8 +15,9 @@ const config = JSON.parse(readFileSync(configPath, 'utf8'));
 
 // Parse --base-dir argument (defaults to directory containing the config)
 const baseDirIdx = process.argv.indexOf('--base-dir');
-const BASE_DIR = baseDirIdx !== -1 && process.argv[baseDirIdx + 1]
-  ? path.resolve(process.argv[baseDirIdx + 1])
+const baseDirValue = baseDirIdx !== -1 ? process.argv[baseDirIdx + 1] : null;
+const BASE_DIR = baseDirValue && !baseDirValue.startsWith('--')
+  ? path.resolve(baseDirValue)
   : path.dirname(configPath);
 
 const { lesson, video, slidesHtml, slidesCount, outputDir, outputFile, narrations } = config;
