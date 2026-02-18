@@ -176,7 +176,7 @@ The agent runs in two stages:
 
 ### Shared Scripts
 - `agents/video-gen/generate-lesson-video.mjs` — config-driven video renderer (Gemini TTS + ffmpeg)
-- Accepts `--config <path>` and `--base-dir <course-dir>` flags
+- Accepts `--config <path>` flag; paths in config resolve relative to the video-gen directory
 
 ## Conventions
 

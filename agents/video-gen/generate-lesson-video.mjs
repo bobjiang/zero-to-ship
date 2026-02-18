@@ -7,23 +7,17 @@ import { chromium } from 'playwright';
 // Parse --config argument
 const configArgIdx = process.argv.indexOf('--config');
 if (configArgIdx === -1 || !process.argv[configArgIdx + 1]) {
-  console.error('Usage: node generate-lesson-video.mjs --config <path> [--base-dir <course-dir>]');
+  console.error('Usage: node generate-lesson-video.mjs --config <path>');
   process.exit(1);
 }
 const configPath = path.resolve(process.argv[configArgIdx + 1]);
 const config = JSON.parse(readFileSync(configPath, 'utf8'));
 
-// Parse --base-dir argument (defaults to directory containing the config)
-const baseDirIdx = process.argv.indexOf('--base-dir');
-const baseDirValue = baseDirIdx !== -1 ? process.argv[baseDirIdx + 1] : null;
-const BASE_DIR = baseDirValue && !baseDirValue.startsWith('--')
-  ? path.resolve(baseDirValue)
-  : path.dirname(configPath);
-
 const { lesson, video, slidesHtml, slidesCount, outputDir, outputFile, narrations } = config;
 
-// Resolve paths relative to the video-gen directory (parent of configs/)
-// Config convention: slidesHtml and outputDir are relative to the video-gen dir
+// Convention: config files live at <course>/video-gen/configs/<file>.json
+// VIDEO_GEN_DIR resolves to <course>/video-gen/ (grandparent of config)
+// All paths in the config (slidesHtml, outputDir) are relative to VIDEO_GEN_DIR
 const VIDEO_GEN_DIR = path.dirname(path.dirname(configPath));
 const OUTPUT_DIR = path.resolve(VIDEO_GEN_DIR, outputDir);
 const AUDIO_DIR = path.join(OUTPUT_DIR, 'audio');
@@ -47,7 +41,7 @@ function findEnvFile(startDir) {
   }
   return null;
 }
-const envPath = findEnvFile(process.cwd());
+const envPath = findEnvFile(path.dirname(configPath));
 if (!envPath) {
   console.error('.env.local not found in any parent directory');
   process.exit(1);
@@ -491,7 +485,7 @@ async function main() {
   console.log(`Voice: ${VOICE_NAME}`);
   console.log(`Slides: ${path.basename(SLIDES_HTML)} (${slidesCount} slides)`);
   console.log(`Config: ${path.basename(configPath)}`);
-  console.log(`Base dir: ${BASE_DIR}`);
+  console.log(`Video-gen dir: ${VIDEO_GEN_DIR}`);
   console.log('='.repeat(50));
 
   await fs.mkdir(AUDIO_DIR, { recursive: true });

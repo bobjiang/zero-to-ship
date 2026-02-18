@@ -425,6 +425,12 @@ If ANY mismatch is found:
 
 ### Step 9: Render Videos
 
+Before rendering the first video, ensure dependencies are installed:
+
+```bash
+cd agents/video-gen && npm install
+```
+
 For each config file, run:
 
 ```bash
