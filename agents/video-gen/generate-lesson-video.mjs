@@ -22,13 +22,15 @@ const BASE_DIR = baseDirValue && !baseDirValue.startsWith('--')
 
 const { lesson, video, slidesHtml, slidesCount, outputDir, outputFile, narrations } = config;
 
-// Resolve paths relative to BASE_DIR
-const OUTPUT_DIR = path.resolve(BASE_DIR, outputDir);
+// Resolve paths relative to the video-gen directory (parent of configs/)
+// Config convention: slidesHtml and outputDir are relative to the video-gen dir
+const VIDEO_GEN_DIR = path.dirname(path.dirname(configPath));
+const OUTPUT_DIR = path.resolve(VIDEO_GEN_DIR, outputDir);
 const AUDIO_DIR = path.join(OUTPUT_DIR, 'audio');
 const FIXED_DIR = path.join(AUDIO_DIR, 'fixed');
 const SLIDES_DIR = path.join(OUTPUT_DIR, 'slides');
 const TEMP_DIR = path.join(OUTPUT_DIR, 'temp_build');
-const SLIDES_HTML = path.resolve(BASE_DIR, slidesHtml);
+const SLIDES_HTML = path.resolve(VIDEO_GEN_DIR, slidesHtml);
 
 // Parse --skip-* flags
 const SKIP_SLIDES = process.argv.includes('--skip-slides');
