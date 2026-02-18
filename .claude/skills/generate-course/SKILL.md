@@ -429,8 +429,7 @@ For each config file, run:
 
 ```bash
 node agents/video-gen/generate-lesson-video.mjs \
-  --config content/courses/<slug>/video-gen/configs/LXXVYY.json \
-  --base-dir content/courses/<slug>/
+  --config content/courses/<slug>/video-gen/configs/LXXVYY.json
 ```
 
 Run videos ONE AT A TIME (sequentially) to avoid overwhelming the TTS API.
