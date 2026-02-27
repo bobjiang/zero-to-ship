@@ -1,0 +1,59 @@
+---
+title: "AI Ships Best When Requirements and Context Come First"
+excerpt: "Notes from our 02Ship AI gathering — a practical AI shipping stack is emerging: structured requirements, compact context, and the right model for the right stage."
+date: "2026-02-27"
+author: "Bob Jiang"
+keywords: "AI coding, Claude Code, requirements, context, AI workflow, multi-agent, Codex, AI shipping stack, 02Ship gathering"
+---
+
+# AI Ships Best When Requirements and Context Come First
+
+Had a productive 02Ship AI gathering today — the core message: AI ships best when you treat "requirements + context" as first-class artifacts, not an afterthought.
+
+## What We Discussed (High-Signal Notes)
+
+### 1) Write a req.txt That the AI Can Execute (Bob)
+
+- Keep it simple but complete:
+  - Goal / description
+  - Tech stack
+  - User stories
+- Use ChatGPT prompts to optimize the requirement quality before coding starts
+- Useful refs for workflow + structure:
+  - CLAUDE.md (project rules / working agreement for the assistant)
+  - [obra/superpowers](https://github.com/obra/superpowers) (prompting + tooling ideas)
+
+### 2) Customer Calls to REQ to Implementation Pipeline (Michelle)
+
+- Record the customer call
+- Speech-to-text → save into notes
+- Refine notes, then send into ChatGPT with a structured prompt to generate a proper REQ doc
+- Send that REQ to Claude Code to implement
+- **Key takeaway:** this is a repeatable "sales/PM → engineering" conversion flow
+
+### 3) Learn a Codebase Faster (Leo)
+
+- Fork a GitHub repo
+- Ask the model questions to understand the code quickly
+- Enforce consistent code style so AI-generated changes don't feel messy or mismatched
+
+### 4) Multi-Agent + Self-Learning Direction (Bing)
+
+- Looked at OpenClaw
+- Interest in self-learning workflows and multi-agent approaches to scale execution
+
+### 5) Context Is Still the Real Bottleneck (Jack)
+
+- Context handling remains the hardest part
+- Idea: aim for ~30% compacting (but avoid losing clarity/intent)
+- Practical division of labor:
+  - ChatGPT + Claude Code → requirements & planning
+  - Codex → implementation/execution
+
+## My Takeaway
+
+A practical "AI shipping stack" is emerging:
+
+**Record real customer intent → turn it into structured REQ → keep context compact but clear → use the right model for the right stage → ship with consistent code style.**
+
+If you're building with Claude Code / Codex / multi-agent workflows, DM me — keen to compare notes and jam on next steps.
