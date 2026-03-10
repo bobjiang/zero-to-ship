@@ -29,14 +29,9 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://luma.com/user/02ship"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-600 hover:text-gray-900"
-                  >
+                  <Link href="/events" className="text-sm text-gray-600 hover:text-gray-900">
                     Events
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
