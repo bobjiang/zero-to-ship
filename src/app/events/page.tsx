@@ -20,7 +20,7 @@ export default function EventsPage() {
           </p>
 
           <a
-            href="https://luma.com/user/02ship"
+            href="https://luma.com/02ship"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 flex items-center justify-between rounded-lg border border-blue-200 bg-blue-50 px-4 py-3"
