@@ -1,0 +1,271 @@
+---
+title: "How We Added an Events Page to 02Ship in One Conversation"
+excerpt: "A step-by-step walkthrough of how we replaced an external events link with a self-hosted /events page using Lu.ma's embed — built entirely through conversation with Claude."
+date: "2026-03-10"
+author: "Bob Jiang"
+keywords: "AI coding, events page, Lu.ma embed, Next.js, iframe, Claude Code, vibe coding, AI web development, 02Ship"
+---
+
+# How We Added an Events Page to 02Ship in One Conversation
+
+You know what's annoying? Clicking "Events" on a website and getting bounced to a completely different site. That's what [02Ship](/) was doing — our Events link in the header sent you straight to [Lu.ma](https://luma.com/02ship), our event management platform. It worked, but it felt disconnected. Like leaving a store to check the hours posted on the door next door.
+
+So we fixed it. In one conversation with Claude. Here's exactly how it happened, step by step — so you can do the same kind of thing with your own projects.
+
+## The Problem: An External Link Where a Page Should Be
+
+Our [header navigation](/) had four links: Courses, Blog, Events, and About. Three of them were internal pages. Events was the odd one out — it was an `<a>` tag pointing to `https://luma.com/user/02ship`, opening in a new tab.
+
+The footer had the same issue. Every other link kept you on the site. Events kicked you out.
+
+We wanted to keep using Lu.ma for event management (it handles registration, reminders, and calendaring beautifully), but we wanted the *experience* to stay on our site.
+
+## The Solution: Lu.ma's Embed Widget
+
+Here's the thing most people don't know: Lu.ma offers an embed widget. It's an iframe that shows your full event calendar — upcoming events, past events, registration — right inside your page.
+
+The embed code looks like this:
+
+```html
+<iframe
+  src="https://luma.com/embed/calendar/cal-zhuelVReFdNX5xm/events"
+  width="600"
+  height="450"
+  frameborder="0"
+  style="border: 1px solid #bfcbda88; border-radius: 4px;"
+  allowfullscreen=""
+  aria-hidden="false"
+  tabindex="0"
+></iframe>
+```
+
+That single snippet gives you a fully interactive event listing — no custom database, no API integration, no data management. Lu.ma handles all of it.
+
+## Step 1: Understanding What We Had
+
+Before changing anything, we looked at the existing codebase. This is a habit worth building — *always understand before you modify.*
+
+Our project structure is a [Next.js 14](https://nextjs.org/) App Router project. Routes live in `src/app/`, and each folder becomes a URL path:
+
+- `src/app/courses/` → `/courses`
+- `src/app/blog/` → `/blog`
+- `src/app/about/` → `/about`
+
+There was no `src/app/events/` folder. The Events link in `src/components/layout/Header.tsx` was a plain anchor tag:
+
+```tsx
+<a
+  href="https://luma.com/user/02ship"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-sm font-medium text-gray-700 hover:text-gray-900"
+>
+  Events
+</a>
+```
+
+Same story in `src/components/layout/Footer.tsx`. Both needed to change from external links to internal Next.js `<Link>` components.
+
+## Step 2: Creating the Events Page
+
+We created a new file at `src/app/events/page.tsx`. In Next.js App Router, that's all it takes to create a new route — add a folder with a `page.tsx` inside it.
+
+Here's the full page component:
+
+```tsx
+import type { Metadata } from 'next';
+import { Container } from '@/components/ui/Container';
+
+export const metadata: Metadata = {
+  title: 'Events - 02Ship',
+  description:
+    'Join our upcoming meetups and workshops for AI builders.',
+};
+
+export default function EventsPage() {
+  return (
+    <Container>
+      <div className="py-12">
+        <div className="mx-auto max-w-3xl">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+            Events
+          </h1>
+          <p className="mt-2 text-base text-gray-600">
+            Join our upcoming meetups and workshops for AI builders
+          </p>
+
+          {/* CTA Banner */}
+          <a
+            href="https://luma.com/02ship"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 flex items-center justify-between rounded-lg
+                       border border-blue-200 bg-blue-50 px-4 py-3"
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-lg" aria-hidden="true">
+                🔔
+              </span>
+              <div>
+                <p className="text-sm font-semibold text-blue-800">
+                  Never miss an event
+                </p>
+                <p className="text-xs text-blue-600">
+                  Subscribe on Lu.ma to get notified
+                </p>
+              </div>
+            </div>
+            <span className="rounded-md bg-blue-600 px-3 py-1.5 text-xs
+                             font-semibold text-white hover:bg-blue-700">
+              Subscribe
+            </span>
+          </a>
+
+          {/* Lu.ma Embed */}
+          <div className="mt-6">
+            <iframe
+              src="https://luma.com/embed/calendar/cal-zhuelVReFdNX5xm/events"
+              width="100%"
+              height="450"
+              frameBorder="0"
+              style={{
+                border: '1px solid #bfcbda88',
+                borderRadius: '4px',
+              }}
+              allowFullScreen
+              aria-hidden="false"
+              tabIndex={0}
+              title="02Ship events calendar"
+            />
+          </div>
+        </div>
+      </div>
+    </Container>
+  );
+}
+```
+
+Let's break down the key decisions:
+
+**The metadata block** at the top gives the page a proper title and description for SEO. Search engines and social media previews use this when someone shares the link.
+
+**The CTA banner** sits above the embed and encourages visitors to subscribe on Lu.ma. This is important because the embed alone doesn't make it obvious that you can follow the calendar for notifications. The banner links to `https://luma.com/02ship` — our Lu.ma profile page where people can hit "Subscribe."
+
+**The Lu.ma iframe** is the core of the page. Notice we changed `width="600"` to `width="100%"` so it fills the container responsively. The `height` stays at `450` — Lu.ma's default, which shows a few events and lets users scroll for more. We also added a `title` attribute for accessibility.
+
+**One subtle detail:** In React/JSX, HTML attributes like `frameborder` and `tabindex` become camelCase — `frameBorder` and `tabIndex`. And the `style` attribute takes a JavaScript object instead of a string. These are small things, but they'll trip you up if you copy HTML directly into a React component without converting.
+
+## Step 3: Updating the Navigation
+
+With the page created, we updated two files to point to it.
+
+**Header.tsx** — changed the external `<a>` tag to a Next.js `<Link>`:
+
+```tsx
+// Before
+<a href="https://luma.com/user/02ship" target="_blank" rel="noopener noreferrer">
+  Events
+</a>
+
+// After
+<Link href="/events">
+  Events
+</Link>
+```
+
+**Footer.tsx** — the exact same change in the "Learn" section:
+
+```tsx
+// Before
+<a href="https://luma.com/user/02ship" target="_blank" rel="noopener noreferrer">
+  Events
+</a>
+
+// After
+<Link href="/events">
+  Events
+</Link>
+```
+
+Why does this matter? Next.js `<Link>` components enable client-side navigation. When someone clicks Events, the page transitions instantly without a full browser reload. External `<a>` tags cause a hard navigation to a different domain. The user experience difference is night and day.
+
+## Step 4: Verify Everything Works
+
+Before shipping, we ran the standard check suite:
+
+```bash
+npx tsc --noEmit    # TypeScript type checking
+npm run lint         # ESLint
+npm run build        # Full production build
+```
+
+All three passed clean. The build output confirmed our new route:
+
+```
+├ ○ /events    141 B    87.4 kB
+```
+
+That `○` symbol means it's statically generated — the page is built once at deploy time and served instantly to every visitor. No server-side computation on each request.
+
+## Step 5: Ship It
+
+Two commands:
+
+```bash
+git add src/app/events/page.tsx src/components/layout/Header.tsx src/components/layout/Footer.tsx
+git commit -m "feat: add self-hosted events page with lu.ma embed"
+git push
+```
+
+Vercel picks up the push automatically, builds, and deploys. Within a minute, [02ship.com/events](/events) was live.
+
+## What We Didn't Build (and Why)
+
+It's worth talking about what we *chose not to do*:
+
+**We didn't build a custom events system.** No database, no event types, no content files. Lu.ma already manages our events beautifully — registration, waitlists, reminders, calendar sync. Rebuilding any of that would have been wasted effort.
+
+**We didn't fetch from Lu.ma's API.** We considered pulling event data via API and rendering custom event cards (like the screenshot in our reference design). But that adds complexity — API keys, data transformation, keeping things in sync. The embed does 90% of what we need with zero maintenance.
+
+**We didn't over-engineer the page.** No tabs, no filters, no search. The Lu.ma embed already has upcoming/past event views built in. Our page is a wrapper — title, subscribe CTA, and the embed. Simple.
+
+This is a core principle of building with AI tools: **do the least amount of custom work possible.** Use existing services. Embed rather than rebuild. Ship fast, iterate later.
+
+## What You Can Learn From This
+
+If you're building your own site and want to add an events page, here's the pattern:
+
+1. **Find your event platform's embed code.** Lu.ma, Eventbrite, Meetup — most of them offer one.
+2. **Create a new page** in your framework. In Next.js, that's a folder + `page.tsx`.
+3. **Adapt the embed for React** if needed (camelCase attributes, style objects).
+4. **Add context around the embed** — a title, description, and call-to-action.
+5. **Update your navigation** to point to the new internal page.
+6. **Run your checks** (types, lint, build) and ship.
+
+The whole thing took about 10 minutes of conversation with Claude. No deep framework knowledge required. Just a clear idea of what we wanted and the willingness to iterate.
+
+## Try It Yourself
+
+Head over to [02Ship Events](/events) to see the finished page. Then think about your own project — what external links could become self-hosted pages? What embeds could bring third-party functionality into your site?
+
+The answer is usually simpler than you think.
+
+---
+
+## Continue Learning
+
+Want to build your own pages with AI? Here's where to start:
+
+**Start Learning:**
+- **[Claude Basics Course](/courses/claude-basics)** — Our step-by-step course for beginners
+- **[Browse All Courses](/courses)** — Explore everything we offer
+- **[Read More on Our Blog](/blog)** — More build stories and tutorials
+
+**Get Involved:**
+- **[Join Our Discord](https://discord.gg/btqaA3hzKp)** — Connect with other builders
+- **[GitHub Discussions](https://github.com/bobjiang/zero-to-ship/discussions)** — Ask questions, share ideas
+- **[View the Source Code](https://github.com/bobjiang/zero-to-ship)** — See exactly how this was built
+
+---
+
+**About the Author:** Bob Jiang is the founder of [02Ship](/) — a learning platform for non-programmers who want to build and ship their ideas using AI tools.
