@@ -1,233 +1,68 @@
-# CLAUDE.md - Project Context for AI Assistants
+# CLAUDE.md
 
-## Project Overview
+## What This Is
 
-**02Ship** is a learning portal for non-programmers to build and ship their ideas using Claude Code and similar AI coding tools. The platform provides step-by-step courses, instructional videos (YouTube embeds), and community support.
+**02Ship** — learning portal for non-programmers to build/ship ideas with AI coding tools. Next.js 14 (App Router), TypeScript strict, Tailwind CSS, Vercel. Content is static JSON (courses) + MDX (blog), no database or auth yet.
 
-**Target audience:** Absolute beginners with no coding experience.
+## Consistency & Conflict Prevention
 
-## Tech Stack
+**Before coding:**
+1. Read related files, imports, and types first. Match existing patterns.
+2. Check for duplicate names, conflicting types, circular deps, inconsistent patterns.
 
-| Layer      | Technology                    |
-|------------|-------------------------------|
-| Framework  | Next.js 14 (App Router)       |
-| Language   | TypeScript (strict mode)      |
-| Styling    | Tailwind CSS                  |
-| Content    | MDX (blog), JSON (courses)    |
-| Videos     | YouTube embeds                |
-| Hosting    | Vercel                        |
-| Community  | Discord + GitHub Discussions  |
+**During coding:**
+3. One pattern per concern — don't introduce alternatives without approval.
+4. Check imports after every edit. Follow sibling file conventions.
 
-**Future:** Supabase (database), NextAuth.js (auth), tRPC (API)
+**After coding:**
+5. Run the full check suite (lint, type-check, build).
+6. Log any conflicts in `CONFLICTS.md` with date, files, and resolution.
 
-## Project Structure
+## Self-Learning
 
-```
-zero-to-ship/
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── layout.tsx          # Root layout
-│   │   ├── page.tsx            # Landing page (/)
-│   │   ├── globals.css         # Global styles
-│   │   ├── fonts/              # Local font files
-│   │   ├── courses/
-│   │   │   ├── page.tsx        # /courses
-│   │   │   └── [series]/
-│   │   │       ├── page.tsx    # /courses/[series]
-│   │   │       └── [lesson]/
-│   │   │           └── page.tsx # /courses/[series]/[lesson]
-│   │   ├── blog/
-│   │   │   ├── page.tsx        # /blog
-│   │   │   └── [slug]/page.tsx # /blog/[slug]
-│   │   └── about/page.tsx      # /about
-│   ├── components/
-│   │   ├── ui/                 # Button, Card, Container, etc.
-│   │   ├── layout/             # Header, Footer, Navigation
-│   │   └── courses/            # VideoPlayer, LessonCard, SeriesCard
-│   ├── lib/
-│   │   ├── utils.ts            # Helper functions (cn() utility)
-│   │   └── content.ts          # Content fetching utilities
-│   └── types/
-│       ├── course.ts           # Series, Lesson, Video, Exercise types
-│       └── blog.ts             # BlogPost type
-├── content/                    # Content files (outside src/)
-│   ├── courses/
-│   │   └── claude-basics/      # Series directory
-│   │       ├── series.json     # Series metadata
-│   │       ├── lesson-*.json   # Lesson files (7 lessons)
-│   │       ├── lesson-*-video-*-slides.html      # Reveal.js slides
-│   │       ├── lesson-*-video-*-shooting-guide.md # Production guides
-│   │       └── video-gen/      # Video generation scripts
-│   └── blog/
-│       └── *.mdx               # Blog posts
-├── agents/
-│   └── video-gen/              # Shared video generation scripts
-│       └── generate-lesson-video.mjs  # Config-driven renderer
-├── .claude/skills/             # Claude Code custom skills
-│   └── generate-course/        # /generate-course skill
-├── docs/plans/                 # Curriculum planning documents
-└── public/images/              # Static assets
-```
+Treat every error/conflict/failure as a learning signal.
 
-## Key Types
+1. **Diagnose root cause** — ask "why?" before "how to fix?"
+2. **Record in `LEARNINGS.md`** — error, root cause, fix, prevention.
+3. **Update this file** if the error reveals a missing rule.
+4. After multi-step tasks, self-review for inconsistencies and simplification opportunities.
 
-```typescript
-// Series metadata
-interface Series {
-  slug: string;
-  title: string;
-  description: string;
-  thumbnail: string;
-  lessons: Lesson[];
-  order: number;
-}
+## Don'ts
 
-// Individual lesson (extended curriculum support)
-interface Lesson {
-  slug: string;
-  title: string;
-  description: string;
-  duration: string;
-  order: number;
-  youtubeId?: string;           // Legacy single video
-  transcript?: string;
-  learningObjectives?: string[];
-  videos?: Video[];             // Multiple videos per lesson
-  textSections?: TextSection[];
-  commonMistakes?: CommonMistake[];
-  reflectionQuestions?: string[];
-  exercises?: Exercise[];
-  resources?: Resource[];
-  instructorNotes?: string[];
-}
+- No new deps without justification and checking `package.json` first.
+- No shared type changes without checking all consumers.
+- No `console.log` in committed code.
+- No files outside established directory structure.
+- No inline styles — use Tailwind.
+- No `@ts-ignore` / `eslint-disable` without an explaining comment.
 
-// Video within a lesson
-interface Video {
-  title: string;
-  description: string;
-  youtubeId: string;
-  maxLength?: string;
-  estimatedDuration?: string;
-}
+## Key References
 
-// Blog post
-interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  author: string;
-  content: string;
-  keywords?: string;
-}
-```
-
-## Routes
-
-| Route                          | Description                              |
-|--------------------------------|------------------------------------------|
-| `/`                            | Landing page with hero, courses preview  |
-| `/courses`                     | Course catalog (all series)              |
-| `/courses/[series]`            | Series overview with lesson list         |
-| `/courses/[series]/[lesson]`   | Lesson page with video + notes           |
-| `/blog`                        | Blog listing                             |
-| `/blog/[slug]`                 | Individual blog post (MDX)               |
-| `/about`                       | About page + community links             |
-
-## Development Commands
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Run linting
-npm run lint
-
-# Type check
-npx tsc --noEmit
-```
-
-## Course Generation Agent
-
-Generate a complete video course from a PDF document:
-
-```bash
-# Create a new course from a PDF
-/generate-course path/to/document.pdf
-
-# Append lessons to an existing series
-/generate-course path/to/document.pdf --series existing-slug
-```
-
-The agent runs in two stages:
-1. **Stage 1:** Extracts curriculum from PDF, generates series.json + lesson JSONs, then pauses for review
-2. **Stage 2:** After approval, generates shooting guides, slides, video configs, and renders videos via TTS + ffmpeg
-
-### Requirements
-- `GOOGLE_TTS_API_KEY` in `.env.local`
-- `ffmpeg` and `ffprobe` on PATH
-- Playwright (installed in `agents/video-gen/`)
-
-### Shared Scripts
-- `agents/video-gen/generate-lesson-video.mjs` — config-driven video renderer (Gemini TTS + ffmpeg)
-- Accepts `--config <path>` flag; paths in config resolve relative to the video-gen directory
+- Types: `src/types/course.ts`, `src/types/blog.ts`
+- Content loader: `src/lib/content.ts`
+- Utility: `src/lib/utils.ts` — `cn()` for conditional Tailwind classes
+- Course content: `content/courses/[series-slug]/` — `series.json` + `lesson-XX-slug.json`
+- Blog content: `content/blog/*.mdx`
+- Video renderer: `agents/video-gen/generate-lesson-video.mjs` (Gemini TTS + ffmpeg)
+- Course generation skill: `.claude/skills/generate-course/`
 
 ## Conventions
 
-### Code Style
-- Use TypeScript strict mode
-- Prefer named exports over default exports
-- Use `cn()` utility for conditional Tailwind classes
-- Components go in `src/components/` organized by feature
+- Named exports, no default exports
+- Components: `src/components/{ui,layout,courses}/`
+- Tailwind theme: `tailwind.config.ts`, dark mode (class-based), mobile-first, WCAG 2.1 AA
+- YouTube: use `youtubeId` field, never full URLs
+- Lessons support multiple videos, each with slides (`.html`) and shooting guides (`.md`)
 
-### Content
-- Course series: `content/courses/[series-slug]/`
-- Each series has `series.json` for metadata
-- Lessons are `lesson-XX-slug.json` files with extended curriculum fields
-- Each lesson can have multiple videos, each with slides (`.html`) and shooting guides (`.md`)
-- Video generation scripts live in `content/courses/[series]/video-gen/`
-- Blog posts are MDX files in `content/blog/`
-
-### Styling
-- Tailwind CSS with custom theme in `tailwind.config.ts`
-- Dark mode support (class-based toggle)
-- Mobile-first responsive design
-- WCAG 2.1 AA accessibility
-
-### Components
-- UI primitives in `src/components/ui/`
-- Layout components in `src/components/layout/`
-- Feature-specific in `src/components/[feature]/`
-
-## Community Links
-
-- Discord: https://discord.gg/btqaA3hzKp
-- Forum: https://github.com/bobjiang/zero-to-ship/discussions
-
-## Environment Variables
-
-Create `.env.local` from `.env.example`:
+## Course Generation
 
 ```bash
-# Required
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-
-# Future: Supabase
-# NEXT_PUBLIC_SUPABASE_URL=
-# NEXT_PUBLIC_SUPABASE_ANON_KEY=
+/generate-course path/to/doc.pdf                    # new course
+/generate-course path/to/doc.pdf --series slug       # append to existing
 ```
 
-## Important Notes
+Requires: `GOOGLE_TTS_API_KEY` in `.env.local`, `ffmpeg`/`ffprobe` on PATH, Playwright in `agents/video-gen/`.
 
-1. **Content is static** - No database initially; courses/blog loaded from files
-2. **No auth required** - All content is public for now
-3. **YouTube embeds** - Use `youtubeId` field, not full URLs
-4. **Transcripts** - Optional but recommended for accessibility
-5. **SEO** - Each page should have proper metadata (title, description, OG tags)
-6. **Lessons support multiple videos** - Each lesson can have up to 3 videos with structured curriculum data
+## Commands
+
+`npm run dev` | `npm run build` | `npm run lint` | `npx tsc --noEmit`

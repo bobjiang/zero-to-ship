@@ -1,0 +1,60 @@
+<h2>Events Page Layout</h2>
+<p class="subtitle">The lu.ma embed handles event listing, tabs, and registration. How should we wrap it?</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background: #f8fafc; padding: 24px; min-height: 280px;">
+        <!-- Mockup A: Minimal -->
+        <div style="max-width: 500px; margin: 0 auto;">
+          <div style="margin-bottom: 20px;">
+            <div style="font-size: 22px; font-weight: 700; color: #111;">Events</div>
+            <div style="font-size: 13px; color: #666; margin-top: 4px;">Join our upcoming meetups and workshops</div>
+          </div>
+          <div style="background: white; border: 1px solid #bfcbda88; border-radius: 8px; padding: 16px; min-height: 180px; display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center; color: #94a3b8;">
+              <div style="font-size: 28px; margin-bottom: 8px;">📅</div>
+              <div style="font-size: 12px;">Lu.ma Calendar Embed</div>
+              <div style="font-size: 11px; color: #cbd5e1;">(full width, responsive)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Minimal — Embed Only</h3>
+      <p>Page title + subtitle + full-width lu.ma embed. Clean, lets lu.ma do all the work. Consistent with the reference screenshot you shared.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background: #f8fafc; padding: 24px; min-height: 280px;">
+        <!-- Mockup B: With CTA -->
+        <div style="max-width: 500px; margin: 0 auto;">
+          <div style="margin-bottom: 20px;">
+            <div style="font-size: 22px; font-weight: 700; color: #111;">Events</div>
+            <div style="font-size: 13px; color: #666; margin-top: 4px;">Join our upcoming meetups and workshops</div>
+          </div>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+            <div style="font-size: 20px;">🎤</div>
+            <div>
+              <div style="font-size: 13px; font-weight: 600; color: #1e40af;">Want to host an event?</div>
+              <div style="font-size: 11px; color: #3b82f6;">Reach out to us to organize a meetup in your city</div>
+            </div>
+          </div>
+          <div style="background: white; border: 1px solid #bfcbda88; border-radius: 8px; padding: 16px; min-height: 140px; display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center; color: #94a3b8;">
+              <div style="font-size: 28px; margin-bottom: 8px;">📅</div>
+              <div style="font-size: 12px;">Lu.ma Calendar Embed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Embed + CTA Banner</h3>
+      <p>Same as A, but adds a call-to-action banner above the embed (e.g., "Want to host an event?" or "Subscribe to updates"). Good if you want to drive engagement beyond just viewing.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<h2>How should events data be managed?</h2>
+<p class="subtitle">This determines how you add/update events and how the page stays current</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Static JSON files (Recommended)</h3>
+      <p>Events defined in <code>content/events/</code> as JSON files, just like courses. You manually add events and include the lu.ma URL for each. Simple, consistent with existing patterns, no API keys needed.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Matches existing content pattern</li><li>No external dependencies</li><li>Full control over display</li><li>Works at build time (fast)</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Manual updates when adding events</li><li>Won't auto-sync with lu.ma</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Lu.ma API Integration</h3>
+      <p>Fetch events directly from lu.ma's API at build time or runtime. Events auto-sync when you publish on lu.ma. Requires API access.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Auto-syncs with lu.ma</li><li>No manual content updates</li><li>Always current</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Depends on lu.ma API availability</li><li>May need API key</li><li>Less control over data shape</li><li>New external dependency</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Hybrid: Static JSON + Lu.ma link</h3>
+      <p>Static JSON for event metadata (title, date, location, tags), but each event links out to its lu.ma page for registration. Best of both worlds.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>Full design control</li><li>Lu.ma handles registration</li><li>Consistent with codebase</li><li>Easy to add events</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Still manual updates</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>

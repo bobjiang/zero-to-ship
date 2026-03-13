@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02Ship Claude Sydney — Know Your Claude Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f14;
+            --bg-slide: #16161d;
+            --accent-coral: #ff6b6b;
+            --accent-teal: #4ecdc4;
+            --accent-gold: #ffd93d;
+            --text-primary: #f8f8f2;
+            --text-secondary: #a9a9b3;
+            --success: #50fa7b;
+            --error: #ff5555;
+            --accent-blue: #6c9eff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+            border-radius: 16px;
+        }
+
+        .presentation-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: var(--bg-slide);
+            border-radius: 16px;
+            padding: 3rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .slide::before {
+            content: attr(data-slide-number);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .slide-section {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Speaker Notes */
+        .speaker-notes {
+            background: rgba(255, 215, 61, 0.08);
+            border: 1px solid rgba(255, 215, 61, 0.25);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-top: -1.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .speaker-notes h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .speaker-notes p,
+        .speaker-notes ul {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .speaker-notes ul {
+            margin-left: 1.25rem;
+        }
+
+        .speaker-notes li {
+            margin-bottom: 0.4rem;
+        }
+
+        .speaker-notes .timing {
+            display: inline-block;
+            background: rgba(255, 215, 61, 0.2);
+            color: var(--accent-gold);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ---- Slide 1: Title ---- */
+        .slide-title {
+            background: linear-gradient(135deg, #0a1628 0%, #0f0f14 50%, #0a1628 100%);
+            text-align: center;
+        }
+
+        .slide-title .event-branding {
+            font-size: 1rem;
+            color: var(--accent-teal);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-title .subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .slide-title .meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .slide-title .meta span {
+            background: rgba(255,255,255,0.06);
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ---- Slide 2: Agenda ---- */
+        .slide-agenda {
+            text-align: left;
+            padding: 3rem 4rem;
+        }
+
+        .slide-agenda h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .agenda-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 700px;
+        }
+
+        .agenda-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 0.9rem 1.25rem;
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .agenda-item .num {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 0.95rem;
+        }
+
+        .agenda-item .label {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .agenda-item .time {
+            margin-left: auto;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+        }
+
+        /* ---- Generic centered slide ---- */
+        .slide-centered {
+            text-align: center;
+        }
+
+        .slide-centered h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-centered .tagline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
+
+        /* ---- Three-column grid (capabilities, products) ---- */
+        .three-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.75rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-teal);
+        }
+
+        .card .icon {
+            font-size: 2.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .card.highlight-coral {
+            border-color: rgba(255, 107, 107, 0.4);
+            background: rgba(255, 107, 107, 0.08);
+        }
+
+        .card.highlight-teal {
+            border-color: rgba(78, 205, 196, 0.4);
+            background: rgba(78, 205, 196, 0.08);
+        }
+
+        .card.highlight-gold {
+            border-color: rgba(255, 217, 61, 0.4);
+            background: rgba(255, 217, 61, 0.08);
+        }
+
+        /* ---- Two-column layout ---- */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .two-col h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .two-col .lead {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ---- Feature list ---- */
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feature-list li .check {
+            color: var(--accent-teal);
+            font-weight: 700;
+        }
+
+        /* ---- Visual panel ---- */
+        .visual-panel {
+            background: #1a1a24;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .visual-panel h4 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ---- Code block ---- */
+        .code-block {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #0d0d12;
+            padding: 1.25rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-block .comment { color: #6272a4; }
+        .code-block .keyword { color: #ff79c6; }
+        .code-block .string { color: #f1fa8c; }
+        .code-block .prompt { color: var(--accent-teal); }
+        .code-block .output { color: var(--text-secondary); }
+
+        /* ---- Live demo slide ---- */
+        .slide-demo {
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+        }
+
+        .slide-demo h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-demo .demo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            color: var(--bg-dark);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-demo .demo-agenda {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .slide-demo .demo-step {
+            background: rgba(255,255,255,0.06);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            min-width: 160px;
+        }
+
+        .slide-demo .demo-step .step-num {
+            font-size: 0.8rem;
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .slide-demo .demo-step p {
+            font-size: 0.95rem;
+        }
+
+        /* ---- Comparison table ---- */
+        .comparison-table {
+            width: 100%;
+            max-width: 920px;
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .comparison-table thead th {
+            font-weight: 700;
+            font-size: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .comparison-table thead th:nth-child(2) { color: var(--accent-coral); }
+        .comparison-table thead th:nth-child(3) { color: var(--accent-teal); }
+        .comparison-table thead th:nth-child(4) { color: var(--accent-gold); }
+
+        .comparison-table td:first-child {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .comparison-table .best {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* ---- Model cards ---- */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .model-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .model-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .model-card .model-tag {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .model-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .model-card.haiku { border-top: 3px solid var(--accent-teal); }
+        .model-card.sonnet { border-top: 3px solid var(--accent-coral); }
+        .model-card.opus { border-top: 3px solid var(--accent-gold); }
+
+        /* ---- Recap grid ---- */
+        .recap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .recap-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .recap-item .number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-teal);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .recap-item p {
+            font-size: 1rem;
+        }
+
+        /* ---- Closing slide ---- */
+        .slide-closing {
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+        }
+
+        .slide-closing h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .slide-closing p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .slide-closing .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .slide-closing .link-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1.25rem 2rem;
+            border-radius: 12px;
+            min-width: 180px;
+        }
+
+        .slide-closing .link-item .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .slide-closing .link-item p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* ---- Chat mock ---- */
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .chat-message.user { flex-direction: row-reverse; }
+
+        .chat-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .chat-message.user .chat-avatar { background: var(--accent-coral); }
+        .chat-message.assistant .chat-avatar { background: var(--accent-teal); }
+
+        .chat-bubble {
+            background: rgba(255,255,255,0.08);
+            padding: 0.85rem 1.1rem;
+            border-radius: 14px;
+            max-width: 75%;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .chat-message.assistant .chat-bubble {
+            background: rgba(78, 205, 196, 0.15);
+            border: 1px solid rgba(78, 205, 196, 0.3);
+        }
+
+        /* ---- Flow diagram ---- */
+        .decision-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .decision-node {
+            background: rgba(255,255,255,0.06);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .decision-node .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .decision-node .value {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .decision-arrow {
+            font-size: 1.4rem;
+            color: var(--accent-teal);
+        }
+
+        /* ---- Print ---- */
+        @media print {
+            body { background: white; color: #1a1a1a; }
+            .slide { page-break-after: always; box-shadow: none; border: 1px solid #ddd; }
+            .speaker-notes { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="presentation-header">
+        <h1>02Ship Claude Sydney — Know Your Claude Tools</h1>
+        <p>45-Minute Technical Training Session &bull; 15 Slides</p>
+    </header>
+
+    <div class="slides-container">
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 1: Title -->
+        <!-- ============================================================ -->
+        <section class="slide slide-title" data-slide-number="1">
+            <div class="event-branding">02Ship &bull; Claude Sydney</div>
+            <h1>Know Your Claude Tools</h1>
+            <p class="subtitle">Claude &bull; Cowork &bull; Code — What, Why, and When</p>
+            <div class="meta">
+                <span>45 min</span>
+                <span>Sydney 2026</span>
+                <span>02ship.com</span>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">0:00 – 1:00 (1 min)</span>
+            <ul>
+                <li>Welcome everyone to the 02Ship Claude Sydney meetup.</li>
+                <li>Introduce yourself. Mention that this session covers the three main ways to interact with Claude and when each one shines.</li>
+                <li>Quick show of hands: Who has used Claude before? Who has tried Claude Code or Cowork?</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 2: Agenda -->
+        <!-- ============================================================ -->
+        <section class="slide slide-agenda" data-slide-number="2">
+            <span class="slide-section">Overview</span>
+            <h2>Agenda</h2>
+            <div class="agenda-list">
+                <div class="agenda-item">
+                    <div class="num">1</div>
+                    <span class="label">What is Claude?</span>
+                    <span class="time">5 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">2</div>
+                    <span class="label">Claude Chat — the conversational interface</span>
+                    <span class="time">8 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">3</div>
+                    <span class="label">Claude Cowork — research &amp; documents</span>
+                    <span class="time">8 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">4</div>
+                    <span class="label">Claude Code — the developer environment</span>
+                    <span class="time">10 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">5</div>
+                    <span class="label">When to use each &amp; choosing a model</span>
+                    <span class="time">8 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">6</div>
+                    <span class="label">Summary &amp; Q&amp;A</span>
+                    <span class="time">6 min</span>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">1:00 – 3:00 (2 min)</span>
+            <ul>
+                <li>Walk through the agenda so attendees know what to expect.</li>
+                <li>Mention there will be live demos after each product section — encourage questions during demos.</li>
+                <li>Clarify: this is about the three <em>modes</em> inside the Claude desktop app and CLI, not just the API.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 3: What is Claude? -->
+        <!-- ============================================================ -->
+        <section class="slide slide-centered" data-slide-number="3">
+            <span class="slide-section">Section 1 &bull; What is Claude</span>
+            <h2>What is Claude?</h2>
+            <p class="tagline">An AI assistant by Anthropic — built to be helpful, harmless, and honest.</p>
+            <div class="three-grid">
+                <div class="card">
+                    <div class="icon">&#x1F4AC;</div>
+                    <h3>Conversational</h3>
+                    <p>Chat naturally — describe what you need in plain language, not commands.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x1F9E0;</div>
+                    <h3>Reasoning</h3>
+                    <p>Extended thinking for deep analysis, planning, and multi-step problems.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x1F310;</div>
+                    <h3>Multi-modal</h3>
+                    <p>Understands text, images, PDFs, code, and structured data.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">3:00 – 6:00 (3 min)</span>
+            <ul>
+                <li>Claude is Anthropic's flagship AI assistant. Think of it as a knowledgeable colleague you can have a conversation with.</li>
+                <li>Three key properties: (1) conversation-first interface, (2) built-in reasoning (extended thinking scales to problem difficulty), (3) multimodal — upload screenshots, documents, data.</li>
+                <li>Stress that you don't need to "code" to use Claude. Describe what you want in everyday language.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 4: Claude Models -->
+        <!-- ============================================================ -->
+        <section class="slide slide-centered" data-slide-number="4">
+            <span class="slide-section">Section 1 &bull; Models</span>
+            <h2>Three Models, One Family</h2>
+            <p class="tagline">Choose the right model for speed, depth, or balance.</p>
+            <div class="model-grid">
+                <div class="model-card haiku">
+                    <h3>Haiku</h3>
+                    <div class="model-tag">Fastest &bull; Lightest</div>
+                    <p>Quick answers, summaries, classification, simple extraction. Lowest token cost.</p>
+                </div>
+                <div class="model-card sonnet">
+                    <h3>Sonnet</h3>
+                    <div class="model-tag">Daily Driver</div>
+                    <p>Coding, writing, analysis, multi-step workflows. Best balance of speed and quality.</p>
+                </div>
+                <div class="model-card opus">
+                    <h3>Opus</h3>
+                    <div class="model-tag">Deepest Reasoning</div>
+                    <p>Complex research, sustained thinking, accuracy-critical tasks. Most capable model.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">6:00 – 8:00 (2 min)</span>
+            <ul>
+                <li>Haiku, Sonnet, Opus — think of them as lightweight, mid-weight, heavyweight.</li>
+                <li>Free plan: Haiku + Sonnet. Pro/Max: adds Opus with higher limits.</li>
+                <li>Both Sonnet 4.6 and Opus 4.6 feature adaptive extended thinking — they scale reasoning depth to problem complexity automatically.</li>
+                <li>Rule of thumb: start with Sonnet. Upgrade to Opus only when Sonnet's answer isn't deep enough. Use Haiku for bulk/simple tasks.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 5: Claude Chat -->
+        <!-- ============================================================ -->
+        <section class="slide" data-slide-number="5">
+            <span class="slide-section">Section 2 &bull; Chat</span>
+            <div class="two-col">
+                <div>
+                    <h2>Claude <span class="highlight-text">Chat</span></h2>
+                    <p class="lead">Quick, conversational interactions. Your go-to for questions, brainstorming, and iterative problem-solving.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Double-tap Option (Mac) for instant access</li>
+                        <li><span class="check">&#x2713;</span> Share screenshots and windows</li>
+                        <li><span class="check">&#x2713;</span> Voice dictation for hands-free input</li>
+                        <li><span class="check">&#x2713;</span> Projects to organize related conversations</li>
+                        <li><span class="check">&#x2713;</span> Artifacts for code, docs, and visuals</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Example Conversation</h4>
+                    <div class="chat-container">
+                        <div class="chat-message user">
+                            <div class="chat-avatar">You</div>
+                            <div class="chat-bubble">Explain API rate limiting like I'm a product manager</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-avatar">C</div>
+                            <div class="chat-bubble">Rate limiting is like a nightclub bouncer — it controls how many people (requests) can enter per minute to prevent overcrowding...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">8:00 – 12:00 (4 min)</span>
+            <ul>
+                <li>Chat is the default tab when you open Claude. It's the most familiar interface — just like texting.</li>
+                <li>Show the desktop app: double-tap Option to summon Claude as an overlay. Great for quick lookups while working.</li>
+                <li>Projects: group related conversations together. You can attach files, set custom instructions, and maintain context across chats.</li>
+                <li>Artifacts: when Claude generates code, a document, or a visualization, it appears as an interactive artifact you can edit, copy, or share.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 6: Live Demo — Chat -->
+        <!-- ============================================================ -->
+        <section class="slide slide-demo" data-slide-number="6">
+            <span class="slide-section">Demo</span>
+            <div class="demo-badge">LIVE DEMO</div>
+            <h2>Claude Chat in Action</h2>
+            <div class="demo-agenda">
+                <div class="demo-step">
+                    <div class="step-num">Step 1</div>
+                    <p>Open Claude desktop app</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 2</div>
+                    <p>Ask a question with a screenshot</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 3</div>
+                    <p>Create an artifact (code snippet)</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 4</div>
+                    <p>Iterate: "make it responsive"</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">12:00 – 16:00 (4 min)</span>
+            <ul>
+                <li>Demo: Open the Claude desktop app. Show the double-tap Option shortcut.</li>
+                <li>Upload a screenshot of a webpage and ask Claude to recreate it.</li>
+                <li>Show the artifact panel appearing with live-preview code.</li>
+                <li>Iterate: ask Claude to make the design responsive or change the color scheme.</li>
+                <li>Emphasize the conversational loop: describe &rarr; generate &rarr; refine &rarr; repeat.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 7: Claude Cowork -->
+        <!-- ============================================================ -->
+        <section class="slide" data-slide-number="7">
+            <span class="slide-section">Section 3 &bull; Cowork</span>
+            <div class="two-col">
+                <div>
+                    <h2>Claude <span class="highlight-text">Cowork</span></h2>
+                    <p class="lead">Complex, sustained work — research, analysis, and document creation. Claude reads your files, browses the web, and produces deliverables.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Access local folders — read and create files</li>
+                        <li><span class="check">&#x2713;</span> Web browsing for live research</li>
+                        <li><span class="check">&#x2713;</span> Scheduled tasks for recurring work</li>
+                        <li><span class="check">&#x2713;</span> Plugin ecosystem for extended tools</li>
+                        <li><span class="check">&#x2713;</span> Protected sandbox environment</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Best For</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div style="background: rgba(78,205,196,0.1); padding: 0.85rem 1rem; border-radius: 8px; border-left: 3px solid var(--accent-teal);">Research briefs from multiple sources</div>
+                        <div style="background: rgba(255,107,107,0.1); padding: 0.85rem 1rem; border-radius: 8px; border-left: 3px solid var(--accent-coral);">Contract and document review</div>
+                        <div style="background: rgba(255,217,61,0.1); padding: 0.85rem 1rem; border-radius: 8px; border-left: 3px solid var(--accent-gold);">Cross-source analysis &amp; reports</div>
+                        <div style="background: rgba(108,158,255,0.1); padding: 0.85rem 1rem; border-radius: 8px; border-left: 3px solid var(--accent-blue);">Comprehensive document creation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">16:00 – 20:00 (4 min)</span>
+            <ul>
+                <li>Cowork is the newest mode — think of it as giving Claude a desk, a browser, and a file cabinet.</li>
+                <li>Key difference from Chat: Cowork can <strong>access local files</strong> and <strong>browse the web</strong>. It's designed for tasks that take 10-30+ minutes of focused work.</li>
+                <li>Scheduled tasks: set Claude to run weekly competitor analysis, daily report summaries, etc.</li>
+                <li>Sandbox: Claude works in a safe environment — it can create files but can't break your system.</li>
+                <li>Requires Pro, Max, Team, or Enterprise plan.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 8: Live Demo — Cowork -->
+        <!-- ============================================================ -->
+        <section class="slide slide-demo" data-slide-number="8">
+            <span class="slide-section">Demo</span>
+            <div class="demo-badge">LIVE DEMO</div>
+            <h2>Claude Cowork in Action</h2>
+            <div class="demo-agenda">
+                <div class="demo-step">
+                    <div class="step-num">Step 1</div>
+                    <p>Switch to Cowork tab</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 2</div>
+                    <p>Connect a local folder</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 3</div>
+                    <p>Ask Claude to research and summarize</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 4</div>
+                    <p>Review the generated document</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">20:00 – 24:00 (4 min)</span>
+            <ul>
+                <li>Demo: Switch to the Cowork tab in the Claude desktop app.</li>
+                <li>Connect a project folder — show how Claude can see and read local files.</li>
+                <li>Give Claude a research task: "Read these three documents and create a comparison brief."</li>
+                <li>Show Claude working — it will browse, read, and produce a structured document.</li>
+                <li>Point out the tool activity panel showing what Claude is doing behind the scenes.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 9: Claude Code -->
+        <!-- ============================================================ -->
+        <section class="slide" data-slide-number="9">
+            <span class="slide-section">Section 4 &bull; Code</span>
+            <div class="two-col">
+                <div>
+                    <h2>Claude <span class="highlight-text">Code</span></h2>
+                    <p class="lead">A full development environment in your terminal. Claude reads your codebase, writes code, runs tests, and commits — with your approval.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Direct codebase access with visual diffs</li>
+                        <li><span class="check">&#x2713;</span> Built-in terminal for running commands</li>
+                        <li><span class="check">&#x2713;</span> Git integration and version tracking</li>
+                        <li><span class="check">&#x2713;</span> Three modes: Ask, Code, Plan</li>
+                        <li><span class="check">&#x2713;</span> Works locally or on GitHub remote</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Terminal Session</h4>
+                    <div class="code-block">
+<span class="prompt">$</span> claude
+
+<span class="comment"># Claude Code reads your project</span>
+<span class="output">&gt; Analyzing codebase... 47 files indexed</span>
+
+<span class="prompt">You:</span> Add dark mode to the settings page
+
+<span class="output">&gt; I'll add dark mode support. Here's my plan:
+  1. Add theme toggle component
+  2. Update CSS variables
+  3. Persist preference in localStorage
+
+  [Apply changes? y/n]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">24:00 – 28:00 (4 min)</span>
+            <ul>
+                <li>Claude Code is the power-user tool — a CLI agent that lives in your terminal.</li>
+                <li>It indexes your entire codebase and understands project structure, dependencies, and patterns.</li>
+                <li>Three interaction modes: <strong>Ask</strong> (requires approval for each change), <strong>Code</strong> (auto-applies safe changes), <strong>Plan</strong> (reviews strategy before implementation).</li>
+                <li>You remain in control: Claude shows diffs before applying, and you approve or reject each change.</li>
+                <li>Also available in the Claude desktop app under the Code tab (rolling out). Requires Pro+ plan.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 10: Live Demo — Claude Code -->
+        <!-- ============================================================ -->
+        <section class="slide slide-demo" data-slide-number="10">
+            <span class="slide-section">Demo</span>
+            <div class="demo-badge">LIVE DEMO</div>
+            <h2>Claude Code in Action</h2>
+            <div class="demo-agenda">
+                <div class="demo-step">
+                    <div class="step-num">Step 1</div>
+                    <p>Open terminal, run <code style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">claude</code></p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 2</div>
+                    <p>Ask Claude to add a feature</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 3</div>
+                    <p>Review the diff and approve</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 4</div>
+                    <p>Run tests and commit</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">28:00 – 34:00 (6 min)</span>
+            <ul>
+                <li>Demo: Open terminal in a real project directory. Run <code>claude</code> to start a session.</li>
+                <li>Ask Claude to add a small feature (e.g., "add a footer with social links to the homepage").</li>
+                <li>Show Claude reading the codebase, proposing changes, and presenting diffs.</li>
+                <li>Approve the changes, then ask Claude to run the dev server and verify.</li>
+                <li>Show the commit flow: Claude can stage changes, write a commit message, and commit with your approval.</li>
+                <li>This is a longer demo — take time to show the iterative back-and-forth.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 11: When to Use Each -->
+        <!-- ============================================================ -->
+        <section class="slide slide-centered" data-slide-number="11" style="padding: 2.5rem 3rem;">
+            <span class="slide-section">Section 5 &bull; Comparison</span>
+            <h2>When to Use Each</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Chat</th>
+                        <th>Cowork</th>
+                        <th>Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Quick question or brainstorm</td>
+                        <td class="best">Best</td>
+                        <td>--</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Draft an email or document</td>
+                        <td class="best">Best</td>
+                        <td>Good</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Multi-source research brief</td>
+                        <td>--</td>
+                        <td class="best">Best</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Review and analyze local files</td>
+                        <td>--</td>
+                        <td class="best">Best</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Recurring scheduled task</td>
+                        <td>--</td>
+                        <td class="best">Best</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Add feature to a codebase</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="best">Best</td>
+                    </tr>
+                    <tr>
+                        <td>Debug and fix a bug</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="best">Best</td>
+                    </tr>
+                    <tr>
+                        <td>Refactor &amp; run tests</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td class="best">Best</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">34:00 – 38:00 (4 min)</span>
+            <ul>
+                <li>Walk through the table row by row. The key insight: each mode is optimized for a different <strong>kind of work</strong>.</li>
+                <li><strong>Chat</strong> = quick, conversational, no file access needed.</li>
+                <li><strong>Cowork</strong> = sustained, research-heavy, needs file/web access, produces documents.</li>
+                <li><strong>Code</strong> = software development, needs codebase access, runs commands, creates diffs.</li>
+                <li>Overlap exists — and that's fine. The table shows where each mode <em>excels</em>, not the only place it works.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 12: Decision Flow -->
+        <!-- ============================================================ -->
+        <section class="slide slide-centered" data-slide-number="12">
+            <span class="slide-section">Section 5 &bull; Decision Guide</span>
+            <h2>Quick Decision Guide</h2>
+            <p class="tagline">Ask yourself one question: what am I producing?</p>
+            <div class="three-grid" style="margin-top: 1rem;">
+                <div class="card highlight-coral">
+                    <div class="icon">&#x1F4AC;</div>
+                    <h3>An Answer</h3>
+                    <p>Questions, brainstorms, drafts, explanations, one-off help.</p>
+                    <div style="margin-top: 0.75rem; font-weight: 700; color: var(--accent-coral);">Use Chat</div>
+                </div>
+                <div class="card highlight-teal">
+                    <div class="icon">&#x1F4C4;</div>
+                    <h3>A Document</h3>
+                    <p>Research briefs, reports, analysis, file-based deliverables.</p>
+                    <div style="margin-top: 0.75rem; font-weight: 700; color: var(--accent-teal);">Use Cowork</div>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x1F4BB;</div>
+                    <h3>Working Software</h3>
+                    <p>Features, bug fixes, refactors, tests, deployable code changes.</p>
+                    <div style="margin-top: 0.75rem; font-weight: 700; color: var(--accent-gold);">Use Code</div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">38:00 – 40:00 (2 min)</span>
+            <ul>
+                <li>Simplest mental model: what are you producing? An <strong>answer</strong>, a <strong>document</strong>, or <strong>working software</strong>?</li>
+                <li>This isn't a rigid rule — it's a starting point. You'll develop intuition over time.</li>
+                <li>Pro tip: you can start in Chat to brainstorm, then switch to Cowork or Code when you're ready to execute.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 13: Choosing the Right Model -->
+        <!-- ============================================================ -->
+        <section class="slide slide-centered" data-slide-number="13" style="padding: 2.5rem 3rem;">
+            <span class="slide-section">Section 5 &bull; Models</span>
+            <h2>Choosing the Right Model</h2>
+            <p class="tagline">Start with Sonnet. Escalate to Opus when depth matters.</p>
+            <div class="three-grid" style="margin-top: 1.5rem;">
+                <div class="card" style="border-top: 3px solid var(--accent-teal);">
+                    <h3 style="color: var(--accent-teal);">Haiku</h3>
+                    <p style="margin-bottom: 0.75rem;">Categorize, extract, summarize, classify. Bulk tasks with simple logic.</p>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">Free plan included</div>
+                </div>
+                <div class="card" style="border-top: 3px solid var(--accent-coral);">
+                    <h3 style="color: var(--accent-coral);">Sonnet</h3>
+                    <p style="margin-bottom: 0.75rem;">Code, write, analyze, debug. Best speed-to-quality ratio. Your daily default.</p>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">Free plan included</div>
+                </div>
+                <div class="card" style="border-top: 3px solid var(--accent-gold);">
+                    <h3 style="color: var(--accent-gold);">Opus</h3>
+                    <p style="margin-bottom: 0.75rem;">Deep research, complex reasoning, accuracy-critical tasks. When Sonnet isn't enough.</p>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">Pro / Max plan</div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">40:00 – 42:00 (2 min)</span>
+            <ul>
+                <li>Model choice is separate from the Chat/Cowork/Code decision. You can use any model in any mode.</li>
+                <li>Practical advice: default to Sonnet for everything. Switch to Opus if Sonnet's answer feels shallow or wrong. Use Haiku for high-volume, simple tasks (e.g., processing 100 support tickets).</li>
+                <li>Both Sonnet and Opus have adaptive extended thinking — they automatically spend more "thinking time" on harder problems.</li>
+                <li>Each new model generation shifts which tasks fit where, so re-evaluate when new versions drop.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 14: Summary -->
+        <!-- ============================================================ -->
+        <section class="slide slide-centered" data-slide-number="14">
+            <span class="slide-section">Closing</span>
+            <h2>Key Takeaways</h2>
+            <div class="recap-grid" style="margin-top: 1.5rem;">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Claude</strong> is a conversational AI assistant — helpful, harmless, and honest.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Chat</strong> is for quick questions, brainstorming, and one-off help.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Cowork</strong> is for sustained research, analysis, and document creation.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Code</strong> is for writing, debugging, and shipping software.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">5</div>
+                    <p>Ask: <em>"Am I producing an answer, a document, or software?"</em></p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">6</div>
+                    <p>Start with <strong>Sonnet</strong>. Escalate to <strong>Opus</strong> when depth matters.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">42:00 – 44:00 (2 min)</span>
+            <ul>
+                <li>Recap the six key points. Emphasize the decision heuristic: answer / document / software.</li>
+                <li>Remind the audience that all three modes live inside one app — they can switch freely.</li>
+                <li>Encourage experimentation: the best way to learn which mode fits is to try each one on a real task.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SLIDE 15: Closing & Q&A -->
+        <!-- ============================================================ -->
+        <section class="slide slide-closing" data-slide-number="15">
+            <span class="slide-section" style="color: rgba(255,255,255,0.7);">Closing</span>
+            <h2>Thanks &amp; Q&amp;A</h2>
+            <p>02Ship Claude Sydney</p>
+            <div class="links">
+                <div class="link-item">
+                    <div class="icon">&#x1F680;</div>
+                    <p>02ship.com</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4BB;</div>
+                    <p>claude.ai</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4DA;</div>
+                    <p>claude.com/resources</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">44:00 – 45:00 (1 min)</span>
+            <ul>
+                <li>Thank the audience. Open the floor for questions.</li>
+                <li>Share the resource links — claude.com/resources has tutorials for choosing models and navigating the desktop app.</li>
+                <li>Mention 02ship.com for courses on building with AI — specifically for non-programmers.</li>
+                <li>If time allows, take 2-3 audience questions. Otherwise, direct follow-up questions to the meetup chat/Discord.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

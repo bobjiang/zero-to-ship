@@ -1,0 +1,28 @@
+<h2>How tall should the lu.ma embed be?</h2>
+<p class="subtitle">The embed defaults to 450px which can feel cramped with many events. It needs to be tall enough to avoid excessive scrolling inside the iframe.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Fixed tall height (700px)</h3>
+      <p>Generous fixed height that shows several events without scrolling inside the iframe. Simple, predictable.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Near full-viewport (calc(100vh - 200px))</h3>
+      <p>Embed fills most of the screen below the header/title area. Feels like a native page rather than an embedded widget. Responsive to screen size.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Keep lu.ma's default (450px)</h3>
+      <p>Use the iframe as-is. Compact, but users will scroll inside the iframe a lot if there are many events.</p>
+    </div>
+  </div>
+</div>
