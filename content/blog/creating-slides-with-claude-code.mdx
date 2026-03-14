@@ -1,0 +1,268 @@
+---
+title: "How to Create Presentation Slides with Claude Code"
+excerpt: "A step-by-step guide to generating self-contained HTML slide decks using Claude Code — no PowerPoint, no design skills, no dependencies. Just describe what you want and ship."
+date: "2026-03-13"
+author: "Bob Jiang"
+keywords: "Claude Code, slides, presentation, HTML slides, AI slides, meetup, Claude skill, slide deck, vibe coding, 02Ship"
+---
+
+# How to Create Presentation Slides with Claude Code
+
+I needed a slide deck for our [02Ship Claude Sydney meetup](/events). Fifteen slides, 45 minutes, covering Claude Chat, Cowork, and Code. The usual options — Google Slides, Keynote, PowerPoint — felt heavy. I wanted something I could version-control, customize fully, and generate fast.
+
+So I built the slides with Claude Code. In about 10 minutes. Here's exactly how, step by step.
+
+## What We're Building
+
+A single, self-contained HTML file. No PowerPoint. No Reveal.js dependency. No build tools. Just one `.html` file you can open in any browser, present full-screen, or share as a link.
+
+Here's what our finished deck includes:
+
+- 15 slides in 16:9 aspect ratio
+- Dark theme with custom colors
+- Speaker notes with timing cues below every slide
+- Code blocks, comparison tables, chat mockups, and card grids
+- Zero external dependencies (aside from Google Fonts)
+
+You can see the finished result at [`content/meetup/claude-sydney-slides.html`](https://github.com/bobjiang/zero-to-ship/blob/main/content/meetup/claude-sydney-slides.html) in our repo.
+
+## Why HTML Slides?
+
+Before diving into the how, here's why this approach works:
+
+**Version control.** The slides are a text file. You can `git diff` them, review changes in a PR, and track history. Try doing that with a `.pptx`.
+
+**Full customization.** CSS gives you pixel-perfect control. Custom colors, fonts, layouts, animations — anything a browser can render, your slides can show.
+
+**No vendor lock-in.** No Canva subscription, no Google account, no app to install. A browser is all you need.
+
+**AI-friendly.** HTML is something Claude is extremely good at generating. Describing a slide layout in English and getting working HTML back is fast and reliable.
+
+## Step 1: Install a Slide Skill (Optional but Recommended)
+
+We created a Claude Code skill called `create-slide` that teaches Claude how to generate consistent, well-structured slide decks. A skill is a reusable instruction file that Claude loads when you invoke it — think of it as a recipe card that tells Claude exactly how to approach a specific type of task.
+
+You don't *need* the skill. You can describe what you want from scratch every time. But the skill gives Claude a base theme (CSS), a library of slide layout patterns (title, agenda, two-column, code block, comparison table, etc.), and rules about structure. It makes the output more consistent and saves you from repeating the same instructions.
+
+If you want to use our skill, it's the `create-slide.skill` file in the root of our repo. Install it with:
+
+```bash
+claude install-skill create-slide.skill
+```
+
+This unpacks the skill into `.claude/skills/create-slide/` where Claude can find it automatically.
+
+## Step 2: Start Claude Code and Describe Your Slides
+
+Open your terminal in the project directory and start Claude Code:
+
+```bash
+claude
+```
+
+Then describe what you need. Be specific about:
+
+- **Topic**: what the talk is about
+- **Audience**: who's attending (technical? non-technical? mixed?)
+- **Duration**: how long is the presentation
+- **Number of slides**: give a rough target
+- **Key sections**: outline the major parts
+
+Here's roughly what I said:
+
+```
+/create-slide
+
+Topic: "Know Your Claude Tools" — covering Claude Chat, Cowork, and Code
+Audience: Mixed technical/non-technical, Sydney meetup attendees
+Duration: 45 minutes
+Slides: ~15
+Sections:
+1. What is Claude (models overview)
+2. Claude Chat (features + live demo)
+3. Claude Cowork (features + live demo)
+4. Claude Code (features + live demo)
+5. When to use each + choosing a model
+6. Summary & Q&A
+
+Brand: 02Ship dark theme
+Include speaker notes with timing for each slide
+```
+
+The `/create-slide` command tells Claude to load the skill, which brings in the theme CSS and layout patterns. If you don't have the skill installed, you can skip the command and describe everything in plain English — Claude will still generate good slides, just with more variation in styling.
+
+## Step 3: Claude Generates the Deck
+
+Claude reads the skill's base theme CSS and slide pattern reference, then composes the entire deck. It:
+
+1. **Creates the HTML skeleton** — `<!DOCTYPE html>`, Google Fonts import, embedded CSS
+2. **Applies the theme** — dark background, coral/teal/gold accent colors, DM Sans + JetBrains Mono fonts
+3. **Builds each slide** using the appropriate layout pattern:
+   - Title slide with event branding and metadata
+   - Agenda with numbered items and time allocations
+   - Two-column layouts for feature overviews (text left, visual right)
+   - Three-card grids for model comparisons
+   - Live demo placeholder slides with step-by-step plans
+   - Comparison table for "when to use each"
+   - Recap grid for key takeaways
+   - Closing slide with resource links
+4. **Adds speaker notes** after every slide, with timing badges that sum to 45 minutes
+
+The output is a single `.html` file. In our case, Claude wrote it to `content/meetup/claude-sydney-slides.html`.
+
+## Step 4: Review the Result
+
+Open the file in your browser:
+
+```bash
+open content/meetup/claude-sydney-slides.html
+```
+
+You'll see all 15 slides stacked vertically (it's a scrollable document, not a slideshow app). Each slide has a 16:9 aspect ratio. Speaker notes appear in gold-tinted boxes below each slide.
+
+Check for:
+
+- **Content accuracy** — are the facts correct? Any hallucinated features?
+- **Timing** — do the speaker notes add up to your target duration?
+- **Flow** — does the narrative progress logically?
+- **Visual balance** — are slides too dense or too sparse?
+
+## Step 5: Iterate
+
+This is where conversational AI shines. You don't have to get it right on the first try. Just tell Claude what to change:
+
+```
+- Slide 4: add "adaptive extended thinking" to the Sonnet and Opus descriptions
+- Slide 7: the Cowork features list should mention scheduled tasks and plugins
+- Slide 11: add a row for "recurring scheduled task" to the comparison table
+- Slide 13: make the model choosing section more actionable
+```
+
+Claude edits the file in place. Each round of feedback takes seconds, not minutes. You're having a conversation, not wrestling with a drag-and-drop editor.
+
+## Step 6: Present
+
+To present full-screen, open the file in Chrome or any browser and zoom to fit each slide. Since every slide uses `aspect-ratio: 16/9`, they display correctly on projectors and wide screens.
+
+For an even smoother experience, you can use your browser's Reader mode or a simple CSS override to show one slide at a time:
+
+```css
+/* Add to the <style> block for presentation mode */
+.slides-container { scroll-snap-type: y mandatory; height: 100vh; overflow-y: scroll; }
+.slide { scroll-snap-align: start; height: 100vh; }
+.speaker-notes { display: none; }
+.presentation-header { display: none; }
+```
+
+This gives you snap-scrolling through slides with arrow keys or scroll, and hides the speaker notes and header.
+
+## The Anatomy of a Slide
+
+If you're curious about what the HTML looks like under the hood, here's a typical two-column slide:
+
+```html
+<section class="slide" data-slide-number="5">
+    <span class="slide-section">Section 2 &bull; Chat</span>
+    <div class="two-col">
+        <div>
+            <h2>Claude <span class="highlight-text">Chat</span></h2>
+            <p class="lead">Quick, conversational interactions.</p>
+            <ul class="feature-list">
+                <li><span class="check">&#x2713;</span> Feature one</li>
+                <li><span class="check">&#x2713;</span> Feature two</li>
+            </ul>
+        </div>
+        <div class="visual-panel">
+            <h4>Example</h4>
+            <div class="chat-container">
+                <div class="chat-message user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Your question here</div>
+                </div>
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">C</div>
+                    <div class="chat-bubble">Claude's response here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+It's semantic HTML with CSS classes. No JavaScript. No framework. Just structure and style.
+
+## Available Slide Layouts
+
+The skill includes patterns for many common slide types:
+
+| Layout | Class / Pattern | Best For |
+|---|---|---|
+| Title | `.slide-title` | Opening slide with event name and metadata |
+| Agenda | `.slide-agenda` | Numbered list with time allocations |
+| Two-column | `.two-col` | Feature overview with visual panel |
+| Three-card grid | `.three-grid` | Comparing 3 options or features |
+| Comparison table | `.comparison-table` | Side-by-side feature comparison |
+| Live demo | `.slide-demo` | Demo placeholder with step-by-step plan |
+| Code block | `.code-block` | Terminal commands or code snippets |
+| Chat mock | `.chat-container` | Simulated conversation |
+| Recap grid | `.recap-grid` | Key takeaways in numbered boxes |
+| Closing | `.slide-closing` | Thank you with resource links |
+
+You can mix and match these freely. A 15-slide deck might use 6-7 different patterns.
+
+## Tips for Better Results
+
+**Be specific about content.** "Add a slide about models" gets you generic filler. "Add a slide comparing Haiku, Sonnet, and Opus with their use cases, speed characteristics, and plan availability" gets you exactly what you need.
+
+**Give Claude reference material.** If you're presenting about a product, paste the relevant docs or talking points into the conversation. Claude can't invent accurate product details from nothing.
+
+**Use the speaker notes.** They're not just for delivery — they help Claude understand the *purpose* of each slide. If the notes say "this is where we do the live demo," Claude will design the slide accordingly.
+
+**Check the timing.** The timing badges in the speaker notes should add up to your target duration. If they don't, ask Claude to rebalance.
+
+**Keep slides sparse.** A common mistake is cramming too much text onto a slide. If Claude generates a wall of text, tell it to "reduce slide 7 to 3-4 bullet points max."
+
+## What This Approach Doesn't Do
+
+To be transparent about the limitations:
+
+**No animations.** The slides are static HTML. No slide transitions, no build-in effects, no animated charts. If you need motion, you'll want a proper presentation tool.
+
+**No presenter view.** There's no dual-screen mode with notes on your laptop and slides on the projector. The speaker notes are visible inline below each slide. You can use the CSS trick above to hide them during presentation.
+
+**No cloud collaboration.** It's a local file. If you need real-time co-editing with teammates, Google Slides is still the better choice.
+
+For solo presenters who want speed, full control, and version-controlled slides, this approach is hard to beat.
+
+## Try It Yourself
+
+Here's the quickest path to your first AI-generated slide deck:
+
+1. **Install Claude Code** if you haven't: `npm install -g @anthropic-ai/claude-code`
+2. **Start Claude Code** in your project: `claude`
+3. **Describe your presentation** — topic, audience, duration, sections
+4. **Review** the generated HTML in your browser
+5. **Iterate** — tell Claude what to change
+6. **Present** — open the file full-screen and go
+
+The whole process takes 10-15 minutes for a polished deck. Compare that to the hours you'd spend dragging boxes around in PowerPoint.
+
+---
+
+## Continue Learning
+
+Want to build more things with AI? Here's where to start:
+
+**Start Learning:**
+- **[Claude Basics Course](/courses/claude-basics)** -- Our step-by-step course for beginners
+- **[Browse All Courses](/courses)** -- Explore everything we offer
+- **[Read More on Our Blog](/blog)** -- More build stories and tutorials
+
+**Get Involved:**
+- **[Join Our Discord](https://discord.gg/btqaA3hzKp)** -- Connect with other builders
+- **[GitHub Discussions](https://github.com/bobjiang/zero-to-ship/discussions)** -- Ask questions, share ideas
+- **[View the Source Code](https://github.com/bobjiang/zero-to-ship)** -- See exactly how this was built
+
+---
+
+**About the Author:** Bob Jiang is the founder of [02Ship](/) -- a learning platform for non-programmers who want to build and ship their ideas using AI tools.
