@@ -17,6 +17,9 @@ export function Header() {
               <Link href="/blog" className="text-sm font-medium text-gray-700 hover:text-gray-900">
                 Blog
               </Link>
+              <Link href="/news" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                News
+              </Link>
               <Link href="/events" className="text-sm font-medium text-gray-700 hover:text-gray-900">
                 Events
               </Link>
