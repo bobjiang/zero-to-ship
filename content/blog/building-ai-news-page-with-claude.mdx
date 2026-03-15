@@ -1,0 +1,189 @@
+---
+title: "How We Built a Daily AI News Page in One Session with Claude"
+excerpt: "We added a /news page to 02Ship that automatically curates the top 15 AI stories every day — fetched from Hacker News, Reddit, arXiv, and Hugging Face, ranked by Gemini. Here's exactly how it happened."
+date: "2026-03-15"
+author: "Bob Jiang"
+keywords: "AI news aggregator, Claude Code, Gemini API, GitHub Actions, automated pipeline, RSS, Hacker News API, Next.js, vibe coding, 02Ship"
+---
+
+# How We Built a Daily AI News Page in One Session with Claude
+
+Keeping up with AI news is exhausting. Every day there are new model releases, research papers, open-source tools, and product launches — scattered across Reddit, Hacker News, arXiv, Twitter, and a dozen newsletters. I was spending 30+ minutes each morning just skimming headlines.
+
+So I asked Claude to build something for me: a page on [02Ship](/) that automatically collects the day's most important AI stories, ranks them by impact, and presents them in one clean list. No manual curation. No copy-pasting links. Just wake up, check [/news](/news), and know what happened.
+
+It took one conversation. Here's how.
+
+## What We Built
+
+Visit [02ship.com/news](/news) and you'll see a list of dates. Click any date, and you get that day's top 15 AI stories — each with a title, one-sentence summary, impact score, source label, and category tag.
+
+The whole thing runs on autopilot:
+
+1. **Every morning at 8am UTC**, a GitHub Actions workflow kicks off
+2. **A script fetches** from four free sources: Hacker News, Reddit, arXiv, and Hugging Face
+3. **Google's Gemini AI** reads all the stories, picks the top 15, writes a summary for each, and scores them by impact
+4. **The result gets saved** as a simple data file and pushed to our site
+5. **Vercel auto-deploys**, and the new page is live — no human involved
+
+Total cost: **$0/month**. Every API we use is free.
+
+## The Idea: Start With a Research Doc
+
+Before writing any code, I had Claude research the landscape. What free APIs exist for AI news? Which sources have the best signal? What are the legal considerations?
+
+Claude produced a comprehensive guide covering 100+ sources — company blogs, tech publications, newsletters, Reddit, Hacker News, arXiv, YouTube channels, Chinese AI sources, and more. Each one mapped by access method (RSS, API, or scraping required) and reliability.
+
+The key insight from the research: **you don't need to scrape anything**. Four free APIs give you 90% coverage of AI news:
+
+- **Hacker News** — The Algolia API lets you search for AI stories with more than 50 upvotes. No API key needed, 10,000 requests per hour.
+- **Reddit** — Append `.json` to any subreddit URL and you get structured data. The r/MachineLearning and r/LocalLLaMA communities surface research and open-source news fast.
+- **arXiv** — Daily RSS feeds for AI, NLP, and machine learning categories. Every major paper shows up here first.
+- **Hugging Face Daily Papers** — A community-curated list of the day's top papers with upvotes. A hidden gem with a simple API.
+
+## Step 1: Design Before Code
+
+I described what I wanted to Claude:
+
+> "Add a new /news page. Show daily news — each day links to its own page with the stories. For the actual news, fetch from the sources in my research doc, use Gemini to rank and summarize, run it daily with GitHub Actions."
+
+Claude didn't start coding immediately. Instead, it asked me a series of questions — one at a time, usually multiple choice — to nail down the design:
+
+- **Where should the pipeline run?** GitHub Actions cron (free, auto-deploys on push)
+- **Which sources to start with?** Just the four free APIs above — easy to add more later
+- **Which AI for summarization?** Gemini, since I already had a Google API key
+- **How many stories per day?** 10-15, ranked by impact
+
+Each answer took seconds. By the end, we had a clear design without any ambiguity. This is one of the biggest advantages of building with AI — it forces you to think through decisions *before* writing code, because the AI needs clarity to do good work.
+
+## Step 2: Claude Writes the Code
+
+Once the design was locked, Claude wrote everything:
+
+**The data structure** — A simple format for each day's news. Each story has a title, summary, source, link, impact score (1-10), and category (research, product, open-source, or industry).
+
+**The pipeline script** — A standalone script that:
+1. Fetches all four sources at the same time (in parallel, for speed)
+2. Removes duplicates
+3. Sends everything to Gemini with instructions: "Pick the top 15, write a one-sentence summary for each, score by impact, categorize"
+4. Saves the result
+
+**Two new pages:**
+- `/news` — A list of all available dates, newest first. Click any date to see that day's stories.
+- `/news/2026-03-15` — The detail page. Each story shows as a card with an impact score badge, the title (linked to the original), a summary, and colored category tags (purple for research, blue for product, green for open-source, amber for industry).
+
+**The automation** — A GitHub Actions workflow that runs the script daily at 8am UTC, saves the result, and pushes it to the site. Vercel detects the push and redeploys automatically.
+
+**Navigation** — Added a "News" link to the site header, right between Blog and Events.
+
+The whole implementation happened through Claude dispatching specialized sub-agents — one for each piece of work — running several in parallel. Think of it like a lead developer assigning tasks to team members, then reviewing their work.
+
+## Step 3: Testing With Real Data
+
+The first test run hit two issues — both caught and fixed in minutes:
+
+**Issue 1: Wrong AI model.** The script was set to use Gemini 2.5 Pro, but my free API key had zero quota for that model. Claude checked which models were available, found that Gemini 2.5 Flash worked on the free tier, and switched to it.
+
+**Issue 2: Response cut off.** Gemini was set to return a maximum of 4,096 tokens — not enough for 15 detailed news items. The response was getting truncated mid-sentence. Claude bumped it to 8,192 tokens and the full list came through.
+
+After those two fixes, the pipeline ran successfully:
+
+```
+Fetching sources...
+Fetched: HN=7, Reddit=30, arXiv=0, HF=50
+Total unique items: 87
+Ranking with Gemini...
+Gemini returned 15 items
+Written to content/news/2026-03-15.json
+```
+
+87 items in, 15 curated stories out. Exactly what we wanted.
+
+## Step 4: Verify and Ship
+
+Claude ran the standard checks:
+
+```bash
+npm run lint     # Code style — passed
+npx tsc --noEmit # Type safety — passed
+npm run build    # Production build — passed
+```
+
+The build output confirmed both new pages were generated:
+
+```
+├ ○ /news                    194 B   96.1 kB
+└ ● /news/[date]             194 B   96.1 kB
+    └ /news/2026-03-15
+```
+
+Then `git push` — Vercel deployed automatically, and [/news](/news) was live.
+
+## What We Didn't Build (and Why)
+
+**No scraping.** Some AI blogs (Anthropic, Meta, Mistral) don't have RSS feeds. We could scrape them, but the four free APIs already cover enough ground. We can add scrapers later if needed.
+
+**No database.** Each day's news is just a file in the project. Simple, version-controlled, zero infrastructure. If we ever need search or filtering across days, we can add a database then.
+
+**No custom UI framework.** The news cards are plain HTML with Tailwind CSS. No component library, no animation framework. The page loads fast and looks clean.
+
+**No Twitter/X.** The free API tier is write-only. The Basic tier costs $200/month for very limited access. Not worth it when Hacker News and Reddit surface the same stories for free.
+
+This is a pattern worth learning: **build the simplest version that solves the problem, using free tools whenever possible.** You can always add complexity later. You can never get back time spent over-engineering.
+
+## How the Automation Works
+
+Every morning at 8am UTC, this happens automatically:
+
+1. GitHub Actions spins up a fresh virtual machine
+2. It checks out our code and installs dependencies
+3. It runs the news generation script with our Gemini API key (stored as a GitHub secret — never in the code)
+4. If new stories were generated, it commits the file and pushes
+5. Vercel detects the push, rebuilds the site, and deploys
+
+The whole process takes about 2 minutes. By the time I check my phone in the morning, the page is already updated.
+
+I can also trigger it manually from GitHub's web interface — useful if I want to regenerate or test.
+
+## What's Next
+
+This is just Tier 1. The architecture makes it easy to add more sources:
+
+- **Company blogs** (OpenAI, Google DeepMind) via RSS feeds
+- **Tech publications** (TechCrunch AI, Ars Technica AI) via RSS
+- **GitHub trending repos** via community-generated feeds
+- **Bluesky** via the free AT Protocol API — many AI researchers have moved there
+
+Each new source is just a new function that returns items in the same format. Plug it in, and Gemini handles the rest.
+
+## Try It Yourself
+
+Check out [02Ship AI News](/news) to see today's stories. Then think about your own version — what information do you check every day that could be automated?
+
+The tools are all free:
+- **GitHub Actions** for scheduling (2,000 free minutes/month)
+- **Hacker News Algolia API** for tech news (no key needed)
+- **Reddit JSON API** for community discussions (no key needed)
+- **Gemini Flash** for AI summarization (free tier is generous)
+
+The hardest part isn't the code. It's deciding what's worth automating. Once you know that, Claude can build it in an afternoon.
+
+---
+
+## Continue Learning
+
+Want to build your own automated pages with AI? Here's where to start:
+
+**Start Learning:**
+- **[Claude Basics Course](/courses/claude-basics)** -- Our step-by-step course for beginners
+- **[Browse All Courses](/courses)** -- Explore everything we offer
+- **[Read More on Our Blog](/blog)** -- More build stories and tutorials
+
+**Get Involved:**
+- **[Join Our Discord](https://discord.gg/btqaA3hzKp)** -- Connect with other builders
+- **[GitHub Discussions](https://github.com/bobjiang/zero-to-ship/discussions)** -- Ask questions, share ideas
+- **[View the Source Code](https://github.com/bobjiang/zero-to-ship)** -- See exactly how this was built
+
+---
+
+**About the Author:** Bob Jiang is the founder of [02Ship](/) -- a learning platform for non-programmers who want to build and ship their ideas using AI tools.
