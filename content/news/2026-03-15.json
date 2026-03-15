@@ -2,122 +2,122 @@
   "date": "2026-03-15",
   "items": [
     {
-      "title": "Nvidia's Nemotron 3 Super is a bigger deal than you think",
-      "summary": "Nvidia's Nemotron 3 Super is highlighted as a significant development in large language models, indicating a strategic shift or major capability enhancement from the chip giant.",
-      "source": "Reddit",
-      "url": "https://www.signalbloom.ai/posts/nvidia-nemotron-3-super-is-a-bigger-deal-than-you-think/",
+      "title": "Sourcetable – AI Spreadsheet and Data Platform",
+      "summary": "Sourcetable introduces an AI-powered spreadsheet and data platform designed to simplify data management and analysis.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=41590682",
       "score": 9,
-      "category": "industry"
+      "category": "product"
     },
     {
-      "title": "The arXiv is separating from Cornell University, and is hiring a CEO",
-      "summary": "arXiv, a crucial platform for scientific preprints, is transitioning from Cornell University to become an independent nonprofit organization, marking a significant change in its governance and funding.",
-      "source": "Reddit",
-      "url": "/r/math/comments/1rtimpu/the_arxiv_is_separating_from_cornell_university/",
-      "score": 9,
-      "category": "industry"
-    },
-    {
-      "title": "Launch HN: Innate (YC F24) – Home robots as easy to program as AI agents",
-      "summary": "Innate introduces a new platform aiming to make home robots as easily programmable as AI agents, potentially democratizing robotics for everyday use.",
+      "title": "Innate (YC F24) – Home robots as easy to program as AI agents",
+      "summary": "Innate aims to make home robots more accessible by allowing users to program them as easily as AI agents.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=42451707",
       "score": 9,
       "category": "product"
     },
     {
-      "title": "55 → 282 tok/s: How I got Qwen3.5-397B running at speed on 4x RTX PRO 6000 Blackwell",
-      "summary": "A user details a method to significantly boost the inference speed of the Qwen3.5-397B model on consumer-grade Nvidia Blackwell GPUs, demonstrating impressive local LLM performance gains.",
-      "source": "Reddit",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rtrdsv/55_282_toks_how_i_got_qwen35397b_running_at_speed/",
-      "score": 8,
+      "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
+      "summary": "This paper proposes IndexCache, a novel method to significantly accelerate sparse attention mechanisms in LLMs by reusing indices across layers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12201",
+      "score": 9,
       "category": "research"
     },
     {
-      "title": "Open-Source \"GreenBoost\" Driver Aims To Augment NVIDIA GPUs vRAM With System RAM & NVMe To Handle Larger LLMs",
-      "summary": "An open-source \"GreenBoost\" driver is being developed to extend NVIDIA GPU vRAM with system RAM and NVMe storage, enabling larger LLMs to run on more accessible hardware.",
-      "source": "Reddit",
-      "url": "https://www.phoronix.com/news/Open-Source-GreenBoost-NVIDIA",
+      "title": "Dropbase AI – A Prompt-Based Python Web App Builder",
+      "summary": "Dropbase AI provides a prompt-based system for building Python web applications, streamlining development for users.",
+      "source": "Hacker News",
+      "url": "https://github.com/DropbaseHQ/dropbase",
       "score": 8,
       "category": "open-source"
     },
     {
+      "title": "Vellum (YC W23) – Dev Platform for LLM Apps",
+      "summary": "Vellum offers a development platform specifically designed to help engineers build and deploy applications powered by large language models.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=35042836",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Inkeep (YC W23) – Copilot for Support (think Cursor for help desks)",
+      "summary": "Inkeep introduces an AI copilot for support teams, aiming to enhance help desk efficiency and user assistance.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=41697137",
+      "score": 8,
+      "category": "product"
+    },
+    {
       "title": "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training",
-      "summary": "Researchers introduce Spatial-TTT, a method for streaming visual-based spatial intelligence that utilizes test-time training to adapt models in real-time.",
+      "summary": "This research introduces a method for real-time visual-based spatial intelligence that continuously adapts through test-time training.",
       "source": "Hugging Face",
       "url": "https://huggingface.co/papers/2603.12255",
       "score": 8,
       "category": "research"
     },
     {
-      "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
-      "summary": "A new technique called IndexCache is proposed to accelerate sparse attention mechanisms in large language models by reusing indices across different layers, improving efficiency.",
+      "title": "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections",
+      "summary": "This research investigates the reasoning strategies employed by both AI agents and humans when navigating and searching through document collections.",
       "source": "Hugging Face",
-      "url": "https://huggingface.co/papers/2603.12201",
+      "url": "https://huggingface.co/papers/2603.12180",
       "score": 8,
       "category": "research"
     },
     {
-      "title": "Show HN: Sourcetable – AI Spreadsheet and Data Platform",
-      "summary": "Sourcetable is presented as an AI-powered spreadsheet and data platform designed to simplify data analysis and management with intelligent features.",
-      "source": "Hacker News",
-      "url": "https://news.ycombinator.com/item?id=41590682",
-      "score": 7,
-      "category": "product"
+      "title": "Video-Based Reward Modeling for Computer-Use Agents",
+      "summary": "Researchers present a method for training computer-use agents using video-based reward modeling, improving their ability to learn from demonstrations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.10178",
+      "score": 8,
+      "category": "research"
     },
     {
-      "title": "Launch HN: Dedalus Labs (YC S25) – Vercel for Agents",
-      "summary": "Dedalus Labs launches a platform aiming to be the \"Vercel for Agents,\" providing infrastructure and tools for developing and deploying AI agents.",
+      "title": "ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation",
+      "summary": "ShotVerse introduces a framework for generating multi-shot videos from text prompts with advanced cinematic camera control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.11421",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning",
+      "summary": "DreamVideo-Omni enables highly customizable multi-subject video generation with precise motion control and identity preservation using latent identity reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12257",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Dedalus Labs (YC S25) – Vercel for Agents",
+      "summary": "Dedalus Labs aims to provide a Vercel-like platform for AI agents, simplifying their deployment and management.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=45054040",
       "score": 7,
       "category": "product"
     },
     {
-      "title": "C++ zero-copy graph engine to bypass RAM entirely for PyTorch Geometric",
-      "summary": "A developer created a C++ zero-copy graph engine to overcome out-of-memory errors in PyTorch Geometric, allowing larger graph neural networks to run on limited hardware by bypassing RAM.",
-      "source": "Reddit",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1ru7bnz/p_i_got_tired_of_pytorch_geometric_ooming_my/",
+      "title": "Hyperbrowser MCP Server – Connect AI agents to the web through browsers",
+      "summary": "Hyperbrowser MCP Server enables AI agents to interact with the web by connecting them through browser environments.",
+      "source": "Hacker News",
+      "url": "https://github.com/hyperbrowserai/mcp",
       "score": 7,
       "category": "open-source"
     },
     {
-      "title": "StepFun releases SFT dataset used to train Step 3.5 Flash",
-      "summary": "StepFun has released the Supervised Fine-Tuning (SFT) dataset used to train their Step 3.5 Flash model, providing valuable resources for further research and development in language models.",
-      "source": "Reddit",
-      "url": "https://huggingface.co/datasets/stepfun-ai/Step-3.5-Flash-SFT",
+      "title": "Trust Your Critic: Robust Reward Modeling and Reinforcement Learning for Faithful Image Editing and Generation",
+      "summary": "This paper proposes a robust reward modeling and reinforcement learning approach to achieve more faithful and high-quality image editing and generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12247",
       "score": 7,
-      "category": "open-source"
-    },
-    {
-      "title": "llama.cpp build b8338 adds OpenVINO backend + NPU support",
-      "summary": "The latest `llama.cpp` build (b8338) introduces OpenVINO backend and NPU support, significantly enhancing performance for prefill and KV cache operations on compatible hardware.",
-      "source": "Reddit",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rtx13d/llamacpp_build_b8338_adds_openvino_backend_npu/",
-      "score": 7,
-      "category": "open-source"
+      "category": "research"
     },
     {
       "title": "XSkill: Continual Learning from Experience and Skills in Multimodal Agents",
-      "summary": "The XSkill research paper explores methods for multimodal agents to achieve continual learning by integrating new experiences and skills over time.",
+      "summary": "XSkill presents a framework for multimodal agents to achieve continual learning by integrating new experiences and skills over time.",
       "source": "Hugging Face",
       "url": "https://huggingface.co/papers/2603.12056",
-      "score": 7,
-      "category": "research"
-    },
-    {
-      "title": "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections",
-      "summary": "This research investigates the reasoning strategies of both AI agents and humans when navigating and searching through document collections, comparing strategic navigation with stochastic search.",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/papers/2603.12180",
-      "score": 7,
-      "category": "research"
-    },
-    {
-      "title": "Video-Based Reward Modeling for Computer-Use Agents",
-      "summary": "Researchers propose a novel approach for reward modeling in computer-use agents by leveraging video data, aiming to improve agent training for complex digital tasks.",
-      "source": "Hugging Face",
-      "url": "https://huggingface.co/papers/2603.10178",
       "score": 7,
       "category": "research"
     }
