@@ -34,3 +34,8 @@ jobs:
           git diff --staged --quiet && echo "No changes" && exit 0
           git commit -m "news: add daily AI news for $(date -u +%Y-%m-%d)"
           git push
+
+      - name: Post to Discord
+        run: node scripts/post-discord.mjs
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
