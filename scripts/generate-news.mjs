@@ -80,6 +80,89 @@ async function fetchHuggingFace() {
   }));
 }
 
+// --- Tier 2 & 3 fetchers ---
+
+function parseRssItems(xml, source, limit = 15) {
+  const parser = new XMLParser();
+  const parsed = parser.parse(xml);
+  const channel = parsed?.rss?.channel || parsed?.feed || {};
+  const entries = channel?.item || channel?.entry || [];
+  const list = Array.isArray(entries) ? entries : [entries];
+  return list.slice(0, limit).map(entry => ({
+    title: (entry.title || '').replace(/\n/g, ' ').trim(),
+    url: entry.link?.href || entry.link || entry.guid || '',
+    source,
+    rawScore: 0,
+  })).filter(item => item.title && item.url);
+}
+
+async function fetchProductHunt() {
+  const res = await fetch('https://www.producthunt.com/feed', {
+    headers: { 'User-Agent': '02ship-news-bot/1.0' },
+  });
+  const xml = await res.text();
+  return parseRssItems(xml, 'Product Hunt', 20);
+}
+
+async function fetchLobsters() {
+  const res = await fetch('https://lobste.rs/t/ai.rss');
+  const xml = await res.text();
+  return parseRssItems(xml, 'Lobste.rs', 15);
+}
+
+async function fetchDevTo() {
+  const res = await fetch('https://dev.to/api/articles?tag=ai&top=1&per_page=20', {
+    headers: { 'User-Agent': '02ship-news-bot/1.0' },
+  });
+  const data = await res.json();
+  return (Array.isArray(data) ? data : []).map(article => ({
+    title: article.title || '',
+    url: article.url || '',
+    source: 'Dev.to',
+    rawScore: article.public_reactions_count || 0,
+  }));
+}
+
+async function fetchTechCrunch() {
+  const res = await fetch('https://techcrunch.com/category/artificial-intelligence/feed/', {
+    headers: { 'User-Agent': '02ship-news-bot/1.0' },
+  });
+  const xml = await res.text();
+  return parseRssItems(xml, 'TechCrunch', 15);
+}
+
+async function fetchTheVerge() {
+  const res = await fetch('https://www.theverge.com/rss/tech/index.xml', {
+    headers: { 'User-Agent': '02ship-news-bot/1.0' },
+  });
+  const xml = await res.text();
+  return parseRssItems(xml, 'The Verge', 15);
+}
+
+async function fetchVentureBeat() {
+  const res = await fetch('https://venturebeat.com/category/ai/feed/', {
+    headers: { 'User-Agent': '02ship-news-bot/1.0' },
+  });
+  const xml = await res.text();
+  return parseRssItems(xml, 'VentureBeat', 15);
+}
+
+async function fetchGoogleAI() {
+  const res = await fetch('https://blog.google/technology/ai/rss/', {
+    headers: { 'User-Agent': '02ship-news-bot/1.0' },
+  });
+  const xml = await res.text();
+  return parseRssItems(xml, 'Google AI Blog', 10);
+}
+
+async function fetchOpenAI() {
+  const res = await fetch('https://openai.com/blog/rss.xml', {
+    headers: { 'User-Agent': '02ship-news-bot/1.0' },
+  });
+  const xml = await res.text();
+  return parseRssItems(xml, 'OpenAI Blog', 10);
+}
+
 // --- Deduplication ---
 
 function deduplicateByUrl(items) {
@@ -159,16 +242,31 @@ async function main() {
   console.log(`Generating AI news for ${today}...`);
 
   console.log('Fetching sources...');
-  const [hn, reddit, arxiv, hf] = await Promise.all([
-    fetchHackerNews().catch(e => { console.warn('HN failed:', e.message); return []; }),
-    fetchReddit().catch(e => { console.warn('Reddit failed:', e.message); return []; }),
-    fetchArxiv().catch(e => { console.warn('arXiv failed:', e.message); return []; }),
-    fetchHuggingFace().catch(e => { console.warn('HF failed:', e.message); return []; }),
-  ]);
+  const sources = [
+    { name: 'HN', fn: fetchHackerNews },
+    { name: 'Reddit', fn: fetchReddit },
+    { name: 'arXiv', fn: fetchArxiv },
+    { name: 'HF', fn: fetchHuggingFace },
+    { name: 'ProductHunt', fn: fetchProductHunt },
+    { name: 'Lobsters', fn: fetchLobsters },
+    { name: 'DevTo', fn: fetchDevTo },
+    { name: 'TechCrunch', fn: fetchTechCrunch },
+    { name: 'TheVerge', fn: fetchTheVerge },
+    { name: 'VentureBeat', fn: fetchVentureBeat },
+    { name: 'GoogleAI', fn: fetchGoogleAI },
+    { name: 'OpenAI', fn: fetchOpenAI },
+  ];
 
-  console.log(`Fetched: HN=${hn.length}, Reddit=${reddit.length}, arXiv=${arxiv.length}, HF=${hf.length}`);
+  const results = await Promise.all(
+    sources.map(({ name, fn }) =>
+      fn().catch(e => { console.warn(`${name} failed:`, e.message); return []; })
+    )
+  );
 
-  const allItems = deduplicateByUrl([...hn, ...reddit, ...arxiv, ...hf]);
+  const summary = sources.map(({ name }, i) => `${name}=${results[i].length}`).join(', ');
+  console.log(`Fetched: ${summary}`);
+
+  const allItems = deduplicateByUrl(results.flat());
   console.log(`Total unique items: ${allItems.length}`);
 
   if (allItems.length === 0) {
