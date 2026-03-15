@@ -94,7 +94,7 @@ function deduplicateByUrl(items) {
 // --- Gemini ---
 
 async function rankWithGemini(items) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro-preview-06-05:generateContent?key=${GEMINI_API_KEY}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
   const prompt = `You are an AI news curator. Given the following list of AI-related news items collected today from various sources, select the top 15 most impactful and interesting stories. For each selected item:
 
@@ -126,12 +126,18 @@ ${JSON.stringify(items, null, 2)}`;
       contents: [{ parts: [{ text: prompt }] }],
       generationConfig: {
         temperature: 0.3,
-        maxOutputTokens: 4096,
+        maxOutputTokens: 8192,
       },
     }),
   });
 
   const data = await res.json();
+
+  if (data.error) {
+    console.error('Gemini API error:', JSON.stringify(data.error, null, 2));
+    process.exit(1);
+  }
+
   const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
   // Strip markdown fences if present

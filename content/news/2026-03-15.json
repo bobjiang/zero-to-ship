@@ -2,28 +2,124 @@
   "date": "2026-03-15",
   "items": [
     {
-      "title": "Sample: GPT-5 Released with Reasoning Improvements",
-      "summary": "OpenAI releases GPT-5 with significant improvements in multi-step reasoning and reduced hallucinations.",
+      "title": "Nvidia's Nemotron 3 Super is a bigger deal than you think",
+      "summary": "Nvidia's Nemotron 3 Super is highlighted as a significant development in large language models, indicating a strategic shift or major capability enhancement from the chip giant.",
+      "source": "Reddit",
+      "url": "https://www.signalbloom.ai/posts/nvidia-nemotron-3-super-is-a-bigger-deal-than-you-think/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "The arXiv is separating from Cornell University, and is hiring a CEO",
+      "summary": "arXiv, a crucial platform for scientific preprints, is transitioning from Cornell University to become an independent nonprofit organization, marking a significant change in its governance and funding.",
+      "source": "Reddit",
+      "url": "/r/math/comments/1rtimpu/the_arxiv_is_separating_from_cornell_university/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Launch HN: Innate (YC F24) – Home robots as easy to program as AI agents",
+      "summary": "Innate introduces a new platform aiming to make home robots as easily programmable as AI agents, potentially democratizing robotics for everyday use.",
       "source": "Hacker News",
-      "url": "https://example.com/1",
+      "url": "https://news.ycombinator.com/item?id=42451707",
       "score": 9,
       "category": "product"
     },
     {
-      "title": "Sample: New SOTA on Mathematical Reasoning Benchmarks",
-      "summary": "Researchers achieve state-of-the-art results using chain-of-thought distillation from large to small models.",
-      "source": "arXiv",
-      "url": "https://example.com/2",
+      "title": "55 → 282 tok/s: How I got Qwen3.5-397B running at speed on 4x RTX PRO 6000 Blackwell",
+      "summary": "A user details a method to significantly boost the inference speed of the Qwen3.5-397B model on consumer-grade Nvidia Blackwell GPUs, demonstrating impressive local LLM performance gains.",
+      "source": "Reddit",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rtrdsv/55_282_toks_how_i_got_qwen35397b_running_at_speed/",
       "score": 8,
       "category": "research"
     },
     {
-      "title": "Sample: LLaMA 4 Weights Released on Hugging Face",
-      "summary": "Meta releases LLaMA 4 weights under a permissive license, enabling local deployment on consumer hardware.",
+      "title": "Open-Source \"GreenBoost\" Driver Aims To Augment NVIDIA GPUs vRAM With System RAM & NVMe To Handle Larger LLMs",
+      "summary": "An open-source \"GreenBoost\" driver is being developed to extend NVIDIA GPU vRAM with system RAM and NVMe storage, enabling larger LLMs to run on more accessible hardware.",
       "source": "Reddit",
-      "url": "https://example.com/3",
+      "url": "https://www.phoronix.com/news/Open-Source-GreenBoost-NVIDIA",
       "score": 8,
       "category": "open-source"
+    },
+    {
+      "title": "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training",
+      "summary": "Researchers introduce Spatial-TTT, a method for streaming visual-based spatial intelligence that utilizes test-time training to adapt models in real-time.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12255",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
+      "summary": "A new technique called IndexCache is proposed to accelerate sparse attention mechanisms in large language models by reusing indices across different layers, improving efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12201",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Show HN: Sourcetable – AI Spreadsheet and Data Platform",
+      "summary": "Sourcetable is presented as an AI-powered spreadsheet and data platform designed to simplify data analysis and management with intelligent features.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=41590682",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Launch HN: Dedalus Labs (YC S25) – Vercel for Agents",
+      "summary": "Dedalus Labs launches a platform aiming to be the \"Vercel for Agents,\" providing infrastructure and tools for developing and deploying AI agents.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=45054040",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "C++ zero-copy graph engine to bypass RAM entirely for PyTorch Geometric",
+      "summary": "A developer created a C++ zero-copy graph engine to overcome out-of-memory errors in PyTorch Geometric, allowing larger graph neural networks to run on limited hardware by bypassing RAM.",
+      "source": "Reddit",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1ru7bnz/p_i_got_tired_of_pytorch_geometric_ooming_my/",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "StepFun releases SFT dataset used to train Step 3.5 Flash",
+      "summary": "StepFun has released the Supervised Fine-Tuning (SFT) dataset used to train their Step 3.5 Flash model, providing valuable resources for further research and development in language models.",
+      "source": "Reddit",
+      "url": "https://huggingface.co/datasets/stepfun-ai/Step-3.5-Flash-SFT",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "llama.cpp build b8338 adds OpenVINO backend + NPU support",
+      "summary": "The latest `llama.cpp` build (b8338) introduces OpenVINO backend and NPU support, significantly enhancing performance for prefill and KV cache operations on compatible hardware.",
+      "source": "Reddit",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rtx13d/llamacpp_build_b8338_adds_openvino_backend_npu/",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "XSkill: Continual Learning from Experience and Skills in Multimodal Agents",
+      "summary": "The XSkill research paper explores methods for multimodal agents to achieve continual learning by integrating new experiences and skills over time.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12056",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections",
+      "summary": "This research investigates the reasoning strategies of both AI agents and humans when navigating and searching through document collections, comparing strategic navigation with stochastic search.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12180",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Video-Based Reward Modeling for Computer-Use Agents",
+      "summary": "Researchers propose a novel approach for reward modeling in computer-use agents by leveraging video data, aiming to improve agent training for complex digital tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.10178",
+      "score": 7,
+      "category": "research"
     }
   ]
 }
