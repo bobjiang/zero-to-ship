@@ -1,0 +1,29 @@
+{
+  "date": "2026-03-15",
+  "items": [
+    {
+      "title": "Sample: GPT-5 Released with Reasoning Improvements",
+      "summary": "OpenAI releases GPT-5 with significant improvements in multi-step reasoning and reduced hallucinations.",
+      "source": "Hacker News",
+      "url": "https://example.com/1",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Sample: New SOTA on Mathematical Reasoning Benchmarks",
+      "summary": "Researchers achieve state-of-the-art results using chain-of-thought distillation from large to small models.",
+      "source": "arXiv",
+      "url": "https://example.com/2",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Sample: LLaMA 4 Weights Released on Hugging Face",
+      "summary": "Meta releases LLaMA 4 weights under a permissive license, enabling local deployment on consumer hardware.",
+      "source": "Reddit",
+      "url": "https://example.com/3",
+      "score": 8,
+      "category": "open-source"
+    }
+  ]
+}
