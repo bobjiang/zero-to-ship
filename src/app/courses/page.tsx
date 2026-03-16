@@ -1,10 +1,13 @@
+import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { SeriesCard } from '@/components/courses/SeriesCard';
 import { getAllSeries } from '@/lib/content';
 
-export const metadata = {
-  title: 'Courses - 02Ship',
-  description: 'Browse our courses and start learning to build with AI tools.',
+export const metadata: Metadata = {
+  title: 'AI Coding Courses for Beginners',
+  description:
+    'Free step-by-step video courses to build and ship real projects with Claude Code and AI tools. No coding experience needed.',
+  alternates: { canonical: '/courses' },
 };
 
 export default async function CoursesPage() {

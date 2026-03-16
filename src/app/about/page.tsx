@@ -1,9 +1,11 @@
+import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 
-export const metadata = {
-  title: 'About - 02Ship',
-  description: 'Learn more about 02Ship and our mission to make AI coding accessible to everyone.',
+export const metadata: Metadata = {
+  title: 'About 02Ship',
+  description: 'Learn about 02Ship — a learning platform helping non-programmers build and ship real projects with AI coding tools like Claude Code.',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {
