@@ -1,0 +1,214 @@
+---
+title: "How We Went from Zero SEO to Full Search Engine Optimization in One Session"
+excerpt: "Our site had no sitemap, no robots.txt, and no structured data. We used Claude to audit everything, write a plan, and implement comprehensive SEO/GEO across all pages — in a single conversation."
+date: "2026-03-16"
+author: "Bob Jiang"
+keywords: "SEO, GEO, generative engine optimization, Next.js SEO, sitemap, robots.txt, JSON-LD, structured data, Open Graph, Claude Code, 02Ship"
+---
+
+# How We Went from Zero SEO to Full Search Engine Optimization in One Session
+
+Here's a confession: [02Ship](/) had been live for weeks, getting traffic from social media and Discord — but search engines barely knew we existed.
+
+No sitemap. No robots.txt. No structured data. No Open Graph tags on most pages. If you searched "learn to build with AI no coding experience" on Google, we were invisible. If you asked ChatGPT or Perplexity about AI coding courses for beginners, they had no way to find us either.
+
+Today we fixed all of it. In one conversation with Claude. Here's exactly what happened.
+
+## The Audit: What Was Actually Wrong
+
+Before writing a single line of code, we asked Claude to do a deep audit — both of our codebase and the live site at [02ship.com](https://www.02ship.com).
+
+The results were sobering:
+
+| Feature | Status |
+|---------|--------|
+| Sitemap | 404 — didn't exist |
+| Robots.txt | 404 — didn't exist |
+| Open Graph tags | Only on blog posts |
+| Twitter Cards | Only on blog posts |
+| Canonical URLs | Only on blog posts |
+| JSON-LD structured data | Only on blog posts |
+| Homepage metadata | Generic — "Learn AI Coding" |
+| Course schema markup | None |
+| Title format | Inconsistent manual suffixes |
+
+The blog post pages were actually well done — full OG tags, Twitter Cards, JSON-LD BlogPosting schema, canonical URLs. But everything else? Nothing. Our courses, news pages, events page, and even the homepage were essentially invisible to search engines beyond basic title tags.
+
+## Why This Matters (SEO + GEO)
+
+Most people think of SEO as "getting ranked on Google." That's true, but there's a new dimension: **GEO — Generative Engine Optimization**.
+
+AI systems like ChatGPT, Perplexity, and Gemini are increasingly how people discover things. When someone asks "what's the best free course to learn AI coding as a beginner?" — those systems need to be able to:
+
+1. **Find your content** (sitemap, crawlable pages)
+2. **Understand your content** (structured data, clear descriptions)
+3. **Trust your content** (canonical URLs, proper metadata, consistent structure)
+
+Without structured data, AI systems can't reliably identify that your page is a *course* or a *learning resource*. They just see a wall of HTML. JSON-LD schema markup is essentially a machine-readable label that says "this is a Course with 7 lessons provided by 02Ship."
+
+## The Plan: 8 Tasks, Zero New Dependencies
+
+Claude wrote a detailed plan before touching any code. The approach was simple: **use only Next.js 14's built-in SEO primitives**. No new npm packages. No third-party SEO tools. Everything the framework already provides.
+
+Here's what we built:
+
+### 1. Root Layout: The Foundation
+
+The root layout (`src/app/layout.tsx`) is where global metadata lives in Next.js. We added:
+
+- **`metadataBase`** — tells Next.js the production URL so all relative paths resolve correctly
+- **Title template** — `%s | 02Ship` means every page just sets its own title and the suffix is automatic
+- **Global Open Graph defaults** — every page inherits `siteName`, `locale`, and card type
+- **Global Twitter Card defaults** — `summary_large_image` card type, `@02ship` creator
+- **Organization JSON-LD** — tells search engines who we are, with links to our Discord, GitHub, and Twitter
+- **WebSite JSON-LD** — tells search engines this is a website with a name and description
+
+### 2. Sitemap
+
+We created `src/app/sitemap.ts` — a single file that Next.js automatically serves as `/sitemap.xml`. It dynamically generates entries for:
+
+- 6 static pages (home, courses, blog, news, events, about)
+- All course series pages
+- All individual lesson pages
+- All blog posts (with `lastModified` from the publish date)
+- All daily news pages
+
+When we add a new course or blog post, the sitemap updates automatically. No manual maintenance.
+
+### 3. Robots.txt
+
+One file: `src/app/robots.ts`. It tells search engines "crawl everything" and points them to our sitemap. Simple, but critical — without it, crawlers have to guess.
+
+### 4. Homepage Metadata
+
+The homepage went from a generic "Learn AI Coding" to targeted metadata:
+
+> *"Step-by-step courses for non-programmers to build and ship real projects using Claude Code and AI tools. Go from idea to live product with zero coding experience."*
+
+Every keyword in that description is intentional — "non-programmers," "Claude Code," "zero coding experience," "real projects." These are the terms people actually search for.
+
+### 5. Course Pages: Schema Markup
+
+This is where it gets interesting for GEO. Each course series page now includes **Course JSON-LD**:
+
+```json
+{
+  "@type": "Course",
+  "name": "02ship Claude Basics",
+  "description": "...",
+  "provider": { "@type": "Organization", "name": "02Ship" },
+  "numberOfLessons": 7,
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online"
+  }
+}
+```
+
+And each lesson page includes **LearningResource JSON-LD** with `timeRequired` and `isPartOf` linking back to the parent course.
+
+This is exactly the kind of structured data that Google uses for [course rich results](https://developers.google.com/search/docs/appearance/structured-data/course) — and that AI systems use to understand educational content.
+
+### 6. Canonical URLs Everywhere
+
+Every page now declares its canonical URL. This prevents duplicate content issues — if someone links to `02ship.com/courses` and `www.02ship.com/courses`, search engines know they're the same page.
+
+We used relative paths (`/courses`, `/blog/my-post`) and let `metadataBase` resolve them to full URLs. This means if we ever change domains, we only update one line.
+
+### 7. Consistent Title Format
+
+Before: some pages said "Courses - 02Ship", others said "AI News — March 15, 2026 - 02Ship". The suffix was manually added everywhere.
+
+After: the root layout template (`%s | 02Ship`) handles it automatically. Each page just sets its own title — "AI Coding Courses for Beginners" becomes "AI Coding Courses for Beginners | 02Ship" in the browser tab.
+
+The homepage uses an `absolute` title to bypass the template, since it's the brand page and should show the full tagline.
+
+## The Execution: Parallel Subagents
+
+Here's where Claude's approach was interesting. Instead of editing files one by one, it dispatched multiple subagents — specialized workers that each handled a different task simultaneously:
+
+- One agent created the sitemap
+- Another created robots.txt
+- A third updated all course pages
+- A fourth updated news/events/about pages
+
+Four tasks running in parallel, each making changes, each running type checks. The whole implementation took minutes, not hours.
+
+## The Verification
+
+After all changes landed:
+
+```bash
+npm run lint     # No warnings or errors
+npx tsc --noEmit # Types pass
+npm run build    # 30 pages generated, 0 errors
+```
+
+The build output told the story — two new routes appeared:
+
+```
+├ ○ /robots.txt    0 B   0 B
+└ ○ /sitemap.xml   0 B   0 B
+```
+
+Both statically generated at build time. Zero runtime cost.
+
+## Before and After
+
+| Feature | Before | After |
+|---------|--------|-------|
+| Sitemap | 404 | Dynamic, all routes |
+| Robots.txt | 404 | Allow all + sitemap ref |
+| Open Graph tags | Blog posts only | Every page |
+| Twitter Cards | Blog posts only | Every page |
+| Canonical URLs | Blog posts only | Every page |
+| JSON-LD schemas | BlogPosting only | + Organization, WebSite, Course, LearningResource |
+| Homepage title | "02Ship - Learn AI Coding" | "02Ship — Learn to Build & Ship with AI (Zero Coding Required)" |
+| Title format | Manual, inconsistent | Automatic template |
+| Files changed | — | 12 files, 2 new |
+| New dependencies | — | Zero |
+
+## What's Next
+
+The foundation is in place. Here's what we'll add next:
+
+- **OG images** — dynamic or static images so social sharing shows a visual preview instead of text-only
+- **Google Search Console** — submit the sitemap and monitor indexing
+- **Analytics** — understand which pages get traffic and from where
+- **More structured data** — BreadcrumbList for navigation, FAQ schema for common questions
+
+## What You Can Learn From This
+
+If your Next.js site doesn't have a sitemap or structured data, you're leaving discoverability on the table — both for traditional search engines and for AI systems.
+
+The fix is surprisingly simple:
+
+1. **Add `metadataBase` to your root layout** — one line that makes everything else work
+2. **Create `sitemap.ts`** — Next.js serves it automatically as `/sitemap.xml`
+3. **Create `robots.ts`** — tells crawlers where to find the sitemap
+4. **Add JSON-LD to your key pages** — especially if you have courses, products, articles, or events
+5. **Set canonical URLs on every page** — prevents duplicate content issues
+
+No npm packages needed. No third-party tools. Just the framework's built-in APIs.
+
+The hardest part isn't the implementation — it's remembering to do it. SEO infrastructure is one of those things that's invisible when it's missing and obvious when it's there. Today we made it there.
+
+---
+
+## Continue Learning
+
+Want to build your own site with proper SEO from day one? Here's where to start:
+
+**Start Learning:**
+- **[Claude Basics Course](/courses/claude-basics)** — Our step-by-step course for beginners
+- **[Browse All Courses](/courses)** — Explore everything we offer
+- **[Read More on Our Blog](/blog)** — More build stories and tutorials
+
+**Get Involved:**
+- **[Join Our Discord](https://discord.gg/btqaA3hzKp)** — Connect with other builders
+- **[GitHub Discussions](https://github.com/bobjiang/zero-to-ship/discussions)** — Ask questions, share ideas
+- **[View the Source Code](https://github.com/bobjiang/zero-to-ship)** — See exactly how this was built
+
+---
+
+**About the Author:** Bob Jiang is the founder of [02Ship](/) — a learning platform for non-programmers who want to build and ship their ideas using AI tools.
