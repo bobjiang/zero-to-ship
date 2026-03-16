@@ -148,7 +148,7 @@ export default function AboutPage() {
             <p className="mt-4 text-lg text-gray-600">
               Bring your stone. We&apos;ll make soup together.
             </p>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <a
                 href="https://discord.gg/btqaA3hzKp"
                 target="_blank"
@@ -157,11 +157,18 @@ export default function AboutPage() {
                 <Button>Join Discord</Button>
               </a>
               <a
+                href="https://github.com/bobjiang/zero-to-ship"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline">GitHub</Button>
+              </a>
+              <a
                 href="https://github.com/bobjiang/zero-to-ship/discussions"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline">Visit Forum</Button>
+                <Button variant="outline">Forum</Button>
               </a>
             </div>
           </div>
