@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <!-- Background warmth -->
+  <defs>
+    <radialGradient id="warmGlow" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="60%" stop-color="#FFF7ED"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </radialGradient>
+    <radialGradient id="fireGlow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FDE68A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="potGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#44403C"/>
+      <stop offset="100%" stop-color="#292524"/>
+    </linearGradient>
+    <linearGradient id="soupGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#warmGlow)"/>
+
+  <!-- Fire glow -->
+  <ellipse cx="400" cy="380" rx="180" ry="100" fill="url(#fireGlow)"/>
+
+  <!-- Flames -->
+  <g opacity="0.9">
+    <ellipse cx="370" cy="370" rx="12" ry="30" fill="#F97316" transform="rotate(-8 370 370)"/>
+    <ellipse cx="400" cy="365" rx="14" ry="35" fill="#FB923C"/>
+    <ellipse cx="430" cy="370" rx="12" ry="28" fill="#F97316" transform="rotate(8 430 370)"/>
+    <ellipse cx="385" cy="368" rx="8" ry="22" fill="#FCD34D"/>
+    <ellipse cx="415" cy="366" rx="8" ry="24" fill="#FCD34D"/>
+  </g>
+
+  <!-- Pot -->
+  <path d="M310 280 Q310 350 400 360 Q490 350 490 280 Z" fill="url(#potGrad)"/>
+  <rect x="305" y="270" width="190" height="16" rx="8" fill="#57534E"/>
+  <!-- Pot handles -->
+  <path d="M310 290 Q280 290 280 310 Q280 330 310 330" stroke="#57534E" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M490 290 Q520 290 520 310 Q520 330 490 330" stroke="#57534E" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Soup surface -->
+  <ellipse cx="400" cy="278" rx="88" ry="14" fill="url(#soupGrad)" opacity="0.9"/>
+
+  <!-- Steam wisps -->
+  <g opacity="0.3" stroke="#9CA3AF" stroke-width="2" fill="none">
+    <path d="M370 250 Q365 230 375 210 Q385 190 375 170"/>
+    <path d="M400 245 Q395 225 405 205 Q415 185 405 165"/>
+    <path d="M430 250 Q425 230 435 210 Q445 190 435 170"/>
+  </g>
+
+  <!-- Stone in pot -->
+  <ellipse cx="400" cy="282" rx="16" ry="8" fill="#9CA3AF" opacity="0.6"/>
+
+  <!-- Person 1 - left, carrying carrot -->
+  <g transform="translate(140, 220)">
+    <circle cx="30" cy="20" r="20" fill="#FBBF24"/>
+    <!-- eyes -->
+    <circle cx="24" cy="18" r="2.5" fill="#44403C"/>
+    <circle cx="36" cy="18" r="2.5" fill="#44403C"/>
+    <!-- smile -->
+    <path d="M24 26 Q30 32 36 26" stroke="#44403C" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- body -->
+    <rect x="18" y="40" width="24" height="45" rx="10" fill="#3B82F6"/>
+    <!-- arms -->
+    <line x1="42" y1="55" x2="70" y2="45" stroke="#FBBF24" stroke-width="6" stroke-linecap="round"/>
+    <line x1="18" y1="55" x2="5" y2="70" stroke="#FBBF24" stroke-width="6" stroke-linecap="round"/>
+    <!-- legs -->
+    <line x1="24" y1="85" x2="20" y2="115" stroke="#44403C" stroke-width="6" stroke-linecap="round"/>
+    <line x1="36" y1="85" x2="40" y2="115" stroke="#44403C" stroke-width="6" stroke-linecap="round"/>
+    <!-- carrot -->
+    <path d="M68 40 L80 25 L72 28 Z" fill="#F97316"/>
+    <line x1="78" y1="26" x2="82" y2="18" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/>
+    <line x1="80" y1="25" x2="86" y2="20" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Person 2 - right, carrying potato -->
+  <g transform="translate(570, 210)">
+    <circle cx="30" cy="20" r="20" fill="#D4A574"/>
+    <circle cx="24" cy="18" r="2.5" fill="#44403C"/>
+    <circle cx="36" cy="18" r="2.5" fill="#44403C"/>
+    <path d="M24 26 Q30 32 36 26" stroke="#44403C" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="18" y="40" width="24" height="45" rx="10" fill="#10B981"/>
+    <line x1="18" y1="55" x2="-10" y2="45" stroke="#D4A574" stroke-width="6" stroke-linecap="round"/>
+    <line x1="42" y1="55" x2="55" y2="70" stroke="#D4A574" stroke-width="6" stroke-linecap="round"/>
+    <line x1="24" y1="85" x2="20" y2="115" stroke="#44403C" stroke-width="6" stroke-linecap="round"/>
+    <line x1="36" y1="85" x2="40" y2="115" stroke="#44403C" stroke-width="6" stroke-linecap="round"/>
+    <!-- potato -->
+    <ellipse cx="-12" cy="40" rx="14" ry="10" fill="#CA8A04" transform="rotate(-15 -12 40)"/>
+  </g>
+
+  <!-- Person 3 - far left, carrying herbs -->
+  <g transform="translate(50, 260)">
+    <circle cx="25" cy="18" r="17" fill="#FCA5A5"/>
+    <circle cx="20" cy="16" r="2" fill="#44403C"/>
+    <circle cx="30" cy="16" r="2" fill="#44403C"/>
+    <path d="M20 23 Q25 28 30 23" stroke="#44403C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <rect x="14" y="35" width="22" height="40" rx="9" fill="#8B5CF6"/>
+    <line x1="36" y1="48" x2="55" y2="38" stroke="#FCA5A5" stroke-width="5" stroke-linecap="round"/>
+    <line x1="14" y1="50" x2="2" y2="62" stroke="#FCA5A5" stroke-width="5" stroke-linecap="round"/>
+    <line x1="20" y1="75" x2="16" y2="100" stroke="#44403C" stroke-width="5" stroke-linecap="round"/>
+    <line x1="30" y1="75" x2="34" y2="100" stroke="#44403C" stroke-width="5" stroke-linecap="round"/>
+    <!-- herbs -->
+    <g transform="translate(53, 30)">
+      <line x1="0" y1="8" x2="0" y2="-5" stroke="#16A34A" stroke-width="2"/>
+      <circle cx="-3" cy="-6" r="3" fill="#22C55E"/>
+      <circle cx="3" cy="-8" r="3" fill="#16A34A"/>
+      <circle cx="0" cy="-3" r="3" fill="#4ADE80"/>
+    </g>
+  </g>
+
+  <!-- Person 4 - far right, carrying onion -->
+  <g transform="translate(660, 250)">
+    <circle cx="25" cy="18" r="17" fill="#FDE68A"/>
+    <circle cx="20" cy="16" r="2" fill="#44403C"/>
+    <circle cx="30" cy="16" r="2" fill="#44403C"/>
+    <path d="M20 23 Q25 28 30 23" stroke="#44403C" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <rect x="14" y="35" width="22" height="40" rx="9" fill="#EC4899"/>
+    <line x1="14" y1="48" x2="-5" y2="38" stroke="#FDE68A" stroke-width="5" stroke-linecap="round"/>
+    <line x1="36" y1="50" x2="48" y2="62" stroke="#FDE68A" stroke-width="5" stroke-linecap="round"/>
+    <line x1="20" y1="75" x2="16" y2="100" stroke="#44403C" stroke-width="5" stroke-linecap="round"/>
+    <line x1="30" y1="75" x2="34" y2="100" stroke="#44403C" stroke-width="5" stroke-linecap="round"/>
+    <!-- onion -->
+    <circle cx="-8" cy="34" r="10" fill="#E9D5FF"/>
+    <line x1="-8" y1="24" x2="-8" y2="18" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Person 5 - center back, waving -->
+  <g transform="translate(370, 140)">
+    <circle cx="30" cy="20" r="18" fill="#C4B5A0"/>
+    <circle cx="24" cy="18" r="2.5" fill="#44403C"/>
+    <circle cx="36" cy="18" r="2.5" fill="#44403C"/>
+    <path d="M23 26 Q30 33 37 26" stroke="#44403C" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="18" y="38" width="24" height="42" rx="10" fill="#F43F5E"/>
+    <line x1="42" y1="42" x2="62" y2="25" stroke="#C4B5A0" stroke-width="6" stroke-linecap="round"/>
+    <line x1="18" y1="50" x2="2" y2="60" stroke="#C4B5A0" stroke-width="6" stroke-linecap="round"/>
+    <line x1="24" y1="80" x2="20" y2="108" stroke="#44403C" stroke-width="6" stroke-linecap="round"/>
+    <line x1="36" y1="80" x2="40" y2="108" stroke="#44403C" stroke-width="6" stroke-linecap="round"/>
+    <!-- waving hand -->
+    <circle cx="64" cy="22" r="5" fill="#C4B5A0"/>
+  </g>
+
+  <!-- Ground line -->
+  <path d="M0 420 Q200 400 400 410 Q600 420 800 405" stroke="#D6D3D1" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Title text area -->
+  <text x="400" y="470" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#78716C" font-style="italic">
+    Everyone brings something to the pot
+  </text>
+</svg>
