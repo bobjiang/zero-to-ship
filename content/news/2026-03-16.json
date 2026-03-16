@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-16",
+  "items": [
+    {
+      "title": "Innate (YC F24) – Home robots as easy to program as AI agents",
+      "summary": "Innate launches a platform making home robots programmable with the ease of AI agents, potentially revolutionizing domestic robotics.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=42451707",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "symphony: OpenAI's orchestrator of autonomous dev agents",
+      "summary": "OpenAI has open-sourced 'symphony', an orchestration framework designed to manage and coordinate multiple autonomous development agents.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/openai/symphony",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "summary": "Anthropic's new Cowork desktop agent for Claude allows users to interact with and perform tasks on their local files without requiring any coding.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Sourcetable – AI Spreadsheet and Data Platform",
+      "summary": "Sourcetable introduces an AI-powered spreadsheet and data platform that enables users to manage and analyze data using natural language.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=41590682",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Dedalus Labs (YC S25) – Vercel for Agents",
+      "summary": "Dedalus Labs is building a platform akin to Vercel, providing infrastructure for deploying and managing AI agents at scale.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=45054040",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop AI-native cloud infrastructure, positioning itself as a competitor to established cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Dropbase AI – A Prompt-Based Python Web App Builder",
+      "summary": "Dropbase AI is an open-source tool that allows users to build Python web applications by simply providing natural language prompts.",
+      "source": "Hacker News",
+      "url": "https://github.com/DropbaseHQ/dropbase",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Vellum (YC W23) – Dev Platform for LLM Apps",
+      "summary": "Vellum offers a comprehensive development platform designed to help engineers build, evaluate, and deploy large language model applications.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=35042836",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training",
+      "summary": "This research presents a novel approach for real-time visual-based spatial intelligence that continuously adapts models during inference.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12255",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "IndexCache: Accelerating Sparse Attention via Cross-Layer Index Reuse",
+      "summary": "A new research paper introduces IndexCache, a method to significantly accelerate sparse attention mechanisms in LLMs by reusing indices across layers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12201",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Video-Based Reward Modeling for Computer-Use Agents",
+      "summary": "This study explores the use of video data to construct effective reward models for AI agents that interact with computer interfaces, improving task learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.10178",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation",
+      "summary": "ShotVerse proposes a framework that enables text-driven generation of multi-shot videos with sophisticated cinematic camera control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.11421",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning",
+      "summary": "This research introduces DreamVideo-Omni, a method for generating customized multi-subject videos with precise omni-motion control and consistent identity.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12257",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Inkeep (YC W23) – Copilot for Support (think Cursor for help desks)",
+      "summary": "Inkeep introduces an AI-powered copilot specifically tailored to enhance productivity and efficiency for support and help desk teams.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=41697137",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections",
+      "summary": "Researchers investigate the distinct strategies AI agents and humans employ when navigating and extracting information from large document collections.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12180",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
