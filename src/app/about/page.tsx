@@ -111,6 +111,35 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Bring Your Talent CTA */}
+          <div className="mt-16">
+            <a
+              href="https://forms.gle/wT2d2zZ47waQAviC8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-xl border border-amber-200 bg-amber-50 p-6 transition-all hover:border-amber-300 hover:shadow-md"
+            >
+              <div className="flex items-start gap-4">
+                <span className="text-3xl" aria-hidden="true">
+                  🍲
+                </span>
+                <div>
+                  <h3 className="text-lg font-bold text-amber-900">
+                    Bring Your Talent to the Pot
+                  </h3>
+                  <p className="mt-1 text-amber-800">
+                    We&apos;re looking for volunteers, speakers, mentors, and
+                    content creators. Everyone has an ingredient to
+                    contribute — what&apos;s yours?
+                  </p>
+                  <span className="mt-3 inline-block rounded-md bg-amber-600 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-700">
+                    Share Your Talent
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
           {/* Community Section */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold text-gray-900">

@@ -44,6 +44,30 @@ export default function EventsPage() {
             </span>
           </a>
 
+          <a
+            href="https://forms.gle/wT2d2zZ47waQAviC8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 flex items-center justify-between rounded-lg border border-amber-200 bg-amber-50 px-4 py-3"
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-lg" aria-hidden="true">
+                🍲
+              </span>
+              <div>
+                <p className="text-sm font-semibold text-amber-800">
+                  Bring your talent to the pot
+                </p>
+                <p className="text-xs text-amber-600">
+                  Volunteer, speak, mentor, or create content with us
+                </p>
+              </div>
+            </div>
+            <span className="rounded-md bg-amber-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-amber-700">
+              Contribute
+            </span>
+          </a>
+
           <div className="mt-6">
             <iframe
               src="https://luma.com/embed/calendar/cal-zhuelVReFdNX5xm/events"
