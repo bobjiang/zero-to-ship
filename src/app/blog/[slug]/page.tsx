@@ -23,22 +23,19 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 
   if (!post) {
     return {
-      title: 'Post Not Found - 02Ship',
+      title: 'Post Not Found',
     };
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const url = `${siteUrl}/blog/${slug}`;
-
   return {
-    title: `${post.title} - 02Ship`,
+    title: post.title,
     description: post.excerpt,
     keywords: post.keywords || 'AI coding, Claude AI, build with AI, learning platform',
     authors: [{ name: post.author }],
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: url,
+      url: `/blog/${slug}`,
       siteName: '02Ship',
       locale: 'en_US',
       type: 'article',
@@ -52,7 +49,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
       creator: '@02ship',
     },
     alternates: {
-      canonical: url,
+      canonical: `/blog/${slug}`,
     },
   };
 }
@@ -65,7 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.02ship.com';
   const url = `${siteUrl}/blog/${slug}`;
 
   const jsonLd = {

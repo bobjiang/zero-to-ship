@@ -1,10 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { getAllNewsDates } from '@/lib/news';
 
-export const metadata = {
-  title: 'AI News - 02Ship',
-  description: 'Daily curated AI news from Hacker News, Reddit, arXiv, and Hugging Face.',
+export const metadata: Metadata = {
+  title: 'Daily AI News — Curated & Ranked',
+  description: 'Daily curated AI news from Hacker News, Reddit, arXiv, and Hugging Face, ranked by impact.',
+  alternates: { canonical: '/news' },
 };
 
 export default async function NewsPage() {

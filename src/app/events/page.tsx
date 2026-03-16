@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 
 export const metadata: Metadata = {
-  title: 'Events - 02Ship',
+  title: 'Events — AI Builder Meetups & Workshops',
   description:
-    'Join our upcoming meetups and workshops for AI builders. Learn to build and ship with Claude Code and other AI tools.',
+    'Join upcoming meetups and workshops for AI builders. Learn to build and ship with Claude Code and other AI tools.',
+  alternates: { canonical: '/events' },
 };
 
 export default function EventsPage() {

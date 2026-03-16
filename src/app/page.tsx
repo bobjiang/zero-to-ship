@@ -1,6 +1,18 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+
+export const metadata: Metadata = {
+  title: {
+    absolute: '02Ship — Learn to Build & Ship with AI (Zero Coding Required)',
+  },
+  description:
+    'Step-by-step courses for non-programmers to build and ship real projects using Claude Code and AI tools. Go from idea to live product with zero coding experience.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function HomePage() {
   return (

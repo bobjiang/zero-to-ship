@@ -25,8 +25,16 @@ export async function generateMetadata({ params }: DailyNewsPageProps) {
   });
 
   return {
-    title: `AI News — ${formatted} - 02Ship`,
+    title: `AI News — ${formatted}`,
     description: `Top AI news for ${formatted}, curated from Hacker News, Reddit, arXiv, and Hugging Face.`,
+    openGraph: {
+      title: `AI News — ${formatted}`,
+      description: `Top AI news for ${formatted}`,
+      type: 'article' as const,
+    },
+    alternates: {
+      canonical: `/news/${date}`,
+    },
   };
 }
 

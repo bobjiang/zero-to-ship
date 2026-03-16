@@ -1,10 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { getAllBlogPosts } from '@/lib/content';
 
-export const metadata = {
-  title: 'Blog - 02Ship',
-  description: 'Tips, tutorials, and insights on building with AI tools.',
+export const metadata: Metadata = {
+  title: 'Blog — AI Coding Tips & Tutorials',
+  description:
+    'Tips, tutorials, and real build stories about creating projects with Claude Code and AI tools.',
+  alternates: { canonical: '/blog' },
 };
 
 export default async function BlogPage() {
