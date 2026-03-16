@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'About 02Ship',
-  description: 'Learn about 02Ship — a learning platform helping non-programmers build and ship real projects with AI coding tools like Claude Code.',
+  description:
+    'Learn about 02Ship — a learning platform inspired by the Stone Soup story, helping non-programmers build and ship real projects with AI coding tools like Claude Code.',
   alternates: { canonical: '/about' },
 };
 
@@ -19,25 +21,103 @@ export default function AboutPage() {
 
           <div className="mt-8 space-y-6 text-lg text-gray-600">
             <p>
-              02Ship is a learning platform designed to help absolute beginners build and ship
-              their ideas using AI coding tools like Claude Code.
+              02Ship is a learning platform designed to help absolute beginners
+              build and ship their ideas using AI coding tools like Claude Code.
             </p>
 
             <p>
-              We believe that everyone should have the ability to bring their ideas to life, regardless
-              of their coding experience. With AI tools, the barrier to entry has never been lower.
+              We believe that everyone should have the ability to bring their
+              ideas to life, regardless of their coding experience. With AI
+              tools, the barrier to entry has never been lower.
             </p>
 
             <p>
-              Our step-by-step courses break down complex concepts into easy-to-understand lessons,
-              so you can go from zero to shipping your first project in no time.
+              Our step-by-step courses break down complex concepts into
+              easy-to-understand lessons, so you can go from zero to shipping
+              your first project in no time.
             </p>
           </div>
 
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900">Join Our Community</h2>
+          {/* Stone Soup Story */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Our Inspiration: The Stone Soup
+            </h2>
+
+            <div className="mt-6 overflow-hidden rounded-xl">
+              <Image
+                src="/images/stone-soup.svg"
+                alt="Illustration of the Stone Soup story — people gathering around a pot, each contributing an ingredient to make something wonderful together"
+                width={800}
+                height={500}
+                className="w-full"
+                priority
+              />
+            </div>
+
+            <div className="mt-6 space-y-4 text-lg text-gray-600">
+              <p>
+                There&apos;s an old folk tale called{' '}
+                <strong className="text-gray-900">Stone Soup</strong>. It goes
+                like this:
+              </p>
+
+              <blockquote className="border-l-4 border-amber-400 bg-amber-50 py-4 pl-6 pr-4 text-gray-700 italic">
+                A hungry traveler arrives in a village with nothing but a pot and
+                a stone. He fills the pot with water, drops in the stone, and
+                starts a fire in the village square. Curious villagers gather
+                around. &ldquo;What are you making?&rdquo; they ask.
+                &ldquo;Stone soup,&rdquo; he says. &ldquo;It&apos;s delicious,
+                though it could use a little garnish.&rdquo; One villager brings
+                a few carrots. Another offers potatoes. Someone else adds
+                onions, herbs, salt. Before long, the whole village has
+                contributed — and what started as a stone in water has become a
+                rich, nourishing soup that feeds everyone.
+              </blockquote>
+
+              <p>
+                The moral isn&apos;t about trickery — it&apos;s about{' '}
+                <strong className="text-gray-900">catalysis</strong>. The
+                traveler didn&apos;t have all the ingredients. Neither did any
+                single villager. But by starting with something small and
+                inviting others to contribute, they created something none of
+                them could have made alone.
+              </p>
+
+              <p>
+                That&apos;s exactly what building with AI feels like. You start
+                with an idea — your &ldquo;stone.&rdquo; You put it in the pot
+                and get to work. AI tools like Claude Code help you shape it.
+                Then the community shows up: someone shares a technique that
+                saves you hours, someone else suggests a feature you hadn&apos;t
+                thought of, another person finds a bug you missed.
+              </p>
+
+              <p>
+                <strong className="text-gray-900">
+                  02Ship is our village square.
+                </strong>{' '}
+                The courses are the fire. Your idea is the stone. And the
+                community — learners, builders, mentors — they&apos;re the ones
+                who bring the carrots, the potatoes, the herbs that turn a
+                simple idea into something real.
+              </p>
+
+              <p>
+                You don&apos;t need to know everything. You don&apos;t need to
+                have everything. You just need to start — and be willing to
+                share the pot.
+              </p>
+            </div>
+          </div>
+
+          {/* Community Section */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Join Our Community
+            </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Connect with other learners, get help, and share your progress.
+              Bring your stone. We&apos;ll make soup together.
             </p>
             <div className="mt-6 flex gap-4">
               <a
