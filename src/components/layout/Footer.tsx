@@ -33,6 +33,11 @@ export function Footer() {
                     Events
                   </Link>
                 </li>
+                <li>
+                  <Link href="/services" className="text-sm text-gray-600 hover:text-gray-900">
+                    Services
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
