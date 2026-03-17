@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-17",
+  "items": [
+    {
+      "title": "The Dictionary Sues OpenAI Over Copyright Infringement",
+      "summary": "Merriam-Webster and Encyclopedia Britannica are suing OpenAI, alleging copyright infringement of their extensive linguistic and factual databases.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/16/merriam-webster-openai-encyclopedia-brittanica-lawsuit/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Lawyer Warns of Mass Casualty Risks from AI Psychosis Cases",
+      "summary": "A lawyer involved in AI psychosis cases is raising alarms about the potential for mass casualty risks stemming from the misuse or unpredictable behavior of advanced AI systems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/15/lawyer-behind-ai-psychosis-cases-warns-of-mass-casualty-risks/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Innate – Home robots as easy to program as AI agents",
+      "summary": "Innate is developing home robots that can be programmed with the same ease as AI agents, aiming to make advanced robotics accessible for everyday tasks.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=42451707",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic Launches Cowork, a Claude Desktop Agent for File Interaction",
+      "summary": "Anthropic has released Cowork, a Claude Desktop agent that enables users to interact with their local files and perform tasks without requiring any coding knowledge.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Nvidia DLSS 5 Uses Generative AI to Boost Photorealism in Games",
+      "summary": "Nvidia's new DLSS 5 technology leverages generative AI to enhance photorealism in video games, with potential applications extending beyond the gaming industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/16/nvidias-dlss-5-uses-generative-ai-to-boost-photo-realism-in-video-games-with-ambitions-beyond-gaming/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI's Symphony: An Orchestrator for Autonomous Dev Agents",
+      "summary": "OpenAI has released Symphony, an open-source orchestrator designed to manage and coordinate autonomous development agents, streamlining complex software engineering tasks.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/openai/symphony",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "Prompt Injection as Role Confusion",
+      "summary": "This research paper analyzes prompt injection attacks as a form of 'role confusion' in large language models, offering new insights into AI security vulnerabilities.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.12277",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Sourcetable – AI Spreadsheet and Data Platform",
+      "summary": "Sourcetable introduces an AI-powered spreadsheet and data platform designed to simplify data analysis and management through intelligent automation.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=41590682",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Dropbase AI – A Prompt-Based Python Web App Builder",
+      "summary": "Dropbase AI offers an open-source, prompt-based builder that allows users to create Python web applications quickly using natural language commands.",
+      "source": "Hacker News",
+      "url": "https://github.com/DropbaseHQ/dropbase",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B: An Open-Source Coding Model",
+      "summary": "Nous Research has introduced NousCoder-14B, an open-source coding model positioned as a free alternative to proprietary coding assistants like Claude Code.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "LMEB: Long-horizon Memory Embedding Benchmark for LLMs",
+      "summary": "LMEB introduces a new benchmark specifically designed to evaluate the long-horizon memory capabilities of large language models, addressing a critical area for advanced AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12572",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Cheers: Unified Multimodal Comprehension and Generation via Decoupled Representations",
+      "summary": "The 'Cheers' research proposes a method to decouple patch details from semantic representations, enabling large language models to achieve unified multimodal comprehension and generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12793",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "daVinci-Env: Open SWE Environment Synthesis at Scale",
+      "summary": "daVinci-Env presents an open-source framework for synthesizing software engineering environments at scale, facilitating the development and testing of AI agents for coding tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.13023",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Stateless Software Is Dying: The Rise of Context-Aware Systems",
+      "summary": "This article argues that the AI era is shifting software development away from stateless designs towards context-aware systems, fundamentally changing architectural paradigms.",
+      "source": "Dev.to",
+      "url": "https://dev.to/jaideepparashar/stateless-software-is-dying-the-rise-of-context-aware-systems-pm",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Vellum – Dev Platform for LLM Apps",
+      "summary": "Vellum provides a comprehensive development platform specifically designed to help engineers build, test, and deploy applications powered by large language models.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=35042836",
+      "score": 7,
+      "category": "product"
+    }
+  ]
+}
