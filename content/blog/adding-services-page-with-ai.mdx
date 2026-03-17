@@ -1,0 +1,169 @@
+---
+title: "How We Added a Services Page to 02Ship with Claude"
+excerpt: "A walkthrough of how we designed and built a /services page — from brainstorming the layout to shipping it — entirely through conversation with Claude Code."
+date: "2026-03-18"
+author: "Bob Jiang"
+keywords: "AI coding, services page, Next.js, Claude Code, vibe coding, AI web development, 02Ship, AI consulting, AI adoption"
+---
+
+# How We Added a Services Page to 02Ship with Claude
+
+02Ship started as a learning platform — courses and blog posts for non-programmers learning to build with AI. But as our community grew, people started asking: *"Can you help my team adopt AI too?"*
+
+So we decided to make it official. We'd add a `/services` page with two offerings: **AI Adoption Consulting** and our **AI Online Course**. Here's how we built it in one conversation with Claude.
+
+## What We Wanted
+
+The brief was simple:
+
+1. A new `/services` route on the site
+2. Two service sections — consulting and courses
+3. The consulting section needed to showcase five key service areas (strategy, risk management, change management, tech selection, and data strategy)
+4. A call-to-action linking to a Calendly booking page
+5. The course section would link out to [ai4all.store](https://www.ai4all.store/)
+
+That's it. No database, no forms, no complex integrations. Just a well-structured page that communicates what we offer.
+
+## Step 1: Brainstorming the Design
+
+Before writing any code, we brainstormed the layout with Claude. This is something we do for every new feature — think before you type.
+
+We explored three layout options:
+
+- **Hero + two equal cards** — side-by-side service cards
+- **Full sections per service** — each service gets its own full-width section
+- **Hero + featured + secondary** — consulting as the primary, courses as secondary
+
+We went with **full sections per service**. It gives each offering room to breathe and scales well if we add more services later.
+
+For the consulting sub-services, we chose an **icon card grid** — a 3-column layout (responsive down to 1 column on mobile) with emoji icons, bold titles, and one-line descriptions. Clean and scannable.
+
+## Step 2: Creating the Page
+
+In Next.js App Router, creating a new route is as simple as adding a folder with a `page.tsx` file:
+
+```
+src/app/services/page.tsx
+```
+
+The page has three sections:
+
+**The hero** — centered heading and a one-liner that positions our offerings:
+
+```tsx
+<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+  Our Services
+</h1>
+<p className="mt-6 text-lg leading-8 text-gray-600">
+  Whether you need hands-on consulting to adopt AI across your
+  organisation or self-paced courses to build and ship your own
+  ideas, we have you covered.
+</p>
+```
+
+**The consulting section** — an intro paragraph followed by a grid of five service cards. We defined the services as data to keep the JSX clean:
+
+```tsx
+const consultingServices = [
+  {
+    icon: '🗺️',
+    title: 'Strategy & Roadmap',
+    description: 'Identify high-impact use cases, set goals, and create a step-by-step plan...',
+  },
+  // ... 4 more
+];
+```
+
+Then mapped them into cards:
+
+```tsx
+<div className="grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  {consultingServices.map((service) => (
+    <div key={service.title} className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+      <span className="text-3xl">{service.icon}</span>
+      <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
+      <p className="mt-2 text-gray-600">{service.description}</p>
+    </div>
+  ))}
+</div>
+```
+
+Below the grid, a "Book a Consultation" button links to [Calendly](https://calendly.com/bobjiang).
+
+**The course section** — a `bg-gray-50` section with a brief description and a "Browse Courses" button linking to [ai4all.store](https://www.ai4all.store/).
+
+## Step 3: Updating Navigation
+
+We added "Services" to two places:
+
+**Header** — inserted between "Courses" and "Blog" so it sits near the top-level offerings:
+
+```tsx
+<Link href="/services" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+  Services
+</Link>
+```
+
+**Footer** — added to the "Learn" column alongside Courses, Blog, and Events.
+
+## Step 4: Verify and Ship
+
+Standard check suite:
+
+```bash
+npm run lint      # ✓ No warnings or errors
+npx tsc --noEmit  # ✓ No type errors
+npm run build     # ✓ Build succeeds
+```
+
+The build output confirmed our new route:
+
+```
+├ ○ /services    141 B    87.4 kB
+```
+
+Statically generated, fast to load. One commit, one push, and Vercel deployed it automatically.
+
+## Design Decisions Worth Noting
+
+**Why full sections instead of cards?** Each service has different depth. Consulting needs five sub-services explained. Courses just need a sentence and a link. Full sections let each breathe at its natural size.
+
+**Why emoji icons instead of SVGs?** Simplicity. Emojis render everywhere, need no imports, and are easy to change. If we want custom icons later, we can swap them in — but for now, emojis get the job done.
+
+**Why external links for CTAs?** Calendly handles scheduling better than anything we'd build. ai4all.store has its own checkout and course delivery. We link out intentionally — let each tool do what it does best.
+
+**Why no contact form?** A form means a backend, email integration, spam filtering, and maintenance. A Calendly link gets the same result with zero infrastructure. Ship the simplest thing that works.
+
+## What You Can Learn From This
+
+Adding a services page is a pattern you can reuse for any "about what we do" content:
+
+1. **Start with the brief** — what services, what CTAs, what tone
+2. **Brainstorm the layout** before coding — explore 2-3 options
+3. **Keep data separate from markup** — arrays of objects mapped to cards
+4. **Use external tools** for booking, payment, and delivery — don't rebuild what exists
+5. **Update navigation everywhere** — header, footer, anywhere links live
+6. **Run your checks and ship** — lint, types, build, push
+
+The whole thing — brainstorming, design, implementation, and deployment — took one conversation with Claude. No deep framework knowledge needed.
+
+## Check It Out
+
+Head over to [02Ship Services](/services) to see the finished page. If your team needs help adopting AI, [book a free consultation](https://calendly.com/bobjiang) — we'd love to help you get started.
+
+---
+
+## Continue Learning
+
+**Start Learning:**
+- **[Claude Basics Course](/courses/claude-basics)** — Our step-by-step course for beginners
+- **[Browse All Courses](/courses)** — Explore everything we offer
+- **[Explore Our Services](/services)** — AI consulting and online courses
+
+**Get Involved:**
+- **[Join Our Discord](https://discord.gg/btqaA3hzKp)** — Connect with other builders
+- **[GitHub Discussions](https://github.com/bobjiang/zero-to-ship/discussions)** — Ask questions, share ideas
+
+---
+
+**About the Author:** Bob Jiang is the founder of [02Ship](/) — a learning platform for non-programmers who want to build and ship their ideas using AI tools.
