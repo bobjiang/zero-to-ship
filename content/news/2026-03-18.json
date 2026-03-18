@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-18",
+  "items": [
+    {
+      "title": "Introducing GPT-5.4 mini and nano",
+      "summary": "OpenAI announced the release of GPT-5.4 mini and nano, new smaller, more efficient models designed for intelligence at scale.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Jensen Huang just put Nvidia’s Blackwell and Vera Rubin sales projections into the $1 trillion stratosphere",
+      "summary": "Nvidia's CEO Jensen Huang projected massive sales for its new Blackwell and Vera Rubin AI chips, indicating a trillion-dollar market opportunity.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/16/jensen-just-put-nvidias-blackwell-and-vera-rubin-sales-projections-into-the-1-trillion-stratosphere/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "summary": "Anthropic introduced Cowork, a new Claude Desktop agent designed to interact with user files and assist with tasks without requiring coding.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Mistral bets on ‘build-your-own AI’ as it takes on OpenAI, Anthropic in the enterprise",
+      "summary": "Mistral AI is focusing on providing tools for enterprises to build custom AI solutions, positioning itself as a key competitor to OpenAI and Anthropic.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/17/mistral-forge-nvidia-gtc-build-your-own-ai-enterprise/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "AI Can Learn Scientific Taste",
+      "summary": "Research demonstrates that AI models can be trained to recognize and apply 'scientific taste,' potentially accelerating scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.14473",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Show HN: Sourcetable – AI Spreadsheet and Data Platform",
+      "summary": "Sourcetable launched an AI-powered spreadsheet and data platform designed to simplify data analysis and management through intelligent automation.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=41590682",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Launch HN: Innate (YC F24) – Home robots as easy to program as AI agents",
+      "summary": "Innate introduced home robots that can be programmed as easily as AI agents, aiming to make robotics more accessible for everyday use.",
+      "source": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=42451707",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "OpenSeeker: Democratizing Frontier Search Agents by Fully Open-Sourcing Training Data",
+      "summary": "OpenSeeker aims to democratize advanced search agents by open-sourcing their training data, fostering transparency and collaborative development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.15594",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Gemini 3.1 Flash-Lite: Built for intelligence at scale",
+      "summary": "Google announced Gemini 3.1 Flash-Lite, a new model optimized for efficient, scalable intelligence across various applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-lite/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Designing AI agents to resist prompt injection",
+      "summary": "OpenAI detailed new methods and research for designing AI agents that are more resilient to prompt injection attacks, enhancing security.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/designing-agents-to-resist-prompt-injection",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "symphony: OpenAI's orchestrator of autonomous dev agents",
+      "summary": "OpenAI released 'symphony,' an open-source orchestrator designed to manage and coordinate autonomous development agents.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/openai/symphony",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+      "summary": "Railway raised $100 million to develop AI-native cloud infrastructure, aiming to compete with major cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment",
+      "summary": "Nous Research released NousCoder-14B, an open-source coding model that offers a free alternative to commercial coding assistants like Claude Code.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "ILION: Deterministic Pre-Execution Safety Gates for Agentic AI Systems",
+      "summary": "Researchers introduced ILION, a framework for deterministic pre-execution safety gates to enhance the reliability and safety of agentic AI systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.13247",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Widespread Gender and Pronoun Bias in Moral Judgments Across LLMs",
+      "summary": "A study revealed widespread gender and pronoun biases in the moral judgments made by various large language models, highlighting ethical concerns.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.13636",
+      "score": 7,
+      "category": "research"
+    }
+  ]
+}
