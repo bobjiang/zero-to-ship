@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync } from 'fs';
+import { writeFileSync, readFileSync, readdirSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { XMLParser } from 'fast-xml-parser';
@@ -16,7 +16,9 @@ if (!GEMINI_API_KEY) {
 // --- Source fetchers ---
 
 async function fetchHackerNews() {
-  const url = 'https://hn.algolia.com/api/v1/search?query=AI+OR+LLM+OR+GPT+OR+Claude+OR+Anthropic&tags=story&numericFilters=points%3E50&hitsPerPage=30';
+  // Use search_by_date with a 3-day window to get only recent stories
+  const threeDaysAgo = Math.floor(Date.now() / 1000) - 3 * 24 * 60 * 60;
+  const url = `https://hn.algolia.com/api/v1/search_by_date?query=AI+OR+LLM+OR+GPT+OR+Claude+OR+Anthropic&tags=story&numericFilters=points%3E20,created_at_i%3E${threeDaysAgo}&hitsPerPage=30`;
   const res = await fetch(url);
   const data = await res.json();
   return data.hits.map(hit => ({
@@ -174,12 +176,44 @@ function deduplicateByUrl(items) {
   });
 }
 
+function loadPreviousDaysUrls(today, lookbackDays = 7) {
+  const urls = new Set();
+  if (!existsSync(NEWS_DIR)) return urls;
+
+  const files = readdirSync(NEWS_DIR).filter(f => f.endsWith('.json')).sort().reverse();
+  for (const file of files) {
+    const date = file.replace('.json', '');
+    if (date >= today) continue; // skip today if it already exists
+    if (files.indexOf(file) >= lookbackDays) break; // only look back N days
+
+    try {
+      const data = JSON.parse(readFileSync(join(NEWS_DIR, file), 'utf-8'));
+      for (const item of data.items || []) {
+        if (item.url) urls.add(item.url);
+      }
+    } catch (e) {
+      // skip corrupted files
+    }
+  }
+
+  return urls;
+}
+
+function removePreviouslySeenItems(items, previousUrls) {
+  const filtered = items.filter(item => !previousUrls.has(item.url));
+  const removed = items.length - filtered.length;
+  if (removed > 0) {
+    console.log(`Removed ${removed} items already seen in previous days`);
+  }
+  return filtered;
+}
+
 // --- Gemini ---
 
 async function rankWithGemini(items) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
-  const prompt = `You are an AI news curator. Given the following list of AI-related news items collected today from various sources, select the top 15 most impactful and interesting stories. For each selected item:
+  const prompt = `You are an AI news curator. Today's date is ${new Date().toISOString().split('T')[0]}. Given the following list of AI-related news items collected today from various sources, select the top 15 most impactful and interesting stories. Strongly prefer items published within the last 1-2 days. For each selected item:
 
 1. Write a concise one-sentence summary
 2. Assign an impact score from 1-10 (10 = most impactful)
@@ -266,8 +300,14 @@ async function main() {
   const summary = sources.map(({ name }, i) => `${name}=${results[i].length}`).join(', ');
   console.log(`Fetched: ${summary}`);
 
-  const allItems = deduplicateByUrl(results.flat());
-  console.log(`Total unique items: ${allItems.length}`);
+  const dedupedItems = deduplicateByUrl(results.flat());
+  console.log(`Total unique items: ${dedupedItems.length}`);
+
+  // Remove items that appeared in previous days
+  const previousUrls = loadPreviousDaysUrls(today);
+  console.log(`Loaded ${previousUrls.size} URLs from previous days`);
+  const allItems = removePreviouslySeenItems(dedupedItems, previousUrls);
+  console.log(`Items after cross-day dedup: ${allItems.length}`);
 
   if (allItems.length === 0) {
     console.error('No items fetched from any source. Aborting.');
