@@ -33,6 +33,7 @@ jobs:
           git add content/news/
           git diff --staged --quiet && echo "No changes" && exit 0
           git commit -m "news: add daily AI news for $(date -u +%Y-%m-%d)"
+          git pull --rebase
           git push
 
       - name: Post to Discord
