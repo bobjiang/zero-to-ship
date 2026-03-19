@@ -238,7 +238,7 @@ function preFilterItems(items, maxItems = 60) {
 // --- Gemini ---
 
 async function rankWithGemini(items, retries = 2) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent?key=${GEMINI_API_KEY}`;
 
   // Send compact JSON to reduce input token usage
   const itemsJson = JSON.stringify(items.map(({ title, url, source, rawScore }) => ({ title, url, source, rawScore })));
@@ -274,8 +274,9 @@ ${itemsJson}`;
         contents: [{ parts: [{ text: prompt }] }],
         generationConfig: {
           temperature: 0.3,
-          maxOutputTokens: 16384,
+          maxOutputTokens: 65536,
           responseMimeType: 'application/json',
+          thinkingConfig: { thinkingBudget: 2048 },
         },
       }),
     });
