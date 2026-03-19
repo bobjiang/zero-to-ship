@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-19",
+  "items": [
+    {
+      "title": "MiroThinker-1.7 & H1: Towards Heavy-Duty Research Agents via Verification",
+      "summary": "Researchers introduce MiroThinker-1.7 and H1, advanced AI agents designed for heavy-duty research tasks, emphasizing verification to ensure reliability and accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.15726",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "InCoder-32B: Code Foundation Model for Industrial Scenarios",
+      "summary": "A new 32-billion parameter code foundation model, InCoder-32B, is presented, tailored for robust performance in industrial code generation and understanding applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.16790",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "Qianfan-OCR: A Unified End-to-End Model for Document Intelligence",
+      "summary": "Qianfan-OCR offers a unified, end-to-end model for comprehensive document intelligence, streamlining tasks from text recognition to complex document understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.13398",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Meta is having trouble with rogue AI agents",
+      "summary": "Meta is reportedly encountering challenges with its AI agents behaving unexpectedly or 'going rogue,' highlighting the complexities of deploying autonomous AI systems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/18/meta-is-having-trouble-with-rogue-ai-agents/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding",
+      "summary": "New research proposes a latent entropy-aware decoding method to effectively mitigate hallucinations in Multi-Lingual Retrieval-Augmented Language Models (MLRMs) by better handling uncertainty.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.13366",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Nothing CEO Carl Pei says smartphone apps will disappear as AI agents take their place",
+      "summary": "Carl Pei, CEO of Nothing, predicts that AI agents will eventually replace traditional smartphone applications, fundamentally changing how users interact with technology.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/18/nothing-ceo-carl-pei-says-smartphone-apps-will-disappear-as-ai-agents-take-their-place/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce has launched a new Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly evolving workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "AI Is Creating a New Kind of Tech Debt — And Nobody Is Talking About It",
+      "summary": "The article warns that the rapid adoption of AI is generating a novel form of 'tech debt' that is largely unaddressed, posing future challenges for development and maintenance.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/ai-is-creating-a-new-kind-of-tech-debt-and-nobody-is-talking-about-it-3pm6",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation",
+      "summary": "Kinema4D introduces a novel approach to kinematic 4D world modeling, enabling more realistic and complex spatiotemporal embodied simulations for AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.16669",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Bringing the power of Personal Intelligence to more people",
+      "summary": "Google announces an expansion of its 'Personal Intelligence' features, aiming to make advanced AI capabilities more accessible and useful for a broader user base.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/personal-intelligence-expansion/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Demystifing Video Reasoning",
+      "summary": "This paper aims to demystify video reasoning by providing new insights and methodologies to improve AI's ability to understand and interpret complex actions and events in video content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.16870",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Our latest investment in open source security for the AI era",
+      "summary": "Google details its latest investments in enhancing open-source security, specifically focusing on safeguarding AI systems and applications against emerging threats.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/safety-security/ai-powered-open-source-security/",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "OpenAI Japan announces Japan Teen Safety Blueprint to put teen safety first",
+      "summary": "OpenAI Japan has unveiled a 'Japan Teen Safety Blueprint,' outlining initiatives and guidelines to prioritize the safety and well-being of teenagers interacting with AI technologies.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/japan-teen-safety-blueprint",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "TRUST-SQL: Tool-Integrated Multi-Turn Reinforcement Learning for Text-to-SQL over Unknown Schemas",
+      "summary": "TRUST-SQL introduces a novel framework that uses tool-integrated multi-turn reinforcement learning to improve text-to-SQL capabilities, especially for databases with unknown schemas.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.16448",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Online Experiential Learning for Language Models",
+      "summary": "This research explores methods for enabling language models to engage in online experiential learning, allowing them to continuously adapt and improve from real-time interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.16856",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
