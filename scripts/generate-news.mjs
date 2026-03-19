@@ -29,20 +29,6 @@ async function fetchHackerNews() {
   }));
 }
 
-async function fetchReddit() {
-  const url = 'https://www.reddit.com/r/MachineLearning+LocalLLaMA/top.json?t=day&limit=30';
-  const res = await fetch(url, {
-    headers: { 'User-Agent': '02ship-news-bot/1.0' },
-  });
-  const data = await res.json();
-  return (data?.data?.children || []).map(child => ({
-    title: child.data.title,
-    url: child.data.url,
-    source: 'Reddit',
-    rawScore: child.data.score,
-  }));
-}
-
 async function fetchArxiv() {
   const parser = new XMLParser();
   const categories = ['cs.AI', 'cs.CL', 'cs.LG'];
@@ -323,7 +309,6 @@ async function main() {
   console.log('Fetching sources...');
   const sources = [
     { name: 'HN', fn: fetchHackerNews },
-    { name: 'Reddit', fn: fetchReddit },
     { name: 'arXiv', fn: fetchArxiv },
     { name: 'HF', fn: fetchHuggingFace },
     { name: 'ProductHunt', fn: fetchProductHunt },
