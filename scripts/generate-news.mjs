@@ -208,10 +208,40 @@ function removePreviouslySeenItems(items, previousUrls) {
   return filtered;
 }
 
+// --- Pre-filter ---
+
+function preFilterItems(items, maxItems = 60) {
+  if (items.length <= maxItems) return items;
+
+  // Sort by rawScore descending, but keep at least some from each source
+  const bySource = new Map();
+  for (const item of items) {
+    if (!bySource.has(item.source)) bySource.set(item.source, []);
+    bySource.get(item.source).push(item);
+  }
+
+  // Guarantee at least 3 items per source, fill rest by score
+  const guaranteed = [];
+  const rest = [];
+  for (const [, sourceItems] of bySource) {
+    sourceItems.sort((a, b) => (b.rawScore || 0) - (a.rawScore || 0));
+    guaranteed.push(...sourceItems.slice(0, 3));
+    rest.push(...sourceItems.slice(3));
+  }
+
+  rest.sort((a, b) => (b.rawScore || 0) - (a.rawScore || 0));
+  const result = [...guaranteed, ...rest.slice(0, maxItems - guaranteed.length)];
+  console.log(`Pre-filtered ${items.length} items down to ${result.length}`);
+  return result;
+}
+
 // --- Gemini ---
 
-async function rankWithGemini(items) {
+async function rankWithGemini(items, retries = 2) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+  // Send compact JSON to reduce input token usage
+  const itemsJson = JSON.stringify(items.map(({ title, url, source, rawScore }) => ({ title, url, source, rawScore })));
 
   const prompt = `You are an AI news curator. Today's date is ${new Date().toISOString().split('T')[0]}. Given the following list of AI-related news items collected today from various sources, select the top 15 most impactful and interesting stories. Strongly prefer items published within the last 1-2 days. For each selected item:
 
@@ -234,38 +264,52 @@ Return ONLY a JSON array (no markdown fences, no explanation) with this exact st
 ]
 
 Here are today's items:
-${JSON.stringify(items, null, 2)}`;
+${itemsJson}`;
 
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: {
-        temperature: 0.3,
-        maxOutputTokens: 8192,
-      },
-    }),
-  });
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.3,
+          maxOutputTokens: 16384,
+          responseMimeType: 'application/json',
+        },
+      }),
+    });
 
-  const data = await res.json();
+    const data = await res.json();
 
-  if (data.error) {
-    console.error('Gemini API error:', JSON.stringify(data.error, null, 2));
-    process.exit(1);
-  }
+    if (data.error) {
+      console.error('Gemini API error:', JSON.stringify(data.error, null, 2));
+      if (attempt < retries) {
+        console.log(`Retrying (${attempt + 1}/${retries})...`);
+        await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+        continue;
+      }
+      process.exit(1);
+    }
 
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const finishReason = data?.candidates?.[0]?.finishReason;
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
-  // Strip markdown fences if present
-  const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+    // Strip markdown fences if present
+    const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
 
-  try {
-    return JSON.parse(cleaned);
-  } catch (e) {
-    console.error('Failed to parse Gemini response:', e.message);
-    console.error('Raw response:', text);
-    process.exit(1);
+    try {
+      return JSON.parse(cleaned);
+    } catch (e) {
+      console.error(`Failed to parse Gemini response (attempt ${attempt + 1}, finishReason: ${finishReason}):`, e.message);
+      if (attempt < retries) {
+        console.log(`Retrying (${attempt + 1}/${retries})...`);
+        await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+        continue;
+      }
+      console.error('Raw response:', text.slice(0, 500));
+      process.exit(1);
+    }
   }
 }
 
@@ -309,13 +353,15 @@ async function main() {
   const allItems = removePreviouslySeenItems(dedupedItems, previousUrls);
   console.log(`Items after cross-day dedup: ${allItems.length}`);
 
-  if (allItems.length === 0) {
+  const filteredItems = preFilterItems(allItems, 60);
+
+  if (filteredItems.length === 0) {
     console.error('No items fetched from any source. Aborting.');
     process.exit(1);
   }
 
   console.log('Ranking with Gemini...');
-  const ranked = await rankWithGemini(allItems);
+  const ranked = await rankWithGemini(filteredItems);
   console.log(`Gemini returned ${ranked.length} items`);
 
   const output = {
