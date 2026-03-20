@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-20",
+  "items": [
+    {
+      "title": "Jeff Bezos Reportedly Seeks $100 Billion to Transform Manufacturing with AI",
+      "summary": "Jeff Bezos is reportedly aiming to raise $100 billion to acquire and modernize traditional manufacturing companies using advanced AI technologies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/19/jeff-bezos-reportedly-wants-100-billion-to-buy-and-transform-old-manufacturing-firms-with-ai/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI to Acquire Astral, Expanding its AI Capabilities",
+      "summary": "OpenAI announces its acquisition of Astral, signaling a strategic move to bolster its technological offerings and market position.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-to-acquire-astral",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Meta Rolls Out New AI Content Enforcement Systems, Reduces Third-Party Reliance",
+      "summary": "Meta is deploying new AI-powered systems for content enforcement, simultaneously decreasing its dependence on external vendors for these operations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/19/meta-rolls-out-new-ai-content-enforcement-systems-while-reducing-reliance-on-third-party-vendors/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Cloudflare CEO Predicts Online Bot Traffic Will Surpass Human Traffic by 2027",
+      "summary": "Cloudflare's CEO states that AI-driven bot traffic is projected to exceed human internet traffic within the next year, highlighting a significant shift in online activity.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/19/online-bot-traffic-will-exceed-human-traffic-by-2027-cloudflare-ceo-says/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "MetaClaw: An Agent That Meta-Learns and Evolves in the Wild",
+      "summary": "Researchers introduce MetaClaw, an innovative AI agent capable of meta-learning and evolving autonomously in dynamic, real-world environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17187",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs secured $69 million in funding to expand its AI-powered customer interview platform, following a highly successful viral billboard hiring campaign.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Gemini in Google Sheets Achieves State-of-the-Art Performance",
+      "summary": "Google announces that its Gemini AI integration within Google Sheets has reached state-of-the-art performance, enhancing data analysis and productivity.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "MosaicMem: Hybrid Spatial Memory for Controllable Video World Models",
+      "summary": "MosaicMem introduces a hybrid spatial memory system designed to enable more controllable and realistic video world models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17117",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How OpenAI Monitors Internal Coding Agents for Misalignment",
+      "summary": "OpenAI details its methods for monitoring internal coding agents to detect and prevent potential misalignments in their behavior and outputs.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Google's Open-Source AI Model SpeciesNet Aids Wildlife Conservation",
+      "summary": "Google highlights how its open-source AI model, SpeciesNet, is being utilized to promote and support global wildlife conservation efforts.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/sustainability/speciesnet-open-source-ai-wildlife/",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "AI's Impact on Mathematics Analogous to Car's Impact on Cities",
+      "summary": "A prominent mathematician suggests that AI's transformative effect on mathematics mirrors the profound way automobiles reshaped urban landscapes.",
+      "source": "Lobste.rs",
+      "url": "https://mathstodon.xyz/@tao/116252708577614828",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Nvidia Greenboost: Transparently Extend GPU VRAM Using System RAM/NVMe",
+      "summary": "Nvidia Greenboost offers a solution to transparently expand GPU VRAM capacity by leveraging system RAM and NVMe storage, enhancing performance for memory-intensive tasks.",
+      "source": "Lobste.rs",
+      "url": "https://gitlab.com/IsolatedOctopi/nvidia_greenboost",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Debugging a Memory Leak in vLLM: Heaps Do Lie",
+      "summary": "Mistral AI shares insights into debugging a challenging memory leak within the vLLM framework, offering valuable lessons for developers.",
+      "source": "Lobste.rs",
+      "url": "https://mistral.ai/news/debugging-memory-leak-in-vllm",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Alignment Makes Language Models Normative, Not Descriptive",
+      "summary": "New research suggests that the process of alignment in large language models fundamentally shifts their nature from merely descriptive to normative.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17218",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Complementary Reinforcement Learning for Enhanced Agent Performance",
+      "summary": "A new paper introduces Complementary Reinforcement Learning, a method designed to improve the learning efficiency and performance of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17621",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
