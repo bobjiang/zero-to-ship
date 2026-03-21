@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-21",
+  "items": [
+    {
+      "title": "What Happened at Nvidia GTC: NemoClaw, Robot Olaf, and a $1 Trillion Bet",
+      "summary": "Nvidia's GTC conference highlighted significant advancements with NemoClaw, Robot Olaf, and a massive investment in AI, reinforcing its dominant position in the industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/video/what-happened-at-nvidia-gtc-nemoclaw-robot-olaf-and-a-1-trillion-bet/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Microsoft Rolls Back Some Copilot AI Bloat on Windows",
+      "summary": "Microsoft is reportedly reducing the presence of its Copilot AI features on Windows, signaling a response to user feedback regarding system integration.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/20/microsoft-rolls-back-some-of-its-copilot-ai-bloat-on-windows/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "AI Agents Are Recruiting Humans To Observe The Offline World",
+      "summary": "A new trend sees AI agents leveraging human observers to gather real-world data, blurring the lines between digital and physical intelligence gathering.",
+      "source": "Lobste.rs",
+      "url": "https://www.noemamag.com/ai-agents-are-recruiting-humans-to-observe-the-offline-world",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Nvidia's OpenClaw Strategy: A Deep Dive",
+      "summary": "Nvidia is pushing an 'OpenClaw' strategy, indicating a move towards more open or accessible frameworks for its AI and robotics technologies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/podcast/nvidia-has-an-openclaw-strategy-do-you/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Efficient Reasoning with Balanced Thinking",
+      "summary": "New research proposes 'Balanced Thinking' for more efficient AI reasoning, optimizing computational resources while maintaining performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.12372",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding",
+      "summary": "This paper reveals that generative AI models possess inherent 3D spatial understanding, which can be leveraged for advanced scene comprehension.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19235",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Unlocking Gemini CLI with Skills, Hooks & Plan Mode",
+      "summary": "Google AI demonstrates new capabilities for the Gemini CLI, including custom skills, hooks, and a 'Plan Mode' for more complex task execution.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/unlocking-gemini-cli-with-skills-hooks-plan-mode-2bgf",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Rakuten Fixes Issues Twice as Fast with Codex",
+      "summary": "Rakuten reports significant improvements in issue resolution speed by integrating OpenAI's Codex, highlighting AI's impact on developer productivity.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/rakuten",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing",
+      "summary": "SAMA introduces a novel approach for high-quality, instruction-guided video editing by factorizing semantic anchoring and motion alignment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19228",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "3DreamBooth: High-Fidelity 3D Subject-Driven Video Generation Model",
+      "summary": "3DreamBooth presents a breakthrough in generating high-fidelity 3D videos driven by specific subjects, advancing personalized content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.18524",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How AI is Helping Improve Heart Health in Rural Australia",
+      "summary": "Google AI is being deployed to enhance heart health outcomes in remote Australian communities, showcasing practical applications of AI in healthcare.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/health/google-ai-heart-health-australia/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Equipping Workers with Insights About Compensation",
+      "summary": "OpenAI is exploring how AI can provide workers with better insights into compensation, potentially fostering transparency and fairness in the job market.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/equipping-workers-with-insights-about-compensation",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "FASTER: Rethinking Real-Time Flow VLAs",
+      "summary": "FASTER proposes a new framework for real-time Vision-Language-Action (VLA) models, aiming to improve their efficiency and responsiveness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19199",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation",
+      "summary": "Nemotron-Cascade 2 introduces advanced post-training techniques for large language models, utilizing cascade reinforcement learning and multi-domain distillation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19220",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "F2LLM-v2: Inclusive, Performant, and Efficient Embeddings for a Multilingual World",
+      "summary": "F2LLM-v2 offers improved multilingual embeddings designed to be inclusive, performant, and efficient across diverse languages and applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19223",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
