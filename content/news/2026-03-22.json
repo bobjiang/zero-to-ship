@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-22",
+  "items": [
+    {
+      "title": "Publisher pulls horror novel ‘Shy Girl’ over AI concerns",
+      "summary": "A publisher has withdrawn a horror novel, 'Shy Girl,' from publication due to concerns about the potential use of AI in its creation, highlighting growing ethical and copyright issues in the industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/21/publisher-pulls-horror-novel-shy-girl-over-ai-concerns/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "From model to agent: Equipping the Responses API with a computer environment",
+      "summary": "OpenAI has enhanced its Responses API by integrating a computer environment, allowing models to act as more capable agents by interacting with external tools and systems.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/equip-responses-api-computer-environment",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Video-CoE: Reinforcing Video Event Prediction via Chain of Events",
+      "summary": "Researchers introduce Video-CoE, a novel framework that improves video event prediction by leveraging a chain-of-events approach to better understand temporal dynamics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.14935",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Why Wall Street wasn't won over by Nvidia's big conference",
+      "summary": "Despite a major conference, Wall Street analysts remained unconvinced by Nvidia's latest announcements, indicating potential concerns about future growth or market saturation in the AI hardware sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/21/why-wall-street-wasnt-won-over-by-nvidias-big-conference/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Memento-Skills: Let Agents Design Agents",
+      "summary": "A new research paper explores Memento-Skills, a framework enabling AI agents to design and refine other agents, pushing the boundaries of autonomous AI development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.18743",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Use Canvas in AI Mode to get things done and bring your ideas to life, right in Search.",
+      "summary": "Google Search now features an 'AI Mode' with Canvas, allowing users to generate and refine ideas, write, and code directly within the search interface.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-canvas-writing-coding/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Bridging Semantic and Kinematic Conditions with Diffusion-based Discrete Motion Tokenizer",
+      "summary": "New research introduces a diffusion-based discrete motion tokenizer that effectively bridges semantic and kinematic conditions, advancing realistic and controllable motion generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19227",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
+      "summary": "Wayfair is leveraging OpenAI's technology to significantly improve the accuracy of its product catalog and accelerate customer support operations, demonstrating practical AI application in e-commerce.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/wayfair",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Delve accused of misleading customers with ‘fake compliance’",
+      "summary": "AI compliance firm Delve faces accusations of providing 'fake compliance' to customers, raising serious questions about trust and accountability in the burgeoning AI governance market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/21/delve-accused-of-misleading-customers-with-fake-compliance/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "summary": "A new report highlights a free alternative, 'Goose,' that offers similar code generation capabilities to the expensive Claude Code, potentially disrupting the market for AI coding assistants.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs",
+      "summary": "LVOmniBench is introduced as a new benchmark designed to rigorously evaluate the long audio-video understanding capabilities of omnimodal large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19217",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The creator of Claude Code just revealed his workflow, and developers are losing their minds",
+      "summary": "The workflow of Claude Code's creator has been unveiled, captivating developers with its innovative approach to AI-assisted coding and sparking widespread discussion.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "MonoArt: Progressive Structural Reasoning for Monocular Articulated 3D Reconstruction",
+      "summary": "Researchers present MonoArt, a method for progressive structural reasoning that significantly improves monocular articulated 3D reconstruction from single-view images.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19231",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens",
+      "summary": "Cubic Discrete Diffusion proposes a novel approach for discrete visual generation by operating on high-dimensional representation tokens, enhancing the quality and control of generated images.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19232",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building Production AI Agents with LangGraph: Beyond the Toy Examples (2026)",
+      "summary": "This article delves into practical strategies for building robust, production-ready AI agents using LangGraph, moving beyond simple demonstrations to real-world applications.",
+      "source": "Dev.to",
+      "url": "https://dev.to/young_gao/building-production-ai-agents-with-langgraph-beyond-the-toy-examples-2idm",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
