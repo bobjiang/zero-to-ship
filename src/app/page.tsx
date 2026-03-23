@@ -32,15 +32,11 @@ export default function HomePage() {
               <Link href="/courses">
                 <Button size="lg">Start Learning</Button>
               </Link>
-              <a
-                href="https://discord.gg/btqaA3hzKp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/community">
                 <Button variant="outline" size="lg">
                   Join Community
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </Container>
