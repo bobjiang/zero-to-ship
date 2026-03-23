@@ -1,0 +1,65 @@
+---
+title: "New Navigation, Community Page, and Past Events — What We Shipped Today"
+excerpt: "We reorganized the site navigation, launched a /community page, added past events from Luma, and connected it all together — built entirely with Claude Code."
+date: "2026-03-23"
+author: "Bob Jiang"
+keywords: "02Ship, community, navigation redesign, past events, Luma API, Claude Code, AI coding, vibe coding, Next.js"
+---
+
+# New Navigation, Community Page, and Past Events
+
+Today was a productive day for 02Ship. We shipped three PRs that make the site easier to navigate and give our community a proper home. Here's what changed and why.
+
+## Cleaner Navigation
+
+The old header had six flat links competing for attention. We trimmed it to four: **Courses**, **Services**, **Events**, and **About** — with About opening a dropdown to Our Story, AI Daily News, Blog, and Community.
+
+On mobile, we replaced the cramped link list with a proper **hamburger menu** — a slide-out panel with Escape-to-close, focus trapping, and scroll lock. Small details that make the experience feel right.
+
+The footer got the same treatment: four columns down to three, with cleaner grouping.
+
+## A Real Community Page
+
+Previously, the "Join Community" button on the homepage linked straight to Discord. That worked, but it was a dead end — one channel, take it or leave it.
+
+Now we have a dedicated **[/community](/community)** page that brings together all the ways to connect with us:
+
+- **X (Twitter)** — follow along and join the conversation
+- **GitHub** — browse the code, open issues, start discussions
+- **Discord** — real-time chat with other builders
+
+One page, three doors. Meet us wherever you're most comfortable.
+
+## Past Events from Luma
+
+The **/events** page used to show only what's coming up. Now it also pulls in **past events** from our Luma calendar automatically — event name, location, and date, with links back to the original Luma pages.
+
+This happens at build time with daily revalidation, so the list stays current without any manual updates. No new dependencies — just a `fetch` call to the Luma API.
+
+## Wiring It Together
+
+The final piece: we updated the homepage hero so the "Join Community" button points to `/community` instead of an external Discord link. Now visitors land on our page first, see all the options, and choose their path.
+
+Three PRs, one coherent improvement: **easier navigation → dedicated community hub → automatic event history**.
+
+## Come Say Hello
+
+We're building 02Ship in the open and we'd love for you to be part of it. Whether you're learning to code with AI, already shipping projects, or just curious — there's a place for you.
+
+**[Join the 02Ship Community](/community)** and connect with other builders who are turning ideas into real products with AI.
+
+---
+
+## Continue Learning
+
+**Start Learning:**
+- **[Claude Basics Course](/courses/claude-basics)** — Our step-by-step course for beginners
+- **[Browse All Courses](/courses)** — Explore everything we offer
+- **[Explore Our Services](/services)** — AI consulting and online courses
+
+**Get Involved:**
+- **[Join Our Community](/community)** — Connect with builders on X, GitHub, and Discord
+
+---
+
+**About the Author:** Bob Jiang is the founder of [02Ship](/) — a learning platform for non-programmers who want to build and ship their ideas using AI tools.
