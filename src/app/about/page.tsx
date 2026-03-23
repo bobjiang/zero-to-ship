@@ -164,11 +164,11 @@ export default function AboutPage() {
                 <Button variant="outline">GitHub</Button>
               </a>
               <a
-                href="https://github.com/bobjiang/zero-to-ship/discussions"
+                href="https://x.com/zero_to_ship"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline">Forum</Button>
+                <Button variant="outline">X</Button>
               </a>
             </div>
           </div>
