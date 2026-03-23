@@ -8,7 +8,49 @@ export const metadata: Metadata = {
   alternates: { canonical: '/events' },
 };
 
-export default function EventsPage() {
+interface LumaEvent {
+  event: {
+    name: string;
+    start_at: string;
+    url: string;
+    geo_address_info?: {
+      city?: string;
+      country?: string;
+    };
+  };
+}
+
+async function getPastEvents(): Promise<LumaEvent[]> {
+  try {
+    const res = await fetch(
+      'https://api.lu.ma/calendar/get-items?calendar_api_id=cal-zhuelVReFdNX5xm&period=past&limit=50',
+      { next: { revalidate: 86400 } }
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.entries ?? [];
+  } catch {
+    return [];
+  }
+}
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+function formatLocation(geo?: LumaEvent['event']['geo_address_info']): string {
+  if (!geo) return 'Online';
+  const parts = [geo.city, geo.country].filter(Boolean);
+  return parts.length > 0 ? parts.join(', ') : 'Online';
+}
+
+export default async function EventsPage() {
+  const pastEvents = await getPastEvents();
+
   return (
     <Container>
       <div className="py-12">
@@ -81,6 +123,41 @@ export default function EventsPage() {
               title="02Ship events calendar"
             />
           </div>
+
+          {pastEvents.length > 0 && (
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                Past Events
+              </h2>
+              <ul className="mt-4 divide-y divide-gray-200">
+                {pastEvents.map((entry) => (
+                  <li key={entry.event.url}>
+                    <a
+                      href={`https://lu.ma/${entry.event.url}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-baseline justify-between gap-4 py-3 transition-colors hover:bg-gray-50 sm:px-2"
+                    >
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-medium text-gray-900">
+                          {entry.event.name}
+                        </p>
+                        <p className="mt-0.5 text-xs text-gray-500">
+                          {formatLocation(entry.event.geo_address_info)}
+                        </p>
+                      </div>
+                      <time
+                        dateTime={entry.event.start_at}
+                        className="shrink-0 text-sm text-gray-500"
+                      >
+                        {formatDate(entry.event.start_at)}
+                      </time>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </Container>
