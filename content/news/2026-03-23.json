@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-23",
+  "items": [
+    {
+      "title": "Elon Musk Unveils Chip Manufacturing Plans for SpaceX and Tesla, Signaling Major AI Hardware Push",
+      "summary": "Elon Musk announced ambitious plans for SpaceX and Tesla to manufacture their own AI chips, indicating a significant vertical integration strategy to secure critical hardware for their advanced AI initiatives.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/22/elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Cursor AI Admits New Coding Model Relies on Moonshot AI’s Kimi, Raising Transparency Questions",
+      "summary": "Coding AI platform Cursor acknowledged that its latest model was built upon Moonshot AI's Kimi, sparking discussions around transparency and attribution in the rapidly evolving AI product landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Arlo: An AI Companion Granting Blind Users a '3-Second Superpower' for Visual Information",
+      "summary": "A developer created Arlo, an AI companion designed to provide blind users with rapid visual information, mimicking the quick perception sighted individuals have of their surroundings.",
+      "source": "Dev.to",
+      "url": "https://dev.to/zeshama/arlo-i-built-an-ai-companion-that-gives-blind-users-the-same-3-second-superpower-sighted-people-55co",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "AndroTMem: Advancing Long-Horizon GUI Agents with Anchored Memory from Interaction Trajectories",
+      "summary": "Researchers introduce AndroTMem, a novel method that enables AI agents to develop anchored memory from user interaction trajectories, significantly improving their performance in long-horizon GUI tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.18429",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "ReactMotion: Generating Realistic Reactive Listener Motions from Speaker Utterance for Embodied AI",
+      "summary": "A new research paper presents ReactMotion, a system capable of generating natural and reactive listener motions based on a speaker's utterance, enhancing the realism of embodied AI interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.15083",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "GigaWorld-Policy: An Efficient Action-Centered World-Action Model for Advanced AI Agents",
+      "summary": "GigaWorld-Policy proposes an efficient action-centered world-action model designed to improve the planning and decision-making capabilities of AI agents in complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17240",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Look Before Acting: Enhancing Vision Foundation Representations for Vision-Language-Action Models",
+      "summary": "New research focuses on improving vision foundation representations to significantly enhance the performance of Vision-Language-Action models, allowing them to better understand and interact with their environment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.15618",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "BenchPreS: A New Benchmark for Context-Aware Personalized Preference Selectivity in Persistent-Memory LLMs",
+      "summary": "BenchPreS is introduced as a benchmark to evaluate how well persistent-memory LLMs can understand and apply context-aware personalized preferences, crucial for more nuanced AI interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.16557",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Temporal Gains, Spatial Costs: Re-evaluating Video Fine-Tuning in Multimodal Large Language Models",
+      "summary": "A study revisits the effectiveness of video fine-tuning in Multimodal Large Language Models, analyzing the trade-offs between temporal understanding gains and potential spatial information costs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17541",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing",
+      "summary": "EffectErase introduces a method for high-quality video editing that simultaneously removes unwanted objects and seamlessly inserts new effects, offering advanced control over video content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19224",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SimulU: Training-free Policy for Long-form Simultaneous Speech-to-Speech Translation",
+      "summary": "SimulU proposes a novel training-free policy for achieving long-form simultaneous speech-to-speech translation, promising real-time communication across language barriers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.16924",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning",
+      "summary": "V-JEPA 2.1 introduces advancements in video self-supervised learning, enabling the extraction of more dense and informative features from video data for various downstream tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.14482",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Cognitive Mismatch in Multimodal Large Language Models for Discrete Symbol Understanding",
+      "summary": "Research highlights a 'cognitive mismatch' in MLLMs, revealing challenges in their ability to accurately understand discrete symbols, which impacts their reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.18472",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "VTC-Bench: Evaluating Agentic Multimodal Models via Compositional Visual Tool Chaining",
+      "summary": "VTC-Bench is presented as a new benchmark for evaluating the capabilities of agentic multimodal models through complex tasks requiring compositional visual tool chaining.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.15030",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Tinted Frames: How Question Framing Blinds Vision-Language Models",
+      "summary": "A study demonstrates that the way questions are framed can significantly impair the performance of Vision-Language Models, revealing a vulnerability to subtle linguistic biases.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19203",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
