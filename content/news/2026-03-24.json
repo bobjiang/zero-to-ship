@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-24",
+  "items": [
+    {
+      "title": "Creating with Sora Safely",
+      "summary": "OpenAI details its ongoing efforts and strategies to ensure the safe and responsible deployment and use of its text-to-video model, Sora.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/creating-with-sora-safely",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "HopChain: Multi-Hop Data Synthesis for Generalizable Vision-Language Reasoning",
+      "summary": "Researchers introduce HopChain, a novel method for synthesizing multi-hop data to improve the generalizability of vision-language reasoning models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17024",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Air Street becomes one of the largest solo VCs in Europe with $232M fund",
+      "summary": "Air Street Capital, a venture capital firm focused on AI, has successfully raised a $232 million fund, positioning it as one of Europe's largest solo VCs.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/23/air-street-becomes-one-of-the-largest-solo-vcs-in-europe-with-232m-fund/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models",
+      "summary": "This paper presents Astrolabe, a technique that leverages forward-process reinforcement learning to enhance the distillation of autoregressive video models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17051",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The Y-Combinator for LLMs: Solving Long-Context Rot with λ-Calculus",
+      "summary": "A novel approach using λ-Calculus is presented to address the 'long-context rot' problem in Large Language Models, improving their ability to handle extended contexts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.20105",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "LLM 'benchmark' as a 1v1 RTS game where models write code controlling the units",
+      "summary": "A unique benchmark proposes evaluating LLMs by having them write code to control units in a 1v1 real-time strategy game.",
+      "source": "Lobste.rs",
+      "url": "https://yare.io/ai-arena",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Engenharia de Prompt: Por Que a Forma Como Você Pergunta Muda Tudo (Um guia introdutório)",
+      "summary": "An introductory guide explains the critical importance of prompt engineering and how the way questions are phrased significantly impacts AI model responses.",
+      "source": "Dev.to",
+      "url": "https://dev.to/fransborges/engenharia-de-prompt-por-que-a-forma-como-voce-pergunta-muda-tudoum-guia-introdutorio-3hb0",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation",
+      "summary": "TerraScope introduces a new framework for pixel-grounded visual reasoning specifically designed for complex Earth observation tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19039",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models",
+      "summary": "This paper proposes ProactiveBench, a new benchmark to evaluate and improve the proactive capabilities of multimodal large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19466",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "FlowScene: Style-Consistent Indoor Scene Generation with Multimodal Graph Rectified Flow",
+      "summary": "Researchers introduce FlowScene, a method for generating style-consistent indoor scenes using multimodal graph rectified flow.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19598",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation",
+      "summary": "LumosX is a new system designed to generate personalized videos by effectively relating various identities with their specific attributes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.20192",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "A Subgoal-driven Framework for Improving Long-Horizon LLM Agents",
+      "summary": "A new subgoal-driven framework is proposed to significantly improve the performance and planning capabilities of LLM agents in long-horizon tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19685",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Versatile Editing of Video Content, Actions, and Dynamics without Training",
+      "summary": "A novel method is introduced that allows for versatile editing of video content, actions, and dynamics without requiring additional training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.17989",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hyperagents",
+      "summary": "This research explores the concept of 'Hyperagents,' advanced AI agents capable of complex, adaptive behaviors in dynamic environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19461",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "BEAVER: A Training-Free Hierarchical Prompt Compression Method via Structure-Aware Page Selection",
+      "summary": "BEAVER offers a training-free hierarchical prompt compression method that uses structure-aware page selection to efficiently manage prompts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19635",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
