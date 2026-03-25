@@ -1,0 +1,141 @@
+/* 02Ship Dark Theme — Base CSS for slide decks */
+/* Embed this entire file inside the style tag in the HTML output */
+
+:root {
+    --bg-dark: #0f0f14;
+    --bg-slide: #16161d;
+    --accent-coral: #ff6b6b;
+    --accent-teal: #4ecdc4;
+    --accent-gold: #ffd93d;
+    --text-primary: #f8f8f2;
+    --text-secondary: #a9a9b3;
+    --success: #50fa7b;
+    --error: #ff5555;
+    --accent-blue: #6c9eff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* ---- Presentation header ---- */
+.presentation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+    border-radius: 16px;
+}
+.presentation-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.presentation-header p { opacity: 0.9; font-size: 1.1rem; }
+
+/* ---- Slides container ---- */
+.slides-container {
+    display: flex; flex-direction: column; gap: 3rem;
+    max-width: 1200px; margin: 0 auto;
+}
+
+/* ---- Base slide ---- */
+.slide {
+    background: var(--bg-slide);
+    border-radius: 16px; padding: 3rem;
+    aspect-ratio: 16/9;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.slide::before {
+    content: attr(data-slide-number);
+    position: absolute; top: 1rem; right: 1.5rem;
+    font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;
+}
+.slide-section {
+    position: absolute; top: 1rem; left: 1.5rem;
+    font-size: 0.8rem; color: var(--accent-teal);
+    text-transform: uppercase; letter-spacing: 2px; font-weight: 600;
+}
+
+/* ---- Speaker notes ---- */
+.speaker-notes {
+    background: rgba(255, 215, 61, 0.08);
+    border: 1px solid rgba(255, 215, 61, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-top: -1.5rem; margin-bottom: 1.5rem;
+    max-width: 1200px; margin-left: auto; margin-right: auto;
+}
+.speaker-notes h4 {
+    color: var(--accent-gold); font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem;
+}
+.speaker-notes p, .speaker-notes ul {
+    font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;
+}
+.speaker-notes ul { margin-left: 1.25rem; }
+.speaker-notes li { margin-bottom: 0.4rem; }
+.speaker-notes .timing {
+    display: inline-block;
+    background: rgba(255, 215, 61, 0.2); color: var(--accent-gold);
+    padding: 0.2rem 0.6rem; border-radius: 4px;
+    font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem;
+}
+
+/* ---- Highlight text gradient ---- */
+.highlight-text {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; font-weight: 700;
+}
+
+/* ---- Feature list ---- */
+.feature-list {
+    list-style: none; display: flex; flex-direction: column; gap: 0.75rem;
+}
+.feature-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; }
+.feature-list li .check { color: var(--accent-teal); font-weight: 700; }
+
+/* ---- Visual panel ---- */
+.visual-panel {
+    background: #1a1a24; border-radius: 12px; padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.visual-panel h4 {
+    color: var(--accent-gold); margin-bottom: 1rem;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* ---- Code block ---- */
+.code-block {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+    background: #0d0d12; padding: 1.25rem; border-radius: 8px;
+    overflow-x: auto; line-height: 1.6;
+}
+.code-block .comment { color: #6272a4; }
+.code-block .keyword { color: #ff79c6; }
+.code-block .string  { color: #f1fa8c; }
+.code-block .prompt  { color: var(--accent-teal); }
+.code-block .output  { color: var(--text-secondary); }
+
+/* ---- Print ---- */
+@media print {
+    body { background: white; color: #1a1a1a; }
+    .slide { page-break-after: always; box-shadow: none; border: 1px solid #ddd; }
+    .speaker-notes { page-break-inside: avoid; }
+    .slide-closing, .slide-demo, .slide-title { background: #f5f5f5; }
+    .highlight-text { -webkit-text-fill-color: initial; background: none; color: #1a1a1a; }
+}
+
+/* Uncomment for presentation mode (one slide at a time, arrow key navigation) */
+/*
+.slides-container { scroll-snap-type: y mandatory; height: 100vh; overflow-y: scroll; }
+.slide { scroll-snap-align: start; height: 100vh; }
+.speaker-notes { display: none; }
+.presentation-header { display: none; }
+*/

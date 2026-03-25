@@ -281,7 +281,11 @@ CRITICAL RULES for shooting guides:
 
 For each video, create `content/courses/<slug>/lesson-XX-video-YY-slides.html`.
 
-Each slide file is a self-contained HTML document with the 02Ship dark theme. Use this exact template:
+Each slide file is a self-contained HTML document with the 02Ship dark theme.
+
+**Theme and layouts:** Read the shared theme CSS from `.claude/skills/create-slide/assets/base-theme.css` and embed it in the `<style>` block. For layout patterns (title, centered, two-col, three-grid, comparison-table, etc.), reference `.claude/skills/create-slide/references/layouts.md`.
+
+Use this HTML skeleton:
 
 ```html
 <!DOCTYPE html>
@@ -294,57 +298,7 @@ Each slide file is a self-contained HTML document with the 02Ship dark theme. Us
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-dark: #0f0f14;
-            --bg-slide: #16161d;
-            --accent-coral: #ff6b6b;
-            --accent-teal: #4ecdc4;
-            --accent-gold: #ffd93d;
-            --text-primary: #f8f8f2;
-            --text-secondary: #a9a9b3;
-            --success: #50fa7b;
-            --error: #ff5555;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 2rem;
-        }
-        .presentation-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
-            border-radius: 16px;
-        }
-        .presentation-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .presentation-header p { opacity: 0.9; font-size: 1.1rem; }
-        .slides-container {
-            display: flex; flex-direction: column; gap: 3rem;
-            max-width: 1200px; margin: 0 auto;
-        }
-        .slide {
-            background: var(--bg-slide);
-            border-radius: 16px; padding: 3rem;
-            aspect-ratio: 16/9;
-            display: flex; flex-direction: column; justify-content: center;
-            position: relative; overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        }
-        .slide::before {
-            content: attr(data-slide-number);
-            position: absolute; top: 1rem; right: 1.5rem;
-            font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;
-        }
-        .slide-section {
-            position: absolute; top: 1rem; left: 1.5rem;
-            font-size: 0.8rem; color: var(--accent-teal);
-            text-transform: uppercase; letter-spacing: 2px; font-weight: 600;
-        }
+        /* Embed base-theme.css here, then add slide-specific layout styles from layouts.md */
     </style>
 </head>
 <body>
@@ -359,7 +313,7 @@ Each slide file is a self-contained HTML document with the 02Ship dark theme. Us
 </html>
 ```
 
-For each slide, add a `<div class="slide" data-slide-number="N">` inside `.slides-container`.
+For each slide, add a `<section class="slide {layout-class}" data-slide-number="N">` inside `.slides-container`.
 
 CRITICAL RULES for slides:
 - ONE slide per SCRIPT block in the shooting guide -- the counts MUST match exactly
