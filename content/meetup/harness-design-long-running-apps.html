@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness Design for Long-Running Application Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+/*
+ * 02Ship Slide Theme — Base CSS
+ * Dark theme with coral/teal/gold accents.
+ */
+
+:root {
+    --bg-dark: #0f0f14;
+    --bg-slide: #16161d;
+    --accent-coral: #ff6b6b;
+    --accent-teal: #4ecdc4;
+    --accent-gold: #ffd93d;
+    --accent-blue: #6c9eff;
+    --text-primary: #f8f8f2;
+    --text-secondary: #a9a9b3;
+    --success: #50fa7b;
+    --error: #ff5555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* ---- Presentation header (page top) ---- */
+.presentation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+    border-radius: 16px;
+}
+.presentation-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.presentation-header p { opacity: 0.9; font-size: 1.1rem; }
+
+/* ---- Slide container ---- */
+.slides-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---- Base slide ---- */
+.slide {
+    background: var(--bg-slide);
+    border-radius: 16px;
+    padding: 3rem;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.slide::before {
+    content: attr(data-slide-number);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.slide-section {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* ---- Speaker notes ---- */
+.speaker-notes {
+    background: rgba(255, 215, 61, 0.08);
+    border: 1px solid rgba(255, 215, 61, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.speaker-notes h4 {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+}
+.speaker-notes p, .speaker-notes ul {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.speaker-notes ul { margin-left: 1.25rem; }
+.speaker-notes li { margin-bottom: 0.4rem; }
+.speaker-notes .timing {
+    display: inline-block;
+    background: rgba(255, 215, 61, 0.2);
+    color: var(--accent-gold);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* ---- Title slide ---- */
+.slide-title {
+    background: linear-gradient(135deg, #0a1628 0%, #0f0f14 50%, #0a1628 100%);
+    text-align: center;
+}
+.slide-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.slide-title .subtitle { font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem; }
+.slide-title .badge {
+    display: inline-block;
+    background: var(--accent-teal);
+    color: var(--bg-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ---- Centered slide ---- */
+.slide-centered { text-align: center; }
+.slide-centered h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+.slide-centered .tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+/* ---- Two-column layout ---- */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.two-col h2 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+.two-col .lead { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; }
+
+/* ---- Three-column grid ---- */
+.three-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ---- Cards ---- */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 1.75rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent-teal); }
+.card .icon { font-size: 2.4rem; margin-bottom: 0.75rem; }
+.card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+.card.highlight-coral { border-color: rgba(255,107,107,0.4); background: rgba(255,107,107,0.08); }
+.card.highlight-teal  { border-color: rgba(78,205,196,0.4);  background: rgba(78,205,196,0.08); }
+.card.highlight-gold  { border-color: rgba(255,217,61,0.4);  background: rgba(255,217,61,0.08); }
+
+/* ---- Feature list ---- */
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.feature-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; }
+.feature-list li .check { color: var(--accent-teal); font-weight: 700; }
+
+/* ---- Visual panel ---- */
+.visual-panel {
+    background: #1a1a24;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.visual-panel h4 {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---- Code block ---- */
+.code-block {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: #0d0d12;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+.code-block .comment { color: #6272a4; }
+.code-block .keyword { color: #ff79c6; }
+.code-block .string  { color: #f1fa8c; }
+.code-block .tag     { color: #ff79c6; }
+.code-block .attr    { color: #50fa7b; }
+.code-block .prompt  { color: var(--accent-teal); }
+.code-block .output  { color: var(--text-secondary); }
+
+/* ---- Demo slide ---- */
+.slide-demo {
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+}
+.slide-demo h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.slide-demo .demo-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+    color: var(--bg-dark);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.slide-demo .demo-agenda { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.slide-demo .demo-step {
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    min-width: 160px;
+}
+.slide-demo .demo-step .step-num { font-size: 0.8rem; color: var(--accent-teal); font-weight: 600; margin-bottom: 0.25rem; }
+
+/* ---- Agenda slide ---- */
+.slide-agenda { text-align: left; padding: 3rem 4rem; }
+.slide-agenda h2 { font-size: 2.2rem; margin-bottom: 2rem; }
+.agenda-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; }
+.agenda-item {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 0.9rem 1.25rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.agenda-item .num {
+    width: 36px; height: 36px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0; font-size: 0.95rem;
+}
+.agenda-item .label { font-size: 1.1rem; font-weight: 500; }
+.agenda-item .time { margin-left: auto; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; }
+
+/* ---- Comparison table ---- */
+.comparison-table {
+    width: 100%; max-width: 920px; margin: 0 auto;
+    border-collapse: separate; border-spacing: 0; font-size: 0.95rem;
+}
+.comparison-table th, .comparison-table td { padding: 0.9rem 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.comparison-table thead th { font-weight: 700; font-size: 1rem; padding-bottom: 1rem; }
+.comparison-table td:first-child { color: var(--text-secondary); font-weight: 500; }
+.comparison-table .best { color: var(--success); font-weight: 600; }
+
+/* ---- Recap grid ---- */
+.recap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 800px; margin: 0 auto; }
+.recap-item {
+    background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: left; display: flex; gap: 1rem; align-items: flex-start;
+}
+.recap-item .number {
+    width: 32px; height: 32px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0;
+}
+
+/* ---- Closing slide ---- */
+.slide-closing {
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+}
+.slide-closing h2 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.slide-closing p { font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.9; }
+.slide-closing .links { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
+.slide-closing .link-item { background: rgba(255,255,255,0.2); padding: 1.25rem 2rem; border-radius: 12px; min-width: 180px; }
+.slide-closing .link-item .icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+.slide-closing .link-item p { font-size: 0.95rem; margin: 0; }
+
+/* ---- Gradient text utility ---- */
+.highlight-text {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* ---- Limitation / yes-no list ---- */
+.limitations-list { display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: 0 auto; }
+.limitation-item {
+    display: flex; align-items: center; gap: 1rem;
+    background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+}
+.limitation-item .status {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+}
+.limitation-item .status.yes { background: rgba(80,250,123,0.2); color: var(--success); }
+.limitation-item .status.no  { background: rgba(255,85,85,0.2); color: var(--error); }
+
+/* ---- Analogy / blockquote ---- */
+.analogy-visual { display: flex; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 2rem; }
+.analogy-item { text-align: center; }
+.analogy-item .emoji { font-size: 4rem; margin-bottom: 0.5rem; }
+.analogy-item p { color: var(--text-secondary); }
+.analogy-arrow { font-size: 2rem; color: var(--accent-teal); }
+
+/* ---- Mindset comparison ---- */
+.mindset-comparison { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center; max-width: 800px; margin: 0 auto; }
+.mindset-box { padding: 2rem; border-radius: 16px; text-align: center; }
+.mindset-box.wrong { background: rgba(255,85,85,0.1); border: 2px solid rgba(255,85,85,0.3); }
+.mindset-box.right { background: rgba(80,250,123,0.1); border: 2px solid rgba(80,250,123,0.3); }
+.mindset-box h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.mindset-box p { color: var(--text-secondary); }
+.mindset-vs { font-size: 1.5rem; font-weight: 700; color: var(--text-secondary); }
+
+/* ---- Flow diagram ---- */
+.flow-diagram { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.flow-step {
+    background: rgba(255,255,255,0.08); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: center; min-width: 120px;
+}
+.flow-step .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.flow-step p { font-size: 0.9rem; font-weight: 500; }
+.flow-arrow { font-size: 1.5rem; color: var(--accent-teal); }
+
+/* ---- Four-column grid ---- */
+.four-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.four-grid .card { padding: 1.5rem; }
+.four-grid .card h3 { font-size: 1rem; }
+.four-grid .card p { font-size: 0.8rem; }
+
+/* ---- Print ---- */
+@media print {
+    body { background: white; color: #1a1a1a; }
+    .slide { page-break-after: always; box-shadow: none; border: 1px solid #ddd; }
+    .speaker-notes { page-break-inside: avoid; }
+}
+    </style>
+</head>
+<body>
+    <header class="presentation-header">
+        <h1>Harness Design for Long-Running Application Development</h1>
+        <p>Multi-Agent Architecture for Autonomous Software Engineering &bull; Anthropic Engineering Blog</p>
+    </header>
+    <div class="slides-container">
+
+        <!-- SLIDE 1: Title -->
+        <section class="slide slide-title" data-slide-number="1">
+            <h1>Harness Design for Long-Running Apps</h1>
+            <p class="subtitle">Multi-agent architecture that builds full-stack applications autonomously</p>
+            <div class="meta" style="display:flex; justify-content:center; gap:2rem; color:var(--text-secondary); font-size:0.95rem;">
+                <span>Prithvi Rajasekaran</span>
+                <span>Anthropic Labs</span>
+                <span>March 2026</span>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">00:00 &#x2013; 01:00 (1 min)</span>
+            <ul>
+                <li>Introduce the blog post from Anthropic&#x2019;s engineering team.</li>
+                <li>Core question: how do you get Claude to build complete apps during multi-hour autonomous sessions?</li>
+                <li>Author built on prior work in frontend design skills and long-running coding agent harnesses.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 2: Agenda -->
+        <section class="slide slide-agenda" data-slide-number="2">
+            <span class="slide-section">Overview</span>
+            <h2>Agenda</h2>
+            <div class="agenda-list">
+                <div class="agenda-item">
+                    <div class="num">1</div>
+                    <span class="label">Why naive implementations fall short</span>
+                    <span class="time">3 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">2</div>
+                    <span class="label">The GAN-inspired multi-agent idea</span>
+                    <span class="time">2 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">3</div>
+                    <span class="label">Frontend design: grading subjective quality</span>
+                    <span class="time">4 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">4</div>
+                    <span class="label">Scaling to full-stack: 3-agent architecture</span>
+                    <span class="time">5 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">5</div>
+                    <span class="label">Results: Retro Game Maker &amp; Browser DAW</span>
+                    <span class="time">4 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">6</div>
+                    <span class="label">Key principles &amp; takeaways</span>
+                    <span class="time">2 min</span>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">01:00 &#x2013; 02:00 (1 min)</span>
+            <ul>
+                <li>Walk through the agenda. Emphasize this is an Anthropic engineering deep-dive, not a product announcement.</li>
+                <li>The core insight: decompose complex tasks across specialized agents, inspired by GANs.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 3: The Problem -->
+        <section class="slide slide-centered" data-slide-number="3">
+            <span class="slide-section">The Problem</span>
+            <h2>Why Naive Implementations <span class="highlight-text">Fall Short</span></h2>
+            <p class="tagline">Two fundamental challenges block single-agent approaches from building real applications</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:800px; margin:0 auto;">
+                <div class="card highlight-coral">
+                    <div class="icon">&#x1F9E0;</div>
+                    <h3>Context Window Degradation</h3>
+                    <p>Models lose coherence on lengthy tasks. Some exhibit &#x201C;context anxiety&#x201D; &#x2014; wrapping up prematurely as they approach perceived limits.</p>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x1F916;</div>
+                    <h3>Self-Evaluation Bias</h3>
+                    <p>Agents confidently praise their own work, even when quality is mediocre. Particularly acute for subjective tasks like design.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">02:00 &#x2013; 05:00 (3 min)</span>
+            <ul>
+                <li>Context window degradation: as token count grows, the model loses track. Prior approaches hit a performance ceiling despite prompt engineering.</li>
+                <li>&#x201C;Context anxiety&#x201D; &#x2014; Opus 4.5 would wrap up prematurely; Opus 4.6 largely fixed this.</li>
+                <li>Self-evaluation: agents rate their own output highly. No binary verification for design quality. Separate evaluator needed.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 4: Solutions to the Problems -->
+        <section class="slide" data-slide-number="4">
+            <span class="slide-section">Solutions</span>
+            <div class="mindset-comparison">
+                <div class="mindset-box wrong">
+                    <h3>&#x274C; Single Agent</h3>
+                    <p>Long context &#x2192; incoherent output. Self-review &#x2192; blind to own flaws. No external feedback loop.</p>
+                </div>
+                <div class="mindset-vs">VS</div>
+                <div class="mindset-box right">
+                    <h3>&#x2705; Multi-Agent Harness</h3>
+                    <p>Context resets + structured handoffs. Separate generator from evaluator. Concrete iteration cycles.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">05:00 &#x2013; 07:00 (2 min)</span>
+            <ul>
+                <li>Solution to context: clear the window entirely, carry state via structured handoffs. Trade-off: orchestration complexity + token overhead.</li>
+                <li>Solution to self-eval: separate the generator from the evaluator. Tuning skepticism in a standalone evaluator is far more tractable.</li>
+                <li>This is the GAN inspiration &#x2014; generator creates, evaluator judges, feedback loops back.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 5: GAN-Inspired Architecture -->
+        <section class="slide slide-centered" data-slide-number="5">
+            <span class="slide-section">Core Idea</span>
+            <h2>The <span class="highlight-text">GAN-Inspired</span> Architecture</h2>
+            <p class="tagline">Generator-evaluator multi-agent structure that applies to both subjective (design) and objective (code) tasks</p>
+            <div class="flow-diagram">
+                <div class="flow-step" style="border-color:rgba(108,158,255,0.4); background:rgba(108,158,255,0.08);">
+                    <div class="icon">&#x1F4CB;</div>
+                    <p>Planner</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step" style="border-color:rgba(255,107,107,0.4); background:rgba(255,107,107,0.08);">
+                    <div class="icon">&#x1F528;</div>
+                    <p>Generator</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step" style="border-color:rgba(78,205,196,0.4); background:rgba(78,205,196,0.08);">
+                    <div class="icon">&#x1F50D;</div>
+                    <p>Evaluator</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step" style="border-color:rgba(255,217,61,0.4); background:rgba(255,217,61,0.08);">
+                    <div class="icon">&#x1F504;</div>
+                    <p>Feedback Loop</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">07:00 &#x2013; 09:00 (2 min)</span>
+            <ul>
+                <li>Three-agent system: Planner expands user prompt into spec, Generator builds feature by feature, Evaluator tests and grades.</li>
+                <li>Agents communicate via files &#x2014; one writes, next reads and responds.</li>
+                <li>Built on Claude Agent SDK. Evaluator uses Playwright MCP to interact with live pages.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 6: Frontend Design Grading -->
+        <section class="slide slide-centered" data-slide-number="6">
+            <span class="slide-section">Frontend Design</span>
+            <h2>Grading <span class="highlight-text">Subjective Quality</span></h2>
+            <p class="tagline">Four criteria that make design quality measurable and iteratable</p>
+            <div class="four-grid">
+                <div class="card highlight-coral">
+                    <div class="icon">&#x1F3A8;</div>
+                    <h3>Design Quality</h3>
+                    <p>Coherent mood/identity. Colors, typography, layout combine into a whole.</p>
+                </div>
+                <div class="card highlight-teal">
+                    <div class="icon">&#x2728;</div>
+                    <h3>Originality</h3>
+                    <p>Custom decisions vs. template defaults. Penalizes &#x201C;AI slop&#x201D; patterns.</p>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x1F527;</div>
+                    <h3>Craft</h3>
+                    <p>Typography hierarchy, spacing consistency, color harmony, contrast.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x1F4F1;</div>
+                    <h3>Functionality</h3>
+                    <p>Can users find actions and complete tasks without guessing?</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">09:00 &#x2013; 12:00 (3 min)</span>
+            <ul>
+                <li>Design quality + originality weighted higher &#x2014; Claude already does well on craft and functionality.</li>
+                <li>Bias toward aesthetic risk-taking pushes outputs away from bland defaults.</li>
+                <li>Evaluator uses Playwright MCP: navigates the page, takes screenshots, studies implementation before scoring.</li>
+                <li>5&#x2013;15 iterations per generation; full runs extended to 4 hours.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 7: Iteration Example -->
+        <section class="slide" data-slide-number="7">
+            <span class="slide-section">Frontend Design</span>
+            <div class="two-col">
+                <div>
+                    <h2>The Power of <span class="highlight-text">Iteration</span></h2>
+                    <p class="lead">Dutch art museum website: by iteration 9, a polished dark-themed landing page. Then iteration 10 surprised everyone.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Assessments improved over iterations before plateauing</li>
+                        <li><span class="check">&#x2713;</span> Criteria wording steered generation in unexpected ways</li>
+                        <li><span class="check">&#x2713;</span> Complexity increased as generator got more ambitious</li>
+                        <li><span class="check">&#x2713;</span> First iteration already better than no-evaluator baseline</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Iteration 10: Creative Leap</h4>
+                    <p style="color:var(--text-secondary); line-height:1.6; font-size:0.95rem;">
+                        Generator pivoted to a <strong style="color:var(--accent-coral);">3D spatial experience</strong> &#x2014;
+                        CSS perspective-rendered room with checkered floor, free-form artwork positioning,
+                        doorway-based navigation.
+                    </p>
+                    <p style="color:var(--text-secondary); line-height:1.6; font-size:0.95rem; margin-top:1rem;">
+                        A creative leap not typically seen in single-pass generation.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">12:00 &#x2013; 13:00 (1 min)</span>
+            <ul>
+                <li>Pattern is not always linearly progressive &#x2014; sometimes middle iterations are preferred.</li>
+                <li>The 3D museum example shows emergent creativity from the feedback loop structure.</li>
+                <li>&#x201C;Museum quality&#x201D; wording in criteria accidentally steered toward museum-themed outputs.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 8: Full-Stack Three-Agent System -->
+        <section class="slide slide-centered" data-slide-number="8">
+            <span class="slide-section">Full-Stack Architecture</span>
+            <h2>Three-Agent System for <span class="highlight-text">Application Development</span></h2>
+            <div class="three-grid">
+                <div class="card highlight-coral">
+                    <div class="icon">&#x1F4CB;</div>
+                    <h3>Planner Agent</h3>
+                    <p>Expands 1&#x2013;4 sentence prompt into full product spec. Stays at product level &#x2014; avoids granular technical detail to prevent cascading errors.</p>
+                </div>
+                <div class="card highlight-teal">
+                    <div class="icon">&#x1F528;</div>
+                    <h3>Generator Agent</h3>
+                    <p>Implements features from spec. React + Vite + FastAPI + SQLite. Uses git for version control. Negotiates sprint contracts with evaluator.</p>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x1F50D;</div>
+                    <h3>Evaluator Agent</h3>
+                    <p>Uses Playwright MCP to click-test the live app. Grades against bugs found + objective criteria. Hard thresholds trigger rework.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">13:00 &#x2013; 16:00 (3 min)</span>
+            <ul>
+                <li>Planner is deliberately more ambitious about scope. Identifies opportunities to weave in AI features.</li>
+                <li>Generator works in sprints, self-evaluates before QA handoff.</li>
+                <li>Sprint Contract: generator and evaluator agree on &#x201C;done&#x201D; definition before code is written. Bridges user stories and testable implementation.</li>
+                <li>Evaluator grades: product depth, functionality, visual design, code quality &#x2014; each with hard threshold.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 9: Sprint Contracts & QA -->
+        <section class="slide" data-slide-number="9">
+            <span class="slide-section">Quality Assurance</span>
+            <div class="two-col">
+                <div>
+                    <h2>Sprint Contracts &amp; <span class="highlight-text">QA Tuning</span></h2>
+                    <p class="lead">Out-of-the-box, Claude is a poor QA agent. Calibrating skepticism was key.</p>
+                    <ul class="feature-list">
+                        <li><span class="check" style="color:var(--error);">&#x2717;</span> Identified issues then talked itself out of them</li>
+                        <li><span class="check" style="color:var(--error);">&#x2717;</span> Tested superficially; subtle bugs escaped</li>
+                        <li><span class="check">&#x2713;</span> Multiple prompt iterations to calibrate skepticism</li>
+                        <li><span class="check">&#x2713;</span> Sprint contracts define &#x201C;done&#x201D; before coding starts</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Example QA Findings</h4>
+                    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                        <div style="background:rgba(255,85,85,0.1); padding:0.75rem 1rem; border-radius:8px; border-left:3px solid var(--error);">
+                            <p style="font-size:0.8rem; color:var(--error); font-weight:600; margin-bottom:0.25rem;">FAIL: Rectangle fill tool</p>
+                            <p style="font-size:0.75rem; color:var(--text-secondary);">Only places tiles at drag start/end instead of filling region</p>
+                        </div>
+                        <div style="background:rgba(255,85,85,0.1); padding:0.75rem 1rem; border-radius:8px; border-left:3px solid var(--error);">
+                            <p style="font-size:0.8rem; color:var(--error); font-weight:600; margin-bottom:0.25rem;">FAIL: Delete entity spawn points</p>
+                            <p style="font-size:0.75rem; color:var(--text-secondary);">Handler requires both selection AND selectedEntityId, but click only sets one</p>
+                        </div>
+                        <div style="background:rgba(255,85,85,0.1); padding:0.75rem 1rem; border-radius:8px; border-left:3px solid var(--error);">
+                            <p style="font-size:0.8rem; color:var(--error); font-weight:600; margin-bottom:0.25rem;">FAIL: Reorder animation frames</p>
+                            <p style="font-size:0.75rem; color:var(--text-secondary);">PUT /frames/reorder defined after /{frame_id}; FastAPI matches &#x201C;reorder&#x201D; as integer &#x2192; 422</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">16:00 &#x2013; 18:00 (2 min)</span>
+            <ul>
+                <li>Key insight: making the evaluator skeptical enough took multiple prompt iterations.</li>
+                <li>Sprint contracts bridge the gap between user stories and testable criteria.</li>
+                <li>These QA findings are real bugs found by the evaluator agent in the Retro Game Maker output.</li>
+                <li>Remaining limits: small layout issues, unintuitive interactions, deeply nested feature bugs.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 10: Retro Game Maker Comparison -->
+        <section class="slide slide-centered" data-slide-number="10">
+            <span class="slide-section">Results</span>
+            <h2>Case Study: <span class="highlight-text">Retro Game Maker</span></h2>
+            <p class="tagline">Solo agent vs. full three-agent harness on the same prompt</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Dimension</th>
+                        <th style="color: var(--accent-coral);">Solo Agent</th>
+                        <th style="color: var(--accent-teal);">Full Harness (3 Agents)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Duration</td>
+                        <td>20 min</td>
+                        <td class="best">6 hours</td>
+                    </tr>
+                    <tr>
+                        <td>Cost</td>
+                        <td>$9</td>
+                        <td>$200</td>
+                    </tr>
+                    <tr>
+                        <td>Scope</td>
+                        <td>Basic UI only</td>
+                        <td class="best">16 features across 10 sprints</td>
+                    </tr>
+                    <tr>
+                        <td>Core Feature</td>
+                        <td>Broken &#x2014; entities don&#x2019;t respond</td>
+                        <td class="best">Playable game; entities move &amp; interact</td>
+                    </tr>
+                    <tr>
+                        <td>AI Integration</td>
+                        <td>None</td>
+                        <td class="best">Claude integration for generating components</td>
+                    </tr>
+                    <tr>
+                        <td>Visual Polish</td>
+                        <td>Fixed panels, wasted viewport</td>
+                        <td class="best">Full viewport canvas, consistent identity</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">18:00 &#x2013; 21:00 (3 min)</span>
+            <ul>
+                <li>Solo agent: met initial expectations but had critical issues &#x2014; core game feature broken, rigid UI.</li>
+                <li>Full harness: planner expanded one sentence into 16-feature spec including sprite animation, behavior templates, sound, AI-assisted generation, game export.</li>
+                <li>Physics had rough edges (character overlap) but core functionality worked.</li>
+                <li>The cost/time trade-off is significant but so is the quality jump.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 11: V2 Harness & DAW -->
+        <section class="slide" data-slide-number="11">
+            <span class="slide-section">Results</span>
+            <div class="two-col">
+                <div>
+                    <h2>V2 Harness: <span class="highlight-text">Browser DAW</span></h2>
+                    <p class="lead">&#x201C;Build a fully featured DAW in browser using Web Audio API&#x201D; &#x2014; a single sentence prompt.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Removed sprint construct (Opus 4.6 handles larger chunks)</li>
+                        <li><span class="check">&#x2713;</span> Kept planner + evaluator (obvious value)</li>
+                        <li><span class="check">&#x2713;</span> Single evaluator pass at end, not per-sprint</li>
+                        <li><span class="check">&#x2713;</span> Generator ran coherently for 2+ hours straight</li>
+                    </ul>
+                    <div style="margin-top:1.25rem; padding:1rem; background:rgba(78,205,196,0.08); border-radius:10px; border:1px solid rgba(78,205,196,0.2);">
+                        <p style="font-size:0.9rem; color:var(--accent-teal); font-weight:600;">Total: 3h 50min | $124.70</p>
+                    </div>
+                </div>
+                <div class="visual-panel">
+                    <h4>Build Phases</h4>
+                    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                        <div style="display:flex; justify-content:space-between; padding:0.5rem 0.75rem; background:rgba(108,158,255,0.08); border-radius:6px;">
+                            <span style="font-size:0.85rem;">Planner</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">4.7 min | $0.46</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:0.5rem 0.75rem; background:rgba(255,107,107,0.08); border-radius:6px;">
+                            <span style="font-size:0.85rem;">Build Round 1</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">2h 7min | $71.08</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:0.5rem 0.75rem; background:rgba(78,205,196,0.08); border-radius:6px;">
+                            <span style="font-size:0.85rem;">QA Round 1</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">8.8 min | $3.24</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:0.5rem 0.75rem; background:rgba(255,107,107,0.08); border-radius:6px;">
+                            <span style="font-size:0.85rem;">Build Round 2</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">1h 2min | $36.89</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:0.5rem 0.75rem; background:rgba(78,205,196,0.08); border-radius:6px;">
+                            <span style="font-size:0.85rem;">QA Round 2</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">6.8 min | $3.09</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:0.5rem 0.75rem; background:rgba(255,107,107,0.08); border-radius:6px;">
+                            <span style="font-size:0.85rem;">Build Round 3</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">10.9 min | $5.88</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; padding:0.5rem 0.75rem; background:rgba(78,205,196,0.08); border-radius:6px;">
+                            <span style="font-size:0.85rem;">QA Round 3</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">9.6 min | $4.06</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">21:00 &#x2013; 24:00 (3 min)</span>
+            <ul>
+                <li>V2 simplified: removed sprints entirely since Opus 4.6 handles larger chunks natively.</li>
+                <li>QA caught real gaps: &#x201C;clips can&#x2019;t be dragged on timeline&#x201D;, &#x201C;no instrument UI panels&#x201D;, &#x201C;effect visualizations are numeric sliders not graphical&#x201D;.</li>
+                <li>Final app: working arrangement view, mixer, transport. User could compose via prompting. Agent set tempo, laid melody, built drums, adjusted mixer, added reverb.</li>
+                <li>Limitation: Claude cannot hear audio, which limits QA feedback on the audio side.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 12: QA Feedback Examples -->
+        <section class="slide slide-centered" data-slide-number="12">
+            <span class="slide-section">QA in Action</span>
+            <h2>What the Evaluator <span class="highlight-text">Actually Caught</span></h2>
+            <p class="tagline">Real feedback from QA rounds on the browser DAW</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:850px; margin:0 auto;">
+                <div style="background:rgba(255,107,107,0.08); padding:1.5rem; border-radius:12px; border:1px solid rgba(255,107,107,0.2); text-align:left;">
+                    <p style="font-size:0.8rem; color:var(--accent-coral); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:0.75rem;">QA Round 1</p>
+                    <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.5;">&#x201C;Strong design/agent/backend but core DAW features display-only: clips can&#x2019;t be dragged on timeline, no instrument UI panels, no visual effect editors.&#x201D;</p>
+                </div>
+                <div style="background:rgba(255,217,61,0.08); padding:1.5rem; border-radius:12px; border:1px solid rgba(255,217,61,0.2); text-align:left;">
+                    <p style="font-size:0.8rem; color:var(--accent-gold); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:0.75rem;">QA Round 2</p>
+                    <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.5;">&#x201C;Audio recording stub-only (button toggles but no mic capture), clip resize by edge drag/split not implemented, effect visualizations are numeric sliders not graphical.&#x201D;</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">24:00 &#x2013; 25:00 (1 min)</span>
+            <ul>
+                <li>Each QA round drives specific, actionable fixes. Not vague &#x201C;needs improvement&#x201D; but concrete feature gaps.</li>
+                <li>This is why a separate evaluator works &#x2014; the generator can&#x2019;t see its own blind spots.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 13: Model Evolution -->
+        <section class="slide slide-centered" data-slide-number="13">
+            <span class="slide-section">Model Evolution</span>
+            <h2>Opus 4.5 &#x2192; Opus 4.6: <span class="highlight-text">What Changed</span></h2>
+            <div class="limitations-list">
+                <div class="limitation-item">
+                    <div class="status yes">&#x2713;</div>
+                    <span><strong>Context anxiety eliminated</strong> &#x2014; single continuous session across entire build</span>
+                </div>
+                <div class="limitation-item">
+                    <div class="status yes">&#x2713;</div>
+                    <span><strong>Sprint construct removed</strong> &#x2014; model handles larger chunks natively</span>
+                </div>
+                <div class="limitation-item">
+                    <div class="status yes">&#x2713;</div>
+                    <span><strong>Automatic SDK compaction</strong> &#x2014; no manual context resets needed</span>
+                </div>
+                <div class="limitation-item">
+                    <div class="status yes">&#x2713;</div>
+                    <span><strong>2+ hour coherent runs</strong> &#x2014; generator stays on track without intervention</span>
+                </div>
+                <div class="limitation-item">
+                    <div class="status no">&#x2717;</div>
+                    <span><strong>Still can&#x2019;t hear audio</strong> &#x2014; limits QA for audio-focused applications</span>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">25:00 &#x2013; 26:00 (1 min)</span>
+            <ul>
+                <li>Key lesson: when new models release, re-examine harness components. Strip non-load-bearing parts, add new capabilities.</li>
+                <li>Opus 4.5 required context resets between sessions. Opus 4.6 made that scaffolding unnecessary.</li>
+                <li>Every harness component encodes an assumption about what models can&#x2019;t do alone.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 14: Key Principles -->
+        <section class="slide slide-centered" data-slide-number="14">
+            <span class="slide-section">Principles</span>
+            <h2>Key <span class="highlight-text">Principles</span></h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Experiment with actual models.</strong> Read traces on realistic problems. Tune performance toward goals &#x2014; don&#x2019;t rely on assumptions.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Decompose with specialized agents.</strong> One agent per aspect of a complex task can yield substantial gains over monolithic approaches.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Re-examine on model upgrades.</strong> Strip non-load-bearing components. Add new capabilities. Assumptions get stale fast.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Better models expand the design space.</strong> They don&#x2019;t eliminate interesting harness work &#x2014; they shift where the interesting combinations exist.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">26:00 &#x2013; 28:00 (2 min)</span>
+            <ul>
+                <li>These principles apply beyond this specific harness &#x2014; any multi-agent system benefits from this thinking.</li>
+                <li>Evaluator usefulness depends on task difficulty relative to model capability. Frontier tasks benefit most.</li>
+                <li>Every component is an assumption about model limitations. Stress-test these regularly.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 15: Takeaways -->
+        <section class="slide slide-centered" data-slide-number="15">
+            <span class="slide-section">Summary</span>
+            <h2>Takeaways</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number" style="background:var(--accent-coral);">&#x2713;</div>
+                    <p><strong>Separate generation from evaluation.</strong> Self-evaluation bias is real. External feedback enables concrete iteration.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number" style="background:var(--accent-gold);">&#x2713;</div>
+                    <p><strong>Make subjective quality gradable.</strong> Define criteria, weight them strategically, iterate against scores.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number" style="background:var(--accent-blue);">&#x2713;</div>
+                    <p><strong>Sprint contracts bridge spec and test.</strong> Agree on &#x201C;done&#x201D; before code, not after.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number" style="background:var(--accent-teal);">&#x2713;</div>
+                    <p><strong>Harness components are assumptions.</strong> Re-evaluate with every model release. Today&#x2019;s scaffolding may be tomorrow&#x2019;s overhead.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">28:00 &#x2013; 29:00 (1 min)</span>
+            <ul>
+                <li>Wrap up with these four actionable takeaways.</li>
+                <li>The GAN-inspired pattern &#x2014; generator + evaluator &#x2014; applies broadly to any task where self-evaluation is unreliable.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 16: Closing -->
+        <section class="slide slide-closing" data-slide-number="16">
+            <h2>Thanks &amp; Q&amp;A</h2>
+            <p>Harness Design for Long-Running Application Development</p>
+            <div class="links">
+                <div class="link-item">
+                    <div class="icon">&#x1F4DD;</div>
+                    <p>anthropic.com/engineering</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4E6;</div>
+                    <p>Claude Agent SDK</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F310;</div>
+                    <p>02ship.com</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">29:00 &#x2013; 30:00 (1 min)</span>
+            <ul>
+                <li>Open for questions. Point audience to the full blog post for additional details and the appendix with planner output examples.</li>
+                <li>Author: Prithvi Rajasekaran, Anthropic Labs.</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
