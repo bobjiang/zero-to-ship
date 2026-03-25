@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-25",
+  "items": [
+    {
+      "title": "OpenAI’s Sora Shuts Down After Being Deemed 'Creepiest App'",
+      "summary": "OpenAI's experimental Sora app, previously known for its advanced capabilities, has been abruptly shut down, with TechCrunch reporting it was considered the 'creepiest app' on users' phones.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/24/openais-sora-was-the-creepiest-app-on-your-phone-now-its-shutting-down/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Kleiner Perkins Secures $3.5B to Double Down on AI Investments",
+      "summary": "Venture capital firm Kleiner Perkins has raised $3.5 billion in fresh capital, signaling a significant strategic pivot to invest heavily in the burgeoning AI sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/24/with-3-5b-in-fresh-capital-kleiner-perkins-is-going-all-in-on-ai/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Introduces New Policies to Help Developers Build Safer AI for Teens",
+      "summary": "OpenAI has announced new guidelines and safeguards aimed at assisting developers in creating safer AI experiences, particularly for teenage users, emphasizing responsible AI development.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/teen-safety-policies-gpt-oss-safeguard",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Provides Update on the OpenAI Foundation's Structure and Mission",
+      "summary": "OpenAI has released an update regarding the operational status and strategic direction of the OpenAI Foundation, clarifying its role within the broader organization.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/update-on-the-openai-foundation",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Research Unveils TurboQuant for Extreme AI Model Compression",
+      "summary": "Google Research introduces TurboQuant, a groundbreaking technique promising to redefine AI efficiency through extreme compression of models, enabling faster and more resource-efficient AI applications.",
+      "source": "Lobste.rs",
+      "url": "https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "ChatGPT Integrates New Features to Power Product Discovery",
+      "summary": "OpenAI is enhancing ChatGPT with new functionalities designed to improve product discovery, allowing users to find and explore products more effectively through the AI assistant.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/powering-product-discovery-in-chatgpt",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Omni-WorldBench: A New Standard for Comprehensive World Model Evaluation",
+      "summary": "Researchers introduce Omni-WorldBench, a novel benchmark designed for comprehensive, interaction-centric evaluation of world models, aiming to standardize performance assessment in complex AI environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.22212",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Speed by Simplicity: A Single-Stream Architecture for Fast Audio-Video Generative Models",
+      "summary": "A new research paper proposes 'Speed by Simplicity,' a single-stream architecture that significantly accelerates audio-video generative foundation models, improving efficiency without sacrificing quality.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.21986",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI Agents Are Becoming API's Biggest Consumers: Do They Prioritize Good Design?",
+      "summary": "An article explores the growing trend of AI agents as primary consumers of APIs and raises critical questions about whether these agents inherently value or contribute to good API design.",
+      "source": "Dev.to",
+      "url": "https://dev.to/morganwilliscloud/ai-agents-are-your-apis-biggest-consumer-do-they-care-about-good-design-31l2",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "LongCat-Flash-Prover: Advancing Formal Reasoning with Agentic Tool-Integrated Reinforcement Learning",
+      "summary": "A new paper introduces LongCat-Flash-Prover, an innovative system that enhances native formal reasoning capabilities through the integration of agentic tools and reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.21065",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "OpenResearcher: An Open Pipeline for Long-Horizon Deep Research Trajectory Synthesis",
+      "summary": "OpenResearcher presents a fully open-source pipeline designed to synthesize long-horizon deep research trajectories, aiming to automate and accelerate scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.20278",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Dev.to User Builds Spotify Playlist Generator with Claude AI",
+      "summary": "A developer on Dev.to shares their experience building a functional Spotify playlist generator, showcasing the practical application of Anthropic's Claude AI for creative tasks.",
+      "source": "Dev.to",
+      "url": "https://dev.to/leugarcez/construi-um-gerador-de-playlists-no-spotify-com-claude-18ge",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "AgenticGEO: A Self-Evolving Agentic System for Generative Engine Optimization",
+      "summary": "New research introduces AgenticGEO, a self-evolving agentic system designed to optimize generative engines, promising advancements in the efficiency and performance of AI content creation.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.20213",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "ProMAS: Proactive Error Forecasting for Multi-Agent Systems Using Markov Transition Dynamics",
+      "summary": "ProMAS is a new research development that enables proactive error forecasting in multi-agent systems by leveraging Markov Transition Dynamics, enhancing reliability and robustness.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.20260",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Domain-Specialized Tree of Thought through Plug-and-Play Predictors",
+      "summary": "Researchers propose a method for creating domain-specialized Tree of Thought models by integrating plug-and-play predictors, allowing for more targeted and efficient AI reasoning in specific fields.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.20267",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
