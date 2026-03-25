@@ -1,0 +1,3 @@
+experiment	score	max_score	pass_rate	status	description
+0	6	18	33.3%	baseline	original skill — no changes (v2 ultra-hard evals)
+1	18	18	100.0%	keep	added clean CSS + slide-section timestamp rules

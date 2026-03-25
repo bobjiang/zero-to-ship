@@ -6,10 +6,7 @@ user-invocable: true
 
 # Create Slide
 
-Generate **two** self-contained HTML files with all CSS inlined. No JavaScript. No frameworks. Only external dependency: Google Fonts.
-
-1. **Speaker notes version** (`{name}.html`) — Full deck with speaker notes and timing badges below each slide. For preparation and rehearsal.
-2. **Presentation version** (`{name}-presentation.html`) — Clean deck with no speaker notes, no presentation header, and presentation mode enabled (snap-scrolling, one slide per viewport). Ready to present.
+Generate a single, self-contained HTML file with all CSS inlined. No JavaScript. No frameworks. Only external dependency: Google Fonts.
 
 ## Arguments
 
@@ -25,9 +22,7 @@ Generate **two** self-contained HTML files with all CSS inlined. No JavaScript. 
 2. **Select layouts** — Choose from [references/layouts.md](references/layouts.md) for each slide.
 3. **Generate HTML** — Single file using [assets/base-theme.css](assets/base-theme.css) as the embedded `<style>` block. Add slide-specific CSS classes as needed.
 4. **Add speaker notes** — Below each slide, with timing badges that sum to the target duration.
-5. **Write both files**:
-   - `{name}.html` — Speaker notes version (as-is with all notes and timing)
-   - `{name}-presentation.html` — Duplicate the file, then: remove all `<div class="speaker-notes">` blocks, remove the `<header class="presentation-header">` block, and uncomment the presentation mode CSS block so slides snap-scroll full-viewport.
+5. **Write the file** — To the path the user specifies, or suggest a sensible default.
 
 ## HTML Structure
 
@@ -69,12 +64,10 @@ Generate **two** self-contained HTML files with all CSS inlined. No JavaScript. 
 - Speaker notes go in a `<div class="speaker-notes">` after each slide `<section>`
 - Include timing badge: `<span class="timing">Start – End (N min)</span>`
 - Include `@media print` styles for printability
-- **Clean CSS output**: When embedding base-theme.css, strip all template instruction comments (e.g., "Embed this entire file inside the style tag", "Paste base-theme.css here"). Only keep structural section comments like `/* ---- Speaker notes ---- */`.
-- **Slide-section timestamps**: Every non-title, non-closing slide's `<span class="slide-section">` must include a timestamp matching the speaker notes timing, e.g., `<span class="slide-section">Setup &bull; 0:04</span>`. Format: `Section Name &bull; M:SS`.
 
 ## Presentation Mode
 
-The base-theme.css includes a commented-out presentation mode block at the bottom. In the speaker notes version, keep it commented out. In the presentation version (`-presentation.html`), uncomment it so slides snap-scroll full-viewport with speaker notes and the header hidden.
+The base-theme.css includes a commented-out presentation mode block at the bottom. It enables snap-scrolling (one slide at a time with arrow keys) and hides speaker notes. Inform users they can uncomment it.
 
 ## Custom Theming
 

@@ -1,0 +1,19 @@
+{
+  "skill_name": "create-slide",
+  "status": "complete",
+  "current_experiment": 1,
+  "baseline_score": 33.3,
+  "best_score": 100.0,
+  "experiments": [
+    { "id": 0, "score": 6, "max_score": 18, "pass_rate": 33.3, "status": "baseline", "description": "original skill — no changes (v2 ultra-hard evals)" },
+    { "id": 1, "score": 18, "max_score": 18, "pass_rate": 100.0, "status": "keep", "description": "added clean CSS + slide-section timestamp rules" }
+  ],
+  "eval_breakdown": [
+    { "name": "Text sparsity", "pass_count": 5, "total": 6 },
+    { "name": "Zero inline styles", "pass_count": 5, "total": 6 },
+    { "name": "Bullet speaker notes", "pass_count": 4, "total": 6 },
+    { "name": "Rich code blocks", "pass_count": 4, "total": 6 },
+    { "name": "No template comments", "pass_count": 3, "total": 6 },
+    { "name": "Slide-section timestamps", "pass_count": 3, "total": 6 }
+  ]
+}
