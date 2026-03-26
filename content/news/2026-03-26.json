@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-26",
+  "items": [
+    {
+      "title": "OpenAI Introduces GPT-5.4 Mini and Nano Models",
+      "summary": "OpenAI has announced the release of GPT-5.4 mini and nano, new compact versions of their advanced language models, likely aimed at more efficient deployment and specific use cases.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Google Unveils TurboQuant AI Memory Compression Algorithm, Drawing 'Pied Piper' Comparisons",
+      "summary": "Google has introduced TurboQuant, a new AI memory compression algorithm, which the internet is humorously likening to the fictional 'Pied Piper' technology from Silicon Valley.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/25/google-turboquant-ai-memory-compression-silicon-valley-pied-piper/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic Launches Cowork: A Claude Desktop Agent for File Interaction Without Coding",
+      "summary": "Anthropic has released Cowork, a new Claude desktop agent designed to interact directly with user files, enabling advanced AI assistance without requiring any coding knowledge.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Railway Secures $100 Million to Compete with AWS in AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop AI-native cloud infrastructure, positioning itself as a significant challenger to established cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research Releases NousCoder-14B, an Open-Source Coding Model",
+      "summary": "Nous Research has launched NousCoder-14B, an open-source coding model that enters the market at a time of high demand for AI-powered code generation and assistance.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Google AI Blog Unveils Lyria 3, New Music Generation Model for Developers",
+      "summary": "Google has announced Lyria 3, its latest music generation model, making it available to developers for creating new audio experiences.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/lyria-3-developers/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Launches Safety Bug Bounty Program to Enhance AI Security",
+      "summary": "OpenAI has initiated a Safety Bug Bounty program, inviting researchers and security experts to identify and report vulnerabilities in their AI systems to improve overall safety.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/safety-bug-bounty",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Deccan AI Raises $25M to Source Experts from India for AI Training, Competing with Mercor",
+      "summary": "Deccan AI has secured $25 million in funding to build an AI training workforce primarily from India, aiming to compete with companies like Mercor in the expert sourcing market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/25/deccan-ai-raises-25m-as-ai-training-push-relies-on-india-based-workforce/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "MinerU-Diffusion: Rethinking Document OCR as Inverse Rendering via Diffusion Decoding",
+      "summary": "A new research paper proposes MinerU-Diffusion, a novel approach that reinterprets document OCR as an inverse rendering problem solved through diffusion decoding, potentially improving accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.22458",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WildWorld: A Large-Scale Dataset for Dynamic World Modeling in Generative ARPGs",
+      "summary": "Researchers introduce WildWorld, a substantial dataset designed for dynamic world modeling with actions and explicit states, aiming to advance generative capabilities in Action Role-Playing Games (ARPGs).",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.23497",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning",
+      "summary": "SpecEyes presents a method to accelerate agentic multimodal LLMs by employing speculative perception and planning, enhancing their efficiency in complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.23483",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Survey Explores Workflow Optimization for LLM Agents: From Static Templates to Dynamic Runtime Graphs",
+      "summary": "A new survey provides an overview of workflow optimization techniques for LLM agents, tracing the evolution from static templates to more dynamic runtime graph structures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.22386",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The AI Skills Gap is Widening, with Power Users Gaining a Significant Advantage",
+      "summary": "An AI company reports that a growing AI skills gap is emerging, where 'power users' who effectively leverage AI tools are significantly outperforming others in the workforce.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/25/the-ai-skills-gap-is-here-says-ai-company-and-power-users-are-pulling-ahead/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "your agent can think. it can't remember.",
+      "summary": "This article discusses the current limitations of AI agents, highlighting that while they possess reasoning capabilities, they often lack persistent memory, posing a challenge for complex, multi-step interactions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ghostbuild/your-agent-can-think-it-cant-remember-5e1o",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Lyria 3 Pro: Create Longer Tracks in More Google Products",
+      "summary": "Google expands its Lyria 3 music generation capabilities with a 'Pro' version, enabling users to create longer audio tracks within a wider range of Google products.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/lyria-3-pro/",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
