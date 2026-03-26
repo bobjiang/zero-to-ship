@@ -24,7 +24,7 @@ async function getPastEvents(): Promise<LumaEvent[]> {
   try {
     const res = await fetch(
       'https://api.lu.ma/calendar/get-items?calendar_api_id=cal-zhuelVReFdNX5xm&period=past&limit=50',
-      { next: { revalidate: 86400 } }
+      { next: { revalidate: 3600 } }
     );
     if (!res.ok) return [];
     const data = await res.json();
