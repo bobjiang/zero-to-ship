@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-27",
+  "items": [
+    {
+      "title": "Gemini Now Allows Chat and Personal Information Transfers from Other Chatbots",
+      "summary": "Google's Gemini now enables users to transfer their chat histories and personal data directly from other chatbot platforms, aiming to simplify migration and enhance user experience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Wikipedia Cracks Down on AI-Generated Content in Articles",
+      "summary": "Wikipedia has implemented stricter policies to curb the use of AI in writing and editing articles, emphasizing human oversight and factual accuracy for its content.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/26/wikipedia-cracks-down-on-the-use-of-ai-in-article-writing/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce Launches New Slackbot AI Agent to Compete in Workplace AI",
+      "summary": "Salesforce has introduced an enhanced Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly growing market for AI-powered workplace tools.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Google Translate Transforms Headphones into Live Personal Translators on iOS",
+      "summary": "Google Translate now offers a feature on iOS that turns headphones into real-time personal translators, enhancing communication across language barriers.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/translate/live-translate-with-headphones/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "CUA-Suite: A New Dataset for Training Computer-Use Agents with Human Video Demonstrations",
+      "summary": "CUA-Suite introduces a massive, human-annotated video demonstration dataset designed to train AI agents for complex computer-use tasks, pushing the boundaries of autonomous interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24440",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Discontinues ChatGPT's Erotic Mode Development",
+      "summary": "OpenAI has reportedly abandoned its experimental 'erotic mode' for ChatGPT, signaling a continued focus on responsible AI development and content moderation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Google AI Blog Announces Gemini 3.1 Flash Live for Natural Audio AI",
+      "summary": "Google's AI Blog highlights Gemini 3.1 Flash Live, a new development aimed at making audio AI interactions more natural and reliable.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Details Approach to Model Specification for AI Safety and Alignment",
+      "summary": "OpenAI has published insights into its strategy for developing a 'Model Spec,' outlining its commitment to defining and aligning AI behavior for safety and ethical use.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/our-approach-to-the-model-spec",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "DA-Flow: Degradation-Aware Optical Flow Estimation Using Diffusion Models",
+      "summary": "Researchers present DA-Flow, a novel method utilizing diffusion models for more accurate optical flow estimation, particularly in the presence of image degradation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.23499",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SIMART: Decomposing Monolithic Meshes into Sim-Ready Articulated Assets with MLLM",
+      "summary": "SIMART proposes a method to automatically decompose complex 3D meshes into articulated, simulation-ready assets using Multimodal Large Language Models (MLLMs), streamlining virtual environment creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.23386",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Future of Coding Emphasizes Communication Beyond Just Code",
+      "summary": "A new perspective suggests that the evolution of coding will increasingly prioritize communication skills over mere code generation, especially with the rise of AI assistants.",
+      "source": "Dev.to",
+      "url": "https://dev.to/auth0/the-future-of-coding-is-communication-not-just-code-328p",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "I Tried to Turn Agent Memory Into Plumbing Instead of Philosophy",
+      "summary": "An article explores a practical, engineering-focused approach to managing AI agent memory, moving beyond theoretical discussions to implement robust, scalable solutions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/marcosomma/i-tried-to-turn-agent-memory-into-plumbing-instead-of-philosophy-3a8e",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Speed vs. Smarts: A Debate on Optimizing Coding Agents",
+      "summary": "This discussion delves into the trade-offs between speed and intelligence in AI coding agents, examining which factor is more crucial for effective software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ben/speed-vs-smarts-for-coding-agents-3h",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "EVA: Efficient Reinforcement Learning for End-to-End Video Agent",
+      "summary": "EVA introduces an efficient reinforcement learning framework designed for end-to-end video agents, enabling them to learn and perform tasks directly from video inputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.22918",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "T-MAP: Red-Teaming LLM Agents with Trajectory-aware Evolutionary Search",
+      "summary": "T-MAP presents a novel red-teaming framework that uses trajectory-aware evolutionary search to identify vulnerabilities and improve the robustness of LLM agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.22341",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
