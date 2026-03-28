@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-28",
+  "items": [
+    {
+      "title": "SoftBank's $40B Loan Fuels Speculation of a 2026 OpenAI IPO",
+      "summary": "A new $40 billion loan to SoftBank is sparking rumors of a potential OpenAI IPO in 2026, indicating significant financial movements in the AI industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/27/why-softbanks-new-40b-loan-points-to-a-2026-openai-ipo/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Intern-S1-Pro: A Trillion-Scale Scientific Multimodal Foundation Model Unveiled",
+      "summary": "Researchers introduce Intern-S1-Pro, a groundbreaking scientific multimodal foundation model operating at a trillion-parameter scale, promising significant advancements in scientific AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.25040",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Acquires Astral, Expanding its AI Capabilities",
+      "summary": "OpenAI announces the acquisition of Astral, signaling a strategic move to enhance its technological stack and market position in the rapidly evolving AI landscape.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-to-acquire-astral",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "VCs Bet Billions on AI's Next Wave Amidst Questions on OpenAI's Sora Strategy",
+      "summary": "Venture capitalists are pouring billions into the next generation of AI, raising questions about OpenAI's strategic direction following reports of Sora's potential discontinuation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/podcast/vcs-are-betting-billions-on-ais-next-wave-so-why-is-openai-killing-sora/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "PixelSmile: Advancing Fine-Grained Facial Expression Editing with New Research",
+      "summary": "New research introduces PixelSmile, a novel approach aimed at achieving more precise and fine-grained control over facial expression editing in images.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.25728",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Expands 'Personal Intelligence' Features Globally, Bringing AI to More Users",
+      "summary": "Google is rolling out its 'Personal Intelligence' features to a wider global audience, aiming to make advanced AI capabilities more accessible to everyday users.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/personal-intelligence-expansion/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Listen Labs Secures $69M to Scale AI Customer Interviews After Viral Hiring Stunt",
+      "summary": "Listen Labs has successfully raised $69 million in funding to expand its AI-powered customer interview platform, following a highly publicized viral billboard hiring campaign.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "ARC-AGI-3: A New Benchmark Challenge for Frontier Agentic AI Intelligence",
+      "summary": "ARC-AGI-3 is introduced as a new and more complex challenge designed to push the boundaries and evaluate the capabilities of frontier agentic artificial intelligence systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2603.24621",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Details Monitoring Strategies for Internal Coding Agents to Prevent Misalignment",
+      "summary": "OpenAI shares insights into its methods for monitoring internal coding agents, focusing on strategies to detect and prevent potential misalignment in their behavior and outputs.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RealRestorer: Advancing Generalizable Real-World Image Restoration with Large-Scale Editing Models",
+      "summary": "A new paper introduces RealRestorer, a method that leverages large-scale image editing models to achieve more generalizable and effective restoration of real-world images.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.25502",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Calibri: Parameter-Efficient Calibration Enhances Diffusion Transformers",
+      "summary": "Calibri presents a new technique for parameter-efficient calibration that significantly improves the performance and efficiency of diffusion transformers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24800",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Cursor Faces Scrutiny for Undisclosed Use of Chinese AI Model Kimi K2.5",
+      "summary": "Cursor is under fire for allegedly using the Chinese AI model Kimi K2.5 without proper disclosure, raising concerns about transparency and trust among developers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/cursor-used-kimi-k25-a-chinese-ai-model-without-disclosure-why-every-developer-should-care-15h6",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "UI-Voyager: A Self-Evolving GUI Agent Learns from Failed Experiences",
+      "summary": "UI-Voyager introduces a novel self-evolving GUI agent that improves its capabilities by learning directly from its failed interactions and experiences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24533",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building Reliable Agents with Transactional Outbox Pattern and Redis Streams",
+      "summary": "A technical guide demonstrates how to construct more reliable AI agents by implementing the transactional outbox pattern alongside Redis Streams for robust message handling.",
+      "source": "Dev.to",
+      "url": "https://dev.to/redis/building-reliable-agents-with-the-transactional-outbox-pattern-and-redis-streams-45e6",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Automating GitHub Activity into Blog Posts with a 3-Agent Pipeline",
+      "summary": "A developer shares how they built a three-agent AI pipeline that automatically converts weekly GitHub activity into structured blog posts for Notion and DEV.to.",
+      "source": "Dev.to",
+      "url": "https://dev.to/yashksaini/i-built-a-3-agent-pipeline-that-turns-my-github-activity-into-weekly-blog-posts-on-notion-devto-1ndn",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
