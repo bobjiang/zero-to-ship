@@ -6,13 +6,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for sharing your build with the community! Fill out the details below and we'll add it to the [Project Hub](/ships).
+        Thanks for sharing your build with the community! Fill out the details below and we'll add it to the [Project Hub](https://www.02ship.com/ships).
 
   - type: input
     id: title
     attributes:
       label: Project Name
-      placeholder: e.g. AI Invoice Parser
+      placeholder: e.g. 02Ship
     validations:
       required: true
 
@@ -30,7 +30,7 @@ body:
     attributes:
       label: Short Description
       description: One or two sentences for the listing card (max ~150 characters)
-      placeholder: e.g. An automated invoice processing tool built with Claude that extracts line items, totals, and vendor details from PDF invoices.
+      placeholder: e.g. A learning portal for non-programmers to build and ship ideas with AI coding tools, featuring courses, daily news, and community events.
     validations:
       required: true
 
@@ -75,7 +75,7 @@ body:
     attributes:
       label: Tags
       description: Comma-separated tags describing your project
-      placeholder: e.g. automation, document-processing, claude-vision
+      placeholder: e.g. education, nextjs, ai-tools, community
     validations:
       required: true
 
@@ -83,13 +83,13 @@ body:
     id: demo_url
     attributes:
       label: Live Demo URL (optional)
-      placeholder: https://example.com/my-project
+      placeholder: https://www.02ship.com
 
   - type: input
     id: repo_url
     attributes:
       label: GitHub Repo URL (optional)
-      placeholder: https://github.com/username/my-project
+      placeholder: https://github.com/bobjiang/zero-to-ship
 
   - type: input
     id: screenshot
