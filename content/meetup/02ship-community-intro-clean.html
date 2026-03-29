@@ -82,42 +82,6 @@ body {
     font-weight: 600;
 }
 
-.speaker-notes {
-    background: rgba(255, 215, 61, 0.08);
-    border: 1px solid rgba(255, 215, 61, 0.25);
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
-    margin-top: -1.5rem;
-    margin-bottom: 1.5rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.speaker-notes h4 {
-    color: var(--accent-gold);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.75rem;
-}
-.speaker-notes p, .speaker-notes ul {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-.speaker-notes ul { margin-left: 1.25rem; }
-.speaker-notes li { margin-bottom: 0.4rem; }
-.speaker-notes .timing {
-    display: inline-block;
-    background: rgba(255, 215, 61, 0.2);
-    color: var(--accent-gold);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
 .slide-title {
     background: linear-gradient(135deg, #0a1628 0%, #0f0f14 50%, #0a1628 100%);
     text-align: center;
@@ -296,7 +260,6 @@ body {
 @media print {
     body { background: white; color: #1a1a1a; }
     .slide { page-break-after: always; box-shadow: none; border: 1px solid #ddd; }
-    .speaker-notes { page-break-inside: avoid; }
 }
     </style>
 </head>
@@ -313,14 +276,6 @@ body {
             <p class="subtitle">A builder community for shipping real projects with AI</p>
             <span class="badge">www.02ship.com</span>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">00:00 &#x2013; 01:00 (1 min)</span>
-            <ul>
-                <li>Welcome everyone. 02Ship is a community for people who want to build and ship real projects using AI coding tools.</li>
-                <li>Whether you're a non-programmer with an idea or a developer exploring AI-assisted workflows, this is for you.</li>
-            </ul>
-        </div>
 
         <!-- Slide 2: Agenda -->
         <section class="slide slide-agenda" data-slide-number="2">
@@ -349,14 +304,6 @@ body {
                 </div>
             </div>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">01:00 &#x2013; 02:00 (1 min)</span>
-            <ul>
-                <li>Quick overview of what we'll cover today.</li>
-                <li>We'll keep it short and actionable &#x2014; three ways to get involved by the end.</li>
-            </ul>
-        </div>
 
         <!-- Slide 3: What is 02Ship? -->
         <section class="slide slide-centered" data-slide-number="3">
@@ -381,15 +328,6 @@ body {
                 </div>
             </div>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">02:00 &#x2013; 04:00 (2 min)</span>
-            <ul>
-                <li>02Ship stands for "zero to ship" &#x2014; taking you from an idea to a shipped product.</li>
-                <li>Three pillars: Learn through courses, Build through cohorts, Ship through demo days.</li>
-                <li>Designed for people who aren't professional developers but want to bring ideas to life.</li>
-            </ul>
-        </div>
 
         <!-- Slide 4: What We Offer -->
         <section class="slide" data-slide-number="4">
@@ -417,15 +355,6 @@ body {
                 </div>
             </div>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">04:00 &#x2013; 06:00 (2 min)</span>
-            <ul>
-                <li>All resources are free and open.</li>
-                <li>The daily news keeps you up to date with AI developments.</li>
-                <li>Meetups happen monthly in Sydney &#x2014; mix of talks and hands-on sessions.</li>
-            </ul>
-        </div>
 
         <!-- Slide 5: Cohort Experience -->
         <section class="slide slide-centered" data-slide-number="5">
@@ -454,17 +383,6 @@ body {
                 </div>
             </div>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">06:00 &#x2013; 08:00 (2 min)</span>
-            <ul>
-                <li>Week 0: Apply with your project idea. We match you with a small cohort.</li>
-                <li>Day 1: Kickoff &#x2014; meet your group, scope your project, set your goal.</li>
-                <li>Day 7: Mid-point check-in. Share progress, get feedback, unblock issues.</li>
-                <li>Day 14: Demo Day &#x2014; present your build to the whole community at the monthly meetup.</li>
-                <li>Cohorts run monthly. Accountability and community make the difference.</li>
-            </ul>
-        </div>
 
         <!-- Slide 6: Takeaways -->
         <section class="slide slide-centered" data-slide-number="6">
@@ -489,14 +407,6 @@ body {
                 </div>
             </div>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">08:00 &#x2013; 09:00 (1 min)</span>
-            <ul>
-                <li>Recap the four reasons to join.</li>
-                <li>Emphasize that this is about shipping, not just learning.</li>
-            </ul>
-        </div>
 
         <!-- Slide 7: Call to Action -->
         <section class="slide slide-centered" data-slide-number="7">
@@ -524,16 +434,6 @@ body {
                 </div>
             </div>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">09:00 &#x2013; 10:00 (1 min)</span>
-            <ul>
-                <li>Three concrete actions the audience can take right now.</li>
-                <li>Apply for Cohort: next cohort starts soon, apply at 02ship.com/ship-weeks.</li>
-                <li>Contribute: help with content, mentoring, or code at 02ship.com/get-involved.</li>
-                <li>Submit Project: if you've already built something, submit it to the Project Hub via GitHub.</li>
-            </ul>
-        </div>
 
         <!-- Slide 8: Closing -->
         <section class="slide slide-closing" data-slide-number="8">
@@ -554,14 +454,6 @@ body {
                 </div>
             </div>
         </section>
-        <div class="speaker-notes">
-            <h4>Speaker Notes</h4>
-            <span class="timing">10:00 &#x2013; 10:30 (0.5 min)</span>
-            <ul>
-                <li>Thank the audience. Invite questions.</li>
-                <li>Point to the links on screen for next steps.</li>
-            </ul>
-        </div>
 
     </div>
 </body>
