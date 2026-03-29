@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllSeries, getAllBlogPosts } from '@/lib/content';
+import { getAllSeries, getAllBlogPosts, getAllShips } from '@/lib/content';
 import { getAllNewsDates } from '@/lib/news';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -29,6 +29,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/ships`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/ship-weeks`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${siteUrl}/events`,
@@ -76,5 +88,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...coursePages, ...blogPages, ...newsPages];
+  const ships = await getAllShips();
+  const shipPages: MetadataRoute.Sitemap = ships.map((ship) => ({
+    url: `${siteUrl}/ships/${ship.slug}`,
+    lastModified: new Date(ship.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...coursePages, ...blogPages, ...newsPages, ...shipPages];
 }

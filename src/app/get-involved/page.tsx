@@ -4,7 +4,7 @@ import { Container } from '@/components/ui/Container';
 export const metadata: Metadata = {
   title: 'Get Involved - 02Ship',
   description:
-    'Join the 02Ship community as a volunteer, speaker, sponsor, or contributor. Help non-programmers learn to build and ship with AI coding tools.',
+    'Join the 02Ship community as a volunteer, speaker, sponsor, or contributor. Help Claude practitioners build and ship real projects in Sydney.',
   alternates: { canonical: '/get-involved' },
 };
 
@@ -61,8 +61,8 @@ export default function GetInvolvedPage() {
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             02Ship is built by the community, for the community. Whether you
-            want to speak, volunteer, sponsor, or contribute in your own way —
-            there&apos;s a place for you.
+            want to speak, volunteer, sponsor, facilitate a cohort, or
+            contribute in your own way — there&apos;s a place for you.
           </p>
         </div>
 

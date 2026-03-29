@@ -1,0 +1,12 @@
+{
+  "slug": "02ship",
+  "title": "02Ship",
+  "builder": "Bob Jiang",
+  "description": "A learning portal and community platform for Claude practitioners in Sydney. Built with Next.js, Tailwind CSS, and Claude Code — from zero to shipped.",
+  "content": "## The Problem\n\n67% of Claude users in Sydney had no local community to share builds, get feedback, or learn from each other. Existing AI meetups were too broad and beginner-focused.\n\n## The Build\n\nUsing Claude Code as the primary development tool, 02Ship was built as a Next.js 14 static site with:\n\n1. Course platform with video lessons and structured curricula\n2. Daily AI news aggregation\n3. Blog with MDX support\n4. Community Cohorts program for 2-week build sprints\n5. Events integration with Luma for monthly meetups\n\n## Results\n\n100+ members joined the community. Monthly meetups running in Sydney. Cohorts program launching to help practitioners go from idea to demo in 14 days.",
+  "date": "2026-03-15",
+  "cohort": "Cohort #1",
+  "tags": ["next.js", "claude-code", "community", "agentic-coding"],
+  "demoUrl": "https://www.02ship.com",
+  "repoUrl": "https://github.com/bobjiang/zero-to-ship"
+}

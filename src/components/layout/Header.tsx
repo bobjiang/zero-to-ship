@@ -4,9 +4,21 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 
+const navLinks = [
+  { label: 'Courses', href: '/courses' },
+  { label: 'Daily News', href: '/news' },
+  { label: 'Services', href: '/services' },
+  { label: 'Events', href: '/events' },
+  { label: 'Get Involved', href: '/get-involved' },
+];
+
+const shipsLinks = [
+  { label: 'Project Hub', href: '/ships' },
+  { label: 'Next Cohort', href: '/ship-weeks' },
+];
+
 const aboutLinks = [
   { label: 'Our Story', href: '/about' },
-  { label: 'AI Daily News', href: '/news' },
   { label: 'Blog', href: '/blog' },
   { label: 'Community', href: '/community' },
 ];
@@ -38,18 +50,36 @@ export function Header() {
               02Ship
             </Link>
             <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
-              <Link href="/courses" className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                Courses
-              </Link>
-              <Link href="/services" className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                Services
-              </Link>
-              <Link href="/events" className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                Events
-              </Link>
-              <Link href="/get-involved" className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                Get Involved
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-gray-700 hover:text-gray-900"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="group relative">
+                <button aria-haspopup="true" aria-expanded={false} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900">
+                  Ships
+                  <svg className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="w-48 rounded-lg border border-gray-200 bg-white py-2 shadow-lg">
+                    {shipsLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
               <div className="group relative">
                 <button aria-haspopup="true" aria-expanded={false} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900">
                   About
@@ -117,34 +147,33 @@ export function Header() {
               </button>
             </div>
             <nav className="mt-8 space-y-1" aria-label="Mobile navigation">
-              <Link
-                href="/courses"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Courses
-              </Link>
-              <Link
-                href="/services"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                href="/events"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Events
-              </Link>
-              <Link
-                href="/get-involved"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Get Involved
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="pt-4">
+                <p className="px-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                  Ships
+                </p>
+                <div className="mt-2 space-y-1">
+                  {shipsLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <div className="pt-4">
                 <p className="px-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
                   About

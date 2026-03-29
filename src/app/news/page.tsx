@@ -4,7 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { getAllNewsDates } from '@/lib/news';
 
 export const metadata: Metadata = {
-  title: 'Daily AI News — Curated & Ranked',
+  title: 'Daily News — Curated & Ranked',
   description: 'Daily curated AI news from Hacker News, Reddit, arXiv, and Hugging Face, ranked by impact.',
   alternates: { canonical: '/news' },
 };
