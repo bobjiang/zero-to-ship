@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02Ship Community — Build &amp; Ship with AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+/*
+ * 02Ship Slide Theme — Base CSS
+ * Dark theme with coral/teal/gold accents.
+ */
+
+:root {
+    --bg-dark: #0f0f14;
+    --bg-slide: #16161d;
+    --accent-coral: #ff6b6b;
+    --accent-teal: #4ecdc4;
+    --accent-gold: #ffd93d;
+    --accent-blue: #6c9eff;
+    --text-primary: #f8f8f2;
+    --text-secondary: #a9a9b3;
+    --success: #50fa7b;
+    --error: #ff5555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.presentation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+    border-radius: 16px;
+}
+.presentation-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.presentation-header p { opacity: 0.9; font-size: 1.1rem; }
+
+.slides-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide {
+    background: var(--bg-slide);
+    border-radius: 16px;
+    padding: 3rem;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.slide::before {
+    content: attr(data-slide-number);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.slide-section {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.speaker-notes {
+    background: rgba(255, 215, 61, 0.08);
+    border: 1px solid rgba(255, 215, 61, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.speaker-notes h4 {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+}
+.speaker-notes p, .speaker-notes ul {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.speaker-notes ul { margin-left: 1.25rem; }
+.speaker-notes li { margin-bottom: 0.4rem; }
+.speaker-notes .timing {
+    display: inline-block;
+    background: rgba(255, 215, 61, 0.2);
+    color: var(--accent-gold);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.slide-title {
+    background: linear-gradient(135deg, #0a1628 0%, #0f0f14 50%, #0a1628 100%);
+    text-align: center;
+}
+.slide-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.slide-title .subtitle { font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem; }
+.slide-title .badge {
+    display: inline-block;
+    background: var(--accent-teal);
+    color: var(--bg-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.slide-centered { text-align: center; }
+.slide-centered h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+.slide-centered .tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.two-col h2 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+.two-col .lead { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; }
+
+.three-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 1.75rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent-teal); }
+.card .icon { font-size: 2.4rem; margin-bottom: 0.75rem; }
+.card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+.card.highlight-coral { border-color: rgba(255,107,107,0.4); background: rgba(255,107,107,0.08); }
+.card.highlight-teal  { border-color: rgba(78,205,196,0.4);  background: rgba(78,205,196,0.08); }
+.card.highlight-gold  { border-color: rgba(255,217,61,0.4);  background: rgba(255,217,61,0.08); }
+
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.feature-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; }
+.feature-list li .check { color: var(--accent-teal); font-weight: 700; }
+
+.visual-panel {
+    background: #1a1a24;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.visual-panel h4 {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flow-diagram { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.flow-step {
+    background: rgba(255,255,255,0.08); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: center; min-width: 120px;
+}
+.flow-step .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.flow-step p { font-size: 0.9rem; font-weight: 500; }
+.flow-arrow { font-size: 1.5rem; color: var(--accent-teal); }
+
+.slide-agenda { text-align: left; padding: 3rem 4rem; }
+.slide-agenda h2 { font-size: 2.2rem; margin-bottom: 2rem; }
+.agenda-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; }
+.agenda-item {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 0.9rem 1.25rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.agenda-item .num {
+    width: 36px; height: 36px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0; font-size: 0.95rem;
+}
+.agenda-item .label { font-size: 1.1rem; font-weight: 500; }
+.agenda-item .time { margin-left: auto; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; }
+
+.recap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 800px; margin: 0 auto; }
+.recap-item {
+    background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: left; display: flex; gap: 1rem; align-items: flex-start;
+}
+.recap-item .number {
+    width: 32px; height: 32px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0;
+}
+
+.slide-closing {
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+}
+.slide-closing h2 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.slide-closing p { font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.9; }
+.slide-closing .links { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
+.slide-closing .link-item { background: rgba(255,255,255,0.2); padding: 1.25rem 2rem; border-radius: 12px; min-width: 180px; }
+.slide-closing .link-item .icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+.slide-closing .link-item p { font-size: 0.95rem; margin: 0; }
+
+.highlight-text {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* CTA button styles */
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.cta-card {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.cta-card:hover { transform: translateY(-4px); }
+.cta-card .icon { font-size: 2.4rem; margin-bottom: 0.75rem; }
+.cta-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.cta-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem; }
+.cta-card .cta-link {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--bg-dark);
+}
+.cta-card.highlight-coral .cta-link { background: var(--accent-coral); }
+.cta-card.highlight-teal .cta-link { background: var(--accent-teal); }
+.cta-card.highlight-gold .cta-link { background: var(--accent-gold); }
+
+@media print {
+    body { background: white; color: #1a1a1a; }
+    .slide { page-break-after: always; box-shadow: none; border: 1px solid #ddd; }
+    .speaker-notes { page-break-inside: avoid; }
+}
+    </style>
+</head>
+<body>
+    <header class="presentation-header">
+        <h1>02Ship Community</h1>
+        <p>Build &amp; Ship Real Projects with AI Coding Tools</p>
+    </header>
+    <div class="slides-container">
+
+        <!-- Slide 1: Title -->
+        <section class="slide slide-title" data-slide-number="1">
+            <h1>02Ship</h1>
+            <p class="subtitle">A builder community for shipping real projects with AI</p>
+            <span class="badge">www.02ship.com</span>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">00:00 &#x2013; 01:00 (1 min)</span>
+            <ul>
+                <li>Welcome everyone. 02Ship is a community for people who want to build and ship real projects using AI coding tools.</li>
+                <li>Whether you're a non-programmer with an idea or a developer exploring AI-assisted workflows, this is for you.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 2: Agenda -->
+        <section class="slide slide-agenda" data-slide-number="2">
+            <span class="slide-section">Overview</span>
+            <h2>Agenda</h2>
+            <div class="agenda-list">
+                <div class="agenda-item">
+                    <div class="num">1</div>
+                    <span class="label">What is 02Ship?</span>
+                    <span class="time">2 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">2</div>
+                    <span class="label">What we offer</span>
+                    <span class="time">2 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">3</div>
+                    <span class="label">The Cohort experience</span>
+                    <span class="time">3 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">4</div>
+                    <span class="label">Get involved</span>
+                    <span class="time">2 min</span>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">01:00 &#x2013; 02:00 (1 min)</span>
+            <ul>
+                <li>Quick overview of what we'll cover today.</li>
+                <li>We'll keep it short and actionable &#x2014; three ways to get involved by the end.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: What is 02Ship? -->
+        <section class="slide slide-centered" data-slide-number="3">
+            <span class="slide-section">Mission</span>
+            <h2>What is <span class="highlight-text">02Ship</span>?</h2>
+            <p class="tagline">A learning portal and builder community for non-programmers to build and ship ideas with AI coding tools like Claude.</p>
+            <div class="three-grid">
+                <div class="card highlight-coral">
+                    <div class="icon">&#x1F4DA;</div>
+                    <h3>Learn</h3>
+                    <p>Free courses on building with Claude and AI tools</p>
+                </div>
+                <div class="card highlight-teal">
+                    <div class="icon">&#x1F528;</div>
+                    <h3>Build</h3>
+                    <p>2-week cohort sprints to ship real projects</p>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x1F680;</div>
+                    <h3>Ship</h3>
+                    <p>Demo days, project hub, and community showcase</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">02:00 &#x2013; 04:00 (2 min)</span>
+            <ul>
+                <li>02Ship stands for "zero to ship" &#x2014; taking you from an idea to a shipped product.</li>
+                <li>Three pillars: Learn through courses, Build through cohorts, Ship through demo days.</li>
+                <li>Designed for people who aren't professional developers but want to bring ideas to life.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 4: What We Offer -->
+        <section class="slide" data-slide-number="4">
+            <span class="slide-section">Resources</span>
+            <div class="two-col">
+                <div>
+                    <h2>What We <span class="highlight-text">Offer</span></h2>
+                    <p class="lead">Everything you need to go from idea to shipped product.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Free video courses on Claude basics</li>
+                        <li><span class="check">&#x2713;</span> Curated daily AI news</li>
+                        <li><span class="check">&#x2713;</span> Monthly meetups and events</li>
+                        <li><span class="check">&#x2713;</span> 2-week build cohorts</li>
+                        <li><span class="check">&#x2713;</span> Project Hub to showcase your work</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Community Channels</h4>
+                    <ul class="feature-list" style="margin-top: 0.5rem;">
+                        <li><span class="check">&#x1F4AC;</span> Telegram group</li>
+                        <li><span class="check">&#x1F3AC;</span> YouTube channel</li>
+                        <li><span class="check">&#x1F4F0;</span> Daily AI news digest</li>
+                        <li><span class="check">&#x1F3A4;</span> In-person meetups (Sydney)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">04:00 &#x2013; 06:00 (2 min)</span>
+            <ul>
+                <li>All resources are free and open.</li>
+                <li>The daily news keeps you up to date with AI developments.</li>
+                <li>Meetups happen monthly in Sydney &#x2014; mix of talks and hands-on sessions.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 5: Cohort Experience -->
+        <section class="slide slide-centered" data-slide-number="5">
+            <span class="slide-section">Cohort</span>
+            <h2>The <span class="highlight-text">Cohort</span> Experience</h2>
+            <p class="tagline">A 2-week build sprint: pick a project, join a small group, ship something real.</p>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="icon">&#x1F4DD;</div>
+                    <p>Apply</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">
+                    <div class="icon">&#x1F91D;</div>
+                    <p>Kickoff</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">
+                    <div class="icon">&#x1F504;</div>
+                    <p>Check-in</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">
+                    <div class="icon">&#x1F3C6;</div>
+                    <p>Demo Day</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">06:00 &#x2013; 08:00 (2 min)</span>
+            <ul>
+                <li>Week 0: Apply with your project idea. We match you with a small cohort.</li>
+                <li>Day 1: Kickoff &#x2014; meet your group, scope your project, set your goal.</li>
+                <li>Day 7: Mid-point check-in. Share progress, get feedback, unblock issues.</li>
+                <li>Day 14: Demo Day &#x2014; present your build to the whole community at the monthly meetup.</li>
+                <li>Cohorts run monthly. Accountability and community make the difference.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Takeaways -->
+        <section class="slide slide-centered" data-slide-number="6">
+            <span class="slide-section">Summary</span>
+            <h2>Why <span class="highlight-text">02Ship</span>?</h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>No coding background needed</strong> &#x2014; AI tools bridge the gap between idea and product.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Accountability</strong> &#x2014; cohort structure keeps you on track to actually ship.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Community</strong> &#x2014; learn from others, get feedback, share your wins.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Real projects</strong> &#x2014; not tutorials. You build something you can show the world.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">08:00 &#x2013; 09:00 (1 min)</span>
+            <ul>
+                <li>Recap the four reasons to join.</li>
+                <li>Emphasize that this is about shipping, not just learning.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: Call to Action -->
+        <section class="slide slide-centered" data-slide-number="7">
+            <span class="slide-section">Get Involved</span>
+            <h2>Three Ways to <span class="highlight-text">Get Started</span></h2>
+            <p class="tagline">Pick one and take the first step today.</p>
+            <div class="cta-grid">
+                <div class="cta-card highlight-coral">
+                    <div class="icon">&#x1F3AF;</div>
+                    <h3>Apply for Cohort</h3>
+                    <p>Join the next 2-week build sprint and ship your project</p>
+                    <a href="https://www.02ship.com/ship-weeks" class="cta-link" target="_blank" rel="noopener noreferrer">Apply Now</a>
+                </div>
+                <div class="cta-card highlight-teal">
+                    <div class="icon">&#x1F91D;</div>
+                    <h3>Contribute</h3>
+                    <p>Help build the community &#x2014; content, mentoring, or code</p>
+                    <a href="https://www.02ship.com/get-involved" class="cta-link" target="_blank" rel="noopener noreferrer">Get Involved</a>
+                </div>
+                <div class="cta-card highlight-gold">
+                    <div class="icon">&#x1F4E6;</div>
+                    <h3>Submit Project</h3>
+                    <p>Already built something? Add it to the Project Hub</p>
+                    <a href="https://github.com/bobjiang/zero-to-ship/issues/new?template=ship-submission.yml" class="cta-link" target="_blank" rel="noopener noreferrer">Submit</a>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">09:00 &#x2013; 10:00 (1 min)</span>
+            <ul>
+                <li>Three concrete actions the audience can take right now.</li>
+                <li>Apply for Cohort: next cohort starts soon, apply at 02ship.com/ship-weeks.</li>
+                <li>Contribute: help with content, mentoring, or code at 02ship.com/get-involved.</li>
+                <li>Submit Project: if you've already built something, submit it to the Project Hub via GitHub.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 8: Closing -->
+        <section class="slide slide-closing" data-slide-number="8">
+            <h2>Let's Build Together</h2>
+            <p>02Ship &#x2014; from zero to shipped</p>
+            <div class="links">
+                <div class="link-item">
+                    <div class="icon">&#x1F310;</div>
+                    <p>www.02ship.com</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F3AF;</div>
+                    <p>02ship.com/ship-weeks</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4AC;</div>
+                    <p>Join our Telegram</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">10:00 &#x2013; 10:30 (0.5 min)</span>
+            <ul>
+                <li>Thank the audience. Invite questions.</li>
+                <li>Point to the links on screen for next steps.</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
