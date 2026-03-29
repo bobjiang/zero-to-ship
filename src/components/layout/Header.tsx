@@ -47,6 +47,9 @@ export function Header() {
               <Link href="/events" className="text-sm font-medium text-gray-700 hover:text-gray-900">
                 Events
               </Link>
+              <Link href="/get-involved" className="text-sm font-medium text-gray-700 hover:text-gray-900">
+                Get Involved
+              </Link>
               <div className="group relative">
                 <button aria-haspopup="true" aria-expanded={false} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900">
                   About
@@ -134,6 +137,13 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Events
+              </Link>
+              <Link
+                href="/get-involved"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Get Involved
               </Link>
               <div className="pt-4">
                 <p className="px-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
