@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Use Claude Code for Non-Coding Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --bg-dark: #0f0f14;
+    --bg-slide: #16161d;
+    --accent-coral: #ff6b6b;
+    --accent-teal: #4ecdc4;
+    --accent-gold: #ffd93d;
+    --accent-blue: #6c9eff;
+    --text-primary: #f8f8f2;
+    --text-secondary: #a9a9b3;
+    --success: #50fa7b;
+    --error: #ff5555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.presentation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+    border-radius: 16px;
+}
+.presentation-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.presentation-header p { opacity: 0.9; font-size: 1.1rem; }
+
+.slides-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide {
+    background: var(--bg-slide);
+    border-radius: 16px;
+    padding: 3rem;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.slide::before {
+    content: attr(data-slide-number);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.slide-section {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.speaker-notes {
+    background: rgba(255, 215, 61, 0.08);
+    border: 1px solid rgba(255, 215, 61, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.speaker-notes h4 {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+}
+.speaker-notes p, .speaker-notes ul {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.speaker-notes ul { margin-left: 1.25rem; }
+.speaker-notes li { margin-bottom: 0.4rem; }
+.speaker-notes .timing {
+    display: inline-block;
+    background: rgba(255, 215, 61, 0.2);
+    color: var(--accent-gold);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.slide-title {
+    background: linear-gradient(135deg, #0a1628 0%, #0f0f14 50%, #0a1628 100%);
+    text-align: center;
+}
+.slide-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.slide-title .subtitle { font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem; }
+.slide-title .badge {
+    display: inline-block;
+    background: var(--accent-teal);
+    color: var(--bg-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.slide-centered { text-align: center; }
+.slide-centered h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+.slide-centered .tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.two-col h2 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+.two-col .lead { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; }
+
+.three-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 1.75rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent-teal); }
+.card .icon { font-size: 2.4rem; margin-bottom: 0.75rem; }
+.card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+.card.highlight-coral { border-color: rgba(255,107,107,0.4); background: rgba(255,107,107,0.08); }
+.card.highlight-teal  { border-color: rgba(78,205,196,0.4);  background: rgba(78,205,196,0.08); }
+.card.highlight-gold  { border-color: rgba(255,217,61,0.4);  background: rgba(255,217,61,0.08); }
+
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.feature-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; }
+.feature-list li .check { color: var(--accent-teal); font-weight: 700; }
+
+.visual-panel {
+    background: #1a1a24;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.visual-panel h4 {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.code-block {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: #0d0d12;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+.code-block .comment { color: #6272a4; }
+.code-block .keyword { color: #ff79c6; }
+.code-block .string  { color: #f1fa8c; }
+.code-block .tag     { color: #ff79c6; }
+.code-block .attr    { color: #50fa7b; }
+.code-block .prompt  { color: var(--accent-teal); }
+.code-block .output  { color: var(--text-secondary); }
+
+.chat-container { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+.chat-message { display: flex; gap: 0.75rem; align-items: flex-start; }
+.chat-message.user { flex-direction: row-reverse; }
+.chat-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 0.8rem; flex-shrink: 0;
+}
+.chat-message.user .chat-avatar { background: var(--accent-coral); }
+.chat-message.assistant .chat-avatar { background: var(--accent-teal); }
+.chat-bubble {
+    background: rgba(255,255,255,0.08);
+    padding: 0.85rem 1.1rem;
+    border-radius: 14px;
+    max-width: 75%;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+.chat-message.user .chat-bubble { background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); }
+.chat-message.assistant .chat-bubble { background: rgba(78,205,196,0.15); border: 1px solid rgba(78,205,196,0.3); }
+
+.slide-demo {
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a24 0%, var(--bg-slide) 100%);
+}
+.slide-demo h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.slide-demo .demo-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+    color: var(--bg-dark);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.slide-demo .demo-agenda { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.slide-demo .demo-step {
+    background: rgba(255,255,255,0.06);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    min-width: 160px;
+}
+.slide-demo .demo-step .step-num { font-size: 0.8rem; color: var(--accent-teal); font-weight: 600; margin-bottom: 0.25rem; }
+
+.slide-agenda { text-align: left; padding: 3rem 4rem; }
+.slide-agenda h2 { font-size: 2.2rem; margin-bottom: 2rem; }
+.agenda-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; }
+.agenda-item {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 0.9rem 1.25rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.agenda-item .num {
+    width: 36px; height: 36px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0; font-size: 0.95rem;
+}
+.agenda-item .label { font-size: 1.1rem; font-weight: 500; }
+.agenda-item .time { margin-left: auto; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; }
+
+.comparison-table {
+    width: 100%; max-width: 920px; margin: 0 auto;
+    border-collapse: separate; border-spacing: 0; font-size: 0.95rem;
+}
+.comparison-table th, .comparison-table td { padding: 0.9rem 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.comparison-table thead th { font-weight: 700; font-size: 1rem; padding-bottom: 1rem; }
+.comparison-table td:first-child { color: var(--text-secondary); font-weight: 500; }
+.comparison-table .best { color: var(--success); font-weight: 600; }
+
+.recap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 800px; margin: 0 auto; }
+.recap-item {
+    background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: left; display: flex; gap: 1rem; align-items: flex-start;
+}
+.recap-item .number {
+    width: 32px; height: 32px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0;
+}
+
+.slide-closing {
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+}
+.slide-closing h2 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.slide-closing p { font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.9; }
+.slide-closing .links { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; }
+.slide-closing .link-item { background: rgba(255,255,255,0.2); padding: 1.25rem 2rem; border-radius: 12px; min-width: 180px; }
+.slide-closing .link-item .icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+.slide-closing .link-item p { font-size: 0.95rem; margin: 0; }
+
+.highlight-text {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.limitations-list { display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: 0 auto; }
+.limitation-item {
+    display: flex; align-items: center; gap: 1rem;
+    background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+}
+.limitation-item .status {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+}
+.limitation-item .status.yes { background: rgba(80,250,123,0.2); color: var(--success); }
+.limitation-item .status.no  { background: rgba(255,85,85,0.2); color: var(--error); }
+
+.analogy-visual { display: flex; justify-content: center; align-items: center; gap: 2rem; margin-bottom: 2rem; }
+.analogy-item { text-align: center; }
+.analogy-item .emoji { font-size: 4rem; margin-bottom: 0.5rem; }
+.analogy-item p { color: var(--text-secondary); }
+.analogy-arrow { font-size: 2rem; color: var(--accent-teal); }
+
+.mindset-comparison { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center; max-width: 800px; margin: 0 auto; }
+.mindset-box { padding: 2rem; border-radius: 16px; text-align: center; }
+.mindset-box.wrong { background: rgba(255,85,85,0.1); border: 2px solid rgba(255,85,85,0.3); }
+.mindset-box.right { background: rgba(80,250,123,0.1); border: 2px solid rgba(80,250,123,0.3); }
+.mindset-box h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.mindset-box p { color: var(--text-secondary); }
+.mindset-vs { font-size: 1.5rem; font-weight: 700; color: var(--text-secondary); }
+
+.flow-diagram { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.flow-step {
+    background: rgba(255,255,255,0.08); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: center; min-width: 120px;
+}
+.flow-step .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.flow-step p { font-size: 0.9rem; font-weight: 500; }
+.flow-arrow { font-size: 1.5rem; color: var(--accent-teal); }
+
+@media print {
+    body { background: white; color: #1a1a1a; }
+    .slide { page-break-after: always; box-shadow: none; border: 1px solid #ddd; }
+    .speaker-notes { page-break-inside: avoid; }
+}
+    </style>
+</head>
+<body>
+    <header class="presentation-header">
+        <h1>How I Use Claude Code for Non-Coding Work</h1>
+        <p>02Ship Meetup &bull; 30 min &bull; Real workflows from building 02Ship</p>
+    </header>
+
+    <div class="slides-container">
+
+        <!-- Slide 1: Title -->
+        <section class="slide slide-title" data-slide-number="1">
+            <h1>How I Use Claude Code for Non-Coding Work</h1>
+            <p class="subtitle">Writing, slides, video &mdash; treating Claude Code as a capable junior team member</p>
+            <div class="meta" style="display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; color:var(--text-secondary); font-size:1rem;">
+                <span>30 min</span>
+                <span>02Ship Meetup</span>
+                <span>02ship.com</span>
+            </div>
+        </section>
+
+        <!-- Slide 2: Agenda -->
+        <section class="slide slide-agenda" data-slide-number="2">
+            <span class="slide-section">Overview</span>
+            <h2>Agenda</h2>
+            <div class="agenda-list">
+                <div class="agenda-item">
+                    <div class="num">1</div>
+                    <span class="label">The mindset shift</span>
+                    <span class="time">3 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">2</div>
+                    <span class="label">Use cases: slides, blog posts, video</span>
+                    <span class="time">12 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">3</div>
+                    <span class="label">The workflow: ideas &#x2192; prompts &#x2192; skills &#x2192; iterate</span>
+                    <span class="time">5 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">4</div>
+                    <span class="label">Live demo: /create-slide skill</span>
+                    <span class="time">5 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">5</div>
+                    <span class="label">Best practices &amp; takeaways</span>
+                    <span class="time">3 min</span>
+                </div>
+                <div class="agenda-item">
+                    <div class="num">6</div>
+                    <span class="label">Q&amp;A</span>
+                    <span class="time">2 min</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: The Mindset Shift -->
+        <section class="slide slide-centered" data-slide-number="3">
+            <span class="slide-section">Mindset</span>
+            <h2>The <span class="highlight-text">Mindset Shift</span></h2>
+            <div class="mindset-comparison">
+                <div class="mindset-box wrong">
+                    <h3>&#x201C;It writes code for me&#x201D;</h3>
+                    <p>Autocomplete on steroids. Only useful in an IDE.</p>
+                </div>
+                <div class="mindset-vs">VS</div>
+                <div class="mindset-box right">
+                    <h3>&#x201C;It is a junior team member&#x201D;</h3>
+                    <p>Reads files. Follows instructions. Does any text-based work.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: What Claude Code actually does -->
+        <section class="slide" data-slide-number="4">
+            <span class="slide-section">Mindset</span>
+            <div class="two-col">
+                <div>
+                    <h2>What Claude Code <span class="highlight-text">actually</span> does</h2>
+                    <p class="lead">It is a CLI agent with full access to your project directory.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Reads and writes any file</li>
+                        <li><span class="check">&#x2713;</span> Runs shell commands</li>
+                        <li><span class="check">&#x2713;</span> Follows complex, multi-step prompts</li>
+                        <li><span class="check">&#x2713;</span> Remembers context across a session</li>
+                        <li><span class="check">&#x2713;</span> Executes reusable Skills</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Example Session</h4>
+                    <div class="code-block">
+<span class="prompt">$</span> claude<br>
+<span class="comment"># You are now in a conversation</span><br>
+<span class="comment"># with an agent that can:</span><br><br>
+<span class="output">&#x2022; Read your project files</span><br>
+<span class="output">&#x2022; Write HTML, Markdown, JSON</span><br>
+<span class="output">&#x2022; Run npm, git, ffmpeg</span><br>
+<span class="output">&#x2022; Follow skill instructions</span><br>
+<span class="output">&#x2022; Iterate based on feedback</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Three Use Cases Overview -->
+        <section class="slide slide-centered" data-slide-number="5">
+            <span class="slide-section">Use Cases</span>
+            <h2>Three things I do <span class="highlight-text">without writing code</span></h2>
+            <p class="tagline">Real workflows from building 02Ship &mdash; a learning portal for non-programmers</p>
+            <div class="three-grid">
+                <div class="card highlight-coral">
+                    <div class="icon">&#x1F3AC;</div>
+                    <h3>Making Slides</h3>
+                    <p>Meetup decks and course lesson slides via /create-slide</p>
+                </div>
+                <div class="card highlight-teal">
+                    <div class="icon">&#x270D;&#xFE0F;</div>
+                    <h3>Writing Blog Posts</h3>
+                    <p>MDX content with front-matter, SEO, and proper formatting</p>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x1F3A5;</div>
+                    <h3>Recording Videos</h3>
+                    <p>Full pipeline: script &#x2192; slides &#x2192; TTS &#x2192; rendered MP4</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Use Case 1 — Making Slides -->
+        <section class="slide" data-slide-number="6">
+            <span class="slide-section">Use Case 1</span>
+            <div class="two-col">
+                <div>
+                    <h2>Making <span class="highlight-text">Slides</span></h2>
+                    <p class="lead">Self-contained HTML slide decks. This presentation was built with Claude Code.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> One command: /create-slide</li>
+                        <li><span class="check">&#x2713;</span> Dark theme with 02Ship branding</li>
+                        <li><span class="check">&#x2713;</span> Speaker notes with timing</li>
+                        <li><span class="check">&#x2713;</span> Two outputs: presenter + clean</li>
+                        <li><span class="check">&#x2713;</span> No PowerPoint, no Figma</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>What I type</h4>
+                    <div class="chat-container">
+                        <div class="chat-message user">
+                            <div class="chat-avatar">You</div>
+                            <div class="chat-bubble">/create-slide &mdash; topic: Claude Code for non-coding, 30 min meetup talk</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-avatar">C</div>
+                            <div class="chat-bubble">Reading base theme... Building 17 slides with speaker notes... Writing presenter + clean versions.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Use Case 2 — Writing a Blog Post -->
+        <section class="slide" data-slide-number="7">
+            <span class="slide-section">Use Case 2</span>
+            <div class="two-col">
+                <div>
+                    <h2>Writing a <span class="highlight-text">Blog Post</span></h2>
+                    <p class="lead">02Ship blog posts are MDX files with YAML front-matter. Claude Code writes them in the right format.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Follows existing content patterns</li>
+                        <li><span class="check">&#x2713;</span> Generates proper front-matter</li>
+                        <li><span class="check">&#x2713;</span> SEO-friendly structure</li>
+                        <li><span class="check">&#x2713;</span> Iterative editing via conversation</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Example Prompt</h4>
+                    <div class="code-block">
+<span class="comment"># What I tell Claude Code:</span><br><br>
+Write a blog post about how<br>
+non-programmers can ship their<br>
+first project using AI tools.<br><br>
+<span class="comment"># It reads existing .mdx files,</span><br>
+<span class="comment"># matches the format, and writes</span><br>
+<span class="comment"># a new post in content/blog/.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Use Case 3 — Recording a Video -->
+        <section class="slide" data-slide-number="8">
+            <span class="slide-section">Use Case 3</span>
+            <div class="two-col">
+                <div>
+                    <h2>Recording a <span class="highlight-text">Video</span></h2>
+                    <p class="lead">02Ship course videos are generated from HTML slides + TTS audio, composed with ffmpeg.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Script outline &#x2192; narration text</li>
+                        <li><span class="check">&#x2713;</span> HTML slides &#x2192; screenshot images</li>
+                        <li><span class="check">&#x2713;</span> Google TTS &#x2192; audio per segment</li>
+                        <li><span class="check">&#x2713;</span> ffmpeg &#x2192; final MP4 video</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Pipeline</h4>
+                    <div class="code-block">
+<span class="comment"># The /generate-course skill:</span><br><br>
+<span class="string">1.</span> PDF &#x2192; curriculum JSON<br>
+<span class="string">2.</span> JSON &#x2192; shooting guides<br>
+<span class="string">3.</span> Guides &#x2192; HTML slides<br>
+<span class="string">4.</span> Slides &#x2192; screenshots (Playwright)<br>
+<span class="string">5.</span> TTS &#x2192; audio segments<br>
+<span class="string">6.</span> ffmpeg &#x2192; final MP4
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: The Workflow Pattern -->
+        <section class="slide slide-centered" data-slide-number="9">
+            <span class="slide-section">Workflow</span>
+            <h2>The <span class="highlight-text">Workflow</span> Behind It All</h2>
+            <p class="tagline">A simple pattern that scales from one-off tasks to repeatable pipelines</p>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="icon">&#x1F4A1;</div>
+                    <p>Ideas</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">
+                    <div class="icon">&#x1F4AC;</div>
+                    <p>Prompts</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step" style="border-color: var(--accent-gold); background: rgba(255,217,61,0.08);">
+                    <div class="icon">&#x2699;&#xFE0F;</div>
+                    <p>Skill</p>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step">
+                    <div class="icon">&#x1F504;</div>
+                    <p>Iterate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: What is a Skill? -->
+        <section class="slide" data-slide-number="10">
+            <span class="slide-section">Skills</span>
+            <div class="two-col">
+                <div>
+                    <h2>What is a <span class="highlight-text">Skill</span>?</h2>
+                    <p class="lead">A Markdown file that teaches Claude Code a reusable workflow. Lives in your project under .claude/skills/.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Plain Markdown &mdash; no code needed</li>
+                        <li><span class="check">&#x2713;</span> Invoked with /skill-name</li>
+                        <li><span class="check">&#x2713;</span> Can reference files, templates, styles</li>
+                        <li><span class="check">&#x2713;</span> Shareable across your team</li>
+                        <li><span class="check">&#x2713;</span> Version-controlled with your project</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Skill File Structure</h4>
+                    <div class="code-block">
+<span class="comment"># .claude/skills/create-slide/</span><br><br>
+SKILL.md        <span class="comment"># Instructions</span><br>
+assets/<br>
+&nbsp;&nbsp;base-theme.css  <span class="comment"># CSS theme</span><br>
+references/<br>
+&nbsp;&nbsp;slide-patterns.md <span class="comment"># HTML patterns</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Anatomy of create-slide skill -->
+        <section class="slide" data-slide-number="11">
+            <span class="slide-section">Skills</span>
+            <div class="two-col">
+                <div>
+                    <h2>Inside <span class="highlight-text">/create-slide</span></h2>
+                    <p class="lead">The skill tells Claude Code exactly what to do, step by step.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">1</span> Gather requirements from user</li>
+                        <li><span class="check">2</span> Read the base CSS theme</li>
+                        <li><span class="check">3</span> Read the HTML slide patterns</li>
+                        <li><span class="check">4</span> Compose slides using patterns</li>
+                        <li><span class="check">5</span> Add speaker notes + timing</li>
+                        <li><span class="check">6</span> Output two HTML files</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>From SKILL.md</h4>
+                    <div class="code-block">
+<span class="comment">## Workflow</span><br><br>
+<span class="string">1.</span> Gather requirements: topic,<br>
+&nbsp;&nbsp;&nbsp;audience, duration<br>
+<span class="string">2.</span> Read assets/base-theme.css<br>
+<span class="string">3.</span> Read references/slide-patterns.md<br>
+<span class="string">4.</span> Compose slides using patterns<br>
+<span class="string">5.</span> Add speaker notes with timing<br>
+<span class="string">6.</span> Verify: required types present,<br>
+&nbsp;&nbsp;&nbsp;timing sums to target duration
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Live Demo -->
+        <section class="slide slide-demo" data-slide-number="12">
+            <span class="slide-section">Demo</span>
+            <div class="demo-badge">LIVE DEMO</div>
+            <h2>/create-slide in Action</h2>
+            <div class="demo-agenda">
+                <div class="demo-step">
+                    <div class="step-num">Step 1</div>
+                    <p>Open Claude Code in terminal</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 2</div>
+                    <p>Type /create-slide with a topic</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 3</div>
+                    <p>Watch it read theme + patterns</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">Step 4</div>
+                    <p>Open the generated HTML</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Best Practices -->
+        <section class="slide slide-centered" data-slide-number="13">
+            <span class="slide-section">Best Practices</span>
+            <h2><span class="highlight-text">Best Practices</span> for Non-Coding Work</h2>
+            <div class="three-grid">
+                <div class="card highlight-coral">
+                    <div class="icon">&#x1F3AF;</div>
+                    <h3>Be Specific</h3>
+                    <p>Give context: audience, format, length, tone. The more detail, the better the output.</p>
+                </div>
+                <div class="card highlight-teal">
+                    <div class="icon">&#x1F4C1;</div>
+                    <h3>Use Project Context</h3>
+                    <p>Work inside your project directory. Claude Code reads existing files to match your patterns.</p>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x1F504;</div>
+                    <h3>Iterate, Don&#x2019;t Restart</h3>
+                    <p>Give feedback in the same session. &#x201C;Make it shorter.&#x201D; &#x201C;Add a section on X.&#x201D;</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: When to create a Skill -->
+        <section class="slide" data-slide-number="14">
+            <span class="slide-section">Best Practices</span>
+            <div class="two-col">
+                <div>
+                    <h2>When to create a <span class="highlight-text">Skill</span></h2>
+                    <p class="lead">Not every task needs a skill. Here is my rule of thumb.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> You do it more than 3 times</li>
+                        <li><span class="check">&#x2713;</span> Output quality must be consistent</li>
+                        <li><span class="check">&#x2713;</span> It references specific files or templates</li>
+                        <li><span class="check">&#x2713;</span> Others on your team will do it too</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>My Skills at 02Ship</h4>
+                    <div class="code-block">
+<span class="comment"># .claude/skills/</span><br><br>
+create-slide/    <span class="comment"># This talk</span><br>
+generate-course/ <span class="comment"># Video pipeline</span><br>
+commit/          <span class="comment"># Git workflow</span><br>
+ship/            <span class="comment"># PR + deploy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Recap -->
+        <section class="slide slide-centered" data-slide-number="15">
+            <span class="slide-section">Takeaways</span>
+            <h2>Key <span class="highlight-text">Takeaways</span></h2>
+            <div class="recap-grid">
+                <div class="recap-item">
+                    <div class="number">1</div>
+                    <p><strong>Claude Code is a work tool</strong>, not just a coding tool. Any text-based task is fair game.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">2</div>
+                    <p><strong>Use your project as context.</strong> Claude Code matches your existing patterns and formats.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">3</div>
+                    <p><strong>Build Skills for repeated work.</strong> A Markdown file turns a prompt into a reusable pipeline.</p>
+                </div>
+                <div class="recap-item">
+                    <div class="number">4</div>
+                    <p><strong>Iterate, do not start over.</strong> Feedback in conversation is faster than re-prompting from scratch.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Resources -->
+        <section class="slide slide-centered" data-slide-number="16">
+            <span class="slide-section">Resources</span>
+            <h2>Learn More</h2>
+            <p class="tagline">Official docs and 02Ship resources to get started</p>
+            <div class="three-grid">
+                <div class="card">
+                    <div class="icon">&#x1F4D6;</div>
+                    <h3>Skills Docs</h3>
+                    <p>code.claude.com/docs/en/skills</p>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x1F6E0;&#xFE0F;</div>
+                    <h3>Common Workflows</h3>
+                    <p>code.claude.com/docs/en/common-workflows</p>
+                </div>
+                <div class="card">
+                    <div class="icon">&#x2705;</div>
+                    <h3>Best Practices</h3>
+                    <p>code.claude.com/docs/en/best-practices</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Closing -->
+        <section class="slide slide-closing" data-slide-number="17">
+            <h2>Thanks &amp; Q&amp;A</h2>
+            <p>How I Use Claude Code for Non-Coding Work &bull; 02Ship Meetup</p>
+            <div class="links">
+                <div class="link-item">
+                    <div class="icon">&#x1F310;</div>
+                    <p>02ship.com</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4BB;</div>
+                    <p>code.claude.com</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4AC;</div>
+                    <p>Questions?</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
