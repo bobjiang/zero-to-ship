@@ -3,10 +3,12 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Series, Lesson } from '@/types/course';
 import { BlogPost } from '@/types/blog';
+import { Ship } from '@/types/ship';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 const COURSES_DIR = path.join(CONTENT_DIR, 'courses');
 const BLOG_DIR = path.join(CONTENT_DIR, 'blog');
+const SHIPS_DIR = path.join(CONTENT_DIR, 'ships');
 
 export async function getAllSeries(): Promise<Series[]> {
   try {
@@ -115,6 +117,37 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
     } as BlogPost;
   } catch (error) {
     console.error(`Error loading blog post ${slug}:`, error);
+    return null;
+  }
+}
+
+export async function getAllShips(): Promise<Ship[]> {
+  try {
+    const files = await fs.readdir(SHIPS_DIR);
+    const jsonFiles = files.filter(f => f.endsWith('.json'));
+
+    const ships = await Promise.all(
+      jsonFiles.map(async (file) => {
+        const filePath = path.join(SHIPS_DIR, file);
+        const fileContent = await fs.readFile(filePath, 'utf-8');
+        return JSON.parse(fileContent) as Ship;
+      })
+    );
+
+    return ships.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } catch (error) {
+    console.error('Error loading ships:', error);
+    return [];
+  }
+}
+
+export async function getShipBySlug(slug: string): Promise<Ship | null> {
+  try {
+    const filePath = path.join(SHIPS_DIR, `${slug}.json`);
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(fileContent) as Ship;
+  } catch (error) {
+    console.error(`Error loading ship ${slug}:`, error);
     return null;
   }
 }

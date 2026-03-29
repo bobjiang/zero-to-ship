@@ -12,21 +12,20 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.02ship.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "02Ship — Learn to Build & Ship with AI (Zero Coding Required)",
+    default: "02Ship — Sydney's Claude Builder Community",
     template: "%s | 02Ship",
   },
   description:
-    "Learn to build and ship your ideas using Claude Code and AI coding tools — no programming experience needed. Step-by-step courses for non-programmers with zero coding experience.",
+    "Sydney's community for Claude practitioners. Monthly meetups, 2-week ship weeks, and real projects. Join 100+ members building with AI.",
   keywords: [
-    "AI coding",
     "Claude Code",
-    "learn to code with AI",
-    "no-code",
-    "non-programmers",
-    "zero coding experience",
+    "Claude AI",
+    "AI community Sydney",
     "build with AI",
     "ship with AI",
-    "AI tools for beginners",
+    "AI meetup Sydney",
+    "Claude practitioners",
+    "agentic coding",
     "02Ship",
   ],
   authors: [{ name: "Bob Jiang" }],
@@ -77,7 +76,7 @@ const websiteJsonLd = {
   name: "02Ship",
   url: siteUrl,
   description:
-    "Learn to build and ship your ideas using Claude Code and AI coding tools — no programming experience needed.",
+    "Sydney's community for Claude practitioners. Monthly meetups, ship weeks, and real projects.",
   publisher: {
     "@type": "Organization",
     name: "02Ship",

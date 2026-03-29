@@ -12,12 +12,22 @@ export function Footer() {
             <div>
               <h3 className="text-sm font-semibold text-gray-900">02Ship</h3>
               <p className="mt-4 text-sm text-gray-600">
-                Learn to build and ship your ideas using AI coding tools.
+                Sydney&apos;s community for Claude practitioners building real projects with AI.
               </p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-900">Learn</h3>
+              <h3 className="text-sm font-semibold text-gray-900">Build</h3>
               <ul className="mt-4 space-y-2">
+                <li>
+                  <Link href="/ships" className="text-sm text-gray-600 hover:text-gray-900">
+                    Ships
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/ship-weeks" className="text-sm text-gray-600 hover:text-gray-900">
+                    Ship Weeks
+                  </Link>
+                </li>
                 <li>
                   <Link href="/courses" className="text-sm text-gray-600 hover:text-gray-900">
                     Courses
@@ -45,7 +55,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link href="/news" className="text-sm text-gray-600 hover:text-gray-900">
-                    AI Daily News
+                    Daily News
                   </Link>
                 </li>
                 <li>
