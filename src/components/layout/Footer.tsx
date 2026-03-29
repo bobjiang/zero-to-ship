@@ -20,12 +20,12 @@ export function Footer() {
               <ul className="mt-4 space-y-2">
                 <li>
                   <Link href="/ships" className="text-sm text-gray-600 hover:text-gray-900">
-                    Ships
+                    Project Hub
                   </Link>
                 </li>
                 <li>
                   <Link href="/ship-weeks" className="text-sm text-gray-600 hover:text-gray-900">
-                    Ship Weeks
+                    Cohort
                   </Link>
                 </li>
                 <li>

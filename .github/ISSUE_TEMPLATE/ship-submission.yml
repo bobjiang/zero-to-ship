@@ -1,0 +1,106 @@
+name: Ship Submission
+description: Submit your project to the 02Ship Project Hub
+title: "[Ship] "
+labels: ["ship-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your build with the community! Fill out the details below and we'll add it to the [Project Hub](/ships).
+
+  - type: input
+    id: title
+    attributes:
+      label: Project Name
+      placeholder: e.g. AI Invoice Parser
+    validations:
+      required: true
+
+  - type: input
+    id: builder
+    attributes:
+      label: Builder Name
+      description: Your name as you'd like it displayed
+      placeholder: e.g. Jane Smith
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Short Description
+      description: One or two sentences for the listing card (max ~150 characters)
+      placeholder: e.g. An automated invoice processing tool built with Claude that extracts line items, totals, and vendor details from PDF invoices.
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Full Write-up (optional)
+      description: |
+        A longer case study in Markdown. What problem did you solve? How did you build it? What were the results?
+      placeholder: |
+        ## The Problem
+        ...
+
+        ## The Build
+        ...
+
+        ## Results
+        ...
+
+  - type: input
+    id: date
+    attributes:
+      label: Date Completed
+      description: When you finished or demoed the project (YYYY-MM-DD)
+      placeholder: "2026-03-30"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: cohort
+    attributes:
+      label: Cohort (optional)
+      description: Where did you build/present this?
+      options:
+        - Cohort #1
+        - Cohort #2
+        - Meetup Demo
+        - Independent Build
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags describing your project
+      placeholder: e.g. automation, document-processing, claude-vision
+    validations:
+      required: true
+
+  - type: input
+    id: demo_url
+    attributes:
+      label: Live Demo URL (optional)
+      placeholder: https://example.com/my-project
+
+  - type: input
+    id: repo_url
+    attributes:
+      label: GitHub Repo URL (optional)
+      placeholder: https://github.com/username/my-project
+
+  - type: input
+    id: screenshot
+    attributes:
+      label: Screenshot (optional)
+      description: Paste a link to a screenshot or drag an image into the issue after submitting
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I agree to have this project listed on the 02Ship website
+          required: true

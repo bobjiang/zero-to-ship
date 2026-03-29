@@ -87,7 +87,7 @@ export default function HomePage() {
             </div>
             <div className="rounded-lg bg-white p-8 shadow-sm">
               <h3 className="text-xl font-semibold text-gray-900">
-                Ship Weeks
+                Cohort
               </h3>
               <p className="mt-4 text-gray-600">
                 2-week build sprints in small groups. Pick a project, get
@@ -124,7 +124,7 @@ export default function HomePage() {
               </Link>
               <Link href="/ship-weeks">
                 <Button variant="outline" size="lg">
-                  Start a Ship Week
+                  Join a Cohort
                 </Button>
               </Link>
             </div>

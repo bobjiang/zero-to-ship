@@ -61,7 +61,7 @@ export default function GetInvolvedPage() {
           </h1>
           <p className="mt-4 text-lg text-gray-600">
             02Ship is built by the community, for the community. Whether you
-            want to speak, volunteer, sponsor, facilitate a Ship Week, or
+            want to speak, volunteer, sponsor, facilitate a cohort, or
             contribute in your own way — there&apos;s a place for you.
           </p>
         </div>
