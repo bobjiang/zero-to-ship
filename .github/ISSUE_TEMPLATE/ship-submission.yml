@@ -65,8 +65,8 @@ body:
       label: Cohort (optional)
       description: Where did you build/present this?
       options:
-        - Cohort #1
-        - Cohort #2
+        - "Cohort #1 (Mar 2026)"
+        - "Cohort #2 (Apr 2026)"
         - Meetup Demo
         - Independent Build
 
