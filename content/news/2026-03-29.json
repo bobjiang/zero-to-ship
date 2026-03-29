@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-29",
+  "items": [
+    {
+      "title": "Stanford Study Highlights Dangers of AI Chatbots Giving Personal Advice",
+      "summary": "A new Stanford study warns about the potential dangers of users seeking and acting on personal advice from AI chatbots, raising ethical and safety concerns.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/28/stanford-study-outlines-dangers-of-asking-ai-chatbots-for-personal-advice/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Elon Musk's Last Co-founder Reportedly Departs xAI",
+      "summary": "The final co-founder of Elon Musk's AI venture, xAI, has reportedly left the company, signaling potential shifts within the organization.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/28/elon-musks-last-co-founder-reportedly-leaves-xai/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Search Live Expands Globally, Enhancing Real-time Information Access",
+      "summary": "Google's AI-powered 'Search Live' feature is rolling out globally, promising to deliver more real-time and dynamic information to users worldwide.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/search-live-global-expansion/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Bluesky Integrates AI with 'Attie' App for Custom Feed Creation",
+      "summary": "Decentralized social platform Bluesky is embracing AI by launching 'Attie,' an application designed to help users build personalized and custom content feeds.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/28/bluesky-leans-into-ai-with-attie-an-app-for-building-custom-feeds/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Japan Unveils 'Japan Teen Safety Blueprint' to Prioritize Youth Protection",
+      "summary": "OpenAI Japan has announced a new 'Japan Teen Safety Blueprint,' outlining initiatives to ensure the safety and well-being of teenagers interacting with AI technologies.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/japan-teen-safety-blueprint",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Why Self-Distillation Can Degrade LLM Reasoning Capabilities",
+      "summary": "New research investigates the surprising phenomenon where self-distillation, a common training technique, can sometimes negatively impact the reasoning abilities of Large Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24472",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Google Boosts Open Source Security for the AI Era",
+      "summary": "Google announces further investment in open-source security measures, specifically tailored to address the evolving challenges and vulnerabilities in the age of AI development.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/safety-security/ai-powered-open-source-security/",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Voxtral TTS: A New Text-to-Speech Model for High-Quality Audio Generation",
+      "summary": "Voxtral TTS introduces a novel text-to-speech model, promising advancements in generating high-quality and natural-sounding audio from text inputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.25551",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MSA: Memory Sparse Attention Enables LLM Scaling to 100M Tokens",
+      "summary": "A new paper introduces Memory Sparse Attention (MSA), an efficient mechanism for end-to-end memory models that allows scaling to unprecedented contexts of 100 million tokens.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.23516",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "STADLER Leverages OpenAI to Transform Knowledge Work in a 230-Year-Old Company",
+      "summary": "OpenAI highlights how STADLER, a company with a 230-year history, is successfully integrating AI to reshape and optimize its knowledge-intensive workflows.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/stadler",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data",
+      "summary": "Researchers present MACRO, a new method for multi-reference image generation that leverages structured long-context data to create more coherent and detailed images.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.25319",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SlopCodeBench: Benchmarking Coding Agents' Degradation in Long-Horizon Tasks",
+      "summary": "SlopCodeBench introduces a new benchmark to evaluate how the performance of AI coding agents degrades when tackling complex, iterative tasks over extended periods.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24755",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Will AI Replace Software Developers?",
+      "summary": "This article discusses the ongoing debate and potential future impact of AI on the software development profession, exploring whether AI will augment or replace human developers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/empiree/will-ai-replace-software-developers-1fo0",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Understanding Challenges in Iterative Generative Optimization with LLMs",
+      "summary": "A new paper explores the inherent difficulties and limitations encountered when attempting iterative generative optimization processes using Large Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.23994",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "ZeroToRepo: AI Agent Converts Notion Ideas to GitHub Repositories Instantly",
+      "summary": "An AI agent named ZeroToRepo is showcased, capable of transforming ideas from Notion into functional GitHub repositories with remarkable speed.",
+      "source": "Dev.to",
+      "url": "https://dev.to/abeera_lodhi/zerotorepo-i-built-an-ai-agent-that-turns-notion-ideas-into-github-repos-before-your-coffee-cools-1em2",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
