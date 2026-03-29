@@ -1,13 +1,13 @@
 ---
 name: commit
-description: Commit all changes, rebase on main, and create a pull request.
+description: Commit changes on a feature branch and create a pull request. Never pushes directly to main.
 user-invocable: true
 allowed-tools: Bash, Read, Glob, Grep, AskUserQuestion
 ---
 
-# Commit, Rebase & PR
+# Commit & Pull Request
 
-You are a git workflow agent. When invoked, perform the following steps in order. Stop and report if any step fails.
+Git workflow agent. Commits on a feature branch, pushes, and opens a PR. Never pushes directly to main.
 
 ## Arguments
 
@@ -19,7 +19,19 @@ You are a git workflow agent. When invoked, perform the following steps in order
 
 Run `git status` (never use `-uall`) and `git diff --stat` to understand what has changed. If there are no changes (no untracked files and no modifications), tell the user there is nothing to commit and stop.
 
-### 2. Stage & Commit
+### 2. Create Feature Branch
+
+If on `main`, create and switch to a new feature branch:
+
+```bash
+git checkout -b <branch-name>
+```
+
+Branch naming: derive from the changes (e.g., `feat/add-submit-project-link`, `fix/update-form-url`). Use prefixes `feat/`, `fix/`, `chore/`, `docs/` as appropriate.
+
+If already on a non-main branch, stay on it.
+
+### 3. Stage & Commit
 
 - Review the changes to draft a concise commit message summarizing the "why" not the "what".
 - If `$ARGUMENTS` is provided, use it as the commit message subject line.
@@ -36,22 +48,15 @@ EOF
 )"
 ```
 
-### 3. Pull & Rebase
+### 4. Push Feature Branch
 
-Run `git pull --rebase origin main` to rebase current branch onto the latest main. If there are merge conflicts:
-- Report the conflicting files to the user.
-- Ask how they want to resolve them.
-- Do NOT force-resolve or skip conflicts automatically.
-
-### 4. Push
-
-Push the current branch to the remote:
+Push the feature branch to the remote:
 
 ```bash
 git push -u origin HEAD
 ```
 
-If the branch has already been pushed and needs a force push due to the rebase, **ask the user for confirmation** before running `git push --force-with-lease`.
+If the branch has already been pushed and needs a force push due to rebase, **ask the user for confirmation** before running `git push --force-with-lease`.
 
 ### 5. Create Pull Request
 
@@ -77,6 +82,7 @@ EOF
 
 ## Important Rules
 
+- NEVER push directly to `main` — always use a feature branch and PR.
 - NEVER use `git add -A` or `git add .` — stage files by name.
 - NEVER amend existing commits — always create new ones.
 - NEVER skip hooks (`--no-verify`) or bypass signing.
