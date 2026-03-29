@@ -86,7 +86,7 @@ export default function ShipWeeksPage() {
           </p>
           <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
-              href="https://forms.gle/CuhvaFTHKip9R1At9"
+              href="https://forms.gle/QAvpyXisP4MQ53kX9"
               target="_blank"
               rel="noopener noreferrer"
             >
