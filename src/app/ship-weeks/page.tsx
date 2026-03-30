@@ -47,6 +47,15 @@ export default function ShipWeeksPage() {
             small cohort, and ship something real — with accountability,
             feedback, and a demo day to show it off.
           </p>
+          <div className="mt-8">
+            <a
+              href="https://forms.gle/QAvpyXisP4MQ53kX9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg">Apply for Next Cohort</Button>
+            </a>
+          </div>
         </div>
 
         {/* Timeline */}
