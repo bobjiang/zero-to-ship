@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-30",
+  "items": [
+    {
+      "title": "Sora's Shutdown: A Reality Check for AI Video Development",
+      "summary": "The unexpected shutdown of OpenAI's Sora could signal a critical moment for the AI video generation industry, prompting a reevaluation of its commercial viability and technical challenges.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/29/soras-shutdown-could-be-a-reality-check-moment-for-ai-video/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic's Claude Sees Skyrocketing Popularity Among Paying Consumers",
+      "summary": "Anthropic's Claude AI assistant is experiencing a significant surge in popularity among paying users, indicating strong market adoption and competitive growth in the AI chatbot space.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Gemini in Google Sheets Achieves State-of-the-Art Performance",
+      "summary": "Google's Gemini AI has reached state-of-the-art performance within Google Sheets, enhancing productivity and data analysis capabilities for users directly within the spreadsheet application.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-google-sheets-state-of-the-art/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "When Models Judge Themselves: Unsupervised Self-Evolution for Multimodal Reasoning",
+      "summary": "Researchers introduce a novel approach where AI models autonomously evaluate and improve their multimodal reasoning capabilities without human supervision, pushing the boundaries of self-correcting AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.21289",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "GameplayQA: Benchmarking Multi-Video Understanding of 3D Virtual Agents",
+      "summary": "A new benchmarking framework, GameplayQA, is introduced to rigorously evaluate AI models' ability to understand decision-dense, POV-synced multi-video scenarios involving 3D virtual agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24329",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AVControl: Efficient Framework for Training Audio-Visual Controls",
+      "summary": "AVControl presents an efficient framework designed for training AI models to achieve precise audio-visual controls, promising advancements in multimodal interaction and generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24793",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Pulse of Motion: Measuring Physical Frame Rate from Visual Dynamics",
+      "summary": "This research explores a method for accurately measuring the physical frame rate of visual dynamics, offering new insights into motion analysis and video processing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.14375",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI's Impact on Mathematics Analogous to Car's Impact on Cities",
+      "summary": "A prominent mathematician suggests that AI's transformative effect on the field of mathematics will be as profound and restructuring as the automobile's influence on urban development.",
+      "source": "Lobste.rs",
+      "url": "https://mathstodon.xyz/@tao/116252708577614828",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "How AI is Improving Heart Health in Rural Australia",
+      "summary": "AI technology is being deployed to enhance heart health outcomes in rural Australia, demonstrating practical applications of AI in addressing critical healthcare disparities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/health/google-ai-heart-health-australia/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Gemini 3.1: Real-World Voice Recognition with Flash Live for LINE Bots",
+      "summary": "Gemini 3.1 introduces Flash Live, enabling LINE bots to achieve real-world voice recognition, allowing for more natural and responsive conversational AI experiences.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/gemini-31-real-world-voice-recognition-with-flash-live-making-your-line-bot-understand-you-560o",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "NoteRunway: An Elite Crew for Your Notion Workspace",
+      "summary": "NoteRunway offers an AI-powered solution to elevate Notion workspaces, providing advanced features and automation to enhance productivity and organization for users.",
+      "source": "Dev.to",
+      "url": "https://dev.to/georgekobaidze/noterunway-because-your-notion-workspace-deserves-an-elite-crew-53bk",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "4DGS360: 360° Gaussian Reconstruction of Dynamic Objects from a Single Video",
+      "summary": "A new research paper introduces 4DGS360, a method capable of reconstructing dynamic 360-degree Gaussian representations of objects using only a single input video.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.21618",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting",
+      "summary": "This paper proposes a novel technique called 'Less Gaussians, Texture More' for 4K feed-forward textured splatting, aiming to improve rendering quality and efficiency in 3D graphics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.25745",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Can LLM Agents Be CFOs? A Benchmark for Resource Allocation in Dynamic Enterprise Environments",
+      "summary": "Researchers explore the potential of LLM agents to function as Chief Financial Officers, introducing a benchmark to test their capabilities in resource allocation within complex enterprise settings.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.23638",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "When Writing Becomes Detached From Thought: AI's Impact on Cognition",
+      "summary": "This article explores the psychological implications of AI on human cognition, specifically how reliance on AI for writing might lead to a detachment between thought processes and written expression.",
+      "source": "Lobste.rs",
+      "url": "https://www.psychologytoday.com/us/blog/the-digital-self/202603/when-writing-becomes-detached-from-thought",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
