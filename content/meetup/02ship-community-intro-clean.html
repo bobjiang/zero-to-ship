@@ -454,22 +454,11 @@ body {
                 </div>
             </div>
             <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                <div id="qr-code" style="border-radius: 8px; background: white; padding: 10px; display: inline-block;"></div>
+                <img src="telegram-qr.png" alt="Telegram QR Code" style="border-radius: 8px; width: 160px; height: 160px;">
                 <p style="font-size: 0.85rem; opacity: 0.85;">t.me/claude_sydney</p>
             </div>
         </section>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-    <script>
-    new QRCode(document.getElementById("qr-code"), {
-        text: "https://t.me/claude_sydney",
-        width: 140,
-        height: 140,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.M
-    });
-    </script>
 </body>
 </html>
