@@ -23,6 +23,14 @@ export default async function ShipsPage() {
           <p className="mt-4 text-lg text-gray-600">
             Real projects built by our community
           </p>
+          <a
+            href="https://github.com/bobjiang/zero-to-ship/issues/new?template=ship-submission.yml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+          >
+            Submit Project
+          </a>
         </div>
 
         <div className="mx-auto mt-16 max-w-5xl">
