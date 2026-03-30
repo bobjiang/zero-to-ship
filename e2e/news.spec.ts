@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('News', () => {
   test('news page loads', async ({ page }) => {
     await page.goto('/news');
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
   test('news page lists dates', async ({ page }) => {
@@ -26,6 +26,6 @@ test.describe('News', () => {
     const firstDateLink = page.locator('a[href^="/news/"]').first();
     await firstDateLink.click();
     await page.waitForLoadState('networkidle');
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 });

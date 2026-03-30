@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Ships', () => {
   test('ships page loads', async ({ page }) => {
     await page.goto('/ships');
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
   test('ships page lists projects', async ({ page }) => {
@@ -19,13 +19,13 @@ test.describe('Ships', () => {
     const href = await firstShipLink.getAttribute('href');
     await firstShipLink.click();
     await expect(page).toHaveURL(href!);
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
   test('ship detail page shows project info', async ({ page }) => {
     await page.goto('/ships');
     await page.locator('a[href^="/ships/"]').first().click();
     await page.waitForLoadState('networkidle');
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 });

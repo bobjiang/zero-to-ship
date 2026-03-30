@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Courses', () => {
   test('courses page lists available series', async ({ page }) => {
     await page.goto('/courses');
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
     const links = page.locator('a[href^="/courses/"]');
     const count = await links.count();
     expect(count).toBeGreaterThan(0);
@@ -15,7 +15,7 @@ test.describe('Courses', () => {
     const href = await firstSeriesLink.getAttribute('href');
     await firstSeriesLink.click();
     await expect(page).toHaveURL(href!);
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
   test('series detail page shows lessons', async ({ page }) => {
@@ -35,7 +35,7 @@ test.describe('Courses', () => {
     const count = await lessonLinks.count();
     if (count > 0) {
       await lessonLinks.first().click();
-      await expect(page.locator('h1')).toBeVisible();
+      await expect(page.locator('h1').first()).toBeVisible();
     }
   });
 });

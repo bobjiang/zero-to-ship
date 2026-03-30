@@ -8,7 +8,7 @@ test.describe('Navigation', () => {
 
   test('homepage has hero section', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
   test('header contains logo link to homepage', async ({ page }) => {
@@ -30,7 +30,7 @@ test.describe('Navigation', () => {
     await page.goto('/');
     await page.click('nav[aria-label="Main navigation"] a[href="/courses"]');
     await expect(page).toHaveURL('/courses');
-    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.locator('h1').first()).toBeVisible();
   });
 
   test('navigates to news page', async ({ page }) => {
