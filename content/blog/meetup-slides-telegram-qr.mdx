@@ -1,0 +1,39 @@
+---
+title: "Preparing Meetup Slides — Community Intro and Claude Code for Non-Coders"
+excerpt: "We created two new slide decks for our meetups: a community introduction and a talk on using Claude Code for non-coding work. Plus, we added QR codes for instant Telegram access."
+date: "2026-03-30"
+author: "Bob Jiang"
+keywords: "02Ship, meetup, slides, Claude Code, non-coding, Telegram QR, presentation, community intro, HTML slides"
+---
+
+# Preparing Meetup Slides
+
+Meetups need good slides. We shipped two new decks this week, both built as self-contained HTML files using our slide creation workflow with Claude Code.
+
+## Community Intro Deck
+
+The first deck is a general introduction to 02Ship — what we are, what we do, and how to get involved. It's designed for the opening of any meetup or event where we need to onboard new people quickly.
+
+We created both a full version and a clean variant. The clean version strips out internal notes and works better for public-facing presentations.
+
+You can find it at `content/meetup/02ship-community-intro-clean.html`.
+
+## Claude Code for Non-Coding Work
+
+The second deck covers something we get asked about constantly: using Claude Code for tasks that aren't traditional programming. Think project planning, content drafting, data analysis, file organization — work that benefits from AI assistance but doesn't involve writing application code.
+
+This talk is aimed at non-programmers who are curious about AI coding tools but don't see themselves as developers. It's one of the most requested topics from our community.
+
+Both decks live at `content/meetup/` — `02ship-community-intro-clean.html` and `claude-code-non-coding-clean.html`.
+
+## Telegram QR Code on Closing Slides
+
+One thing we noticed at previous meetups: telling people to "join our Telegram" at the end of a talk doesn't convert well. People forget, or they don't want to type in a URL.
+
+So we added a Telegram QR code directly to the closing slide of the community intro deck. Attendees can scan it with their phone camera and join instantly. Simple fix, much better follow-through.
+
+## The HTML Slides Workflow
+
+All our slide decks are single HTML files — no PowerPoint, no external dependencies. We generate them with Claude Code using our `/create-slide` skill. Version-controlled, fully customizable, and easy to share as a link or present in any browser.
+
+If you want to try this approach for your own presentations, check out our earlier post on [creating slides with Claude Code](/blog/creating-slides-with-claude-code).

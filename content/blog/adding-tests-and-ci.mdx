@@ -1,0 +1,48 @@
+---
+title: "Adding Unit Tests and E2E Tests with CI to 02Ship"
+excerpt: "We added Vitest for unit tests, Playwright for end-to-end tests, and GitHub Actions CI workflows — bringing proper test infrastructure to the project."
+date: "2026-03-30"
+author: "Bob Jiang"
+keywords: "02Ship, testing, Vitest, Playwright, CI, GitHub Actions, unit tests, e2e tests, Next.js, Claude Code"
+---
+
+# Adding Tests and CI to 02Ship
+
+02Ship has been growing fast — new pages, new content types, new features every week. But we had zero automated tests. That's fine when you're one person pushing fast, but it becomes a liability as the project matures and more people contribute. So we fixed it.
+
+## Unit Tests with Vitest
+
+We added [Vitest](https://vitest.dev/) as our test runner. It's fast, has native TypeScript support, and plays well with Next.js.
+
+Our first batch of unit tests covers:
+
+- **Components**: `LessonCard`, `SeriesCard`, `Button`, `Card` — making sure UI components render correctly with different props
+- **Content loaders**: `content.ts` and `news.ts` — verifying that our file-based content loading works as expected
+- **Utilities**: `utils.ts` — testing the `cn()` helper and other shared functions
+
+These tests catch regressions in the building blocks that everything else depends on.
+
+## End-to-End Tests with Playwright
+
+Unit tests verify individual pieces. E2E tests verify that the whole thing works together. We added [Playwright](https://playwright.dev/) tests for the key user flows:
+
+- **Navigation** — header links, mobile menu, page transitions
+- **Courses** — series listing, lesson pages, video embeds
+- **Blog** — post listing, individual post rendering
+- **News** — daily news page, date navigation
+- **Ships** — project showcase browsing
+
+Each test runs in a real browser, clicking through the site the way a user would.
+
+## CI with GitHub Actions
+
+Tests are only useful if they run automatically. We added two GitHub Actions workflows:
+
+- **Unit tests** — runs Vitest on every push and PR
+- **E2E tests** — runs Playwright on every push and PR
+
+Both workflows run in parallel. If either fails, the PR gets a red check. No more merging broken code by accident.
+
+## Why This Matters
+
+For a learning platform that teaches people to build and ship, we should practice what we preach. Automated testing and CI are foundational engineering practices. Now every change to 02Ship gets verified automatically before it lands.
