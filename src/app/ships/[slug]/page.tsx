@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { marked } from 'marked';
 import { Container } from '@/components/ui/Container';
 import { getShipBySlug, getAllShips } from '@/lib/content';
 
@@ -167,14 +168,7 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
                 <div
                   className="prose prose-lg prose-blue mt-8 max-w-none"
                   dangerouslySetInnerHTML={{
-                    __html: ship.content
-                      .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-                      .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-                      .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-                      .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
-                      .replace(/(<li>.*<\/li>\n?)+/g, '<ol>$&</ol>')
-                      .replace(/\n\n/g, '</p><p>')
-                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    __html: marked.parse(ship.content, { async: false }) as string
                   }}
                 />
               )}
