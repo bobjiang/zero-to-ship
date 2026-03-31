@@ -1,0 +1,106 @@
+---
+title: "RePPIT: A 5-Step Prompting Framework for Shipping Code with Claude Code"
+excerpt: "A structured prompting framework — Research, Proposal, Plan, Implement, Test — that turns Claude Code into a disciplined engineering partner for brownfield codebases and production deployments."
+date: "2026-04-01"
+author: "Bob Jiang"
+keywords: "RePPIT, Claude Code, prompting framework, AI coding, test-driven development, code review, production workflow, slash commands, agent skills, verification"
+---
+
+# RePPIT: A 5-Step Prompting Framework for Shipping Code with Claude Code
+
+One of the biggest challenges with AI coding assistants is keeping them grounded. Give an agent too much freedom and it hallucinates APIs, invents patterns that clash with your codebase, or "improves" code you never asked it to touch. This gets dangerous fast in production settings — especially in large, existing codebases where context matters more than creativity.
+
+RePPIT is a 5-step prompting framework (credited to [Mihail](https://x.com/kreaboreon)) designed to solve exactly this. It constrains each phase of work so your coding agent operates with precision instead of guesswork. The steps are: **Research, Proposal, Plan, Implement, Test**.
+
+Here's how it works, and how we use it with [Claude Code](https://code.claude.com/docs/en/common-workflows).
+
+## The 5 Steps
+
+### 1. Research
+
+Before changing anything, document what exists. The agent decomposes your query into focused research areas, explores relevant code in parallel, and produces a structured document mapping out components, data flows, and cross-cutting connections.
+
+The key constraint: **no suggestions, no improvements** — just concrete findings with file paths and line references. This forces the agent to understand the codebase as-is rather than jumping to conclusions.
+
+In Claude Code, this maps naturally to using the Explore agent or running targeted searches with Glob and Grep to build up a complete picture before writing a single line.
+
+### 2. Proposal
+
+With research in hand, generate 2-3 distinct solution approaches. Each proposal outlines key changes, affected code paths, trade-offs, and validation strategies. Because proposals are grounded in the research document, they're tied to what actually exists in the codebase — not invented in a vacuum.
+
+This is where you catch bad ideas early. Comparing concrete proposals is faster and cheaper than comparing half-finished implementations.
+
+### 3. Plan
+
+Once you pick a proposal, convert it into a concrete implementation plan — a structured markdown document covering scope, requirements, design decisions, and actionable steps. The plan explicitly avoids actual code changes. It's a blueprint.
+
+Testing, rollout, and security considerations go here — but only where relevant. The plan becomes the contract that the implementation phase executes against.
+
+Claude Code's [plan mode](https://code.claude.com/docs/en/common-workflows) is built for exactly this: you can review and approve the plan before any code gets written.
+
+### 4. Implement
+
+This is the execution step. The agent takes the structured plan and writes the actual code changes. By this point, research, proposals, and plan have already constrained the work — so implementation becomes focused execution rather than open-ended coding.
+
+Because every decision was already made in earlier phases, the agent has less room to hallucinate or go off-script. It knows what files to touch, what patterns to follow, and what the expected outcome looks like.
+
+### 5. Test
+
+The final phase validates everything. The agent analyzes all changes for security, performance, edge cases, and integration risks. It produces prioritized action items: **must-fix**, **recommended**, and **consider**. The code is verified against the original research and plan before it ships.
+
+This is the phase that matters most — and the one most people skip.
+
+## Why Verification Deserves Extra Emphasis
+
+In our experience building 02Ship, the testing and verification phase is where AI-assisted development either succeeds or quietly fails. It's tempting to trust that the agent "got it right" because the code looks clean. But looking clean and being correct are different things.
+
+Here's what we recommend:
+
+### Run the Tests, Don't Just Write Them
+
+Claude Code can write tests, but the real value is in *running* them and reading the output. A test that passes is evidence. A test file that exists is not. Always verify:
+
+```bash
+npm run lint && npx tsc --noEmit && npm run build
+```
+
+If you have unit tests and E2E tests, run those too. Don't let the agent tell you "tests should pass" — make it prove it.
+
+### Test-Driven Development Fits Naturally
+
+Consider flipping the order: write the tests *before* the implementation. This is classic TDD, and it pairs remarkably well with the RePPIT framework:
+
+1. **Research** the existing code and test patterns
+2. **Propose** what the tests should verify (expected behavior, edge cases)
+3. **Plan** the test structure alongside the implementation plan
+4. **Implement** the tests first, watch them fail, then write the code to make them pass
+5. **Test** by running the full suite and reviewing coverage
+
+When the agent writes tests first, it has to think about *what the code should do* before thinking about *how to write it*. This naturally produces better implementations.
+
+### Code Review as a Gate
+
+The Test phase in RePPIT isn't just automated tests — it includes code review. Have the agent review its own changes against the research document and the plan. Ask explicitly:
+
+- Does this match what we found in the Research phase?
+- Does this follow the approach from the selected Proposal?
+- Does this implement everything in the Plan?
+- Are there security, performance, or edge case concerns?
+
+This structured review catches drift — where the implementation subtly diverged from what was agreed.
+
+## How to Set This Up in Claude Code
+
+In practice, each RePPIT step can be a separate slash command or [agent skill](https://code.claude.com/docs/en/common-workflows). This gives you explicit control over transitions between phases. You review the output of each step before moving to the next.
+
+You can also encode the constraints directly in your `CLAUDE.md` file — for example, requiring that research findings include file paths and line numbers, or that proposals always include trade-offs.
+
+The [Claude Code docs](https://code.claude.com/docs/en/common-workflows) cover workflows for plan mode, sub-agents, custom slash commands, and hooks — all of which support this kind of structured approach.
+
+## The Bottom Line
+
+RePPIT works because it replaces "write code for this feature" with a structured pipeline that forces understanding before action. Each phase constrains the next, reducing hallucination and keeping the agent aligned with your actual codebase.
+
+The framework is especially valuable for brownfield codebases — the ones with history, quirks, and patterns that an agent can't guess. By researching first, proposing options, planning explicitly, implementing against a blueprint, and verifying at the end, you get code that's ready for production.
+
+If you take one thing from this: **don't skip the Test phase**. Verification is what separates AI-assisted code that works from AI-assisted code that looks like it works.
