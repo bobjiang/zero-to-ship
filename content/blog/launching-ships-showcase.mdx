@@ -1,0 +1,40 @@
+---
+title: "Launching the Ships Showcase — A Home for Community Projects"
+excerpt: "We built a project showcase where 02Ship community members can submit and display what they've built. Here's how we shipped the ships page, submission flow, and first featured projects."
+date: "2026-03-31"
+author: "Bob Jiang"
+keywords: "02Ship, ships, showcase, community projects, project hub, AI projects, Claude Code, vibe coding, Next.js"
+---
+
+# Launching the Ships Showcase
+
+One of the best parts of building with AI is seeing what other people create. We wanted a place on 02Ship where community members could show off what they've shipped — so we built one.
+
+## The Ships Page
+
+We added a new `/ships` route that displays community projects as a card grid. Each project gets its own detail page at `/ships/[slug]` with a full description, tech stack, links, and screenshots.
+
+The data model is simple — each ship is a JSON file in `content/ships/`. No database, no CMS. Just drop in a file and it shows up on the site. This keeps the contribution barrier low and matches how the rest of 02Ship's content works.
+
+## Submit Your Project
+
+We added a "Submit Project" button that links to a GitHub Issue template. Fill out the form — project name, description, URL, tech stack — and we turn it into a ship card. This keeps the process lightweight while giving us a review step before things go live.
+
+The issue template lives at `.github/ISSUE_TEMPLATE/ship-submission.yml` and uses GitHub's structured form fields, so submissions come in clean and consistent.
+
+## First Featured Projects
+
+We launched with two community projects:
+
+- **AI Uni Tutor** — an AI-powered university tutoring tool
+- **Clawfy** — another creative project from our community
+
+Both are live on the [ships page](/ships) now. If you've built something with AI tools, we'd love to feature it.
+
+## Fixing Markdown Rendering
+
+The ship detail pages support markdown in descriptions. Our initial render approach wasn't handling markdown properly — bold text, links, and lists weren't displaying correctly. We switched to the `marked` library for proper markdown-to-HTML conversion, and now project descriptions render cleanly.
+
+## What's Next
+
+We want this to become the go-to gallery for projects built during our ship weeks and cohorts. If you've built something — big or small — [submit it](/ships) and join the showcase.
