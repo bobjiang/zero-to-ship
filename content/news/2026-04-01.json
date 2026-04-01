@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-01",
+  "items": [
+    {
+      "title": "OpenAI Raises $3B from Retail Investors, Valuing Company at $122B",
+      "summary": "OpenAI, despite not yet being public, has successfully raised $3 billion from retail investors, pushing its valuation to a staggering $122 billion.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/31/openai-not-yet-public-raises-3b-from-retail-investors-in-monster-122b-fund-raise/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce Unveils Major AI Overhaul for Slack with 30 New Features",
+      "summary": "Salesforce is integrating over 30 new AI-powered features into Slack, aiming to significantly enhance productivity and collaboration for users.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic's Rapid Growth and Strategic Moves Highlighted in Recent Report",
+      "summary": "Anthropic has experienced a significant period of growth and strategic activity, positioning itself as a major player in the competitive AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/03/31/anthropic-is-having-a-month/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google AI Introduces Veo 3.1 Lite for Cost-Effective Video Generation",
+      "summary": "Google AI has released Veo 3.1 Lite, a more cost-effective version of its video generation model, making advanced video creation more accessible.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-lite/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Towards a Medical AI Scientist: Advancing AI for Scientific Discovery in Medicine",
+      "summary": "Researchers are exploring the development of a 'Medical AI Scientist' to automate and accelerate scientific discovery processes within the medical field.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.28589",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "TAPS: Task Aware Proposal Distributions for Efficient Speculative Sampling in LLMs",
+      "summary": "A new research paper introduces TAPS, a method that uses task-aware proposal distributions to improve the efficiency of speculative sampling for large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27027",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Details Safe Creation Practices for Sora Video Generation",
+      "summary": "OpenAI has published guidelines and measures to ensure safe and responsible content creation using its advanced Sora video generation model.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/creating-with-sora-safely/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Emergent Social Intelligence Risks in Generative Multi-Agent Systems",
+      "summary": "A new paper investigates the potential for emergent social intelligence and associated risks within complex generative multi-agent AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27771",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EpochX: Building Infrastructure for an Emergent Agent Civilization",
+      "summary": "Researchers propose EpochX, a foundational infrastructure designed to support the development and evolution of an emergent civilization of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27304",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Surviving as a Human in the Age of AI: A Personal Perspective",
+      "summary": "An article discusses strategies and perspectives for individuals to thrive and adapt in a world increasingly shaped by artificial intelligence.",
+      "source": "Dev.to",
+      "url": "https://dev.to/jenlooper/surviving-as-a-human-in-the-age-of-ai-1p1b",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Gen-Searcher: Reinforcing Agentic Search for Enhanced Image Generation",
+      "summary": "Gen-Searcher introduces a novel approach that uses reinforced agentic search to significantly improve the quality and relevance of image generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.28767",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building a Token Billing System for AI Agents: A Practical Guide",
+      "summary": "A developer shares insights and a practical guide on how they implemented a token-based billing system for their AI agent, detailing the technical process.",
+      "source": "Dev.to",
+      "url": "https://dev.to/tejakummarikuntla/i-built-a-token-billing-system-for-my-ai-agent-heres-how-it-works-dl2",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning",
+      "summary": "This paper addresses the challenge of continual learning in large vision-language models using a dynamic Mixture-of-Experts (MoE) approach with drift-aware token assignment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27481",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "GEditBench v2: A Human-Aligned Benchmark for General Image Editing",
+      "summary": "GEditBench v2 is presented as an improved, human-aligned benchmark designed to rigorously evaluate the performance of general image editing models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.28547",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "PRBench: End-to-end Paper Reproduction in Physics Research",
+      "summary": "PRBench introduces a new framework for end-to-end reproduction of scientific papers, specifically focusing on physics research to enhance reliability and transparency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27646",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
