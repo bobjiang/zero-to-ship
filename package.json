@@ -21,6 +21,7 @@
     "next-mdx-remote": "^6.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.4.0",
     "zod": "^3.22.3"
   },
