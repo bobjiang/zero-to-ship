@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-02",
+  "items": [
+    {
+      "title": "Anthropic Accidentally Takes Down Thousands of GitHub Repos Containing Leaked Claude Source Code",
+      "summary": "Anthropic faced a major incident, accidentally issuing DMCA takedowns for thousands of GitHub repositories while attempting to remove its recently leaked Claude source code.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "The Great Claude Code Leak of 2026: Accident, Incompetence, or PR Stunt?",
+      "summary": "Speculation mounts regarding the recent Claude code leak, questioning whether it was an accident, a display of incompetence, or a calculated public relations maneuver by Anthropic.",
+      "source": "Dev.to",
+      "url": "https://dev.to/varshithvhegde/the-great-claude-code-leak-of-2026-accident-incompetence-or-the-best-pr-stunt-in-ai-history-3igm",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Cognichip Raises $60M to Develop AI for Designing AI Chips",
+      "summary": "Cognichip secured $60 million in funding to pursue its ambitious goal of using artificial intelligence to design the very chips that power AI systems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/01/cognichip-wants-ai-to-design-the-chips-that-power-ai-and-just-raised-60m-to-try/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "FIPO: Eliciting Deep Reasoning with Future-KL Influenced Policy Optimization",
+      "summary": "New research introduces FIPO, a policy optimization method designed to elicit deeper reasoning capabilities in AI models through future-KL influence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.19835",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Meta's Massive Natural Gas Consumption for AI Infrastructure Could Power South Dakota",
+      "summary": "Meta's substantial investment in natural gas to fuel its AI infrastructure raises environmental concerns, with its energy demands potentially equivalent to powering an entire state like South Dakota.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/01/metas-natural-gas-binge-could-power-south-dakota/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "CARLA-Air: A Unified Infrastructure for Air-Ground Embodied Intelligence in Drone Simulation",
+      "summary": "CARLA-Air presents a novel unified infrastructure that allows for the simulation of drones within the CARLA world, advancing research in air-ground embodied intelligence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.28032",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "LongCat-Next: Lexicalizing Modalities as Discrete Tokens for Enhanced Multimodal AI",
+      "summary": "LongCat-Next proposes a method for lexicalizing different modalities as discrete tokens, potentially leading to more efficient and powerful multimodal AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27538",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Gradient Labs Partners with OpenAI to Provide AI Account Managers for Bank Customers",
+      "summary": "Gradient Labs is leveraging OpenAI technology to offer every bank customer an AI-powered account manager, aiming to revolutionize financial services.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gradient-labs",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Project Imaging-X: A Survey of 1000+ Open-Access Medical Imaging Datasets for Foundation Models",
+      "summary": "Project Imaging-X provides a comprehensive survey of over a thousand open-access medical imaging datasets, crucial for developing foundation models in healthcare AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27460",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Lingshu-Cell: A Generative Cellular World Model for Transcriptome Modeling Towards Virtual Cells",
+      "summary": "Lingshu-Cell introduces a generative cellular world model capable of transcriptome modeling, paving the way for the creation of virtual cells in biological research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.25240",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Google AI Announces New Satellite Imagery Map to Combat Brazilian Deforestation",
+      "summary": "Google AI is developing a new satellite imagery map to aid in the protection of Brazil's forests by monitoring and detecting deforestation.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/earth/satellite-imagery-brazilian-deforestation/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Outlines Strategy for Accelerating the Next Phase of AI Development",
+      "summary": "OpenAI shares its vision and strategic initiatives for rapidly advancing the next generation of artificial intelligence technologies.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/accelerating-the-next-phase-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "GEMS: Agent-Native Multimodal Generation with Memory and Skills",
+      "summary": "GEMS proposes a new framework for agent-native multimodal generation, integrating memory and skills to enhance AI agent capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.28088",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VGGRPO: Towards World-Consistent Video Generation with 4D Latent Reward",
+      "summary": "VGGRPO presents a novel approach for video generation that utilizes a 4D latent reward mechanism to achieve more world-consistent and realistic video outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.26599",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Introduces New Policies to Help Developers Build Safer AI Experiences for Teens",
+      "summary": "OpenAI has released updated policies and safeguards for GPT models to assist developers in creating safer AI experiences specifically for teenage users.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/teen-safety-policies-gpt-oss-safeguard",
+      "score": 7,
+      "category": "product"
+    }
+  ]
+}
