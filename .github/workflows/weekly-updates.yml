@@ -36,3 +36,9 @@ jobs:
           git commit -m "weekly: add Anthropic & Claude digest for $(date -u +%Y-W%V)"
           git pull --rebase
           git push
+
+      - name: Post to Telegram
+        run: node scripts/post-telegram-weekly.mjs
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
