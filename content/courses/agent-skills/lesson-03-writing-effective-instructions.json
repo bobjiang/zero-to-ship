@@ -1,0 +1,192 @@
+{
+  "slug": "writing-effective-instructions",
+  "title": "Lesson 3 - Crafting High-Fidelity Instructions",
+  "description": "Turn your skeleton into actionable instructions that produce consistent results. Learn to brief AI like a capable colleague, embed quality gates, and iterate using real test feedback.",
+  "duration": "2-2.5 hours",
+  "order": 3,
+  "learningObjectives": [
+    "Structure instructions with the Trigger → Workflow → Constraints → Output framework.",
+    "Embed quality gates, acceptance criteria, and examples directly inside SKILL.md.",
+    "Use markdown formatting for clarity without exceeding the 500-line guidance.",
+    "Run iterative tests, capture deviations, and revise instructions to close gaps."
+  ],
+  "videos": [
+    {
+      "title": "Manager Mindset: Briefing a Literal Genius",
+      "description": "The mindset shift for writing great instructions — you're defining a contract the AI must execute consistently.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-03-video-01-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "8 minutes",
+      "scriptOutline": [
+        "Your AI is like a brilliant new hire — smart, capable, but doesn't know YOUR preferences yet.",
+        "Side-by-side: vague instruction vs. specific instruction, same task, wildly different outputs.",
+        "The 'two interpretations' test: if two smart people could read it differently, clarify it.",
+        "Writing for consistency: your skill will run hundreds of times — optimize for repeatability, not a single conversation.",
+        "Preview the testing loop learners will run today."
+      ],
+      "talkingPoints": [
+        "You're not chatting casually. You're defining a playbook the AI follows every time.",
+        "Literal execution is a feature: it creates repeatability if you write deliberately.",
+        "Ask yourself: if I gave these instructions to three different people, would they all do the same thing?"
+      ]
+    },
+    {
+      "title": "The Four-Part Instruction System",
+      "description": "Deep dive into Trigger → Workflow → Constraints → Output, with a live build of the deploy-checklist skill.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-03-video-02-slides.html",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "10 minutes",
+      "scriptOutline": [
+        "Trigger: describe the context, files, or command that should activate the skill. Include exclusions.",
+        "Workflow: number the steps, include decision points, reference supporting files explicitly.",
+        "Constraints: state what to avoid — destructive commands, off-limit directories, scope creep.",
+        "Output: prescribe exact deliverable format — tables, checklists, JSON, specific headings.",
+        "Live build: populate all four sections of deploy-checklist/SKILL.md with real instructions.",
+        "The 80/20 rule: handle the common case well first. Add edge cases after it works."
+      ],
+      "talkingPoints": [
+        "Every workflow step should start with a verb: Check, Read, Generate, Verify, Return.",
+        "Constraints reduce rework — especially for destructive operations. 'Never run DROP' is cheap insurance.",
+        "Describe the output like you're writing a contract: 'Return a markdown checklist with these exact columns.'",
+        "Start with the 80% case. You can always add handling for edge cases later."
+      ]
+    },
+    {
+      "title": "Testing Loops and Iteration",
+      "description": "Install your skill, test it with real inputs, capture deviations, and translate findings into instruction edits.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-03-video-03-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "7 minutes",
+      "scriptOutline": [
+        "Install the skill locally and trigger it with a representative task.",
+        "Log what happened: command issued, skill activated, output produced.",
+        "Classify deviations: missing context? Ambiguous instruction? Lacking constraint?",
+        "Edit SKILL.md to fix the deviation. Re-test. Aim for 3 iterations minimum.",
+        "Running example: test deploy-checklist, find two gaps, fix them, re-test.",
+        "Demonstrate capturing test results in a simple log for future reference."
+      ],
+      "talkingPoints": [
+        "Testing is where craftsmanship happens. Expect to iterate 3+ times.",
+        "Document what you tested so you can reproduce it. Future-you will thank present-you.",
+        "A skill that isn't tested is just a hypothesis. Testing makes it a tool."
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "The Four-Part Template",
+      "content": "Use this structure for every skill you write:\n\n```markdown\n## Trigger\nActivate this skill when [specific scenario].\nDo NOT use this skill when [exclusion condition].\n\n## Workflow\n1. [Verb] [specific action with clear details]\n2. [Verb] [next action]\n3. Check that [validation step]\n4. [Verb] [output action]\n\n## Constraints\n- Never [destructive or out-of-scope action]\n- Always [required behavior]\n- If [condition], then [specific response]\n\n## Output\nReturn the result as [specific format].\n\n### Example Output\n[Concrete example showing exactly what good output looks like]\n```"
+    },
+    {
+      "title": "Good vs. Bad Instructions — Side by Side",
+      "content": "**Bad: Vague and open to interpretation**\n```markdown\nReview the code and suggest improvements.\n```\nThis produces different results every time. The AI doesn't know what to check, how deep to go, or what format to use.\n\n**Good: Specific, structured, and testable**\n```markdown\n## Workflow\n1. Check for unused imports — flag any import not referenced in the file.\n2. Check function length — flag any function exceeding 30 lines.\n3. Check error handling — flag any try/catch that silently swallows errors.\n4. Check naming — flag variables with single-letter names (except loop counters i, j, k).\n\n## Output\nReturn a markdown checklist:\n- [ ] file:line — issue description — suggested fix\n```\nThis produces consistent results because every step is specific and testable.\n\n**Bad: Tries to handle everything**\n```markdown\nHandle all possible code review scenarios including security, performance,\naccessibility, testing, documentation, and style for all programming languages.\n```\n\n**Good: Focused on the 80% case**\n```markdown\n## Trigger\nActivate when reviewing TypeScript pull requests.\n\n## Constraints\n- Focus on code quality only — security and performance are separate skills.\n- Only review changed files, not the entire codebase.\n```"
+    },
+    {
+      "title": "Quality Gates and Acceptance Criteria",
+      "content": "Embed checks directly in your instructions that the AI must satisfy:\n\n- **Completion criteria:** `Do not finish until you've verified all items in the checklist pass.`\n- **Stop conditions:** `If tests fail, stop and return the error logs. Do not attempt fixes.`\n- **Scope limits:** `Do not modify any files outside the src/ directory.`\n- **Safety rails:** `Never run destructive commands (DROP, DELETE, rm -rf) during validation.`\n\nQuality gates turn your skill from 'nice instructions' into a reliable contract."
+    },
+    {
+      "title": "Writing Tips for All Backgrounds",
+      "content": "You don't need to be technical to write great skills. Here are universal tips:\n\n**1. Start with what you know.** If you review documents, manage projects, or write marketing copy — you already have the expertise. Write down your process.\n\n**2. Use everyday language.** 'Check if the summary is under 200 words' is better than trying to sound technical.\n\n**3. Be direct.** 'Do this. Then do that. Never do this.' Politeness is nice in conversation, but clarity wins in instructions.\n\n**4. The 'new colleague' test.** Read your instructions aloud. If a smart new colleague could follow them without questions, they're good enough.\n\n**5. Show, don't tell.** One example of good output eliminates pages of description. Include examples.\n\n**6. Iterate, don't perfect.** Write version 1, test it, fix where the AI deviated. Three rounds of iteration beat one hour of trying to write perfect instructions."
+    },
+    {
+      "title": "Testing Log Template",
+      "content": "Keep a lightweight test log as you iterate:\n\n| # | Input/Scenario | Expected | Actual | Deviation | Fix Applied |\n|---|---------------|----------|--------|-----------|-------------|\n| 1 | Deploy with pending migrations | Flag migrations | Missed migration check | Added explicit step: 'List all unapplied migrations' | |\n| 2 | Deploy with failing tests | Stop and report | Attempted to fix tests | Added constraint: 'Do NOT attempt fixes — only report' | |\n| 3 | Re-test after fixes | Both issues caught | Both caught correctly | None — ship it | |\n\nThis log doubles as documentation for why your instructions evolved."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Writing vague instructions",
+      "explanation": "'Review the code' gives inconsistent results. 'Check for unused imports, functions over 30 lines, and silent error handling' gives the same result every time."
+    },
+    {
+      "mistake": "Trying to cover every edge case upfront",
+      "explanation": "A skill that handles 80% of cases consistently is more valuable than one that tries to handle 100% and becomes a confusing wall of text."
+    },
+    {
+      "mistake": "Skipping examples",
+      "explanation": "Examples are the single most effective way to communicate what you want. One concrete example of good output eliminates entire paragraphs of description."
+    },
+    {
+      "mistake": "Being polite instead of precise",
+      "explanation": "'It would be nice if you could perhaps check...' → 'Check for X. Flag any instance. Return results as a checklist.' Direct language gets direct results."
+    },
+    {
+      "mistake": "Not specifying the output format",
+      "explanation": "Without a prescribed format, the AI invents one — differently each time. Specify: 'Return a markdown table with columns: File, Line, Issue, Fix.'"
+    },
+    {
+      "mistake": "Testing only once",
+      "explanation": "One test doesn't catch inconsistencies. Run at least 3 tests with different inputs. The gap between run 1 and run 3 reveals ambiguity."
+    }
+  ],
+  "reflectionQuestions": [
+    "Read your Lesson 2 skeleton. Where is each section vague enough that two people might interpret it differently?",
+    "Which of the four parts (Trigger, Workflow, Constraints, Output) do you find hardest to write? Why?",
+    "Think of a time someone misunderstood your instructions. What was missing that would have prevented it?",
+    "After testing your skill, what surprised you most about how the AI interpreted your instructions?"
+  ],
+  "exercises": [
+    {
+      "title": "Populate Your Four-Part Instructions",
+      "description": "Replace the placeholder sections in your SKILL.md with real instructions using the Trigger → Workflow → Constraints → Output framework. Include at least one example in the Output section.",
+      "output": "A complete SKILL.md with all four sections populated and at least one example output.",
+      "successCriteria": [
+        "Trigger references a concrete scenario (not generic).",
+        "Workflow has at least 4 numbered steps, each starting with a verb.",
+        "Constraints include at least 2 things the AI must NOT do.",
+        "Output section includes a concrete example showing the expected format."
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    {
+      "title": "Live Test Loop (3 Iterations)",
+      "description": "Install your skill, test it with a real scenario, log the results, fix deviations, and re-test. Repeat at least 3 times.",
+      "output": "A completed test log showing 3 iterations with deviations found and fixes applied.",
+      "successCriteria": [
+        "Tested at least 3 times with real (not toy) inputs.",
+        "Each test logged: scenario, expected result, actual result, deviation, fix.",
+        "At least 3 instruction edits traced directly to observed deviations.",
+        "Final test confirms the fixes work."
+      ],
+      "estimatedTime": "35 minutes"
+    },
+    {
+      "title": "Peer Review Swap",
+      "description": "Exchange your SKILL.md with another learner (or read it aloud to yourself as if you've never seen it). Apply the 'new colleague' test. Would they know exactly what to do?",
+      "output": "Feedback notes from the reviewer plus your revision plan.",
+      "successCriteria": [
+        "Reviewer identified at least one ambiguous instruction.",
+        "Reviewer confirmed the output example is clear.",
+        "You revised the ambiguous section based on feedback.",
+        "Updated SKILL.md committed to git."
+      ],
+      "estimatedTime": "20 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Anthropic Prompt Engineering Guide",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+    },
+    {
+      "title": "Agent Skills Best Practices",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "title": "Claude Code Skills Documentation",
+      "url": "https://code.claude.com/docs/en/skills"
+    }
+  ],
+  "instructorNotes": [
+    "This is the most important lesson in the course. Writing quality determines skill quality. Allocate extra time if needed.",
+    "The side-by-side comparison (good vs. bad instructions) is the most powerful teaching moment. Let learners react before explaining why.",
+    "Non-tech learners often write better instructions than developers because they don't assume technical knowledge. Celebrate this!",
+    "Live demo: write a bad skill (vague), run it, show inconsistent results. Rewrite it (specific), run it, show consistent results. The contrast sells the concept.",
+    "Exercise 2 (live test loop) is where real learning happens. Every learner MUST test their skill, even if it means extending the session.",
+    "Common question: 'How detailed should I be?' Answer: 'Detailed enough that you get the same result every time. If results vary, add more detail somewhere.'"
+  ]
+}

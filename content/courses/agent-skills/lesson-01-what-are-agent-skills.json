@@ -1,0 +1,186 @@
+{
+  "slug": "what-are-agent-skills",
+  "title": "Lesson 1 - Why Agent Skills Matter",
+  "description": "Diagnose the high-friction workflows in your day, understand what agent skills are, and learn how the open standard lets one skill work across 30+ AI coding tools.",
+  "duration": "1.5-2 hours",
+  "order": 1,
+  "learningObjectives": [
+    "Identify repeated AI workflows that cost you time and produce inconsistent results.",
+    "Define what an agent skill is and how it differs from a paste-in prompt or checklist.",
+    "Explain how the open standard keeps skills portable across 30+ tools.",
+    "Differentiate personal, project, and enterprise skills and know when each level is appropriate."
+  ],
+  "videos": [
+    {
+      "title": "The Repetition Tax: Why Skills Exist",
+      "description": "Ground the lesson in real pain: capture the wasted minutes, inconsistent outputs, and lost context that accumulate when you retype the same instructions.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-01-video-01-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "8 minutes",
+      "scriptOutline": [
+        "Walk through a day-in-the-life: 4-5 moments where you give the same instructions to Claude, Copilot, or Cursor.",
+        "Quantify the cost: time rewriting prompts, drift in quality, lost decisions that lived only in chat history.",
+        "Introduce the scorecard: frequency, variance, risk, and teachability — a simple way to find your best skill candidate.",
+        "Preview the solution: reusable instruction packages your AI loads automatically.",
+        "Set expectations: by lesson 7 you will build, test, and ship one real skill."
+      ],
+      "talkingPoints": [
+        "If you've pasted the same instructions into your AI tool more than twice, that's a skill waiting to be written.",
+        "Inconsistency is the hidden cost — different results each time erode trust in AI-assisted work.",
+        "You don't need to be a programmer. If you can write a checklist, you can write a skill."
+      ]
+    },
+    {
+      "title": "What Is an Agent Skill? (From 10,000 ft)",
+      "description": "Define the artifact precisely: a named folder with a SKILL.md file, optional supporting files, and a clear contract the AI follows.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-01-video-02-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "9 minutes",
+      "scriptOutline": [
+        "Show the simplest possible skill: a folder with one SKILL.md file — nothing else needed.",
+        "Live demo: same code review task without a skill (messy) vs. with a skill installed (consistent).",
+        "Explain the open standard: one format adopted by Claude Code, GitHub Copilot, Cursor, Gemini CLI, VS Code, JetBrains, and 25+ more tools.",
+        "Introduce our running example: the 'deploy-checklist' skill we'll build across all 7 lessons.",
+        "Show the final version of the skill (preview) so learners know where they're heading."
+      ],
+      "talkingPoints": [
+        "A skill is just a folder with a text file — the barrier to entry is as low as it gets.",
+        "The open standard means your skill works everywhere: write once, use in any AI tool.",
+        "We'll build one skill together through this entire course. By lesson 7 it will be production-ready."
+      ]
+    },
+    {
+      "title": "Skill Tiers: Personal, Project, and Enterprise",
+      "description": "Explain where skills live, who they affect, and when to promote a skill from personal experimentation to team-wide standard.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-01-video-03-slides.html",
+      "maxLength": "10 minutes",
+      "estimatedDuration": "6 minutes",
+      "scriptOutline": [
+        "Personal skills: your private toolkit, stored in your home directory, available in every project.",
+        "Project skills: shared with your team via git, stored in the project repository.",
+        "Enterprise skills: organization-wide standards managed centrally.",
+        "Priority: project overrides personal, enterprise provides guardrails.",
+        "Rule of thumb: start personal, promote when others depend on it."
+      ],
+      "talkingPoints": [
+        "Always start with a personal skill — it's your sandbox with zero risk to others.",
+        "When your personal skill saves you time consistently, that's the signal to share it with your team.",
+        "Don't overthink the tier. You can always move a skill later."
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "The Skill Candidate Scorecard",
+      "content": "Before writing a skill, score the workflow you want to automate. Assign 0-5 for each dimension:\n\n| Dimension | What to Assess | 0 (Low) | 5 (High) |\n|-----------|---------------|---------|----------|\n| **Frequency** | How often do you repeat this? | Once a month | Multiple times daily |\n| **Variance** | How inconsistent are the results? | Always the same | Different every time |\n| **Risk** | What happens when a step is missed? | Minor inconvenience | Downtime or rework |\n| **Teachability** | Can you describe the workflow clearly? | Too complex to explain | Clear checklist exists |\n\n**Prioritize workflows scoring 12+.** These are your best skill candidates.\n\nCapture this score now — you'll compare it to your results after the capstone to see the impact."
+    },
+    {
+      "title": "Precise Definition",
+      "content": "An **agent skill** is a folder containing a `SKILL.md` file (metadata + instructions) and optional supporting directories. AI tools read the metadata first, then load instructions and resources on demand.\n\nThis enables:\n1. **Automatic activation** — the description tells the AI when to load the skill.\n2. **Consistent results** — the same instructions produce the same quality every time.\n3. **Portability** — one folder works in Claude Code, Copilot, Cursor, Gemini CLI, VS Code, JetBrains, and more."
+    },
+    {
+      "title": "Running Example: The deploy-checklist Skill",
+      "content": "Throughout this course, we'll build one skill together: **deploy-checklist**.\n\n**The problem:** Before shipping code, you need to verify migrations, run tests, check environment variables, and notify the team. People forget steps. Different team members check different things.\n\n**The skill:** A reusable checklist your AI assistant runs through before every deployment.\n\n**Where we're going:**\n- Lesson 1: Identify the problem and draft a charter\n- Lesson 2: Create the folder structure and SKILL.md skeleton\n- Lesson 3: Write the instruction body\n- Lesson 4: Deploy it as a project skill\n- Lesson 5: Add a reference template and validation script\n- Lesson 6: Add Claude Code auto-activation for deploy-related files\n- Lesson 7: Validate, cold test, and ship\n\nYou'll also build your OWN skill alongside this example."
+    },
+    {
+      "title": "Skills vs. Other Approaches",
+      "content": "| Approach | Reusable? | Shareable? | Cross-platform? | Includes files? | Auto-activates? |\n|----------|-----------|-----------|-----------------|----------------|----------------|\n| One-off prompt | No — copy/paste | Manual | No | No | No |\n| System instructions | Per-session | Not easily | No | No | Yes |\n| CLAUDE.md / .cursorrules | Per-project | Via git | Tool-specific | No | Yes |\n| **Agent Skill** | **Yes** | **Via git** | **30+ tools** | **Yes** | **Yes** |\n\nSkills are the only approach that combines reusability, portability, and bundled resources."
+    },
+    {
+      "title": "Skill Tiers and Ownership",
+      "content": "| Tier | Where It Lives | Who Uses It | When to Use |\n|------|---------------|-------------|------------|\n| Personal | `~/.claude/skills/` (or equivalent) | Just you | Preferences, personal workflows, experimentation |\n| Project | `.claude/skills/` inside repo | Your team | Team conventions, shared checklists, code review standards |\n| Enterprise | Org-managed directory or registry | Everyone | Compliance checks, company-wide standards, security policies |\n\nStart personal. Promote when multiple people depend on the same behavior."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Thinking skills require programming knowledge",
+      "explanation": "Skills are written in plain markdown — the same format as a README file. If you can write a to-do list, you can write a skill."
+    },
+    {
+      "mistake": "Trying to automate everything at once",
+      "explanation": "Your first skill should solve ONE workflow. A focused skill that handles one thing well is more valuable than a sprawling skill that handles ten things poorly."
+    },
+    {
+      "mistake": "Assuming skills only work in one tool",
+      "explanation": "Agent Skills is an open standard. A skill written for Claude Code also works in Copilot, Cursor, and 30+ other tools without modification."
+    },
+    {
+      "mistake": "Confusing skills with plugins or extensions",
+      "explanation": "Skills are just instruction files — no installation, no API keys, no app store. Drop a folder in the right place and it works."
+    },
+    {
+      "mistake": "Skipping the scorecard and jumping straight to building",
+      "explanation": "Without scoring your candidate workflow, you might automate something that doesn't save meaningful time. Five minutes on the scorecard prevents hours of wasted effort."
+    }
+  ],
+  "reflectionQuestions": [
+    "Think about the last week of using your AI assistant. Which instructions did you repeat more than twice?",
+    "Score your top three repeated workflows using the scorecard. Which scored highest and why?",
+    "If you could teach your AI one thing it would remember forever, what would it be?",
+    "How would your team benefit if everyone's AI assistant followed the same conventions?"
+  ],
+  "exercises": [
+    {
+      "title": "Workflow Baseline Audit",
+      "description": "List 3-5 workflows where you repeatedly brief an AI assistant. Score each using the scorecard (frequency, variance, risk, teachability).",
+      "output": "A scored table showing your top skill candidates ranked by total score.",
+      "successCriteria": [
+        "Listed at least 3 repeated workflows with specific details.",
+        "Scored each on all 4 dimensions (frequency, variance, risk, teachability).",
+        "Identified one workflow scoring 12+ as your capstone candidate."
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Skill Charter Draft",
+      "description": "For your top-scoring workflow, write a one-page charter: problem statement, who it helps, desired outcome, and how you'll measure success.",
+      "output": "A skill charter document you'll reference throughout the course.",
+      "successCriteria": [
+        "Problem statement describes the pain in concrete terms (not 'it would be nice').",
+        "Describes the trigger scenario clearly (e.g., 'when reviewing backend PRs' or 'before each weekly report').",
+        "Lists any templates, scripts, or references you already use for this workflow."
+      ],
+      "estimatedTime": "25 minutes"
+    },
+    {
+      "title": "Landscape Scan",
+      "description": "Visit at least two community skill repositories (github.com/anthropics/skills, github.com/github/awesome-copilot) and find skills similar to your charter.",
+      "output": "Notes on 2-3 existing skills: what they do well, what you'd change, and ideas to borrow.",
+      "successCriteria": [
+        "Found and linked at least 2 existing community skills.",
+        "Noted one idea to borrow and one pitfall to avoid.",
+        "Summarized how these findings influence your charter."
+      ],
+      "estimatedTime": "15 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Agent Skills Open Standard",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "title": "Claude Code Skills Documentation",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "title": "GitHub Copilot Agent Skills",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/about-agent-skills"
+    },
+    {
+      "title": "Claude Platform Agent Skills Overview",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
+    }
+  ],
+  "instructorNotes": [
+    "Open with a poll: 'Who has copy-pasted the same instructions into an AI tool more than 3 times this week?' — most hands go up. This builds urgency.",
+    "The before/after demo (Video 2) is the most impactful moment. Use a timer to show measurable time savings.",
+    "Non-tech learners may worry this is programming. Reassure them within the first 5 minutes: a skill is a folder with a text file.",
+    "Introduce the running example (deploy-checklist) early and show the finished version. Knowing the destination makes the journey feel achievable.",
+    "For live sessions: have learners share their scorecard results with a partner. Peer discussion improves charter quality.",
+    "Encourage learners to capture their scorecard now — they'll compare before/after at capstone time to quantify ROI."
+  ]
+}
