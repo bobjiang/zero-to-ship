@@ -49,6 +49,14 @@ export default async function WeeklyPage() {
           <p className="mt-4 text-lg text-gray-600">
             Curated weekly digest of what&apos;s new from Anthropic and Claude
           </p>
+          <a
+            href="https://t.me/ClauderSydney"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
+          >
+            Subscribe on Telegram
+          </a>
         </div>
 
         <div className="mx-auto mt-16 max-w-2xl">
