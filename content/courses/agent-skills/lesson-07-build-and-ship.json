@@ -1,0 +1,203 @@
+{
+  "slug": "build-and-ship",
+  "title": "Lesson 7 - Capstone: Build, Validate, and Ship",
+  "description": "Apply everything you've learned to deliver a production-grade skill. Validate it with tooling, run a cold test, and publish it for your team or the community.",
+  "duration": "2.5-3 hours",
+  "order": 7,
+  "learningObjectives": [
+    "Build a complete skill with instructions, references, and scripts that aligns to your Lesson 1 charter.",
+    "Validate structure using the skills-ref CLI and behavioral quality using smoke tests.",
+    "Conduct a cold test where another person or AI tool uses the skill without coaching.",
+    "Ship the skill via git and establish a maintenance plan."
+  ],
+  "videos": [
+    {
+      "title": "Choosing and Scoping Your Capstone",
+      "description": "Select a compelling workflow, scope it realistically, and set clear success criteria for the session.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-07-video-01-slides.html",
+      "maxLength": "10 minutes",
+      "estimatedDuration": "6 minutes",
+      "scriptOutline": [
+        "Revisit your Lesson 1 charter — is this still the right workflow to automate?",
+        "If not, pick from four exemplar projects (or bring your own).",
+        "Review the charter template: problem, users, success metric.",
+        "Scope ruthlessly: solve ONE workflow extremely well. Out-of-scope is fine.",
+        "Connect to the scorecard: your capstone should target a workflow scoring 12+.",
+        "Set expectations: you'll iterate 2-3 times before sharing. Perfection is not the goal."
+      ],
+      "talkingPoints": [
+        "Real value beats cleverness — pick a workflow you'll actually use Monday morning.",
+        "Scope ruthlessly. A narrow, excellent skill beats a broad, mediocre one.",
+        "Use your scorecard to defend your choice. If frequency + variance + risk is high, it's worth automating."
+      ]
+    },
+    {
+      "title": "The End-to-End Build Cycle",
+      "description": "Walk through the complete build process with checkpoints, demonstrating the finished deploy-checklist as reference.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-07-video-02-slides.html",
+      "maxLength": "18 minutes",
+      "estimatedDuration": "12 minutes",
+      "scriptOutline": [
+        "The 8-step build loop: define → structure → write → add references → test → iterate → validate → ship.",
+        "Show the completed deploy-checklist skill as the finished reference (all files, all sections).",
+        "Live demo: test with real inputs, capture deviations, fix instructions, re-test.",
+        "Run skills-ref validate to catch structural issues.",
+        "Prepare the PR: screenshots, test log, compatibility notes.",
+        "The cold test: hand the skill to someone who's never seen it. Can they use it?"
+      ],
+      "talkingPoints": [
+        "Validation tooling catches structure issues. Testing catches behavioral ones. You need both.",
+        "Document everything — reviewers shouldn't have to guess how to test your skill.",
+        "Ship even if it's not perfect. Iterate from real feedback, not hypothetical improvements."
+      ]
+    },
+    {
+      "title": "Maintenance, Composition, and What's Next",
+      "description": "Position the capstone as the beginning — cover maintenance, composing skills, and growing a skill library.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-07-video-03-slides.html",
+      "maxLength": "10 minutes",
+      "estimatedDuration": "6 minutes",
+      "scriptOutline": [
+        "Skills need maintenance: update when conventions change, teams grow, or tools evolve.",
+        "Version control helps: git history shows why a skill changed, PRs let the team review updates.",
+        "Composing skills: multiple skills work together — code-review → changelog → release-notes.",
+        "Building a skill library: how teams catalog, discover, and onboard new members to their skills.",
+        "Course summary: from repeated prompts to a portable, tested, production-grade skill.",
+        "What's next: the open standard is evolving, new tools keep adopting it, the community is growing."
+      ],
+      "talkingPoints": [
+        "A skill is never 'done' — it evolves with your needs. That's why version control matters.",
+        "When you have 5-10 skills, they start composing: one skill's output feeds another's input.",
+        "You now have a superpower: the ability to teach your AI assistant anything, once, and have it remember forever.",
+        "Share your skills publicly when possible — community feedback is invaluable."
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Capstone Project Options",
+      "content": "Choose one of these projects or bring your own:\n\n### Option 1: Code Review Skill\n**Problem:** Reviews are inconsistent — different reviewers check different things.\n**What to build:** Automated review against your team's specific conventions.\n**Include:** `references/style-guide.md` with conventions, output format as a checklist.\n**Good for:** Developers, tech leads, anyone who reviews PRs.\n\n### Option 2: Documentation Skill\n**Problem:** Docs don't match your project's style or structure.\n**What to build:** Generate docs following your project's format and voice.\n**Include:** `references/doc-template.md`, `references/example-doc.md`.\n**Good for:** Technical writers, product managers, anyone who writes docs.\n\n### Option 3: Deploy Checklist Skill\n**Problem:** Deployments miss steps — someone forgets migrations or env var checks.\n**What to build:** Pre-deploy validation that catches issues before shipping.\n**Include:** `scripts/pre-deploy-check.sh`, `assets/required-env-vars.json`.\n**Good for:** DevOps, backend engineers, anyone who ships code.\n\n### Option 4: Content Skill\n**Problem:** Content doesn't match your brand voice or format.\n**What to build:** Content creation following your brand's tone and structure.\n**Include:** `references/brand-voice.md`, `references/content-template.md`.\n**Good for:** Marketers, content creators, product managers.\n\n### Option 5: Your Own\n**Problem:** The workflow from your Lesson 1 charter.\n**What to build:** Whatever saves you the most time.\n**Include:** Whatever supporting files make sense."
+    },
+    {
+      "title": "Build Checklist",
+      "content": "Track your progress through the 8-step build cycle:\n\n**Define (Lesson 1)**\n- [ ] Problem statement: What pain does this skill solve?\n- [ ] Target user: Who will use this skill?\n- [ ] Success metric: How will you know it's working?\n\n**Structure (Lesson 2)**\n- [ ] Folder created with correct kebab-case naming\n- [ ] SKILL.md has valid frontmatter (name matches folder, description is scenario-specific)\n\n**Write (Lesson 3)**\n- [ ] Trigger section with specific activation conditions\n- [ ] Workflow with 4+ numbered steps, each starting with a verb\n- [ ] Constraints with at least 2 things NOT to do\n- [ ] Output section with concrete example\n\n**Enhance (Lessons 4-6)**\n- [ ] references/ added if needed (templates, examples)\n- [ ] scripts/ added if needed (validation, automation)\n- [ ] assets/ added if needed (data, configs)\n- [ ] Platform features added if applicable ($ARGUMENTS, paths)\n- [ ] Supporting Files table documented in SKILL.md\n\n**Test & Ship (Lesson 7)**\n- [ ] Tested 3+ times with different inputs\n- [ ] Deviations logged and instructions fixed\n- [ ] skills-ref validate passes (or manual validation checklist completed)\n- [ ] Cold test: someone else used it without coaching\n- [ ] Committed to git and shared (PR, repo, or community)"
+    },
+    {
+      "title": "Capstone Quality Rubric",
+      "content": "Score your capstone on each dimension (aim for 4-5 on all):\n\n| Dimension | 1-2 (Needs Work) | 3 (Acceptable) | 4-5 (Excellent) |\n|-----------|-------------------|-----------------|------------------|\n| **Problem Clarity** | Vague or too broad | Partially scoped | Crisp trigger + success metric |\n| **Instruction Quality** | Missing sections | Basic structure, some gaps | All 4 parts with examples + quality gates |\n| **Supporting Files** | None when needed | One directory used | References + scripts/assets, all documented |\n| **Testing** | Untested | One manual pass | 3+ logged tests, deviations fixed |\n| **Sharing** | Local only | In repo, no docs | PR + README + compatibility notes |\n\nUse this rubric for self-assessment and peer review."
+    },
+    {
+      "title": "Validation Pipeline",
+      "content": "Run these checks before sharing:\n\n**Automated:**\n```bash\n# Validate structure (if skills-ref is installed)\nskills-ref validate ./my-skill\n\n# Alternative: manual validation\n# 1. Folder name matches 'name' field? ✓\n# 2. Frontmatter valid YAML between --- markers? ✓\n# 3. Name is lowercase with hyphens? ✓\n# 4. Description under 1024 chars and scenario-specific? ✓\n# 5. All file references use relative paths? ✓\n# 6. Scripts are executable (chmod +x)? ✓\n```\n\n**Manual:**\n- [ ] Skill tested 3+ times with different inputs\n- [ ] Cold test completed (another person or AI tool used it successfully)\n- [ ] Supporting Files table is complete and accurate\n- [ ] No hardcoded paths, secrets, or machine-specific references"
+    },
+    {
+      "title": "Course Summary: Your Journey",
+      "content": "Here's what you've learned across 7 lessons:\n\n| Lesson | Key Takeaway | What You Built |\n|--------|-------------|----------------|\n| 1. Why Skills Matter | Skills = reusable expertise, open standard across 30+ tools | Scorecard + charter |\n| 2. Designing a Skill | SKILL.md + optional directories, progressive disclosure | Folder skeleton + frontmatter |\n| 3. Crafting Instructions | Trigger → Workflow → Constraints → Output framework | Complete instruction body |\n| 4. Deploying & Sharing | Personal → project → enterprise, shared via git | Promoted skill to project repo |\n| 5. Power Features | references/, scripts/, assets/ for richer skills | Template + validation script |\n| 6. Platform Enhancements | Standard first, platform features second | Cross-platform compatibility |\n| 7. Build & Ship | Full cycle: define, build, test, iterate, validate, share | Production-grade capstone skill |\n\n**You now have the ability to:**\n- Capture your expertise as reusable, testable skills\n- Share skills with your team via git\n- Write skills that work across 30+ AI tools\n- Build, test, iterate, and ship skills independently\n\nWelcome to the skill-building community. The skill you built today is just the beginning."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Skipping the charter and jumping straight to building",
+      "explanation": "Without a clear problem statement and success metric, you'll build something that 'works' but doesn't solve a real pain. Five minutes on the charter saves hours of unfocused work."
+    },
+    {
+      "mistake": "Testing with toy inputs instead of real scenarios",
+      "explanation": "A skill that works with 'Hello World' may fail with real data. Use actual tasks from your workflow — that's where the edge cases live."
+    },
+    {
+      "mistake": "Testing only once",
+      "explanation": "One test doesn't catch inconsistencies. Three tests with different inputs reveals whether the skill is truly reliable."
+    },
+    {
+      "mistake": "Skipping the cold test",
+      "explanation": "If the skill only works because YOU know the missing context, it's not ready to share. Have someone else use it without any coaching."
+    },
+    {
+      "mistake": "Overbuilding before shipping",
+      "explanation": "Ship version 1 when it works, not when it's perfect. Real feedback from real usage is more valuable than hypothetical improvements."
+    },
+    {
+      "mistake": "Not establishing a maintenance plan",
+      "explanation": "Skills drift as your workflow evolves. Set a reminder to review your skill quarterly. Update it or retire it — stale skills erode trust."
+    }
+  ],
+  "reflectionQuestions": [
+    "Compare your Lesson 1 scorecard to your capstone result. How much time does the skill save per week?",
+    "What was the most surprising thing you learned about writing instructions for AI?",
+    "During the cold test, what did the tester struggle with? What does that tell you about your instructions?",
+    "What's the next skill you'll build after this capstone?",
+    "If your entire team adopted skill-based workflows, what would change about how you work together?"
+  ],
+  "exercises": [
+    {
+      "title": "Build Your Capstone Skill",
+      "description": "Use the build checklist to create a complete skill from scratch (or finish the one you've been building). Follow the 8-step cycle.",
+      "output": "A complete skill directory with SKILL.md, supporting files, and validated structure.",
+      "successCriteria": [
+        "SKILL.md has valid frontmatter and all four instruction sections populated.",
+        "At least one supporting file (reference, script, or asset) included and documented.",
+        "skills-ref validate passes (or manual validation checklist completed).",
+        "Supporting Files table present in SKILL.md."
+      ],
+      "estimatedTime": "60 minutes"
+    },
+    {
+      "title": "The Cold Test",
+      "description": "Hand your skill to another person (or a different AI tool) with NO explanation. Can they use it successfully from SKILL.md alone?",
+      "output": "Feedback from the tester: what worked, what was confusing, and suggestions.",
+      "successCriteria": [
+        "Tester completed the core workflow without verbal coaching from you.",
+        "Collected specific feedback on at least one confusing or missing element.",
+        "Applied at least one instruction improvement based on feedback.",
+        "Re-tested after the improvement to confirm the fix works."
+      ],
+      "estimatedTime": "30 minutes"
+    },
+    {
+      "title": "Ship It",
+      "description": "Commit your skill to a git repository, open a PR or publish it, and write a short announcement describing the skill.",
+      "output": "Your skill live in a repository, accessible to at least one other person.",
+      "successCriteria": [
+        "Skill committed to git with a descriptive commit message.",
+        "PR description (or README) includes: problem solved, how to invoke, test evidence.",
+        "Compatibility field documents tested platforms.",
+        "Shared with at least one other person (teammate, community, or public repo)."
+      ],
+      "estimatedTime": "15 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Agent Skills Validation Tool (skills-ref)",
+      "url": "https://github.com/agentskills/agentskills"
+    },
+    {
+      "title": "Anthropic Community Skills Repository",
+      "url": "https://github.com/anthropics/skills"
+    },
+    {
+      "title": "Awesome Copilot Skills Collection",
+      "url": "https://github.com/github/awesome-copilot"
+    },
+    {
+      "title": "Agent Skills Open Standard",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "title": "Claude Code Skills Documentation",
+      "url": "https://code.claude.com/docs/en/skills"
+    }
+  ],
+  "instructorNotes": [
+    "This is the payoff lesson. Allocate 60-70% of time to hands-on building. Keep lectures short.",
+    "The Cold Test (Exercise 2) is the most valuable exercise in the entire course. If time is limited, prioritize it over everything else.",
+    "Help stuck learners with: 'What did you copy-paste into your AI tool this week?' — that's their capstone.",
+    "For live sessions: end with a 2-3 minute skill showcase where each learner presents their capstone to the group.",
+    "Facilitate the cold test by pairing learners. Each person tests the other's skill — they learn from both giving and receiving feedback.",
+    "End with genuine encouragement: they've gone from zero skills to a working, tested, shareable skill in 7 lessons. The skill they built today is the first of many.",
+    "If learners want to continue: point them to community repositories for inspiration and suggest they build a skill library for their team."
+  ]
+}

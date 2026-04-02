@@ -1,0 +1,193 @@
+{
+  "slug": "platform-specific-features",
+  "title": "Lesson 6 - Platform-Specific Enhancements",
+  "description": "Respect the open standard first, then layer optional features for Claude Code, GitHub Copilot, Cursor, and other tools — without breaking portability.",
+  "duration": "1.5-2 hours",
+  "order": 6,
+  "learningObjectives": [
+    "Use Claude Code extensions: $ARGUMENTS, paths-based auto-activation, context forking, and invocation controls.",
+    "Understand how GitHub Copilot, Cursor, and Gemini CLI detect and load skills.",
+    "Design skills with a portability-first mindset so platform features degrade gracefully.",
+    "Document compatibility directly in SKILL.md frontmatter."
+  ],
+  "videos": [
+    {
+      "title": "Claude Code: The Most Feature-Rich Platform",
+      "description": "Explore Claude Code's powerful extensions and show how to add them incrementally to the deploy-checklist skill.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-06-video-01-slides.html",
+      "maxLength": "18 minutes",
+      "estimatedDuration": "12 minutes",
+      "scriptOutline": [
+        "Claude Code supports all standard features PLUS the richest set of extensions.",
+        "User invocation: /deploy-checklist from the command line — like a slash command.",
+        "$ARGUMENTS: accept user input like /deploy-checklist staging. Show positional args ($1, $ARGUMENTS[0]).",
+        "paths for auto-activation: paths: ['scripts/deploy/**'] makes the skill auto-load when editing deploy files.",
+        "context: fork — run the skill in an isolated subprocess for heavy analysis without polluting the conversation.",
+        "Dynamic context injection: !`git diff --staged` embeds live system state into the skill.",
+        "Running example: add paths and $ARGUMENTS to deploy-checklist so it auto-activates and accepts a target environment.",
+        "Invocation controls: user-invocable (show/hide from / menu), disable-model-invocation (prevent auto-triggering)."
+      ],
+      "talkingPoints": [
+        "Claude Code pioneered most of these extensions — it has the richest feature set in the ecosystem.",
+        "$ARGUMENTS is the most useful: /deploy-checklist production lets users pass context without extra typing.",
+        "paths-based auto-activation is magic: the skill loads itself when you touch relevant files.",
+        "context: fork protects heavy skills from polluting your main conversation."
+      ]
+    },
+    {
+      "title": "GitHub Copilot, Cursor, and the Broader Ecosystem",
+      "description": "How other platforms handle skills, where they store them, and which extensions they support.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-06-video-02-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "7 minutes",
+      "scriptOutline": [
+        "GitHub Copilot: checks .github/skills/, .claude/skills/, AND .agents/skills/ — your Claude Code skills often just work.",
+        "Copilot surfaces: cloud agent, CLI, VS Code agent mode — same skill works across all three.",
+        "Cursor: supports .cursor/skills/ and .claude/skills/ — reads most standard fields.",
+        "Gemini CLI + JetBrains: follow the standard via .agents/skills/.",
+        "The convergence: 30+ tools now read the same format. Your skills are more portable than ever.",
+        "When in doubt: drop the skill into .agents/skills/ for maximum compatibility."
+      ],
+      "talkingPoints": [
+        "GitHub Copilot checking .claude/skills/ means your Claude Code skills work in Copilot without changes.",
+        "The ecosystem convergence is real — tools are competing on features, not on format.",
+        "If you're not sure which directory to use, .agents/skills/ is the universal fallback."
+      ]
+    },
+    {
+      "title": "The Portability-First Playbook",
+      "description": "A disciplined approach: build on the standard first, add platform features as opt-in enhancements.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-06-video-03-slides.html",
+      "maxLength": "10 minutes",
+      "estimatedDuration": "6 minutes",
+      "scriptOutline": [
+        "Strategy: standard features first (Lessons 1-5), platform features on top (this lesson).",
+        "Platform features are additive: tools that don't support them simply ignore them — no errors.",
+        "Fallback behavior: design your skill to work without $ARGUMENTS or paths (provide defaults).",
+        "The compatibility field: document which platforms you've tested.",
+        "Running example: deploy-checklist now works everywhere AND has Claude Code auto-activation. Best of both worlds.",
+        "Troubleshooting checklist: what to check when a skill works on one platform but not another."
+      ],
+      "talkingPoints": [
+        "A great skill works everywhere. Platform features make it shine on specific tools.",
+        "Platform extensions are ignored (not errors) on tools that don't support them — safe to add.",
+        "Test on two platforms minimum. You'll catch subtle path and script issues.",
+        "Use the compatibility field honestly: list only platforms you've actually tested."
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Claude Code Extensions Reference",
+      "content": "**Frontmatter extensions (Claude Code only):**\n\n```yaml\n---\nname: deploy-checklist\ndescription: Run pre-deploy validations before shipping backend services\npaths:                            # Auto-activate for matching files\n  - \"scripts/deploy/**\"\n  - \"infrastructure/**\"\nargument-hint: <environment>      # Help text shown in / menu\nuser-invocable: true              # Show in / menu (default: true)\ndisable-model-invocation: false   # Allow AI to auto-trigger (default: false)\ncontext: fork                     # Run in isolated subprocess\nmodel: sonnet                     # Override model for this skill\n---\n```\n\n**String substitutions:**\n\n| Variable | Meaning | Example |\n|----------|---------|--------|\n| `$ARGUMENTS` | All user input after `/skill-name` | `/deploy-checklist staging` → `staging` |\n| `$ARGUMENTS[0]` | First positional argument | Same → `staging` |\n| `$1` | Shorthand for first argument | Same → `staging` |\n| `${CLAUDE_SKILL_DIR}` | Path to the skill's directory | For referencing bundled files |\n\n**Dynamic context injection:**\n```markdown\nCurrent staged changes:\n!`git diff --staged`\n\nCurrent branch:\n!`git branch --show-current`\n```\nThe !\\`command\\` syntax runs the command and injects its output into the prompt when the skill loads."
+    },
+    {
+      "title": "Platform Compatibility Matrix",
+      "content": "| Feature | Open Standard | Claude Code | Copilot | Cursor | Gemini CLI |\n|---------|:---:|:---:|:---:|:---:|:---:|\n| SKILL.md + frontmatter | Yes | Yes | Yes | Yes | Yes |\n| scripts/ references/ assets/ | Yes | Yes | Yes | Yes | Yes |\n| /skill-name invocation | — | Yes | — | — | — |\n| $ARGUMENTS | — | Yes | — | — | — |\n| paths auto-activation | — | Yes | — | — | — |\n| context: fork | — | Yes | — | — | — |\n| Dynamic context !\\`\\` | — | Yes | — | — | — |\n| Multiple skill directories | — | — | Yes | Yes | — |\n\n**Key insight:** The standard features (top two rows) work everywhere. Platform features (bottom rows) are bonus."
+    },
+    {
+      "title": "Running Example: deploy-checklist with Platform Enhancements",
+      "content": "Here's the deploy-checklist frontmatter after adding Claude Code features:\n\n```markdown\n---\nname: deploy-checklist\ndescription: Run pre-deploy validations before shipping backend services to production\npaths:\n  - \"scripts/deploy/**\"\n  - \"infrastructure/**\"\n  - \"**/Dockerfile\"\nargument-hint: <environment>\ncompatibility: Tested on Claude Code 1.x, GitHub Copilot (VS Code)\n---\n\n# Deploy Checklist\n\n## Trigger\nActivate when deploying backend services.\nTarget environment: $ARGUMENTS (default to 'staging' if not specified).\n\n## Workflow\n1. Run `scripts/pre-deploy-check.sh`\n2. Read `assets/required-env-vars.json` — verify vars for the target environment\n...\n```\n\n**On Claude Code:** `/deploy-checklist production` auto-activates near deploy files, accepts environment as argument.\n**On Copilot/Cursor:** Works identically — just activated manually or by AI matching the description. $ARGUMENTS ignored gracefully."
+    },
+    {
+      "title": "Troubleshooting Cross-Platform Issues",
+      "content": "When a skill works on one platform but not another:\n\n1. **Check the directory path** — is the skill in the right location for that tool?\n2. **Validate frontmatter** — YAML typos silently break activation.\n3. **Test without platform features** — strip Claude Code extensions and test the baseline.\n4. **Check script compatibility** — bash scripts may behave differently on macOS vs. Linux vs. Windows.\n5. **Review logs** — many tools show which skills they discovered at startup.\n\nAdd findings to your compatibility notes. Future you (and your team) will thank you."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Building platform-specific skills first",
+      "explanation": "Start with the standard. If your skill relies on $ARGUMENTS to function, it won't work in Copilot or Cursor. Standard first, enhancements second."
+    },
+    {
+      "mistake": "Assuming all features work everywhere",
+      "explanation": "$ARGUMENTS, context: fork, and paths are Claude Code-only. They're silently ignored (not errors) on other platforms, but your skill must work without them."
+    },
+    {
+      "mistake": "Not providing defaults for platform features",
+      "explanation": "If $ARGUMENTS is empty (non-Claude Code tools), your skill should still work. Add a default: 'Target environment: $ARGUMENTS (default to staging if not specified).'"
+    },
+    {
+      "mistake": "Over-using dynamic context injection",
+      "explanation": "!`command` runs on every skill load. Keep commands fast and outputs small. !`git log --oneline -1000` will bloat the context."
+    },
+    {
+      "mistake": "Claiming cross-platform without testing",
+      "explanation": "If you say 'works on Claude Code and Copilot', test on both. Use the compatibility field to document what you've actually verified."
+    }
+  ],
+  "reflectionQuestions": [
+    "Which platform feature would benefit your skill the most? Why?",
+    "Does your skill still work if ALL platform-specific features are removed?",
+    "If a teammate uses a different AI tool than you, can they still use your skill?",
+    "How would you test your skill on a platform you don't normally use?"
+  ],
+  "exercises": [
+    {
+      "title": "Add One Platform Enhancement",
+      "description": "Choose a platform feature (e.g., $ARGUMENTS, paths, context: fork) and add it to your skill. Test it end-to-end.",
+      "output": "Updated SKILL.md frontmatter plus test evidence showing the feature working.",
+      "successCriteria": [
+        "Platform feature added to frontmatter or instruction body.",
+        "Skill still works WITHOUT the platform feature (graceful degradation tested).",
+        "Test log shows the feature working on your primary tool.",
+        "Usage documented inside SKILL.md (e.g., how to pass arguments)."
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Cross-Platform Smoke Test",
+      "description": "Test your skill on a second platform or mode (e.g., Copilot if you built in Claude Code, or vice versa). Log any differences.",
+      "output": "Compatibility notes documenting what worked and what differed.",
+      "successCriteria": [
+        "Tested on at least one additional platform.",
+        "Core workflow verified working without platform extensions.",
+        "Documented any behavioral differences.",
+        "Updated the compatibility field in frontmatter."
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Write Compatibility Documentation",
+      "description": "Add the compatibility field to frontmatter and document platform-specific usage in SKILL.md.",
+      "output": "Updated SKILL.md with compatibility info and platform-specific usage notes.",
+      "successCriteria": [
+        "Compatibility field lists platforms and versions tested.",
+        "Any platform-specific features documented with usage examples.",
+        "Fallback behavior described for tools that don't support extensions.",
+        "Changes committed to git."
+      ],
+      "estimatedTime": "10 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Claude Code Skills — Full Feature Reference",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "title": "GitHub Copilot Agent Skills",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/about-agent-skills"
+    },
+    {
+      "title": "Agent Skills Open Standard",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "title": "Claude Platform Agent Skills",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson is more reference-oriented. Don't try to cover every feature — focus on the 3-4 most useful: $ARGUMENTS, paths, and context: fork.",
+    "For Claude Code users: /skill-name invocation is the 'wow' moment. Demo it live with the deploy-checklist.",
+    "For mixed-tool audiences: the portability-first strategy validates everyone's tool choice. Nobody feels like a second-class citizen.",
+    "The compatibility matrix is a great reference to keep visible throughout exercises.",
+    "Dynamic context injection (!`command`) is advanced. Only cover it in depth if the audience is comfortable with the command line.",
+    "Pair learners by tool preference for the cross-platform exercise — they can test each other's skills.",
+    "Remind learners: platform features are bonus, not requirements. A great standard skill beats a mediocre platform-specific one."
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "slug": "anatomy-of-a-skill",
+  "title": "Lesson 2 - Designing a Skill Artifact",
+  "description": "Translate your charter into a concrete folder structure, master SKILL.md frontmatter, and understand how progressive disclosure keeps skills fast and maintainable.",
+  "duration": "1.5-2 hours",
+  "order": 2,
+  "learningObjectives": [
+    "Create a correctly named skill directory with a valid SKILL.md file.",
+    "Author compliant YAML frontmatter with name and description (required) plus optional governance fields.",
+    "Structure the instruction body with scannable sections that map to the four-part hierarchy.",
+    "Decide when to add scripts/, references/, and assets/ without bloating SKILL.md."
+  ],
+  "videos": [
+    {
+      "title": "From Charter to Folder",
+      "description": "Live-build the minimum viable skill folder, validate naming conventions, and watch the AI tool recognize it instantly.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-02-video-01-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "7 minutes",
+      "scriptOutline": [
+        "Recap the charter from Lesson 1 and derive the folder name (kebab-case, <=64 chars).",
+        "Create the folder + empty SKILL.md. Show the directory where it will live.",
+        "Explain naming pitfalls: spaces, uppercase, underscores, version suffixes, consecutive hyphens.",
+        "Live demo: open Claude Code (or Copilot) and watch it recognize the new skill instantly.",
+        "Running example: create the deploy-checklist/ folder and commit the skeleton to git."
+      ],
+      "talkingPoints": [
+        "A skill name should read like a clear command: 'deploy-checklist', 'meeting-notes', 'code-review'.",
+        "The folder name IS the skill name — they must match exactly.",
+        "Version control from day one: commit the skeleton so changes are tracked."
+      ]
+    },
+    {
+      "title": "SKILL.md Frontmatter Deep Dive",
+      "description": "Walk through every field, explain why descriptions must be scenario-specific, and show what makes the AI activate your skill.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-02-video-02-slides.html",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "10 minutes",
+      "scriptOutline": [
+        "The two parts of SKILL.md: frontmatter (metadata between --- markers) and body (instructions).",
+        "Required fields: name (must match folder name) and description (the AI reads this to decide when to activate).",
+        "Optional standard fields: license, compatibility, metadata.",
+        "Writing great descriptions: answer 'When should the AI use this?' not 'What does this skill do?'.",
+        "Live demo: weak description vs. strong description — show how activation accuracy changes.",
+        "Running example: write the deploy-checklist frontmatter with a scenario-specific description."
+      ],
+      "talkingPoints": [
+        "Think of frontmatter as the label on a jar — the AI reads it to decide whether to open the jar.",
+        "A vague description like 'helps with deployments' is useless. 'Run pre-deploy validations before shipping backend services' is actionable.",
+        "The description is the most important line in your entire skill. Spend real time on it."
+      ]
+    },
+    {
+      "title": "Instruction Body and Supporting Directories",
+      "description": "Structure the markdown body with placeholder sections and learn when to offload content into supporting directories.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-02-video-03-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "8 minutes",
+      "scriptOutline": [
+        "Sketch the four default sections (Trigger, Workflow, Constraints, Output) as placeholders — we'll populate them in Lesson 3.",
+        "Show how markdown headings and numbered lists make instructions parsable for both AI and humans.",
+        "Introduce optional directories: scripts/ (automation), references/ (templates/examples), assets/ (data/configs).",
+        "Progressive disclosure: AI reads metadata first, loads instructions when activated, reads files on demand.",
+        "Decision thresholds: >500 lines in SKILL.md? Move templates to references/. Repeating shell tasks? Add scripts/.",
+        "Running example: add the four placeholder sections to deploy-checklist/SKILL.md."
+      ],
+      "talkingPoints": [
+        "Structure before content: even a placeholder skeleton prevents rambling instructions later.",
+        "Supporting directories are appendices — reference them explicitly from SKILL.md.",
+        "Progressive disclosure keeps the AI fast: it only loads what it needs, when it needs it.",
+        "Most skills start with just SKILL.md. Don't add directories until you actually need them."
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Canonical Skill Layout",
+      "content": "Here's the complete anatomy of a skill:\n\n```\ndeploy-checklist/              # Folder name = skill name (kebab-case)\n├── SKILL.md                   # Required — frontmatter + instructions\n├── references/                # Optional — templates, examples, style guides\n│   ├── template.md\n│   └── example-good.md\n├── scripts/                   # Optional — automation scripts\n│   └── run-sanity-check.sh\n└── assets/                    # Optional — data files, configs, images\n    └── release-matrix.json\n```\n\n**Only SKILL.md is required.** Everything else is optional. Start minimal, add directories when you need them."
+    },
+    {
+      "title": "Complete SKILL.md Example: deploy-checklist",
+      "content": "Here is the running example skill we'll build across this course:\n\n```markdown\n---\nname: deploy-checklist\ndescription: Run pre-deploy validations before shipping backend services to production. Checks migrations, tests, environment variables, and team notifications.\n---\n\n# Deploy Checklist\n\n## Trigger\nActivate when the user is about to deploy backend services to production or staging.\nDo NOT activate for frontend-only changes or documentation updates.\n\n## Workflow\n1. Check for pending database migrations — list any unapplied migrations.\n2. Run the test suite — report pass/fail with summary.\n3. Verify environment variables — confirm all required vars are set for the target environment.\n4. Check for uncommitted changes — warn if the working directory is dirty.\n5. Generate a deployment summary for the team notification.\n\n## Constraints\n- Never run destructive commands (DROP, DELETE, rm -rf) during validation.\n- Do not proceed if tests fail — stop and report the failures.\n- Do not modify any source files — this skill only validates and reports.\n\n## Output\nReturn a markdown checklist:\n\n### Deploy Readiness Report\n- [ ] Migrations: [status]\n- [ ] Tests: [pass/fail count]\n- [ ] Env vars: [status]\n- [ ] Clean working directory: [yes/no]\n- [ ] Summary: [one-line description of what's being deployed]\n```\n\nThis is a complete, working skill. We'll refine it over the next five lessons."
+    },
+    {
+      "title": "Frontmatter Field Reference",
+      "content": "**Required fields (open standard):**\n\n| Field | Rules | Example |\n|-------|-------|---------|\n| `name` | Lowercase + hyphens, max 64 chars, must match folder name | `deploy-checklist` |\n| `description` | Max 1024 chars, explains WHEN to use the skill | `Run pre-deploy validations before shipping backend services` |\n\n**Optional fields (open standard):**\n\n| Field | Purpose | Example |\n|-------|---------|--------|\n| `license` | License for sharing | `MIT` |\n| `compatibility` | Platforms tested + requirements | `Tested on Claude Code, Copilot` |\n| `metadata` | Arbitrary key-value pairs | `author: Jane Doe` |\n\n**Note:** Some platforms add extra fields (Lesson 6 covers these). Always use the standard fields first."
+    },
+    {
+      "title": "Progressive Disclosure: How AI Loads Skills",
+      "content": "Your AI doesn't read every skill fully at startup — that would be slow. Instead, it uses **three-stage loading**:\n\n**Stage 1 — Metadata (~100 tokens):** At startup, the AI reads only `name` and `description` from frontmatter. This is how it knows what skills exist.\n\n**Stage 2 — Instructions (<5,000 tokens):** When a task matches a skill's description, the AI loads the full SKILL.md body. Now it has detailed instructions.\n\n**Stage 3 — Resources (on demand):** Only when referenced by the instructions, the AI reads files from `scripts/`, `references/`, or `assets/`.\n\nThis is why a great `description` matters so much — it's the gateway to everything else."
+    },
+    {
+      "title": "Supporting Directory Decision Tree",
+      "content": "Ask these questions before adding a directory:\n\n| Question | If Yes → | Example |\n|----------|---------|--------|\n| Am I pasting the same template into SKILL.md? | Move it to `references/` | Output template, style guide |\n| Do I need repeatable automation? | Create a `scripts/` file | Lint checker, test runner |\n| Does the AI need static data to do its job? | Store it in `assets/` | JSON config, CSV data |\n| Is SKILL.md over 400 lines? | Split content into supporting files | Long examples → references/ |\n\n**Default answer: not yet.** Start with just SKILL.md. Add directories when you feel the pain."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Folder name doesn't match the name field",
+      "explanation": "If your folder is 'code-review/', the name field MUST be 'code-review'. Any mismatch makes the skill invisible to your AI tool."
+    },
+    {
+      "mistake": "Writing a vague description",
+      "explanation": "'A helpful deployment skill' tells the AI nothing. Write: 'Run pre-deploy validations before shipping backend services to production.' The AI uses the description to decide WHEN to activate."
+    },
+    {
+      "mistake": "Adding directories before you need them",
+      "explanation": "An empty scripts/ folder adds complexity without value. Start with just SKILL.md. Add scripts/ when you actually have a script to put there."
+    },
+    {
+      "mistake": "Using uppercase, spaces, or underscores in the skill name",
+      "explanation": "Skill names must be lowercase with hyphens: 'deploy-checklist' not 'Deploy_Checklist' or 'deploy checklist'."
+    },
+    {
+      "mistake": "Putting everything in one massive SKILL.md",
+      "explanation": "If SKILL.md exceeds 500 lines, it becomes hard to scan and maintain. Move templates to references/, data to assets/, and automation to scripts/."
+    }
+  ],
+  "reflectionQuestions": [
+    "Look at the complete deploy-checklist example. Which section is clearest? Which would you write differently?",
+    "For your chartered workflow, is SKILL.md alone enough, or do you already know you'll need supporting files?",
+    "How would you describe your skill in one sentence so the AI knows EXACTLY when to activate it?",
+    "What's the difference between a description that says what the skill does vs. when to use it?"
+  ],
+  "exercises": [
+    {
+      "title": "Build Your Skill Skeleton",
+      "description": "Create the folder for your chartered workflow. Add SKILL.md with valid frontmatter and the four placeholder sections (Trigger, Workflow, Constraints, Output).",
+      "output": "A folder with SKILL.md containing frontmatter + placeholder section headings.",
+      "successCriteria": [
+        "Folder name is lowercase kebab-case, under 64 characters.",
+        "SKILL.md frontmatter has name (matching folder) and a scenario-specific description.",
+        "Four placeholder sections (Trigger, Workflow, Constraints, Output) are present.",
+        "Committed to git with a descriptive commit message."
+      ],
+      "estimatedTime": "15 minutes"
+    },
+    {
+      "title": "Description Stress Test",
+      "description": "Write three different descriptions for your skill. Test each by asking: 'Would the AI activate this skill for the right task and NOT activate it for the wrong task?'",
+      "output": "Three candidate descriptions with notes on which is most precise.",
+      "successCriteria": [
+        "Three descriptions that differ meaningfully, not just in wording.",
+        "Evaluated each against a 'should activate' scenario and a 'should NOT activate' scenario.",
+        "Selected the strongest description and updated SKILL.md."
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Reverse-Engineer an Existing Skill",
+      "description": "Find a community skill (github.com/anthropics/skills or similar). Map each file to the canonical layout diagram. Note how they use frontmatter and supporting files.",
+      "output": "Annotated breakdown of another team's skill structure.",
+      "successCriteria": [
+        "Identified every frontmatter field in the reference skill.",
+        "Documented how the instruction body links to supporting files.",
+        "Listed one idea to adopt and one thing you'd do differently."
+      ],
+      "estimatedTime": "15 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Agent Skills Specification",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "title": "Claude Code Skills — Structure & Frontmatter",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "title": "Community Skills Repository (Anthropic)",
+      "url": "https://github.com/anthropics/skills"
+    },
+    {
+      "title": "YAML Syntax Quick Reference",
+      "url": "https://yaml.org/spec/1.2/spec.html"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson introduces the most 'technical' concepts (file structure, YAML). Reassure non-tech learners: creating a folder and a text file is something everyone can do.",
+    "If learners find YAML intimidating, compare it to a simple form: 'name: value' — that's all frontmatter is.",
+    "Live demo tip: build the deploy-checklist skeleton in real time, showing each keystroke. Then open your AI tool and show it recognizing the skill immediately.",
+    "The complete deploy-checklist example is the anchor for this lesson. Walk through every line and explain the reasoning.",
+    "Progressive disclosure is abstract — use the library analogy: you read the book title first, then the back cover, then open the book only if it's relevant.",
+    "For Exercise 2 (description stress test): this is where learners discover that writing is harder than it looks. Celebrate the struggle — it's the most valuable exercise."
+  ]
+}

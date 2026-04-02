@@ -1,0 +1,16 @@
+{
+  "slug": "agent-skills",
+  "title": "Agent Skills Mastery Program",
+  "description": "A hands-on practitioner path for designing, building, and shipping cross-platform agent skills. Capture your expertise as reusable instructions that work across Claude Code, Copilot, Cursor, Gemini CLI, and 30+ AI tools adopting the open standard. No programming experience required.",
+  "thumbnail": "/images/agent-skills-thumbnail.jpg",
+  "order": 2,
+  "lessons": [
+    "what-are-agent-skills",
+    "anatomy-of-a-skill",
+    "writing-effective-instructions",
+    "where-skills-live",
+    "power-features",
+    "platform-specific-features",
+    "build-and-ship"
+  ]
+}

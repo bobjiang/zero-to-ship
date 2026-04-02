@@ -1,0 +1,192 @@
+{
+  "slug": "power-features",
+  "title": "Lesson 5 - Power Features: References, Scripts, and Assets",
+  "description": "Go beyond plain instructions by bundling templates, automation scripts, and static data with your skill. Learn when to externalize, how to reference files safely, and how to keep everything maintainable.",
+  "duration": "2-2.5 hours",
+  "order": 5,
+  "learningObjectives": [
+    "Design a reference library that keeps SKILL.md focused while providing battle-tested templates and examples.",
+    "Author lightweight scripts the AI can invoke for validation or automation, with clear safeguards.",
+    "Package assets (JSON, CSV, configs) and reference them consistently from the instruction body.",
+    "Document every supporting file so maintainers understand why it exists."
+  ],
+  "videos": [
+    {
+      "title": "When to Externalize: SKILL.md Isn't Enough",
+      "description": "Recognize the thresholds for moving templates, checklists, and data out of SKILL.md and into supporting directories.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-05-video-01-slides.html",
+      "maxLength": "10 minutes",
+      "estimatedDuration": "6 minutes",
+      "scriptOutline": [
+        "Symptoms: SKILL.md exceeding 400 lines, repeated template sections, difficult git diffs.",
+        "Apply the decision tree from Lesson 2: references for templates, scripts for automation, assets for data.",
+        "Show the before/after: a bloated SKILL.md vs. a clean one with supporting files.",
+        "Discoverability: add a 'Supporting Files' table in SKILL.md so the AI and humans know what exists.",
+        "Running example: deploy-checklist is getting complex — time to add a reference template."
+      ],
+      "talkingPoints": [
+        "Externalizing content reduces noise without losing quality.",
+        "Supporting files become canonical references you can share across multiple skills.",
+        "Always tell the AI exactly WHAT to read and WHY — don't make it guess."
+      ]
+    },
+    {
+      "title": "References in Action: Templates and Examples",
+      "description": "Build a reference library for the deploy-checklist skill with a template and a good/bad example pair.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-05-video-02-slides.html",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "10 minutes",
+      "scriptOutline": [
+        "Create references/report-template.md for the deploy-checklist skill — the exact format the AI should produce.",
+        "Create references/example-good.md showing a correctly formatted deploy report.",
+        "Show how to reference them from SKILL.md: 'Read references/report-template.md and follow its structure exactly.'",
+        "Naming conventions: use descriptive names (report-template.md, not template1.md).",
+        "Demo: test the skill with and without the reference template — show the consistency improvement.",
+        "Keep reference files focused: one template per file, not everything in one mega-file."
+      ],
+      "talkingPoints": [
+        "references/ is the most commonly used supporting directory — it's where your templates and examples live.",
+        "Good/bad example pairs are powerful: the AI learns from contrast, not just positive examples.",
+        "One reference file per artifact keeps diffs clean and makes each file easy to update independently."
+      ]
+    },
+    {
+      "title": "Scripts and Assets: Automation and Data",
+      "description": "Add a validation script and a configuration asset to the deploy-checklist skill.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-05-video-03-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "8 minutes",
+      "scriptOutline": [
+        "Create scripts/pre-deploy-check.sh: a simple script that checks for uncommitted changes and pending migrations.",
+        "Script best practices: descriptive header comment, validate inputs, log progress, exit with meaningful codes.",
+        "Make it executable: chmod +x scripts/pre-deploy-check.sh.",
+        "Create assets/required-env-vars.json: a list of environment variables the deploy-checklist must verify.",
+        "Reference both from SKILL.md: 'Run scripts/pre-deploy-check.sh' and 'Read assets/required-env-vars.json'.",
+        "Security reminder: scripts run on your machine. Audit third-party scripts before installing."
+      ],
+      "talkingPoints": [
+        "Scripts make skills actionable — the AI doesn't just advise, it can validate and verify.",
+        "Always use relative paths: 'scripts/check.sh' not '/Users/jane/scripts/check.sh'.",
+        "Assets hold ground truth the AI should read but never modify — treat them like configuration.",
+        "For non-tech learners: start with a simple script (even one line) and build from there."
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Running Example: deploy-checklist with Supporting Files",
+      "content": "Here's our deploy-checklist skill after adding all three directories:\n\n```\ndeploy-checklist/\n├── SKILL.md                          # Instructions (now references supporting files)\n├── references/\n│   ├── report-template.md            # The exact format for the deploy report\n│   └── example-good.md               # A well-formatted example report\n├── scripts/\n│   └── pre-deploy-check.sh           # Validates git state and migrations\n└── assets/\n    └── required-env-vars.json        # Env vars to verify per environment\n```\n\n**Updated SKILL.md workflow (excerpt):**\n```markdown\n## Workflow\n1. Run `scripts/pre-deploy-check.sh` — verify clean git state and no pending migrations.\n2. Read `assets/required-env-vars.json` — verify all listed variables are set for the target environment.\n3. Run the test suite and capture pass/fail counts.\n4. Generate the deploy report following `references/report-template.md` exactly.\n5. See `references/example-good.md` for tone and detail level.\n```\n\nThe skill went from 'tell me what to check' to 'check it for me and report the results.'"
+    },
+    {
+      "title": "Reference Library Patterns",
+      "content": "Organize references/ for clarity:\n\n| File Pattern | Purpose | Example |\n|-------------|---------|--------|\n| `template-*.md` | Output structure the AI must follow | `template-report.md` |\n| `example-good.md` | What great output looks like | A completed deploy report |\n| `example-bad.md` | What to avoid (anti-patterns) | A sloppy, incomplete report |\n| `guide-*.md` | Decision guides, style references | `guide-severity-levels.md` |\n\nKeep each file focused on ONE thing. When references/ grows beyond 5-6 files, consider whether the skill is trying to do too much."
+    },
+    {
+      "title": "Script Guardrails",
+      "content": "Keep scripts safe and predictable:\n\n```bash\n#!/bin/bash\n# pre-deploy-check.sh\n# Purpose: Verify clean git state and no pending migrations before deploy\n# Inputs: None\n# Outputs: Status report to stdout, exit code 0 (pass) or 1 (fail)\n\nset -euo pipefail  # Exit on error, undefined vars, pipe failures\n\necho \"Checking for uncommitted changes...\"\nif ! git diff --quiet; then\n  echo \"FAIL: Uncommitted changes found\"\n  exit 1\nfi\n\necho \"Checking for pending migrations...\"\n# Add your migration check here\n\necho \"PASS: All pre-deploy checks passed\"\nexit 0\n```\n\n**Rules:**\n- Start with a comment: purpose, inputs, outputs.\n- Use `set -euo pipefail` for safety.\n- Echo progress so the AI can report what happened.\n- Exit 0 for success, non-zero for failure.\n- Never pipe user arguments into destructive commands without validation."
+    },
+    {
+      "title": "Referencing Files from SKILL.md",
+      "content": "Always use **relative paths** from the skill directory:\n\n```markdown\n# Good — relative paths\nRead `references/report-template.md` for the output format.\nRun `scripts/pre-deploy-check.sh` to validate pre-conditions.\nLoad environment requirements from `assets/required-env-vars.json`.\n\n# Bad — absolute paths (break when shared)\nRead `/Users/jane/templates/report.md`\n\n# Bad — external URLs (create dependency on network)\nFetch the template from https://example.com/template.md\n```\n\n**Why relative paths matter:**\n- They work on any machine (your teammate's paths are different from yours)\n- They keep the skill self-contained — everything it needs is in the folder\n- They work with progressive disclosure — the AI knows exactly where to look"
+    },
+    {
+      "title": "Supporting Files Documentation Table",
+      "content": "Add this to the bottom of your SKILL.md so humans and AI can discover all files:\n\n```markdown\n## Supporting Files\n\n| File | Purpose | When to Read |\n|------|---------|-------------|\n| references/report-template.md | Output format template | Step 4 of workflow |\n| references/example-good.md | Tone and detail reference | Step 5 of workflow |\n| scripts/pre-deploy-check.sh | Git + migration validation | Step 1 of workflow |\n| assets/required-env-vars.json | Required env vars per environment | Step 2 of workflow |\n```\n\nThis table doubles as a maintenance checklist — if a file is missing from this table, it's either undocumented or unnecessary."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Adding directories before you need them",
+      "explanation": "An empty scripts/ folder adds complexity without value. Wait until you have an actual script to write. Most skills start with just SKILL.md."
+    },
+    {
+      "mistake": "Using absolute paths to reference files",
+      "explanation": "'references/template.md' works everywhere. '/Users/jane/skills/template.md' breaks the moment someone else uses the skill."
+    },
+    {
+      "mistake": "Putting everything in one massive reference file",
+      "explanation": "One template, one style guide, and three examples in a single file is hard to maintain. Keep each file focused on one thing."
+    },
+    {
+      "mistake": "Forgetting to make scripts executable",
+      "explanation": "Scripts need execute permissions: 'chmod +x scripts/check.sh'. Without this, the AI can't run them and you'll get a confusing error."
+    },
+    {
+      "mistake": "Not documenting supporting files",
+      "explanation": "Without a Supporting Files table, maintainers have to guess what each file does. A 5-line table prevents hours of confusion."
+    },
+    {
+      "mistake": "Scripts that modify files outside the skill directory",
+      "explanation": "Skills should validate and report, not silently change things. If a script needs to modify files, make that explicit in SKILL.md so it's reviewable."
+    }
+  ],
+  "reflectionQuestions": [
+    "Does your skill need supporting files right now, or are you adding them prematurely?",
+    "What repetitive validation in your workflow could be automated with a simple script?",
+    "If you shared your skill with someone who's never seen it, which reference files would help them understand the expected output?",
+    "How would adding a good/bad example pair change the consistency of your skill's output?"
+  ],
+  "exercises": [
+    {
+      "title": "Build a Reference Template",
+      "description": "Create references/ with a template file that defines your skill's output format. Update SKILL.md to reference it explicitly.",
+      "output": "A references/ directory with a template file, and SKILL.md updated to use it.",
+      "successCriteria": [
+        "Reference file contains a clear, complete output template.",
+        "SKILL.md workflow includes a step: 'Read references/[file] and follow its structure.'",
+        "Tested the skill — confirmed the AI follows the template consistently.",
+        "Added the file to the Supporting Files table in SKILL.md."
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Add a Validation Script",
+      "description": "Create scripts/ with a simple validation script. Wire it into your SKILL.md workflow. Test it manually first, then via the skill.",
+      "output": "A scripts/ directory with an executable script, referenced from SKILL.md.",
+      "successCriteria": [
+        "Script has a descriptive header comment (purpose, inputs, outputs).",
+        "Script is executable (chmod +x) and tested manually.",
+        "SKILL.md workflow includes a step to run the script.",
+        "Tested the full skill workflow including the script."
+      ],
+      "estimatedTime": "25 minutes"
+    },
+    {
+      "title": "Package an Asset",
+      "description": "Add one static data file to assets/ that the AI needs to reference during the workflow (JSON config, checklist data, etc.).",
+      "output": "An assets/ directory with a data file, referenced from SKILL.md.",
+      "successCriteria": [
+        "Asset file contains structured data the AI reads during the workflow.",
+        "SKILL.md includes a step: 'Read assets/[file] to determine...'",
+        "Test confirmed the AI used the asset data correctly.",
+        "File documented in the Supporting Files table."
+      ],
+      "estimatedTime": "20 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Agent Skills Specification — File Structure",
+      "url": "https://agentskills.io/home"
+    },
+    {
+      "title": "Claude Code Skills — Bundled Resources",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "title": "Google Shell Style Guide",
+      "url": "https://google.github.io/styleguide/shellguide.html"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson is where skills go from 'useful' to 'powerful'. The reference template exercise shows immediate output consistency improvement.",
+    "Demo the difference: skill without references (inconsistent output) vs. with template (identical structure every time). The visual contrast is compelling.",
+    "For non-tech learners: focus on references/ (everyone can create a template). Position scripts/ as optional for those comfortable with the command line.",
+    "Provide a ready-made script boilerplate for learners who've never written a shell script. They can adapt it rather than starting from scratch.",
+    "The security discussion around scripts/ should inform, not scare. Frame it as: 'Same caution as downloading any software — know what you're running.'",
+    "The Supporting Files table is a sleeper hit — learners who add it report much easier maintenance weeks later."
+  ]
+}

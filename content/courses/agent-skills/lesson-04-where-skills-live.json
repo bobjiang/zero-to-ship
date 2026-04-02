@@ -1,0 +1,186 @@
+{
+  "slug": "where-skills-live",
+  "title": "Lesson 4 - Deploying and Sharing Skills",
+  "description": "Learn the exact directories each platform watches, how precedence works when skills share a name, and how to promote skills from personal sandboxes to shared repositories safely.",
+  "duration": "1.5-2 hours",
+  "order": 4,
+  "learningObjectives": [
+    "Know the canonical paths for personal and project skills across major AI tools.",
+    "Promote a personal skill into a project repository with git-based review.",
+    "Explain priority resolution when duplicate skill names exist in multiple locations.",
+    "Evaluate community skills for security and quality before installing."
+  ],
+  "videos": [
+    {
+      "title": "Personal Skills: Your Private Toolkit",
+      "description": "Where to store skills that are just for you — your personal AI configuration that follows you across every project.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-04-video-01-slides.html",
+      "maxLength": "12 minutes",
+      "estimatedDuration": "7 minutes",
+      "scriptOutline": [
+        "Personal skills live in your home directory — available in every project on your machine.",
+        "Tour the paths: ~/.claude/skills/ (Claude Code), ~/.copilot/skills/ (Copilot), ~/.agents/skills/ (universal).",
+        "When to keep skills personal: style preferences, personal checklists, experimental workflows.",
+        "Live demo: install the deploy-checklist as a personal skill, open two different projects, show it works in both.",
+        "Tip: avoid hardcoding machine-specific paths — use relative references."
+      ],
+      "talkingPoints": [
+        "Personal skills are your sandbox — the fastest iteration loop with zero risk to others.",
+        "Great personal skills: your preferred commit format, your documentation voice, your review checklist.",
+        "Start here. Always. Move to project-level only after the skill proves its value."
+      ]
+    },
+    {
+      "title": "Project Skills: Sharing with Your Team via Git",
+      "description": "Promote a skill from personal to project-level so everyone on the team benefits. Enforce review through pull requests.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-04-video-02-slides.html",
+      "maxLength": "15 minutes",
+      "estimatedDuration": "10 minutes",
+      "scriptOutline": [
+        "Project skills live in the repository — shared via git with your entire team.",
+        "Paths: .claude/skills/ (Claude Code), .github/skills/ (Copilot), .agents/skills/ (universal).",
+        "When to promote: the skill works consistently AND other people would benefit.",
+        "Live demo: move deploy-checklist from ~/.claude/skills/ to .claude/skills/ in the repo.",
+        "Open a pull request — show how the team reviews and improves skills like code.",
+        "Priority: project skills override personal skills with the same name.",
+        "Running example: deploy-checklist is now a project skill, tracked in git."
+      ],
+      "talkingPoints": [
+        "Project skills encode team knowledge into the repository — they're living documentation.",
+        "Git gives you review (PRs), history (blame), and rollback (revert) for free.",
+        "The promotion signal: when you catch yourself telling a teammate 'use my personal skill for this.'"
+      ]
+    },
+    {
+      "title": "Community Skills: Finding and Evaluating Shared Skills",
+      "description": "How to discover community-built skills, evaluate them for safety, and install them responsibly.",
+      "youtubeId": "",
+      "slidesUrl": "/courses/agent-skills/lesson-04-video-03-slides.html",
+      "maxLength": "10 minutes",
+      "estimatedDuration": "6 minutes",
+      "scriptOutline": [
+        "Community repositories: github.com/anthropics/skills, github.com/github/awesome-copilot.",
+        "Evaluation checklist: read SKILL.md, check description, audit scripts/ for destructive commands.",
+        "Red flags: rm -rf, curl to unknown URLs, commands that modify files outside the skill directory.",
+        "Installation: copy the folder to your personal skills directory first, test, then promote if valuable.",
+        "Contributing back: how to share your skills with the community."
+      ],
+      "talkingPoints": [
+        "You don't have to write every skill from scratch. The community has already built useful ones.",
+        "Treat community skills like any software: read the code before running it.",
+        "Fork and adapt rather than editing community skills in place — respect upstream."
+      ]
+    }
+  ],
+  "textSections": [
+    {
+      "title": "Directory Cheat Sheet",
+      "content": "**Personal skills (just for you — available in all projects):**\n\n| Tool | Path |\n|------|------|\n| Claude Code | `~/.claude/skills/<name>/SKILL.md` |\n| GitHub Copilot | `~/.copilot/skills/<name>/SKILL.md` |\n| Cursor | `~/.cursor/skills/<name>/SKILL.md` |\n| Universal | `~/.agents/skills/<name>/SKILL.md` |\n\n**Project skills (shared via git — available to the team):**\n\n| Tool | Path |\n|------|------|\n| Claude Code | `.claude/skills/<name>/SKILL.md` |\n| GitHub Copilot | `.github/skills/<name>/SKILL.md` |\n| Cursor | `.cursor/skills/<name>/SKILL.md` |\n| Universal | `.agents/skills/<name>/SKILL.md` |\n\n**Note:** GitHub Copilot checks all three project directories. When in doubt, `.agents/skills/` is the most universal."
+    },
+    {
+      "title": "Priority Resolution: What Wins When Names Clash",
+      "content": "When multiple skills share the same name, the most specific one wins:\n\n1. **Project skills** override **personal skills** (team standards beat personal preferences).\n2. **Enterprise skills** override both (organization policies win).\n\n**Example:** You have a personal `code-review` skill. Your project also has a `code-review` skill. The project version is used — because it reflects team conventions, not just yours.\n\n**Tip:** To avoid confusion, use distinct names: `my-code-review` (personal) vs. `code-review` (project)."
+    },
+    {
+      "title": "Promotion Workflow: Personal → Project",
+      "content": "Step-by-step guide to promoting a skill:\n\n**1. Validate the skill works consistently** (you've tested it 3+ times with different inputs).\n\n**2. Copy to the project directory:**\n```bash\ncp -r ~/.claude/skills/deploy-checklist .claude/skills/deploy-checklist\n```\n\n**3. Commit and push:**\n```bash\ngit add .claude/skills/deploy-checklist/\ngit commit -m \"Add deploy-checklist skill for team use\"\ngit push\n```\n\n**4. Open a pull request** with:\n- What problem the skill solves\n- Test evidence (screenshots or test log from Lesson 3)\n- How to invoke the skill\n\n**5. (Optional) Remove the personal copy** to avoid shadowing:\n```bash\nrm -r ~/.claude/skills/deploy-checklist\n```\n\nNow everyone on your team gets the skill on their next `git pull`."
+    },
+    {
+      "title": "Security Checklist for Community Skills",
+      "content": "Before installing any community skill, check:\n\n- [ ] **Read SKILL.md** — does the description match your use case?\n- [ ] **Audit scripts/** — look for `rm`, `curl`, `wget`, `eval`, or commands that modify files\n- [ ] **Check references/** — no secrets, credentials, or proprietary data\n- [ ] **Verify the source** — active repo? Recent commits? Issues addressed?\n- [ ] **Install to personal first** — test in your sandbox before promoting to project\n- [ ] **Note the commit hash** — document exactly which version you installed\n\nA skill with scripts/ can run commands on your machine. Treat it with the same caution as installing any software."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "mistake": "Putting personal preferences in project skills",
+      "explanation": "Project skills should reflect team conventions, not individual taste. Keep your personal quirks (favorite formatting, custom abbreviations) in personal skills."
+    },
+    {
+      "mistake": "Installing community skills without reading them",
+      "explanation": "Always read SKILL.md and inspect scripts/ before installing. A skill with 'rm -rf' in a script could delete your files."
+    },
+    {
+      "mistake": "Forgetting to commit and push skill changes",
+      "explanation": "Project skills only reach your team through git. Edit → commit → push. If you skip push, nobody else gets the update."
+    },
+    {
+      "mistake": "Using the wrong directory path for your tool",
+      "explanation": "Each tool has specific paths. .claude/skills/ works for Claude Code but may not be discovered by Gemini CLI. Check the cheat sheet."
+    },
+    {
+      "mistake": "Not removing the personal copy after promotion",
+      "explanation": "If both personal and project versions exist, the project version wins. But having two copies creates confusion about which to edit. Clean up after promoting."
+    }
+  ],
+  "reflectionQuestions": [
+    "Is your skill more of a personal preference or a team convention? Which tier does it belong at?",
+    "If your team had a shared skills library, which 3 skills would save the most collective time?",
+    "Have you ever wished a colleague followed the same process you do? That's a project skill waiting to be written.",
+    "What would your security checklist look like for evaluating skills in a regulated industry?"
+  ],
+  "exercises": [
+    {
+      "title": "Path Audit",
+      "description": "Verify that the personal and project skill directories exist on your machine. Create any missing directories.",
+      "output": "Verified directory paths plus commands used to create any missing ones.",
+      "successCriteria": [
+        "Confirmed the personal skill directory exists for your primary AI tool.",
+        "Confirmed the project skill directory exists (or created it).",
+        "Noted the exact paths for your OS and tool combination."
+      ],
+      "estimatedTime": "10 minutes"
+    },
+    {
+      "title": "Promote Your Skill to Project Level",
+      "description": "Move your skill from personal to project directory, commit it to git, and verify it still works from the project location.",
+      "output": "A git commit containing your skill in the project skills directory.",
+      "successCriteria": [
+        "Skill copied to the correct project directory.",
+        "Committed to git with a descriptive message.",
+        "AI tool recognizes the skill from the project directory.",
+        "Tested the skill still works after relocation."
+      ],
+      "estimatedTime": "20 minutes"
+    },
+    {
+      "title": "Community Skill Evaluation",
+      "description": "Find a community skill, run the security checklist, and write a one-paragraph evaluation: adopt, fork, or reject.",
+      "output": "Completed security checklist plus your decision with justification.",
+      "successCriteria": [
+        "Found a community skill and noted the source URL + commit hash.",
+        "Completed all items on the security checklist.",
+        "Wrote a clear decision (adopt/fork/reject) with reasoning.",
+        "If adopted, installed to personal directory and tested."
+      ],
+      "estimatedTime": "20 minutes"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Claude Code Skills — Storage Locations",
+      "url": "https://code.claude.com/docs/en/skills"
+    },
+    {
+      "title": "GitHub Copilot — Skill Locations",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/about-agent-skills"
+    },
+    {
+      "title": "Anthropic Community Skills Repository",
+      "url": "https://github.com/anthropics/skills"
+    },
+    {
+      "title": "Awesome Copilot Skills Collection",
+      "url": "https://github.com/github/awesome-copilot"
+    }
+  ],
+  "instructorNotes": [
+    "This lesson bridges 'I can write a skill' and 'my team uses skills.' The promotion workflow is the key moment.",
+    "For learners not using git: walk through git add/commit/push basics. This is also a great moment to show how AI tools help with git.",
+    "Spend real time on the security checklist. Show what a malicious script looks like vs. a safe one. This builds trust and judgment.",
+    "For solo learners: the promotion exercise still works — create a test repo and commit there.",
+    "Keep a demo repository ready so learners can watch the full promotion workflow end-to-end.",
+    "Community skill repos change frequently. Verify the URLs in resources before the session."
+  ]
+}
