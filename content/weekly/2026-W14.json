@@ -1,0 +1,87 @@
+{
+  "week": "2026-W14",
+  "startDate": "2026-03-30",
+  "endDate": "2026-04-05",
+  "summary": "Big week: Opus 4.6 launched with 1M context, Claude Code gets security enhancements",
+  "sections": [
+    {
+      "id": "product-updates",
+      "title": "Product Updates and News",
+      "items": [
+        {
+          "title": "Claude Opus 4.6 now available with 1M context window",
+          "summary": "Anthropic's new flagship model brings 1M token context and faster output. Available on all plans including Free (limited), Pro, and Max.",
+          "url": "https://www.anthropic.com/news/opus-4-6",
+          "impact": "high",
+          "tags": ["model-release", "context-window"]
+        },
+        {
+          "title": "Claude now available as desktop app on Mac and Windows",
+          "summary": "Claude Code is now available as a standalone desktop application, making it easier to use outside the browser.",
+          "url": "https://www.anthropic.com/news/claude-desktop",
+          "impact": "medium",
+          "tags": ["desktop", "claude-code"]
+        }
+      ]
+    },
+    {
+      "id": "developer-tools",
+      "title": "Developer Tools and Tips and Tricks",
+      "items": [
+        {
+          "title": "Claude Code security enhancements: sandboxed execution",
+          "summary": "Claude Code now runs in a sandboxed environment by default, preventing accidental file system damage. Tip: use the permission mode settings to customize access.",
+          "url": "https://www.anthropic.com/news/claude-code-security",
+          "impact": "high",
+          "tags": ["claude-code", "security"]
+        },
+        {
+          "title": "MCP server support expanded with 12 new integrations",
+          "summary": "Model Context Protocol now supports Slack, GitHub, Jira, Linear, and 8 more services. Connect your tools directly to Claude.",
+          "url": "https://docs.anthropic.com/en/docs/mcp",
+          "impact": "medium",
+          "tags": ["mcp", "integrations"]
+        }
+      ]
+    },
+    {
+      "id": "community-learning",
+      "title": "Community & Learning",
+      "items": [
+        {
+          "title": "Anthropic Academy launches free prompt engineering course",
+          "summary": "A new self-paced course covering prompt engineering fundamentals, from basic techniques to advanced chain-of-thought strategies.",
+          "url": "https://www.anthropic.com/news/academy-prompt-engineering",
+          "impact": "medium",
+          "tags": ["learning", "prompt-engineering"]
+        }
+      ]
+    },
+    {
+      "id": "research-safety",
+      "title": "Research & Safety",
+      "items": [
+        {
+          "title": "Anthropic publishes updated Responsible Scaling Policy",
+          "summary": "The updated policy adds new evaluation criteria for frontier models and clearer deployment thresholds. This may affect how Claude responds to certain edge-case prompts.",
+          "url": "https://www.anthropic.com/news/responsible-scaling-policy-update",
+          "impact": "medium",
+          "tags": ["safety", "policy"]
+        }
+      ]
+    },
+    {
+      "id": "whats-coming",
+      "title": "What's Coming",
+      "items": [
+        {
+          "title": "Claude Projects: shared workspaces coming to Teams plan",
+          "summary": "Anthropic previewed collaborative project workspaces where team members can share Claude conversations, custom instructions, and uploaded files.",
+          "url": "https://www.anthropic.com/news/claude-projects-preview",
+          "impact": "low",
+          "tags": ["teams", "collaboration", "preview"]
+        }
+      ]
+    }
+  ]
+}

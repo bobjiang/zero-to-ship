@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllSeries, getAllBlogPosts, getAllShips } from '@/lib/content';
 import { getAllNewsDates } from '@/lib/news';
+import { getAllWeeks } from '@/lib/weekly';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.02ship.com';
@@ -28,6 +29,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}/news`,
       lastModified: new Date(),
       changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/weekly`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
@@ -96,5 +103,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...coursePages, ...blogPages, ...newsPages, ...shipPages];
+  const weeks = await getAllWeeks();
+  const weeklyPages: MetadataRoute.Sitemap = weeks.map((week) => ({
+    url: `${siteUrl}/weekly/${week}`,
+    lastModified: new Date(),
+    changeFrequency: 'never' as const,
+    priority: 0.5,
+  }));
+
+  return [...staticPages, ...coursePages, ...blogPages, ...newsPages, ...weeklyPages, ...shipPages];
 }
