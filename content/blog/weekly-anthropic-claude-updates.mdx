@@ -1,0 +1,125 @@
+---
+title: "How We Built a Weekly Anthropic & Claude Digest — Automatically"
+excerpt: "We added a /weekly page to 02Ship that curates everything new from Anthropic and Claude each week — fetched from RSS feeds and Hacker News, organized by Gemini, and published every Wednesday morning. Here's how it works."
+date: "2026-04-02"
+author: "Bob Jiang"
+keywords: "Anthropic updates, Claude updates, weekly digest, GitHub Actions, Gemini API, RSS, automation, Claude Code, Next.js, 02Ship"
+---
+
+# How We Built a Weekly Anthropic & Claude Digest — Automatically
+
+If you use Claude to build things, you know the problem: Anthropic ships fast. New models, features, API changes, safety updates, Claude Code improvements — announcements come from multiple places and it's easy to miss something that matters to your workflow.
+
+We already had a [daily AI news page](/news) covering the broad industry. But we wanted something focused: a weekly digest of just Anthropic and Claude updates, written for builders, not researchers. What changed this week? What should I try? What's coming next?
+
+So we built it. Visit [/weekly](/weekly) and you'll see it — a curated weekly digest that updates every Wednesday morning, completely automated.
+
+## What It Looks Like
+
+The [weekly list page](/weekly) shows each week as a card with a date range, an editorial summary, top tags, and a quick count of how many updates across how many sections.
+
+Click into any week and you get the full digest, organized into five sections:
+
+1. **Product Updates and News** — Model releases, Claude.ai features, integrations, pricing changes
+2. **Developer Tools and Tips and Tricks** — API changes, Claude Code, MCP, SDKs, practical how-tos
+3. **Community & Learning** — Anthropic Academy, tutorials, case studies
+4. **Research & Safety** — Plain-language summaries of safety research and policy changes
+5. **What's Coming** — Betas, previews, things to watch
+
+Each item has a colored impact dot — red for major announcements, blue for notable updates, gray for informational — plus tags so you can scan quickly. Every section is optional: if nothing happened in "Research & Safety" that week, it just doesn't show up.
+
+## How We Designed It
+
+Before writing any code, we ran a brainstorming session with Claude to nail down the design. The process was question-by-question:
+
+**Who's the audience?** Non-programmer builders — the same people who use 02Ship. Focus on "what changed that affects me using Claude as a tool," not deep technical analysis.
+
+**How should it relate to daily news?** Completely separate content type. Different cadence, different voice, different schema. The daily news covers the broad AI industry; the weekly digest is Anthropic/Claude only.
+
+**What sections?** We started with five, merged some, added "Community & Learning" and "Research & Safety" because those updates directly affect how Claude behaves.
+
+**What's the data model?** JSON files in `content/weekly/`, one per ISO week (like `2026-W14.json`). Each file has a week identifier, date range, editorial summary, and sections containing items with title, summary, URL, impact level, and tags.
+
+**What route?** `/weekly` — clean, parallel to `/news`, and the page title makes the Anthropic focus clear.
+
+The whole design conversation took about 10 minutes. By the end we had a complete spec — types, schema, routes, visual design — before touching a single line of code.
+
+## How We Built It
+
+Claude executed the plan using subagent-driven development — dispatching a fresh agent for each task, with code review between steps. Seven tasks total:
+
+1. **TypeScript types** — `WeeklyDigest`, `WeeklySection`, `WeeklyItem`, plus union types for impact levels and section IDs
+2. **Sample content** — A realistic `2026-W14.json` with items across all five sections, so we could test the pages immediately
+3. **Content loader** — Two functions (`getAllWeeks`, `getWeeklyDigest`) mirroring the existing news loader pattern, plus six tests
+4. **List page** — The `/weekly` route with inline preview cards showing date range, summary, tags from high-impact items, and item counts
+5. **Detail page** — The `/weekly/[week]` route with sectioned layout, impact dots, tag pills, external links, and newer/older navigation
+6. **Navigation integration** — Added "Weekly" to the header nav and footer, plus sitemap entries for SEO
+7. **Final verification** — All 64 tests passing, lint clean, type-check clean, production build successful
+
+Each task was implemented, tested, and committed individually. Six clean commits, each building on the last.
+
+## The Automation Pipeline
+
+The weekly digest generates automatically every Wednesday morning. Here's what happens:
+
+1. **GitHub Actions wakes up** at 8am Sydney time (Tuesday 10pm UTC)
+2. **The script fetches** from five sources:
+   - Anthropic's main news RSS feed
+   - Anthropic Engineering blog RSS
+   - Anthropic Research RSS
+   - Claude Changelog RSS
+   - Hacker News (searching for Anthropic/Claude mentions from the past week)
+3. **Gemini reads everything** and curates it into the five-section digest format — writing builder-focused summaries, assigning impact levels, and adding tags
+4. **Deduplication** checks against previous weeks so you never see the same item twice
+5. **The result gets committed** as a JSON file and pushed to main
+6. **Vercel auto-deploys** and the new page is live
+
+If it's a quiet week with no Anthropic updates (unlikely, but possible), the script creates a minimal digest with an empty sections array instead of failing.
+
+The whole run takes about a minute. I can also trigger it manually from the GitHub Actions tab — useful for testing or if something big drops mid-week.
+
+## The Technical Details
+
+**Content model:** Each week is a JSON file named by ISO week (`2026-W14.json`). The schema supports the five optional sections, each containing items with title, summary, URL, impact (`high`/`medium`/`low`), and tags.
+
+**Sources:** We focused on official Anthropic channels plus Hacker News for community discussion. The RSS feeds cover announcements, engineering posts, research papers, and API changelog entries. Hacker News catches the broader conversation around those announcements.
+
+**Gemini prompt:** The AI is instructed to write for non-programmers building with Claude. Summaries focus on "what this means for builders," not technical details. Impact levels are assigned based on how much the update changes a builder's workflow.
+
+**Pages:** Both pages are async server components with static generation via `generateStaticParams`. The detail page skips empty sections and uses a left-border accent on section headers for an editorial feel.
+
+**Cost:** $0/month. Anthropic RSS feeds are free, Hacker News API needs no key, and Gemini Flash is on the free tier.
+
+## What We Didn't Build
+
+**No email newsletter.** The page is the product. If people want notifications, they can check `/weekly` on Wednesdays or we can add RSS later.
+
+**No manual override UI.** If we need to edit a digest, we just edit the JSON file directly. No CMS needed.
+
+**No real-time updates.** Weekly cadence is intentional — it's a digest, not a feed. One update per week means you can read it once and be caught up.
+
+**No scraping.** We rely on RSS feeds and APIs. If Anthropic changes their RSS structure, we'll adapt, but we're not scraping HTML.
+
+## Try It
+
+Check out [/weekly](/weekly) to see the latest digest. New ones appear every Wednesday.
+
+If you want to build something similar for your own sources, the pattern is straightforward: RSS fetchers + AI curation + GitHub Actions cron + static JSON files. No database, no server, no costs.
+
+---
+
+## Continue Learning
+
+**Start Learning:**
+- **[Claude Basics Course](/courses/claude-basics)** — Our step-by-step course for beginners
+- **[Browse All Courses](/courses)** — Explore everything we offer
+- **[Read More on Our Blog](/blog)** — More build stories and tutorials
+
+**Get Involved:**
+- **[Join Our Discord](https://discord.gg/btqaA3hzKp)** — Connect with other builders
+- **[GitHub Discussions](https://github.com/bobjiang/zero-to-ship/discussions)** — Ask questions, share ideas
+- **[View the Source Code](https://github.com/bobjiang/zero-to-ship)** — See exactly how this was built
+
+---
+
+**About the Author:** Bob Jiang is the founder of [02Ship](/) — a learning platform for non-programmers who want to build and ship their ideas using AI tools.
