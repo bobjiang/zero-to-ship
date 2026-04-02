@@ -1,0 +1,38 @@
+name: Weekly Anthropic & Claude Updates
+
+on:
+  schedule:
+    # Wednesday 8am Sydney (AEST UTC+10) = Tuesday 10pm UTC
+    - cron: '0 22 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Generate weekly digest
+        run: node scripts/generate-weekly.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/weekly/
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "weekly: add Anthropic & Claude digest for $(date -u +%Y-W%V)"
+          git pull --rebase
+          git push
