@@ -140,6 +140,58 @@ export default function AboutPage() {
             </a>
           </div>
 
+          {/* FAQ Section */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Frequently Asked Questions
+            </h2>
+            <dl className="mt-6 space-y-6">
+              <div>
+                <dt className="text-lg font-semibold text-gray-900">
+                  What is 02Ship?
+                </dt>
+                <dd className="mt-2 text-gray-600">
+                  02Ship is a free learning platform and community based in
+                  Sydney, Australia. We help people with no coding experience
+                  build and ship real projects using AI tools like Claude Code.
+                  We offer step-by-step video courses, daily AI news, weekly
+                  Anthropic updates, monthly meetups, and 2-week building
+                  sprints called ship weeks.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-lg font-semibold text-gray-900">
+                  Who is 02Ship for?
+                </dt>
+                <dd className="mt-2 text-gray-600">
+                  Anyone who wants to build with AI but doesn&apos;t know where
+                  to start. Our members include designers, product managers,
+                  entrepreneurs, students, and developers. No programming
+                  background required.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-lg font-semibold text-gray-900">
+                  Is 02Ship free?
+                </dt>
+                <dd className="mt-2 text-gray-600">
+                  Yes. Our community, courses, meetups, daily news, and weekly
+                  updates are all free.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-lg font-semibold text-gray-900">
+                  Where is 02Ship based?
+                </dt>
+                <dd className="mt-2 text-gray-600">
+                  02Ship is based in Sydney, Australia. Our in-person meetups
+                  happen monthly in Sydney, and our online content is available
+                  globally.
+                </dd>
+              </div>
+            </dl>
+          </div>
+
           {/* Community Section */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold text-gray-900">

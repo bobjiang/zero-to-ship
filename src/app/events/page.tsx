@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 
 export const metadata: Metadata = {
-  title: 'Events — AI Builder Meetups & Workshops',
+  title: 'Events — Claude AI Meetups & Workshops in Sydney',
   description:
-    'Join upcoming meetups and workshops for AI builders. Learn to build and ship with Claude Code and other AI tools.',
+    'Monthly Claude AI meetups and workshops in Sydney, Australia. Live demos, talks, networking, and hands-on building sessions for AI practitioners of all levels.',
   alternates: { canonical: '/events' },
 };
 
@@ -59,7 +59,9 @@ export default async function EventsPage() {
             Events
           </h1>
           <p className="mt-2 text-base text-gray-600">
-            Join our upcoming meetups and workshops for AI builders
+            Monthly in-person meetups in Sydney for Claude AI practitioners.
+            Live demos, lightning talks, and hands-on building sessions.
+            All skill levels welcome.
           </p>
 
           <a
@@ -158,6 +160,65 @@ export default async function EventsPage() {
               </ul>
             </div>
           )}
+
+          {/* FAQ Section */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+              Event FAQ
+            </h2>
+            <dl className="mt-6 space-y-6">
+              <div>
+                <dt className="text-base font-semibold text-gray-900">
+                  When and where are the meetups?
+                </dt>
+                <dd className="mt-2 text-sm text-gray-600">
+                  We host monthly in-person meetups in Sydney, Australia. Dates
+                  and venues vary, so subscribe on Lu.ma or join our Discord to
+                  get notified about each event.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-base font-semibold text-gray-900">
+                  What happens at a typical meetup?
+                </dt>
+                <dd className="mt-2 text-sm text-gray-600">
+                  Each meetup includes lightning talks from community members,
+                  live demos of projects built with AI tools, networking time,
+                  and sometimes hands-on workshops. Topics focus on Claude Code,
+                  agent skills, and building products with AI.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-base font-semibold text-gray-900">
+                  Do I need coding experience to attend?
+                </dt>
+                <dd className="mt-2 text-sm text-gray-600">
+                  No. Our events welcome everyone from complete beginners to
+                  experienced developers. The community is built around helping
+                  non-programmers learn to build with AI.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-base font-semibold text-gray-900">
+                  Are events free?
+                </dt>
+                <dd className="mt-2 text-sm text-gray-600">
+                  Yes, all 02Ship events are free to attend. Just RSVP on Lu.ma
+                  so we can plan for the right number of attendees.
+                </dd>
+              </div>
+              <div>
+                <dt className="text-base font-semibold text-gray-900">
+                  Can I speak or present at a meetup?
+                </dt>
+                <dd className="mt-2 text-sm text-gray-600">
+                  Absolutely. We love community speakers. Fill out the
+                  contribution form above or message us on Discord to propose a
+                  talk or demo.
+                </dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </div>
     </Container>
