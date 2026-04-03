@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-03",
+  "items": [
+    {
+      "title": "Anthropic Claude Code Source Code Leaked: What Happened, Why It Matters, and What Comes Next",
+      "summary": "Reports indicate a significant leak of Anthropic Claude's source code, raising major security and competitive concerns within the AI industry.",
+      "source": "Dev.to",
+      "url": "https://dev.to/om_shree_0709/anthropic-claude-code-source-code-leaked-what-happened-why-it-matters-and-what-comes-next-53cc",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Microsoft takes on AI rivals with three new foundational models",
+      "summary": "Microsoft has unveiled three new foundational AI models, intensifying its competition with other major players in the rapidly evolving AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "summary": "Anthropic introduces 'Cowork,' a new desktop agent for Claude designed to integrate directly with user files and automate tasks without requiring coding skills.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI acquires TBPN, the buzzy founder-led business talk show",
+      "summary": "OpenAI has acquired TBPN, a popular founder-led business talk show, signaling a potential expansion into media and content creation for the AI giant.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment",
+      "summary": "Nous Research releases NousCoder-14B, an open-source coding model, strategically timed with recent events surrounding Claude's code, offering an alternative for developers.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+      "summary": "Railway has raised $100 million to develop AI-native cloud infrastructure, positioning itself as a significant challenger to established cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google now lets you direct avatars through prompts in its Vids app",
+      "summary": "Google's Vids app now allows users to control avatars using natural language prompts, enhancing its AI-powered video creation capabilities.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills, Plugins, and Watchers",
+      "summary": "A new paper introduces ClawKeeper, a robust framework designed to provide comprehensive safety and security for OpenClaw AI agents using a multi-layered approach.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.24414",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Introducing the OpenAI Safety Bug Bounty program",
+      "summary": "OpenAI has launched a new bug bounty program focused on safety, inviting researchers to identify and report vulnerabilities in its AI systems.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/safety-bug-bounty",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Terminal Agents Suffice for Enterprise Automation",
+      "summary": "New research suggests that terminal-based AI agents are highly effective and sufficient for automating a wide range of tasks within enterprise environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.00073",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "New ways to balance cost and reliability in the Gemini API",
+      "summary": "Google introduces new options for the Gemini API, allowing developers to better balance inference cost and reliability based on their specific application needs.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-flex-and-priority-inference/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "How Emotion Shapes the Behavior of LLMs and Agents: A Mechanistic Study",
+      "summary": "A mechanistic study explores how the simulation or understanding of emotions can influence the behavior and decision-making processes of large language models and AI agents.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.00005",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Open, Reliable, and Collective: A Community-Driven Framework for Tool-Using AI Agents",
+      "summary": "Researchers propose a community-driven framework aimed at developing open, reliable, and collaborative tool-using AI agents, fostering broader participation and trust.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.00137",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Reasoning Shift: How Context Silently Shortens LLM Reasoning",
+      "summary": "A new paper investigates how contextual information can subtly alter and shorten the reasoning paths taken by large language models, impacting their output.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01161",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Dynin-Omni: Omnimodal Unified Large Diffusion Language Model",
+      "summary": "Introducing Dynin-Omni, a novel omnimodal unified large diffusion language model capable of processing and generating across various data modalities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.00007",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
