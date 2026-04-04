@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-04",
+  "items": [
+    {
+      "title": "Anthropic buys biotech startup Coefficient Bio in $400M deal: Reports",
+      "summary": "Anthropic reportedly acquired biotech startup Coefficient Bio in a $400 million deal, indicating a significant expansion of the AI company into the intersection of AI and biological research.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models",
+      "summary": "Researchers introduce DataFlex, a novel framework that enables dynamic, data-centric training of LLMs by adapting data selection and augmentation strategies based on model performance and data characteristics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.26164",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI executive shuffle includes new role for COO Brad Lightcap to lead &#8216;special projects&#8217;",
+      "summary": "OpenAI has announced an executive reshuffle, moving COO Brad Lightcap to a new role overseeing 'special projects,' signaling a strategic shift in the company's high-priority initiatives.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/03/openai-executive-shuffle-new-roles-coo-brad-lightcap-fidji-simo-kate-rouch/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook",
+      "summary": "A comprehensive survey paper explores the concept of latent space in AI, detailing its foundational principles, evolutionary trajectory, underlying mechanisms, capabilities, and future outlook across various AI domains.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02029",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Generative World Renderer",
+      "summary": "A new research paper introduces a 'Generative World Renderer' capable of creating complex and realistic virtual worlds, potentially revolutionizing simulation, gaming, and virtual reality applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02329",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+      "summary": "SKILL0 presents a new approach to agentic reinforcement learning that allows AI agents to internalize skills directly from in-context examples, significantly improving their adaptability and learning efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02268",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic ramps up its political activities with a new PAC",
+      "summary": "Anthropic is increasing its engagement in political activities by establishing a new Political Action Committee (PAC), reflecting a growing focus on influencing AI policy and regulation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI acquires TBPN",
+      "summary": "OpenAI has announced the acquisition of TBPN, a move expected to bolster its capabilities in an undisclosed strategic area of AI development.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-acquires-tbpn",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "ASI-Evolve: AI Accelerates AI",
+      "summary": "The ASI-Evolve paper introduces a novel framework where AI systems are designed to autonomously accelerate the development and improvement of other AI models, hinting at a future of self-improving AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.29640",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce has launched an enhanced Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly evolving workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Create, edit and share videos at no cost in Google Vids",
+      "summary": "Google has announced that its AI-powered video creation tool, Google Vids, will now allow users to create, edit, and share videos for free, making advanced video production more accessible.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Inside our approach to the Model Spec",
+      "summary": "OpenAI provides an in-depth look into its methodology for developing the 'Model Spec,' outlining the principles and processes guiding the creation of its advanced AI models.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/our-approach-to-the-model-spec",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "EgoSim: Egocentric World Simulator for Embodied Interaction Generation",
+      "summary": "EgoSim introduces an egocentric world simulator designed to generate realistic embodied interactions, providing a crucial tool for training and evaluating AI agents in complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01001",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving",
+      "summary": "UniDriveVLA proposes a unified vision-language-action model that integrates understanding, perception, and action planning to enhance the capabilities of autonomous driving systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02190",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Steerable Visual Representations",
+      "summary": "New research explores 'Steerable Visual Representations,' enabling more controllable and interpretable manipulation of visual data through AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02327",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
