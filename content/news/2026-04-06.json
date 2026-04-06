@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-06",
+  "items": [
+    {
+      "title": "Investigating Autonomous Agent Contributions in the Wild",
+      "summary": "A new study analyzes the activity patterns and code changes made by autonomous AI agents in real-world scenarios, offering insights into their practical contributions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.00917",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Gemini 3.1 Flash Live: Making Audio AI More Natural and Reliable",
+      "summary": "Google announces Gemini 3.1 Flash Live, an update focused on enhancing the naturalness and reliability of audio AI interactions.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-live/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Copilot is 'for entertainment purposes only,' according to Microsoft’s terms of use",
+      "summary": "Microsoft's terms of service for Copilot state that the AI assistant is 'for entertainment purposes only,' raising questions about liability and intended use.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/05/copilot-is-for-entertainment-purposes-only-according-to-microsofts-terms-of-service/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers",
+      "summary": "Researchers propose a novel method for controllable linear-attention transformers that allows for gated condition injection without relying on multimodal attention mechanisms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.27666",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "In Japan, the robot isn't coming for your job; it's filling the one nobody wants",
+      "summary": "Japan is demonstrating how experimental physical AI can successfully fill undesirable jobs, showcasing a practical application of robotics in the real world.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/05/japan-is-proving-experimental-physical-ai-is-ready-for-the-real-world/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Tex3D: Objects as Attack Surfaces via Adversarial 3D Textures for Vision-Language-Action Models",
+      "summary": "A new paper reveals how adversarial 3D textures can turn physical objects into attack surfaces for vision-language-action models, posing significant security risks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01618",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "GPA: Learning GUI Process Automation from Demonstrations",
+      "summary": "A new research paper introduces GPA, a system that learns to automate GUI processes by observing user demonstrations, streamlining repetitive tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01676",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Omni123: Exploring 3D Native Foundation Models with Limited 3D Data by Unifying Text to 2D and 3D Generation",
+      "summary": "Omni123 presents a novel approach to developing 3D native foundation models, leveraging limited 3D data by unifying text-to-2D and text-to-3D generation techniques.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02289",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data",
+      "summary": "DynaVid introduces a new method for generating highly dynamic videos by effectively utilizing synthetic motion data to train video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01666",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Powering Product Discovery in ChatGPT",
+      "summary": "OpenAI details how ChatGPT is being enhanced to improve product discovery, suggesting new features for users to find and interact with products.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/powering-product-discovery-in-chatgpt",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "How I Found $1,240/Month in Wasted LLM API Costs (And Built a Tool to Find Yours)",
+      "summary": "A developer shares insights on identifying and reducing significant wasted LLM API costs, along with a tool to help others optimize their expenditures.",
+      "source": "Dev.to",
+      "url": "https://dev.to/buildwithabid/how-i-found-1240month-in-wasted-llm-api-costs-and-built-a-tool-to-find-yours-3041",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Building a Continuous Voice Interface with the OpenAI Realtime API",
+      "summary": "A guide demonstrates how to construct a continuous voice interface using OpenAI's Realtime API, enabling more fluid and responsive conversational AI applications.",
+      "source": "Dev.to",
+      "url": "https://dev.to/diran_adeola/building-a-continuous-voice-interface-with-the-openai-realtime-api-2pn",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "AutoMIA: Improved Baselines for Membership Inference Attack via Agentic Self-Exploration",
+      "summary": "AutoMIA proposes enhanced baselines for membership inference attacks by employing agentic self-exploration, improving the ability to detect if specific data was used in model training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01014",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "T5Gemma-TTS Technical Report",
+      "summary": "A technical report details T5Gemma-TTS, a new text-to-speech model, outlining its architecture, training, and performance characteristics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01760",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Embarrassingly Simple Self-Distillation Improves Code Generation",
+      "summary": "New research demonstrates that an 'embarrassingly simple' self-distillation technique can significantly enhance the performance of code generation models.",
+      "source": "Lobste.rs",
+      "url": "https://arxiv.org/abs/2604.01193",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
