@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-08",
+  "items": [
+    {
+      "title": "OpenWorldLib: A Unified Codebase and Definition of Advanced World Models",
+      "summary": "Researchers introduce OpenWorldLib, a new unified codebase and definition aimed at advancing the development and understanding of world models in AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04707",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Firmus, the Nvidia-backed AI data center builder, hits $5.5B valuation",
+      "summary": "Firmus, an AI data center construction company known for its 'Southgate' project and backed by Nvidia, has achieved a significant $5.5 billion valuation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/07/firmus-the-southgate-ai-datacenter-builder-backed-by-nvidia-hits-5-5b-valuation/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Intel signs on to Elon Musk's Terafab chips project",
+      "summary": "Intel has joined Elon Musk's ambitious Terafab chips project, signaling a major collaboration in the semiconductor and AI hardware industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Project Glasswing: Anthropic's Initiative for Securing Critical AI Software",
+      "summary": "Anthropic launches Project Glasswing, a new initiative focused on enhancing the security of critical software systems for the AI era.",
+      "source": "Lobste.rs",
+      "url": "https://www.anthropic.com/glasswing",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google's Search Live is expanding globally",
+      "summary": "Google announces the global expansion of its 'Search Live' feature, likely integrating more real-time AI-powered information into search results.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/search-live-global-expansion/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "MinerU2.5-Pro: Pushing the Limits of Data-Centric Document Parsing at Scale",
+      "summary": "A new paper introduces MinerU2.5-Pro, a system designed to significantly improve the efficiency and scale of data-centric document parsing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04771",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Helps Disaster Response Teams Turn AI into Action Across Asia",
+      "summary": "OpenAI is collaborating with disaster response teams in Asia to implement AI solutions for more effective and rapid humanitarian aid efforts.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/helping-disaster-response-teams-asia",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "TriAttention: Efficient Long Reasoning with Trigonometric KV Compression",
+      "summary": "New research presents TriAttention, a method utilizing trigonometric key-value compression to enable more efficient long-context reasoning in AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04921",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "GrandCode: Achieving Grandmaster Level in Competitive Programming via Agentic Reinforcement Learning",
+      "summary": "Researchers introduce GrandCode, an AI system that leverages agentic reinforcement learning to reach grandmaster proficiency in competitive programming.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02721",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Goose Offers Free Alternative to Claude Code's $200/Month Service",
+      "summary": "A new tool called Goose is positioned as a free alternative to Claude Code, offering similar functionalities for developers without the monthly subscription cost.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Hazmat: OS-level containment for AI coding agents on macOS",
+      "summary": "Hazmat is an open-source project providing OS-level containment solutions for AI coding agents running on macOS, enhancing security and isolation.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/dredozubov/hazmat",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "I can't help rooting for tiny open source AI model maker Arcee",
+      "summary": "TechCrunch highlights Arcee, a small open-source AI model maker, praising its efforts and potential impact in the competitive AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "The creator of Claude Code just revealed his workflow, and developers are losing their minds",
+      "summary": "The workflow of Claude Code's creator has been unveiled, generating significant excitement and discussion among the developer community.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Adam's Law: Textual Frequency Law on Large Language Models",
+      "summary": "A new paper proposes Adam's Law, a textual frequency law that describes patterns observed in large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02176",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AURA: Always-On Understanding and Real-Time Assistance via Video Streams",
+      "summary": "Researchers introduce AURA, a system designed for continuous understanding and real-time assistance by processing live video streams.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04184",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
