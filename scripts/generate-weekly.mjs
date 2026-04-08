@@ -13,34 +13,25 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-// --- ISO week helpers ---
+// --- Date helpers ---
 
-function getISOWeek(date) {
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  const weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
-  return { year: d.getUTCFullYear(), week: weekNo };
+function formatDate(date) {
+  return date.toISOString().split('T')[0];
 }
 
-function getWeekDateRange(year, week) {
-  const jan4 = new Date(Date.UTC(year, 0, 4));
-  const dayOfWeek = jan4.getUTCDay() || 7;
-  const monday = new Date(jan4);
-  monday.setUTCDate(jan4.getUTCDate() - dayOfWeek + 1 + (week - 1) * 7);
-  const sunday = new Date(monday);
-  sunday.setUTCDate(monday.getUTCDate() + 6);
+function getLast7DaysRange() {
+  const end = new Date();
+  const start = new Date();
+  start.setDate(end.getDate() - 7);
   return {
-    start: monday.toISOString().split('T')[0],
-    end: sunday.toISOString().split('T')[0],
+    start: formatDate(start),
+    end: formatDate(end),
+    startDate: start,
+    endDate: end,
   };
 }
 
-function formatWeekId(year, week) {
-  return `${year}-W${String(week).padStart(2, '0')}`;
-}
-
-// --- Source fetchers (Anthropic & Claude focused) ---
+// --- Source fetchers ---
 
 function parseRssItems(xml, source, limit = 20) {
   const parser = new XMLParser();
@@ -72,60 +63,34 @@ async function fetchAnthropicNews() {
   }
 }
 
-async function fetchAnthropicEngineering() {
+async function fetchClaudeDotCom() {
   try {
-    const res = await fetch('https://www.anthropic.com/engineering/rss.xml', {
+    const res = await fetch('https://claude.com/', {
       headers: { 'User-Agent': '02ship-weekly-bot/1.0' },
     });
-    const xml = await res.text();
-    return parseRssItems(xml, 'Anthropic Engineering', 10);
-  } catch (e) {
-    console.warn('Anthropic Engineering RSS failed:', e.message);
-    return [];
-  }
-}
+    const html = await res.text();
 
-async function fetchAnthropicResearch() {
-  try {
-    const res = await fetch('https://www.anthropic.com/research/rss.xml', {
-      headers: { 'User-Agent': '02ship-weekly-bot/1.0' },
-    });
-    const xml = await res.text();
-    return parseRssItems(xml, 'Anthropic Research', 10);
-  } catch (e) {
-    console.warn('Anthropic Research RSS failed:', e.message);
-    return [];
-  }
-}
+    const items = [];
+    // Extract links with titles from the page
+    const linkRegex = /<a[^>]+href="([^"]*)"[^>]*>([^<]+)<\/a>/gi;
+    let match;
+    while ((match = linkRegex.exec(html)) !== null) {
+      const [, href, text] = match;
+      const title = text.trim();
+      if (!title || title.length < 10 || title.length > 200) continue;
+      // Skip navigation/footer links
+      if (/^(sign|log|privacy|terms|cookie|about|home|menu)/i.test(title)) continue;
 
-async function fetchClaudeChangelog() {
-  try {
-    const res = await fetch('https://docs.anthropic.com/en/changelog/rss.xml', {
-      headers: { 'User-Agent': '02ship-weekly-bot/1.0' },
-    });
-    const xml = await res.text();
-    return parseRssItems(xml, 'Claude Changelog', 20);
-  } catch (e) {
-    console.warn('Claude Changelog RSS failed:', e.message);
-    return [];
-  }
-}
+      let url = href;
+      if (url.startsWith('/')) url = `https://claude.com${url}`;
+      if (!url.startsWith('http')) continue;
 
-// Also search broader sources for Anthropic/Claude mentions
-async function fetchHackerNewsAnthropicClaude() {
-  try {
-    const weekAgo = Math.floor(Date.now() / 1000) - 7 * 24 * 60 * 60;
-    const url = `https://hn.algolia.com/api/v1/search_by_date?query=Anthropic+OR+Claude+AI&tags=story&numericFilters=points%3E10,created_at_i%3E${weekAgo}&hitsPerPage=20`;
-    const res = await fetch(url);
-    const data = await res.json();
-    return data.hits.map(hit => ({
-      title: hit.title,
-      url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,
-      source: 'Hacker News',
-      pubDate: new Date(hit.created_at_i * 1000).toISOString(),
-    }));
+      items.push({ title, url, source: 'Claude.com', pubDate: '' });
+    }
+
+    return items;
   } catch (e) {
-    console.warn('HN Anthropic/Claude search failed:', e.message);
+    console.warn('Claude.com fetch failed:', e.message);
     return [];
   }
 }
@@ -141,28 +106,26 @@ function deduplicateByUrl(items) {
   });
 }
 
-function filterToLastWeek(items) {
-  const weekAgo = new Date();
-  weekAgo.setDate(weekAgo.getDate() - 8);
+function filterToDateRange(items, startDate) {
   return items.filter(item => {
     if (!item.pubDate) return true; // keep items without dates
     try {
       const d = new Date(item.pubDate);
-      return d >= weekAgo;
+      return d >= startDate;
     } catch {
       return true;
     }
   });
 }
 
-function loadPreviousWeekUrls(currentWeekId) {
+function loadPreviousDigestUrls(currentFileId) {
   const urls = new Set();
   if (!existsSync(WEEKLY_DIR)) return urls;
 
   const files = readdirSync(WEEKLY_DIR).filter(f => f.endsWith('.json')).sort().reverse();
   for (const file of files.slice(0, 4)) {
-    const weekId = file.replace('.json', '');
-    if (weekId >= currentWeekId) continue;
+    const fileId = file.replace('.json', '');
+    if (fileId >= currentFileId) continue;
     try {
       const data = JSON.parse(readFileSync(join(WEEKLY_DIR, file), 'utf-8'));
       for (const section of data.sections || []) {
@@ -184,9 +147,9 @@ async function curateWithGemini(items, weekStart, weekEnd, retries = 2) {
 
   const itemsJson = JSON.stringify(items.map(({ title, url, source, pubDate }) => ({ title, url, source, pubDate })));
 
-  const prompt = `You are a weekly AI news curator for a site that helps non-programmers build with Claude/AI tools. Today is ${new Date().toISOString().split('T')[0]}. You are creating the weekly digest for the week of ${weekStart} to ${weekEnd}.
+  const prompt = `You are a weekly AI news curator for a site that helps non-programmers build with Claude/AI tools. Today is ${new Date().toISOString().split('T')[0]}. You are creating the weekly digest for ${weekStart} to ${weekEnd}.
 
-Given the following items collected from Anthropic, Claude, and related sources this week, organize them into the weekly digest.
+Given the following items collected from Anthropic, Claude, and their official social accounts this week, organize them into the weekly digest.
 
 SECTIONS (include a section ONLY if there are relevant items for it):
 
@@ -276,27 +239,22 @@ ${itemsJson}`;
 // --- Main ---
 
 async function main() {
-  const now = new Date();
-  const { year, week } = getISOWeek(now);
-  const weekId = formatWeekId(year, week);
-  const { start, end } = getWeekDateRange(year, week);
+  const { start, end, startDate } = getLast7DaysRange();
+  const fileId = end; // e.g. "2026-04-08"
 
-  console.log(`Generating weekly Anthropic & Claude digest for ${weekId} (${start} to ${end})...`);
+  console.log(`Generating weekly Anthropic & Claude digest for ${start} to ${end}...`);
 
   // Check if this week already exists
-  const outputPath = join(WEEKLY_DIR, `${weekId}.json`);
+  const outputPath = join(WEEKLY_DIR, `${fileId}.json`);
   if (existsSync(outputPath)) {
-    console.log(`${weekId}.json already exists. Skipping.`);
+    console.log(`${fileId}.json already exists. Skipping.`);
     process.exit(0);
   }
 
   console.log('Fetching sources...');
   const sources = [
-    { name: 'Anthropic News', fn: fetchAnthropicNews },
-    { name: 'Anthropic Engineering', fn: fetchAnthropicEngineering },
-    { name: 'Anthropic Research', fn: fetchAnthropicResearch },
-    { name: 'Claude Changelog', fn: fetchClaudeChangelog },
-    { name: 'HN Anthropic/Claude', fn: fetchHackerNewsAnthropicClaude },
+    { name: 'Anthropic News', fn: () => fetchAnthropicNews() },
+    { name: 'Claude.com', fn: () => fetchClaudeDotCom() },
   ];
 
   const results = await Promise.all(
@@ -311,19 +269,19 @@ async function main() {
   let allItems = deduplicateByUrl(results.flat());
   console.log(`Total unique items: ${allItems.length}`);
 
-  allItems = filterToLastWeek(allItems);
-  console.log(`Items from last week: ${allItems.length}`);
+  allItems = filterToDateRange(allItems, startDate);
+  console.log(`Items from last 7 days: ${allItems.length}`);
 
-  // Remove items from previous weekly digests
-  const previousUrls = loadPreviousWeekUrls(weekId);
-  console.log(`Loaded ${previousUrls.size} URLs from previous weeks`);
+  // Remove items from previous digests
+  const previousUrls = loadPreviousDigestUrls(fileId);
+  console.log(`Loaded ${previousUrls.size} URLs from previous digests`);
   allItems = allItems.filter(item => !previousUrls.has(item.url));
-  console.log(`Items after cross-week dedup: ${allItems.length}`);
+  console.log(`Items after cross-digest dedup: ${allItems.length}`);
 
   if (allItems.length === 0) {
     console.log('No new Anthropic/Claude items found this week. Creating minimal digest.');
     const output = {
-      week: weekId,
+      week: fileId,
       startDate: start,
       endDate: end,
       summary: 'A quiet week from Anthropic and Claude',
@@ -339,7 +297,7 @@ async function main() {
   const curated = await curateWithGemini(allItems, start, end);
 
   const output = {
-    week: weekId,
+    week: fileId,
     startDate: start,
     endDate: end,
     summary: curated.summary || '',

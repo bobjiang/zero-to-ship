@@ -30,6 +30,8 @@ const IMPACT_DOT = {
 
 function getWeek() {
   const arg = process.argv[2];
+  if (arg && /^\d{4}-\d{2}-\d{2}$/.test(arg)) return arg;
+  // Also accept legacy YYYY-WXX format
   if (arg && /^\d{4}-W\d{2}$/.test(arg)) return arg;
   const files = readdirSync(WEEKLY_DIR)
     .filter((f) => f.endsWith('.json'))
