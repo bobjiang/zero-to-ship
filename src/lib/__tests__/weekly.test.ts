@@ -17,10 +17,10 @@ describe('weekly loaders', () => {
       }
     });
 
-    it('weeks match YYYY-WNN format', async () => {
+    it('weeks match YYYY-MM-DD format', async () => {
       const weeks = await getAllWeeks();
       for (const week of weeks) {
-        expect(week).toMatch(/^\d{4}-W\d{2}$/);
+        expect(week).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       }
     });
   });
