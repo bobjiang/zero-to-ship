@@ -26,7 +26,6 @@ jobs:
         run: node scripts/generate-weekly.mjs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
 
       - name: Commit and push
         run: |

@@ -13,8 +13,6 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-const TWITTER_BEARER_TOKEN = process.env.TWITTER_BEARER_TOKEN;
-
 // --- Date helpers ---
 
 function formatDate(date) {
@@ -93,65 +91,6 @@ async function fetchClaudeDotCom() {
     return items;
   } catch (e) {
     console.warn('Claude.com fetch failed:', e.message);
-    return [];
-  }
-}
-
-async function fetchTwitterUser(username) {
-  if (!TWITTER_BEARER_TOKEN) {
-    console.warn(`Skipping @${username} — no TWITTER_BEARER_TOKEN`);
-    return [];
-  }
-
-  try {
-    // Look up user ID first
-    const userRes = await fetch(
-      `https://api.twitter.com/2/users/by/username/${username}`,
-      { headers: { Authorization: `Bearer ${TWITTER_BEARER_TOKEN}` } }
-    );
-    const userData = await userRes.json();
-    if (userData.errors || !userData.data) {
-      console.warn(`Twitter user lookup failed for @${username}:`, JSON.stringify(userData.errors || userData));
-      return [];
-    }
-    const userId = userData.data.id;
-
-    // Fetch recent tweets (last 7 days)
-    const startTime = new Date();
-    startTime.setDate(startTime.getDate() - 7);
-
-    const params = new URLSearchParams({
-      'max_results': '20',
-      'start_time': startTime.toISOString(),
-      'tweet.fields': 'created_at,text,public_metrics',
-      'exclude': 'replies,retweets',
-    });
-
-    const tweetsRes = await fetch(
-      `https://api.twitter.com/2/users/${userId}/tweets?${params}`,
-      { headers: { Authorization: `Bearer ${TWITTER_BEARER_TOKEN}` } }
-    );
-    const tweetsData = await tweetsRes.json();
-
-    if (tweetsData.errors || !tweetsData.data) {
-      console.warn(`Twitter tweets fetch failed for @${username}:`, JSON.stringify(tweetsData.errors || tweetsData));
-      return [];
-    }
-
-    return tweetsData.data.map(tweet => {
-      // Use first 100 chars of tweet as title
-      const title = tweet.text.length > 100
-        ? tweet.text.slice(0, 97).replace(/\n/g, ' ') + '...'
-        : tweet.text.replace(/\n/g, ' ');
-      return {
-        title,
-        url: `https://x.com/${username}/status/${tweet.id}`,
-        source: `@${username}`,
-        pubDate: tweet.created_at || '',
-      };
-    });
-  } catch (e) {
-    console.warn(`Twitter @${username} failed:`, e.message);
     return [];
   }
 }
@@ -316,8 +255,6 @@ async function main() {
   const sources = [
     { name: 'Anthropic News', fn: () => fetchAnthropicNews() },
     { name: 'Claude.com', fn: () => fetchClaudeDotCom() },
-    { name: '@AnthropicAI', fn: () => fetchTwitterUser('AnthropicAI') },
-    { name: '@claudeai', fn: () => fetchTwitterUser('claudeai') },
   ];
 
   const results = await Promise.all(
