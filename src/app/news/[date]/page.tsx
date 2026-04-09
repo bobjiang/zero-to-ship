@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { getNewsByDate, getAllNewsDates } from '@/lib/news';
 import { cn } from '@/lib/utils';
 import { NewsCategory } from '@/types/news';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
 interface DailyNewsPageProps {
   params: Promise<{
@@ -81,6 +82,9 @@ export default async function DailyNewsPage({ params }: DailyNewsPageProps) {
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             AI News — {formatted}
           </h1>
+          <div className="mt-3">
+            <BookmarkButton contentType="news" contentSlug={date} />
+          </div>
 
           <div className="mt-8 space-y-6">
             {news.items.map((item, i) => (

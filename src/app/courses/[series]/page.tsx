@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { LessonCard } from '@/components/courses/LessonCard';
 import { getSeriesBySlug, getAllSeries } from '@/lib/content';
+import { SeriesProgressClient } from '@/components/courses/SeriesProgressClient';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
 interface SeriesPageProps {
   params: Promise<{
@@ -78,6 +80,10 @@ export default async function SeriesPage({ params }: SeriesPageProps) {
             <p className="mt-2 text-sm text-gray-600">
               {series.lessons.length} {series.lessons.length === 1 ? 'lesson' : 'lessons'}
             </p>
+            <div className="mt-3 flex items-center gap-3">
+              <BookmarkButton contentType="series" contentSlug={series.slug} />
+            </div>
+            <SeriesProgressClient seriesSlug={series.slug} totalLessons={series.lessons.length} />
           </div>
 
           <div className="mt-16 space-y-4">
