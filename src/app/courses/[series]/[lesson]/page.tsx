@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/Container';
 import { VideoPlayer } from '@/components/courses/VideoPlayer';
 import { Button } from '@/components/ui/Button';
 import { getLessonBySlug, getSeriesBySlug, getAllSeries } from '@/lib/content';
+import { LessonActionsClient } from '@/components/courses/LessonActionsClient';
 
 interface LessonPageProps {
   params: Promise<{
@@ -102,6 +103,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
             <h1 className="text-4xl font-bold tracking-tight text-gray-900">{lesson.title}</h1>
             <p className="mt-4 text-lg text-gray-600">{lesson.description}</p>
             <p className="mt-2 text-sm text-gray-600">Duration: {lesson.duration}</p>
+            <LessonActionsClient seriesSlug={seriesSlug} lessonSlug={lessonSlug} />
 
             {/* Learning Objectives */}
             {lesson.learningObjectives && lesson.learningObjectives.length > 0 && (
