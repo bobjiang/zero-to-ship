@@ -1,0 +1,139 @@
+---
+title: "How We Built a Full User Management System with Claude Code in One Session"
+excerpt: "From research to production — how we designed and shipped Supabase auth, dashboards, and personalization for 02Ship using a structured AI-assisted workflow."
+date: "2026-04-10"
+author: "Bob Jiang"
+keywords: "02Ship, user management, Supabase, authentication, Claude Code, membership, OAuth, magic link, TDD, code review, AI coding"
+---
+
+# How We Built a Full User Management System with Claude Code in One Session
+
+02Ship started as a fully static site — no database, no auth, no user accounts. Content lives in flat files, pages are statically generated, and everything is fast and SEO-friendly. But as the community grew, we kept hearing the same requests: "Can I track my progress?" "Can I bookmark lessons?" "Can I have a dashboard?"
+
+So we added a full membership system. Here's how we went from idea to merged PR, and why the process mattered as much as the code.
+
+## Step 1: Research — What Do Users Actually Need?
+
+Before writing any code, we started by asking what member accounts would actually unlock for our users:
+
+- **Progress tracking** — know which lessons you've completed, see how far through a course you are
+- **Bookmarks** — save lessons, blog posts, and news articles to come back to later
+- **Personal dashboard** — a single place to see your learning activity
+- **Profile** — share what you're building and what skills you have
+
+We also identified what we should *not* do: add auth just for the sake of it. Public content must stay public. Anonymous browsing must stay fast. The membership system should add value for signed-in users without degrading the experience for everyone else.
+
+## Step 2: Audit the Existing System
+
+We inventoried what 02Ship already had:
+
+- **Static content pages** — courses, blog, news, all loaded from `content/` at build time
+- **SEO infrastructure** — sitemaps, JSON-LD, OpenGraph images
+- **No database, no middleware, no auth** — a clean slate, but also no infrastructure to build on
+
+The key architectural constraint was clear: *public content pages must remain statically generated*. Any user-specific state had to load client-side after hydration, not server-side during rendering.
+
+## Step 3: Design the Data Model
+
+We designed three core tables:
+
+- **profiles** — linked 1:1 with Supabase auth users, stores name, bio, skills, and what you're building
+- **lesson_progress** — tracks which lessons each user has completed, keyed by `(user_id, series_slug, lesson_slug)`
+- **bookmarks** — stores saved content with type, slug, and parent slug for proper URL resolution
+
+Every table uses Row Level Security (RLS) so users can only read and write their own data. A database trigger auto-creates a profile row when someone signs up.
+
+We deliberately kept the schema minimal — no course-level progress aggregation, no certificates, no social features. Those can come later once the foundation is stable.
+
+## Step 4: Write the Plan
+
+With the research and data model done, we wrote a detailed implementation plan covering:
+
+- Supabase client utilities (browser, server, middleware)
+- Auth UX (magic link + OAuth with GitHub and Google)
+- Public page personalization via client islands
+- Protected dashboard routes
+- Database migrations with RLS
+- Testing strategy
+
+This plan became our source of truth for the entire implementation.
+
+## Step 5: Independent Code Review with Codex
+
+Before writing any code, we ran the plan through an independent review using OpenAI's Codex. The "outside voice" caught 8 issues, including:
+
+- **Unnecessary API routes** — client islands could call Supabase directly, RLS enforces access
+- **Open redirect vulnerability** — the `?next` param needed validation to prevent redirects to external URLs
+- **Signup metadata gap** — Google OAuth first-timers wouldn't have a name, needed a redirect to complete their profile
+- **Slug durability** — renaming content slugs would break progress and bookmark records
+
+We resolved all issues and removed the API routes entirely, simplifying the architecture.
+
+## Step 6: Engineering Review
+
+Next, we ran a structured engineering review that scored the plan on architecture, data flow, edge cases, and test coverage. It surfaced 11 issues including 2 critical gaps:
+
+- **OAuth error handling** — what happens when Google/GitHub returns an error?
+- **Magic link expiry** — what does the user see when a link has expired?
+
+Both were addressed in the auth callback route with proper error redirects.
+
+## Step 7: Implement with TDD
+
+With the reviewed plan in hand, we implemented everything in a single worktree branch:
+
+**Phase 1 — Auth Foundation (~18 files)**
+- Supabase client utilities for browser, server, and middleware
+- Next.js middleware scoped to only protected routes
+- Auth pages with magic link + GitHub + Google OAuth
+- UserNav component in the header (client-side, no server auth in layout)
+- Auth callback route handling both OAuth and email verification
+
+**Phase 2 — Member Features (~15 files)**
+- Protected dashboard with sidebar navigation
+- Course progress page grouped by series
+- Bookmarks page with content URL resolution
+- Settings page with profile form
+- Client personalization islands on course, blog, and news pages
+
+The key architectural decision: public pages stay static. Small client components (`SeriesProgressClient`, `LessonActionsClient`, `BookmarkButton`) fetch user data after hydration using `Promise.all` for parallel requests. If you're not signed in, they render nothing.
+
+## Step 8: Verify Everything
+
+Every change was verified against:
+
+- **ESLint** — 0 warnings, 0 errors
+- **TypeScript** — strict mode, 0 errors
+- **Vitest** — 74 unit tests passing (10 new for auth helpers and content resolver)
+- **Playwright** — 47 E2E tests passing (20 new for auth flows and anonymous regression)
+- **Production build** — successful, public pages confirmed still static
+
+We also ran a security review that confirmed no actionable vulnerabilities — RLS policies are correctly scoped, auth uses server-validated `getUser()`, and redirect validation handles edge cases properly.
+
+## The Result
+
+One PR, 41 files, ~1900 lines of code: [PR #63](https://github.com/bobjiang/zero-to-ship/pull/63)
+
+What users get:
+- Sign in with GitHub, Google, or email magic link
+- Track lesson completion with visual progress bars
+- Bookmark any content to find it later
+- Personal dashboard with activity overview
+- Profile settings to share what you're building
+
+What we preserved:
+- All public pages remain statically generated
+- Anonymous browsing is unchanged — no redirects, no slowdowns
+- SEO and caching work exactly as before
+
+## What We Learned
+
+1. **Plan before you code.** The multi-step review process (Codex review, eng review) caught real issues that would have been painful to fix after implementation.
+
+2. **Static-first is worth protecting.** It would have been easier to make everything dynamic, but keeping public pages static preserves performance and SEO. Client islands are the right trade-off.
+
+3. **RLS is your best friend.** Row Level Security means you don't need API routes to gate access. The database enforces permissions regardless of how the client calls it.
+
+4. **Ship the minimum.** No certificates, no public profiles, no social features. Those are all in the plan for later, but the core membership system needed to be solid first.
+
+The whole process — from research to merged PR — happened in a single focused session with Claude Code. The structured workflow (research, plan, review, implement, verify) is what made it possible to ship with confidence.
