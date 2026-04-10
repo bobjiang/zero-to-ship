@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-10",
+  "items": [
+    {
+      "title": "Florida AG Launches Investigation into OpenAI Following ChatGPT-Linked Shooting Allegation",
+      "summary": "The Florida Attorney General has initiated an investigation into OpenAI after a shooting incident was allegedly linked to the use of ChatGPT, raising questions about AI safety and responsibility.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "ChatGPT Finally Offers $100/Month Pro Plan",
+      "summary": "OpenAI has introduced a new, higher-tier 'Pro' subscription plan for ChatGPT at $100 per month, indicating a move towards premium enterprise features and advanced user access.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Mercor, a $10B-Valued AI Startup, Faces Scrutiny After Data Breach",
+      "summary": "AI startup Mercor, valued at $10 billion, is under intense scrutiny following a recent data breach, highlighting the growing security challenges for high-profile AI companies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Unveils Veo 3.1 Lite, a Cost-Effective Video Generation Model",
+      "summary": "Google has announced Veo 3.1 Lite, a new, more cost-effective version of its video generation model, aiming to make advanced AI video creation more accessible.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-lite/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Think in Strokes, Not Pixels: Process-Driven Image Generation via Interleaved Reasoning",
+      "summary": "New research introduces a process-driven approach to image generation that uses interleaved reasoning to create images in 'strokes' rather than pixels, potentially leading to more coherent and controllable outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04746",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "RAGEN-2: Reasoning Collapse in Agentic RL",
+      "summary": "A new paper, RAGEN-2, investigates the phenomenon of 'reasoning collapse' in agentic Reinforcement Learning, highlighting critical challenges in developing robust AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.06268",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Outlines 'The Next Phase of Enterprise AI'",
+      "summary": "OpenAI has published insights into its vision for the future of enterprise AI, signaling strategic directions for integrating advanced AI solutions into business operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/next-phase-of-enterprise-ai/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "How Well Do Agentic Skills Work in the Wild: Benchmarking LLM Skill Usage in Realistic Settings",
+      "summary": "Researchers benchmark the real-world performance of LLM agentic skills, providing crucial insights into their practical utility and limitations in diverse scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04323",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Watch Before You Answer: Learning from Visually Grounded Post-Training",
+      "summary": "This research explores a novel post-training method for AI models that emphasizes visually grounded learning, allowing models to 'watch' and understand context before generating responses.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.05117",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MARS: Enabling Autoregressive Models Multi-Token Generation",
+      "summary": "A new technique called MARS is introduced to enhance autoregressive models by enabling more efficient multi-token generation, potentially speeding up and improving the quality of AI text outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07023",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Combee: Scaling Prompt Learning for Self-Improving Language Model Agents",
+      "summary": "Combee presents a scalable method for prompt learning that allows language model agents to self-improve, advancing the development of more autonomous and capable AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04247",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ClawsBench: Evaluating Capability and Safety of LLM Productivity Agents in Simulated Workspaces",
+      "summary": "ClawsBench offers a new benchmark for assessing the capabilities and safety of LLM-powered productivity agents within simulated work environments, crucial for real-world deployment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.05172",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "INSPATIO-WORLD: A Real-Time 4D World Simulator via Spatiotemporal Autoregressive Modeling",
+      "summary": "INSPATIO-WORLD introduces a real-time 4D world simulator built on spatiotemporal autoregressive modeling, offering advanced capabilities for virtual environment creation and interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07209",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Unlocking Casual Fun: AI-Powered 'Vibe Coding' for Quick, Niche Apps",
+      "summary": "A new concept called 'Vibe Coding' leverages AI to enable rapid development of casual, niche applications, making app creation more accessible and fun for developers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/maria_from_mlh/unlocking-casual-fun-ai-powered-vibe-coding-for-quick-niche-apps-ml5",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Experimenting with AI Subagents",
+      "summary": "Developers are exploring the concept of AI subagents, breaking down complex tasks into smaller, manageable units handled by specialized AI components to improve efficiency and capability.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nfrankel/experimenting-with-ai-subagents-pc7",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
