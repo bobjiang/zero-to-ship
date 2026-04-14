@@ -1,0 +1,274 @@
+{
+  "week": "2026-04-14",
+  "startDate": "2026-04-07",
+  "endDate": "2026-04-14",
+  "summary": "This week highlights Claude's expanding ecosystem, from new enterprise-grade coding tools and productivity integrations to robust partner programs and industry-specific solutions, empowering builders across diverse applications.",
+  "sections": [
+    {
+      "id": "product-updates",
+      "title": "Product Updates and News",
+      "items": [
+        {
+          "title": "Enterprise plan",
+          "summary": "Anthropic has detailed its Enterprise plan, offering advanced features and support tailored for large organizations. This means builders in enterprise environments can leverage Claude with enhanced security, compliance, and dedicated resources.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/pricing/enterprise",
+          "impact": "high",
+          "tags": [
+            "pricing",
+            "enterprise",
+            "features"
+          ]
+        },
+        {
+          "title": "Claude for Chrome",
+          "summary": "A new Chrome extension allows users to integrate Claude directly into their browsing workflow. This makes it easier for builders to use Claude for quick summaries, content generation, and research directly within their browser.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/chrome",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "productivity",
+            "browser-extension"
+          ]
+        },
+        {
+          "title": "Claude for Excel",
+          "summary": "Claude can now be integrated into Excel, enabling powerful data analysis, formula generation, and spreadsheet automation. Builders working with data can significantly streamline their workflows and gain insights directly within Excel.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/claude-for-excel",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "productivity",
+            "data-analysis"
+          ]
+        },
+        {
+          "title": "Claude for Powerpoint",
+          "summary": "An integration for PowerPoint helps users create presentations more efficiently, from generating slide content to refining talking points. This offers builders a new way to leverage Claude for business communication and content creation.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/claude-for-powerpoint",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "productivity",
+            "content-creation"
+          ]
+        },
+        {
+          "title": "Claude for Slack",
+          "summary": "Claude's integration with Slack allows teams to bring AI assistance directly into their communication channels for tasks like summarizing discussions or answering questions. This enhances team collaboration and provides instant AI support within familiar tools.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/claude-for-slack",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "collaboration",
+            "team-tools"
+          ]
+        },
+        {
+          "title": "Marketplace",
+          "summary": "The Claude Marketplace provides a central hub for discovering and deploying pre-built solutions and integrations powered by Claude. Builders can explore ready-to-use applications or find inspiration for their own projects.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/platform/marketplace",
+          "impact": "medium",
+          "tags": [
+            "platform",
+            "integrations",
+            "solutions"
+          ]
+        },
+        {
+          "title": "Amazon Bedrock",
+          "summary": "Claude continues to be a key model available on Amazon Bedrock, offering a robust platform for deploying and scaling AI applications. Builders using AWS can easily access and integrate Claude into their cloud-native workflows.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/partners/amazon-bedrock",
+          "impact": "high",
+          "tags": [
+            "partner",
+            "cloud-platform",
+            "api"
+          ]
+        },
+        {
+          "title": "Google Cloud’s Vertex AI",
+          "summary": "Claude is integrated with Google Cloud’s Vertex AI, providing another powerful cloud environment for developers to build and deploy AI solutions. This expands options for builders who prefer the Google Cloud ecosystem for their projects.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/partners/google-cloud-vertex-ai",
+          "impact": "high",
+          "tags": [
+            "partner",
+            "cloud-platform",
+            "api"
+          ]
+        },
+        {
+          "title": "Microsoft Foundry",
+          "summary": "Claude is now available through Microsoft Foundry, offering enterprise-grade access and support for building secure and scalable AI applications. This provides another major cloud avenue for builders to leverage Claude within their existing Microsoft infrastructure.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/partners/microsoft-foundry",
+          "impact": "high",
+          "tags": [
+            "partner",
+            "cloud-platform",
+            "enterprise"
+          ]
+        },
+        {
+          "title": "Connectors",
+          "summary": "A dedicated page highlights the various connectors available to integrate Claude with other applications and services. Builders can explore these to seamlessly embed Claude's capabilities into their existing tech stacks and workflows.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/connectors",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "api",
+            "workflow-automation"
+          ]
+        },
+        {
+          "title": "Claude partner network",
+          "summary": "The Claude Partner Network provides resources and opportunities for businesses to build and offer solutions powered by Claude. This is valuable for builders looking to expand their reach or find partners for complex projects.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/partners",
+          "impact": "low",
+          "tags": [
+            "partnerships",
+            "ecosystem",
+            "business-development"
+          ]
+        },
+        {
+          "title": "Powered by Claude",
+          "summary": "This program showcases applications and services that are built using Claude, offering inspiration and visibility for builders. It's a great resource to see real-world applications and potentially get your own project featured.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/partners/powered-by-claude",
+          "impact": "low",
+          "tags": [
+            "showcase",
+            "inspiration",
+            "community"
+          ]
+        },
+        {
+          "title": "Service partners",
+          "summary": "Anthropic's service partners offer expertise in implementing and customizing Claude for various business needs. Builders can leverage these partners for specialized support and accelerated deployment of their AI initiatives.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/partners/services",
+          "impact": "low",
+          "tags": [
+            "partnerships",
+            "support",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "developer-tools",
+      "title": "Developer Tools and Tips and Tricks",
+      "items": [
+        {
+          "title": "Claude Code",
+          "summary": "Claude Code is highlighted as a powerful tool for developers, offering advanced capabilities for code generation, debugging, and review. Builders can leverage this to accelerate their software development workflows and improve code quality.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/product/claude-code",
+          "impact": "high",
+          "tags": [
+            "claude-code",
+            "code-generation",
+            "developer-tool"
+          ]
+        },
+        {
+          "title": "Claude Code for Enterprise",
+          "summary": "An enterprise-focused version of Claude Code is available, providing enhanced security, compliance, and scalability for large development teams. This is crucial for builders working on sensitive or large-scale coding projects within corporate environments.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/product/claude-code/enterprise",
+          "impact": "medium",
+          "tags": [
+            "claude-code",
+            "enterprise",
+            "security"
+          ]
+        },
+        {
+          "title": "Claude Code Security",
+          "summary": "Claude Code Security is a solution designed to help identify and mitigate vulnerabilities in codebases using Claude's analytical capabilities. Builders can use this to enhance the security posture of their applications and ensure compliance.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/solutions/claude-code-security",
+          "impact": "medium",
+          "tags": [
+            "claude-code",
+            "security",
+            "code-analysis"
+          ]
+        },
+        {
+          "title": "Code modernization",
+          "summary": "Claude offers solutions for modernizing legacy codebases, translating older languages, and updating frameworks. This is a valuable resource for builders looking to maintain and improve existing software without extensive manual refactoring.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/solutions/code-modernization",
+          "impact": "medium",
+          "tags": [
+            "claude-code",
+            "legacy-code",
+            "refactoring"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "community-learning",
+      "title": "Community & Learning",
+      "items": [
+        {
+          "title": "Customer stories",
+          "summary": "A collection of customer stories showcases how various organizations are successfully using Claude to solve real-world problems. These case studies provide valuable insights and inspiration for builders looking to apply Claude in their own projects.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/customers",
+          "impact": "low",
+          "tags": [
+            "case-studies",
+            "inspiration",
+            "community"
+          ]
+        },
+        {
+          "title": "Campus Program",
+          "summary": "The Campus Program offers resources and support for students and academic institutions to learn and build with Claude. This is an excellent opportunity for aspiring AI builders to gain hands-on experience and integrate Claude into their studies.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/programs/campus",
+          "impact": "low",
+          "tags": [
+            "education",
+            "students",
+            "learning"
+          ]
+        },
+        {
+          "title": "Startups program",
+          "summary": "The Startups Program provides support, credits, and resources for early-stage companies building with Claude. This is a significant benefit for entrepreneurial builders looking to launch and scale their AI-powered products.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/programs/startups",
+          "impact": "medium",
+          "tags": [
+            "startups",
+            "funding",
+            "entrepreneurship"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-safety",
+      "title": "Research & Safety",
+      "items": [
+        {
+          "title": "Regional compliance",
+          "summary": "Information on regional compliance standards and how Claude adheres to various data governance and regulatory requirements is now available. This is important for builders deploying applications globally, ensuring their projects meet local legal and ethical guidelines.",
+          "url": "https://claude.com/redirect/claudeai.v1.a6b39cab-932b-42e0-97ea-9943cfc249d9/regional-compliance",
+          "impact": "medium",
+          "tags": [
+            "compliance",
+            "safety",
+            "governance"
+          ]
+        },
+        {
+          "title": "Economic Futures",
+          "summary": "Anthropic's Economic Futures initiative explores the broader societal and economic impacts of advanced AI. While not a direct tool, this research provides context for builders on the ethical considerations and long-term implications of their AI creations.",
+          "url": "https://www.anthropic.com/economic-futures",
+          "impact": "low",
+          "tags": [
+            "ethics",
+            "societal-impact",
+            "research"
+          ]
+        }
+      ]
+    }
+  ]
+}
