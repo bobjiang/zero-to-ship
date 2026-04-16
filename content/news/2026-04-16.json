@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-16",
+  "items": [
+    {
+      "title": "OpenAI Unveils Next Evolution of Agents SDK for Safer, More Capable Enterprise AI Agents",
+      "summary": "OpenAI has updated its Agents SDK, focusing on enhancing safety and capabilities for enterprises building AI agents, signaling a move towards more robust and reliable AI deployments.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Google Introduces Gemini 3.1 Flash TTS for Expressive AI Speech",
+      "summary": "Google has launched Gemini 3.1 Flash TTS, the latest generation of its text-to-speech model, promising more expressive and natural-sounding AI-generated speech.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents",
+      "summary": "Researchers introduce ClawGUI, a new unified framework designed to streamline the training, evaluation, and deployment of AI agents that interact with graphical user interfaces.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11784",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "KnowRL: Boosting LLM Reasoning with Reinforcement Learning and Knowledge Guidance",
+      "summary": "A new research paper presents KnowRL, a method that leverages reinforcement learning with minimal-sufficient knowledge guidance to significantly improve the reasoning capabilities of Large Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.12627",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hightouch Achieves $100M ARR, Driven by AI-Powered Marketing Tools",
+      "summary": "Hightouch has reached a significant milestone of $100 million in Annual Recurring Revenue, largely attributed to the success and adoption of its AI-powered marketing tools.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/15/hightouch-reaches-100m-arr-fueled-by-marketing-tools-powered-by-ai/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
+      "summary": "New research delves into the intricacies of on-policy distillation for large language models, offering insights into its mechanisms and proposing an improved recipe for more effective training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.13016",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LinkedIn Data Suggests AI Not Yet Responsible for Hiring Decline",
+      "summary": "New data from LinkedIn indicates that, contrary to some concerns, AI is not currently the primary cause of a decline in hiring, though its future impact remains a subject of observation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/15/linkedin-data-shows-ai-isnt-to-blame-for-hiring-decline-yet/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Nemotron 3 Super: Open, Efficient Mixture-of-Experts Hybrid Model for Agentic Reasoning",
+      "summary": "A new paper introduces Nemotron 3 Super, an open and efficient mixture-of-experts model combining Mamba and Transformer architectures, designed to enhance agentic reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.12374",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Toward Autonomous Long-Horizon Engineering for ML Research",
+      "summary": "Researchers are exploring methods for autonomous long-horizon engineering, aiming to enable AI systems to independently conduct and manage complex machine learning research projects.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.13018",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Lyra 2.0: Explorable Generative 3D Worlds Unveiled",
+      "summary": "Lyra 2.0 is introduced as a new system for creating explorable generative 3D worlds, pushing the boundaries of immersive virtual environment generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.13036",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How to Prompt Gemini 3.1's New Text-to-Speech Model for Optimal Results",
+      "summary": "A guide has been published detailing effective prompting techniques for Google's new Gemini 3.1 text-to-speech model, helping developers achieve high-quality expressive audio.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/how-to-prompt-gemini-31s-new-text-to-speech-model-24bb",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Audio-Omni: Extending Multi-modal Understanding to Versatile Audio Generation and Editing",
+      "summary": "Audio-Omni is a new development that expands multi-modal AI understanding to include versatile audio generation and editing capabilities, bridging the gap between text, image, and sound.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.10708",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "AI Assistance Reduces Persistence and Hurts Independent Performance",
+      "summary": "A new study suggests that while AI assistance can be helpful, it may inadvertently reduce users' persistence and negatively impact their ability to perform tasks independently.",
+      "source": "Lobste.rs",
+      "url": "https://arxiv.org/pdf/2604.04721",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "BERT-as-a-Judge: A Robust Alternative for Efficient Reference-Based LLM Evaluation",
+      "summary": "Researchers propose 'BERT-as-a-Judge' as a robust and efficient alternative to traditional lexical methods for evaluating Large Language Models based on reference texts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.09497",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents",
+      "summary": "A study highlights critical safety vulnerabilities in computer-use agents, revealing how seemingly benign user instructions can inadvertently expose significant security risks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.10577",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
