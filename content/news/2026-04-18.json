@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-18",
+  "items": [
+    {
+      "title": "Sam Altman's Project World Expands Human Verification to Tinder",
+      "summary": "Sam Altman's Project World is reportedly scaling its human verification services, with Tinder being the latest platform to integrate its technology.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/17/sam-altmans-project-world-looks-to-scale-its-human-verification-empire-first-stop-tinder/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Cursor Reportedly Seeks $2B+ Funding at $50B Valuation as Enterprise AI Surges",
+      "summary": "Sources indicate that Cursor is in talks to raise over $2 billion at a staggering $50 billion valuation, driven by rapid growth in its enterprise AI solutions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/17/sources-cursor-in-talks-to-raise-2b-at-50b-valuation-as-enterprise-growth-surges/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Key Executives Kevin Weil and Bill Peebles Depart OpenAI Amid 'Side Quest' Streamlining",
+      "summary": "Kevin Weil and Bill Peebles have exited OpenAI, signaling the company's continued effort to streamline operations and shed non-core projects.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/17/kevin-weil-and-bill-peebles-exit-openai-as-company-continues-to-shed-side-quests/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Launches Initiative to Accelerate Cyber Defense Ecosystem",
+      "summary": "OpenAI has announced a new initiative focused on accelerating the cyber defense ecosystem, aiming to enhance protection against digital threats.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/accelerating-cyber-defense-ecosystem/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "HY-World 2.0: A Multi-Modal World Model for 3D Reconstruction, Generation, and Simulation",
+      "summary": "Researchers introduce HY-World 2.0, an advanced multi-modal world model capable of reconstructing, generating, and simulating complex 3D environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14268",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Google Introduces New AI-Powered Travel Features for Smarter Summer Planning",
+      "summary": "Google is rolling out seven new AI-powered features to help users plan and experience smarter summer travel, leveraging advancements in Google Search and AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/summer-travel-tips-google-search-ai/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Gemini App Gains New Personalized Image Creation Capabilities",
+      "summary": "The Gemini app now offers enhanced ways for users to create personalized images, further expanding its creative AI functionalities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "RAD-2: Scaling Reinforcement Learning with a Generator-Discriminator Framework",
+      "summary": "RAD-2 presents a novel generator-discriminator framework designed to significantly scale reinforcement learning, offering new avenues for complex AI training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.15308",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "GlobalSplat: Efficient Feed-Forward 3D Gaussian Splatting via Global Scene Tokens",
+      "summary": "GlobalSplat introduces an efficient feed-forward method for 3D Gaussian Splatting, utilizing global scene tokens to enhance performance in 3D rendering and reconstruction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.15284",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "NuHF Claw: A Risk-Constrained Cognitive Agent for Nuclear Control Rooms",
+      "summary": "NuHF Claw introduces a risk-constrained cognitive agent framework designed to provide human-centered procedure support in digital nuclear control rooms, enhancing safety and efficiency.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.14160",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RadAgent: A Tool-Using AI Agent for Stepwise Interpretation of Chest CT Scans",
+      "summary": "RadAgent is presented as a tool-using AI agent capable of providing stepwise interpretations of chest computed tomography scans, potentially aiding medical diagnostics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.15231",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Releases Guide for Creating Images with ChatGPT",
+      "summary": "OpenAI has published an academy guide detailing how users can effectively create images using ChatGPT, making the feature more accessible.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/academy/image-generation",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Academy Offers Guidance on Using ChatGPT for Research",
+      "summary": "A new resource from OpenAI Academy provides insights and best practices for leveraging ChatGPT as a tool in academic and professional research.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/academy/research",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Memory Transfer Learning: Understanding Memory Transfer Across Domains in Coding Agents",
+      "summary": "This paper investigates the mechanisms of memory transfer learning, exploring how memories are effectively transferred across different domains in AI coding agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14004",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Simulating Human Cognition with Heartbeat-Driven Autonomous Thinking for LLM-based AI",
+      "summary": "A new framework proposes simulating human cognition through heartbeat-driven autonomous thinking activity scheduling for large language model-based AI systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.14178",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
