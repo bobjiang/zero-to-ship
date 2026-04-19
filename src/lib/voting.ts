@@ -84,3 +84,73 @@ export function shuffleWithSeed<T>(items: T[], seed: string): T[] {
   }
   return arr;
 }
+
+import { kv } from '@vercel/kv';
+import type { Submission, SubmissionStatus, Ballot } from '@/types/voting';
+
+const submissionKey = (id: string) => `submission:${id}`;
+const submissionsSetKey = (event: string) => `submissions:set:${event}`;
+const voteKey = (event: string, voter: string) => `vote:${event}:${voter}`;
+const votersSetKey = (event: string) => `voters:set:${event}`;
+const submitRateKey = (event: string, cookie: string) => `submit-rate:${event}:${cookie}`;
+
+export async function createSubmission(input: Omit<Submission, 'id' | 'status' | 'createdAt'>): Promise<Submission> {
+  const id = crypto.randomUUID();
+  const submission: Submission = {
+    ...input,
+    id,
+    status: 'pending',
+    createdAt: new Date().toISOString(),
+  };
+  await kv.set(submissionKey(id), submission);
+  await kv.sadd(submissionsSetKey(input.event), id);
+  return submission;
+}
+
+export async function getSubmission(id: string): Promise<Submission | null> {
+  return (await kv.get<Submission>(submissionKey(id))) ?? null;
+}
+
+export async function listSubmissions(event: string): Promise<Submission[]> {
+  const ids = (await kv.smembers(submissionsSetKey(event))) as string[];
+  if (ids.length === 0) return [];
+  const results = await Promise.all(ids.map((id) => kv.get<Submission>(submissionKey(id))));
+  return results.filter((s): s is Submission => s !== null);
+}
+
+export async function setSubmissionStatus(id: string, status: SubmissionStatus): Promise<void> {
+  const current = await getSubmission(id);
+  if (!current) throw new Error(`submission ${id} not found`);
+  await kv.set(submissionKey(id), { ...current, status });
+}
+
+export async function getBallot(event: string, voter: string): Promise<Ballot | null> {
+  return (await kv.get<Ballot>(voteKey(event, voter))) ?? null;
+}
+
+export async function writeBallot(event: string, voter: string, ballot: Ballot): Promise<void> {
+  await kv.set(voteKey(event, voter), ballot);
+  await kv.sadd(votersSetKey(event), voter);
+}
+
+export async function voterCount(event: string): Promise<number> {
+  return (await kv.scard(votersSetKey(event))) as number;
+}
+
+export async function listBallots(event: string): Promise<Ballot[]> {
+  const voters = (await kv.smembers(votersSetKey(event))) as string[];
+  if (voters.length === 0) return [];
+  const results = await Promise.all(voters.map((v) => kv.get<Ballot>(voteKey(event, v))));
+  return results.filter((b): b is Ballot => b !== null);
+}
+
+export async function getSubmitRate(event: string, cookie: string): Promise<number> {
+  return (await kv.get<number>(submitRateKey(event, cookie))) ?? 0;
+}
+
+export async function incrSubmitRate(event: string, cookie: string): Promise<number> {
+  const key = submitRateKey(event, cookie);
+  const n = (await kv.incr(key)) as number;
+  if (n === 1) await kv.expire(key, 86400);
+  return n;
+}
