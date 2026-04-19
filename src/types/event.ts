@@ -5,7 +5,6 @@ export interface EventConfig {
   name: string;
   submissionOpensAt: string;
   submissionClosesAt: string;
-  votingOpensAt: string;
   votingClosesAt: string;
   voteLimit: number;
   submissionRateLimitPerCookie24h: number;

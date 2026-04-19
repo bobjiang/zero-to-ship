@@ -5,6 +5,9 @@ import { useRouter } from 'next/navigation';
 
 type Status = 'pending' | 'approved' | 'rejected';
 
+const baseBtn =
+  'inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50';
+
 export function SubmissionActions({ id, current }: { id: string; current: Status }) {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
@@ -22,12 +25,12 @@ export function SubmissionActions({ id, current }: { id: string; current: Status
   }
 
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-1.5">
       <button
         type="button"
         disabled={busy || current === 'approved'}
         onClick={() => set('approved')}
-        className="rounded bg-green-700 px-2 py-1 text-xs text-white disabled:opacity-50"
+        className={`${baseBtn} bg-green-600 text-white hover:bg-green-700 focus-visible:ring-green-600`}
       >
         Approve
       </button>
@@ -35,7 +38,7 @@ export function SubmissionActions({ id, current }: { id: string; current: Status
         type="button"
         disabled={busy || current === 'rejected'}
         onClick={() => set('rejected')}
-        className="rounded bg-red-700 px-2 py-1 text-xs text-white disabled:opacity-50"
+        className={`${baseBtn} bg-red-600 text-white hover:bg-red-700 focus-visible:ring-red-600`}
       >
         Reject
       </button>
@@ -43,7 +46,7 @@ export function SubmissionActions({ id, current }: { id: string; current: Status
         type="button"
         disabled={busy || current === 'pending'}
         onClick={() => set('pending')}
-        className="rounded bg-neutral-700 px-2 py-1 text-xs text-white disabled:opacity-50"
+        className={`${baseBtn} border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus-visible:ring-gray-500`}
       >
         Reset
       </button>

@@ -1,5 +1,7 @@
 'use client';
 
+import { Button } from '@/components/ui/Button';
+
 interface Row {
   rank: number;
   title: string;
@@ -44,8 +46,8 @@ export function ResultsExport({ rows, filename }: { rows: Row[]; filename: strin
   }
 
   return (
-    <button type="button" onClick={download} className="rounded bg-black px-3 py-1 text-sm text-white">
+    <Button type="button" size="sm" onClick={download}>
       Download CSV
-    </button>
+    </Button>
   );
 }

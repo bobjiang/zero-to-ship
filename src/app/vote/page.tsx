@@ -3,17 +3,17 @@ import { VOTER_COOKIE } from '@/middleware';
 import {
   getBallot,
   getEventConfig,
-  isWithinWindow,
   listSubmissions,
   shuffleWithSeed,
 } from '@/lib/voting';
+import { Container } from '@/components/ui/Container';
 import { VoteClient } from './VoteClient';
 
 export const dynamic = 'force-dynamic';
 
 export default async function VotePage() {
   const event = await getEventConfig();
-  const open = isWithinWindow(event.votingOpensAt, event.votingClosesAt, new Date());
+  const closed = Date.now() >= new Date(event.votingClosesAt).getTime();
   const voter = cookies().get(VOTER_COOKIE)?.value;
   const seed = (voter ?? `anon-${Date.now()}`) + ':' + event.slug;
   const [all, existing] = await Promise.all([
@@ -26,41 +26,43 @@ export default async function VotePage() {
       id: s.id,
       title: s.title,
       speakerName: s.speakerName,
-      handle: s.handle,
-      tag: s.tag,
       intro: s.intro,
     })),
     seed
   );
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
-      <h1 className="mb-2 text-2xl font-semibold">Vote for talks you want to hear</h1>
-      <p className="mb-6 text-sm text-neutral-600">
-        {event.name} · voting closes {new Date(event.votingClosesAt).toLocaleString()}
-      </p>
+    <section className="py-16 sm:py-20">
+      <Container>
+        <div className="mx-auto max-w-3xl">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            Vote for talks you want to hear
+          </h1>
 
-      {existing ? (
-        <div className="rounded-md border border-neutral-300 bg-neutral-50 p-4">
-          <p className="font-medium">You&apos;ve already voted from this browser.</p>
-          <p className="text-sm text-neutral-700">
-            {existing.submissionIds.length} selection(s) recorded at{' '}
-            {new Date(existing.submittedAt).toLocaleString()}.
-          </p>
+          <div className="mt-10">
+            {existing ? (
+              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                <p className="text-lg font-semibold text-gray-900">
+                  You&apos;ve already voted from this browser.
+                </p>
+                <p className="mt-2 text-sm text-gray-600">
+                  {existing.submissionIds.length} selection(s) recorded at{' '}
+                  {new Date(existing.submittedAt).toLocaleString()}.
+                </p>
+              </div>
+            ) : closed ? (
+              <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                <p className="text-lg font-semibold text-gray-900">Voting is closed.</p>
+                <p className="mt-2 text-sm text-gray-600">Results will be announced soon.</p>
+              </div>
+            ) : approved.length === 0 ? (
+              <p className="text-gray-600">No talks are available for voting yet.</p>
+            ) : (
+              <VoteClient cards={cards} voteLimit={event.voteLimit} />
+            )}
+          </div>
         </div>
-      ) : !open ? (
-        <div className="rounded-md border border-neutral-300 bg-neutral-50 p-4">
-          <p className="font-medium">
-            {Date.now() < new Date(event.votingOpensAt).getTime()
-              ? `Voting opens ${new Date(event.votingOpensAt).toLocaleString()}.`
-              : 'Voting is closed. Results will be announced soon.'}
-          </p>
-        </div>
-      ) : approved.length === 0 ? (
-        <p className="text-sm text-neutral-700">No talks are available for voting yet.</p>
-      ) : (
-        <VoteClient cards={cards} voteLimit={event.voteLimit} />
-      )}
-    </div>
+      </Container>
+    </section>
   );
 }

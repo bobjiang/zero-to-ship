@@ -1,18 +1,26 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { ADMIN_SESSION_COOKIE, verifySession } from '@/lib/admin';
 import {
   assignRanks,
   getEventConfig,
-  isWithinWindow,
   listBallots,
   listSubmissions,
   tallyVotes,
   voterCount,
 } from '@/lib/voting';
+import type { SubmissionStatus } from '@/types/voting';
+import { Container } from '@/components/ui/Container';
 import { ResultsExport } from './ResultsExport';
 
 export const dynamic = 'force-dynamic';
+
+const STATUS_BADGE: Record<SubmissionStatus, string> = {
+  pending: 'bg-amber-100 text-amber-900',
+  approved: 'bg-green-100 text-green-900',
+  rejected: 'bg-red-100 text-red-900',
+};
 
 export default async function AdminResultsPage() {
   const session = cookies().get(ADMIN_SESSION_COOKIE)?.value;
@@ -28,62 +36,111 @@ export default async function AdminResultsPage() {
   const counts = tallyVotes(ballots, approvedIds);
   const totalVotes = ballots.reduce((n, b) => n + b.submissionIds.length, 0);
   const rows = assignRanks(subs.map((s) => ({ ...s, voteCount: counts.get(s.id) ?? 0 })));
-  const votingOpen = isWithinWindow(event.votingOpensAt, event.votingClosesAt, new Date());
+  const votingOpen = Date.now() < new Date(event.votingClosesAt).getTime();
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-10">
-      <div className="mb-4 flex items-baseline justify-between gap-4">
-        <h1 className="text-2xl font-semibold">Results</h1>
-        <ResultsExport
-          rows={rows.map((r) => ({
-            rank: r.rank,
-            title: r.title,
-            speakerName: r.speakerName,
-            handle: r.handle,
-            contact: r.contact,
-            tag: r.tag,
-            status: r.status,
-            voteCount: r.voteCount,
-          }))}
-          filename={`${event.slug}-results.csv`}
-        />
-      </div>
-      <p className="mb-6 text-sm text-neutral-600">
-        {event.name} ·{' '}
-        {votingOpen
-          ? `voting closes ${new Date(event.votingClosesAt).toLocaleString()}`
-          : 'Final ranking'}{' '}
-        · voters {totalVoters} · total votes {totalVotes}
-      </p>
-      <table className="w-full border-collapse text-sm">
-        <thead>
-          <tr className="border-b text-left">
-            <th className="py-2 pr-4">Rank</th>
-            <th className="py-2 pr-4">Title</th>
-            <th className="py-2 pr-4">Speaker</th>
-            <th className="py-2 pr-4">Contact</th>
-            <th className="py-2 pr-4">Tag</th>
-            <th className="py-2 pr-4">Status</th>
-            <th className="py-2 pr-4">Votes</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.id} className="border-b align-top">
-              <td className="py-2 pr-4">{r.rank}</td>
-              <td className="py-2 pr-4 font-medium">{r.title}</td>
-              <td className="py-2 pr-4">
-                {r.speakerName}
-                {r.handle ? ` · ${r.handle}` : ''}
-              </td>
-              <td className="py-2 pr-4 text-neutral-700">{r.contact ?? ''}</td>
-              <td className="py-2 pr-4">{r.tag ?? ''}</td>
-              <td className="py-2 pr-4">{r.status}</td>
-              <td className="py-2 pr-4">{r.voteCount}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <section className="py-12 sm:py-16">
+      <Container>
+        <div className="mx-auto max-w-5xl">
+          <div className="flex flex-wrap items-baseline justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Results
+              </h1>
+              <p className="mt-2 text-sm text-gray-600">
+                {event.name} ·{' '}
+                {votingOpen
+                  ? `voting closes ${new Date(event.votingClosesAt).toLocaleString()}`
+                  : 'Final ranking'}
+              </p>
+            </div>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/admin/submissions"
+                className="text-sm font-medium text-blue-700 hover:text-blue-900"
+              >
+                ← Submissions
+              </Link>
+              <ResultsExport
+                rows={rows.map((r) => ({
+                  rank: r.rank,
+                  title: r.title,
+                  speakerName: r.speakerName,
+                  handle: r.handle,
+                  contact: r.contact,
+                  tag: r.tag,
+                  status: r.status,
+                  voteCount: r.voteCount,
+                }))}
+                filename={`${event.slug}-results.csv`}
+              />
+            </div>
+          </div>
+
+          <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+              <dt className="text-xs font-medium uppercase tracking-wide text-gray-500">Voters</dt>
+              <dd className="mt-1 text-2xl font-bold text-gray-900">{totalVoters}</dd>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+              <dt className="text-xs font-medium uppercase tracking-wide text-gray-500">Total votes</dt>
+              <dd className="mt-1 text-2xl font-bold text-gray-900">{totalVotes}</dd>
+            </div>
+            <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+              <dt className="text-xs font-medium uppercase tracking-wide text-gray-500">Approved talks</dt>
+              <dd className="mt-1 text-2xl font-bold text-gray-900">{approvedIds.size}</dd>
+            </div>
+          </dl>
+
+          <div className="mt-10 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+            <table className="w-full border-collapse text-sm">
+              <thead className="bg-gray-50">
+                <tr className="text-left">
+                  <th className="px-4 py-3 font-medium text-gray-700">Rank</th>
+                  <th className="px-4 py-3 font-medium text-gray-700">Title</th>
+                  <th className="px-4 py-3 font-medium text-gray-700">Speaker</th>
+                  <th className="px-4 py-3 font-medium text-gray-700">Contact</th>
+                  <th className="px-4 py-3 font-medium text-gray-700">Status</th>
+                  <th className="px-4 py-3 text-right font-medium text-gray-700">Votes</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {rows.length === 0 ? (
+                  <tr>
+                    <td colSpan={6} className="px-4 py-6 text-center text-sm text-gray-500">
+                      No submissions yet.
+                    </td>
+                  </tr>
+                ) : (
+                  rows.map((r) => (
+                    <tr key={r.id} className="align-top">
+                      <td className="px-4 py-3 font-mono text-sm text-gray-900">
+                        {r.status === 'approved' ? r.rank : '—'}
+                      </td>
+                      <td className="px-4 py-3 font-medium text-gray-900">{r.title}</td>
+                      <td className="px-4 py-3 text-gray-700">
+                        <div>{r.speakerName}</div>
+                        {r.handle && <div className="text-xs text-gray-500">{r.handle}</div>}
+                      </td>
+                      <td className="px-4 py-3 text-gray-600">{r.contact ?? '—'}</td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${STATUS_BADGE[r.status]}`}
+                        >
+                          {r.status}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-right font-semibold text-gray-900">
+                        {r.voteCount}
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 }

@@ -5,7 +5,6 @@ import { VOTER_COOKIE } from '@/middleware';
 import {
   getBallot,
   getEventConfig,
-  isWithinWindow,
   listSubmissions,
   sameCanonicalBallot,
   validateBallot,
@@ -23,7 +22,7 @@ export async function POST(req: Request) {
   }
 
   const event = await getEventConfig();
-  if (!isWithinWindow(event.votingOpensAt, event.votingClosesAt, new Date())) {
+  if (Date.now() >= new Date(event.votingClosesAt).getTime()) {
     return NextResponse.json({ ok: false, error: 'closed' }, { status: 400 });
   }
 

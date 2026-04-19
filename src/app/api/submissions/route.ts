@@ -38,9 +38,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
   }
   const { handle, contact } = parsed.data;
-  if (!(handle && handle.length > 0) && !(contact && contact.length > 0)) {
-    return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
-  }
 
   const afterIncr = await incrSubmitRate(event.slug, voter);
   if (afterIncr > event.submissionRateLimitPerCookie24h) {
