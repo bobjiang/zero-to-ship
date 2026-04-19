@@ -2,30 +2,15 @@ import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { ADMIN_SESSION_COOKIE, verifySession } from '@/lib/admin';
 import {
+  assignRanks,
   getEventConfig,
   listBallots,
   listSubmissions,
   tallyVotes,
   voterCount,
 } from '@/lib/voting';
-import type { Submission } from '@/types/voting';
 
 export const dynamic = 'force-dynamic';
-
-function assignRanks(rows: Array<Submission & { voteCount: number }>): Array<Submission & { voteCount: number; rank: number }> {
-  const sorted = [...rows].sort((a, b) => b.voteCount - a.voteCount);
-  let rank = 0;
-  let lastCount = -1;
-  let seen = 0;
-  return sorted.map((r) => {
-    seen += 1;
-    if (r.voteCount !== lastCount) {
-      rank = seen;
-      lastCount = r.voteCount;
-    }
-    return { ...r, rank };
-  });
-}
 
 export async function GET() {
   const session = cookies().get(ADMIN_SESSION_COOKIE)?.value;

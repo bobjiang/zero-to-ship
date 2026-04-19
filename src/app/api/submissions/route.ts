@@ -5,7 +5,6 @@ import { VOTER_COOKIE } from '@/middleware';
 import {
   createSubmission,
   getEventConfig,
-  getSubmitRate,
   incrSubmitRate,
   isWithinWindow,
 } from '@/lib/voting';
@@ -43,8 +42,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
   }
 
-  const count = await getSubmitRate(event.slug, voter);
-  if (count >= event.submissionRateLimitPerCookie24h) {
+  const afterIncr = await incrSubmitRate(event.slug, voter);
+  if (afterIncr > event.submissionRateLimitPerCookie24h) {
     return NextResponse.json({ ok: false, error: 'rate-limited' }, { status: 429 });
   }
 
@@ -57,7 +56,6 @@ export async function POST(req: Request) {
     intro: parsed.data.intro,
     tag: parsed.data.tag,
   });
-  await incrSubmitRate(event.slug, voter);
 
   return NextResponse.json({ ok: true, id: submission.id });
 }

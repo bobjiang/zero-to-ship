@@ -61,6 +61,23 @@ export function tallyVotes(
   return counts;
 }
 
+export function assignRanks<T extends { voteCount: number }>(
+  rows: T[]
+): Array<T & { rank: number }> {
+  const sorted = [...rows].sort((a, b) => b.voteCount - a.voteCount);
+  let rank = 0;
+  let lastCount = -1;
+  let seen = 0;
+  return sorted.map((r) => {
+    seen += 1;
+    if (r.voteCount !== lastCount) {
+      rank = seen;
+      lastCount = r.voteCount;
+    }
+    return { ...r, rank };
+  });
+}
+
 function xmur3(str: string): () => number {
   let h = 1779033703 ^ str.length;
   for (let i = 0; i < str.length; i++) {
