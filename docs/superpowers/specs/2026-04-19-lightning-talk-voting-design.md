@@ -1,65 +1,74 @@
 # Design — Community Lightning Talk Voting
 
-**Status:** Draft — pending user review
-**Date:** 2026-04-19
+**Status:** Draft — revised after architecture review  
+**Date:** 2026-04-19  
 **Source PRD:** `docs/community-lightning-talk-voting-prd.md`
 
 ## 1. Goal
 
-Ship a mobile-first, QR-driven lightning-talk submission and voting tool on top of the existing 02ship.com Next.js app, with no database and no auth framework. Stores data in Vercel KV. Scoped to a single hardcoded event.
+Ship a mobile-first, QR-driven lightning-talk submission and voting tool inside the existing 02ship.com Next.js app. MVP is a single deployed event with config in the repo, no full auth framework, and mutable state stored in Vercel KV via `@vercel/kv`.
 
-## 2. Non-goals (explicit cuts from the PRD)
+## 2. Non-goals
 
 - Multi-event support
-- Full admin dashboard UI with filters and bulk actions (replaced by a minimal token-gated table)
-- Account system or OAuth (Discord, wallet, magic link)
-- Voter search/filter on the voting page
-- Voter vote editing
+- Runtime event-settings UI
+- Full admin dashboard UI with filters, bulk actions, or inline copy editing
+- Voter search / filter / sort controls
+- Vote editing after submission
 - Speaker submission editing
-- Comment system, speaker profiles, gamification, leaderboards
+- Public live vote counts
+- Public in-app results page
 - Runtime QR code generation
-- Live public vote counts
+- Account system or OAuth
+- Comment system, speaker profiles, gamification, or leaderboards
 
 ## 3. Architecture
 
-A single-event, mobile-first voting feature bolted onto the existing Next.js 14 / Vercel app. Write store is **Vercel KV**; event metadata is a JSON file committed to the repo.
+A single-event voting feature added to the existing Next.js 14 / Vercel app. Event metadata is a JSON file committed to the repo. Mutable submission and ballot data lives in Vercel KV.
 
 ```
 content/events/lightning-talk.json       # event config
+src/types/event.ts                       # typed event config
 src/app/submit/page.tsx                  # QR 1 target
 src/app/vote/page.tsx                    # QR 2 target
-src/app/admin/page.tsx                   # landing (token prompt)
+src/app/admin/page.tsx                   # token form / landing
 src/app/admin/submissions/page.tsx       # moderation queue
 src/app/admin/results/page.tsx           # ranked tally
 src/app/api/submissions/route.ts         # POST new submission
 src/app/api/votes/route.ts               # POST ballot
-src/app/api/admin/submissions/route.ts   # GET/PATCH (token)
-src/app/api/admin/results/route.ts       # GET (token)
-src/lib/voting.ts                        # KV + cookie helpers, tallyVotes
-src/lib/admin.ts                         # timing-safe token check
-src/middleware.ts                        # sets zts_voter cookie if missing
+src/app/api/admin/session/route.ts       # POST admin token -> session cookie
+src/app/api/admin/logout/route.ts        # POST clear admin session
+src/app/api/admin/submissions/route.ts   # GET/PATCH submissions
+src/app/api/admin/results/route.ts       # GET ranked results
+src/lib/voting.ts                        # KV access, validators, tally, shuffle helpers
+src/lib/admin.ts                         # token compare + signed session cookie helpers
+src/middleware.ts                        # best-effort zts_voter cookie seeding
 public/events/lightning-talk-qr-submit.png
 public/events/lightning-talk-qr-vote.png
 ```
 
-**End-to-end flow:**
-1. Organizer edits `content/events/lightning-talk.json` and deploys.
-2. Speaker scans QR 1 → `/submit` → POST `/api/submissions` → KV `submission:<id>` with `status: pending`.
-3. Organizer visits `/admin/submissions?token=...` → PATCH `/api/admin/submissions?id=<id>` → status → `approved`.
-4. Voter scans QR 2 → `/vote` → sees approved submissions in per-session-randomized order, no counts → selects up to `voteLimit` → POST `/api/votes` → KV `vote:<event>:<voterUuid>` = ballot.
-5. Organizer watches `/admin/results?token=...`. After `votingClosesAt`, publishes final list.
+Add `@vercel/kv` to the app dependencies. No separate backend service.
 
-**Design choices (locked in during brainstorming):**
+**End-to-end flow**
+1. Organizer edits `content/events/lightning-talk.json` and deploys.
+2. Speaker scans QR 1, opens `/submit`, and POSTs `/api/submissions`. Server writes `submission:<id>` with `status: "pending"`.
+3. Organizer opens `/admin`, submits the admin token once, receives a signed session cookie, and approves or rejects submissions from `/admin/submissions`.
+4. Voter scans QR 2, opens `/vote`, sees approved talks in neutral order, selects up to `voteLimit`, and POSTs `/api/votes`. Server writes a single ballot for that voter cookie.
+5. Organizer watches `/admin/results`, exports CSV, and announces the final agenda outside the app.
+
+**Locked design choices**
 - Vercel KV is the only write store.
-- Event config committed to the repo (git-versioned). Redeploy to change.
-- Anonymous voter identity via `httpOnly`, `SameSite=Lax` UUID cookie `zts_voter`, set by Next.js middleware on first request to any `/submit`, `/vote`, or `/api/{submissions,votes}` path. This guarantees the cookie exists before any page renders or any API handler runs, avoiding a race between the cookie-seeded shuffle and a cookieless first visit.
-- Organizer-only vote-count visibility to avoid popularity bias; voter sees cards in a per-session-randomized order seeded from the cookie.
-- Admin endpoints gated by `ADMIN_TOKEN` env var compared with `crypto.timingSafeEqual`.
-- Submission anti-spam: same cookie keys a 24h rate-limit counter, cap 3 submissions per browser.
+- Event config is git-versioned. Changing submission window, voting window, vote limit, or contact rule requires redeploy.
+- Anonymous voter identity uses an `httpOnly`, `SameSite=Lax` UUID cookie named `zts_voter`. Middleware seeds it best-effort on public paths, but pages and APIs must tolerate the cookie being missing on the first render.
+- Public voters never see vote counts. Approved cards are shown in neutral order; when `zts_voter` exists, order is deterministically shuffled from that seed for that browser.
+- Admin access uses a signed `httpOnly` session cookie (`zts_admin`) issued by `/api/admin/session`. No admin secret appears in the URL.
+- Submission anti-spam is browser-scoped with a 24-hour counter.
+- Ballots are write-once per voter cookie. Retrying the same ballot is idempotent; trying to change it after submission is rejected.
+- All pages and handlers that depend on current time, cookies, or KV use dynamic rendering and `no-store` fetch semantics. This feature must not be statically optimized.
 
 ## 4. Data model
 
-### 4.1 Event config (repo file)
+### 4.1 Event config
 
 `content/events/lightning-talk.json`:
 
@@ -72,179 +81,245 @@ public/events/lightning-talk-qr-vote.png
   "votingOpensAt": "2026-04-20T00:00:00Z",
   "votingClosesAt": "2026-04-27T23:59:00Z",
   "voteLimit": 3,
-  "submissionLimitPerCookie": 3
+  "submissionRateLimitPerCookie24h": 3,
+  "contactRule": "handle-or-contact"
 }
 ```
 
-Typed by a new `src/types/event.ts`. Loaded via `getEventConfig()` in `src/lib/voting.ts`.
+Typed by `src/types/event.ts` and loaded through `getEventConfig()` in `src/lib/voting.ts`.
 
 ### 4.2 Vercel KV keys
 
 | Key | Value shape | Purpose |
 |---|---|---|
 | `submission:<uuid>` | `{ id, event, speakerName, handle?, contact?, title, intro, tag?, status, createdAt }` | One submission. `status ∈ "pending" \| "approved" \| "rejected"`. |
-| `submissions:index:<event>` | `string[]` of submission IDs | Cheap iteration; append-only. |
-| `vote:<event>:<voterUuid>` | `string[]` of submission IDs, length ≤ `voteLimit` | Full ballot per voter. Overwrite is allowed (idempotent). |
-| `voters:index:<event>` | `string[]` of voter UUIDs | For `totalVoters` in results. |
-| `submit-rate:<cookieUuid>` | `number`, TTL 86400s | Submission counter per browser, 24h window. |
+| `submissions:set:<event>` | Redis set of submission IDs | Enumerate submissions without race-prone array appends. |
+| `vote:<event>:<voterUuid>` | `{ submissionIds: string[]; submittedAt: string }` | One immutable ballot per voter cookie. |
+| `voters:set:<event>` | Redis set of voter UUIDs | Stable `totalVoters` count with `SCARD`. |
+| `submit-rate:<event>:<cookieUuid>` | `number`, TTL 86400s | Submission counter per browser in a rolling 24-hour window. |
 
-**Rationale:**
-- Per-submission keys make status updates atomic single `SET`s.
-- Index keys work around KV's lack of `SCAN`.
-- Per-voter ballot key: one write per voter, idempotent overwrite, trivial future "edit before close".
-- No aggregated counters stored — `tallyVotes()` always computes — so counts can't drift.
+**Rationale**
+- Per-submission keys keep moderation updates atomic.
+- Redis sets avoid lost updates and duplicate IDs that would happen with read-modify-write array indexes.
+- One ballot key per voter preserves write-once semantics while still allowing idempotent retries.
+- Vote counts are always derived by `tallyVotes()`, so no aggregate counters can drift.
 
 ## 5. Routes and pages
 
 ### 5.1 Public pages
 
-- **`/submit`** — Server reads event config, renders `<SubmissionForm />` client component. Fields: `speakerName` (required), `handle` (optional), `contact` (optional), `title` (≤ 80 chars, required), `intro` (≤ 500 chars, required), `tag` (optional), `consent` (required checkbox). Top copy: "Submit a 5-minute talk idea" + event name + close time. Banner "Submissions are closed" when `now` is outside the submission window. On success, page state switches to "Thanks, your submission is under review."
-- **`/vote`** — Server fetches approved submissions from KV, shuffles with a seed stored in the voter cookie (so refresh keeps the same order for that voter), renders `<VoteClient />`. Voter taps up to `voteLimit` cards to toggle selection. "Submit vote" button POSTs ballot. After success, page state switches to confirmation with share CTAs. Banner "Voting is closed" outside window. No vote counts visible anywhere.
+- **`/submit`**  
+  Server component that reads event config and renders `<SubmissionForm />`. Required fields: `speakerName`, `title`, `intro`, `consent`. `handle` and `contact` are individually optional but at least one must be present. `title` max 80 chars, `intro` max 500 chars. Top copy includes event name and submission close time. Outside the window, the page remains viewable but the form is disabled and shows "Submissions are closed."
 
-### 5.2 Admin pages (token-gated)
+- **`/vote`**  
+  Server component that reads approved submissions plus the current ballot, if one exists. If the voter has already submitted a ballot, render a read-only confirmation state instead of the selection UI. Otherwise render `<VoteClient />`, which shows approved talks with no counts and lets the voter toggle up to `voteLimit` selections. The display order is seeded from `zts_voter` when available; if the first render has no cookie yet, use a request-scoped fallback seed and accept that a first refresh may reshuffle.
 
-All admin pages are server components that read `?token=` from the URL and compare it with `ADMIN_TOKEN` via `crypto.timingSafeEqual`. If missing or wrong, the page renders a "paste your token" form that GETs back to the same path with `?token=<input>`. Token stays in the URL on every navigation (admin bookmarks include it). Server components pass `token` as a prop to any client component that needs to issue mutations; those components include it in the `x-admin-token` header on `fetch`. No `sessionStorage`, no cookie, no client-side persistence of the token.
+### 5.2 Admin pages
 
-- **`/admin`** — Landing. On valid token, renders links to `/admin/submissions?token=...` and `/admin/results?token=...`.
-- **`/admin/submissions`** — Moderation queue. Table grouped by status (pending first). Each row: title, speaker, intro preview, tag, Approve / Reject / Reset-to-pending buttons. Buttons live in a client component that receives `token` as a prop and PATCHes `/api/admin/submissions?id=<id>` with `x-admin-token`. Header shows total submissions per status plus `totalVoters` and `totalVotes` snapshot (fetched server-side).
-- **`/admin/results`** — Ranked results table: rank (ties share), title, speaker, vote count, tag, status. "Voting closes in Xh" while open; "Final results" after close. "Download CSV" button generates a CSV client-side from data already on the page.
+Admin pages are protected by a signed `zts_admin` cookie. They never accept the admin token via query string.
+
+- **`/admin`**  
+  If no valid admin session cookie exists, render a token-entry form that `POST`s to `/api/admin/session`. On success, redirect to `/admin/submissions`. If a session exists, render links to the submissions queue and results page plus a sign-out button.
+
+- **`/admin/submissions`**  
+  Protected server component. Table grouped by status with pending first. Each row shows title, speaker, reachable contact, intro preview, tag, and actions: Approve, Reject, Reset to pending. Header includes per-status counts and a read-only summary of the configured submission window, voting window, and vote limit.
+
+- **`/admin/results`**  
+  Protected server component. Ranked table with rank, title, speaker, reachable contact, vote count, tag, and status. While voting is open, show the close timestamp; after close, show "Final ranking." "Download CSV" builds a client-side export from data already on the page, including contact info even if that column is visually collapsed on mobile.
 
 ### 5.3 QR codes
 
-Not a page. Generated once via any external QR generator from the full absolute URLs:
+Generated once from the production URLs:
 
 - `https://02ship.com/submit`
 - `https://02ship.com/vote`
 
-Saved as PNGs in `public/events/` and linked from a private Notion/doc. No runtime generation.
+Saved as static PNGs in `public/events/`. No runtime generation, no in-app QR management screen.
 
 ## 6. API endpoints
 
-All under `src/app/api/`. JSON in, JSON out. Most logic lives in `src/lib/voting.ts`; routes are thin.
+All routes live under `src/app/api/`. Most business logic stays in `src/lib/voting.ts` and `src/lib/admin.ts`; route handlers remain thin.
 
 ### 6.1 `POST /api/submissions`
 
 **Request body**
 ```ts
-{ speakerName: string; handle?: string; contact?: string;
-  title: string; intro: string; tag?: string; consent: boolean }
+{
+  speakerName: string;
+  handle?: string;
+  contact?: string;
+  title: string;
+  intro: string;
+  tag?: string;
+  consent: boolean;
+}
 ```
 
-**Validations (server-side, all enforced):**
+**Validations**
 - `event.submissionOpensAt <= now < event.submissionClosesAt`
-- `title.length` in `[1, 80]`
-- `intro.length` in `[1, 500]`
+- `speakerName`, `title`, and `intro` are non-empty after trim
+- `title.length <= 80`
+- `intro.length <= 500`
+- At least one of `handle` or `contact` is non-empty after trim
 - `consent === true`
-- `submit-rate:<cookieUuid>` < `event.submissionLimitPerCookie`
+- `zts_voter` cookie exists
+- `submit-rate:<event>:<cookieUuid>` is below `event.submissionRateLimitPerCookie24h`
 
-**Side effects (ordered):**
-1. Read `zts_voter` cookie (guaranteed set by middleware).
-2. `id = crypto.randomUUID()`.
-3. `SET submission:<id>` with `status: "pending"`, `createdAt: nowIso`.
-4. Append `id` to `submissions:index:<event>`.
-5. `INCR submit-rate:<cookieUuid>` and `EXPIRE 86400` on first hit.
+**Side effects**
+1. Read `zts_voter`.
+2. Generate `id = crypto.randomUUID()`.
+3. `SET submission:<id>` with `status: "pending"` and `createdAt`.
+4. `SADD submissions:set:<event> <id>`.
+5. `INCR submit-rate:<event>:<cookieUuid>` and set TTL to 86400 seconds on the first hit.
 
 **Responses**
 - `200 { ok: true, id }`
-- `400 { ok: false, error: "validation" | "closed" | "rate-limited" }`
+- `400 { ok: false, error: "validation" | "closed" | "cookies-required" }`
+- `429 { ok: false, error: "rate-limited" }`
 
 ### 6.2 `POST /api/votes`
 
 **Request body**
 ```ts
-{ submissionIds: string[] }  // length 1..voteLimit
+{ submissionIds: string[] }
 ```
 
-**Validations:**
+**Validations**
+- `zts_voter` cookie exists
 - `event.votingOpensAt <= now < event.votingClosesAt`
-- `submissionIds.length` in `[1, voteLimit]`
-- No duplicates within the array.
-- Every id exists in KV AND `submission.status === "approved"`. Unknown or non-approved IDs: return `unknown-submission` (we do NOT silently drop in the normal vote path; see §7 for the post-hoc rejection edge case).
+- `submissionIds.length` is in `[1, voteLimit]`
+- No duplicates within `submissionIds`
+- Every ID currently exists and is `approved` during the initial validation pass
+- If `vote:<event>:<voterUuid>` already exists:
+  - same canonical submission set => treat as idempotent retry
+  - different canonical submission set => reject as `already-voted`
 
-**Side effects (ordered):**
-1. Read `zts_voter` cookie (guaranteed set by middleware).
-2. `SET vote:<event>:<voterUuid>` = `submissionIds`.
-3. Add `voterUuid` to `voters:index:<event>` if new.
+**Side effects**
+1. Re-read the selected submissions immediately before writing.
+2. Keep only IDs that are still `approved`.
+3. If zero selections remain, return `409 selection-unavailable`.
+4. `SET vote:<event>:<voterUuid>` to `{ submissionIds: approvedIds, submittedAt: nowIso }`.
+5. `SADD voters:set:<event> <voterUuid>`.
 
 **Responses**
-- `200 { ok: true, recorded: submissionIds.length }`
-- `400 { ok: false, error: "validation" | "closed" | "unknown-submission" }`
+- `200 { ok: true, recorded: number, dropped?: number, alreadyRecorded?: true }`
+- `400 { ok: false, error: "validation" | "closed" | "cookies-required" | "unknown-submission" }`
+- `409 { ok: false, error: "already-voted" | "selection-unavailable" }`
 
-### 6.3 `GET|PATCH /api/admin/submissions`
+### 6.3 `POST /api/admin/session`
 
-Auth: header `x-admin-token` compared with `ADMIN_TOKEN` env var using `crypto.timingSafeEqual`.
+**Request body**
+```ts
+{ token: string }
+```
 
-- `GET /api/admin/submissions?status=pending|approved|rejected|all` → `{ submissions: Submission[] }`
-- `PATCH /api/admin/submissions?id=<uuid>` with body `{ status: "approved" | "rejected" | "pending" }` → `{ ok: true }`
-- `401` on missing/wrong token.
+**Behavior**
+- Compare the submitted token with `ADMIN_TOKEN` using a constant-time helper.
+- On success, set signed `httpOnly`, `secure`, `SameSite=Lax` cookie `zts_admin`.
+- Default session lifetime: 8 hours.
 
-### 6.4 `GET /api/admin/results`
+**Responses**
+- `204` on success
+- `401` on invalid token
 
-Auth: same.
+### 6.4 `POST /api/admin/logout`
+
+Clears `zts_admin` and redirects or returns `204`.
+
+### 6.5 `GET | PATCH /api/admin/submissions`
+
+Auth: valid `zts_admin` cookie required.
+
+- `GET /api/admin/submissions?status=pending|approved|rejected|all`  
+  Returns `{ submissions: Submission[] }`
+- `PATCH /api/admin/submissions?id=<uuid>` with body `{ status: "approved" | "rejected" | "pending" }`  
+  Returns `{ ok: true }`
+- `401` on missing or invalid admin session
+
+### 6.6 `GET /api/admin/results`
+
+Auth: valid `zts_admin` cookie required.
 
 **Response**
 ```ts
 {
-  totalVoters: number,
-  totalVotes: number,
+  totalVoters: number;
+  totalVotes: number;
   results: Array<{
-    id: string, title: string, speakerName: string,
-    handle?: string, tag?: string, status: Status,
-    voteCount: number, rank: number
-  }>
+    id: string;
+    title: string;
+    speakerName: string;
+    handle?: string;
+    contact?: string;
+    tag?: string;
+    status: "pending" | "approved" | "rejected";
+    voteCount: number;
+    rank: number;
+  }>;
 }
 ```
 
-Sorted by `voteCount` desc; ties share rank (1, 1, 3, ...).
+Sorted by `voteCount` descending. Ties share rank: `1, 1, 3`.
+Only currently approved submissions contribute to `voteCount`; pending and rejected rows remain visible to admins for context.
 
 ## 7. Error handling and edge cases
 
-**User-facing failures** (inline banner, never throw):
-- Submission outside window → "Submissions are closed" with close time.
-- Voting outside window → "Voting is closed. Results will be announced soon."
-- Submission rate-limited → "You've reached the limit of 3 submissions from this browser."
-- Cookies disabled → form POST fails because we can't identify the voter; show "Please enable cookies to vote" with a retry button.
+**User-facing failures**
+- Submission outside window => "Submissions are closed."
+- Missing reachable contact => "Add a public handle or contact info so organizers can reach you."
+- Submission rate-limited => "You've reached the limit of 3 submissions from this browser in 24 hours."
+- Missing cookie => "Please enable cookies and reload before submitting or voting."
+- Voting not open or already closed => show the approved talk list, disable submit controls, and display the relevant timestamp.
+- `already-voted` => "This browser has already submitted a ballot."
+- `selection-unavailable` => "Your selected talks changed while you were voting. Refresh and try again."
+- Partial drop (`dropped > 0`) => "Vote recorded, but some selections were no longer available."
 
-**Post-hoc rejection edge case** (organizer rejects a talk while a voter is choosing):
-- Server-side when saving the ballot: filter `submissionIds` to only those currently `approved`, persist the filtered array.
-- If anything was filtered, respond `200 { ok: true, recorded: N, dropped: M }`; client shows "Vote recorded (N of N+M counted — some selections were no longer available)."
-- This is the ONE case where we silently drop IDs; the normal-path validation in §6.2 still rejects IDs that were never approved.
+**Admin failures**
+- Missing or invalid admin session => redirect to `/admin`.
+- KV unavailable => render "Service temporarily unavailable, please retry." No silent retry loops.
 
-**Admin failures:**
-- Wrong/missing token → 401; admin pages render the "paste token" form.
-- KV unavailable → error boundary renders "Service temporarily unavailable, please retry." No auto-retry.
+**Race conditions we accept**
+- Two submissions or votes arriving at once => different primary keys; KV sets avoid index append races.
+- Two admin tabs changing the same submission => last write wins.
+- A talk changes out of `approved` while a voter is submitting => the server filters to currently approved selections right before writing, and `tallyVotes()` also ignores any non-approved submissions.
+- The same ballot is retried after a network hiccup => idempotent success if the submission set matches.
 
-**Race conditions we accept without locking:**
-- Two voters submit simultaneously → different keys, no lock needed.
-- Two admin tabs approve the same submission → last write wins.
-- Voter voted, admin later rejects a talk on their ballot → ballot key still contains the rejected ID, but `tallyVotes()` filters by `submission.status === "approved"`, so counts stay correct without rewriting ballots.
-
-**Explicit non-guards:**
-- Abuser clearing cookies to vote twice — accepted cost of cookie-only identity.
-- Replay of a submitted ballot via curl — same voterUuid = same key = idempotent overwrite.
+**Explicit non-guards**
+- Clearing cookies to vote twice. Accepted trade-off for cookie-only identity in MVP.
+- Any runtime change to event windows or vote limit without redeploy. Not supported.
 
 ## 8. Testing
 
-Intentionally lightweight for a short-lived, single-event tool.
+Keep the test surface small, but do not skip the integration points that are easiest to break.
 
-1. **Unit tests** at `src/lib/__tests__/voting.test.ts` (Vitest, matching existing setup) for pure functions:
+1. **Unit tests** in `src/lib/__tests__/voting.test.ts` for:
    - `isWithinWindow(opens, closes, now)`
-   - `tallyVotes(ballots, submissions)` — including the "rejected submission on ballot" case
-   - Ballot-shape validator (length, duplicates, unknown IDs)
-2. **Smoke script** at `scripts/smoke-voting.mjs` against a local dev server + scratch KV namespace: submit 3 talks → approve 2 via admin API → cast 2 ballots → fetch results, assert counts and rank order.
-3. **No E2E browser tests.** Two forms and a table; manual QA on a real phone for 10 minutes before the event is cheaper and higher-signal than Playwright here.
+   - ballot validation
+   - canonical ballot comparison
+   - `tallyVotes(ballots, submissions)` including non-approved-submission filtering
+2. **Unit tests** in `src/lib/__tests__/admin.test.ts` for:
+   - token comparison helper
+   - admin session cookie signing / verification
+3. **One Playwright smoke spec** in `e2e/lightning-talk-voting.spec.ts` covering:
+   - submit a talk
+   - approve it through admin session flow
+   - cast a ballot once
+   - verify the ballot cannot be changed
+   - verify the approved talk appears in admin results
 
 ## 9. Environment variables
 
 | Var | Purpose | Where |
 |---|---|---|
-| `KV_REST_API_URL` | Vercel KV | Vercel project env (auto-set when KV linked) |
-| `KV_REST_API_TOKEN` | Vercel KV | Vercel project env (auto-set when KV linked) |
-| `ADMIN_TOKEN` | Moderator auth | Set manually in Vercel project env; share out-of-band |
+| `KV_REST_API_URL` | Vercel KV | Vercel project env |
+| `KV_REST_API_TOKEN` | Vercel KV | Vercel project env |
+| `ADMIN_TOKEN` | Admin login token and admin-session signing secret | Vercel project env |
 
-## 10. Open operational notes
+## 10. Operational notes
 
-- The organizer needs a strong random `ADMIN_TOKEN` (e.g., 32 bytes base64) set before launch.
-- KV must be provisioned and linked to the Vercel project before the first write.
-- QR codes need to be regenerated if the production domain changes.
-- After the event, `content/events/lightning-talk.json` can stay in the repo as an archived record; KV data can be purged with a one-off `scripts/purge-event.mjs` if desired.
+- Add `@vercel/kv` before implementation. The current repo does not include it yet.
+- Set a strong random `ADMIN_TOKEN` before launch.
+- Provision and link Vercel KV before the first write.
+- Because event config is repo-backed, any change to windows, vote limit, or contact rule requires redeploy.
+- Regenerate QR codes if the production domain changes.
+- After the event, keep `content/events/lightning-talk.json` as an archive and purge KV data with a one-off script if desired.
