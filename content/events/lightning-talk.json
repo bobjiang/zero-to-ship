@@ -1,0 +1,11 @@
+{
+  "slug": "lightning-talk",
+  "name": "Community Lightning Talks — April 2026",
+  "submissionOpensAt": "2026-04-15T00:00:00Z",
+  "submissionClosesAt": "2026-04-25T23:59:00Z",
+  "votingOpensAt": "2026-04-20T00:00:00Z",
+  "votingClosesAt": "2026-04-27T23:59:00Z",
+  "voteLimit": 3,
+  "submissionRateLimitPerCookie24h": 3,
+  "contactRule": "handle-or-contact"
+}
