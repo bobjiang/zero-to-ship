@@ -130,3 +130,18 @@ Post content here...
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details
+
+## Lightning Talk Voting
+
+Single-event submission + voting tool under `/submit`, `/vote`, and `/admin`.
+
+**Required env vars** (see `.env.example`):
+
+- `KV_REST_API_URL`, `KV_REST_API_TOKEN` — Vercel KV (run `vercel env pull .env.local` after linking the KV store)
+- `ADMIN_TOKEN` — used for admin login and session-cookie signing; generate 32+ random bytes
+
+**Event config:** edit `content/events/lightning-talk.json` and redeploy. Runtime edits are not supported.
+
+**QR codes:** generate PNGs from the production URLs (`/submit` and `/vote`) using any external QR generator, then drop them into `public/events/` as `lightning-talk-qr-submit.png` and `lightning-talk-qr-vote.png`. Regenerate if the production domain changes.
+
+**After the event:** keep `content/events/lightning-talk.json` as an archive; purge KV data with a one-off script if desired.
