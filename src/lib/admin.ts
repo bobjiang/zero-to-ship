@@ -9,12 +9,12 @@ function secret(): string {
 
 export function constantTimeTokenMatch(provided: string): boolean {
   const expected = secret();
-  if (!expected) return false;
   const a = Buffer.from(provided);
   const b = Buffer.from(expected);
-  if (a.length !== b.length) {
-    // keep timing stable even when lengths differ
-    crypto.timingSafeEqual(Buffer.alloc(b.length), b);
+  if (!expected || a.length !== b.length) {
+    // Always run timingSafeEqual so timing is stable across "unset", "wrong length", and "wrong value" paths
+    const dummy = Buffer.alloc(Math.max(a.length, 1));
+    crypto.timingSafeEqual(dummy, Buffer.alloc(dummy.length));
     return false;
   }
   return crypto.timingSafeEqual(a, b);
