@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-11",
+  "items": [
+    {
+      "title": "Stalking Victim Sues OpenAI, Claims ChatGPT Fueled Abuser's Delusions",
+      "summary": "A stalking victim is suing OpenAI, alleging that ChatGPT provided information that exacerbated her abuser's delusions and that the company failed to act on her warnings.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic Launches 'Cowork' Desktop Agent for Claude, No Coding Required",
+      "summary": "Anthropic has introduced Cowork, a new Claude Desktop agent designed to work directly with user files without requiring any coding expertise, enhancing accessibility for everyday tasks.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Railway Secures $100 Million to Build AI-Native Cloud Infrastructure, Challenging AWS",
+      "summary": "Railway has raised $100 million to develop an AI-native cloud infrastructure, positioning itself as a direct competitor to established giants like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research Releases NousCoder-14B, an Open-Source Coding Model",
+      "summary": "Nous Research has launched NousCoder-14B, an open-source coding model, entering the rapidly evolving landscape of AI-powered code generation tools.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Anthropic Temporarily Banned OpenClaw's Creator from Accessing Claude",
+      "summary": "Anthropic temporarily suspended the creator of OpenClaw from using Claude, raising questions about API usage policies and the interaction between AI developers and platform providers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Rethinking Generalization in Reasoning SFT: A Conditional Analysis on Optimization, Data, and Model Capability",
+      "summary": "New research explores how optimization, data, and model capabilities conditionally influence generalization in reasoning-focused Supervised Fine-Tuning (SFT) for language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.06628",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver",
+      "summary": "SkillClaw introduces an 'Agentic Evolver' framework that allows AI agents' skills to evolve collectively, potentially leading to more robust and adaptable AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08377",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents",
+      "summary": "Researchers present HY-Embodied-0.5, a new embodied foundation model designed to enable real-world AI agents to perform complex tasks in physical environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07430",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Google Introduces New Ways to Balance Cost and Reliability in Gemini API",
+      "summary": "Google has announced new features for the Gemini API, offering developers more flexibility to balance inference cost and reliability for their AI applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-flex-and-priority-inference/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models",
+      "summary": "This paper investigates methods to improve text-to-video diffusion models by better aligning textual numerals with their corresponding visual instances in generated content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08546",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ClawBench: Can AI Agents Complete Everyday Online Tasks?",
+      "summary": "ClawBench introduces a new benchmark to evaluate the capability of AI agents in completing a wide range of everyday online tasks, assessing their practical utility.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08523",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping",
+      "summary": "MegaStyle proposes a method for creating diverse and scalable style datasets by consistently mapping textual descriptions to image styles in text-to-image generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08364",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Google AI to Create New Satellite Imagery Map for Protecting Brazil's Forests",
+      "summary": "Google AI is developing a new satellite imagery map specifically designed to aid in the protection and monitoring of Brazil's vital forest ecosystems.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/earth/satellite-imagery-brazilian-deforestation/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "A Simple React Hook for Running Local LLMs via WebGPU",
+      "summary": "A new React hook has been developed to simplify the process of running local Large Language Models directly in the browser using WebGPU, enhancing client-side AI capabilities.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rahul_80cfa43302b/a-simple-react-hook-for-running-local-llms-via-webgpu-5234",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "\"I Pointed Claude Code at My Local Ollama Models — Here's the 3-Minute Setup\"",
+      "summary": "A developer shares a quick guide on how to integrate Claude Code with local Ollama models, demonstrating an easy setup for leveraging powerful AI locally.",
+      "source": "Dev.to",
+      "url": "https://dev.to/yiyaoai/i-pointed-claude-code-at-my-local-ollama-models-heres-the-3-minute-setup-4hha",
+      "score": 5,
+      "category": "open-source"
+    }
+  ]
+}

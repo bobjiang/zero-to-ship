@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { Container } from '@/components/ui/Container';
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/content';
+import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -115,6 +116,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <time dateTime={post.date}>{post.date}</time>
                 <span>•</span>
                 <span>{post.author}</span>
+              </div>
+              <div className="mt-3">
+                <BookmarkButton contentType="blog" contentSlug={slug} />
               </div>
             </header>
 

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
+import { UserNav } from '@/components/auth/UserNav';
 
 const navLinks = [
   { label: 'Courses', href: '/courses' },
@@ -107,16 +108,21 @@ export function Header() {
             </nav>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 text-gray-700 hover:text-gray-900"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Open menu"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:block">
+              <UserNav />
+            </div>
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden p-2 text-gray-700 hover:text-gray-900"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
         </div>
       </Container>
 
@@ -149,7 +155,10 @@ export function Header() {
                 </svg>
               </button>
             </div>
-            <nav className="mt-8 space-y-1" aria-label="Mobile navigation">
+            <div className="mt-6">
+              <UserNav />
+            </div>
+            <nav className="mt-4 space-y-1" aria-label="Mobile navigation">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}

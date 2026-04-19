@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-09",
+  "items": [
+    {
+      "title": "Video-MME-v2: A New Benchmark for Comprehensive Video Understanding",
+      "summary": "Researchers introduce Video-MME-v2, a significant benchmark designed to push the boundaries of comprehensive video understanding models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.05015",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Claw-Eval: Towards Trustworthy Evaluation of Autonomous Agents",
+      "summary": "A new framework, Claw-Eval, is proposed to provide a more trustworthy and robust evaluation methodology for autonomous AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.06132",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AWS Boss Explains Why Investing Billions in Both Anthropic and OpenAI is an OK Conflict",
+      "summary": "The head of AWS clarifies the strategic rationale behind Amazon's substantial investments in both Anthropic and OpenAI, addressing potential conflicts of interest.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "MegaTrain: Full Precision Training of 100B+ Parameter Large Language Models on a Single GPU",
+      "summary": "MegaTrain presents a breakthrough in training massive language models with over 100 billion parameters in full precision on just a single GPU.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.05091",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "General Multimodal Protein Design Enables DNA-Encoding of Chemistry",
+      "summary": "A new multimodal AI system demonstrates the ability to design proteins and translate chemical information into DNA sequences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.05181",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Learning to Retrieve from Agent Trajectories",
+      "summary": "A new research paper explores methods for AI agents to learn and retrieve information effectively from their past trajectories, improving decision-making.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04949",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AIMock: One Mock Server For Your Entire AI Stack",
+      "summary": "AIMock is introduced as a versatile mock server designed to streamline development and testing across an entire AI application stack.",
+      "source": "Dev.to",
+      "url": "https://dev.to/copilotkit/aimock-one-mock-server-for-your-entire-ai-stack-1jhp",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "AI Agent Poke Makes Setting Up Automations as Easy as Sending a Text",
+      "summary": "Poke is a new AI agent that simplifies the creation of automations, allowing users to set up complex tasks with simple text commands.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Tubi is the First Streamer to Launch a Native App Within ChatGPT",
+      "summary": "Tubi becomes the first streaming service to integrate directly into ChatGPT with a native application, allowing users to access content recommendations and playback within the AI interface.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/08/tubi-is-the-first-streamer-to-launch-a-native-app-within-chatgpt/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Paper Circle: An Open-source Multi-agent Research Discovery and Analysis Framework",
+      "summary": "Paper Circle is introduced as an open-source framework that leverages multiple AI agents to assist in the discovery and analysis of research papers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.06170",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "ACES: Leave-One-Out AUC Consistency for Code Generation Evaluation",
+      "summary": "A new evaluation metric, ACES, is presented to assess the consistency and reliability of code generation models by testing their tests.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.03922",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "GBQA: A Game Benchmark for Evaluating LLMs as Quality Assurance Engineers",
+      "summary": "A new benchmark called GBQA uses games to evaluate the capabilities of Large Language Models in performing quality assurance engineering tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.02648",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ThinkTwice: Jointly Optimizing Large Language Models for Reasoning and Self-Refinement",
+      "summary": "Researchers propose ThinkTwice, a method for optimizing LLMs to improve both their reasoning abilities and their capacity for self-correction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.01591",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision",
+      "summary": "Vanast introduces a novel approach to virtual try-on technology, using synthetic triplet supervision for realistic human image animation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04934",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning",
+      "summary": "This paper investigates and reveals patterns of inefficiency in how AI models utilize external tools for reasoning, moving beyond simple accuracy metrics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.05404",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}

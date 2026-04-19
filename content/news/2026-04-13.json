@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-13",
+  "items": [
+    {
+      "title": "Trump Officials May Encourage Banks to Test Anthropic’s Mythos AI Model",
+      "summary": "Reports indicate that Trump administration officials are potentially encouraging major banks to pilot Anthropic's advanced Mythos AI model, signaling a push for AI adoption in the financial sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/12/trump-officials-may-be-encouraging-banks-to-test-anthropics-mythos-model/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OmniJigsaw: Enhancing Omni-Modal Reasoning via Modality-Orchestrated Reordering",
+      "summary": "Researchers introduce OmniJigsaw, a novel framework that improves omni-modal reasoning by reordering and orchestrating different modalities, achieving state-of-the-art performance on complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08209",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Apple Reportedly Testing Four Designs for Upcoming Smart Glasses",
+      "summary": "Apple is reportedly experimenting with four distinct designs for its anticipated smart glasses, indicating significant progress in its augmented reality hardware development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/12/apple-reportedly-testing-four-designs-for-upcoming-smart-glasses/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Banks Adopt First MCP Server, Nymbus Details Its AI-Powered Capabilities",
+      "summary": "Nymbus has deployed the first Multi-Cloud Processing (MCP) server for banks, offering enhanced AI-driven financial services and operational efficiencies.",
+      "source": "Dev.to",
+      "url": "https://dev.to/om_shree_0709/banks-got-their-first-mcp-server-heres-what-nymbus-actually-built-40l3",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Salesmotion's MCP Server Transforms AI Assistants into Live Pipeline Analysts",
+      "summary": "Salesmotion's new Multi-Cloud Processing (MCP) server empowers AI assistants to function as real-time pipeline analysts, providing immediate insights for sales teams.",
+      "source": "Dev.to",
+      "url": "https://dev.to/om_shree_0709/salesmotions-mcp-server-turns-your-ai-assistant-into-a-live-pipeline-analyst-1f5h",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs secured $69 million in funding following a viral billboard hiring campaign, aiming to expand its AI-powered platform for conducting customer interviews at scale.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Translate Now Offers Live Personal Translation via Headphones on iOS",
+      "summary": "Google has updated its Translate app for iOS, allowing users to experience live personal translation directly through their headphones, enhancing real-time communication.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/translate/live-translate-with-headphones/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On",
+      "summary": "A new large-scale dataset, FIT, has been released to advance research in fit-aware virtual try-on, enabling more realistic and accurate clothing simulations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08526",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Graph of Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills",
+      "summary": "Researchers propose 'Graph of Skills,' a method for dependency-aware structural retrieval that enhances the management and utilization of massive AI agent skill sets.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.05333",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Structured Distillation of Web Agent Capabilities Enables Generalization",
+      "summary": "A new paper explores how structured distillation of web agent capabilities can significantly improve their generalization across diverse tasks and environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07776",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Responds to Axios Developer Tool Compromise",
+      "summary": "OpenAI has issued a statement addressing the recent compromise of an Axios developer tool, outlining its response and security measures.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/axios-developer-tool-compromise",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Building an AI Chatbot That Learns From Human Edits (Not Just Feedback)",
+      "summary": "A new approach focuses on developing AI chatbots that learn more effectively by incorporating direct human edits rather than solely relying on feedback mechanisms.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sang0424/building-an-ai-chatbot-that-learns-from-human-edits-not-just-feedback-4n76",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ViVa: A Video-Generative Value Model for Robot Reinforcement Learning",
+      "summary": "ViVa introduces a video-generative value model designed to enhance robot reinforcement learning by predicting future states through video generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08168",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SIM1: Physics-Aligned Simulator as Zero-Shot Data Scaler in Deformable Worlds",
+      "summary": "SIM1 presents a physics-aligned simulator capable of acting as a zero-shot data scaler for deformable worlds, improving data efficiency in complex simulations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08544",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Automating Database-Native Function Code Synthesis with LLMs",
+      "summary": "Research explores the automation of database-native function code synthesis using Large Language Models, streamlining database development and optimization.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.06231",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}

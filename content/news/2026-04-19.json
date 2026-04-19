@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-19",
+  "items": [
+    {
+      "title": "Anthropic Launches Claude Desktop Agent 'Cowork' for File Interaction Without Coding",
+      "summary": "Anthropic has released Cowork, a new Claude Desktop agent designed to interact with user files and perform tasks without requiring any coding knowledge, making advanced AI more accessible.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Tesla Expands Robotaxi Service to Dallas and Houston",
+      "summary": "Tesla has launched its autonomous robotaxi service in Dallas and Houston, marking a significant expansion of its self-driving technology into major urban centers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic Claude Code Leak Reveals Critical Command Injection Vulnerabilities",
+      "summary": "A reported code leak from Anthropic's Claude AI has exposed critical command injection vulnerabilities, raising serious security concerns for the advanced language model.",
+      "source": "Lobste.rs",
+      "url": "https://beyondmachines.net/event_details/anthropic-claude-code-leak-reveals-critical-command-injection-vulnerabilities-e-6-c-1-k/gD2P6Ple2L",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "AI Chip Startup Cerebras Files for Initial Public Offering (IPO)",
+      "summary": "Cerebras, a prominent AI chip startup known for its wafer-scale engines, has filed for an IPO, signaling a major move in the competitive AI hardware market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/18/ai-chip-startup-cerebras-files-for-ipo/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Railway Secures $100 Million to Compete with AWS in AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop AI-native cloud infrastructure, positioning itself as a direct challenger to established cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research Releases NousCoder-14B, an Open-Source Coding Model",
+      "summary": "Nous Research has launched NousCoder-14B, a new open-source coding model, offering a powerful alternative in the rapidly evolving landscape of AI-powered code generation.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "DR^{3}-Eval: Towards Realistic and Reproducible Deep Research Evaluation",
+      "summary": "This paper introduces DR^{3}-Eval, a new framework aimed at improving the realism and reproducibility of deep learning research evaluations, addressing a critical challenge in the field.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14683",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Exploration and Exploitation Errors Are Measurable for Language Model Agents",
+      "summary": "New research demonstrates that exploration and exploitation errors in language model agents can be quantitatively measured, providing a pathway for more robust and reliable AI agent development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.13151",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Sema Code: Decoupling AI Coding Agents into Programmable, Embeddable Infrastructure",
+      "summary": "Sema Code proposes a novel architecture for AI coding agents that decouples their components into programmable and embeddable infrastructure, enhancing flexibility and integration.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11045",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attacks",
+      "summary": "ASGuard introduces an activation-scaling guard mechanism designed to effectively mitigate targeted jailbreaking attacks against AI models, enhancing their security and robustness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2509.25843",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic's Relationship with Trump Administration Appears to Be Thawing",
+      "summary": "Reports indicate a potential warming of relations between AI leader Anthropic and the Trump administration, suggesting evolving dynamics in AI policy and industry engagement.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/18/anthropics-relationship-with-the-trump-administration-seems-to-be-thawing/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Google Introduces New Ways to Balance Cost and Reliability in the Gemini API",
+      "summary": "Google has rolled out new features for the Gemini API, offering developers more flexibility to balance cost efficiency with reliability for their AI applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-flex-and-priority-inference/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Accelerates Cyber Defense Ecosystem to Enhance Global Protection",
+      "summary": "OpenAI is actively working to accelerate the cyber defense ecosystem, focusing on initiatives that bolster collective security against evolving digital threats.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/accelerating-cyber-defense-ecosystem",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "From P(y|x) to P(y): Investigating Reinforcement Learning in Pre-train Space",
+      "summary": "This research explores a new paradigm for reinforcement learning by investigating the transition from conditional probability P(y|x) to unconditional probability P(y) within pre-trained model spaces.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14142",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How to Fine-Tune a Reasoning Model? A Teacher-Student Cooperation Framework to Synthesize Student-Consistent SFT Data",
+      "summary": "A new teacher-student cooperation framework is proposed for fine-tuning reasoning models, enabling the synthesis of student-consistent SFT data to improve model performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14164",
+      "score": 7,
+      "category": "research"
+    }
+  ]
+}

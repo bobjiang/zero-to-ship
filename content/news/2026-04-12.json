@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-12",
+  "items": [
+    {
+      "title": "Sam Altman responds to ‘incendiary’ New Yorker article after attack on his home",
+      "summary": "OpenAI CEO Sam Altman addressed a controversial New Yorker article and a recent attack on his home, highlighting the intense scrutiny and personal risks associated with leading the frontier of AI development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce has launched an enhanced Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly evolving market for AI-powered workplace productivity tools.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Google Vids: Create, edit and share videos at no cost with new AI features",
+      "summary": "Google introduces new AI-powered features for Google Vids, allowing users to create, edit, and share videos at no cost, further integrating generative AI into its Workspace suite.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks",
+      "summary": "Researchers introduce OpenVLThinkerV2, a new generalist multimodal reasoning model designed to excel across a wide array of visual tasks by integrating diverse reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08539",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LPM 1.0: Video-based Character Performance Model",
+      "summary": "LPM 1.0 presents a novel video-based character performance model, enabling realistic and dynamic animation of digital characters directly from video input.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07823",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DMax: Aggressive Parallel Decoding for dLLMs",
+      "summary": "A new paper introduces DMax, an aggressive parallel decoding method aimed at significantly improving the inference speed and efficiency of distributed Large Language Models (dLLMs).",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08302",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "KnowU-Bench: Towards Interactive, Proactive, and Personalized Mobile Agent Evaluation",
+      "summary": "KnowU-Bench proposes a new benchmark for evaluating mobile AI agents, focusing on interactive, proactive, and personalized behaviors in real-world scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08455",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Externalization in LLM Agents: A Unified Review of Memory, Skills, Protocols and Harness Engineering",
+      "summary": "This paper offers a comprehensive review of externalization techniques in LLM agents, covering memory, skills, protocols, and harness engineering to enhance their capabilities and robustness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08224",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models",
+      "summary": "Researchers explore methods to cultivate meta-cognitive tool use in agentic multimodal models, enabling them to 'act wisely' by strategically selecting and applying tools for complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08545",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MolmoWeb: Open Visual Web Agent and Open Data for the Open Web",
+      "summary": "MolmoWeb introduces an open visual web agent and corresponding open datasets, aiming to democratize research and development for AI agents interacting with the web.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08516",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "OpenSpatial: A Principled Data Engine for Empowering Spatial Intelligence",
+      "summary": "OpenSpatial presents a principled data engine designed to empower spatial intelligence in AI systems by providing structured and efficient access to spatial data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07296",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "I got mass-flagged by GPTZero for my own writing. So I built an open-source alternative in pure Python.",
+      "summary": "A developer created an open-source AI content detection tool in Python after experiencing false positives from GPTZero on their own original writing, highlighting the challenges of AI authorship verification.",
+      "source": "Dev.to",
+      "url": "https://dev.to/wd400/i-got-mass-flagged-by-gptzero-for-my-own-writing-so-i-built-an-open-source-alternative-in-pure-5aj2",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Agent Reading Test: A New Benchmark for AI Agent Comprehension",
+      "summary": "The Agent Reading Test introduces a novel benchmark designed to rigorously evaluate the reading comprehension and understanding capabilities of AI agents.",
+      "source": "Lobste.rs",
+      "url": "https://agentreadingtest.com",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Small Vision-Language Models are Smart Compressors for Long Video Understanding",
+      "summary": "This research demonstrates that small vision-language models can act as efficient compressors, significantly improving the processing and understanding of long video sequences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08120",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Flux Attention: Context-Aware Hybrid Attention for Efficient LLMs Inference",
+      "summary": "Flux Attention proposes a new context-aware hybrid attention mechanism to achieve more efficient inference for Large Language Models, optimizing performance without sacrificing accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07394",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}

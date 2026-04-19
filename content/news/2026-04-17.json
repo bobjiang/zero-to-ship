@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-17",
+  "items": [
+    {
+      "title": "Seedance 2.0: Advancing Video Generation for World Complexity",
+      "summary": "Researchers introduce Seedance 2.0, a significant advancement in video generation capabilities, enabling the creation of more complex and realistic virtual worlds.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14148",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Factory hits $1.5B valuation to build AI coding for enterprises",
+      "summary": "Factory, an AI coding platform, has achieved a $1.5 billion valuation, signaling strong investor confidence in AI-powered development tools for large organizations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/16/factory-hits-1-5b-valuation-to-build-ai-coding-for-enterprises/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "A new way to explore the web with AI Mode in Chrome",
+      "summary": "Google introduces an 'AI Mode' in Chrome, offering users novel ways to interact with and explore web content through artificial intelligence.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-chrome/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Luma launches AI-powered production studio with faith-focused Wonder Project",
+      "summary": "Luma has unveiled a new AI-powered production studio, launching with the 'Wonder Project' specifically tailored for faith-based content creation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/16/luma-launches-ai-powered-production-studio-with-faith-focused-wonder-project/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Upscale AI in talks to raise at $2B valuation, says report",
+      "summary": "Upscale AI is reportedly in discussions to secure new funding that would value the company at $2 billion, highlighting rapid growth in the AI sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/16/upscale-ai-in-talks-to-raise-at-2b-valuation-says-report/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Codex for (almost) everything",
+      "summary": "OpenAI announces an expansion of its Codex model's capabilities, aiming to apply its code generation and understanding across a broader range of tasks and domains.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/codex-for-almost-everything",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Introducing GPT-Rosalind for life sciences research",
+      "summary": "OpenAI unveils GPT-Rosalind, a specialized AI model designed to accelerate and enhance research within the life sciences sector.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-rosalind",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "GameWorld: Towards Standardized and Verifiable Evaluation of Multimodal Game Agents",
+      "summary": "Researchers propose GameWorld, a new framework for standardized and verifiable evaluation of multimodal AI agents operating within game environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.07429",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time",
+      "summary": "A new research paper introduces RationalRewards, a method that uses reasoning-based rewards to improve the scalability of visual generation models during both training and testing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11626",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "summary": "A VentureBeat article highlights a free alternative called Goose that offers similar AI coding capabilities to the paid Claude Code, potentially disrupting the market for developer tools.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Exploration and Exploitation Errors Are Measurable for Language Model Agents",
+      "summary": "New research demonstrates that exploration and exploitation errors, critical aspects of decision-making, can be quantitatively measured in language model agents.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.13151",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SciFi: A Safe, Lightweight, User-Friendly, and Fully Autonomous Agentic AI Workflow for Scientific Applications",
+      "summary": "SciFi introduces a new autonomous, agentic AI workflow designed to be safe, lightweight, and user-friendly for various scientific applications.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.13180",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Numerical Instability and Chaos: Quantifying the Unpredictability of Large Language Models",
+      "summary": "This paper explores the inherent numerical instability and chaotic behavior in large language models, providing a framework to quantify their unpredictability.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.13206",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The creator of Claude Code just revealed his workflow, and developers are losing their minds",
+      "summary": "The workflow of Claude Code's creator has been revealed, generating significant excitement and discussion among developers keen to optimize their AI-assisted coding practices.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Join the OpenClaw Challenge: $1,200 Prize Pool!",
+      "summary": "Developers are invited to participate in the OpenClaw Challenge, an initiative with a $1,200 prize pool aimed at fostering innovation in AI agent development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/devteam/join-the-openclaw-challenge-1200-prize-pool-5682",
+      "score": 6,
+      "category": "open-source"
+    }
+  ]
+}

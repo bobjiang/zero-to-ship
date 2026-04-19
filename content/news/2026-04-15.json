@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-15",
+  "items": [
+    {
+      "title": "Max Hodak’s Science Corp. preparing to place first sensor in human brain",
+      "summary": "Science Corp., led by Neuralink co-founder Max Hodak, is reportedly preparing for its initial human brain sensor implantation, marking a significant step in brain-computer interface technology.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Google adds AI Skills to Chrome for workflow automation",
+      "summary": "Google is integrating new AI Skills into its Chrome browser, allowing users to save and automate their favorite AI-powered workflows directly within the browser.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/14/google-adds-ai-skills-to-chrome-to-help-you-save-favorite-workflows/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic co-founder confirms briefing Trump administration on Mythos",
+      "summary": "Anthropic's co-founder has confirmed that the company briefed the Trump administration on its advanced AI model, Mythos, highlighting growing engagement between AI developers and government.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/14/anthropic-co-founder-confirms-the-company-briefed-the-trump-administration-on-mythos/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI scales trusted access for cyber defense",
+      "summary": "OpenAI is focusing on enhancing trusted access solutions to bolster cyber defense capabilities, indicating a strategic move into national security applications for AI.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/scaling-trusted-access-for-cyber-defense",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Turn your best AI prompts into one-click tools in Chrome",
+      "summary": "Google's new Chrome feature allows users to transform their most effective AI prompts into convenient one-click tools, streamlining AI interaction for everyday tasks.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "QuanBench+: A Unified Multi-Framework Benchmark for LLM-Based Quantum Code Generation",
+      "summary": "QuanBench+ introduces a new unified benchmark designed to evaluate Large Language Models' performance in generating quantum code across various frameworks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.08570",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Past Is Not Past: Memory-Enhanced Dynamic Reward Shaping",
+      "summary": "Researchers propose a novel method called Memory-Enhanced Dynamic Reward Shaping to improve reinforcement learning by leveraging past experiences for more effective reward signals.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11297",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OmniShow: Unifying Multimodal Conditions for Human-Object Interaction Video Generation",
+      "summary": "OmniShow presents a new approach to generate videos of human-object interactions by unifying various multimodal conditions, advancing the field of realistic video synthesis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11804",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Attention Sink in Transformers: A Survey on Utilization, Interpretation, and Mitigation",
+      "summary": "A comprehensive survey explores the phenomenon of 'attention sink' in Transformer models, analyzing its utilization, interpretation, and potential mitigation strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.10098",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "TESSERA — A pixel-wise earth observation foundation model",
+      "summary": "TESSERA introduces a new pixel-wise foundation model for earth observation, promising enhanced capabilities for analyzing satellite imagery and geospatial data.",
+      "source": "Lobste.rs",
+      "url": "https://geotessera.org",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Amazon Bedrock for Beginners From First Prompt to AI Agent (Full Tutorial)",
+      "summary": "A detailed tutorial guides beginners through the process of using Amazon Bedrock, from initial prompts to deploying fully functional AI agents.",
+      "source": "Dev.to",
+      "url": "https://dev.to/morganwilliscloud/amazon-bedrock-for-beginners-from-first-prompt-to-ai-agent-full-tutorial-12ln",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Your Job Isn't Going Away. But Someone's Fundraise Depends on You Thinking It Is.",
+      "summary": "An opinion piece argues against the narrative of widespread job displacement by AI, suggesting it's often driven by companies seeking investment.",
+      "source": "Dev.to",
+      "url": "https://dev.to/jon_at_backboardio/your-job-isnt-going-away-but-someones-fundraise-depends-on-you-thinking-it-is-12el",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Building a Privacy-First Voice-Controlled AI Agent with Local LLMs 🎙️->🤖",
+      "summary": "This guide demonstrates how to create a voice-controlled AI agent that prioritizes privacy by utilizing local Large Language Models.",
+      "source": "Dev.to",
+      "url": "https://dev.to/deep_bartaria/building-a-privacy-first-voice-controlled-ai-agent-with-local-llms--15j0",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Agentic Aggregation for Parallel Scaling of Long-Horizon Agentic Tasks",
+      "summary": "This paper proposes a method for 'Agentic Aggregation' to enable parallel scaling of complex, long-horizon tasks performed by AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11753",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Solving Physics Olympiad via Reinforcement Learning on Physics Simulators",
+      "summary": "Researchers explore using reinforcement learning on physics simulators to solve complex problems typically found in Physics Olympiads, showcasing AI's problem-solving capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11805",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
