@@ -2,26 +2,18 @@ import { test, expect, request } from '@playwright/test';
 
 const ADMIN_TOKEN = process.env.E2E_ADMIN_TOKEN ?? '';
 
-// Skip unless the voting feature's env is actually configured. Running this
-// spec requires Vercel KV to be reachable (so submissions and ballots persist)
-// and the admin token to match the one used by the app.
-const CAN_RUN = Boolean(
-  ADMIN_TOKEN && process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
-);
-
 test('speaker submits, admin approves, voter votes once, already-voted on retry', async ({
   page,
   baseURL,
 }) => {
-  test.skip(
-    !CAN_RUN,
-    'Set ADMIN_TOKEN (and E2E_ADMIN_TOKEN), KV_REST_API_URL, KV_REST_API_TOKEN to run this spec.'
-  );
+  // Unique per run so repeated CI runs against the same KV do not collide.
+  const uniqueTitle = `E2E Lightning Talk ${Date.now()}`;
+
   // Speaker: open /submit and submit a talk
   await page.goto('/submit');
   await page.fill('input[name="speakerName"]', 'E2E Speaker');
   await page.fill('input[name="handle"]', '@e2e');
-  await page.fill('input[name="title"]', 'E2E Lightning Talk');
+  await page.fill('input[name="title"]', uniqueTitle);
   await page.fill('textarea[name="intro"]', 'A short test intro for the end-to-end smoke.');
   await page.check('input[name="consent"]');
   await Promise.all([
@@ -39,7 +31,7 @@ test('speaker submits, admin approves, voter votes once, already-voted on retry'
   expect(list.ok()).toBe(true);
   const pendingBody = await list.json();
   const target = pendingBody.submissions.find((s: { title: string; id: string }) =>
-    s.title === 'E2E Lightning Talk'
+    s.title === uniqueTitle
   );
   expect(target).toBeTruthy();
   const patch = await ctx.patch(`/api/admin/submissions?id=${target.id}`, {
@@ -49,7 +41,7 @@ test('speaker submits, admin approves, voter votes once, already-voted on retry'
 
   // Voter: open /vote and cast a ballot for the approved talk
   await page.goto('/vote');
-  await page.getByRole('button', { name: /E2E Lightning Talk/ }).click();
+  await page.getByRole('button', { name: new RegExp(uniqueTitle) }).click();
   await Promise.all([
     page.waitForResponse((r) => r.url().includes('/api/votes') && r.request().method() === 'POST'),
     page.getByRole('button', { name: /Submit vote/ }).click(),
