@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-20",
+  "items": [
+    {
+      "title": "OpenAI’s existential questions",
+      "summary": "TechCrunch explores the internal and external challenges facing OpenAI as it navigates its mission and commercial pressures.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/19/openais-existential-questions/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce launches an enhanced Slackbot AI agent, intensifying its competition with Microsoft and Google in the enterprise AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Create, edit and share videos at no cost in Google Vids",
+      "summary": "Google announces new features for Google Vids, allowing users to create, edit, and share videos using AI-powered tools for free.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/google-vids-updates-lyria-veo/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "We’re creating a new satellite imagery map to help protect Brazil’s forests.",
+      "summary": "Google is developing an AI-powered satellite imagery map to monitor and protect Brazil's forests from deforestation.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/earth/satellite-imagery-brazilian-deforestation/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "SemaClaw: A Step Towards General-Purpose Personal AI Agents through Harness Engineering",
+      "summary": "A new research paper proposes SemaClaw, a system designed to advance general-purpose personal AI agents by focusing on robust harness engineering.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11548",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "HiVLA: A Visual-Grounded-Centric Hierarchical Embodied Manipulation System",
+      "summary": "Researchers introduce HiVLA, a hierarchical system for embodied AI that leverages visual grounding to perform complex manipulation tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14125",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Dive into Claude Code: The Design Space of Today's and Future AI Agent Systems",
+      "summary": "A new paper explores the design principles and future directions for AI agent systems, focusing on the capabilities exemplified by Claude Code.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14228",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The 12-month window",
+      "summary": "TechCrunch discusses the critical short-term period for AI companies to establish market dominance and innovation before competition intensifies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/19/the-12-month-window/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Palantir posts mini-manifesto denouncing inclusivity and ‘regressive’ cultures",
+      "summary": "Palantir releases a controversial statement criticizing certain cultural trends, sparking debate about corporate values in the tech industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Target Policy Optimization",
+      "summary": "A new research paper introduces Target Policy Optimization, a novel method for reinforcement learning aiming for more stable and efficient training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.06159",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EM Operating System: Your Brain Is a Terrible Database",
+      "summary": "This article discusses the concept of an 'EM Operating System' as a framework for externalizing and managing information, suggesting AI could augment human memory and cognitive functions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/alexr/em-operating-system-your-brain-is-a-terrible-database-1bce",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "LangFlow: Continuous Diffusion Rivals Discrete in Language Modeling",
+      "summary": "A new paper introduces LangFlow, demonstrating that continuous diffusion models can rival discrete models in language modeling tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.11748",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ROSE: An Intent-Centered Evaluation Metric for NL2SQL",
+      "summary": "Researchers propose ROSE, a new intent-centered evaluation metric designed to better assess the performance of Natural Language to SQL (NL2SQL) systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.12988",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Bringing people together at AI for the Economy Forum",
+      "summary": "Google highlights its participation in the AI for the Economy Forum, emphasizing collaboration and the economic impact of AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/ai-economy-forum/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Healthcare",
+      "summary": "OpenAI shares insights and initiatives regarding the application of AI in the healthcare sector, outlining potential benefits and challenges.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/academy/healthcare",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
