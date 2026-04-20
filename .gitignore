@@ -42,3 +42,6 @@ next-env.d.ts
 content/courses/claude-basics/video-gen/*
 content/courses/*/video-gen/output/
 .gstack/
+
+# worktrees
+.worktrees/
