@@ -63,6 +63,9 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
       case 'unknown-submission':
         setMessage('One of your selections is no longer available. Refresh and try again.');
         break;
+      case 'server':
+        setMessage('Server error — storage is unreachable. Please contact the organizer.');
+        break;
       default:
         setMessage('Could not record your vote. Try again.');
     }
