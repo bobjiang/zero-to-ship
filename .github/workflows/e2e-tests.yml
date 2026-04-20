@@ -25,6 +25,20 @@ jobs:
 
       - name: Run e2e tests
         run: npm run test:e2e
+        env:
+          # Supabase vars must be non-empty so `next build` does not crash at prerender.
+          # If NEXT_PUBLIC_SUPABASE_URL is configured as a repo secret, it wins;
+          # otherwise fall back to a harmless stub that lets the build finish.
+          # Specs that actually exercise /login, /signup, or /dashboard need the real
+          # values to pass.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://stub.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'stub-anon-key-for-ci-build' }}
+          # Voting feature env. Empty when secrets are not set; the voting spec
+          # uses test.skip() to gracefully skip itself in that case.
+          KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
+          KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+          E2E_ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

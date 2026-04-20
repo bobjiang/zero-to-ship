@@ -1,11 +1,22 @@
 import { test, expect, request } from '@playwright/test';
 
-const ADMIN_TOKEN = process.env.E2E_ADMIN_TOKEN ?? 'change-me-matching-ADMIN_TOKEN';
+const ADMIN_TOKEN = process.env.E2E_ADMIN_TOKEN ?? '';
+
+// Skip unless the voting feature's env is actually configured. Running this
+// spec requires Vercel KV to be reachable (so submissions and ballots persist)
+// and the admin token to match the one used by the app.
+const CAN_RUN = Boolean(
+  ADMIN_TOKEN && process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
+);
 
 test('speaker submits, admin approves, voter votes once, already-voted on retry', async ({
   page,
   baseURL,
 }) => {
+  test.skip(
+    !CAN_RUN,
+    'Set ADMIN_TOKEN (and E2E_ADMIN_TOKEN), KV_REST_API_URL, KV_REST_API_TOKEN to run this spec.'
+  );
   // Speaker: open /submit and submit a talk
   await page.goto('/submit');
   await page.fill('input[name="speakerName"]', 'E2E Speaker');
