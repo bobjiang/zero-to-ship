@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/Button';
 
 interface Card {
@@ -11,6 +12,7 @@ interface Card {
 }
 
 export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: number }) {
+  const router = useRouter();
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState<string>('');
@@ -36,14 +38,7 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
     const data = await res.json().catch(() => ({}));
     if (res.ok && data.ok) {
       setStatus('success');
-      const dropped = Number(data.dropped ?? 0);
-      setMessage(
-        dropped > 0
-          ? 'Vote recorded, but some selections were no longer available.'
-          : data.alreadyRecorded
-            ? 'You already submitted this ballot. Nothing changed.'
-            : 'Thanks — your vote has been recorded.'
-      );
+      router.refresh();
       return;
     }
     setStatus('error');
@@ -69,14 +64,6 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
       default:
         setMessage('Could not record your vote. Try again.');
     }
-  }
-
-  if (status === 'success') {
-    return (
-      <div className="rounded-lg border border-green-200 bg-green-50 p-6 shadow-sm">
-        <p className="text-lg font-semibold text-green-900">{message}</p>
-      </div>
-    );
   }
 
   return (
@@ -131,9 +118,11 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
           type="button"
           size="lg"
           onClick={submit}
-          disabled={selected.size === 0 || status === 'submitting'}
+          disabled={selected.size === 0 || status === 'submitting' || status === 'success'}
         >
-          {status === 'submitting' ? 'Submitting…' : `Submit vote${selected.size > 0 ? ` (${selected.size})` : ''}`}
+          {status === 'submitting' || status === 'success'
+            ? 'Submitting…'
+            : `Submit vote${selected.size > 0 ? ` (${selected.size})` : ''}`}
         </Button>
       </div>
     </div>
