@@ -22,29 +22,39 @@ function requireSession(): boolean {
 }
 
 export async function GET(req: Request) {
-  if (!requireSession()) return unauthorized();
-  const url = new URL(req.url);
-  const filter = (url.searchParams.get('status') ?? 'all') as SubmissionStatus | 'all';
-  const event = await getEventConfig();
-  const all = await listSubmissions(event.slug);
-  const submissions = filter === 'all' ? all : all.filter((s) => s.status === filter);
-  return NextResponse.json({ submissions });
+  try {
+    if (!requireSession()) return unauthorized();
+    const url = new URL(req.url);
+    const filter = (url.searchParams.get('status') ?? 'all') as SubmissionStatus | 'all';
+    const event = await getEventConfig();
+    const all = await listSubmissions(event.slug);
+    const submissions = filter === 'all' ? all : all.filter((s) => s.status === filter);
+    return NextResponse.json({ submissions });
+  } catch (err) {
+    console.error('[api/admin/submissions GET] server error', err);
+    return NextResponse.json({ ok: false, error: 'server' }, { status: 500 });
+  }
 }
 
 const patchSchema = z.object({ status: z.enum(['pending', 'approved', 'rejected']) });
 
 export async function PATCH(req: Request) {
-  if (!requireSession()) return unauthorized();
-  const url = new URL(req.url);
-  const id = url.searchParams.get('id');
-  if (!id) return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
-  const existing = await getSubmission(id);
-  if (!existing) return NextResponse.json({ ok: false, error: 'not-found' }, { status: 404 });
-  const json = await req.json().catch(() => null);
-  const parsed = patchSchema.safeParse(json);
-  if (!parsed.success) {
-    return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
+  try {
+    if (!requireSession()) return unauthorized();
+    const url = new URL(req.url);
+    const id = url.searchParams.get('id');
+    if (!id) return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
+    const existing = await getSubmission(id);
+    if (!existing) return NextResponse.json({ ok: false, error: 'not-found' }, { status: 404 });
+    const json = await req.json().catch(() => null);
+    const parsed = patchSchema.safeParse(json);
+    if (!parsed.success) {
+      return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
+    }
+    await setSubmissionStatus(id, parsed.data.status);
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error('[api/admin/submissions PATCH] server error', err);
+    return NextResponse.json({ ok: false, error: 'server' }, { status: 500 });
   }
-  await setSubmissionStatus(id, parsed.data.status);
-  return NextResponse.json({ ok: true });
 }

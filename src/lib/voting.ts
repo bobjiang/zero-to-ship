@@ -102,7 +102,7 @@ export function shuffleWithSeed<T>(items: T[], seed: string): T[] {
   return arr;
 }
 
-import { kv } from '@vercel/kv';
+import { kv } from '@/lib/kv';
 import type { Submission, SubmissionStatus, Ballot } from '@/types/voting';
 
 const submissionKey = (id: string) => `submission:${id}`;

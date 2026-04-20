@@ -22,37 +22,42 @@ const bodySchema = z.object({
 });
 
 export async function POST(req: Request) {
-  const voter = cookies().get(VOTER_COOKIE)?.value;
-  if (!voter) {
-    return NextResponse.json({ ok: false, error: 'cookies-required' }, { status: 400 });
+  try {
+    const voter = cookies().get(VOTER_COOKIE)?.value;
+    if (!voter) {
+      return NextResponse.json({ ok: false, error: 'cookies-required' }, { status: 400 });
+    }
+
+    const event = await getEventConfig();
+    if (!isWithinWindow(event.submissionOpensAt, event.submissionClosesAt, new Date())) {
+      return NextResponse.json({ ok: false, error: 'closed' }, { status: 400 });
+    }
+
+    const json = await req.json().catch(() => null);
+    const parsed = bodySchema.safeParse(json);
+    if (!parsed.success) {
+      return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
+    }
+    const { handle, contact } = parsed.data;
+
+    const afterIncr = await incrSubmitRate(event.slug, voter);
+    if (afterIncr > event.submissionRateLimitPerCookie24h) {
+      return NextResponse.json({ ok: false, error: 'rate-limited' }, { status: 429 });
+    }
+
+    const submission = await createSubmission({
+      event: event.slug,
+      speakerName: parsed.data.speakerName,
+      handle,
+      contact,
+      title: parsed.data.title,
+      intro: parsed.data.intro,
+      tag: parsed.data.tag,
+    });
+
+    return NextResponse.json({ ok: true, id: submission.id });
+  } catch (err) {
+    console.error('[api/submissions] server error', err);
+    return NextResponse.json({ ok: false, error: 'server' }, { status: 500 });
   }
-
-  const event = await getEventConfig();
-  if (!isWithinWindow(event.submissionOpensAt, event.submissionClosesAt, new Date())) {
-    return NextResponse.json({ ok: false, error: 'closed' }, { status: 400 });
-  }
-
-  const json = await req.json().catch(() => null);
-  const parsed = bodySchema.safeParse(json);
-  if (!parsed.success) {
-    return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
-  }
-  const { handle, contact } = parsed.data;
-
-  const afterIncr = await incrSubmitRate(event.slug, voter);
-  if (afterIncr > event.submissionRateLimitPerCookie24h) {
-    return NextResponse.json({ ok: false, error: 'rate-limited' }, { status: 429 });
-  }
-
-  const submission = await createSubmission({
-    event: event.slug,
-    speakerName: parsed.data.speakerName,
-    handle,
-    contact,
-    title: parsed.data.title,
-    intro: parsed.data.intro,
-    tag: parsed.data.tag,
-  });
-
-  return NextResponse.json({ ok: true, id: submission.id });
 }

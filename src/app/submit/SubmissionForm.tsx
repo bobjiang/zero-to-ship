@@ -53,8 +53,13 @@ export function SubmissionForm({ disabled }: Props) {
         setErrorMsg('Please enable cookies and reload before submitting.');
         break;
       case 'validation':
-      default:
         setErrorMsg('Please fill in name, title, intro, and tick the consent box.');
+        break;
+      case 'server':
+        setErrorMsg('Server error — storage is unreachable. Please contact the organizer.');
+        break;
+      default:
+        setErrorMsg('Something went wrong. Please try again in a moment.');
     }
   }
 
