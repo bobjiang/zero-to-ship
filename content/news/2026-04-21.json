@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-21",
+  "items": [
+    {
+      "title": "Anthropic Secures $5B from Amazon, Commits $100B in Cloud Spending",
+      "summary": "Anthropic has received a $5 billion investment from Amazon, solidifying a strategic partnership that includes a commitment to spend $100 billion on Amazon's cloud services.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Google Expands Gemini AI Integration to Chrome in Seven New Countries",
+      "summary": "Google is rolling out its Gemini AI capabilities within the Chrome browser to seven additional countries, broadening access to its generative AI features.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/20/google-rolls-out-gemini-in-chrome-in-seven-new-countries/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Qwen3.5-Omni Technical Report Released, Showcasing New Multimodal LLM",
+      "summary": "A new technical report details Qwen3.5-Omni, a significant advancement in multimodal large language models, indicating progress in general-purpose AI capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.15804",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI-Powered Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs has successfully raised $69 million in funding, aiming to expand its AI-driven platform for customer interviews following a high-profile viral hiring campaign.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Partners with Hyatt to Advance AI Adoption Among Employees",
+      "summary": "OpenAI is collaborating with Hyatt to integrate and advance AI tools, specifically ChatGPT Enterprise, within the hospitality company's internal operations and employee workflows.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Elucidating the SNR-t Bias of Diffusion Probabilistic Models",
+      "summary": "New research explores and clarifies the Signal-to-Noise Ratio (SNR-t) bias inherent in Diffusion Probabilistic Models, offering insights for improving their stability and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.16044",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PersonaVLM: Introducing Long-Term Personalized Multimodal LLMs",
+      "summary": "Researchers present PersonaVLM, a novel approach to developing multimodal large language models capable of long-term personalization, enhancing user-specific interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.13074",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DeepER-Med: Advancing Evidence-Based Research in Medicine with Agentic AI",
+      "summary": "DeepER-Med introduces an agentic AI framework designed to significantly advance deep evidence-based research in the medical field, promising more efficient and robust analysis.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.15456",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Web Retrieval-Aware Chunking (W-RAC) for Efficient RAG Systems",
+      "summary": "A new method, Web Retrieval-Aware Chunking (W-RAC), is proposed to create more efficient and cost-effective Retrieval-Augmented Generation (RAG) systems by optimizing data chunking for web retrieval.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.04936",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Stop Giving AI Agents AWS Credentials: A Better Way to Secure Access",
+      "summary": "A new article advises against directly providing AI agents with AWS credentials, proposing more secure alternative methods for managing their access to cloud resources.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws-builders/stop-giving-ai-agents-aws-credentials-a-better-way-to-secure-access-5gih",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Zero Waste, Zero Stress: Building ReMake with AI-Assisted GitHub Copilot Development",
+      "summary": "A developer shares insights on building the 'ReMake' project with enhanced efficiency and reduced stress, leveraging AI-assisted development through GitHub Copilot.",
+      "source": "Dev.to",
+      "url": "https://dev.to/shreya111111/zero-waste-zero-stress-building-remake-with-ai-assisted-github-copilot-development-53fo",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Motif-Video 2B: Technical Report on Advanced Video Generation Model",
+      "summary": "The technical report for Motif-Video 2B has been released, detailing a new large-scale model designed for advanced video generation capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.16503",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Bureaucratic Silences: What the Canadian AI Register Reveals, Omits, and Obscures",
+      "summary": "An analysis of the Canadian AI Register highlights its limitations, revealing what the official record discloses, fails to mention, and intentionally obscures regarding AI systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.15514",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "QuantCode-Bench: A Benchmark for Evaluating LLMs in Algorithmic Trading",
+      "summary": "QuantCode-Bench is introduced as a new benchmark specifically designed to assess the proficiency of Large Language Models in generating executable algorithmic trading strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.15151",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "LARQL: Query Neural Network Weights Like a Graph Database",
+      "summary": "LARQL is an innovative tool that allows users to query neural network weights as if they were a graph database, potentially simplifying analysis and manipulation of model architectures.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/chrishayuk/larql",
+      "score": 5,
+      "category": "open-source"
+    }
+  ]
+}
