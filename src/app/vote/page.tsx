@@ -9,6 +9,7 @@ import {
   tallyVotes,
 } from '@/lib/voting';
 import { Container } from '@/components/ui/Container';
+import { AutoRefresh } from './AutoRefresh';
 import { VoteClient } from './VoteClient';
 import { VotedView } from './VotedView';
 
@@ -32,6 +33,7 @@ export default async function VotePage() {
     <section className="py-16 sm:py-20">
       <Container>
         <div className="mx-auto max-w-3xl">
+          {!closed && <AutoRefresh intervalMs={10000} />}
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
             {existing ? 'Your vote is in' : closed ? 'Voting is closed' : 'Vote for talks you want to hear'}
           </h1>
