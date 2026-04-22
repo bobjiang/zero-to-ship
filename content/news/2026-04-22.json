@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-22",
+  "items": [
+    {
+      "title": "Unauthorized Group Gains Access to Anthropic's Exclusive Cyber Tool Mythos",
+      "summary": "An unauthorized group has reportedly accessed Anthropic's proprietary cyber tool, Mythos, raising serious questions about AI security and intellectual property protection.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/21/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos-report-claims/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "SpaceX Explores $60 Billion Acquisition of AI Coding Startup Cursor",
+      "summary": "SpaceX is collaborating with AI coding startup Cursor and holds an option to acquire it for a staggering $60 billion, signaling a major investment in AI development for space applications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Meta to Record Employee Keystrokes for AI Model Training",
+      "summary": "Meta is reportedly implementing keystroke logging on employees to gather data for training its AI models, raising significant privacy concerns.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/21/meta-will-record-employees-keystrokes-and-use-it-to-train-its-ai-models/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Expands Codex AI Model to Enterprises Worldwide",
+      "summary": "OpenAI is expanding its Codex AI model to enterprise clients globally, aiming to integrate advanced code generation capabilities into business operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/scaling-codex-to-enterprises-worldwide",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Cloudflare Agent Cloud Powers Enterprise Agentic Workflows with OpenAI",
+      "summary": "Cloudflare's Agent Cloud is now enabling enterprises to utilize OpenAI's models for agentic workflows, enhancing automated processes and intelligent applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/cloudflare-openai-agent-cloud",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation",
+      "summary": "New research introduces a method to extend one-step image generation from simple class labels to complex text prompts by using discriminative text representations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.18168",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation",
+      "summary": "Researchers propose OneVL, a novel model capable of one-step latent reasoning and planning, providing vision-language explanations for its actions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.18486",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Agent-World: Scaling Real-World Environment Synthesis for Evolving General Agent Intelligence",
+      "summary": "A new framework, Agent-World, aims to scale the synthesis of real-world environments to foster the evolution of more general agent intelligence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.18292",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenGame: Open Agentic Coding for Games",
+      "summary": "OpenGame introduces an open agentic coding framework specifically designed for game development, enabling more autonomous and intelligent game creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.18394",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "MultiWorld: Scalable Multi-Agent Multi-View Video World Models",
+      "summary": "New research presents MultiWorld, a scalable framework for creating multi-agent, multi-view video world models to enhance AI understanding of complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.18564",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AI Avatar v6 Chrome and VS Code Extensions Bring Superheroes to Your Workflow",
+      "summary": "A new AI Avatar v6 release offers Chrome and VS Code extensions that integrate superhero-themed AI avatars to personalize and cheer up user workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/webdeveloperhyper/let-superheroes-cheer-you-up-ai-avatar-v6-chrome-extension-vs-code-extension-2ak7",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Building a $5k MRR AI App Still Required a Developer",
+      "summary": "A developer shares insights on building an AI-powered app that achieved $5,000 in monthly recurring revenue, emphasizing that human development skills remain crucial despite AI assistance.",
+      "source": "Dev.to",
+      "url": "https://dev.to/chocoscoding/built-a-5k-usd-mrr-app-with-ai-but-still-needed-a-developer-2k8p",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "AI Self-Reviews Its Own Code, Gives Itself a Perfect Score",
+      "summary": "An experiment revealed an AI reviewing its own generated code and assigning itself a perfect 10/10 score, highlighting potential biases or limitations in AI self-assessment.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/i-asked-ai-to-review-its-own-code-it-gave-itself-1010-5b7n",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "EasyVideoR1: Easier RL for Video Understanding",
+      "summary": "EasyVideoR1 introduces a new approach to simplify reinforcement learning for video understanding tasks, making it more accessible and efficient.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.16893",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "From 10 Failed Stacks to Production: Building a Job Board with Wasp for the Agentic Era",
+      "summary": "A data scientist recounts the journey of building a job board using Wasp, a full-stack framework, after numerous failed attempts, showcasing its utility for agentic applications.",
+      "source": "Dev.to",
+      "url": "https://dev.to/wasp/from-10-failed-stacks-to-production-how-a-data-scientist-built-a-job-board-with-wasp-a-full-stack-5fmp",
+      "score": 4,
+      "category": "product"
+    }
+  ]
+}
