@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-23",
+  "items": [
+    {
+      "title": "Google Updates Workspace to Make AI Your New Office Intern",
+      "summary": "Google is integrating advanced AI features into Workspace, positioning AI as a new 'office intern' to automate tasks and enhance productivity for users.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/22/google-updates-workspace-to-make-ai-your-new-office-intern/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic's Most Dangerous Model Just Got Accessed by People Who Weren't Supposed to Have It",
+      "summary": "Reports indicate that Anthropic's highly sensitive AI model has been accessed by unauthorized individuals, raising significant concerns about AI security and control.",
+      "source": "Dev.to",
+      "url": "https://dev.to/om_shree_0709/anthropics-most-dangerous-model-just-got-accessed-by-people-who-werent-supposed-to-have-it-14dn",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google Launches Two Specialized TPUs for the Agentic Era",
+      "summary": "Google announces the release of two new specialized TPUs, the 8T and 8I, designed to accelerate the development and deployment of advanced AI agents in the cloud.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/tpus-8t-8i-cloud-next/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Tstars-Tryon 1.0: Robust and Realistic Virtual Try-On for Diverse Fashion Items",
+      "summary": "Researchers introduce Tstars-Tryon 1.0, a new model offering robust and realistic virtual try-on capabilities for a wide range of fashion items, pushing the boundaries of AI in e-commerce.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19748",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Making ChatGPT Better for Clinicians",
+      "summary": "OpenAI is focusing on tailoring ChatGPT's capabilities to better serve clinicians, aiming to improve its utility and accuracy in medical and healthcare contexts.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/making-chatgpt-better-for-clinicians",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "CoInteract: Physically-Consistent Human-Object Interaction Video Synthesis via Spatially-Structured Co-Generation",
+      "summary": "A new research paper introduces CoInteract, a method for synthesizing physically-consistent videos of human-object interactions using spatially-structured co-generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19636",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AgentSPEX: An Agent SPecification and EXecution Language",
+      "summary": "Researchers propose AgentSPEX, a novel language designed for specifying and executing AI agents, aiming to streamline the development and deployment of autonomous systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.13346",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hands-on with X’s New AI-Powered Custom Feeds",
+      "summary": "X (formerly Twitter) is rolling out new AI-powered custom feeds, allowing users to personalize their content consumption experience with advanced recommendation algorithms.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/22/hands-on-with-xs-new-ai-powered-custom-feeds/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Turn Your Best AI Prompts into One-Click Tools in Chrome",
+      "summary": "Google Chrome is introducing a new feature that allows users to convert their most effective AI prompts into one-click tools, enhancing accessibility and efficiency for AI interactions.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Speeding Up Agentic Workflows with WebSockets in the Responses API",
+      "summary": "OpenAI is enhancing its Responses API with WebSockets to significantly speed up agentic workflows, enabling more responsive and efficient AI agent interactions.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/speeding-up-agentic-workflows-with-websockets",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "AI Made Devs Feel 20% Faster But Measured 19% Slower: Nobody's Ready for That Conversation",
+      "summary": "A new discussion highlights a perplexing trend where AI tools make developers feel more productive, yet objective metrics show a decrease in actual speed, sparking debate on AI's true impact on developer efficiency.",
+      "source": "Dev.to",
+      "url": "https://dev.to/adioof/ai-made-devs-feel-20-faster-but-measured-19-slower-nobodys-ready-for-that-conversation-1ki8",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "If AI Existed in 2011, Would We Still Have the Modern Web?",
+      "summary": "This thought-provoking article explores how the web's evolution might have differed if advanced AI technologies were prevalent in 2011, questioning the trajectory of modern web development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sylwia-lask/if-ai-existed-in-2011-would-we-still-have-the-modern-web-408g",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "AnyRecon: Arbitrary-View 3D Reconstruction with Video Diffusion Model",
+      "summary": "AnyRecon presents a novel approach to arbitrary-view 3D reconstruction by leveraging video diffusion models, offering new possibilities for generating 3D content from diverse video inputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19747",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Built My Own Event Bus for a Sustainability App — Here's What I Learned About Agent Automation Using OpenClaw",
+      "summary": "A developer shares insights from building an event bus for a sustainability application, detailing lessons learned about implementing agent automation with the OpenClaw framework.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ujja/i-built-my-own-event-bus-for-a-sustainability-app-heres-what-i-learned-about-agent-automation-2cfl",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "TEMPO: Scaling Test-time Training for Large Reasoning Models",
+      "summary": "TEMPO introduces a new method for scaling test-time training, specifically designed to improve the performance and adaptability of large reasoning models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19295",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
