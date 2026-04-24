@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to build a feature for community engagement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --bg-dark: #0f0f14;
+    --bg-slide: #16161d;
+    --accent-coral: #ff6b6b;
+    --accent-teal: #4ecdc4;
+    --accent-gold: #ffd93d;
+    --accent-blue: #6c9eff;
+    --text-primary: #f8f8f2;
+    --text-secondary: #a9a9b3;
+    --success: #50fa7b;
+    --error: #ff5555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.presentation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+    border-radius: 16px;
+}
+.presentation-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.presentation-header p { opacity: 0.9; font-size: 1.1rem; }
+
+.slides-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide {
+    background: var(--bg-slide);
+    border-radius: 16px;
+    padding: 3rem;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.slide::before {
+    content: attr(data-slide-number);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.slide-section {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.speaker-notes {
+    background: rgba(255, 215, 61, 0.08);
+    border: 1px solid rgba(255, 215, 61, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.speaker-notes h4 {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+}
+.speaker-notes p, .speaker-notes ul {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.speaker-notes ul { margin-left: 1.25rem; }
+.speaker-notes li { margin-bottom: 0.4rem; }
+.speaker-notes .timing {
+    display: inline-block;
+    background: rgba(255, 215, 61, 0.2);
+    color: var(--accent-gold);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.slide-title {
+    background: linear-gradient(135deg, #0a1628 0%, #0f0f14 50%, #0a1628 100%);
+    text-align: center;
+}
+.slide-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.slide-title .subtitle { font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 2rem; }
+.slide-title .badge {
+    display: inline-block;
+    background: var(--accent-teal);
+    color: var(--bg-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.slide-centered { text-align: center; }
+.slide-centered h2 { font-size: 2.4rem; margin-bottom: 1rem; }
+.slide-centered .tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 750px;
+    margin: 0 auto 2rem;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.two-col h2 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+.two-col .lead { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; }
+
+.three-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 1.75rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent-teal); }
+.card .icon { font-size: 2.4rem; margin-bottom: 0.75rem; }
+.card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+.card.highlight-coral { border-color: rgba(255,107,107,0.4); background: rgba(255,107,107,0.08); }
+.card.highlight-teal  { border-color: rgba(78,205,196,0.4);  background: rgba(78,205,196,0.08); }
+.card.highlight-gold  { border-color: rgba(255,217,61,0.4);  background: rgba(255,217,61,0.08); }
+
+.feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.feature-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; }
+.feature-list li .check { color: var(--accent-teal); font-weight: 700; }
+
+.visual-panel {
+    background: #1a1a24;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.visual-panel h4 {
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.code-block {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: #0d0d12;
+    padding: 1.25rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+.code-block .comment { color: #6272a4; }
+.code-block .keyword { color: #ff79c6; }
+.code-block .string  { color: #f1fa8c; }
+.code-block .tag     { color: #ff79c6; }
+.code-block .attr    { color: #50fa7b; }
+.code-block .prompt  { color: var(--accent-teal); }
+.code-block .output  { color: var(--text-secondary); }
+.code-block .err     { color: var(--error); }
+
+.chat-container { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+.chat-message { display: flex; gap: 0.75rem; align-items: flex-start; }
+.chat-message.user { flex-direction: row-reverse; }
+.chat-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600; font-size: 0.8rem; flex-shrink: 0;
+}
+.chat-message.user .chat-avatar { background: var(--accent-coral); }
+.chat-message.assistant .chat-avatar { background: var(--accent-teal); }
+.chat-bubble {
+    background: rgba(255,255,255,0.08);
+    padding: 0.85rem 1.1rem;
+    border-radius: 14px;
+    max-width: 75%;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+.chat-message.user .chat-bubble { background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); }
+.chat-message.assistant .chat-bubble { background: rgba(78,205,196,0.15); border: 1px solid rgba(78,205,196,0.3); }
+
+.slide-agenda { text-align: left; padding: 3rem 4rem; }
+.slide-agenda h2 { font-size: 2.2rem; margin-bottom: 2rem; }
+.agenda-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 850px; }
+.agenda-item {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 0.7rem 1.25rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.agenda-item .num {
+    width: 32px; height: 32px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0; font-size: 0.9rem;
+}
+.agenda-item .label { font-size: 1rem; font-weight: 500; }
+.agenda-item .time { margin-left: auto; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; }
+
+.recap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 900px; margin: 0 auto; }
+.recap-item {
+    background: rgba(255,255,255,0.05); padding: 1.25rem 1.5rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: left; display: flex; gap: 1rem; align-items: flex-start;
+}
+.recap-item .number {
+    width: 32px; height: 32px; background: var(--accent-teal); color: var(--bg-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; flex-shrink: 0;
+}
+
+.slide-closing {
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
+}
+.slide-closing h2 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.slide-closing p { font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.9; }
+.slide-closing .links { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem; flex-wrap: wrap; }
+.slide-closing .link-item { background: rgba(255,255,255,0.2); padding: 1.25rem 2rem; border-radius: 12px; min-width: 200px; }
+.slide-closing .link-item .icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+.slide-closing .link-item p { font-size: 0.95rem; margin: 0; }
+
+.highlight-text {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.mindset-comparison { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center; max-width: 900px; margin: 0 auto; }
+.mindset-box { padding: 2rem; border-radius: 16px; text-align: center; }
+.mindset-box.wrong { background: rgba(255,85,85,0.1); border: 2px solid rgba(255,85,85,0.3); }
+.mindset-box.right { background: rgba(80,250,123,0.1); border: 2px solid rgba(80,250,123,0.3); }
+.mindset-box h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.mindset-box p { color: var(--text-secondary); }
+.mindset-vs { font-size: 1.5rem; font-weight: 700; color: var(--text-secondary); }
+
+.flow-diagram { display: flex; justify-content: center; align-items: center; gap: 0.75rem; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
+.flow-step {
+    background: rgba(255,255,255,0.08); padding: 1rem 1.25rem;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+    text-align: center; min-width: 130px;
+}
+.flow-step .icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.flow-step p { font-size: 0.85rem; font-weight: 500; }
+.flow-arrow { font-size: 1.25rem; color: var(--accent-teal); }
+
+.pr-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 820px; margin: 0 auto; }
+.pr-item {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.9rem 1.25rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.pr-item .pr-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--accent-teal);
+    min-width: 60px;
+}
+.pr-item .pr-label { flex: 1; font-size: 0.95rem; }
+.pr-item.merged .pr-num { color: var(--success); }
+.pr-item.problem .pr-num { color: var(--accent-coral); }
+
+@media print {
+    body { background: white; color: #1a1a1a; }
+    .slide { page-break-after: always; box-shadow: none; border: 1px solid #ddd; }
+    .speaker-notes { page-break-inside: avoid; }
+}
+    </style>
+</head>
+<body>
+    <header class="presentation-header">
+        <h1>How to build a feature for community engagement</h1>
+        <p>A real journey &bull; Idea &rarr; PRD &rarr; Plan &rarr; Code &rarr; Deploy</p>
+    </header>
+    <div class="slides-container">
+
+        <section class="slide slide-title" data-slide-number="1">
+            <h1>How to build a feature for community engagement</h1>
+            <p class="subtitle">The messy, honest walkthrough of shipping Lightning Talk Voting</p>
+            <span class="badge">02Ship Community Share &bull; 2026-04</span>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">00:00 &ndash; 00:30 (0.5 min)</span>
+            <ul>
+                <li>Intro: "I'll walk you through exactly how I built the /submit + /vote feature — warts and all."</li>
+                <li>Set expectation: this is not a clean happy-path story. Every tool picked matters because of a problem I hit.</li>
+                <li>Goal: you leave knowing which AI tool to reach for at each step.</li>
+            </ul>
+        </div>
+
+        <section class="slide slide-agenda" data-slide-number="2">
+            <span class="slide-section">Overview</span>
+            <h2>The journey</h2>
+            <div class="agenda-list">
+                <div class="agenda-item"><div class="num">1</div><span class="label">Idea &rarr; Hermes brainstorm</span><span class="time">2 min</span></div>
+                <div class="agenda-item"><div class="num">2</div><span class="label">First PRD &rarr; Claude Code + gstack (failed)</span><span class="time">3 min</span></div>
+                <div class="agenda-item"><div class="num">3</div><span class="label">Refine with superpowers + codex review</span><span class="time">4 min</span></div>
+                <div class="agenda-item"><div class="num">4</div><span class="label">Write plan &rarr; execute &rarr; code review &rarr; E2E</span><span class="time">4 min</span></div>
+                <div class="agenda-item"><div class="num">5</div><span class="label">Deploy pain: localhost vs production</span><span class="time">4 min</span></div>
+                <div class="agenda-item"><div class="num">6</div><span class="label">Lessons &amp; Q&amp;A</span><span class="time">3 min</span></div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">00:30 &ndash; 01:30 (1 min)</span>
+            <ul>
+                <li>Walk the audience through the arc: the interesting story isn't code, it's the tool choices at each inflection point.</li>
+                <li>Flag that the biggest surprise is section 5 &mdash; the tests passed but prod still broke.</li>
+            </ul>
+        </div>
+
+        <section class="slide slide-centered" data-slide-number="3">
+            <span class="slide-section">Start</span>
+            <h2>Have an <span class="highlight-text">idea</span></h2>
+            <p class="tagline">"Let the community submit lightning talks and vote for the ones they want to hear &mdash; anonymously, from a single link on meetup night."</p>
+            <div style="max-width: 680px; margin: 0 auto;">
+                <ul class="feature-list" style="display: inline-flex;">
+                    <li><span class="check">&#x2713;</span> Submit a talk in 30 seconds</li>
+                    <li><span class="check">&#x2713;</span> Vote for up to 3 talks</li>
+                    <li><span class="check">&#x2713;</span> One ballot per browser, no login</li>
+                    <li><span class="check">&#x2713;</span> Admin approves before it's listed</li>
+                </ul>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">01:30 &ndash; 02:30 (1 min)</span>
+            <ul>
+                <li>The prompt: "How do we pick talks for our community meetup without another Google Form?"</li>
+                <li>The constraints: anonymous, fast, no login. That shapes every later decision.</li>
+            </ul>
+        </div>
+
+        <section class="slide" data-slide-number="4">
+            <span class="slide-section">Step 1 &bull; Brainstorm</span>
+            <div class="two-col">
+                <div>
+                    <h2>Talk with <span class="highlight-text">Hermes</span></h2>
+                    <p class="lead">Hermes is the founding-mode agent &mdash; it challenges my premise before I write a line of code.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Forcing questions, not friendly agreement</li>
+                        <li><span class="check">&#x2713;</span> "What's the smallest version that ships?"</li>
+                        <li><span class="check">&#x2713;</span> Narrows the wedge to one week of work</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Real exchange</h4>
+                    <div class="chat-container">
+                        <div class="chat-message user"><div class="chat-avatar">Me</div><div class="chat-bubble">I want a voting site with ranked choice, profiles, Slack integration...</div></div>
+                        <div class="chat-message assistant"><div class="chat-avatar">H</div><div class="chat-bubble">Who votes the night of the meetup? Pick the narrowest wedge that makes that work.</div></div>
+                        <div class="chat-message user"><div class="chat-avatar">Me</div><div class="chat-bubble">Anonymous visitors on a phone, ~40 people, 5 min window.</div></div>
+                        <div class="chat-message assistant"><div class="chat-avatar">H</div><div class="chat-bubble">Then drop ranked-choice, drop Slack, drop profiles. One cookie, three votes, done.</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">02:30 &ndash; 04:00 (1.5 min)</span>
+            <ul>
+                <li>Hermes is from the gstack office-hours skill. Its job is to kill scope, not help me write.</li>
+                <li>Key move: "narrowest wedge." It cut my feature list by 60% in 10 minutes.</li>
+                <li>Lesson: start with the scope-killer, not the coder.</li>
+            </ul>
+        </div>
+
+        <section class="slide slide-centered" data-slide-number="5">
+            <span class="slide-section">Step 2 &bull; First draft</span>
+            <h2>First version <span class="highlight-text">PRD</span></h2>
+            <p class="tagline">Hermes output a PRD with the narrowed scope. It was workable &mdash; but vague on implementation and edge cases.</p>
+            <div class="three-grid">
+                <div class="card highlight-teal">
+                    <div class="icon">&#x1F3AF;</div>
+                    <h3>Scope</h3>
+                    <p>Clear &mdash; one event, three votes, no auth</p>
+                </div>
+                <div class="card highlight-gold">
+                    <div class="icon">&#x2753;</div>
+                    <h3>Data model</h3>
+                    <p>Hand-wavy &mdash; "some storage"</p>
+                </div>
+                <div class="card highlight-coral">
+                    <div class="icon">&#x26A0;&#xFE0F;</div>
+                    <h3>Edge cases</h3>
+                    <p>Missing &mdash; idempotency? rate limits?</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">04:00 &ndash; 05:00 (1 min)</span>
+            <ul>
+                <li>Good PRDs name the corner cases. Mine didn't &mdash; and that showed up later as real bugs.</li>
+                <li>I thought: "let me just throw it at Claude Code + gstack and iterate." Spoiler: bad idea.</li>
+            </ul>
+        </div>
+
+        <section class="slide" data-slide-number="6">
+            <span class="slide-section">Step 3 &bull; Wrong turn</span>
+            <div class="mindset-comparison">
+                <div class="mindset-box wrong">
+                    <h3>Claude Code + gstack alone</h3>
+                    <p>Asked to "refine the PRD."</p>
+                    <p style="margin-top: 0.75rem;"><strong style="color: var(--error);">Output:</strong> 40 pages, 6 services, websockets, Redis streams, 3 new tables.</p>
+                    <p style="margin-top: 0.75rem;">Too complex to build or review.</p>
+                </div>
+                <div class="mindset-vs">VS</div>
+                <div class="mindset-box right">
+                    <h3>The right tool</h3>
+                    <p>Switched to superpowers brainstorming &mdash; scoped reasoning that asks intent first, implementation last.</p>
+                    <p style="margin-top: 0.75rem;"><strong style="color: var(--success);">Output:</strong> 6-page PRD, 1 KV store, honest edge-case list.</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">05:00 &ndash; 06:30 (1.5 min)</span>
+            <ul>
+                <li>Be honest: Claude Code + gstack are coding tools. If you ask them to architect, they will happily over-architect.</li>
+                <li>The failure mode wasn't "wrong code." It was "PRD I can't fit in my head."</li>
+                <li>Pivot moment: switched to the superpowers skill chain for PRD work.</li>
+            </ul>
+        </div>
+
+        <section class="slide slide-centered" data-slide-number="7">
+            <span class="slide-section">Step 4 &bull; Refine</span>
+            <h2>Refine PRD with <span class="highlight-text">superpowers</span></h2>
+            <p class="tagline">Brainstorming &rarr; spec &rarr; plan. Each step has a dedicated skill; each stage locks intent before touching the next.</p>
+            <div class="flow-diagram">
+                <div class="flow-step"><div class="icon">&#x1F4AD;</div><p>brainstorming</p></div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step"><div class="icon">&#x1F4DD;</div><p>writing-spec</p></div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step"><div class="icon">&#x1F5FA;&#xFE0F;</div><p>writing-plans</p></div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step"><div class="icon">&#x2705;</div><p>reviewed spec</p></div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">06:30 &ndash; 08:30 (2 min)</span>
+            <ul>
+                <li>superpowers forces a process: you can't skip brainstorming to jump into plan.</li>
+                <li>brainstorming gave me 5 tradeoffs I hadn't considered (e.g., what if the same person submits twice).</li>
+                <li>writing-spec produced the data model with explicit keys &mdash; saved me a week later.</li>
+            </ul>
+        </div>
+
+        <section class="slide" data-slide-number="8">
+            <span class="slide-section">Step 5 &bull; Second opinion</span>
+            <div class="two-col">
+                <div>
+                    <h2>PRD review with <span class="highlight-text">codex</span></h2>
+                    <p class="lead">Independent adversarial review &mdash; a different model, different training, zero context on my chat history. Finds things Claude won't.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> "You mention 'approved' but no auth for approvers."</li>
+                        <li><span class="check">&#x2713;</span> "Rate limit is per-cookie &mdash; trivial to bypass."</li>
+                        <li><span class="check">&#x2713;</span> "What happens when a talk is rejected after a vote?"</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>Value of adversarial review</h4>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem;">
+                        Claude is optimized to help you finish. Codex, invoked in "challenge" mode, is optimized to poke holes.
+                    </p>
+                    <p style="color: var(--text-primary); line-height: 1.7; font-size: 0.95rem; margin-top: 1rem;">
+                        Result: <span class="highlight-text">3 real gaps closed</span> before a single line of code.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">08:30 &ndash; 10:00 (1.5 min)</span>
+            <ul>
+                <li>codex review skill wraps OpenAI's codex CLI. Think of it as a 200-IQ grumpy senior who hasn't seen your conversation.</li>
+                <li>Always review PRD, plan, and diff through a different model. Different blind spots.</li>
+            </ul>
+        </div>
+
+        <section class="slide slide-centered" data-slide-number="9">
+            <span class="slide-section">Step 6 &bull; Build</span>
+            <h2>Write plan &rarr; <span class="highlight-text">execute</span></h2>
+            <p class="tagline">Plan is a checklist of commits, each small enough to review in one sitting. Execute in a worktree; checkpoint at each step.</p>
+            <div class="flow-diagram">
+                <div class="flow-step"><div class="icon">&#x1F4CB;</div><p>writing-plans</p></div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step"><div class="icon">&#x1F333;</div><p>git-worktree</p></div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step"><div class="icon">&#x1F9EA;</div><p>TDD + verify</p></div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step"><div class="icon">&#x1F195;</div><p>commit per step</p></div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-step"><div class="icon">&#x1F680;</div><p>PR #65</p></div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">10:00 &ndash; 12:00 (2 min)</span>
+            <ul>
+                <li>Plan = step-by-step commits, each independently testable. superpowers executing-plans skill.</li>
+                <li>Worktree = zero risk of polluting the main checkout.</li>
+                <li>verification-before-completion: each step's success claim needs evidence (test output), not vibes.</li>
+            </ul>
+        </div>
+
+        <section class="slide" data-slide-number="10">
+            <span class="slide-section">Step 7 &bull; Quality gate</span>
+            <div class="two-col">
+                <div>
+                    <h2>Code review + <span class="highlight-text">E2E test</span></h2>
+                    <p class="lead">Three-lens review before any merge:</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> Claude self-review (simplify skill)</li>
+                        <li><span class="check">&#x2713;</span> codex review (adversarial)</li>
+                        <li><span class="check">&#x2713;</span> Human eye on the diff</li>
+                    </ul>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">Plus Playwright E2E: submit &rarr; approve &rarr; vote &rarr; verify.</p>
+                </div>
+                <div class="visual-panel">
+                    <h4>E2E: the good &amp; the trap</h4>
+                    <div class="code-block"><span class="comment"># good: real end-to-end flow</span>
+<span class="keyword">await</span> page.goto(<span class="string">'/submit'</span>);
+<span class="keyword">await</span> page.fill(<span class="string">'name'</span>, speaker);
+<span class="keyword">await</span> page.click(<span class="string">'submit'</span>);
+
+<span class="comment"># trap: every CI run created</span>
+<span class="comment"># real records in prod KV</span>
+<span class="err">"E2E Speaker 1776673201567"</span>
+<span class="err">"E2E Speaker 1776673201912"</span>
+<span class="err">...forever.</span></div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">12:00 &ndash; 13:30 (1.5 min)</span>
+            <ul>
+                <li>E2E gave me confidence the feature works &mdash; but I hadn't thought about prod-data pollution.</li>
+                <li>Lesson: E2E against a shared prod store needs teardown. Without teardown, kill the test.</li>
+                <li>I ended up deleting it (PR #69) after real talks were getting drowned out by test records.</li>
+            </ul>
+        </div>
+
+        <section class="slide" data-slide-number="11">
+            <span class="slide-section">Step 8 &bull; The cliff</span>
+            <div class="mindset-comparison">
+                <div class="mindset-box right">
+                    <h3>Localhost</h3>
+                    <p style="font-size: 2rem; margin: 0.5rem 0;">&#x2705;</p>
+                    <p>All tests green<br>Form submits<br>Votes record<br>Admin approves</p>
+                </div>
+                <div class="mindset-vs">&rarr; deploy &rarr;</div>
+                <div class="mindset-box wrong">
+                    <h3>Production</h3>
+                    <p style="font-size: 2rem; margin: 0.5rem 0;">&#x274C;</p>
+                    <p>500 on every submit<br>"Please fill in name, title, intro..."<br>All fields filled<br>User confused</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">13:30 &ndash; 15:00 (1.5 min)</span>
+            <ul>
+                <li>This is the painful moment. I'd shipped PR #65. Users reported the form breaking.</li>
+                <li>Worst part: the error message on screen was "fill in your name" &mdash; even though every field was filled.</li>
+                <li>The UI wasn't lying &mdash; it was just showing the wrong thing because the API failed in an unexpected way.</li>
+            </ul>
+        </div>
+
+        <section class="slide" data-slide-number="12">
+            <span class="slide-section">Step 9 &bull; Root cause</span>
+            <div class="two-col">
+                <div>
+                    <h2>The <span class="highlight-text">env config</span> trap</h2>
+                    <p class="lead">Vercel KV was deprecated. My KV store migrated to Upstash &mdash; which provisions <em>different</em> env var names.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">&#x2713;</span> <code>@vercel/kv</code> reads <code>KV_REST_API_URL</code></li>
+                        <li><span class="check">&#x2713;</span> Upstash provides <code>UPSTASH_REDIS_REST_URL</code></li>
+                        <li><span class="check">&#x2713;</span> First <code>kv.incr()</code> throws</li>
+                        <li><span class="check">&#x2713;</span> No try/catch &rarr; 500 HTML page</li>
+                        <li><span class="check">&#x2713;</span> Client default case &rarr; wrong error text</li>
+                    </ul>
+                </div>
+                <div class="visual-panel">
+                    <h4>The fix (PR #66)</h4>
+                    <div class="code-block"><span class="comment">// src/lib/kv.ts</span>
+<span class="keyword">if</span> (!process.env.KV_REST_API_URL
+    &amp;&amp; process.env.UPSTASH_REDIS_REST_URL) {
+  process.env.KV_REST_API_URL =
+    process.env.UPSTASH_REDIS_REST_URL;
+}
+
+<span class="keyword">export</span> { kv } <span class="keyword">from</span> <span class="string">'@vercel/kv'</span>;</div>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">15:00 &ndash; 17:00 (2 min)</span>
+            <ul>
+                <li>The environment changed under me. The package didn't fail at install &mdash; it failed at first call.</li>
+                <li>Fix: alias the env vars at module load before the lazy KV proxy reads them.</li>
+                <li>Also wrapped every voting route in try/catch so real errors hit Vercel logs instead of hiding in HTML 500s.</li>
+                <li>Lesson: always have a path from "prod broke" to "I can see the stack trace in 30 seconds."</li>
+            </ul>
+        </div>
+
+        <section class="slide" data-slide-number="13">
+            <span class="slide-section">Recap</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">5 lessons from this build</h2>
+            <div class="recap-grid">
+                <div class="recap-item"><div class="number">1</div><p><strong>Start with a scope-killer</strong> &mdash; Hermes / office-hours before any coder.</p></div>
+                <div class="recap-item"><div class="number">2</div><p><strong>Match the tool to the stage</strong> &mdash; Claude Code doesn't write PRDs well; superpowers does.</p></div>
+                <div class="recap-item"><div class="number">3</div><p><strong>Always get a second model's eyes</strong> &mdash; codex catches what Claude rationalizes.</p></div>
+                <div class="recap-item"><div class="number">4</div><p><strong>"Tests pass" &ne; "prod works"</strong> &mdash; env, secrets, and integrations live outside your repo.</p></div>
+                <div class="recap-item"><div class="number">5</div><p><strong>Make prod errors observable</strong> &mdash; try/catch every KV/API call; log with a tag.</p></div>
+                <div class="recap-item"><div class="number">6</div><p><strong>E2E tests need teardown</strong> &mdash; or they pollute real data. If you can't clean up, delete the test.</p></div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">17:00 &ndash; 19:00 (2 min)</span>
+            <ul>
+                <li>The lessons aren't about AI tools &mdash; they're about when each AI tool is the right hammer.</li>
+                <li>#4 and #5 are the ones that saved me most time after the prod incident.</li>
+            </ul>
+        </div>
+
+        <section class="slide slide-centered" data-slide-number="14">
+            <span class="slide-section">Receipts</span>
+            <h2>PRs shipped</h2>
+            <p class="tagline">Every tradeoff above is visible in these five PRs.</p>
+            <div class="pr-list">
+                <div class="pr-item merged"><span class="pr-num">#65</span><span class="pr-label">feat: community lightning-talk voting tool</span></div>
+                <div class="pr-item merged"><span class="pr-num">#66</span><span class="pr-label">fix(voting): Upstash env aliases + route try/catch + clearer errors</span></div>
+                <div class="pr-item problem"><span class="pr-num">#67</span><span class="pr-label">feat(vote): read-only results view (merged into stale branch, never reached main)</span></div>
+                <div class="pr-item merged"><span class="pr-num">#68</span><span class="pr-label">feat(vote): read-only results view after voting (reland onto main)</span></div>
+                <div class="pr-item merged"><span class="pr-num">#69</span><span class="pr-label">chore(e2e): drop lightning-talk smoke test (stop polluting KV)</span></div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">19:00 &ndash; 20:30 (1.5 min)</span>
+            <ul>
+                <li>#67 is its own lesson: I stacked it on an unmerged branch. Once the base merged first, #67 merged into a stale branch and never reached main. Hence #68.</li>
+                <li>Rule: never stack PRs on an unmerged feature branch unless you plan to rebase after the base merges.</li>
+            </ul>
+        </div>
+
+        <section class="slide slide-closing" data-slide-number="15">
+            <h2>Thanks &amp; Q&amp;A</h2>
+            <p>How to build a feature for community engagement &mdash; 02Ship meetup</p>
+            <div class="links">
+                <div class="link-item">
+                    <div class="icon">&#x1F5F3;&#xFE0F;</div>
+                    <p>02ship.com/vote</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4DD;</div>
+                    <p>02ship.com/submit</p>
+                </div>
+                <div class="link-item">
+                    <div class="icon">&#x1F4BB;</div>
+                    <p>github.com/bobjiang/zero-to-ship<br>PRs #65&ndash;#69</p>
+                </div>
+            </div>
+        </section>
+        <div class="speaker-notes">
+            <h4>Speaker Notes</h4>
+            <span class="timing">20:30 &ndash; 22:00 (1.5 min)</span>
+            <ul>
+                <li>Invite the audience to submit a talk right now on their phone. Live voting demo if time permits.</li>
+                <li>Anticipated Qs: "Why not Supabase?" "How much did this cost in AI credits?" "Would you do it again?"</li>
+                <li>Short answer to the last one: yes, but I'd set the env-alias file on day one.</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
