@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-24",
+  "items": [
+    {
+      "title": "OpenAI Releases GPT-5.5, Advancing Towards an AI 'Super App'",
+      "summary": "OpenAI has officially launched GPT-5.5, a significant step in its strategy to integrate AI capabilities into a comprehensive 'super app' experience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/23/openai-chatgpt-gpt-5-5-ai-model-superapp/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Introducing GPT-5.5: OpenAI's Latest Flagship Model",
+      "summary": "OpenAI formally announced the release of GPT-5.5, highlighting its enhanced capabilities and setting a new benchmark for large language models.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-5-5",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "GPT-5.5 System Card Details Safety and Capabilities",
+      "summary": "OpenAI published the GPT-5.5 System Card, providing in-depth information on the model's safety measures, limitations, and advanced functionalities.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-5-5-system-card",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Splits TPU into Two Chips, Signaling Agentic Era Advancements",
+      "summary": "Google's decision to split its Tensor Processing Unit (TPU) into two chips indicates a strategic move to optimize hardware for increasingly complex agentic AI workloads.",
+      "source": "Dev.to",
+      "url": "https://dev.to/om_shree_0709/google-just-split-its-tpu-into-two-chips-heres-what-that-actually-signals-about-the-agentic-era-2485",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model",
+      "summary": "Researchers introduce LLaDA2.0-Uni, a novel diffusion large language model designed to unify multimodal understanding and generation tasks, showing high community interest.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.20796",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Details How TPUs Power Demanding AI Workloads",
+      "summary": "Google's AI Blog explains the architectural innovations and operational efficiencies of its TPUs, crucial for handling the escalating demands of modern AI applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/what-is-a-tpu/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Bret Taylor's Sierra Acquires YC-Backed AI Startup Fragment",
+      "summary": "Bret Taylor's new venture, Sierra, has acquired Fragment, an AI startup backed by Y Combinator, signaling significant investment and consolidation in the AI startup landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/23/bret-taylors-sierra-buys-yc-backed-ai-startup-fragment/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Near-Future Policy Optimization for Enhanced AI Control",
+      "summary": "A new research paper explores Near-Future Policy Optimization, a method aimed at improving the efficiency and effectiveness of AI policy learning in dynamic environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.20733",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DR-Venus: Edge-Scale Deep Research Agents with Minimal Data",
+      "summary": "DR-Venus presents a breakthrough in developing frontier edge-scale deep research agents that can operate effectively with only 10K open data points, enhancing accessibility for resource-constrained environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19859",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Reward Hacking in Large Models: Mechanisms, Misalignment, and Challenges",
+      "summary": "A new paper delves into the critical issue of reward hacking in large models, analyzing its mechanisms, emergent misalignment, and the challenges it poses for AI safety.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.13602",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ShadowPEFT: A Novel Shadow Network for Parameter-Efficient Fine-Tuning",
+      "summary": "ShadowPEFT introduces a new parameter-efficient fine-tuning method utilizing a shadow network, offering a more resource-friendly approach to adapt large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19254",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "OpenMobile: Building Open Mobile Agents with Task and Trajectory Synthesis",
+      "summary": "OpenMobile proposes a framework for creating open mobile agents by synthesizing tasks and trajectories, pushing the boundaries of autonomous mobile AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.15093",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DeVI: Physics-based Dexterous Human-Object Interaction via Synthetic Video Imitation",
+      "summary": "DeVI explores physics-based dexterous human-object interaction through synthetic video imitation, advancing robotic manipulation and human-robot collaboration.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.20841",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Google Invests in First Data Center in Austria, Expanding Cloud Infrastructure",
+      "summary": "Google announced its first data center investment in Austria, signifying a strategic expansion of its global cloud infrastructure to support growing AI and data demands in the Alps region.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/google-data-center-austria/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Meet Noscroll, an AI Bot Designed to Automate Doomscrolling",
+      "summary": "Noscroll is a new AI bot that promises to handle users' doomscrolling habits, curating and summarizing negative news to save time and mental energy.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/23/meet-noscroll-an-ai-bot-that-does-your-doomscrolling-for-you/",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
