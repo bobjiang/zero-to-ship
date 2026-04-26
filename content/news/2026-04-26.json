@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-26",
+  "items": [
+    {
+      "title": "Anthropic Launches Test Marketplace for Agent-on-Agent Commerce",
+      "summary": "Anthropic has introduced a new test marketplace designed for AI agents to engage in commerce with each other, signaling a step towards autonomous economic systems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Exploring Spatial Intelligence from a Generative Perspective",
+      "summary": "New research delves into understanding spatial intelligence through a generative AI lens, potentially advancing how AI perceives and interacts with 3D environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.20570",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Cutting AI Spend to Zero with an Open-Source Claude Code Alternative",
+      "summary": "A developer shares how they eliminated AI expenses by switching to an open-source alternative for Claude Code, highlighting the growing viability of open-source AI tools.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ask-sol/cutting-my-ai-spend-to-zero-with-an-open-source-claude-code-alternative-647",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Maine Governor Vetoes Data Center Moratorium, Impacting AI Infrastructure Growth",
+      "summary": "Maine's governor has vetoed a proposed moratorium on data center development, a decision that could influence the expansion of AI infrastructure in the region.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/25/maines-governor-vetoes-data-center-moratorium/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI CEO Apologizes to Tumbler Ridge Community Amidst Data Center Concerns",
+      "summary": "The CEO of OpenAI issued an apology to the Tumbler Ridge community, likely addressing concerns related to the environmental or social impact of the company's operations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/25/openai-ceo-apologizes-to-tumbler-ridge-community/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "StyleID: A Perception-Aware Dataset and Metric for Stylization-Agnostic Facial Identity Recognition",
+      "summary": "Researchers introduce StyleID, a new dataset and metric designed to improve facial identity recognition systems by making them robust to various artistic stylizations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.21689",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Seeing Fast and Slow: Learning the Flow of Time in Videos",
+      "summary": "A new paper explores methods for AI models to learn and understand the temporal flow within videos, enabling more sophisticated video analysis and generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.21931",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VLAA-GUI: A Modular Framework for GUI Automation with AI Agents",
+      "summary": "A novel modular framework, VLAA-GUI, is presented for robust GUI automation, allowing AI agents to intelligently decide when to stop, recover, and search during tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.21375",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hybrid Policy Distillation for LLMs Improves Efficiency and Performance",
+      "summary": "New research introduces Hybrid Policy Distillation, a technique aimed at enhancing the efficiency and performance of large language models through improved policy learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.20244",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale",
+      "summary": "TingIS offers a solution for enterprises to discover real-time risk events from large volumes of noisy customer incident data, improving operational resilience.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.21889",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "WavAlign: Enhancing Intelligence and Expressiveness in Spoken Dialogue Models",
+      "summary": "WavAlign proposes an adaptive hybrid post-training method to significantly improve the intelligence and expressiveness of spoken dialogue models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.14932",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Fixed 5 Chained AI Bugs in My Sales Chatbot — Each Solution Revealed the Next Problem",
+      "summary": "A developer recounts the challenging process of debugging and resolving a series of interconnected AI bugs in a sales chatbot, offering insights into practical AI development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/alimafana/i-fixed-5-chained-ai-bugs-in-my-sales-chatbot-each-solution-revealed-the-next-problem-5fjh",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "The Creator of Claude Code Reveals Workflow, Exciting Developers",
+      "summary": "The workflow of the creator behind Claude Code has been unveiled, generating significant interest and discussion among developers eager to learn best practices.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Image Generators are Generalist Vision Learners, New Research Suggests",
+      "summary": "A new study posits that image generators can function as generalist vision learners, indicating their potential beyond mere image synthesis to broader visual understanding tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.20329",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Abstain-R1: Calibrated Abstention and Post-Refusal Clarification via Verifiable RL",
+      "summary": "Researchers introduce Abstain-R1, a system that allows AI models to abstain from uncertain answers and provide clarifications, enhancing reliability and user trust through verifiable reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.17073",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
