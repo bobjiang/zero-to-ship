@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-29",
+  "items": [
+    {
+      "title": "OpenAI Models, Codex, and Managed Agents Now Available on AWS",
+      "summary": "OpenAI has announced that its models, Codex, and managed agents are now available on Amazon Web Services, significantly expanding their reach and integration capabilities for developers and enterprises.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-on-aws",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon Offers New OpenAI Products on AWS, Deepening AI Integration",
+      "summary": "Amazon is reportedly already offering new OpenAI products through its AWS platform, indicating a rapid integration and competitive move in the cloud AI market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/28/amazon-is-already-offering-new-openai-products-on-aws/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "The Next Phase of the Microsoft OpenAI Partnership Unveiled",
+      "summary": "OpenAI has detailed the next phase of its strategic partnership with Microsoft, signaling continued deep collaboration on AI development and deployment.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/next-phase-of-microsoft-partnership",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "World-R1: Reinforcing 3D Constraints for Text-to-Video Generation",
+      "summary": "A new research paper introduces World-R1, a method that reinforces 3D constraints to improve the realism and consistency of text-to-video generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.24764",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "From Skills to Talent: Organizing Heterogeneous Agents as a Real-World Company",
+      "summary": "Researchers propose a novel framework for organizing diverse AI agents to function cohesively as a real-world company, pushing the boundaries of multi-agent systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.22446",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Musk Relitigates Old Friendship at OpenAI Trial",
+      "summary": "Elon Musk's trial against OpenAI reportedly delves into the history of his friendship with the company's founders, highlighting the personal stakes in the ongoing legal battle.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/28/at-his-openai-trial-musk-relitigates-an-old-friendship/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon Launches AI-Powered Audio Q&A Experience on Product Pages",
+      "summary": "Amazon has introduced an AI-powered audio Q&A feature directly on its product pages, aiming to enhance customer engagement and information access.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/28/amazon-launches-an-ai-powered-audio-qa-experience-on-product-pages/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Listen Labs Raises $69M After Viral Billboard Stunt to Scale AI Customer Interviews",
+      "summary": "Listen Labs secured $69 million in funding following a successful viral marketing campaign, which will be used to expand its AI-driven customer interview platform.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning",
+      "summary": "A new evaluation framework, ReVSI, is proposed to more accurately assess the 3D reasoning capabilities and visual spatial intelligence of Vision-Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.24300",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Tuna-2: Pixel Embeddings Beat Vision Encoders for Multimodal Understanding and Generation",
+      "summary": "Tuna-2 demonstrates that pixel embeddings can outperform traditional vision encoders in multimodal understanding and generation tasks, suggesting a new direction for model architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.24763",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms",
+      "summary": "This paper provides a comprehensive overview of the critical safety aspects in Vision-Language-Action models, covering potential threats, current challenges, evaluation methods, and mitigation mechanisms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.23775",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ClawMark: A Living-World Benchmark for Multi-Turn, Multi-Day, Multimodal Coworker Agents",
+      "summary": "ClawMark introduces a new benchmark designed to evaluate multi-turn, multi-day, and multimodal AI coworker agents in realistic, living-world scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.23781",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Almost Missed the Most Important Announcement at Google Cloud NEXT 26",
+      "summary": "A developer highlights a crucial announcement from Google Cloud NEXT 26 that could have significant implications for AI development and cloud services.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/i-almost-missed-the-most-important-announcement-at-google-cloud-next-26-2pa0",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "How I Used Gemini CLI to Orchestrate a Complex RAG Migration",
+      "summary": "A practical guide demonstrates how Google's Gemini CLI can be effectively used to manage and orchestrate intricate Retrieval-Augmented Generation (RAG) system migrations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/how-i-used-gemini-cli-to-orchestrate-a-complex-rag-migration-43ga",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "On the Limits of Self-Improving in Large Language Models: The Singularity Is Not Near Without Symbolic Model Synthesis",
+      "summary": "This paper argues that true self-improvement leading to an AI singularity in LLMs is unlikely without the integration of symbolic model synthesis capabilities.",
+      "source": "Lobste.rs",
+      "url": "https://arxiv.org/html/2601.05280v2",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
