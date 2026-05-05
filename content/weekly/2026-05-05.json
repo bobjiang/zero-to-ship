@@ -1,0 +1,163 @@
+{
+  "week": "2026-05-05",
+  "startDate": "2026-04-28",
+  "endDate": "2026-05-05",
+  "summary": "This week highlights Claude's growing ecosystem, emphasizing its availability through major cloud partners and diverse industry applications.",
+  "sections": [
+    {
+      "id": "product-updates",
+      "title": "Product Updates and News",
+      "items": [
+        {
+          "title": "Amazon Bedrock",
+          "summary": "Claude continues to be available through Amazon Bedrock, providing builders with a familiar cloud environment to integrate Claude into their AWS-based applications. This reinforces the ease of access and deployment for many users.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/partners/amazon-bedrock",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "cloud-platform",
+            "aws"
+          ]
+        },
+        {
+          "title": "Google Cloud’s Vertex AI",
+          "summary": "Claude's availability on Google Cloud's Vertex AI means builders can leverage Claude within their existing Google Cloud infrastructure. This offers another robust platform for developing and deploying AI-powered solutions with Claude.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/partners/google-cloud-vertex-ai",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "cloud-platform",
+            "google-cloud"
+          ]
+        },
+        {
+          "title": "Microsoft Foundry",
+          "summary": "Claude's presence on Microsoft Foundry indicates a growing partnership, offering builders access to Claude within Microsoft's enterprise-focused AI development environment. This expands options for integrating Claude into large-scale business solutions.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/partners/microsoft-foundry",
+          "impact": "medium",
+          "tags": [
+            "integration",
+            "cloud-platform",
+            "microsoft"
+          ]
+        },
+        {
+          "title": "Claude partner network",
+          "summary": "The expanding Claude partner network highlights Anthropic's commitment to making Claude accessible through various platforms and service providers. Builders can find more avenues for support, integration, and specialized solutions leveraging Claude.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/partners",
+          "impact": "low",
+          "tags": [
+            "partnerships",
+            "ecosystem",
+            "access"
+          ]
+        },
+        {
+          "title": "Powered by Claude",
+          "summary": "This initiative showcases applications and services that are built using Claude, offering inspiration and potential integration points for builders. It demonstrates the diverse capabilities and real-world impact of Claude-powered solutions.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/partners/powered-by-claude",
+          "impact": "low",
+          "tags": [
+            "case-studies",
+            "inspiration",
+            "solutions"
+          ]
+        },
+        {
+          "title": "Service partners",
+          "summary": "Anthropic's service partners offer specialized expertise to help businesses integrate and optimize Claude for their specific needs. Builders can leverage these partners for implementation support, custom development, and strategic guidance.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/partners/services",
+          "impact": "low",
+          "tags": [
+            "partnerships",
+            "support",
+            "implementation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "community-learning",
+      "title": "Community & Learning",
+      "items": [
+        {
+          "title": "Code modernization",
+          "summary": "Claude can assist in modernizing existing codebases, helping builders update legacy systems or refactor code more efficiently. This highlights a practical application for leveraging Claude's coding capabilities in development workflows.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/solutions/code-modernization",
+          "impact": "medium",
+          "tags": [
+            "use-case",
+            "code",
+            "solutions"
+          ]
+        },
+        {
+          "title": "Customer support",
+          "summary": "Claude is positioned as a tool for enhancing customer support operations, enabling builders to create AI-powered agents or tools for better customer interactions. This showcases a direct application for improving user experience and operational efficiency.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/solutions/customer-support",
+          "impact": "medium",
+          "tags": [
+            "use-case",
+            "customer-support",
+            "solutions"
+          ]
+        },
+        {
+          "title": "Financial services",
+          "summary": "Claude offers solutions tailored for the financial services industry, indicating its capabilities for tasks like analysis, compliance, or personalized client interactions. Builders in this sector can explore specific applications to leverage Claude's power.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/solutions/financial-services",
+          "impact": "low",
+          "tags": [
+            "use-case",
+            "industry-solutions",
+            "finance"
+          ]
+        },
+        {
+          "title": "Government",
+          "summary": "Anthropic highlights Claude's applicability for government sector needs, suggesting potential for administrative efficiency, data analysis, or public service improvements. This opens avenues for builders working on public sector projects.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/solutions/government",
+          "impact": "low",
+          "tags": [
+            "use-case",
+            "industry-solutions",
+            "government"
+          ]
+        },
+        {
+          "title": "Healthcare",
+          "summary": "Claude is presented as a solution for healthcare applications, from research assistance to patient interaction support, demonstrating its utility in a sensitive and complex domain. Builders in healthcare can find inspiration for AI-driven innovations.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/solutions/healthcare",
+          "impact": "low",
+          "tags": [
+            "use-case",
+            "industry-solutions",
+            "healthcare"
+          ]
+        },
+        {
+          "title": "Life sciences",
+          "summary": "Solutions for life sciences are featured, indicating Claude's potential in areas like drug discovery, research analysis, or bioinformatics. This provides a framework for builders to apply Claude in scientific and biological contexts.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/solutions/life-sciences",
+          "impact": "low",
+          "tags": [
+            "use-case",
+            "industry-solutions",
+            "life-sciences"
+          ]
+        },
+        {
+          "title": "Nonprofits",
+          "summary": "Claude offers solutions tailored for nonprofit organizations, suggesting ways to enhance operations, fundraising, or outreach efforts. Builders in the nonprofit sector can explore how AI can amplify their impact.",
+          "url": "https://claude.com/redirect/claudeai.v1.8c191f0c-cca7-4cae-9cc1-c18f3b9e421a/solutions/nonprofits",
+          "impact": "low",
+          "tags": [
+            "use-case",
+            "industry-solutions",
+            "nonprofit"
+          ]
+        }
+      ]
+    }
+  ]
+}
