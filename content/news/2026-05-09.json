@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-09",
+  "items": [
+    {
+      "title": "Cloudflare says AI made 1,100 jobs obsolete, even as revenue hit a record high",
+      "summary": "Cloudflare announced that AI automation led to the obsolescence of 1,100 jobs, highlighting the significant impact of AI on employment despite the company's record revenue growth.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/08/cloudflare-says-ai-made-1100-jobs-obsolete-even-as-revenue-hit-a-record-high/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning",
+      "summary": "Researchers propose Skill1, a framework for the unified evolution of skill-augmented agents using reinforcement learning, enabling more complex and adaptable AI behaviors.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06130",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction",
+      "summary": "The MiniCPM-o 4.5 model aims to achieve real-time, full-duplex omni-modal interaction, representing a significant step towards more natural human-AI communication.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.27393",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Testing ads in ChatGPT",
+      "summary": "OpenAI is reportedly testing advertisements within ChatGPT, indicating a potential shift in its monetization strategy and user experience.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/testing-ads-in-chatgpt",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Beyond Semantic Similarity: Rethinking Retrieval for Agentic Search via Direct Corpus Interaction",
+      "summary": "A new paper explores moving beyond traditional semantic similarity in retrieval systems for agentic search, advocating for direct interaction with the corpus to improve results.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.05242",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Continuous Latent Diffusion Language Model",
+      "summary": "A novel approach introduces the Continuous Latent Diffusion Language Model, pushing the boundaries of generative AI for language tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06548",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The Local Model That Doesn't Sleep: Gemma 4 + MTP as a Marathon Engine",
+      "summary": "This article explores the potential of Gemma 4 combined with MTP to create a continuously running local AI model, suggesting a shift towards more viable on-device intelligence.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ertugrul_demir/the-local-model-that-doesnt-sleep-gemma-4-mtp-as-a-marathon-engine-4c9",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "MiA-Signature: Approximating Global Activation for Long-Context Understanding",
+      "summary": "Researchers introduce MiA-Signature, a method for approximating global activation to enhance long-context understanding in AI models, crucial for processing extensive information.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06416",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RaguTeam at SemEval-2026 Task 8: Meno and Friends in a Judge-Orchestrated LLM Ensemble for Faithful Multi-Turn Response Generation",
+      "summary": "RaguTeam's participation in SemEval-2026 Task 8 showcases a judge-orchestrated LLM ensemble designed to generate more faithful and coherent multi-turn responses.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.04523",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "When to Trust Imagination: Adaptive Action Execution for World Action Models",
+      "summary": "This paper investigates the critical question of when AI agents should trust their 'imagination' and adapt action execution within world action models, improving agent autonomy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06222",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MARBLE: Multi-Aspect Reward Balance for Diffusion RL",
+      "summary": "MARBLE presents a new approach for Multi-Aspect Reward Balance in Diffusion Reinforcement Learning, aiming to optimize learning across various reward signals.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06507",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Why does AI lie? Hallucinations explained simply",
+      "summary": "An article provides a simple explanation for why AI models 'lie' or hallucinate, demystifying a common challenge in AI development and usage.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws/why-does-ai-lie-hallucinations-explained-simply-1c7g",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "SkillOS: Learning Skill Curation for Self-Evolving Agents",
+      "summary": "SkillOS proposes a system for learning skill curation, enabling AI agents to self-evolve and adapt their capabilities over time.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06614",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "I Built My Mom an AI Recipe Helper for Mother's Day",
+      "summary": "A developer shares a personal project of creating an AI-powered recipe helper for Mother's Day, demonstrating practical and accessible AI applications.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws/i-built-my-mom-an-ai-recipe-helper-for-mothers-day-2hc5",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Using Claude Code with Docker Model Runner",
+      "summary": "A practical guide demonstrates how to integrate and use Claude's code generation capabilities with a Docker Model Runner, streamlining development workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/pradumnasaraf/using-claude-code-with-docker-model-runner-36eo",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
