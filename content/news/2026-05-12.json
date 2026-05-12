@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-12",
+  "items": [
+    {
+      "title": "Mean Mode Screaming: Mean-Variance Split Residuals for 1000-Layer Diffusion Transformers",
+      "summary": "Researchers introduce a novel technique, Mean-Variance Split Residuals, enabling the training of Diffusion Transformers with an unprecedented 1000 layers, pushing the boundaries of generative model architecture.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06169",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "MACE-Dance: Motion-Appearance Cascaded Experts for Music-Driven Dance Video Generation",
+      "summary": "A new framework, MACE-Dance, utilizes cascaded expert models to generate high-quality, music-driven dance videos by separately handling motion and appearance, showcasing advanced multimodal AI capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2512.18181",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Flow-OPD: On-Policy Distillation for Flow Matching Models",
+      "summary": "This paper presents Flow-OPD, a method for on-policy distillation that significantly improves the efficiency and performance of flow matching models, crucial for advanced generative AI applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.08063",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Riding an AI rally, Robinhood preps second retail venture IPO",
+      "summary": "Robinhood is reportedly preparing for a second retail venture IPO, capitalizing on the current AI market rally and investor interest in technology-driven financial services.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/11/riding-an-ai-rally-robinhood-preps-second-retail-venture-ipo/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "The new AI-powered Google Finance is expanding to Europe.",
+      "summary": "Google Finance is rolling out its new AI-powered features to Europe, offering enhanced financial insights and tools to users across the continent.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "How ChatGPT adoption broadened in early 2026",
+      "summary": "OpenAI provides insights into the significant expansion of ChatGPT's adoption across various sectors and user demographics during the first quarter of 2026.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/signals/research/2026q1-update",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents",
+      "summary": "HyperEyes introduces an efficiency-aware reinforcement learning approach for multimodal search agents, optimizing performance across various granularities for complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.07177",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LLMs Improving LLMs: Agentic Discovery for Test-Time Scaling",
+      "summary": "A new research direction explores how Large Language Models can autonomously improve other LLMs through agentic discovery, enabling more robust and scalable AI systems during testing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.08083",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "HumanNet: Scaling Human-centric Video Learning to One Million Hours",
+      "summary": "HumanNet presents a massive dataset and methodology for scaling human-centric video learning to one million hours, promising significant advancements in understanding human behavior and interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06747",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How to Secure AI Agents in Production: What MCP Gets Right (and What It Doesn’t)",
+      "summary": "This article delves into the critical aspects of securing AI agents in production environments, analyzing the strengths and weaknesses of the Multi-Agent Control Protocol (MCP).",
+      "source": "Dev.to",
+      "url": "https://dev.to/hadil/how-to-secure-ai-agents-in-production-what-mcp-gets-right-and-what-it-doesnt-1d12",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Digg tries again, this time as an AI news aggregator",
+      "summary": "Veteran social news site Digg is attempting a comeback by rebranding itself as an AI-powered news aggregator, aiming to leverage artificial intelligence for content curation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/11/digg-tries-again-this-time-as-an-ai-news-aggregator/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "How enterprises are scaling AI",
+      "summary": "OpenAI shares a guide detailing strategies and best practices for enterprises looking to effectively scale their AI initiatives and integrate advanced models into their operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "DecodingTrust-Agent Platform (DTap): A Controllable and Interactive Red-Teaming Platform for AI Agents",
+      "summary": "DTap is introduced as a new platform designed for controllable and interactive red-teaming of AI agents, enhancing the ability to identify and mitigate risks in AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.04808",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The missing layer in prompt engineering: thinking quality",
+      "summary": "An insightful piece argues that beyond syntax and structure, the 'thinking quality' embedded in prompt design is the crucial, often overlooked, layer for effective prompt engineering.",
+      "source": "Dev.to",
+      "url": "https://dev.to/javz/the-missing-layer-in-prompt-engineering-thinking-quality-2n3j",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "I Tested PaioClaw — Here's What Happened When I Pushed It to Its Limits",
+      "summary": "A developer shares a hands-on review of PaioClaw, detailing its performance and limitations when subjected to rigorous testing scenarios.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/i-tested-paioclaw-heres-what-happened-when-i-pushed-it-to-its-limits-iok",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
