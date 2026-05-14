@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-14",
+  "items": [
+    {
+      "title": "Notion just turned its workspace into a hub for AI agents",
+      "summary": "Notion has integrated AI agents directly into its workspace, allowing users to automate tasks and enhance productivity within their existing workflows.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Musk’s xAI is running nearly 50 gas turbines unchecked at its Mississippi data center",
+      "summary": "xAI is reportedly operating a large number of gas turbines at its Mississippi data center without proper regulatory oversight, raising environmental and safety concerns.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/13/musks-xai-is-running-nearly-50-gas-turbines-unchecked-at-its-mississippi-data-center/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce has launched a new Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly evolving workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic’s Cat Wu says that, in the future, AI will anticipate your needs before you know what they are",
+      "summary": "A key figure at Anthropic envisions a future where AI systems will proactively understand and address user needs even before they are consciously recognized.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "World Action Models: The Next Frontier in Embodied AI",
+      "summary": "This paper explores 'World Action Models' as a critical advancement for embodied AI, enabling agents to better understand and interact with complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12090",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The creator of Claude Code just revealed his workflow, and developers are losing their minds",
+      "summary": "The workflow of Claude Code's creator has been unveiled, captivating developers with its innovative approach to AI-assisted coding.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward",
+      "summary": "AlphaGRPO introduces a novel method for self-reflective multimodal generation in Universal Multimodal Models by using a decompositional verifiable reward system.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12495",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building a safe, effective sandbox to enable Codex on Windows",
+      "summary": "OpenAI details the development of a secure and functional sandbox environment to facilitate the integration and use of Codex on Windows operating systems.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/building-codex-windows-sandbox",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Reduce friction and latency for long-running jobs with Webhooks in Gemini API",
+      "summary": "Google has enhanced the Gemini API with webhooks, allowing developers to reduce friction and latency for long-running asynchronous tasks.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "How to Save Bloated MCP with Code Mode",
+      "summary": "This article discusses strategies for optimizing and reducing the size of 'Bloated MCP' (likely a software project or model) using a 'Code Mode' approach.",
+      "source": "Dev.to",
+      "url": "https://dev.to/zenstack/how-to-save-bloated-mcp-with-code-mode-33e3",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "ToolCUA: Towards Optimal GUI-Tool Path Orchestration for Computer Use Agents",
+      "summary": "ToolCUA proposes a framework for optimal orchestration of GUI-tool paths, aiming to improve the efficiency and effectiveness of computer use agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12481",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Lambda Just Got a File System. I Put AI Agents on It.",
+      "summary": "AWS Lambda now supports file systems, enabling developers to deploy and run AI agents directly within serverless functions for more complex operations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws/lambda-just-got-a-file-system-i-put-ai-agents-on-it-1ej8",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "L2P: Unlocking Latent Potential for Pixel Generation",
+      "summary": "L2P presents a new technique designed to unlock the latent potential within models for more effective and high-quality pixel generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12013",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Multi-Stream LLMs: Unblocking Language Models with Parallel Streams of Thoughts, Inputs and Outputs",
+      "summary": "This research introduces Multi-Stream LLMs, a novel architecture that uses parallel streams for thoughts, inputs, and outputs to enhance language model efficiency and capability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12460",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "What Parameter Golf taught us about AI-assisted research",
+      "summary": "OpenAI shares insights gained from 'Parameter Golf,' a project that explored the effectiveness and challenges of AI-assisted research methodologies.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/what-parameter-golf-taught-us",
+      "score": 4,
+      "category": "research"
+    }
+  ]
+}
