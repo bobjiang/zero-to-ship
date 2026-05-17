@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-17",
+  "items": [
+    {
+      "title": "Warp-as-History: Generalizable Camera-Controlled Video Generation from One Training Video",
+      "summary": "Researchers introduce Warp-as-History, a novel method enabling generalizable camera-controlled video generation from a single training video, significantly advancing video synthesis capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.15182",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Co-founder Greg Brockman Takes Charge of Product Strategy",
+      "summary": "OpenAI co-founder Greg Brockman is reportedly taking over product strategy, signaling a significant shift in the company's direction and focus.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/16/openai-co-founder-greg-brockman-reportedly-takes-charge-of-product-strategy/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "ArXiv to Ban Authors for One Year for AI-Generated Submissions",
+      "summary": "The research repository ArXiv announces a new policy to ban authors for a year if they are found to have used AI to generate their entire research papers, aiming to maintain academic integrity.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI and Malta Partner to Bring ChatGPT Plus to All Citizens",
+      "summary": "OpenAI has partnered with the government of Malta to provide free access to ChatGPT Plus for all Maltese citizens, marking a significant national-level AI adoption initiative.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "RouteProfile: Elucidating the Design Space of LLM Profiles for Routing",
+      "summary": "This research explores RouteProfile, a framework that clarifies the design space for LLM profiles used in routing, optimizing how language models handle diverse tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.00180",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PREPING: Building Agent Memory without Tasks",
+      "summary": "A new paper introduces PREPING, a method for building robust agent memory architectures without requiring explicit task-specific training, enhancing agent adaptability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13880",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EvolveMem: Self-Evolving Memory Architecture via AutoResearch for LLM Agents",
+      "summary": "EvolveMem proposes a self-evolving memory architecture for LLM agents that uses 'AutoResearch' to continuously improve its memory capabilities, leading to more adaptive AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13941",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning",
+      "summary": "Realiz3D presents a new approach to 3D generation that achieves photorealistic results by incorporating domain-aware learning, significantly improving visual fidelity.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13852",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "I Ran Hermes Agent on the Same Task for 7 Days. The Skill File on Day 7 Looked Nothing Like Day 1.",
+      "summary": "A developer shares insights from running an AI agent for a week, observing how its 'skill file' dynamically evolved and changed significantly over time, highlighting adaptive learning in agents.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sreejit_/i-ran-hermes-agent-on-the-same-task-for-7-days-the-skill-file-on-day-7-looked-nothing-like-day-1-2oa8",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Long Context Pre-Training with Lighthouse Attention",
+      "summary": "This paper introduces Lighthouse Attention, a novel mechanism designed to enable more efficient and effective long-context pre-training for large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06554",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Haves and Have Nots of the AI Gold Rush",
+      "summary": "TechCrunch explores the growing disparity between major tech players and smaller entities in the ongoing AI gold rush, examining who benefits most from the current boom.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/16/the-haves-and-have-nots-of-the-ai-gold-rush/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Google Partners with XPRIZE and Range Media Partners for $3.5M Future Vision Film Competition",
+      "summary": "Google announces a collaboration with XPRIZE and Range Media Partners to launch the $3.5 million Future Vision film competition, encouraging creative exploration of AI's impact on society.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/future-vision-film-competition-xprize/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "My AI Agent Kept Blind-Reading My Files, So I Built a Local CLI to Give It 'Eyes'",
+      "summary": "A developer created a local command-line interface to provide AI agents with controlled access and 'vision' into local files, addressing privacy and efficiency issues with current agent designs.",
+      "source": "Dev.to",
+      "url": "https://dev.to/1jaswanth1/my-ai-agent-kept-blind-reading-my-files-so-i-built-a-local-cli-to-give-it-eyes-looking-for-beta-4j4g",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Orchard: An Open-Source Agentic Modeling Framework",
+      "summary": "Orchard is introduced as a new open-source framework designed for agentic modeling, providing tools and structures for developing and deploying AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.15040",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "I Built an Agent That Actually Reviews Your Pull Requests",
+      "summary": "A developer showcases an AI agent designed to autonomously review pull requests, aiming to streamline code review processes and improve development workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aditya_rasal/i-built-an-agent-that-actually-reviews-your-pull-requests-56ld",
+      "score": 5,
+      "category": "open-source"
+    }
+  ]
+}
