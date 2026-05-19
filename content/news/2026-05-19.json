@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-19",
+  "items": [
+    {
+      "title": "Anthropic Acquires Dev Tools Startup Used by OpenAI, Google, and Cloudflare",
+      "summary": "Anthropic has acquired a prominent dev tools startup, signaling its strategic move to enhance its AI development ecosystem and compete more effectively with industry giants.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Elon Musk Loses Lawsuit Against Sam Altman and OpenAI",
+      "summary": "Elon Musk's high-profile lawsuit against Sam Altman and OpenAI has concluded with a loss for Musk, potentially solidifying OpenAI's current operational direction and legal standing.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI and Dell Partner to Bring Codex to Enterprise Environments",
+      "summary": "OpenAI has partnered with Dell to extend its Codex models to hybrid and on-premise enterprise settings, addressing data privacy and security concerns for large organizations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/dell-codex-enterprise-partnership",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "SandboxAQ Integrates Drug Discovery Models with Claude, Democratizing Access",
+      "summary": "SandboxAQ is making its advanced drug discovery models accessible through Anthropic's Claude, enabling broader use of AI in pharmaceutical research without requiring deep computing expertise.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/18/sandboxaq-brings-its-drug-discovery-models-to-claude-no-phd-in-computing-required/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "DeepSeek AI Models Secretly Powering Popular AI Tools",
+      "summary": "DeepSeek's AI models are reportedly being integrated into various popular AI tools without explicit user notification, raising questions about transparency and model attribution in the AI ecosystem.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/deepseek-is-running-inside-your-favorite-ai-tool-and-nobody-told-you-5g47",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence",
+      "summary": "Researchers introduce CiteVQA, a new benchmark designed to evaluate and improve the ability of AI models to attribute evidence accurately in document intelligence tasks, crucial for building trustworthy systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12882",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PhysBrain 1.0 Technical Report: Advancing Physical Reasoning in AI",
+      "summary": "The PhysBrain 1.0 technical report details a new development aimed at enhancing AI's capacity for complex physical reasoning, a critical step towards more human-like intelligence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.15298",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MMSkills: Towards Multimodal Skills for General Visual Agents",
+      "summary": "MMSkills presents a new framework focused on developing multimodal skills for general visual agents, pushing the boundaries of AI's ability to understand and interact with the visual world.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13527",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Claude AI Identifies Missed Insights from Six Months of Team Retrospectives",
+      "summary": "A developer leveraged Claude AI to analyze six months of team retrospectives, revealing three critical insights that human review had overlooked, showcasing AI's potential in organizational analysis.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mattlewandowski93/i-gave-claude-six-months-of-our-retros-it-found-three-things-id-missed-c1p",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "FashionChameleon: Real-Time and Interactive Human-Garment Video Customization",
+      "summary": "FashionChameleon introduces a novel approach for real-time and interactive customization of human-garment videos, offering significant advancements for virtual try-on and fashion design applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.15824",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DexJoCo: A Benchmark for Task-Oriented Dexterous Manipulation on MuJoCo",
+      "summary": "DexJoCo provides a new benchmark and toolkit for evaluating task-oriented dexterous manipulation in the MuJoCo physics engine, accelerating research in robotic control and AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.16257",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SDOF: Taming Alignment Tax in Multi-Agent Orchestration with State-Constrained Dispatch",
+      "summary": "This research introduces SDOF, a method to reduce the 'alignment tax' in multi-agent orchestration by using state-constrained dispatch, improving efficiency in complex AI systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.15204",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Does Theory of Mind Improvement Benefit Human-AI Interactions?",
+      "summary": "Empirical findings from interactive evaluations explore whether enhancing an AI's 'Theory of Mind' truly improves human-AI interactions, providing crucial insights for designing more intuitive AI systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.15205",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DeepSlide: From Artifacts to Presentation Delivery with AI",
+      "summary": "DeepSlide proposes an AI-powered system that transforms raw artifacts into polished presentation deliveries, streamlining the content creation process for professionals.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.15202",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Democratizing Frontier AI for Bharat: Gemma 4’s Edge Capabilities",
+      "summary": "This article highlights how Gemma 4 is being optimized for edge capabilities to democratize frontier AI access in low-resource environments across Bharat (India), fostering local innovation.",
+      "source": "Dev.to",
+      "url": "https://dev.to/pravesh_sudha_3c2b0c2b5e0/democratizing-frontier-ai-for-bharat-gemma-4s-edge-capabilities-in-low-resource-environments-b34",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
