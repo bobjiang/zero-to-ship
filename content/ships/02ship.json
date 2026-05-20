@@ -7,6 +7,7 @@
   "date": "2026-03-15",
   "cohort": "Cohort #1",
   "tags": ["next.js", "claude-code", "community", "agentic-coding"],
+  "screenshot": "/ships/02ship.jpeg",
   "demoUrl": "https://www.02ship.com",
   "repoUrl": "https://github.com/bobjiang/zero-to-ship"
 }
