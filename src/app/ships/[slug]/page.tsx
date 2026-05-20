@@ -1,8 +1,21 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { marked } from 'marked';
 import { Container } from '@/components/ui/Container';
 import { getShipBySlug, getAllShips } from '@/lib/content';
+
+function withUtmSource(rawUrl: string, source: string): string {
+  try {
+    const u = new URL(rawUrl);
+    if (!u.searchParams.has('utm_source')) {
+      u.searchParams.set('utm_source', source);
+    }
+    return u.toString();
+  } catch {
+    return rawUrl;
+  }
+}
 
 interface ShipPageProps {
   params: Promise<{
@@ -60,6 +73,8 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.02ship.com';
   const url = `${siteUrl}/ships/${slug}`;
 
+  const demoHref = ship.demoUrl ? withUtmSource(ship.demoUrl, '02ship.com') : null;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -113,27 +128,40 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
                 </div>
               </header>
 
-              <div className="mb-8 flex h-64 items-center justify-center rounded-xl bg-gray-100">
-                <svg
-                  className="h-16 w-16 text-gray-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+              {ship.screenshot ? (
+                <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
+                  <Image
+                    src={ship.screenshot}
+                    alt={`${ship.title} homepage screenshot`}
+                    fill
+                    sizes="(min-width: 768px) 768px, 100vw"
+                    className="object-cover object-top"
+                    priority
                   />
-                </svg>
-              </div>
+                </div>
+              ) : (
+                <div className="mb-8 flex h-64 items-center justify-center rounded-xl bg-gray-100">
+                  <svg
+                    className="h-16 w-16 text-gray-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                    />
+                  </svg>
+                </div>
+              )}
 
               {(ship.demoUrl || ship.repoUrl) && (
                 <div className="mb-8 flex flex-wrap gap-4">
-                  {ship.demoUrl && (
+                  {demoHref && (
                     <a
-                      href={ship.demoUrl}
+                      href={demoHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
