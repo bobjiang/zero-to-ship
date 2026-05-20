@@ -93,9 +93,9 @@ A few practical notes from Sharat:
 
 ## Talk 2: Claude Code as an Autonomous CI Teammate — Fayner (Readplace)
 
-[**Fayner**](https://www.linkedin.com/in/fagnerbrack/) is a solo founder. He builds **Readplace**. He showed how he wires **Claude Code into the GitHub Actions CI pipeline** as an autonomous agent.
+[**Fayner**](https://www.linkedin.com/in/fagnerbrack/) is a solo founder. She builds **Readplace**. She showed how she wires **Claude Code into the GitHub Actions CI pipeline** as an autonomous agent.
 
-In his setup, Claude Code automatically:
+In her setup, Claude Code automatically:
 
 - Reviews every PR
 - Fixes CI failures
@@ -104,16 +104,16 @@ In his setup, Claude Code automatically:
 
 Because the boring CI work runs by itself, Fayner can focus on **architecture and product**.
 
-He also gave a quick tour of how Readplace works end-to-end. Then he showed a recent fix: **PDF OCR now fans out to one Lambda per page**. Before this fix, large PDFs would time out one single Lambda function. With one Lambda per page, the work runs in parallel and finishes much faster.
+She also gave a quick tour of how Readplace works end-to-end. Then she showed a recent fix: **PDF OCR now fans out to one Lambda per page**. Before this fix, large PDFs would time out one single Lambda function. With one Lambda per page, the work runs in parallel and finishes much faster.
 
-He also talked briefly about **canary-based monitoring** for deployed agents, but did not go deep.
+She also talked briefly about **canary-based monitoring** for deployed agents, but did not go deep.
 
-He ended with Q&A. Two questions came up many times:
+She ended with Q&A. Two questions came up many times:
 
 - How do you **split tasks** so AI agents can work on them well?
 - Why does **architecture and design judgement still matter** when AI can write the code?
 
-His answer to the second one: many founders without architecture background try to build complex systems with AI, and then hit a wall. AI writes code, but you still need to design the system.
+Her answer to the second one: many founders without architecture background try to build complex systems with AI, and then hit a wall. AI writes code, but you still need to design the system.
 
 Both talks shared one message: AI agents are powerful, but the **structure** you give them — interface contracts, isolated workspaces, clear review gates — decides if the result is good or messy.
 
