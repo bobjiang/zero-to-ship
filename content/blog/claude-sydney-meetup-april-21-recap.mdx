@@ -1,12 +1,20 @@
 ---
-title: "Claude Sydney Meetup Recap — Workflows Worth Stealing & A Weekend Build"
-excerpt: "Our April 2026 Claude Sydney meetup packed 50+ builders into Haymarket HQ for 14 Claude workflows worth stealing, a warts-and-all weekend build walkthrough, and six community lightning talks now open for voting."
+title: "14 Claude Code Workflows Worth Stealing & a Weekend Build to Prod — Claude Sydney Meetup — April 21, 2026"
+excerpt: "5 lessons from the April Claude Sydney meetup: 14 Claude Code workflows worth stealing and the real story of shipping a weekend build to prod."
 date: "2026-04-21"
 author: "Bob Jiang"
 keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, workflows, skills, evals, agent skills, lightning talks, community, recap, Haymarket HQ"
 ---
 
-# Claude Sydney Meetup Recap — Workflows Worth Stealing & A Weekend Build
+# 14 Claude Code Workflows Worth Stealing & a Weekend Build to Prod
+
+## TL;DR
+
+- Start with a **scope-killer** (Hermes / office-hours skill) before any coder touches the project.
+- Match the tool to the stage — **Claude Code is a coder, not an architect**. Use the superpowers skill chain for specs and plans.
+- Always get a **second model** to review your plan. Codex catches what Claude rationalizes.
+- "Tests pass" ≠ "prod works". Env vars, secrets, and integrations live outside your repo.
+- Make prod errors **observable**: wrap every external call in try/catch, log with a tag.
 
 On **Tuesday, April 21, 2026**, the 02Ship community gathered at **Haymarket HQ** (Level 2, 63 Dixon St) for our third Claude Sydney meetup. 50+ builders, engineers, and founders showed up for two longer talks and six community lightning talks — all focused on *how people actually use Claude Code at work*.
 
