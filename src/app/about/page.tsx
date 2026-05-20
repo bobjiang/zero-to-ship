@@ -154,9 +154,8 @@ export default function AboutPage() {
                   02Ship is a free learning platform and community based in
                   Sydney, Australia. We help people with no coding experience
                   build and ship real projects using AI tools like Claude Code.
-                  We offer step-by-step video courses, daily AI news, weekly
-                  Anthropic updates, monthly meetups, and 2-week building
-                  sprints called ship weeks.
+                  We offer step-by-step video courses, daily AI news, monthly
+                  meetups, and 2-week building sprints called ship weeks.
                 </dd>
               </div>
               <div>
@@ -175,8 +174,8 @@ export default function AboutPage() {
                   Is 02Ship free?
                 </dt>
                 <dd className="mt-2 text-gray-600">
-                  Yes. Our community, courses, meetups, daily news, and weekly
-                  updates are all free.
+                  Yes. Our community, courses, meetups, and daily news are all
+                  free.
                 </dd>
               </div>
               <div>
