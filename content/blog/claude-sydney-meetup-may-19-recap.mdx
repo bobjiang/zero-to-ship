@@ -1,0 +1,130 @@
+---
+title: "02Ship - Claude Sydney Recap - May 2026"
+excerpt: "The May Claude Sydney meetup focused on multi-agent orchestration. Sharat showed how to ship a feature with a fleet of Claudes using cmux. Fayner showed how Readplace uses Claude Code in GitHub Actions as an autonomous CI teammate."
+date: "2026-05-19"
+author: "Bob Jiang"
+keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, cmux, multi-agent, orchestration, DAG, worktrees, GitHub Actions, Readplace, InTune AI, agent, autonomous, recap"
+---
+
+# 02Ship - Claude Sydney Recap - May 2026
+
+On **Tuesday, May 19**, the 02Ship community met again at **Haymarket HQ** (Level 2, 63 Dixon St, Haymarket) for the May Claude Sydney meetup.
+
+The topic of the night was **multi-agent orchestration**. How do you let many Claude agents work together to ship real code, without you checking every step?
+
+![Attendees at the 02Ship Claude Sydney meetup, May 19 2026](/images/claude-sydney-meetup-may-19-2026.jpg)
+
+Thanks to **Haymarket HQ** for hosting us again.
+
+## Talk 1: Claude Conducting Claude — Sharat Madanapalli (InTune AI)
+
+[**Sharat Madanapalli**](https://www.linkedin.com/in/sharat910/) is the founder of **InTune AI**. He has 10+ years in ML and a PhD from UNSW. His company helps businesses adopt AI. Clients include **Virgin, Lifeline, nuix, AVLAW, and Canopus**. They help on three things: find AI opportunities, train people on tools, and build custom solutions.
+
+His talk was called *"Claude Conducting Claude — Working In Tune with AI"*.
+
+### The Agent Paradox
+
+Sharat started with the problem. Opus 4.5 made long-running AI agents possible. But the experience was still bad because of **endless approval loops**. Every small step needs a "yes" from the user. Two things happen:
+
+- Some users are scared and approve nothing.
+- Some users just click "yes" without reading.
+
+Both are bad. If you skip the approvals, the agent runs out of context and gets dumb. So Sharat wanted a clear **structure** for agent work, not blind trust.
+
+### From linear to DAG
+
+Before AI, one developer worked in a line: Plan → Build → Verify → Review. But AI can do more than one task at a time.
+
+Sharat showed a **Directed Acyclic Graph (DAG)** model. The plan splits into many tasks. The tasks run in parallel. Then they merge. This is how human teams worked before AI — a PM plans, then engineers work in parallel on frontend, backend, and cloud.
+
+The hard part is the "interface contract" between tasks. If task A and task B agree on the contract first, they can work alone.
+
+### cmux: the AI orchestration workbench
+
+To run this DAG, Sharat uses [**cmux**](https://github.com/manaflow-ai/cmux). It is a native macOS terminal made for agent work. cmux gives the orchestrator:
+
+- Dynamic terminals and panes
+- An embedded browser that uses **token-efficient snapshots** instead of full HTML
+- Real-time notifications
+- A CLI you can script
+
+The idea is simple: if Claude can drive the terminal, Claude can work like a real team.
+
+In Sharat's setup, Claude Code (or Codex) uses cmux to:
+
+- Run the DAG plan
+- Spawn worker agents in **isolated git worktrees**
+- Launch containers and read logs
+- Open browser panes to verify behaviour
+- Review code changes in a Codex pane
+
+### Demo: shipping a feature with a fleet of Claudes
+
+The live demo shipped a real feature: a **historical-context capability for a network traffic-spike detection agent**.
+
+The workflow was:
+
+1. An **OpenSpec-style proposal file** described the feature.
+2. A **DAG.md** file defined the parallel plan:
+   - **Layer 0**: interface definition (the contract)
+   - **Wave 1**: Schema (A), Agent logic (B), Database (C), Frontend (D) — each in its own worktree
+   - **Merge and review** at the end
+3. **Overnight execution** with a main orchestrator agent.
+4. **Morning result**: a complete PR with passing tests.
+
+### Things he learned
+
+A few practical notes from Sharat:
+
+- He uses **Claude Sonnet** as the worker model, not Claude Computer Use.
+- **Worktree isolation** is very important. Without it, agents will edit the same files and break each other.
+- Use **isolated agent instances**, not sub-agents. Sub-agents have real limits.
+- Keep each agent's context under about **60k tokens**. After that, quality drops fast.
+- The patterns are still new. He is watching OpenAI Symphony and Sandcastle.
+- For cost, he runs the fleet at **off-peak hours** to get more from API limits.
+
+## Talk 2: Claude Code as an Autonomous CI Teammate — Fayner (Readplace)
+
+[**Fayner**](https://www.linkedin.com/in/fagnerbrack/) is a solo founder. He builds **Readplace**. He showed how he wires **Claude Code into the GitHub Actions CI pipeline** as an autonomous agent.
+
+In his setup, Claude Code automatically:
+
+- Reviews every PR
+- Fixes CI failures
+- Resolves merge conflicts
+- Applies review feedback
+
+Because the boring CI work runs by itself, Fayner can focus on **architecture and product**.
+
+He also gave a quick tour of how Readplace works end-to-end. Then he showed a recent fix: **PDF OCR now fans out to one Lambda per page**. Before this fix, large PDFs would time out one single Lambda function. With one Lambda per page, the work runs in parallel and finishes much faster.
+
+He also talked briefly about **canary-based monitoring** for deployed agents, but did not go deep.
+
+He ended with Q&A. Two questions came up many times:
+
+- How do you **split tasks** so AI agents can work on them well?
+- Why does **architecture and design judgement still matter** when AI can write the code?
+
+His answer to the second one: many founders without architecture background try to build complex systems with AI, and then hit a wall. AI writes code, but you still need to design the system.
+
+Both talks shared one message: AI agents are powerful, but the **structure** you give them — interface contracts, isolated workspaces, clear review gates — decides if the result is good or messy.
+
+## Community Shout-Outs (Open Mic)
+
+Three community members shared their projects during the open mic:
+
+- **Bradley** — a **software development framework with an AI harness**, to keep agents on track.
+- **Burin** — a **lightweight markdown presentation tool**, for people who like writing markdown more than using slide software.
+- **Joseph** — a **game built by a developer with no game-dev experience**, which shows how AI lets you enter a new domain quickly.
+
+If you want to share next time, just add your name to the open mic list when you arrive.
+
+## Join the Next Meetup
+
+The next meetup is on **Tuesday, June 16** at **Haymarket HQ** (Level 2, 63 Dixon St, Haymarket). Same time as before (6:00 – 8:30 PM).
+
+It is free. Spots are limited.
+
+**[Register for the June 16 meetup on Luma](https://luma.com/in9tpvja)**
+
+See you there.
