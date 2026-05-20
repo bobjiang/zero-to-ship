@@ -56,7 +56,7 @@ const communities = [
   },
   {
     name: 'Telegram',
-    description: 'Daily AI news and weekly Anthropic/Claude updates.',
+    description: 'Daily AI news and Claude updates.',
     href: 'https://t.me/ClauderSydney',
     members: '',
     icon: (
@@ -87,11 +87,6 @@ const whatWeDoItems = [
     title: 'Free Courses',
     description:
       'Step-by-step video courses teaching you to build with Claude Code and agent skills. Designed for beginners, no coding experience needed.',
-  },
-  {
-    title: 'Weekly Updates',
-    description:
-      'Weekly digest of Anthropic and Claude developments. Product updates, API changes, and ecosystem news summarized so you don\'t miss what matters.',
   },
 ];
 
@@ -124,7 +119,7 @@ const faqItems = [
   {
     question: 'Is 02Ship free?',
     answer:
-      'Yes. Our community, courses, meetups, daily news, and weekly updates are all free. We believe everyone should have access to learn AI building skills.',
+      'Yes. Our community, courses, meetups, and daily news are all free. We believe everyone should have access to learn AI building skills.',
   },
 ];
 

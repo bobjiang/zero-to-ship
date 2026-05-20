@@ -59,11 +59,6 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/weekly" className="text-sm text-gray-600 hover:text-gray-900">
-                    Weekly Updates
-                  </Link>
-                </li>
-                <li>
                   <Link href="/blog" className="text-sm text-gray-600 hover:text-gray-900">
                     Blog
                   </Link>

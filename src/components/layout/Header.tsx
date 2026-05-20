@@ -8,7 +8,6 @@ import { UserNav } from '@/components/auth/UserNav';
 const navLinks = [
   { label: 'Courses', href: '/courses' },
   { label: 'Daily News', href: '/news' },
-  { label: 'Weekly', href: '/weekly' },
   { label: 'Services', href: '/services' },
   { label: 'Events', href: '/events' },
   { label: 'Get Involved', href: '/get-involved' },
