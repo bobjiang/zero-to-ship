@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-15",
+  "items": [
+    {
+      "title": "OpenAI's Codex AI Assistant Expands to Mobile Devices",
+      "summary": "OpenAI announces that its advanced coding assistant, Codex, will soon be available on mobile phones, enabling developers to work from anywhere.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "MinT: Managed Infrastructure for Training and Serving Millions of LLMs",
+      "summary": "A new paper introduces MinT, a managed infrastructure designed to efficiently train and serve millions of large language models, addressing scalability challenges in AI deployment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13779",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Elon Musk vs. Sam Altman: Jury to Decide Key Aspects of AI Lawsuit",
+      "summary": "A TechCrunch report details the critical points the jury will deliberate in the high-profile legal battle between Elon Musk and Sam Altman, potentially shaping the future of AI leadership.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/14/what-the-jury-will-actually-decide-in-the-case-of-elon-musk-vs-sam-altman/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Listen Labs Secures $69M to Scale AI Customer Interview Platform After Viral Stunt",
+      "summary": "Listen Labs successfully raises $69 million in funding, following a viral hiring campaign, to expand its AI-powered platform for conducting and analyzing customer interviews.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "SpaceXAI Experiences Significant Staff Departures Post-Merger",
+      "summary": "Reports indicate that Elon Musk's SpaceXAI has seen a substantial exodus of staff since its recent merger, raising questions about the company's stability and future direction.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/14/elon-musks-spacexai-has-been-bleeding-staff-since-its-merger/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "MulTaBench: Benchmarking Multimodal Tabular Learning with Text and Image",
+      "summary": "Researchers introduce MulTaBench, a new benchmark for evaluating multimodal tabular learning models that integrate both text and image data, pushing the boundaries of data analysis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.10616",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation",
+      "summary": "A new video diffusion model called AnyFlow is presented, capable of generating video at any step count using an on-policy flow map distillation technique, improving efficiency and quality.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13724",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Enhances ChatGPT's Context Recognition for Sensitive Conversations",
+      "summary": "OpenAI announces improvements to ChatGPT, enabling it to better understand and maintain context in sensitive discussions, aiming for more nuanced and appropriate responses.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context",
+      "summary": "A new study demonstrates effective methods for training vision-language models to handle extremely long contexts, achieving generalization beyond 128K tokens.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13831",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Old PC vs New AI: Can a 2015 Desktop Actually Run Gemma 4? (2B vs 4B Benchmark)",
+      "summary": "A practical benchmark explores whether a 2015 desktop PC can effectively run Google's Gemma 4 (2B and 4B parameter models), offering insights into AI accessibility on older hardware.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gramli/old-pc-vs-new-ai-can-a-2015-desktop-actually-run-gemma-4-2b-vs-4b-benchmark-2eg6",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "EVA-Bench: A New End-to-end Framework for Evaluating Voice Agents",
+      "summary": "Researchers introduce EVA-Bench, a comprehensive end-to-end framework designed for robustly evaluating the performance of voice agents across various scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13841",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Predicting Decisions of AI Agents from Limited Interaction through Text-Tabular Modeling",
+      "summary": "A new paper explores a method for predicting the decisions of AI agents based on limited interactions, utilizing a novel text-tabular modeling approach.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12411",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Qwen-Image-VAE-2.0 Technical Report",
+      "summary": "The technical report for Qwen-Image-VAE-2.0 is released, detailing advancements in image generation and compression through an improved Variational Autoencoder.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13565",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AI Isn't Replacing Developers - It's Turning Us Into Underpaid Bot Babysitters",
+      "summary": "An opinion piece argues that AI is not replacing developers but rather shifting their roles to managing and overseeing AI agents, potentially leading to new challenges in compensation and job satisfaction.",
+      "source": "Dev.to",
+      "url": "https://dev.to/karol_modelski/ai-isnt-replacing-developers-its-turning-us-into-underpaid-bot-babysitters-ohc",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Do Androids Dream of Breaking the Game? Systematically Auditing AI Agent Benchmarks with BenchJack",
+      "summary": "Researchers introduce BenchJack, a new tool for systematically auditing AI agent benchmarks to uncover potential vulnerabilities and ensure robust evaluation of agent capabilities.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.12673",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}

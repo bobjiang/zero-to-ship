@@ -1,0 +1,42 @@
+{
+  "week": "2026-05-19",
+  "startDate": "2026-05-12",
+  "endDate": "2026-05-19",
+  "summary": "This week, Anthropic offered a sneak peek into future innovations with the 'Mythos Preview' and provided essential guidance on managing Claude usage limits.",
+  "sections": [
+    {
+      "id": "product-updates",
+      "title": "Product Updates and News",
+      "items": [
+        {
+          "title": "Usage limit best practices",
+          "summary": "Understanding Claude's usage limits is crucial for planning your projects and ensuring uninterrupted access to the AI. This resource helps builders optimize their interactions and manage their usage effectively.",
+          "url": "https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices",
+          "impact": "medium",
+          "tags": [
+            "pricing",
+            "usage-limits",
+            "best-practices"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whats-coming",
+      "title": "What's Coming",
+      "items": [
+        {
+          "title": "Mythos Preview (Glasswing)",
+          "summary": "Anthropic's 'Mythos Preview' (Glasswing) offers a glimpse into future capabilities or research. Builders should keep an eye on this space for potential new tools or approaches that could enhance their Claude-powered applications.",
+          "url": "https://www.anthropic.com/glasswing",
+          "impact": "high",
+          "tags": [
+            "preview",
+            "future-features",
+            "research"
+          ]
+        }
+      ]
+    }
+  ]
+}

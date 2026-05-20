@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-13",
+  "items": [
+    {
+      "title": "Anthropic Launches Cowork: A Claude Desktop Agent for File Interaction Without Coding",
+      "summary": "Anthropic introduces Cowork, a new Claude desktop agent that allows users to interact with their files and perform tasks without requiring any coding, making advanced AI more accessible.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Qwen-Image-2.0 Technical Report Released",
+      "summary": "The technical report for Qwen-Image-2.0 is released, detailing advancements in this significant multimodal model, indicating progress in image understanding and generation capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.10730",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway raises $100 million in funding to develop AI-native cloud infrastructure, positioning itself as a major competitor to established cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Medicare's New Payment Model Designed for AI, Overlooked by Tech Industry",
+      "summary": "A new Medicare payment model has been quietly structured to accommodate AI technologies, a significant development in healthcare policy that much of the tech world has yet to recognize.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/12/medicares-new-payment-model-is-built-for-ai-and-most-of-the-tech-world-has-no-idea/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research Releases NousCoder-14B, an Open-Source Coding Model",
+      "summary": "Nous Research launches NousCoder-14B, an open-source coding model that enters the market at a crucial time for AI-assisted code generation, offering a powerful alternative to proprietary solutions.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Elon Musk Considered Transferring OpenAI Ownership to His Children, Altman Testifies",
+      "summary": "Sam Altman testifies that Elon Musk at one point considered transferring ownership of OpenAI to his children, revealing new details about the company's early internal dynamics.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/12/musk-mulled-handing-openai-to-his-children-altman-testifies/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic Issues Warning Against Secondary Platforms Offering Access to Its Shares",
+      "summary": "Anthropic has cautioned investors about unauthorized secondary platforms selling access to its shares, highlighting concerns over market speculation and potential risks.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/12/anthropic-warns-investors-against-secondary-platforms-offering-access-to-its-shares/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Voker (YC S24) Launches Analytics Platform for AI Agents",
+      "summary": "Voker, a Y Combinator S24 startup, has launched its analytics platform specifically designed to monitor and provide insights into the performance and behavior of AI agents.",
+      "source": "Hacker News",
+      "url": "https://voker.ai",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "CollabVR: Collaborative Video Reasoning with Vision-Language and Video Generation Models",
+      "summary": "New research introduces CollabVR, a system enabling collaborative video reasoning by integrating vision-language and video generation models to understand and interact with video content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.08735",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "TMAS: Scaling Test-Time Compute via Multi-Agent Synergy",
+      "summary": "A new paper presents TMAS, a method for scaling test-time computation in AI systems by leveraging the synergistic collaboration of multiple agents, improving efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.10344",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Run Claude Code Locally for Free with Docker Model Runner",
+      "summary": "A guide demonstrates how to run Claude's code models locally for free using a Docker Model Runner, making advanced AI coding capabilities more accessible to developers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/pradumnasaraf/run-claude-code-locally-for-free-with-docker-model-runner-3o27",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Where Reliability Lives in Vision-Language Models: A Mechanistic Study",
+      "summary": "A mechanistic study delves into the internal workings of vision-language models, identifying where reliability is encoded within attention mechanisms, hidden states, and causal circuits.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.08200",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Spatial Priming Outperforms Semantic Prompting for LLM Chart Data Extraction",
+      "summary": "Research indicates that a grid-based spatial priming approach significantly improves LLM accuracy in extracting data from charts, outperforming traditional semantic prompting methods.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.08220",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Auto-Rubric as Reward: From Implicit Preferences to Explicit Multimodal Generative Criteria",
+      "summary": "A new research paper proposes using 'Auto-Rubric' as a reward mechanism to translate implicit user preferences into explicit multimodal generative criteria, enhancing model control and output quality.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.08354",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Open Vibe: Ship Your SaaS with AI, Without Getting Stuck",
+      "summary": "Open Vibe offers a solution aimed at helping developers integrate AI into their SaaS products more smoothly, addressing common hurdles in AI adoption for businesses.",
+      "source": "Dev.to",
+      "url": "https://dev.to/wasp/open-vibe-ship-your-saas-with-ai-without-getting-stuck-e2h",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}

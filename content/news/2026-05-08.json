@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-08",
+  "items": [
+    {
+      "title": "Scaling Trusted Access for Cyber with GPT-5.5 and GPT-5.5-Cyber",
+      "summary": "OpenAI announces advancements in secure access for cybersecurity applications using its new GPT-5.5 and specialized GPT-5.5-Cyber models.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI launches new voice intelligence features in its API",
+      "summary": "OpenAI has released new advanced voice intelligence capabilities for its API, allowing developers to integrate more sophisticated speech recognition and synthesis into their applications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Advancing voice intelligence with new models in the API",
+      "summary": "OpenAI is enhancing its API with new models that significantly improve voice intelligence capabilities, offering more nuanced and accurate speech processing.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenSearch-VL: An Open Recipe for Frontier Multimodal Search Agents",
+      "summary": "Introduces OpenSearch-VL, an open-source framework designed to create advanced multimodal search agents capable of understanding and processing various data types.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.05185",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "OpenAI introduces new &#8216;Trusted Contact&#8217; safeguard for cases of possible self-harm",
+      "summary": "OpenAI has implemented a new 'Trusted Contact' feature to provide a safeguard for users, enabling intervention in situations where self-harm might be indicated.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/07/openai-introduces-new-trusted-contact-safeguard-for-cases-of-possible-self-harm/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Stream-R1: Reliability-Perplexity Aware Reward Distillation for Streaming Video Generation",
+      "summary": "Introduces Stream-R1, a method for streaming video generation that uses reliability-perplexity aware reward distillation to improve performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.03849",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Stream-T1: Test-Time Scaling for Streaming Video Generation",
+      "summary": "Presents Stream-T1, a technique for test-time scaling in streaming video generation to enhance output quality and efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.04461",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Voi founders&#8217; new AI startup Pit has become the latest rising star out of Stockholm",
+      "summary": "The founders of Voi have launched a new AI startup called Pit, which is quickly gaining recognition as a prominent emerging company in Stockholm's tech scene.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/07/voi-founders-new-ai-startup-pit-has-become-the-latest-rising-star-out-of-stockholm/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "RLDX-1 Technical Report",
+      "summary": "Provides a technical report on RLDX-1, likely a new model or framework for reinforcement learning, detailing its architecture and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.03269",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "HERMES++: Toward a Unified Driving World Model for 3D Scene Understanding and Generation",
+      "summary": "Proposes HERMES++, a unified world model aimed at improving 3D scene understanding and generation specifically for autonomous driving applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.28196",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The latest AI news we announced in April 2026",
+      "summary": "Google's AI blog summarizes its key AI announcements and updates from April 2026, covering various product and research advancements.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "I built a 200 line AI router in TypeScript. My monthly bill dropped 41%.",
+      "summary": "A developer shares how building a small AI router in TypeScript significantly reduced their monthly cloud service costs by 41%.",
+      "source": "Dev.to",
+      "url": "https://dev.to/thegdsks/i-built-a-200-line-ai-router-in-typescript-my-monthly-bill-dropped-41-23ok",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic just rented Elon Musk's data center. The price of a Claude token is about to make sense.",
+      "summary": "Anthropic's reported rental of Elon Musk's data center suggests a strategic move to scale operations, potentially impacting the cost structure of their Claude AI tokens.",
+      "source": "Dev.to",
+      "url": "https://dev.to/thegdsks/anthropic-just-rented-elon-musks-data-center-the-price-of-a-claude-token-is-about-to-make-sense-lc3",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Cloudflare and Stripe just let agents buy domains and ship code. Here is the API.",
+      "summary": "Cloudflare and Stripe have reportedly released APIs that enable AI agents to autonomously purchase domains and deploy code, signaling a new era for automated development workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/thegdsks/cloudflare-and-stripe-just-let-agents-buy-domains-and-ship-code-here-is-the-api-59pb",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Mojo v1.0.0b1",
+      "summary": "Mojo, a new programming language designed for AI development, announces its v1.0.0b1 release, indicating significant progress towards a stable version.",
+      "source": "Lobste.rs",
+      "url": "https://mojolang.org/releases/v1.0.0b1",
+      "score": 6,
+      "category": "open-source"
+    }
+  ]
+}

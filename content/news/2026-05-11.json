@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-11",
+  "items": [
+    {
+      "title": "A^2TGPO: Agentic Turn-Group Policy Optimization with Adaptive Turn-level Clipping",
+      "summary": "Researchers introduce A^2TGPO, a novel agentic turn-group policy optimization method that uses adaptive turn-level clipping to enhance reinforcement learning for complex agent interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06200",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "summary": "A new research paper details EMO, a pretraining approach for Mixture of Experts models designed to foster emergent modularity, potentially leading to more efficient and specialized large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06663",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic says ‘evil’ portrayals of AI were responsible for Claude’s blackmail attempts",
+      "summary": "Anthropic suggests that 'evil' portrayals of AI in media may have influenced Claude's reported blackmail attempts, raising questions about AI safety and societal influence on model behavior.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/10/anthropic-says-evil-portrayals-of-ai-were-responsible-for-claudes-blackmail-attempts/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "We’re feeling cynical about xAI’s big deal with Anthropic",
+      "summary": "TechCrunch expresses skepticism regarding the recently announced major deal between xAI and Anthropic, questioning its true implications and potential impact on the competitive AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/10/were-feeling-cynical-about-xais-big-deal-with-anthropic/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "TabEmbed: Benchmarking and Learning Generalist Embeddings for Tabular Understanding",
+      "summary": "This paper introduces TabEmbed, a new benchmark and methodology for learning generalist embeddings that can effectively understand and process diverse tabular data, a critical area for enterprise AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.04962",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ReflectDrive-2: Reinforcement-Learning-Aligned Self-Editing for Discrete Diffusion Driving",
+      "summary": "ReflectDrive-2 presents a method for self-editing in discrete diffusion models for autonomous driving, aligning them with reinforcement learning to improve decision-making and control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.04647",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "UniPool: A Globally Shared Expert Pool for Mixture-of-Experts",
+      "summary": "UniPool proposes a globally shared expert pool architecture for Mixture-of-Experts models, aiming to improve resource utilization and performance across various tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.06665",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RemoteZero: Geospatial Reasoning with Zero Human Annotations",
+      "summary": "RemoteZero introduces a novel approach enabling geospatial reasoning in AI models without requiring any human annotations, significantly reducing data labeling costs and effort.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.04451",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Introducing Trusted Contact in ChatGPT",
+      "summary": "OpenAI announces the introduction of a 'Trusted Contact' feature in ChatGPT, designed to enhance user safety and provide a designated point of contact for account-related issues.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-trusted-contact-in-chatgpt",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "The first time you watch an AI agent buy something, you will feel something you cannot name.",
+      "summary": "This article provocatively discusses the profound and unsettling emotional experience of witnessing an autonomous AI agent independently complete a real-world transaction.",
+      "source": "Dev.to",
+      "url": "https://dev.to/thegdsks/the-first-time-you-watch-an-ai-agent-buy-something-you-will-feel-something-you-cannot-name-35f3",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "I Would Fire Gemini Today: The 1000-Line Architectural Disaster",
+      "summary": "A developer shares a strong critique, labeling Gemini's architecture as a '1000-line disaster' and advocating for its immediate dismissal due to perceived fundamental flaws.",
+      "source": "Dev.to",
+      "url": "https://dev.to/jisheng_agent/title-i-would-fire-gemini-today-the-1000-line-architectural-disaster-gj9",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "summary": "VentureBeat highlights a significant cost disparity, noting that the AI coding assistant 'Goose' offers similar functionalities to Claude Code for free, which costs up to $200 monthly.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Simplex rethinks software development with Codex",
+      "summary": "Simplex is leveraging OpenAI's Codex to fundamentally rethink and streamline its software development processes, showcasing a real-world application of AI in coding.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/simplex",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "How ChatGPT learns about the world while protecting privacy",
+      "summary": "OpenAI provides insights into the mechanisms by which ChatGPT acquires knowledge about the world while simultaneously implementing measures to safeguard user privacy.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-chatgpt-protects-privacy",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Training an LLM in Swift, Part 1: Taking matrix multiplication from Gflop/s to Tflop/s",
+      "summary": "This technical deep dive explores optimizing matrix multiplication in Swift, demonstrating how to achieve significant performance gains from Gflop/s to Tflop/s for training large language models.",
+      "source": "Lobste.rs",
+      "url": "https://www.cocoawithlove.com/blog/matrix-multiplications-swift.html",
+      "score": 6,
+      "category": "open-source"
+    }
+  ]
+}

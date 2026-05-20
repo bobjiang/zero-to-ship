@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-27",
+  "items": [
+    {
+      "title": "C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion",
+      "summary": "Researchers introduce C-GenReg, a novel training-free method for 3D point cloud registration that leverages multi-view-consistent geometry-to-image generation and probabilistic modalities fusion.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.16680",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic Launches Cowork, a Claude Desktop Agent for File Interaction Without Coding",
+      "summary": "Anthropic has released Cowork, a new Claude Desktop agent designed to interact directly with user files, offering AI assistance without requiring any coding knowledge.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Why Cohere is Merging with Aleph Alpha",
+      "summary": "Cohere and Aleph Alpha are merging, a significant consolidation in the AI industry that could reshape the competitive landscape for enterprise AI solutions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/25/why-cohere-is-merging-with-aleph-alpha/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop AI-native cloud infrastructure, aiming to compete directly with established giants like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B: An Open-Source Coding Model Enters the Scene",
+      "summary": "Nous Research has launched NousCoder-14B, an open-source coding model positioned to compete in the rapidly evolving landscape of AI-powered code generation.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Vista4D: Video Reshooting with 4D Point Clouds",
+      "summary": "A new research paper introduces Vista4D, a technique that enables video reshooting by utilizing 4D point clouds for advanced scene manipulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.21915",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EditCrafter: Tuning-Free High-Resolution Image Editing via Pretrained Diffusion Model",
+      "summary": "EditCrafter presents a novel method for high-resolution image editing using a pretrained diffusion model, eliminating the need for fine-tuning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.10268",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Context Unrolling in Omni Models",
+      "summary": "New research explores context unrolling techniques within omni models, aiming to enhance their ability to process and understand complex, multi-modal inputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.21921",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Scaling Test-Time Compute for Agentic Coding",
+      "summary": "This paper investigates methods for scaling test-time computational resources to improve the performance and efficiency of agentic coding systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.16529",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "I Built a Safe Autonomous Email Agent with OpenClaw and It Actually Works",
+      "summary": "A developer shares their success in building a functional and safe autonomous email agent using the OpenClaw framework, highlighting its practical application.",
+      "source": "Dev.to",
+      "url": "https://dev.to/samir_vaniya_ce9cc284f2f8/i-built-a-safe-autonomous-email-agent-with-openclaw-and-it-actually-works-1kmh",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Why Tokyo is the Most Important Tech Destination of 2026",
+      "summary": "Tokyo is emerging as a critical hub for technology and AI innovation in 2026, attracting significant investment and talent.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/25/why-tokyo-is-the-most-important-tech-destination-of-2026/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "I Spent Weeks Reverse-Engineering OpenClaw. Here's What Nobody Tells You.",
+      "summary": "A developer recounts their experience reverse-engineering OpenClaw, revealing insights and challenges not commonly discussed about the platform.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nazarf/i-spent-weeks-reverse-engineering-openclaw-heres-what-nobody-tells-you-4bch",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Securely Deploying OpenClaw on a VPS With Enterprise Grade Access Control",
+      "summary": "This article provides a guide on securely deploying the OpenClaw platform on a Virtual Private Server, incorporating enterprise-grade access control measures.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dean0x/securely-deploying-openclaw-on-a-vps-with-enterprise-grade-access-control-32ji",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Kiro Forgets Everything Every Session. So I've Built It a Memory.",
+      "summary": "A developer addresses the ephemeral memory of the Kiro AI by building a persistent memory system to enhance its conversational capabilities.",
+      "source": "Dev.to",
+      "url": "https://dev.to/tverney_77/kiro-forgets-everything-every-session-so-ive-built-it-a-memory-1e86",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "AI Scientists Produce Results Without Reasoning Scientifically",
+      "summary": "A new paper explores the phenomenon of AI systems generating valid scientific results without explicitly demonstrating human-like scientific reasoning processes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.18805",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}

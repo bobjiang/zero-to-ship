@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-18",
+  "items": [
+    {
+      "title": "VGGT-Edit: Feed-forward Native 3D Scene Editing with Residual Field Prediction",
+      "summary": "Researchers introduce VGGT-Edit, a novel method for native 3D scene editing that uses a feed-forward network with residual field prediction, offering efficient and high-quality results.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.15186",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Apple’s Siri revamp could include auto-deleting chats",
+      "summary": "Apple is reportedly planning a significant overhaul for Siri, potentially introducing privacy-enhancing features like auto-deleting chat histories.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/17/apples-siri-revamp-could-include-auto-deleting-chats/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Why trust is a big question at the Elon Musk-OpenAI trial",
+      "summary": "The ongoing legal battle between Elon Musk and OpenAI highlights fundamental questions of trust, ethics, and the founding principles of AI development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/17/why-trust-is-a-big-question-at-the-elon-musk-openai-trial/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "ATLAS: Agentic or Latent Visual Reasoning? One Word is Enough for Both",
+      "summary": "ATLAS proposes a new approach to visual reasoning, exploring whether agentic or latent methods are more effective and demonstrating a unified solution.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.15198",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "FrontierSmith: Synthesizing Open-Ended Coding Problems at Scale",
+      "summary": "FrontierSmith presents a new method for generating a large volume of diverse and open-ended coding problems, which could significantly aid in AI agent training and software engineering education.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.14445",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Learning to Communicate Locally for Large-Scale Multi-Agent Pathfinding",
+      "summary": "This research explores efficient local communication strategies for multi-agent systems to solve large-scale pathfinding problems, crucial for robotics and logistics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.07637",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The latest AI news we announced in April 2026",
+      "summary": "Google provides a comprehensive recap of its significant AI advancements and product updates released throughout April 2026.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "I Ran AI Models Directly in the Browser and Measured What It Did to Core Web Vitals",
+      "summary": "An experiment details the performance impact of running AI models directly within a web browser on critical web performance metrics, offering insights for web developers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mspk97/i-ran-ai-models-directly-in-the-browser-and-measured-what-it-did-to-core-web-vitals-4adj",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "IntentVLA: Short-Horizon Intent Modeling for Aliased Robot Manipulation",
+      "summary": "IntentVLA introduces a method for robots to model short-term human intent, improving manipulation tasks where objects or actions might be ambiguous.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.14712",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DiffusionOPD: A Unified Perspective of On-Policy Distillation in Diffusion Models",
+      "summary": "DiffusionOPD offers a unified framework for understanding and applying on-policy distillation techniques within diffusion models, potentially enhancing their training and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.15055",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PanoWorld: Towards Spatial Supersensing in 360^circ Panorama World",
+      "summary": "PanoWorld explores advanced spatial understanding in 360-degree panoramic environments, aiming for 'supersensing' capabilities in immersive AI applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13169",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ViMU: Benchmarking Video Metaphorical Understanding",
+      "summary": "ViMU introduces a new benchmark specifically designed to evaluate how well AI models can understand metaphorical concepts within video content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.14607",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "CodeGraph: Stop Your AI Agent From Grepping the Same Files 50 Times",
+      "summary": "CodeGraph proposes a solution to optimize AI agent efficiency by preventing redundant file searches, improving performance in code-related tasks.",
+      "source": "Dev.to",
+      "url": "https://dev.to/arshtechpro/codegraph-stop-your-ai-agent-from-grepping-the-same-files-50-times-3bgm",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Autonomous AI research for nanogpt speedrun",
+      "summary": "This article discusses efforts to accelerate AI research using autonomous AI agents, specifically in the context of optimizing nanoGPT development.",
+      "source": "Lobste.rs",
+      "url": "https://www.primeintellect.ai/auto-nanogpt",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "What Coding Is Starting to Lose",
+      "summary": "This piece reflects on the evolving nature of software development, discussing how the increasing role of AI might be changing the essence of coding itself.",
+      "source": "Lobste.rs",
+      "url": "https://caio.ca/blog/what-coding-is-starting-to-lose",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}

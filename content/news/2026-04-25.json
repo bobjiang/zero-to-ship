@@ -1,0 +1,125 @@
+{
+  "date": "2026-04-25",
+  "items": [
+    {
+      "title": "Google to Invest Up to $40B in Anthropic in Cash and Compute",
+      "summary": "Google is making a massive investment of up to $40 billion in AI competitor Anthropic, signaling a significant deepening of their strategic partnership in the AI race.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "ComfyUI Hits $500M Valuation as Creators Seek More Control Over AI-Generated Media",
+      "summary": "ComfyUI, a popular open-source tool for AI image generation workflows, has achieved a $500 million valuation, reflecting growing demand for user control in creative AI.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/24/comfyui-hits-500m-valuation-as-creators-seek-more-control-over-ai-generated-media/",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "LLaTiSA: Towards Difficulty-Stratified Time Series Reasoning from Visual Perception to Semantics",
+      "summary": "Researchers introduce LLaTiSA, a new approach for time series reasoning that integrates visual perception with semantic understanding, stratified by difficulty levels.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.17295",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "A New Way to Explore the Web with AI Mode in Chrome",
+      "summary": "Google introduces an 'AI Mode' in Chrome, offering users an enhanced way to explore the web with integrated artificial intelligence capabilities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-chrome/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "I Used to Love Coding. Now I Just Prompt.",
+      "summary": "This article reflects a growing sentiment among developers who find themselves shifting from traditional coding to primarily using prompts to interact with AI models for software development tasks.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/i-used-to-love-coding-now-i-just-prompt-550l",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Google Just Launched an Official Agent Skills Repository. Here's What It Actually Solves.",
+      "summary": "Google has launched an official repository for AI agent skills, aiming to standardize and streamline the development and deployment of capabilities for AI agents.",
+      "source": "Dev.to",
+      "url": "https://dev.to/om_shree_0709/google-just-launched-an-official-agent-skills-repository-heres-what-it-actually-solves-2k5c",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "The Tool-Overuse Illusion: Why Does LLM Prefer External Tools over Internal Knowledge?",
+      "summary": "New research investigates the phenomenon where Large Language Models (LLMs) sometimes prefer using external tools even when they possess the internal knowledge to solve a task, highlighting a potential inefficiency or bias.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2604.19749",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Reversing SynthID",
+      "summary": "An analysis explores the technical details and potential vulnerabilities of SynthID, Google's AI watermarking technology, by attempting to reverse-engineer its mechanisms.",
+      "source": "Lobste.rs",
+      "url": "https://hackerfactor.com/blog/index.php?/archives/1092-Reversing-SynthID.html",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WorldMark: A Unified Benchmark Suite for Interactive Video World Models",
+      "summary": "WorldMark introduces a new comprehensive benchmark suite designed to evaluate the performance of interactive video world models across various tasks and scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.21686",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling",
+      "summary": "Researchers propose UniT, a unified physical language aimed at bridging the gap between human demonstrations and humanoid robot policy learning and world modeling.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19734",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Meta’s Loss is Thinking Machines’ Gain",
+      "summary": "This article discusses a notable talent migration from Meta to Thinking Machines, indicating shifts in the competitive landscape for top AI researchers and engineers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/04/24/metas-loss-is-thinking-machines-gain/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Expert Upcycling: Shifting the Compute-Efficient Frontier of Mixture-of-Experts",
+      "summary": "This paper introduces a novel technique called 'Expert Upcycling' to improve the compute efficiency of Mixture-of-Experts (MoE) models, pushing the boundaries of what's possible with less computational cost.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19835",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Co-Evolving LLM Decision and Skill Bank Agents for Long-Horizon Tasks",
+      "summary": "A new research paper explores a method for co-evolving both the decision-making capabilities and the skill sets of LLM-based agents to tackle complex, long-horizon tasks more effectively.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.20987",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Claude Code Costs Up to $200 a Month. Goose Does the Same Thing for Free.",
+      "summary": "This article highlights the competitive landscape in AI coding assistants, contrasting the paid service of Claude Code with a free alternative named Goose that offers similar functionalities.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "A Self-Evolving Framework for Efficient Terminal Agents via Observational Context Compression",
+      "summary": "Researchers present a self-evolving framework that enhances the efficiency of terminal agents by compressing observational context, allowing for more adaptive and resource-optimized operations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2604.19572",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}

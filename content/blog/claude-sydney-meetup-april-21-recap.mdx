@@ -1,0 +1,119 @@
+---
+title: "Claude Sydney Meetup Recap — Workflows Worth Stealing & A Weekend Build"
+excerpt: "Our April 2026 Claude Sydney meetup packed 50+ builders into Haymarket HQ for 14 Claude workflows worth stealing, a warts-and-all weekend build walkthrough, and six community lightning talks now open for voting."
+date: "2026-04-21"
+author: "Bob Jiang"
+keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, workflows, skills, evals, agent skills, lightning talks, community, recap, Haymarket HQ"
+---
+
+# Claude Sydney Meetup Recap — Workflows Worth Stealing & A Weekend Build
+
+On **Tuesday, April 21, 2026**, the 02Ship community gathered at **Haymarket HQ** (Level 2, 63 Dixon St) for our third Claude Sydney meetup. 50+ builders, engineers, and founders showed up for two longer talks and six community lightning talks — all focused on *how people actually use Claude Code at work*.
+
+![Attendees at the Claude Sydney meetup April 21](/images/claude-sydney-meetup-april-2-2026.jpeg)
+
+Thanks to **Haymarket HQ** for hosting the space and to everyone who turned up on a rainy Tuesday night.
+
+The event page is here: [**Claude Sydney Meetup — How People Actually Use Claude Code at Work**](https://luma.com/ml2pbh7n).
+
+## Talk 1: Claude Workflows Worth Stealing
+
+[**Shaon Diwakar**](https://www.linkedin.com/in/shaon-diwakar/) — Founder of **Dini Labs**, ex-Meta (Instagram/Threads), NewsMaven, Tyro, EY — opened with a rapid-fire tour through 14 Claude workflows that have made it into his daily practice. His framing: *these are all "worth stealing"* — pick the ones that match your stack.
+
+**[View Shaon's slide deck →](https://docs.google.com/presentation/d/1LkeEg4HESCkZfJzN-8w0vCcBE6XJhjBIgKqLdKT0GSo/edit?usp=sharing)**
+
+We'll group the 14 workflows into four clusters so you can scan them fast.
+
+### Cluster 1 — Agent infrastructure
+
+- **[InboxAPI](https://inboxapi.ai)** — Shaon's own project. Gives every AI agent a personal email address so it can send and receive mail like any other teammate. `npm install -g @inboxapi/cli` with SMTP exposed via MCP.
+- **[Beads](https://github.com/Dicklesworthstone/beads_rust)** — local-first, SQLite-backed task tracker that lets an agent remember its own work. Issues store as JSONL for git collaboration; the agent picks up "ready" work and manages dependencies. Fixes the problem of Claude drifting off plan between sessions.
+- **Tool Gateways (Composio, Merge)** — SaaS orchestration with 1,000+ pre-built integrations (Slack, GitHub, Jira, etc.). Managed OAuth, ephemeral sandboxes, and dynamic tool resolution. Skip building MCP servers per integration — buy the platform instead.
+
+### Cluster 2 — Agent behavior & knowledge
+
+- **Agent Skills ecosystem** — "Baking engineering culture into agent memory." 20+ production-grade workflows covering TDD, security, and code quality. Shaon quoted the *"Beyoncé Rule"* — *"If you liked the code, you should have put a test on it."* Reference: Addy Osmani's Agent Skills on GitHub.
+- **Evals, Evals, Evals** — Make the model rate its own work against a rubric before it calls a task done. Structured JSON self-evals documenting *what went well, what needed improvement, what's next*. Turns a solo dev into a team by enforcing guardrails.
+- **The LLM Wiki Pattern** — a compounding knowledge base the agent contributes to. Markdown files in a shared git repo; agents read wiki-first before scanning raw source. Cuts token cost and stops the model from re-deriving the same facts every session. (Nod to Andrej Karpathy.)
+- **Requirements Interrogation** — the *"Interview me until you're 95% confident"* prompt. Flip the dynamic: let Claude ask *you* the questions before any code is written. Surfaces hidden assumptions stakeholders didn't even know they had. (Addy Osmani again.)
+
+### Cluster 3 — Day-to-day dev workflows
+
+- **Claude Postgres Optimization** — point Claude Code at a `psql` connection (or an anonymized prod replica via MCP). Get slow-query reports, normalization gaps, and schema drift flagged before your users find them.
+- **Headless Browser Ops** — Playwright + [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) for frontend debugging. Real DOM interaction, network traces, console logs, performance profiling — the agent sees what the browser sees.
+- **Log Detective** — read-only access to prod logs + DB schema. Claude correlates a stack trace back to a specific source line, proposes a fix, and verifies against the real failure data. Works with nginx, IIS, Apache. Shaon suggested Opus 4.6 for cost efficiency on long log tails.
+- **Security Auditor** — agents review PRs for security *and* architectural drift. Self-eval against OWASP Top 10 before a commit lands. Web-search enabled so it can flag supply-chain attacks against your dependencies.
+
+### Cluster 4 — Meta & ergonomics
+
+- **Measure AI ROI** — build leaderboards comparing AI-assisted output to the human baseline. If you can't show the saving, you can't get organizational buy-in.
+- **Voice Typing** — 3x faster than typing. Longer prompts produce better interrogation, which produces better code. Tools: [HyperWhisper](https://hyperwhisper.com), [Wispr Flow](https://wisprflow.ai). A decent mic is non-negotiable.
+
+The through-line: **give the agent memory, rubrics, and tools — then get out of its way**. The 14 workflows are less about clever prompts and more about the scaffolding around them.
+
+## Talk 2: How to Build a Feature for Community Engagement
+
+![Bob Jiang speaking at the Claude Sydney meetup April 21](/images/claude-sydney-meetup-april-1-2026.jpeg)
+
+[**Bob Jiang**](https://www.linkedin.com/in/xinbaojiang) (02Ship) followed with a live walkthrough of a weekend build: the **Lightning Talk Voting tool** that powers [02ship.com/vote](https://www.02ship.com/vote). Five PRs, one prod incident, and a handful of lessons about which AI tool to reach for at each stage.
+
+**[View the Talk 2 slide deck →](https://htmlpreview.github.io/?https://github.com/bobjiang/zero-to-ship/blob/main/content/meetup/community-feature-build.html)**
+
+The arc of the build:
+
+1. **Idea → Hermes brainstorm.** Before writing code, Bob ran the idea through *Hermes* (via the gstack `office-hours` skill). Its job is to kill scope, not help you write. It cut the feature list by ~60% in 10 minutes — dropped ranked-choice voting, Slack integration, and user profiles. The narrowest wedge: "40 people on a phone, 5-minute window, one cookie, three votes."
+
+2. **First PRD with Claude Code + gstack — failed.** Asked to "refine the PRD," Claude Code produced **40 pages, 6 services, WebSockets, Redis streams, 3 new tables**. Too complex to build or review. Lesson: *Claude Code is a coder. If you ask it to architect, it will happily over-architect.*
+
+3. **Refine with [superpowers](https://github.com/obra/superpowers-skills) + codex review.** Switched to the superpowers skill chain — `brainstorming → writing-spec → writing-plans` — which locks intent before touching implementation. Got a **6-page PRD, 1 KV store, honest edge-case list**. Then ran the PRD through `codex review` (OpenAI's Codex CLI in adversarial mode) for a second pair of eyes. Codex caught three real gaps: *"no auth for approvers," "rate limit is per-cookie — trivial to bypass," "what happens when a talk is rejected after a vote?"*
+
+4. **Write plan → execute in a worktree.** Plan as a checklist of commits, each small enough to review in one sitting. Git worktree keeps the main checkout clean. The `verification-before-completion` skill requires evidence (test output), not vibes, to close a step.
+
+5. **Code review + E2E — and an E2E trap.** Three-lens review: Claude self-review (simplify skill), codex review (adversarial), then a human on the diff. Plus a Playwright E2E covering submit → approve → vote → verify. **The trap**: the E2E ran against the shared prod KV store. Every CI run left behind `"E2E Speaker 1776673201567"` records, drowning out real talks. Eventually deleted the test (PR #69). *Rule: E2E against shared prod needs teardown — or kill the test.*
+
+6. **The deploy cliff.** Localhost all green → production returns 500 on every submit. The client showed *"Please fill in name, title, intro..."* even when every field was filled. Root cause: Vercel KV had been deprecated; the store migrated to **Upstash**, which provisions *different* env var names. `@vercel/kv` reads `KV_REST_API_URL`; Upstash provides `UPSTASH_REDIS_REST_URL`. First `kv.incr()` threw; no try/catch, so a 500 HTML page bubbled to the client, which fell through to its default error text. The fix (PR #66) aliased the env vars at module load and wrapped every voting route in try/catch so real errors reach Vercel logs.
+
+### Five lessons from the build
+
+1. **Start with a scope-killer.** Hermes / office-hours before any coder.
+2. **Match the tool to the stage.** Claude Code doesn't write PRDs well; superpowers does.
+3. **Always get a second model's eyes.** Codex catches what Claude rationalizes.
+4. **"Tests pass" ≠ "prod works."** Env vars, secrets, and integrations live outside your repo.
+5. **Make prod errors observable.** Try/catch every KV/API call; log with a tag so you get from *"prod broke"* to a stack trace in 30 seconds.
+
+Bonus rule: **never stack PRs on an unmerged feature branch** unless you plan to rebase after the base merges. (PR #67 merged into a stale branch and never reached main — which is why PR #68 exists.)
+
+The PRs, all public on the repo:
+
+| PR | Title |
+|----|-------|
+| #65 | feat: community lightning-talk voting tool |
+| #66 | fix(voting): Upstash env aliases + route try/catch + clearer errors |
+| #67 | feat(vote): read-only results view (merged into stale branch) |
+| #68 | feat(vote): read-only results view after voting (reland onto main) |
+| #69 | chore(e2e): drop lightning-talk smoke test |
+
+## Community Lightning Talks — Now Open for Voting
+
+The last block of the night was dedicated to the community. **All six submitted lightning talks were presented live** — a quick pitch from each speaker. The voting page is live until the next meetup; **pick your top three** at [**02ship.com/vote**](https://www.02ship.com/vote):
+
+1. **Beyond the Demo** — *Fayner Brack* — "AI can build an MVP in a weekend but can't tell you what to do when a real user shows up on Monday."
+2. **pi cloned** — *Burin Choomnuan* — Replicating features of a Claude Code competitor to see how far he can get.
+3. **Partner Management System in 2 weeks** — *Tony Huang* — Building a partner management platform on a two-week deadline.
+4. **Agentic Workbench** — *Aboo* — An open-source workbench for engineers working with agents.
+5. **Next Anthropic** — *JohnZhou* — Investment angle on Anthropic's valuation trajectory and the adjacent opportunities.
+6. **Automating the loan serviceability sheet** — *Linda Liu* — Claude-powered tool that extracts financial data and auto-fills mortgage serviceability calculations.
+
+Top-voted talks get the headline slot at the next meetup. **[Cast your votes →](https://www.02ship.com/vote)**
+
+## Join the Next Meetup — Tuesday, May 19
+
+We're back on **Tuesday, May 19, 2026** at **Haymarket HQ** — same venue, same rhythm: 6:00 PM doors, 6:30–7:30 talks, 7:30–8:30 networking.
+
+Still "not a hype session" — real workflows, real lessons, real examples from people shipping with AI. If you've built something with Claude Code and want a 5-minute slot to share what you learned, [apply here](https://forms.gle/CuhvaFTHKip9R1At9).
+
+It's free. Spots fill fast.
+
+**[Register for May 19 on Luma →](https://luma.com/71v09ng6)**
+
+See you there.
