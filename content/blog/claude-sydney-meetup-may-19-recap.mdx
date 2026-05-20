@@ -1,12 +1,20 @@
 ---
-title: "02Ship - Claude Sydney Recap - May 19 2026"
-excerpt: "The May Claude Sydney meetup focused on multi-agent orchestration. Sharat showed how to ship a feature with a fleet of Claudes using cmux. Fayner showed how Readplace uses Claude Code in GitHub Actions as an autonomous CI teammate."
+title: "cmux, Multi-Agent Claude Fleets & Claude Code as an Autonomous CI Teammate — Claude Sydney Meetup — May 19, 2026"
+excerpt: "5 takeaways from the May Claude Sydney meetup: a DAG-based fleet of Claude agents with cmux, and Claude Code as an autonomous GitHub Actions teammate."
 date: "2026-05-19"
 author: "Bob Jiang"
 keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, cmux, multi-agent, orchestration, DAG, worktrees, GitHub Actions, Readplace, InTune AI, agent, autonomous, recap"
 ---
 
-# 02Ship - Claude Sydney Recap - May 19 2026
+# cmux, Multi-Agent Claude Fleets & Claude Code as an Autonomous CI Teammate
+
+## TL;DR
+
+- Replace "endless approval loops" with **structure** — a clear DAG plan, not blind trust in the agent.
+- Use **isolated git worktrees** so parallel agents do not edit the same files.
+- **cmux** gives Claude dynamic terminals, an embedded browser, and a CLI — enough to drive a real workflow.
+- Keep each agent's context under about **60k tokens**. Quality drops fast after that.
+- Wire Claude Code into **GitHub Actions CI** to review PRs, fix CI failures, and resolve merge conflicts.
 
 On **Tuesday, May 19**, the 02Ship community met again at **Haymarket HQ** (Level 2, 63 Dixon St, Haymarket) for the May Claude Sydney meetup.
 
