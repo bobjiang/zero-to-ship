@@ -24,18 +24,8 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/ship-weeks" className="text-sm text-gray-600 hover:text-gray-900">
-                    Cohort
-                  </Link>
-                </li>
-                <li>
                   <Link href="/courses" className="text-sm text-gray-600 hover:text-gray-900">
                     Courses
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="text-sm text-gray-600 hover:text-gray-900">
-                    Services
                   </Link>
                 </li>
                 <li>
