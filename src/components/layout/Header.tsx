@@ -9,7 +9,6 @@ const navLinks = [
   { label: 'Courses', href: '/courses' },
   { label: 'Daily News', href: '/news' },
   { label: 'Events', href: '/events' },
-  { label: 'Get Involved', href: '/get-involved' },
 ];
 
 const shipsLinks = [
@@ -19,6 +18,7 @@ const shipsLinks = [
 
 const aboutLinks = [
   { label: 'Our Story', href: '/about' },
+  { label: 'Get Involved', href: '/get-involved' },
   { label: 'Blog', href: '/blog' },
   { label: 'Community', href: '/community' },
 ];
