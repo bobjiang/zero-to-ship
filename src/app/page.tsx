@@ -122,11 +122,6 @@ export default function HomePage() {
               <Link href="/events">
                 <Button size="lg">Join Next Meetup</Button>
               </Link>
-              <Link href="/ship-weeks">
-                <Button variant="outline" size="lg">
-                  Join a Cohort
-                </Button>
-              </Link>
             </div>
           </div>
         </Container>

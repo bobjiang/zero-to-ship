@@ -103,13 +103,7 @@ export default async function ShipsPage() {
             </div>
           ) : (
             <div className="text-center text-gray-600">
-              <p>No ships yet. Join a cohort to showcase your build.</p>
-              <Link
-                href="/ship-weeks"
-                className="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-700"
-              >
-                Learn about cohorts →
-              </Link>
+              <p>No ships yet — check back soon.</p>
             </div>
           )}
         </div>

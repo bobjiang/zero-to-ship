@@ -8,14 +8,12 @@ import { UserNav } from '@/components/auth/UserNav';
 const navLinks = [
   { label: 'Courses', href: '/courses' },
   { label: 'Daily News', href: '/news' },
-  { label: 'Services', href: '/services' },
   { label: 'Events', href: '/events' },
   { label: 'Get Involved', href: '/get-involved' },
 ];
 
 const shipsLinks = [
   { label: 'Project Hub', href: '/ships' },
-  { label: 'Next Cohort', href: '/ship-weeks' },
   { label: 'Submit Project', href: 'https://github.com/bobjiang/zero-to-ship/issues/new?template=ship-submission.yml' },
 ];
 
