@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-22",
+  "items": [
+    {
+      "title": "Spotify and Universal Music Strike Deal Allowing Fan-Made AI Covers and Remixes",
+      "summary": "Spotify and Universal Music Group have partnered to permit fan-created AI covers and remixes, signaling a significant shift in music rights and AI integration.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "I/O 2026: Welcome to the Agentic Gemini Era",
+      "summary": "Google's I/O 2026 keynote introduces the 'agentic Gemini era,' highlighting a future where AI agents powered by Gemini play a more autonomous and integrated role.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Trump Delays AI Security Executive Order, Citing Potential 'Blocker' Language",
+      "summary": "Former President Trump has postponed an AI security executive order, citing concerns that its initial wording might hinder innovation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce Rolls Out New Slackbot AI Agent to Compete in Workplace AI Market",
+      "summary": "Salesforce has launched a new Slackbot AI agent, intensifying its competition with Microsoft and Google in the enterprise workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B: An Open-Source Coding Model for the 'Claude Code Moment'",
+      "summary": "Nous Research has released NousCoder-14B, an open-source coding model positioned as a strong competitor in the rapidly evolving AI code generation space.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Mega-ASR: Scaling Real-world Acoustic Simulation for In-the-wild Speech Recognition",
+      "summary": "Researchers introduce Mega-ASR, a new approach to significantly improve speech recognition in diverse real-world conditions by scaling up acoustic simulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.19833",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AdventHealth Advances Whole-Person Care with OpenAI Partnership",
+      "summary": "AdventHealth is partnering with OpenAI to integrate AI into its healthcare services, aiming to enhance whole-person care delivery.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/adventhealth",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining",
+      "summary": "A new method, Video2GUI, enables the synthesis of vast interaction data to pretrain AI agents for generalized graphical user interface control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.14747",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos",
+      "summary": "A novel technique allows for the generation of consistent, infinitely long videos without requiring additional training, advancing video synthesis capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.18233",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories",
+      "summary": "This paper suggests that LLMs can be effectively extrapolated with minimal Reinforcement Learning from Variational Rewards (RLVR) training using rank-1 trajectories.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.21468",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OScaR: Occam's Razor for Extreme KV Cache Quantization in LLMs and Beyond",
+      "summary": "OScaR introduces an extreme KV cache quantization method for LLMs, significantly reducing memory footprint while maintaining performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.19660",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Introducing OpenAI for Singapore: Fostering AI Innovation in the Region",
+      "summary": "OpenAI is expanding its presence and services into Singapore, marking a strategic move to foster AI innovation and adoption in the region.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-openai-for-singapore/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Building a Database Performance Testing Tool With AI: The Honest Breakdown",
+      "summary": "An article details the practical challenges and insights gained from developing an AI-powered tool for database performance testing.",
+      "source": "Dev.to",
+      "url": "https://dev.to/m4rri4nne/building-a-database-performance-testing-tool-with-ai-the-honest-breakdown-3c0c",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "IndusAgent: Reinforcing Open-Vocabulary Industrial Anomaly Detection with Agentic Tools",
+      "summary": "IndusAgent proposes using agentic tools to enhance open-vocabulary industrial anomaly detection, improving robustness and adaptability in manufacturing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.20682",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "A Survey of Large Audio Language Models: Generalization, Trustworthiness, and Outlook",
+      "summary": "A comprehensive survey explores the current state, challenges, and future directions of Large Audio Language Models, focusing on generalization and trustworthiness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.20266",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
