@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-23",
+  "items": [
+    {
+      "title": "AI is being used to resurrect the voices of dead pilots",
+      "summary": "A new application of AI technology is enabling the resurrection of deceased pilots' voices, raising both ethical considerations and potential benefits for aviation training and historical preservation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
+      "summary": "Gartner has recognized OpenAI as a leading provider of enterprise coding agents, highlighting the company's significant impact and advanced capabilities in automated software development.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gartner-2026-agentic-coding-leader",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
+      "summary": "An investigative report reveals how venture capitalists and startup founders may be inflating Annual Recurring Revenue (ARR) metrics to overvalue AI companies, potentially creating an unsustainable bubble.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews",
+      "summary": "Listen Labs secured $69 million in funding following a highly successful viral marketing campaign, aiming to expand its AI-powered platform for conducting and analyzing customer interviews at scale.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation",
+      "summary": "Researchers introduce TransitLM, a new large-scale dataset and benchmark designed to advance map-free transit route generation, enabling AI models to create efficient routes without relying on traditional map data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22355",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?",
+      "summary": "A new study investigates whether Multi-modal Large Language Models (MLLMs) can develop a deeper understanding of personality beyond initial superficial impressions, exploring the nuances of AI perception.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22109",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How Virgin Atlantic ships faster with Codex",
+      "summary": "Virgin Atlantic is leveraging OpenAI's Codex to accelerate its software development and deployment processes, demonstrating a practical application of AI in streamlining enterprise operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/virgin-atlantic",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "The Most Concerning AI Risk of 2026",
+      "summary": "An article discusses the most pressing AI risk anticipated for 2026, prompting reflection on potential societal and technological challenges as AI continues to evolve rapidly.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sachagreif/the-most-concerning-ai-risk-of-2026-3m0d",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "SOLAR: A Self-Optimizing Open-Ended Autonomous Agent for Lifelong Learning and Continual Adaptation",
+      "summary": "Researchers introduce SOLAR, a new autonomous agent designed for lifelong learning and continual adaptation through self-optimization, promising advancements in persistent AI systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.20189",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DelTA: Discriminative Token Credit Assignment for Reinforcement Learning from Verifiable Rewards",
+      "summary": "This paper presents DelTA, a novel method for discriminative token credit assignment that improves reinforcement learning by enabling models to learn more effectively from verifiable rewards.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.21467",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How we're using Gemini Embeddings to build a smarter, community-driven feed on DEV",
+      "summary": "DEV.to is enhancing its community-driven content feed by integrating Google's Gemini Embeddings, aiming to provide users with a more intelligent and personalized experience.",
+      "source": "Dev.to",
+      "url": "https://dev.to/devteam/how-were-using-gemini-embeddings-to-build-a-smarter-community-driven-feed-on-dev-1b9f",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Tool-Augmented Agent for Closed-loop Optimization,Simulation,and Modeling Orchestration",
+      "summary": "This paper proposes a tool-augmented agent capable of orchestrating closed-loop optimization, simulation, and modeling, enhancing the capabilities of AI agents in complex problem-solving scenarios.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.20190",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "π-Bench: Evaluating Proactive Personal Assistant Agents in Long-Horizon Workflows",
+      "summary": "π-Bench is introduced as a new benchmark for thoroughly evaluating the performance of proactive personal assistant agents within complex, long-horizon workflows, addressing a critical need in agent development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.14678",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps",
+      "summary": "A new research paper demonstrates a method to efficiently transfer full attention mechanisms into sparse ones within a minimal number of training steps, potentially improving the efficiency of large models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.16928",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ACC: Compiling Agent Trajectories for Long-Context Training",
+      "summary": "This research presents ACC, a novel approach for compiling agent trajectories to facilitate more effective long-context training, which is crucial for developing sophisticated AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.21850",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
