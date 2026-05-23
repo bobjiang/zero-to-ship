@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+import { cn, cardSurface, cardHover } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Community — Join Sydney\'s Claude Builder Community',
@@ -176,7 +177,7 @@ export default function CommunityPage() {
             {whatWeDoItems.map((item) => (
               <div
                 key={item.title}
-                className="rounded-lg border border-gray-200 p-6"
+                className={cn(cardSurface, 'p-6')}
               >
                 <h3 className="text-lg font-semibold text-gray-900">
                   {item.title}
@@ -199,7 +200,7 @@ export default function CommunityPage() {
                 href={community.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center rounded-xl border border-gray-200 p-6 text-center transition-all hover:border-gray-300 hover:shadow-md"
+                className={cn(cardSurface, cardHover, 'flex flex-col items-center p-6 text-center')}
               >
                 <div className="text-gray-700">{community.icon}</div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-900">
@@ -241,7 +242,7 @@ export default function CommunityPage() {
             href="https://forms.gle/wT2d2zZ47waQAviC8"
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-xl border border-amber-200 bg-amber-50 p-6 transition-all hover:border-amber-300 hover:shadow-md"
+            className="block rounded-lg border border-amber-200 bg-amber-50 p-6 transition-shadow hover:shadow-md"
           >
             <div className="flex items-start gap-4">
               <span className="text-3xl" aria-hidden="true">

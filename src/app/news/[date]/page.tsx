@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { getNewsByDate, getAllNewsDates } from '@/lib/news';
-import { cn } from '@/lib/utils';
+import { cn, cardSurface, cardHover } from '@/lib/utils';
 import { NewsCategory } from '@/types/news';
 import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
@@ -88,23 +88,21 @@ export default async function DailyNewsPage({ params }: DailyNewsPageProps) {
 
           <div className="mt-8 space-y-6">
             {news.items.map((item, i) => (
-              <article
+              <a
                 key={i}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(cardSurface, cardHover, 'block p-5')}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-sm font-bold text-gray-700">
                     {item.score}
                   </div>
                   <div className="min-w-0">
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors"
-                    >
+                    <span className="block text-lg font-semibold text-gray-900">
                       {item.title}
-                    </a>
+                    </span>
                     <p className="mt-1 text-gray-600">{item.summary}</p>
                     <div className="mt-2 flex items-center gap-2">
                       <span className="text-xs font-medium text-gray-500">{item.source}</span>
@@ -119,7 +117,7 @@ export default async function DailyNewsPage({ params }: DailyNewsPageProps) {
                     </div>
                   </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
 

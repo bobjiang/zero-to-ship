@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
+import { cn, cardSurface, cardHover } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Get Involved - 02Ship',
@@ -68,9 +69,12 @@ export default function GetInvolvedPage() {
 
         <div className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2">
           {roles.map((role) => (
-            <div
+            <a
               key={role.title}
-              className="flex flex-col rounded-xl border border-gray-200 p-6 transition-all hover:border-gray-300 hover:shadow-md"
+              href="https://forms.gle/CuhvaFTHKip9R1At9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(cardSurface, cardHover, 'flex flex-col p-6')}
             >
               <div className="text-gray-700">{role.icon}</div>
               <h2 className="mt-4 text-xl font-semibold text-gray-900">
@@ -79,7 +83,7 @@ export default function GetInvolvedPage() {
               <p className="mt-2 text-sm leading-relaxed text-gray-600">
                 {role.description}
               </p>
-            </div>
+            </a>
           ))}
         </div>
 

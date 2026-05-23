@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { getAllShips } from '@/lib/content';
+import { cn, cardSurface, cardHover } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Ships — What Our Members Built',
@@ -41,10 +42,10 @@ export default async function ShipsPage() {
                 <Link
                   key={ship.slug}
                   href={`/ships/${ship.slug}`}
-                  className="group flex flex-col rounded-xl border border-gray-200 transition-all hover:border-gray-300 hover:shadow-md"
+                  className={cn(cardSurface, cardHover, 'flex flex-col')}
                 >
                   {ship.screenshot ? (
-                    <div className="relative h-48 overflow-hidden rounded-t-xl bg-gray-100">
+                    <div className="relative h-48 overflow-hidden rounded-t-lg bg-gray-100">
                       <Image
                         src={ship.screenshot}
                         alt={`${ship.title} homepage screenshot`}
@@ -54,7 +55,7 @@ export default async function ShipsPage() {
                       />
                     </div>
                   ) : (
-                    <div className="flex h-48 items-center justify-center rounded-t-xl bg-gray-100">
+                    <div className="flex h-48 items-center justify-center rounded-t-lg bg-gray-100">
                       <svg
                         className="h-12 w-12 text-gray-400"
                         fill="none"
@@ -76,7 +77,7 @@ export default async function ShipsPage() {
                         {ship.cohort}
                       </span>
                     )}
-                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    <h2 className="text-xl font-semibold text-gray-900">
                       {ship.title}
                     </h2>
                     <p className="mt-1 text-sm text-gray-500">
