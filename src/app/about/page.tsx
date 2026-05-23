@@ -21,8 +21,10 @@ export default function AboutPage() {
 
           <div className="mt-8 space-y-6 text-lg text-gray-600">
             <p>
-              02Ship is a learning platform designed to help absolute beginners
-              build and ship their ideas using AI coding tools like Claude Code.
+              02Ship — short for{' '}
+              <strong className="text-gray-900">Zero to Ship</strong> — is a
+              learning platform designed to help absolute beginners build and
+              ship their ideas using AI coding tools like Claude Code.
             </p>
 
             <p>

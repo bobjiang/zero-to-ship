@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
 import { UserNav } from '@/components/auth/UserNav';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
   { label: 'Courses', href: '/courses' },
@@ -26,6 +28,12 @@ const aboutLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
+  const isGroupActive = (links: { href: string }[]) =>
+    links.some((link) => !link.href.startsWith('http') && isActive(link.href));
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -54,13 +62,24 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-700 hover:text-gray-900"
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                  className={cn(
+                    'text-sm font-medium',
+                    isActive(link.href)
+                      ? 'font-semibold text-blue-600'
+                      : 'text-gray-700 hover:text-gray-900'
+                  )}
                 >
                   {link.label}
                 </Link>
               ))}
               <div className="group relative">
-                <button aria-haspopup="true" aria-expanded={false} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900">
+                <button aria-haspopup="true" aria-expanded={false} className={cn(
+                  'flex items-center gap-1 text-sm font-medium',
+                  isGroupActive(shipsLinks)
+                    ? 'font-semibold text-blue-600'
+                    : 'text-gray-700 hover:text-gray-900'
+                )}>
                   Ships
                   <svg className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -73,7 +92,13 @@ export function Header() {
                         key={link.href}
                         href={link.href}
                         {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                        aria-current={!link.href.startsWith('http') && isActive(link.href) ? 'page' : undefined}
+                        className={cn(
+                          'block px-4 py-2 text-sm',
+                          !link.href.startsWith('http') && isActive(link.href)
+                            ? 'font-semibold text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                        )}
                       >
                         {link.label}
                       </Link>
@@ -82,7 +107,12 @@ export function Header() {
                 </div>
               </div>
               <div className="group relative">
-                <button aria-haspopup="true" aria-expanded={false} className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-gray-900">
+                <button aria-haspopup="true" aria-expanded={false} className={cn(
+                  'flex items-center gap-1 text-sm font-medium',
+                  isGroupActive(aboutLinks)
+                    ? 'font-semibold text-blue-600'
+                    : 'text-gray-700 hover:text-gray-900'
+                )}>
                   About
                   <svg className="h-4 w-4 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -94,7 +124,13 @@ export function Header() {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                        aria-current={isActive(link.href) ? 'page' : undefined}
+                        className={cn(
+                          'block px-4 py-2 text-sm',
+                          isActive(link.href)
+                            ? 'font-semibold text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                        )}
                       >
                         {link.label}
                       </Link>
@@ -160,7 +196,13 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                  aria-current={isActive(link.href) ? 'page' : undefined}
+                  className={cn(
+                    'block rounded-md px-3 py-2 text-base font-medium',
+                    isActive(link.href)
+                      ? 'bg-blue-50 font-semibold text-blue-600'
+                      : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                  )}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -176,7 +218,13 @@ export function Header() {
                       key={link.href}
                       href={link.href}
                       {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      aria-current={!link.href.startsWith('http') && isActive(link.href) ? 'page' : undefined}
+                      className={cn(
+                        'block rounded-md px-3 py-2 text-base font-medium',
+                        !link.href.startsWith('http') && isActive(link.href)
+                          ? 'bg-blue-50 font-semibold text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                      )}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}
@@ -193,7 +241,13 @@ export function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      aria-current={isActive(link.href) ? 'page' : undefined}
+                      className={cn(
+                        'block rounded-md px-3 py-2 text-base font-medium',
+                        isActive(link.href)
+                          ? 'bg-blue-50 font-semibold text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                      )}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}

@@ -1,9 +1,6 @@
 import { notFound } from 'next/navigation';
-import { Container } from '@/components/ui/Container';
-import { LessonCard } from '@/components/courses/LessonCard';
+import { LessonContent } from '@/components/courses/LessonContent';
 import { getSeriesBySlug, getAllSeries } from '@/lib/content';
-import { SeriesProgressClient } from '@/components/courses/SeriesProgressClient';
-import { BookmarkButton } from '@/components/bookmarks/BookmarkButton';
 
 interface SeriesPageProps {
   params: Promise<{
@@ -48,6 +45,8 @@ export default async function SeriesPage({ params }: SeriesPageProps) {
     notFound();
   }
 
+  const firstLesson = series.lessons[0];
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.02ship.com';
   const courseJsonLd = {
     '@context': 'https://schema.org',
@@ -70,35 +69,14 @@ export default async function SeriesPage({ params }: SeriesPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
       />
-      <div className="py-20">
-        <Container>
-          <div className="mx-auto max-w-2xl">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              {series.title}
-            </h1>
-            <p className="mt-4 text-lg text-gray-600">{series.description}</p>
-            <p className="mt-2 text-sm text-gray-600">
-              {series.lessons.length} {series.lessons.length === 1 ? 'lesson' : 'lessons'}
-            </p>
-            <div className="mt-3 flex items-center gap-3">
-              <BookmarkButton contentType="series" contentSlug={series.slug} />
-            </div>
-            <SeriesProgressClient seriesSlug={series.slug} totalLessons={series.lessons.length} />
-          </div>
-
-          <div className="mt-16 space-y-4">
-            {series.lessons.length > 0 ? (
-              series.lessons.map((lesson) => (
-                <LessonCard key={lesson.slug} lesson={lesson} seriesSlug={series.slug} />
-              ))
-            ) : (
-              <div className="text-center text-gray-600">
-                <p>No lessons available yet. Check back soon!</p>
-              </div>
-            )}
-          </div>
-        </Container>
-      </div>
+      {firstLesson ? (
+        <LessonContent series={series} lesson={firstLesson} />
+      ) : (
+        <div className="text-gray-600">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900">{series.title}</h1>
+          <p className="mt-4">No lessons available yet. Check back soon!</p>
+        </div>
+      )}
     </>
   );
 }

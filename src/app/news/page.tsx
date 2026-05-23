@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { getAllNewsDates } from '@/lib/news';
+import { cn, cardSurface, cardHover } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Daily News — Curated & Ranked',
@@ -46,7 +47,7 @@ export default async function NewsPage() {
                   <Link
                     key={date}
                     href={`/news/${date}`}
-                    className="block rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:border-blue-300 hover:shadow-md transition-all"
+                    className={cn(cardSurface, cardHover, 'block p-4')}
                   >
                     <span className="text-lg font-semibold text-gray-900">{formatted}</span>
                   </Link>

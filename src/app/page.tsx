@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+import { cn, cardSurface } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: {
@@ -25,9 +26,8 @@ export default function HomePage() {
               Sydney&apos;s Claude Builder Community
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Monthly meetups. Small-group ship weeks. Real projects, real
-              outcomes. Join 100+ Claude practitioners building with AI in
-              Sydney.
+              Monthly meetups. Real projects, real outcomes. Join 500+ Claude
+              practitioners building with AI in Sydney.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link href="/events">
@@ -48,7 +48,7 @@ export default function HomePage() {
         <Container>
           <div className="mx-auto grid max-w-3xl grid-cols-1 gap-8 text-center sm:grid-cols-3">
             <div>
-              <p className="text-3xl font-bold text-gray-900">100+</p>
+              <p className="text-3xl font-bold text-gray-900">500+</p>
               <p className="mt-1 text-sm text-gray-600">Members</p>
             </div>
             <div>
@@ -71,11 +71,11 @@ export default function HomePage() {
               How the community works
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Three ways to level up your Claude skills with other practitioners
+              Two ways to level up your Claude skills with other practitioners
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="rounded-lg bg-white p-8 shadow-sm">
+          <div className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-8 md:grid-cols-2">
+            <div className={cn(cardSurface, 'p-8')}>
               <h3 className="text-xl font-semibold text-gray-900">
                 Monthly Meetups
               </h3>
@@ -85,16 +85,7 @@ export default function HomePage() {
                 work.
               </p>
             </div>
-            <div className="rounded-lg bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900">
-                Cohort
-              </h3>
-              <p className="mt-4 text-gray-600">
-                2-week build sprints in small groups. Pick a project, get
-                accountability and feedback, then demo on day 14.
-              </p>
-            </div>
-            <div className="rounded-lg bg-white p-8 shadow-sm">
+            <div className={cn(cardSurface, 'p-8')}>
               <h3 className="text-xl font-semibold text-gray-900">
                 Member Builds
               </h3>
