@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-24",
+  "items": [
+    {
+      "title": "PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects",
+      "summary": "Researchers introduce PhysX-Omni, a novel framework for generating physically accurate 3D objects across various types, suitable for simulation environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.21572",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "From an Abandoned Hackathon Project to an AI Study Workspace",
+      "summary": "A developer shares the journey of transforming a hackathon project into a functional AI-powered study workspace, demonstrating practical application development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/hrishika_malviya_cec808f3/from-an-abandoned-hackathon-project-to-an-ai-study-workspace-c86",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "LatentOmni: Rethinking Omni-Modal Understanding via Unified Audio-Visual Latent Reasoning",
+      "summary": "This paper proposes LatentOmni, a new approach to achieve comprehensive omni-modal understanding by unifying audio-visual latent reasoning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22012",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Forecasting Scientific Progress with Artificial Intelligence",
+      "summary": "A new study explores the use of AI to predict future scientific advancements, offering insights into the trajectory of research and innovation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22681",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SEGA: Spectral-Energy Guided Attention for Resolution Extrapolation in Diffusion Transformers",
+      "summary": "Researchers present SEGA, a method that uses spectral-energy guided attention to enable resolution extrapolation in diffusion transformers, improving image generation capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22668",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WorldKV: Efficient World Memory with World Retrieval and Compression",
+      "summary": "This paper introduces WorldKV, a system designed for efficient world memory management through advanced retrieval and compression techniques, potentially enhancing AI agent capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22718",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning",
+      "summary": "A new research paper details Spreadsheet-RL, an approach that uses reinforcement learning to significantly improve LLM agents' performance on complex spreadsheet tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22642",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Ferrari is using IBM’s AI to create F1 superfans",
+      "summary": "Ferrari partners with IBM to leverage AI in enhancing fan engagement and creating a more immersive experience for Formula 1 enthusiasts.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving",
+      "summary": "Researchers propose Sensor2Sensor, a method for converting sensor data across different autonomous driving platforms, improving data interoperability and model generalization.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22809",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
+      "summary": "This paper introduces Gated DeltaNet-2, an advancement in linear attention mechanisms that effectively decouples erase and write operations for improved efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22791",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Introducing OpenAI for Singapore",
+      "summary": "OpenAI announces its expansion into Singapore, aiming to foster AI innovation and collaboration within the region.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-openai-for-singapore/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "The next phase of OpenAI’s Education for Countries",
+      "summary": "OpenAI outlines the next steps in its global education initiative, focusing on expanding AI literacy and access to learning resources in various countries.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/the-next-phase-of-education-for-countries",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "When AI Reads Blueprints: The Hidden Attack Surface of Multimodal Engineering Intelligence",
+      "summary": "This article explores the security vulnerabilities and potential attack surfaces that arise when multimodal AI systems are used to interpret engineering blueprints.",
+      "source": "Dev.to",
+      "url": "https://dev.to/toxy4ny/when-ai-reads-blueprints-the-hidden-attack-surface-of-multimodal-engineering-intelligence-2d7e",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Multimodal Gemma 4 Visual Regression & Patch Agent",
+      "summary": "A developer explores the capabilities of Multimodal Gemma 4 for visual regression testing and automated patch generation, showcasing its potential in software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kanyingidickson-dev/multimodal-gemma-4-visual-regression-patch-agent-53lk",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Google shipped three Gemini \"Flash\" models. Picking the wrong one could 6x your AI bill",
+      "summary": "An analysis warns developers that choosing the incorrect Gemini 'Flash' model from Google could drastically increase their AI service costs due to varying pricing structures.",
+      "source": "Dev.to",
+      "url": "https://dev.to/chintanonweb/google-shipped-three-gemini-flash-models-picking-the-wrong-one-could-6x-your-ai-bill-48m9",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
