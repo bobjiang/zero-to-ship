@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-25",
+  "items": [
+    {
+      "title": "OpenAI and Malta Partner to Bring ChatGPT Plus to All Citizens",
+      "summary": "OpenAI has announced a partnership with Malta to provide all Maltese citizens with free access to ChatGPT Plus, marking a significant step in national AI adoption and digital equity.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing OpenAI for Singapore",
+      "summary": "OpenAI is expanding its global presence by launching operations in Singapore, aiming to foster AI innovation and collaboration within the Southeast Asian region.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-openai-for-singapore",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Everyone's Talking About Gemini 3.5 Flash. The Real Story at Google I/O 2026 Was a Skill File.",
+      "summary": "While Gemini 3.5 Flash garnered attention at Google I/O 2026, the author argues that the introduction of a 'Skill File' for AI agents was the more significant and overlooked development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sreejit_/everyones-talking-about-gemini-35-flash-the-real-story-at-google-io-2026-was-a-skill-file-4f3c",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Unsupervised Process Reward Models",
+      "summary": "Researchers introduce a novel method for training reward models without human supervision, potentially streamlining the development of reinforcement learning from human feedback (RLHF) for AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.10158",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "FlowLong: Inference-time Long Video Generation via Manifold-constrained Tweedie Matching",
+      "summary": "A new research paper presents FlowLong, a method enabling efficient inference-time generation of long videos by leveraging manifold-constrained Tweedie matching.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.20910",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "SpaceDG: Benchmarking Spatial Intelligence under Visual Degradation",
+      "summary": "This paper introduces SpaceDG, a new benchmark designed to evaluate the robustness of AI models' spatial intelligence when faced with various forms of visual degradation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22536",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Everyone is navigating AI security in real time — even Google",
+      "summary": "The article highlights that even major tech companies like Google are actively and continuously developing strategies to address the evolving challenges of AI security.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/24/everyone-is-navigating-ai-security-in-real-time-even-google/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Q-ARVD: Quantizing Autoregressive Video Diffusion Models",
+      "summary": "Q-ARVD proposes a method for quantizing autoregressive video diffusion models, significantly improving their efficiency and reducing computational requirements.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.21072",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Maestro: Reinforcement Learning to Orchestrate Hierarchical Model-Skill Ensembles",
+      "summary": "Maestro introduces a reinforcement learning framework for orchestrating hierarchical ensembles of models and skills, enhancing the capabilities of complex AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22177",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Training Large Language Models to Predict Clinical Events",
+      "summary": "Researchers explore the application of large language models to predict clinical events, showcasing their potential to revolutionize healthcare diagnostics and patient management.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.12817",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "KVServe: Service-Aware KV Cache Compression for Communication-Efficient Disaggregated LLM Serving",
+      "summary": "KVServe presents a novel approach to compress KV caches in large language models, leading to more communication-efficient and scalable disaggregated LLM serving architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.13734",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Ditched Cloud LLMs for Gemma 4 4B: A DevOps Engineer's 48-Hour Reality Check",
+      "summary": "A DevOps engineer shares their experience and insights after switching from cloud-based LLMs to the locally run Gemma 4 4B model, providing a practical perspective on on-device AI.",
+      "source": "Dev.to",
+      "url": "https://dev.to/asamaes/i-ditched-cloud-llms-for-gemma-4-4b-a-devops-engineers-48-hour-reality-check-a7d",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "A new experiment brings better group meetings to Google Beam",
+      "summary": "Google Beam is introducing a new experimental feature designed to enhance group meeting experiences with improved AI-powered functionalities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Dissecting ThunderKittens, anatomy of a compact DSL for high-performance AI kernels",
+      "summary": "This article provides a deep dive into ThunderKittens, a compact domain-specific language (DSL) designed for developing high-performance AI kernels, offering insights into its architecture and benefits.",
+      "source": "Lobste.rs",
+      "url": "https://hamzaelshafie.bearblog.dev/dissecting-thunderkittens-anatomy-of-a-compact-dsl-for-high-performance-ai-kernels/",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "I spent 31 hours on the math behind TurboQuant so you don't have to",
+      "summary": "The author demystifies the complex mathematical underpinnings of TurboQuant, offering a simplified explanation to help developers understand and implement efficient quantization techniques for AI models.",
+      "source": "Lobste.rs",
+      "url": "https://www.baseten.co/blog/i-spent-31-hours-on-the-math-behind-turboquant-so-you-dont-have-to/",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
