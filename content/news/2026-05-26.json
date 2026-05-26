@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-26",
+  "items": [
+    {
+      "title": "Gemini 3.5: Frontier Intelligence with Action",
+      "summary": "Google announces Gemini 3.5, a new iteration of its AI model, emphasizing enhanced frontier intelligence and improved capabilities for taking action, suggesting significant advancements in agentic AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+      "summary": "This paper introduces SkillOpt, a novel framework enabling AI agents to autonomously evolve and optimize their skills through an executive strategy, significantly enhancing their adaptability and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.23904",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI, Grupo Folha and Grupo UOL Announce Strategic Content Partnership",
+      "summary": "OpenAI has formed a strategic partnership with major Brazilian media groups, Grupo Folha and Grupo UOL, to license their content for training AI models and integrating AI into their platforms.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/grupo-folha-grupo-uol-partnership",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Rethinking Cross-Layer Information Routing in Diffusion Transformers",
+      "summary": "Researchers propose new methods for cross-layer information routing within Diffusion Transformers, aiming to improve the efficiency and quality of generative models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.20708",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Lens: Rethinking Training Efficiency for Foundational Text-to-Image Models",
+      "summary": "A new approach called Lens is introduced to significantly enhance the training efficiency of foundational text-to-image models, potentially reducing computational costs and time.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.21573",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The pope’s AI encyclical isn’t really about AI",
+      "summary": "An analysis suggests that Pope Leo XIV's encyclical, 'Magnifica Humanitas,' while ostensibly about AI, primarily addresses broader themes of human dignity, ethics, and societal values in the digital age.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/25/the-popes-ai-encyclical-isnt-really-about-ai/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "RMA: an Agentic System for Research-Level Mathematical Problems",
+      "summary": "A new agentic system, RMA, is introduced, demonstrating capabilities in tackling complex, research-level mathematical problems, pushing the boundaries of AI in symbolic reasoning.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2605.22875",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "An npm Package for AI Agent Orchestration Just Shipped With Its Front Door Unlocked. Here's What the CVE Actually Reveals.",
+      "summary": "A critical security vulnerability (CVE) has been discovered in a newly released npm package for AI agent orchestration, highlighting significant security risks in emerging AI development tools.",
+      "source": "Dev.to",
+      "url": "https://dev.to/om_shree_0709/an-npm-package-for-ai-agent-orchestration-just-shipped-with-its-front-door-unlocked-heres-what-19h2",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research",
+      "summary": "SciAtlas presents a large-scale knowledge graph designed to automate and accelerate scientific research by providing structured access to vast amounts of scientific information.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.22878",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Why AI-Generated Code Is Always Good Enough — And Never Great",
+      "summary": "This article explores the current limitations of AI-generated code, arguing that while it can produce functional solutions, it often lacks the nuanced quality and innovative spark of human-written code.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/why-ai-generated-code-is-always-good-enough-and-never-great-4lhn",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "What ClickUp’s mass layoff tells us about the future of work",
+      "summary": "ClickUp's recent mass layoffs are analyzed for insights into the evolving landscape of work, particularly concerning the impact of AI and automation on job roles and company structures.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/25/what-clickups-mass-layoff-tells-us-about-the-future-of-work/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Why does AI forget what you said (and how to fix it)",
+      "summary": "This article delves into the common problem of AI models losing conversational context and offers practical solutions to improve their memory and coherence in interactions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws/why-does-ai-forget-what-you-said-and-how-to-fix-it-52f6",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion",
+      "summary": "PiD proposes a novel method for fast and high-resolution latent decoding using pixel diffusion, enhancing the quality and speed of image generation in diffusion models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.23902",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PhotoFlow: Agentic 3D Virtual Photography Missions",
+      "summary": "PhotoFlow introduces an agentic system capable of executing complex 3D virtual photography missions, allowing AI to autonomously compose and capture images within virtual environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.23771",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Don’t let AI break your collective thinking: a practical guide for engineering teams",
+      "summary": "A practical guide offers strategies for engineering teams to integrate AI tools without undermining collaborative problem-solving and critical thinking processes.",
+      "source": "Dev.to",
+      "url": "https://dev.to/javz/dont-let-ai-break-your-collective-thinking-a-practical-guide-for-engineering-teams-41c4",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
