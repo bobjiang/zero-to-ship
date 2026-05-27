@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-27",
+  "items": [
+    {
+      "title": "OpenAI and Dell Partner to Bring Codex to Hybrid and On-Premise Enterprise Environments",
+      "summary": "OpenAI and Dell have announced a strategic partnership to integrate OpenAI's Codex models into Dell's hybrid and on-premise solutions, enabling enterprises to leverage advanced AI capabilities within their private infrastructure.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/dell-codex-enterprise-partnership",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "OpenRouter More Than Doubles Valuation to $1.3B in a Year Amidst AI Boom",
+      "summary": "AI model routing platform OpenRouter has seen its valuation soar to $1.3 billion, reflecting rapid growth and investor confidence in the infrastructure supporting diverse AI models.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google Unveils 'A New Era for AI Search' at I/O 2026",
+      "summary": "Google has announced significant advancements in its AI Search capabilities at I/O 2026, promising a more intelligent and intuitive search experience for users.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "DuckDuckGo Installs Surge 30% as Users Reject Google's AI Search Integration",
+      "summary": "Privacy-focused search engine DuckDuckGo reports a 30% increase in installs, indicating a growing user backlash against Google's aggressive integration of AI into its core search experience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "DVAO: Dynamic Variance-adaptive Advantage Optimization for Multi-reward Reinforcement Learning",
+      "summary": "Researchers introduce DVAO, a novel optimization method that dynamically adapts variance for multi-reward reinforcement learning, improving agent performance in complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.25604",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Foundation Protocol: A Coordination Layer for Agentic Society",
+      "summary": "A new paper proposes the 'Foundation Protocol' as a crucial coordination layer to enable the scalable and secure interaction of autonomous AI agents in an emerging agentic society.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.23218",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AutoResearch AI: Towards AI-Powered Research Automation for Scientific Discovery",
+      "summary": "This paper explores the development of AutoResearch AI, an initiative aimed at automating various stages of scientific discovery through advanced AI agents, promising to accelerate research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.23204",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "WBench: A Comprehensive Multi-turn Benchmark for Interactive Video World Model Evaluation",
+      "summary": "WBench is introduced as a new, comprehensive benchmark designed to rigorously evaluate interactive video world models across multiple turns, addressing current limitations in assessment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.25874",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Indian Startup Leverages Gig Economy to Train Robots for the World",
+      "summary": "A new startup is tapping into India's vast gig economy to collect and label data, aiming to provide the essential training datasets needed for the development of physical AI and robotics globally.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Macaron-A2UI: A Model for Generative UI in Personal Agents",
+      "summary": "Macaron-A2UI presents a novel model for generating user interfaces dynamically, enabling personal AI agents to create adaptive and intuitive interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.24830",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Toward Native Multimodal Modeling: A Roadmap",
+      "summary": "This paper outlines a roadmap for achieving native multimodal modeling, emphasizing the need for models that inherently understand and integrate information from various modalities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.25343",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ThriftAttention: Selective Mixed Precision for Long-Context FP4 Attention",
+      "summary": "ThriftAttention introduces a method for selective mixed-precision computation in long-context attention mechanisms, significantly improving efficiency for large language models using FP4.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.23081",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "QUEST: Training Frontier Deep Research Agents with Fully Synthetic Tasks",
+      "summary": "QUEST proposes a new approach for training advanced deep research agents using entirely synthetic tasks, potentially accelerating the development of autonomous scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.24218",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Claw-Anything: Benchmarking Always-On Personal Assistants with Broader Access to User's Digital World",
+      "summary": "Claw-Anything introduces a new benchmark for evaluating always-on personal AI assistants, focusing on their ability to interact with and utilize a wider range of a user's digital environment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.26086",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "TriSplat: Simulation-Ready Feed-Forward 3D Scene Reconstruction",
+      "summary": "TriSplat presents a novel feed-forward method for 3D scene reconstruction that generates simulation-ready assets, streamlining the process for virtual environments and robotics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.26115",
+      "score": 7,
+      "category": "research"
+    }
+  ]
+}
