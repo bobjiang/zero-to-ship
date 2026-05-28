@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-28",
+  "items": [
+    {
+      "title": "LocateAnything: Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding",
+      "summary": "Researchers introduce LocateAnything, a novel vision-language grounding model that achieves fast and high-quality object localization through an efficient parallel box decoding mechanism.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.27365",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Snowflake Signs $6B Deal with AWS for AI CPU Chips, Boosting Amazon's Cloud Business",
+      "summary": "Snowflake has reportedly signed a massive $6 billion deal with AWS to secure AI CPU chips, signaling a significant investment in AI infrastructure and a win for Amazon's cloud services.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "How Are Developers Actually Using AI At Work?",
+      "summary": "A new report explores the practical applications and integration of AI tools by developers in their daily work routines, highlighting current trends and challenges.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sylwia-lask/how-are-developers-actually-using-ai-at-work-4g9c",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "EvalVerse: Pipeline-Aware and Expert-Calibrated Benchmarking for Professional Cinematic Video Generation",
+      "summary": "EvalVerse introduces a new benchmarking framework designed for professional cinematic video generation, offering pipeline-aware and expert-calibrated evaluations to assess model performance accurately.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.23271",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Cisco and OpenAI Redefine Enterprise Engineering with Codex",
+      "summary": "Cisco and OpenAI announce a collaboration to integrate Codex, OpenAI's advanced AI model, into enterprise engineering workflows, aiming to enhance productivity and innovation.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/cisco",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Warp's Big Bet on Building Open Source with GPT-5.5",
+      "summary": "Warp is making a significant commitment to open-source development by leveraging GPT-5.5, indicating a growing trend of advanced AI models powering collaborative software creation.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/warp",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "SpatialBench: Is Your Spatial Foundation Model an All-Round Player?",
+      "summary": "SpatialBench introduces a comprehensive benchmark to evaluate the versatility and capabilities of spatial foundation models across various tasks and domains.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.27367",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Why Google's AI Can't Spell Google (or Anything Else)",
+      "summary": "This article delves into the persistent challenges Google's AI models face with basic spelling, exploring the underlying reasons and implications for AI literacy.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/27/why-googles-ai-cant-spell-google-or-anything-else/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Building Self-Improving Tax Agents with Codex",
+      "summary": "OpenAI showcases a new application of Codex in developing self-improving AI agents specifically designed to handle complex tax-related tasks, demonstrating practical agentic AI capabilities.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Google I/O 2026: Catch Up on the Dialogues Stage",
+      "summary": "A recap of the Dialogues stage at Google I/O 2026 highlights key discussions and announcements related to AI, innovation, and developer tools.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-dialogues-recap/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research",
+      "summary": "MobileGym offers a new simulation platform that provides verifiable and highly parallel environments for advancing research into AI agents interacting with mobile graphical user interfaces.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.26114",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Personalize-then-Store: Benchmarking and Learning Personalized Memory for Long-horizon Agents",
+      "summary": "This research introduces a new approach and benchmark for developing and evaluating personalized memory systems crucial for long-horizon AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.25535",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "D^2-Monitor: Dynamic Safety Monitoring for Diffusion LLMs via Hesitation-Aware Routing",
+      "summary": "D^2-Monitor proposes a dynamic safety monitoring system for Diffusion LLMs that uses hesitation-aware routing to enhance safety and reliability in generative AI applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.25893",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Share More, Search Less: Collaborative Parallel Thinking for Efficient Test-Time Scaling",
+      "summary": "This paper explores a method called 'Collaborative Parallel Thinking' to improve the efficiency of test-time scaling in AI models by encouraging agents to share information and reduce redundant searches.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.27030",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "The Open/Closed Problem in AI",
+      "summary": "This blog post discusses the fundamental 'open/closed problem' in AI, examining the trade-offs between open-source and proprietary approaches in AI development and deployment.",
+      "source": "Lobste.rs",
+      "url": "https://blog.mempko.com/the-open-closed-problem-in-ai/",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
