@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-29",
+  "items": [
+    {
+      "title": "Google Unveils 100 Major AI Innovations and Updates at I/O 2026",
+      "summary": "Google announced a hundred new features and updates across its products and platforms at I/O 2026, with a strong focus on advancements in AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Introduces Frontier Governance Framework for Advanced AI Systems",
+      "summary": "OpenAI has published its new Frontier Governance Framework, outlining principles and practices for the safe and responsible development of highly advanced AI models.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-frontier-governance-framework",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Asana Acquires No-Code AI Agent-Builder StackAI",
+      "summary": "Work management platform Asana has acquired StackAI, a no-code platform for building AI agents, signaling a move to integrate more advanced AI capabilities into its offerings.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/28/asana-acquires-no-code-agent-builder-stack-ai/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop an AI-native cloud infrastructure, positioning itself as a direct competitor to established cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Redesigns Search Box for First Time in 25 Years, Signaling AI Integration",
+      "summary": "Google has unveiled the first redesign of its search box in 25 years, a change that is expected to signify deeper integration of AI into its core search experience.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Glean's Top Line Crosses $300M as AI Budget-Cutting Becomes Major Selling Point",
+      "summary": "Glean, an enterprise AI search and knowledge discovery platform, has surpassed $300 million in revenue, driven by its ability to help companies cut AI-related costs.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/28/gleans-top-line-crosses-300m-as-ai-budget-cutting-becomes-its-major-selling-point/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "The Internet is Being Rebuilt for Machines",
+      "summary": "This article explores how the underlying architecture and functionality of the internet are evolving to better serve the needs of AI agents and automated systems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/28/the-internet-is-being-rebuilt-for-machines/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation",
+      "summary": "Researchers introduce ProRL, a new reinforcement learning method that uses rectified policy gradient estimation to significantly improve proactive recommendation systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28293",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Agent Explorative Policy Optimization for Multimodal Agentic Reasoning",
+      "summary": "A new research paper details Agent Explorative Policy Optimization, a technique designed to enhance multimodal agentic reasoning by enabling more effective exploration strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28774",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Outlines Election Information and Safeguards for 2026",
+      "summary": "OpenAI has released its strategy and safeguards for managing election-related information and preventing misuse of its AI models during the 2026 election cycle.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/election-safeguards-2026",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "DenoiseRL: Bootstrapping Reasoning Models to Recover from Noisy Prefixes",
+      "summary": "DenoiseRL presents a novel method for bootstrapping reasoning models, allowing them to effectively recover and perform accurately even when faced with noisy or incomplete input prefixes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28421",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "GEM: Generative Supervision Helps Embodied Intelligence",
+      "summary": "New research demonstrates that Generative Supervision (GEM) significantly aids the development and capabilities of embodied AI, pushing the boundaries of intelligent agents interacting with the physical world.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28548",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MemTrace: Tracing and Attributing Errors in Large Language Model Memory Systems",
+      "summary": "MemTrace introduces a new system for tracing and attributing errors within the complex memory systems of large language models, crucial for debugging and improving LLM reliability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28732",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Learn from Weaknesses: Automated Domain Specialization for Small Computer-Use Agents",
+      "summary": "This paper proposes a method for automated domain specialization, enabling small computer-use agents to learn from their weaknesses and become more efficient in specific tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28775",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Spent 10x Longer Debugging AI Code Than Writing It",
+      "summary": "A developer shares their experience highlighting the significant challenges and time investment involved in debugging AI-driven code compared to its initial development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/i-spent-10x-longer-debugging-ai-code-than-writing-it-15h4",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
