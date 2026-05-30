@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-30",
+  "items": [
+    {
+      "title": "AgentDoG 1.5: A Lightweight and Scalable Alignment Framework for AI Agent Safety and Security",
+      "summary": "A new open-source framework, AgentDoG 1.5, is introduced to enhance the safety and security of AI agents through scalable alignment techniques.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.29801",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "Coders are refusing to work without AI — and that could come back to bite them",
+      "summary": "A TechCrunch report highlights a growing trend of developers refusing to work without AI assistance, raising concerns about potential long-term skill degradation and over-reliance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Boston Children’s uses AI to unlock new diagnoses",
+      "summary": "Boston Children's Hospital is leveraging AI technology to analyze complex medical data, leading to the discovery of new diagnoses and improved patient care.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/boston-childrens-hospital",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OmniRetrieval: Unified Retrieval across Heterogeneous Knowledge Sources",
+      "summary": "OmniRetrieval proposes a unified approach to retrieve information efficiently from diverse and heterogeneous knowledge sources, improving RAG systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.29250",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "minWM: A Full-Stack Open-Source Framework for Real-Time Interactive Video World Models",
+      "summary": "minWM is presented as a comprehensive open-source framework designed for building and deploying real-time, interactive video world models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30263",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "summary": "Anthropic introduces Cowork, a new desktop agent for Claude that allows users to interact with their files and perform tasks without needing any coding knowledge.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce has launched an enhanced Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly expanding workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "9 demos of Gemini Omni and Gemini 3.5 in action",
+      "summary": "Google showcases nine practical demonstrations of its advanced Gemini Omni and Gemini 3.5 models, highlighting their capabilities across various applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Strengthening societal resilience with Rosalind Biodefense",
+      "summary": "OpenAI highlights Rosalind Biodefense, an initiative utilizing AI to enhance societal resilience against biological threats and improve biosecurity measures.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "How to Automate Mobile App Testing Without Writing a Single Line of Code",
+      "summary": "This article details a method for automating mobile application testing, making it accessible even for users without coding expertise.",
+      "source": "Dev.to",
+      "url": "https://dev.to/drizzdev/how-to-automate-mobile-app-testing-without-writing-a-single-line-of-code-5d17",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation",
+      "summary": "Researchers introduce CollectionLoRA, a method that distills 50 different effects into a single LoRA model using multi-teacher on-policy distillation, enhancing model efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.25378",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "YoCausal: How Far is Video Generation from World Model? A Causality Perspective",
+      "summary": "This research explores the gap between current video generation techniques and true world models, analyzing the role of causality in achieving more realistic and predictive video synthesis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30346",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "GenClaw: Code-Driven Agentic Image Generation",
+      "summary": "GenClaw introduces a novel approach to image generation where AI agents are driven by code to create images, offering more precise control and complex scene creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30248",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Autonomous \"Budget-Bound\" Agent: Securing AI with Bedrock AgentCore Payments",
+      "summary": "This article discusses securing AI agents by implementing budget constraints through Bedrock AgentCore Payments, ensuring controlled and accountable autonomous operations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dhananjay_lakkawar/the-autonomous-budget-bound-agent-securing-ai-with-bedrock-agentcore-payments-5fee",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "EarlyTom: Early Token Compression Completes Fast Video Understanding",
+      "summary": "EarlyTom proposes an efficient method for video understanding by compressing tokens early in the processing pipeline, significantly speeding up analysis without compromising accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30010",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
