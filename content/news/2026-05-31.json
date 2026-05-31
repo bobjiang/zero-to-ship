@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-31",
+  "items": [
+    {
+      "title": "SoftBank Plans €75 Billion Investment in French AI Data Centers",
+      "summary": "SoftBank announced a massive €75 billion investment to construct new data centers in France, signaling a major commitment to AI infrastructure in Europe.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "GitHub Copilot's New Token-Based Billing Sparks Developer Outcry",
+      "summary": "GitHub Copilot's shift to a token-based billing model has caused significant frustration and consternation among developers due to unexpected cost increases.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Meta Reportedly Developing an AI Pendant for Wearable Computing",
+      "summary": "Meta is reportedly working on an AI-powered pendant, indicating a potential new direction for wearable AI devices and human-computer interaction.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Nous Research Launches NousCoder-14B, a Free Open-Source Alternative to Claude Code",
+      "summary": "Nous Research has released NousCoder-14B, an open-source coding model, positioning it as a free and competitive alternative to expensive commercial tools like Claude Code.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in-the-claude-code-moment",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Why Far Looks Up: Probing Spatial Representation in Vision-Language Models",
+      "summary": "New research delves into how vision-language models represent spatial relationships, offering insights into their understanding of object positions and interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30161",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs secured $69 million in funding to expand its AI-driven customer interview platform, following a successful viral billboard hiring campaign.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "UniSteer: Text-Guided Flow Matching for Versatile LLM Steering",
+      "summary": "Researchers introduce UniSteer, a novel method using text-guided flow matching in activation space to enable more versatile and precise steering of large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30076",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hermes Agent's Increasing Capabilities Come with a Rising Cost",
+      "summary": "As the Hermes AI agent becomes more intelligent and capable, developers are noting a significant increase in its operational costs, raising concerns about long-term affordability.",
+      "source": "Dev.to",
+      "url": "https://dev.to/chintanonweb/hermes-agent-gets-smarter-every-day-so-does-the-bill-4i8o",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Google Highlights 12 Major Moments from I/O 2026 Keynote",
+      "summary": "Google's AI Blog recaps 12 significant announcements and developments from the I/O 2026 keynote, emphasizing advancements in AI and technology.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "LoMo: Local Modality Substitution for Deeper Vision-Language Fusion",
+      "summary": "A new paper proposes LoMo, a technique for local modality substitution that aims to achieve deeper and more effective fusion between vision and language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30265",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Shares Playbook for Trustworthy Third-Party AI Evaluations",
+      "summary": "OpenAI has published a shared playbook outlining best practices for conducting trustworthy third-party evaluations of AI systems, focusing on safety and reliability.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Your AI Agent Should Initiate Communication First",
+      "summary": "An article argues that AI agents should be proactive in initiating communication with users, rather than solely reacting to prompts, to enhance user experience and utility.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nimay_04/your-ai-agent-should-text-you-first-2b3b",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Skill0.5: Joint Skill Internalization and Utilization for OOD Generalization in Agentic RL",
+      "summary": "New research introduces Skill0.5, a method for agentic reinforcement learning that combines skill internalization and utilization to improve generalization in out-of-distribution scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28424",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems",
+      "summary": "A paper explores the challenges and insights gained from integrating cloud-based AI agents with device-side agents in hybrid multi-agent systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30102",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Inference Theft Is the New AI App Security Bug: Protecting LLM Endpoints",
+      "summary": "An article highlights 'inference theft' as a critical new security vulnerability for AI applications and provides guidance on how to protect large language model endpoints.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nimay_04/inference-theft-is-the-new-ai-app-security-bug-how-to-protect-your-llm-endpoints-50hb",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
