@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-01",
+  "items": [
+    {
+      "title": "Colored Noise Diffusion Sampling",
+      "summary": "Researchers introduce a novel diffusion sampling method utilizing colored noise, which could significantly improve the efficiency and quality of generative AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30332",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Xetrieval: Mechanistically Explaining Dense Retrieval",
+      "summary": "A new paper delves into the mechanistic explanation of dense retrieval systems, offering insights into how these critical components of modern search and RAG systems function.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.29507",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Is Position Bias in Dense Retrievers Built In-or Learned from Data?",
+      "summary": "This research investigates whether position bias in dense retrievers is an inherent design flaw or a learned behavior from training data, impacting fairness and accuracy in information retrieval.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.26578",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Erin Brockovich takes aim at data center secrecy",
+      "summary": "Environmental activist Erin Brockovich is reportedly targeting the lack of transparency surrounding data centers, raising concerns about their environmental impact and public accountability.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/31/erin-brockovich-takes-aim-at-data-center-secrecy/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment",
+      "summary": "Nous Research releases NousCoder-14B, a new open-source coding model, positioning it as a competitive alternative to proprietary solutions like Claude Code.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "I Added a 71-Line Black Box to My Python Agent, Then Queried the $200 Crash With DuckDB",
+      "summary": "A developer shares a practical approach to debugging and analyzing Python AI agents using a small 'black box' and DuckDB, highlighting real-world agent development challenges.",
+      "source": "Dev.to",
+      "url": "https://dev.to/tahosin/i-added-a-71-line-black-box-to-my-python-agent-then-queried-the-200-crash-with-duckdb-4h18",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "CausaLab: A Scalable Environment for Interactive Causal Discovery Toward AI Scientists",
+      "summary": "CausaLab presents a scalable environment designed for interactive causal discovery, aiming to empower AI scientists with better tools for understanding complex relationships in data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.26029",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Making sense of the debate over AI psychosis",
+      "summary": "This article explores the growing discussion around 'AI psychosis,' examining the psychological and philosophical implications of advanced AI systems and their potential impact on human perception.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "I put Google's 24/7 AI assistant Gemini Spark to work, and it's actually pretty useful",
+      "summary": "A reviewer shares their positive experience with Google's new 24/7 AI assistant, Gemini Spark, highlighting its practical utility in daily tasks and productivity.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "summary": "This article highlights a new free alternative, 'Goose,' that offers similar coding assistance capabilities to the more expensive Claude Code, potentially disrupting the market for AI coding tools.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers",
+      "summary": "PRISM introduces a new multi-dimensional benchmark designed to rigorously evaluate the performance of Large Language Models when acting as peer reviewers for academic papers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.26730",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Towards Verifiable Multimodal Deep Research: A Multi-Agent Harness for Interleaved Report Generation",
+      "summary": "Researchers propose a multi-agent system to generate interleaved reports, aiming to enhance the verifiability and transparency of multimodal deep research processes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.29861",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "UI-KOBE: Knowledge-Oriented Behavior Exploration for Lightweight Graph-Guided GUI Agents",
+      "summary": "UI-KOBE presents a new framework for lightweight, graph-guided GUI agents that leverage knowledge-oriented behavior exploration to interact with user interfaces more effectively.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.29534",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building Truly Cross-Platform Claude Code Hooks with Go, Bash, PowerShell, WSL, and Git-Bash",
+      "summary": "A developer details how to create robust, cross-platform code hooks for Claude Code using a combination of Go, Bash, PowerShell, WSL, and Git-Bash, enhancing its versatility.",
+      "source": "Dev.to",
+      "url": "https://dev.to/shrsv/building-truly-cross-platform-claude-code-hooks-with-go-bash-powershell-wsl-and-git-bash-1ceo",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Markdown Is Becoming the AI App Interface",
+      "summary": "This article posits that Markdown is rapidly emerging as the standard interface for AI applications, streamlining interaction and development due to its simplicity and flexibility.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nimay_04/markdown-is-becoming-the-ai-app-interface-4209",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
