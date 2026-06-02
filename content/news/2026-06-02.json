@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-02",
+  "items": [
+    {
+      "title": "Florida Sues OpenAI and Sam Altman Over Violent Incidents",
+      "summary": "Florida has filed a first-of-its-kind lawsuit against OpenAI and CEO Sam Altman, alleging their AI models contributed to violent incidents.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/01/florida-sues-openai-sam-altman-in-first-of-its-kind-lawsuit-over-violent-incidents/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Alphabet Plans to Raise $80 Billion for AI Infrastructure Buildout",
+      "summary": "Alphabet is reportedly seeking to raise $80 billion to fund its ambitious AI infrastructure expansion, signaling massive investment in the sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Nvidia Targets $200B CPU Market with AI Agent PCs from Microsoft, Dell, and HP",
+      "summary": "Nvidia is expanding its reach into the CPU market, partnering with Microsoft, Dell, and HP to power new AI agent-enabled personal computers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Frontier Models and Codex Now Available on AWS",
+      "summary": "OpenAI has announced the availability of its frontier models and Codex on Amazon Web Services, expanding access for developers and enterprises.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Details Views on AI Policy and Political Advocacy",
+      "summary": "OpenAI has published its stance on AI policy and political advocacy, outlining its approach to shaping future regulations and public discourse.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/our-views-on-ai-policy-and-political-advocacy/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "GrepSeek: Training Search Agents for Direct Corpus Interaction",
+      "summary": "Researchers introduce GrepSeek, a novel method for training AI search agents to directly interact with and query large text corpora more effectively.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.29307",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "COLLEAGUE.SKILL: Automated AI Skill Generation via Expert Knowledge Distillation",
+      "summary": "A new paper presents COLLEAGUE.SKILL, a system for automatically generating AI skills by distilling knowledge from human experts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.31264",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Builds 'Intelligence Age' Infrastructure in Michigan",
+      "summary": "OpenAI is investing in building new data center infrastructure in Michigan, positioning it as a key hub for the 'Intelligence Age'.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/stargate-michigan-data-center/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Trust-Region Behavior Blending for On-Policy Distillation",
+      "summary": "This research explores Trust-Region Behavior Blending, a technique for improving on-policy distillation by combining expert and student policies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.31159",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "My Company Bought a $660K AI Platform and I Was Replaced, Highlighting AI Deployment Challenges",
+      "summary": "An anecdotal account details a company's $660K AI platform purchase leading to job replacement and a critical system rollback, illustrating real-world AI implementation pitfalls.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/my-company-bought-a-660k-ai-platform-i-was-replaced-on-friday-at-258-am-it-fixed-everything-3kc4",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "How Google Used Gemini to Build Google I/O 2026",
+      "summary": "Google shares insights into how its Gemini AI model was leveraged internally to develop and streamline the production of Google I/O 2026.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "SwanVoice: Expressive Long-Form Zero-Shot Speech Synthesis for Monologue and Dialogue",
+      "summary": "SwanVoice introduces a new method for highly expressive, long-form, zero-shot speech synthesis capable of generating both monologues and dialogues.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30993",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Mellum2 Technical Report Released",
+      "summary": "The technical report for Mellum2 provides a detailed overview of the model's architecture, training, and performance benchmarks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.31268",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "From Vibe Coding to Clear Thinking: What Non-Technical Builders Need in the Age of AI",
+      "summary": "This article discusses the evolving needs of non-technical builders in the AI era, emphasizing the shift from intuitive 'vibe coding' to more structured, clear thinking.",
+      "source": "Dev.to",
+      "url": "https://dev.to/javz/from-vibe-coding-to-clear-thinking-what-non-technical-builders-need-in-the-age-of-ai-4nbd",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Constraining LLMs Just Like Users",
+      "summary": "An article explores practical methods for constraining Large Language Models to behave more predictably and align with user expectations, similar to how human users are constrained.",
+      "source": "Lobste.rs",
+      "url": "https://www.aeracode.org/2026/06/01/constraining-llms/",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
