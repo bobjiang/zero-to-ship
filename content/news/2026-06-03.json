@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-03",
+  "items": [
+    {
+      "title": "Microsoft CEO: We’re moving from OS and apps to agents instead",
+      "summary": "Microsoft's CEO Satya Nadella announced a strategic shift, indicating the company's future focus will be on AI agents rather than traditional operating systems and applications.",
+      "source": "Lobste.rs",
+      "url": "https://9to5mac.com/2026/06/02/microsoft-ceo-were-moving-from-os-and-apps-to-agents-instead/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Uber caps employee AI spending after blowing through budget in 4 months",
+      "summary": "Uber has reportedly capped employee AI spending after exceeding its allocated budget within four months, highlighting the rapid and costly adoption of AI tools within large enterprises.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "New Microsoft tool lets devs spin up AI behavior tests using text descriptions",
+      "summary": "Microsoft has introduced a new tool that allows developers to create and run AI behavior tests using simple text descriptions, streamlining the process of evaluating AI agent performance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Travelers deploys AI-powered claims countrywide with OpenAI",
+      "summary": "Travelers insurance company has partnered with OpenAI to deploy AI-powered claims processing nationwide, marking a significant real-world application of advanced AI in the insurance sector.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/travelers",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Cyera eyes $12B valuation at 80x ARR multiple despite operating losses",
+      "summary": "AI security startup Cyera is reportedly seeking a $12 billion valuation at an 80x ARR multiple, indicating strong investor confidence in the AI security market despite the company's current operating losses.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks",
+      "summary": "Researchers propose 'TASTE,' a new framework designed to improve the coverage and difficulty of benchmarks for AI agents, aiming for more robust and comprehensive evaluation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.28556",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Harness-1: Reinforcement Learning for Search Agents with State-Externalizing Harnesses",
+      "summary": "A new research paper introduces Harness-1, a reinforcement learning approach that uses 'state-externalizing harnesses' to improve the performance of search agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.02373",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Domino: Decoupling Causal Modeling from Autoregressive Drafting in Speculative Decoding",
+      "summary": "The 'Domino' method proposes decoupling causal modeling from autoregressive drafting in speculative decoding, potentially improving the efficiency and accuracy of large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.29707",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Linear Ensembles Wash Away Watermarks: On the Fragility of Distributional Perturbations in LLMs",
+      "summary": "New research reveals that linear ensembles can effectively remove watermarks from LLMs, highlighting the fragility of current watermark techniques against distributional perturbations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.30501",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Your AI Agent Isn't Failing Because It Hallucinates — It's Failing Because of Rate Limits",
+      "summary": "A developer argues that AI agent failures are often due to API rate limits rather than hallucinations, suggesting practical infrastructure challenges are a major bottleneck.",
+      "source": "Dev.to",
+      "url": "https://dev.to/p0rt/your-ai-agent-isnt-failing-because-it-hallucinates-its-failing-because-of-rate-limits-2d60",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "AI Native DevCon Day 1: Making AI Agents Ready for Enterprise",
+      "summary": "The first day of AI Native DevCon focused on the critical steps and challenges involved in preparing AI agents for robust and reliable deployment within enterprise environments.",
+      "source": "Dev.to",
+      "url": "https://dev.to/tessl/ai-native-devcon-day-1-making-ai-agents-ready-for-enterprise-1e50",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "I Thought AI Would Make Me Code Faster. Then I Spent 6 Hours Debugging One Line.",
+      "summary": "A developer shares a relatable experience where AI assistance, intended to speed up coding, paradoxically led to a prolonged debugging session for a single line of code.",
+      "source": "Dev.to",
+      "url": "https://dev.to/trojanmocx/i-thought-ai-would-make-me-code-faster-then-i-spent-6-hours-debugging-one-line-3ffh",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "When Does Multi-Agent RL Improve LLM Workflows? Workflow, Scale, and Policy-Sharing Tradeoffs",
+      "summary": "Research explores the conditions under which multi-agent reinforcement learning can enhance LLM workflows, examining the tradeoffs between workflow design, scale, and policy-sharing strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.24202",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "LVSA: Training-Free Sparse Attention for Long Video Diffusion",
+      "summary": "A new method called LVSA introduces training-free sparse attention to efficiently handle long video diffusion models, improving performance without additional training overhead.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.31057",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "MCP-Persona: Benchmarking LLM Agents on Real-World Personal Applications via Environment Simulation",
+      "summary": "MCP-Persona is introduced as a new benchmark for evaluating LLM agents on real-world personal applications through comprehensive environment simulations, aiming for more realistic performance assessment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.02470",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
