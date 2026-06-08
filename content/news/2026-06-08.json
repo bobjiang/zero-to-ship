@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-08",
+  "items": [
+    {
+      "title": "Complexity-Balanced Diffusion Splitting",
+      "summary": "Researchers introduce a novel diffusion model that optimizes complexity balance for improved generative performance and efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06477",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Dream.exe: Can Video Generation Models Dream Executable Robot Manipulation?",
+      "summary": "A new study explores the potential for video generation models to synthesize executable robot manipulation tasks, bridging the gap between visual generation and physical action.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.04811",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery",
+      "summary": "This paper presents MLEvolve, a framework that autonomously discovers and optimizes machine learning algorithms, pushing the boundaries of automated machine learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06473",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Our VP Said AI Would Test Itself. I Raised My Hand. I Got Reassigned. Day 3 Cost $2.8M. I Had the Screenshots Ready.",
+      "summary": "A developer recounts a cautionary tale of an AI testing project that failed spectacularly, highlighting the risks of over-reliance on autonomous AI without human oversight.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/our-vp-said-ai-would-test-itself-i-raised-my-hand-i-got-reassigned-day-3-cost-28m-i-had-the-555j",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Unsupervised Skill Discovery for Agentic Data Analysis",
+      "summary": "New research focuses on enabling AI agents to autonomously discover and acquire skills for complex data analysis tasks without explicit supervision.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06416",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AffordanceVLA: A Vision-Language-Action Model Empowering Action Generation through Affordance-Aware Understanding",
+      "summary": "AffordanceVLA introduces a new model that integrates vision, language, and action to generate robot actions based on an understanding of object affordances.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06155",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LLMs Can Leak Training Data But Do They Want To? A Propensity-Aware Evaluation of Memorization in LLMs",
+      "summary": "This paper investigates the propensity of Large Language Models to leak training data, offering new insights into memorization and privacy concerns.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06286",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI is still working on that ‘super app’",
+      "summary": "OpenAI continues to develop its ambitious 'super app' project, aiming to integrate various AI capabilities into a single, comprehensive platform.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/07/openai-is-still-working-on-that-super-app/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "MAOAM: Unified Object and Material Selection with Vision-Language Models",
+      "summary": "Researchers propose MAOAM, a unified vision-language model capable of simultaneously selecting objects and their materials, enhancing scene understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.04880",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Shadow Price of Reasoning: Economic Perspective on Optimal Budget Allocation for LLMs",
+      "summary": "This study explores the economic implications of reasoning in LLMs, providing a framework for optimal budget allocation in their development and deployment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.03092",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "World-Language-Action Model for Unified World Modeling, Language Reasoning, and Action Synthesis",
+      "summary": "A new model aims to unify world modeling, language reasoning, and action synthesis, paving the way for more comprehensive and intelligent AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.05979",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Listen Labs raises $69M after viral billboard hiring stunt to scale AI customer interviews",
+      "summary": "Listen Labs secures $69 million in funding, following a successful viral marketing campaign, to expand its AI-powered platform for customer interviews.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Notion restores access to Anthropic after service disruption",
+      "summary": "Notion has successfully reinstated access to Anthropic's AI services after a temporary disruption, ensuring continuity for users relying on the integration.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Is this the dawn of the Tokenpocalypse?",
+      "summary": "TechCrunch speculates on the potential future challenges and shifts in the AI landscape, questioning whether a 'Tokenpocalypse' is on the horizon.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "How Endava is redesigning software delivery around AI agents",
+      "summary": "Endava is transforming its software delivery processes by integrating AI agents, aiming to enhance efficiency and innovation in development workflows.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/endava-frontiers",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
