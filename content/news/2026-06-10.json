@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-10",
+  "items": [
+    {
+      "title": "Google Fires Warning Shot in AI Subscription Price Wars",
+      "summary": "Google has initiated aggressive pricing strategies for its AI services, signaling a potential price war in the competitive AI subscription market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic Unveils Claude Fable 5 and Mythos 5 Models",
+      "summary": "Anthropic has released its new Claude Fable 5 and Claude Mythos 5 models, expanding its offerings in the competitive large language model landscape.",
+      "source": "Lobste.rs",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "NousCoder-14B: An Open-Source Coding Model Challenges Commercial Offerings",
+      "summary": "Nous Research has launched NousCoder-14B, an open-source coding model positioned as a free alternative to expensive commercial services like Claude Code.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "AI Usage Statistics 2026: Structural Shifts in Adoption, Work, and Hiring",
+      "summary": "New statistics for 2026 reveal significant structural shifts in AI adoption, its impact on workforces, and hiring practices across industries.",
+      "source": "Dev.to",
+      "url": "https://dev.to/alifar/ai-usage-statistics-2026-the-structural-shift-behind-adoption-work-and-hiring-mlj",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Agents' Last Exam: A New Benchmark for Evaluating AI Agent Capabilities",
+      "summary": "A new paper introduces 'Agents' Last Exam,' a comprehensive benchmark designed to rigorously evaluate the performance and limitations of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.05405",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "FlashMemory-DeepSeek-V4: Ultra-Long Context via Lookahead Sparse Attention",
+      "summary": "Researchers present FlashMemory-DeepSeek-V4, a new method that uses lookahead sparse attention to enable lightning-fast indexing and processing of ultra-long contexts in LLMs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.09079",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LatentSkill: Bridging Textual and Latent Skills for LLM Agents",
+      "summary": "A new study explores LatentSkill, a framework that translates in-context textual skills into in-weight latent skills, enhancing the capabilities of LLM agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06087",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hey, Siri, Here's What I Actually Want From AI",
+      "summary": "This article discusses user expectations for AI assistants like Siri, highlighting the gap between current capabilities and desired intelligent features.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/09/hey-siri-heres-what-i-actually-want-from-ai/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "The 'Prompt' Is Not a Skill — And We Need to Stop Pretending",
+      "summary": "This opinion piece argues that 'prompt engineering' should not be considered a fundamental skill, advocating for a deeper understanding of AI interaction.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/the-prompt-is-not-a-skill-and-we-need-to-stop-pretending-3m18",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Syll: Open-Source Personal Automation with Cross-Surface Execution",
+      "summary": "Syll introduces an open-source framework for personal automation, enabling intelligent agents to execute tasks seamlessly across various digital surfaces.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.07594",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "End-to-End Context Compression at Scale for Large Language Models",
+      "summary": "Researchers present a novel approach for end-to-end context compression, allowing large language models to handle and process information more efficiently at scale.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.09659",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "OmniMem: Perturbation-aware Memory Compression for Streaming Audio-Visual LLMs",
+      "summary": "OmniMem proposes a new memory compression technique designed to handle streaming audio-visual data for LLMs, making them more robust to perturbations.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.07577",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PathoSage: Multi-Source Evidence Adjudication in Pathology via Experience-Aware Agentic Workflow",
+      "summary": "PathoSage introduces an agentic workflow for pathology, designed to adjudicate evidence from multiple sources using an experience-aware approach.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.07549",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "OmniGameArena: A Unified UE5 Benchmark for VLM Game Agents",
+      "summary": "OmniGameArena provides a unified benchmark built on Unreal Engine 5 to evaluate and improve the performance of Vision-Language Model (VLM) agents in gaming environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.09826",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Whisper Hallucination Detection and Mitigation via Hidden Representation Steering",
+      "summary": "This paper explores methods for detecting and mitigating hallucinations in Whisper models by steering hidden representations and utilizing sparse autoencoders.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.07473",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
