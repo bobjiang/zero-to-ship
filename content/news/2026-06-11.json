@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-11",
+  "items": [
+    {
+      "title": "xAI Fired Engineer Over Grok Safety Concerns, Lawsuit Claims",
+      "summary": "A new lawsuit alleges that xAI fired an engineer who raised alarms about the safety of its Grok AI model, highlighting potential internal conflicts over AI ethics and development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/10/xai-fired-an-engineer-who-raised-alarms-about-grok-safety-new-lawsuit-claims/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon Secures $17.5B Loan to Fuel Continued AI Investments",
+      "summary": "Amazon has borrowed an additional $17.5 billion from banks, following a recent bond sale, signaling its aggressive and sustained investment in AI infrastructure and development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/10/fresh-off-bond-sale-amazon-borrows-17-5-billion-from-banks-as-ai-spending-continues/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "ABot-Earth 0.5: Generative 3D Earth Model Released",
+      "summary": "A new generative 3D Earth model, ABot-Earth 0.5, has been released, showcasing advancements in creating detailed and realistic virtual representations of our planet.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.09967",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "PRC-Linked Influence Operations Targeting US AI Debates",
+      "summary": "OpenAI reports that influence operations linked to the People's Republic of China are actively attempting to shape public discourse around AI debates in the United States.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/prc-linked-influence-operations-ai-debates/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "AI-Pilled Firms Spend $7,500 Per Employee Monthly on AI",
+      "summary": "New data reveals that companies heavily invested in AI are spending an average of $7,500 per employee each month on AI technologies, indicating a significant financial commitment to adoption.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/10/ai-pilled-firms-spend-7500-per-employee-each-month-on-ai/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Kwai Keye-VL-2.0 Technical Report Details New Multimodal Model",
+      "summary": "The technical report for Kwai Keye-VL-2.0 has been published, introducing a new large multimodal model with significant capabilities in understanding and generating various data types.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.10651",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Real-time Lip Synchronization Achieved with Few-Step Autoregressive Diffusion",
+      "summary": "Researchers have developed 'Lip Forcing,' a method using few-step autoregressive diffusion to achieve real-time lip synchronization, promising advancements for avatars and media production.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.11180",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Oracle Cloud Now Offers Access to OpenAI Models and Codex",
+      "summary": "OpenAI has announced a partnership allowing customers to access its advanced models, including Codex, through their existing Oracle cloud commitments, expanding enterprise access.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-on-oracle-cloud/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Google AI Blog Highlights May 2026 Updates",
+      "summary": "The Google AI Blog provides a roundup of key AI news and product updates announced in May 2026, showcasing ongoing innovations across Google's AI portfolio.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution",
+      "summary": "A new research paper introduces 'Role-Agent,' a method for bootstrapping LLM agents through a dual-role evolutionary process, enhancing their capabilities and autonomy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.10917",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SearchSwarm: Delegation Intelligence for Agentic LLMs in Deep Research",
+      "summary": "SearchSwarm proposes a new paradigm for agentic LLMs, focusing on delegation intelligence to enable long-horizon, deep research tasks more effectively.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.09730",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MemDreamer Decouples Perception and Reasoning for Long Video Understanding",
+      "summary": "MemDreamer presents a novel approach to long video understanding by decoupling perception and reasoning using hierarchical graph memory and an agentic retrieval mechanism.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.07512",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SCAIL-2 Unifies Controlled Character Animation with In-Context Conditioning",
+      "summary": "SCAIL-2 introduces a unified framework for controlled character animation that leverages end-to-end in-context conditioning, simplifying and improving animation generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.10804",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Claude Code Alternative 'Goose' Offers Free AI Coding Assistance",
+      "summary": "A new tool called 'Goose' is highlighted as a free alternative to Claude Code, offering similar AI-powered coding assistance that typically costs up to $200 a month.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "How Google Used Gemini to Build I/O 2026",
+      "summary": "Google shares insights into how its Gemini AI model was leveraged in the development and execution of the Google I/O 2026 conference, demonstrating practical applications of its advanced AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+      "score": 7,
+      "category": "industry"
+    }
+  ]
+}
