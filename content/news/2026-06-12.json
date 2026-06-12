@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-12",
+  "items": [
+    {
+      "title": "Jeff Bezos's Prometheus Raises $12B to Build an 'Artificial General Engineer' for the Physical World",
+      "summary": "Jeff Bezos's new venture, Prometheus, has secured an astounding $12 billion in funding to develop an \"artificial general engineer\" focused on real-world physical applications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI to Acquire Ona",
+      "summary": "OpenAI announced its acquisition of Ona, signaling a strategic move to integrate new capabilities or talent into its AI ecosystem.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-to-acquire-ona",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Redesign Mixture-of-Experts Routers with Manifold Power Iteration",
+      "summary": "New research proposes redesigning Mixture-of-Experts (MoE) routers using Manifold Power Iteration to potentially enhance the efficiency and performance of large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12397",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "summary": "This paper explores a novel approach to achieving generalist autonomous research by refining hypothesis trees, pushing the boundaries of AI's scientific discovery capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.11926",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Agentic Environment Engineering for Large Language Models: A Survey",
+      "summary": "This survey provides a comprehensive overview of agentic environment engineering for large language models, covering modeling, synthesis, evaluation, and application to guide future research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12191",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+      "summary": "A new benchmark, Claw-SWE-Bench, has been introduced to rigorously evaluate OpenClaw-style AI agent harnesses on complex coding tasks, aiming to standardize performance measurement.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12344",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Scalar Rewards by Internalizing Reasoning into Score Distributions",
+      "summary": "New research proposes moving beyond simple scalar rewards in reinforcement learning by internalizing reasoning into score distributions, aiming for more sophisticated agent training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.09076",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Supporting Europe’s Work in Ensuring a Trustworthy AI Ecosystem",
+      "summary": "OpenAI reiterates its commitment to supporting Europe's efforts in establishing a trustworthy AI ecosystem, highlighting collaboration on ethical guidelines and regulatory frameworks.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "HazelJS 1.0.0: Stable Release of the AI-Native TypeScript Framework",
+      "summary": "HazelJS has announced the stable 1.0.0 release of its AI-native TypeScript framework, offering developers a robust toolset for building AI applications.",
+      "source": "Dev.to",
+      "url": "https://dev.to/arslan_mecom/hazeljs-100-stable-release-of-the-ai-native-typescript-framework-89j",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Grammar-Constrained Decoding Can Jailbreak LLMs into Generating Malicious Code",
+      "summary": "Researchers demonstrate that grammar-constrained decoding methods can be exploited to jailbreak large language models, compelling them to generate malicious code.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.11817",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DeNovoSWE: Scaling Long-Horizon Environments for Generating Entire Repositories from Scratch",
+      "summary": "DeNovoSWE introduces a method for scaling long-horizon environments, enabling AI agents to generate entire software repositories from scratch, pushing the boundaries of autonomous software engineering.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.10728",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "My Daughter Asked if Developers Used to Write Code by Hand, but it Was the Follow-Up Question That Surprised Me.",
+      "summary": "A Google AI blog post reflects on a child's insightful questions about the evolution of coding, highlighting the rapid advancements and future implications of AI in software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/my-daughter-asked-if-developers-used-to-write-code-by-hand-but-it-was-the-follow-up-question-that-1bh8",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Google ADK Security: 5 Layers That Defend AI Agents From Prompt Injection",
+      "summary": "Google details five layers of security within its AI Development Kit (ADK) designed to protect AI agents from prompt injection attacks, enhancing the robustness of AI applications.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/google-adk-security-5-layers-that-defend-ai-agents-from-prompt-injection-1ped",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "How an Astrophysicist Uses Codex to Help Simulate Black Holes",
+      "summary": "An astrophysicist shares insights into how OpenAI's Codex is being utilized to assist in complex simulations of black holes, demonstrating AI's utility in advanced scientific research.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/using-codex-to-simulate-black-holes",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "chromiumfish: A Stealth Chromium Build with a Drop-in Playwright Harness for Python and Node",
+      "summary": "Chromiumfish offers a stealthy Chromium build integrated with a Playwright harness, providing developers with a powerful tool for automated browser testing and scraping in Python and Node.js.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/arman-bd/chromiumfish",
+      "score": 4,
+      "category": "open-source"
+    }
+  ]
+}
