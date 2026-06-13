@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-13",
+  "items": [
+    {
+      "title": "EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments",
+      "summary": "Researchers introduce EvoArena, a new benchmark and framework for evaluating how LLM agents evolve and manage memory to maintain robustness in constantly changing environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13681",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Meta's Months-Old AI Unit Described as a 'Soul-Crushing Gulag' by Engineers",
+      "summary": "Engineers within Meta's recently formed AI unit reportedly describe their working conditions as extremely challenging and demoralizing, raising concerns about internal culture and project pressures.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineers-stuck-inside-it/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google Sues Chinese Cybercrime Operation Using AI to Scam Hundreds of Thousands",
+      "summary": "Google has filed a lawsuit against a Chinese cybercrime group accused of leveraging AI to defraud hundreds of thousands of victims, highlighting the growing threat of AI-powered scams.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "MiniMax Sparse Attention: Efficient Attention for Large Language Models",
+      "summary": "A new sparse attention mechanism, MiniMax Sparse Attention, is proposed to improve the efficiency of large language models by focusing on the most critical tokens.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13392",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning",
+      "summary": "SpatialClaw presents a novel action interface designed to enhance the spatial reasoning capabilities of AI agents, allowing for more intuitive and effective interaction with 3D environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13673",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "BBVA Integrates OpenAI to Place AI at the Core of Banking Operations",
+      "summary": "BBVA is partnering with OpenAI to embed AI deeply into its banking services, aiming to revolutionize financial operations and customer experiences.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/bbva",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "InterleaveThinker: Reinforcing Agentic Interleaved Generation",
+      "summary": "InterleaveThinker introduces a method for reinforcing interleaved generation in AI agents, enabling them to better combine planning and execution for complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13679",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?",
+      "summary": "This paper investigates the ability of Multimodal Large Language Models (MLLMs) to self-recover and robustly understand visual content even when it is corrupted.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.08063",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents",
+      "summary": "FORT-Searcher proposes a method to create challenging, shortcut-resistant search tasks, crucial for training more robust and intelligent deep search agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12087",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling",
+      "summary": "MaxProof introduces a new approach to scale mathematical proof generation using a combination of generative-verifier reinforcement learning and population-level test-time scaling.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13473",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Launches New Academy Courses for Applying AI in the Workplace",
+      "summary": "OpenAI has introduced new Academy courses designed to equip professionals with the skills needed to effectively apply AI technologies in various work environments.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/academy-courses-applying-ai-at-work",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "LabVLA: Grounding Vision-Language-Action Models in Scientific Laboratories",
+      "summary": "LabVLA introduces a new framework for training vision-language-action models specifically designed to operate and assist within complex scientific laboratory environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13578",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Switched to the Agent Toolkit for AWS: Here's Why",
+      "summary": "An AWS developer shares their positive experience and reasons for adopting the Agent Toolkit for AWS, highlighting its benefits for building AI agents.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws/i-switched-to-the-agent-toolkit-for-aws-heres-why-5hf",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "I Lead AI Agents Every Day - Here Are 5 Shifts No Standard Tells You How to Make",
+      "summary": "An experienced AI agent leader shares five crucial, non-standard shifts in approach necessary for effectively managing and optimizing AI agents in daily operations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/itskondrat/i-lead-ai-agents-every-day-here-are-5-shifts-no-standard-tells-you-how-to-make-1pg4",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery",
+      "summary": "EurekAgent proposes that effective environment engineering for AI agents is the key to achieving fully autonomous scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13662",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
