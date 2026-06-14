@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-14",
+  "items": [
+    {
+      "title": "WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces",
+      "summary": "Researchers introduce WeaveBench, a new benchmark designed to evaluate computer-use agents on complex, long-horizon tasks in real-world environments using hybrid interfaces.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.09426",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Meta reportedly moves to unwind $2B Manus deal after Beijing’s demand",
+      "summary": "Meta is reportedly unwinding its $2 billion acquisition of AI startup Manus following demands from Beijing, highlighting increasing geopolitical tensions in tech mergers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "KPMG pulls report on AI usage due to apparent hallucinations",
+      "summary": "KPMG has withdrawn a recent report on AI usage after discovering that the AI models used to generate parts of the report produced significant hallucinations, raising concerns about AI reliability in professional services.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon CEO reportedly raised Anthropic model concerns before government crackdown",
+      "summary": "Amazon's CEO reportedly expressed concerns about Anthropic's AI models prior to a government crackdown, suggesting internal awareness of potential issues before public intervention.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "PRC-linked influence operations are targeting AI debates in the US",
+      "summary": "OpenAI reports that influence operations linked to the People's Republic of China are actively targeting AI-related discussions and debates within the United States.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/prc-linked-influence-operations-ai-debates",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers",
+      "summary": "A new research paper introduces HYDRA-X, a framework for native unified multimodal models that utilize holistic visual tokenizers to enhance understanding across different data types.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13289",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Access OpenAI models and Codex through your Oracle cloud commitment",
+      "summary": "OpenAI announces that its models, including Codex, are now accessible to customers through their existing Oracle cloud commitments, expanding enterprise integration options.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-on-oracle-cloud",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "How Preply combines AI and human tutors to personalize learning",
+      "summary": "Preply is leveraging a combination of AI and human tutors to create personalized learning experiences, demonstrating a hybrid approach to educational technology.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/preply",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization",
+      "summary": "Researchers propose N-GRPO, a novel method that uses embedding-level neighbor mixing to significantly enhance policy optimization in reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.10768",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Demystifying Hidden-State Recurrence: Switchable Latent Reasoning with On-Policy Reinforcement Learning",
+      "summary": "This paper explores hidden-state recurrence, introducing switchable latent reasoning combined with on-policy reinforcement learning to improve understanding and control of agent behavior.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13106",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "VideoMDM: Towards 3D Human Motion Generation From 2D Supervision",
+      "summary": "VideoMDM presents a new approach for generating realistic 3D human motion directly from 2D video supervision, simplifying the process of creating complex animations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13364",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DyCo-RL: Dynamic Cross-Modal Coordination for Visual Reasoning",
+      "summary": "DyCo-RL introduces a dynamic cross-modal coordination framework for visual reasoning, enabling AI systems to better integrate information from different sensory modalities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.08035",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "VIA-SD: Verification via Intra-Model Routing for Speculative Decoding",
+      "summary": "VIA-SD proposes a novel method for speculative decoding that uses intra-model routing for verification, potentially improving the efficiency and accuracy of language model outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12243",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "The Most Powerful Model on the Market Got Pulled by the Government in 3 Days. Is It Real, or a Hype Bubble?",
+      "summary": "An article discusses the rapid government intervention to pull a supposedly powerful new AI model from the market, questioning whether it signifies genuine risk or an overhyped bubble.",
+      "source": "Dev.to",
+      "url": "https://dev.to/p0rt/the-most-powerful-model-on-the-market-got-pulled-by-the-government-in-3-days-is-it-real-or-a-hype-fce",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Why Testing MCP Servers With Real AI Models Matters (2026)",
+      "summary": "This article emphasizes the critical importance of testing MCP (Multi-Cloud Platform) servers using actual AI models to ensure robust performance and reliability in real-world scenarios.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rupa_tiwari_dd308948d710f/why-testing-mcp-servers-with-real-ai-models-matters-2026-55e9",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
