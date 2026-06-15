@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-15",
+  "items": [
+    {
+      "title": "OpenAI Faces Investigation from State Attorneys General",
+      "summary": "OpenAI is reportedly under investigation by state attorneys general, signaling increased regulatory scrutiny over its operations and practices.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic Suspends New Model Access as India Debates its AI Future",
+      "summary": "Anthropic has suspended access to its latest models, prompting a debate in India about the nation's strategy and future in the AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing the OpenAI Partner Network",
+      "summary": "OpenAI has launched its Partner Network to foster a broader ecosystem of developers and businesses building on its AI models and technologies.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-openai-partner-network",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million to develop AI-native cloud infrastructure, positioning itself as a significant competitor to established cloud providers like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Redesigns Search Box for First Time in 25 Years, Signaling AI Integration",
+      "summary": "Google has unveiled the first redesign of its search box in 25 years, a move that is expected to deeply integrate AI capabilities and reshape user interaction with search.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "From 2D Grids to 1D Tokens: Reforming Shared Representations for Multimodal Image Fusion",
+      "summary": "New research proposes a novel method to reform shared representations for multimodal image fusion by converting 2D grids into 1D tokens, potentially improving efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12303",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "As AI Companies Race to Go Public, Who Else is Along for the Ride?",
+      "summary": "The article explores the broader ecosystem of investors, partners, and ancillary businesses benefiting from the current rush of AI companies preparing for initial public offerings.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/14/as-ai-companies-race-to-go-public-who-else-is-along-for-the-ride/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback",
+      "summary": "Researchers introduce a structured defect grounding method to provide more precise and actionable feedback for improving text-to-image generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06113",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "I Built a Free Open-Source Alternative to Sourcegraph — Here's Why",
+      "summary": "A developer shares their motivation and process for creating a free, open-source alternative to Sourcegraph, aiming to provide accessible code search and intelligence.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mukund_zha/i-built-a-free-open-source-alternative-to-sourcegraph-heres-why-805",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold",
+      "summary": "A new research paper introduces MoVerse, a system for real-time video world modeling that leverages a panoramic Gaussian scaffold for efficient and accurate scene representation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13376",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Future of Siri: Why Private Inference Isn’t Private Enough",
+      "summary": "This article critically examines Apple's approach to AI with Siri, arguing that current private inference methods may not fully address user privacy concerns for intelligent agents.",
+      "source": "Lobste.rs",
+      "url": "https://blog.cryptographyengineering.com/2026/06/09/apples-siri-ai-or-more-shouting-into-the-void-about-private-agents/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "TreeSeeker: Tree-Structured Trial, Error, and Return in Deep Search",
+      "summary": "TreeSeeker is presented as a novel deep search method that utilizes a tree-structured approach for trial, error, and return, enhancing exploration and problem-solving capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.11662",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "HarnessBridge: Learnable Bidirectional Controller for LLM Agent Harness",
+      "summary": "New research introduces HarnessBridge, a learnable bidirectional controller designed to improve the efficiency and control of LLM agent harnesses.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12882",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Built an AI System Design Coach — Clone It, Try It, Break It",
+      "summary": "A developer shares their experience building and open-sourcing an AI-powered system design coach, encouraging others to experiment with and contribute to the tool.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nithiin7/i-built-an-ai-system-design-coach-clone-it-try-it-break-it-1j4b",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Running Claude Code and Codex Side by Side: A Practical Division of Labor",
+      "summary": "A user shares practical insights on effectively using Claude Code and Codex concurrently, detailing a successful division of labor for different coding tasks.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rapls/i-run-claude-code-and-codex-side-by-side-heres-the-division-of-labor-that-actually-works-4hkg",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
