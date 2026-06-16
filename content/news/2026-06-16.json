@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-16",
+  "items": [
+    {
+      "title": "OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data",
+      "summary": "Researchers introduce OmniDirector, a novel method for general multi-shot camera cloning that eliminates the need for cross-paired data, simplifying the process of creating realistic camera effects.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13432",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Meta's new ‘AI Mode’ on Facebook pulls from public info across its platforms",
+      "summary": "Meta has launched a new 'AI Mode' on Facebook that leverages public information across its various platforms to enhance user experience and content generation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/15/metas-new-ai-mode-on-facebook-pulls-from-public-info-across-its-platforms/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "summary": "Anthropic introduces Cowork, a new Claude AI desktop agent designed to interact directly with user files and workflows without requiring any coding expertise, aiming to boost productivity.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "APPO: Agentic Procedural Policy Optimization",
+      "summary": "A new research paper proposes Agentic Procedural Policy Optimization (APPO), enhancing reinforcement learning agents with procedural knowledge for more efficient and robust policy learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12384",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce has deployed an advanced Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly evolving workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents",
+      "summary": "A new paper suggests that LLM agents don't simply retrieve memories but reconstruct them using a graph-based memory system, offering a more dynamic approach to AI memory.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.06036",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The US government's Anthropic models ban was never about an AI jailbreak",
+      "summary": "New reports clarify that the US government's ban on certain Anthropic AI models was not due to an AI jailbreak, but rather other undisclosed concerns.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI",
+      "summary": "This paper explores the evolution of AI from simple chatbots to persistent autonomous digital colleagues, highlighting a significant paradigm shift in AI agent design and capability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.14502",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Measuring Epistemic Resilience of LLMs Under Misleading Medical Context",
+      "summary": "Researchers are developing methods to measure the epistemic resilience of Large Language Models when exposed to misleading medical information, crucial for their safe deployment in healthcare.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.12291",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Orchestra-o1: Omnimodal Agent Orchestration",
+      "summary": "Orchestra-o1 introduces a new framework for omnimodal agent orchestration, enabling complex coordination and interaction across various AI agents and modalities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13707",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry",
+      "summary": "HarnessX presents a foundry for creating composable, adaptive, and evolvable AI agent harnesses, offering a flexible platform for developing sophisticated AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.14249",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Rethinking RAG in Long Videos: What to Retrieve and How to Use It?",
+      "summary": "This research re-evaluates Retrieval-Augmented Generation (RAG) for long video content, exploring optimal strategies for information retrieval and utilization within extended visual narratives.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.13141",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Fable 5 Went Dark Friday Night. I Ran My Critical Workflow on a Backup Saturday - Here's What Broke",
+      "summary": "A user recounts the challenges and failures encountered when a critical workflow relying on Fable 5 AI service had to be switched to a backup system after an unexpected outage.",
+      "source": "Dev.to",
+      "url": "https://dev.to/itskondrat/fable-5-went-dark-friday-night-i-ran-my-critical-workflow-on-a-backup-saturday-heres-what-broke-349d",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Building a Chrome Extension to Make AI Use More Intentional",
+      "summary": "A developer shares insights on creating a Chrome extension designed to encourage more intentional and mindful use of AI tools in daily browsing.",
+      "source": "Dev.to",
+      "url": "https://dev.to/javz/building-a-chrome-extension-to-make-ai-use-more-intentional-20k0",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Turning Gemma 4 into an Old Korean Translator",
+      "summary": "This article details the process of fine-tuning Google's Gemma 4 model to function as an effective translator for Old Korean, showcasing its adaptability for specialized linguistic tasks.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/turning-gemma-4-into-an-old-korean-translator-hop",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
