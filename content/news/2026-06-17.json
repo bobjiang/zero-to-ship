@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-17",
+  "items": [
+    {
+      "title": "JoyAI-VL-Interaction: Real-Time Vision-Language Interaction Intelligence",
+      "summary": "Researchers introduce JoyAI-VL-Interaction, a novel framework enabling real-time, high-fidelity vision-language interaction for AI systems, achieving superior performance in complex multimodal tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.14777",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Android 17 Launches with New Multitasking Tools and Expanded Gemini Features",
+      "summary": "Google's Android 17 introduces new multitasking capabilities and expands Gemini AI features, further integrating advanced AI into the mobile operating system.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/16/android-17-launches-with-new-multitasking-tools-as-google-expands-gemini-features/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Data Journalist Agent: Transforming Data into Verifiable Multimodal Stories",
+      "summary": "A new AI agent is proposed that can transform raw data into verifiable, multimodal stories, potentially automating aspects of data journalism and content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.11176",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Geometric Action Model for Robot Policy Learning",
+      "summary": "A new Geometric Action Model is presented for robot policy learning, offering a more intuitive and efficient way for robots to understand and execute complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17046",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "DreamX-World 1.0: A General-Purpose Interactive World Model",
+      "summary": "DreamX-World 1.0 is introduced as a general-purpose interactive world model, designed to enable AI agents to understand and interact with complex environments more effectively.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.16993",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Predicting Model Behavior Before Release by Simulating Deployment",
+      "summary": "OpenAI details a new method for predicting the behavior of AI models prior to their public release by simulating real-world deployment scenarios, enhancing safety and reliability.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/deployment-simulation",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "FastContext: Training Efficient Repository Explorer for Coding Agents",
+      "summary": "This paper details FastContext, a method for training efficient repository explorer models that significantly improve the ability of coding agents to navigate and understand large codebases.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.14066",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VibeThinker-3B: Exploring Verifiable Reasoning in Small Language Models",
+      "summary": "VibeThinker-3B pushes the frontier of verifiable reasoning in small language models, demonstrating enhanced capabilities for accurate and auditable AI outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.16140",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic's Feud with Trump Admin May Boost Sales, Data Suggests",
+      "summary": "Sales data indicates that Anthropic's recent conflict with the Trump administration might inadvertently be helping the AI company's market performance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs secured $69 million in funding following a viral billboard hiring campaign, aiming to scale its AI-powered customer interview platform.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "VisualClaw: A Real-Time, Personalized Agent for the Physical World",
+      "summary": "VisualClaw is presented as a real-time, personalized AI agent designed to interact with and understand the physical world, offering new possibilities for embodied AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.16295",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "TokenPilot: Cache-Efficient Context Management for LLM Agents",
+      "summary": "TokenPilot introduces a cache-efficient context management system for LLM agents, significantly improving performance and reducing resource usage in multi-turn interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17016",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
+      "summary": "Nemotron 3 Ultra is unveiled as an open and efficient hybrid Mamba-Transformer model, leveraging a Mixture-of-Experts architecture for advanced agentic reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.15007",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Qwen-RobotWorld Technical Report: Unifying Embodied World Modeling through Language-Conditioned Video Generation",
+      "summary": "The Qwen-RobotWorld technical report details a new approach to unifying embodied world modeling by generating videos conditioned on language, enhancing robotic understanding and interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17030",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "A Company AI Flagged My Article As 'Low Quality.' I Ran the Numbers.",
+      "summary": "A developer recounts their experience of having an article flagged as 'low quality' by a company's AI, prompting an investigation into the AI's assessment metrics.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/a-company-ai-flagged-my-article-as-low-quality-i-ran-the-numbers-then-i-ran-again-1h0p",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
