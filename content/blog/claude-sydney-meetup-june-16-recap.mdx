@@ -1,0 +1,162 @@
+---
+title: "An AI Board of Directors, the Human Element in AI Design & Harness Engineering — Claude Sydney Meetup — June 16, 2026"
+excerpt: "3 talks from the June Claude Sydney meetup: an AI board of directors with role-based agents, the human element in AI design, and harness engineering."
+date: "2026-06-16"
+author: "Bob Jiang"
+keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, AI agents, multi-agent, AI board of directors, AI design, harness engineering, Google ADK, guard rails, recap"
+---
+
+# An AI Board of Directors, the Human Element in AI Design, and Harness Engineering
+
+## TL;DR
+
+- Give each AI agent a **clear role** (CFO, CMO, CTO) so they disagree and push back, instead of one agent that always agrees.
+- Enforce agent guard rails in **code, not just prompts**. Use read-only access, block destructive queries, and gate risky actions behind approval.
+- The **human element** is the differentiator. AI is an amplifier. A lazy prompt gives generic output.
+- Write your taste and judgement into the repo. As one speaker said: **"Code is free. Judgment is scarce."**
+- The next meetup is on **Tuesday, July 8**. The theme is **agent memory and data management**, with **TiDB**.
+
+On **Tuesday, June 16**, the 02Ship community met again at **Haymarket HQ** for the June Claude Sydney meetup.
+
+The night had three talks. They covered different angles: how to give AI agents real roles, why the human element still matters in design, and how humans steer agents at scale.
+
+Thanks to **Haymarket HQ** for hosting us again.
+
+## Talk 1: Building an AI Board of Directors — Harshil Siyani
+
+[**Harshil Siyani**](https://www.linkedin.com/in/hsiyani/) built an AI boardroom. You can see his slides here: [ai-boardroom-demo.vercel.app](https://ai-boardroom-demo.vercel.app).
+
+![Harshil Siyani presenting Building an AI Board of Directors at the 02Ship Claude Sydney meetup, June 16 2026](/images/claude-sydney-meetup-june-16-2026-talk-1.jpg)
+
+### The core idea
+
+Give each AI agent a distinct persona and role. A CFO, a CMO, a CTO. Do not prompt one generalist model and hope it covers everything.
+
+The problem this solves is simple. A solo AI almost always agrees with you. Board members disagree. They push back with real data.
+
+### Each agent reads live data
+
+The agents are not just persona prompts. Each one connects to a real data source:
+
+- The **CMO** pulls Twitter analytics (for example, "you haven't posted in 4 months, 15 views").
+- The **CFO** queries Supabase financials (for example, "8.53% conversion, 11 paid users of 129").
+- The **CTO** reads the GitHub codebase through the GitHub API.
+
+### Guard rails live in code, not prompts
+
+Harshil enforced roles at the tool level, not the prompt level:
+
+- The marketing agent has **read-only** database access.
+- The CTO can read the database and GitHub.
+- No agent can run destructive queries. `CREATE` and `DELETE` are blocked in code.
+- Actions that need approval, like scheduling a tweet, are gated by a session approval state.
+
+In a later demo, one agent tried to run a `CREATE TABLE` query. The tool blocked it and raised an error from the code, not from the model.
+
+### The live demo
+
+He asked the board a real question: "Should we build a Teams feature for PromPath?"
+
+- The CFO (Victoria) argued against it. Only 11 paid users.
+- The CTO noted that it needs a large architecture overhaul.
+- The board recommended a manual team plan soft launch at **$49 per user**.
+- An agent created a **Linear ticket** with full instructions, automatically.
+- An agent drafted a **Twitter thread** to announce the launch. It was held as a draft, not scheduled, because of the guard rails.
+
+All decisions are stored in Supabase. A new session can recall the context from before.
+
+### The full production setup
+
+The demo was small. The real setup is bigger:
+
+- **7 board members**: product, technical, growth, UX, data/AI, finance, and community.
+- Each board member has **3 sub-agents** with different angles, like security, UX, and cloud.
+- **7,600 synthetic personas** vote on a feature before it enters the backlog.
+- Approved features auto-run the next day through Linear's agent pipeline.
+
+He built this in 3 to 4 hours on a Sunday, using **Google ADK**.
+
+### Takeaways
+
+- Force disagreement between agents. Mix models (Claude, Gemini, GPT) for bias diversity.
+- Ground opinions in real data, not just persona prompts.
+- Enforce roles with code-level tool restrictions, not markdown prompts.
+- Only run the relevant agent for each query. Do not fire all agents every time.
+
+## Talk 2: The Human Element in AI-Generated Design — Wendy Teo
+
+[**Wendy Teo**](https://www.linkedin.com/in/wendy-teo-36821461/) spent 10 years in finance. She is a self-taught coder. Now she builds workflow automation for fintech startups.
+
+![Wendy Teo presenting on the human element in AI-generated design at the 02Ship Claude Sydney meetup, June 16 2026](/images/claude-sydney-meetup-june-16-2026-talk-2.jpg)
+
+### AI flattens empathy
+
+Her main argument: AI flattens empathy and critical thinking. The human element is the differentiator.
+
+When you overuse AI, it erodes your own voice, your judgement, and your ability to connect with an audience. She noted that 20% of YouTube videos are now AI-generated, within just 2 years.
+
+### How to spot an AI-generated website
+
+Wendy listed the common tells:
+
+- Default blue buttons, the Inter font, and black text on a cream or neutral background.
+- Too much white space, with no design reason.
+- Bounce animations that are not needed, often on cards you cannot click.
+- Inconsistent button hover states.
+- Italic subtitles and titles used for decoration.
+- Weird colored side borders. Card boxes with drop shadows that bounce on hover.
+- Very basic, forgettable navigation menus.
+
+### Lazy prompt, lazy output
+
+A generic prompt returns a generic design and generic follow-up questions. A specific prompt unlocks a specific result.
+
+She showed a demo. The prompt asked for an ocean-depth educational scroll experience for kids. The output was an interactive HTML/CSS/JS page, with creature info, sound, and kid-friendly copy. All from one detailed prompt.
+
+The key idea: AI is an amplifier. It reflects what you give it. So know your own taste, voice, and constraints before you prompt. Do not delegate the thinking.
+
+## Talk 3: Harness Engineering — Hemanth Haridas
+
+This was a lightning talk. You can read the [slides here](https://docs.google.com/presentation/d/1NnmnOmWMQofbRCEGAauGqLpVTMOZpM9BkxgRW4kqGxE/edit).
+
+![Hemanth Haridas giving a lightning talk on harness engineering at the 02Ship Claude Sydney meetup, June 16 2026](/images/claude-sydney-meetup-june-16-2026-talk-3.jpg)
+
+Hemanth shared an OpenAI internal experiment. They started with an empty GitHub repo. Agents wrote all the code:
+
+- 5 months, **1 million lines of code**, 1,500 pull requests.
+- They shipped about **10x faster**. The team grew from 3 to 7 developers, and throughput went up.
+- Humans built the harness (the guard rails, the loops, the rails). The agents executed inside it.
+
+He called this **"harness engineering"**. Humans steer, agents pull.
+
+Every agent output is shaped by a prompt. So you should write your taste and instincts into the repo. For example, instead of fixing one missing timeout bug, write a deterministic test that enforces a timeout on every network call, forever.
+
+What this means:
+
+- For engineers: systems thinking and delegation matter more than typing.
+- For recruiters: screen for "can this person specify what good looks like?"
+- For founders: 3 people shipped 1 million lines in 5 months. The moat was never the code.
+
+His closing line: **"Code is free. Judgment is scarce."**
+
+Hemanth recently is looking for backend or AI-tools roles. Connect with him on LinkedIn.
+
+## Thanks to Our Sponsor: CloudBridge
+
+This meetup was sponsored by **CloudBridge**, an AWS Premier Tier Services Partner. They are offering **$300 in AWS cloud credits** to the community. Scan the QR code to claim them.
+
+![CloudBridge sponsor offer: scan to activate $300 AWS cloud credit at the 02Ship Claude Sydney meetup](/images/claude-sydney-meetup-june-16-2026-sponsor.jpg)
+
+## Join the Next Meetup
+
+The next meetup is on **Tuesday, July 8**. The theme is **agent memory and data management**. **TiDB** will present on memory as a Claude memory and data layer.
+
+It is free. Spots are limited.
+
+**[Register for the July 8 meetup on Luma](https://luma.com/in9tpvja)**
+
+## Get Involved
+
+Want to speak at a future meetup, sponsor an event, or help shape the community? **[Get involved with 02Ship →](https://www.02ship.com/get-involved)**
+
+See you there.
