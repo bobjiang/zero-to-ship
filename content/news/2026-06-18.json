@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-18",
+  "items": [
+    {
+      "title": "A Near-Autonomous AI Chemist Improves Challenging Reactions in Medicinal Chemistry",
+      "summary": "OpenAI's new research demonstrates an almost fully autonomous AI chemist that can optimize complex reactions crucial for medicinal chemistry, accelerating drug discovery.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/ai-chemist-improves-reaction",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "LoopCoder-v2: Efficient Test-Time Computation Scaling with Single Loop",
+      "summary": "LoopCoder-v2 introduces a novel method that processes test-time computations in a single loop, significantly enhancing efficiency for large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18023",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Ling and Ring 2.6 Technical Report: Instant Agentic Intelligence at Trillion-Parameter Scale",
+      "summary": "This technical report details Ling and Ring 2.6, showcasing efficient and instant agentic intelligence capabilities at an unprecedented trillion-parameter scale.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.15079",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "New Research Shows How AMIE, Google's Medical AI, Could Help Manage Health Conditions",
+      "summary": "Google's AMIE, a medical AI, shows promise in new research for its ability to assist in managing various health conditions, potentially transforming patient care.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients",
+      "summary": "A new policy optimization method, Zone of Proximal Policy Optimization, guides agents through prompts rather than gradients, offering a novel approach to learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18216",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "ACE-Ego-0: Unifying Egocentric Human and Robotic Data for VLA Pretraining",
+      "summary": "ACE-Ego-0 presents a unified dataset and framework for pretraining Vision-Language-Action (VLA) models by combining egocentric human and robotic data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17200",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "GameCraft-Bench: Can Agents Build Playable Games End-to-End in a Real Game Engine?",
+      "summary": "GameCraft-Bench introduces a benchmark to evaluate the capability of AI agents to autonomously build playable games from start to finish within a real game engine.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17861",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B: An Open-Source Coding Model for the Claude Code Moment",
+      "summary": "Nous Research has released NousCoder-14B, an open-source coding model positioned to compete with proprietary solutions like Claude Code, offering a powerful alternative to developers.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Introducing LifeSciBench: A New Benchmark for Life Sciences AI",
+      "summary": "OpenAI introduces LifeSciBench, a new benchmark designed to evaluate and advance AI models specifically for applications within the life sciences domain.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-life-sci-bench",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LectūraAgents: A Multi-Agent Framework for Adaptive Personalized AI-Assisted Learning and Embodied Teaching",
+      "summary": "LectūraAgents proposes a multi-agent AI framework designed to provide adaptive and personalized learning experiences, incorporating embodied teaching methodologies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.16428",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Learning from the Self-future: On-policy Self-distillation for dLLMs",
+      "summary": "This paper introduces a novel on-policy self-distillation technique for distributed Large Language Models (dLLMs), enabling them to learn effectively from their own future states.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18195",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How I Use Premortems with Claude and Codex to Anticipate Project Failures",
+      "summary": "A developer shares a practical approach to using AI models like Claude and Codex for conducting premortems, identifying potential project risks before they occur.",
+      "source": "Dev.to",
+      "url": "https://dev.to/pablonax/how-i-use-premortems-with-claude-and-codex-46mm",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "OPD-Evolver: Cultivating Holistic Agent Evolver via On-Policy Distillation",
+      "summary": "OPD-Evolver presents a method for developing a holistic agent evolver by leveraging on-policy distillation to improve agent capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17628",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "NEA’s Tiffany Luck Says Enterprises Are Still Figuring Out Their AI ROI",
+      "summary": "Tiffany Luck from NEA observes that enterprises are still in the early stages of understanding and quantifying the return on investment from their AI implementations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/video/neas-tiffany-luck-says-enterprises-are-still-figuring-out-their-ai-roi/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "My AI Agent Got Dumber Mid-Session: Measuring Context Window Before Blaming MCP",
+      "summary": "A developer recounts an experience where their AI agent's performance degraded mid-session, highlighting the importance of understanding and measuring the context window.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rapls/my-ai-agent-got-dumber-mid-session-i-measured-the-context-window-before-blaming-mcp-4c3l",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
