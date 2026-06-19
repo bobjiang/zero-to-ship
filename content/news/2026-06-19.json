@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-19",
+  "items": [
+    {
+      "title": "AI inference startup Baseten reportedly raising $1.5B months after its last mega-round",
+      "summary": "AI inference startup Baseten is reportedly in the process of raising a massive $1.5 billion funding round, signaling strong investor confidence in the AI infrastructure market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/18/ai-inference-startup-baseten-reportedly-raising-1-5b-months-after-its-last-mega-round/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M",
+      "summary": "Elastic has reportedly agreed to acquire DeductiveAI for up to $85 million, indicating a strategic move to enhance its AI capabilities, particularly in search and data analysis.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/18/source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-to-85m/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
+      "summary": "OpenAI is leveraging AI to develop tools that assist physicians in diagnosing rare genetic diseases in children, potentially accelerating critical medical interventions.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/diagnose-rare-childhood-diseases/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Snap spins off AI video team into new company, Dotmo, due to costs",
+      "summary": "Snap has spun off its AI video team into a new independent company called Dotmo, citing high operational costs associated with advanced AI development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/18/snap-spins-off-ai-video-team-into-new-company-dotmo-due-to-costs/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Improving health intelligence in ChatGPT",
+      "summary": "OpenAI is actively working on enhancing ChatGPT's health intelligence capabilities, aiming to provide more accurate and reliable information in medical contexts.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Beyond the Current Observation: Evaluating Multimodal Large Language Models in Controllable Non-Markov Games",
+      "summary": "New research evaluates Multimodal Large Language Models (MLLMs) in complex non-Markov games, pushing the boundaries of their decision-making and strategic capabilities beyond immediate observations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19338",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "New usage analytics and updated spend controls for enterprises",
+      "summary": "OpenAI has introduced new usage analytics and updated spend controls for its enterprise clients, offering better oversight and management of AI resource consumption.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-enterprise-spend-controls/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "MolmoMotion: Forecasting Point Trajectories in 3D with Language Instruction",
+      "summary": "MolmoMotion introduces a novel method for forecasting 3D point trajectories guided by natural language instructions, advancing the field of intuitive human-AI interaction for motion planning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18558",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Kairos: A Native World Model Stack for Physical AI",
+      "summary": "Kairos presents a native world model stack designed for physical AI systems, aiming to provide robots with a more robust and integrated understanding of their environment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.16533",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Tower Before Dusk: I Built a Puzzle Game for Humans and AI",
+      "summary": "A developer shares their experience building a puzzle game designed to be challenging and engaging for both human players and AI agents, highlighting the intersection of game design and AI.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gramli/tower-before-dusk-i-built-a-puzzle-game-for-humans-and-ai-oao",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Our Competitor Had an AI That Covered 97.2%. We Had a Spreadsheet and a Fake Quote. Guess Who Won.",
+      "summary": "An article humorously recounts a business scenario where a low-tech, human-driven approach triumphed over a competitor's advanced AI solution, emphasizing the importance of strategy over technology alone.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/our-competitor-had-an-ai-that-covered-972-we-had-a-spreadsheet-and-a-fake-quote-guess-who-won-5cc3",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Guava: An Effective and Universal Harness for Embodied Manipulation",
+      "summary": "Guava introduces a new, effective, and universal harness designed to facilitate embodied manipulation tasks, offering a standardized platform for robotic control and interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18363",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "EfficientRollout: System-Aware Self-Speculative Decoding for RL Rollouts",
+      "summary": "EfficientRollout proposes a system-aware self-speculative decoding method to improve the efficiency of reinforcement learning rollouts, optimizing performance by anticipating future states.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18967",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Reward Was in Your Data All Along: Correcting Flow Matching with Discriminator-Guided RL",
+      "summary": "This research presents a novel approach to correct flow matching models by integrating discriminator-guided reinforcement learning, leveraging inherent data rewards for improved performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19162",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "SAE Interventions are Unreliable: Post-Intervention Recovery of Suppressed Behavior",
+      "summary": "A study reveals that SAE (Sparse Autoencoder) interventions in AI models can be unreliable, as suppressed behaviors may recover post-intervention, raising concerns about interpretability and control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18322",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
