@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-20",
+  "items": [
+    {
+      "title": "Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance",
+      "summary": "Researchers introduce Moebius, a highly efficient 0.2 billion parameter image inpainting model that achieves performance comparable to much larger 10 billion parameter models, significantly reducing computational demands.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19195",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "The US banned Anthropic’s Fable 5 release, but the numbers don’t seem to care",
+      "summary": "Despite a US government ban on Anthropic's Fable 5 release, market performance and user adoption metrics indicate the ban has had little negative impact, potentially even boosting the brand.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/podcast/the-us-banned-anthropics-fable-5-release-but-the-numbers-dont-seem-to-care/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
+      "summary": "OpenAI highlights a new initiative leveraging AI to assist physicians in accurately and efficiently diagnosing rare genetic diseases in children, showcasing a critical application of AI in healthcare.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/diagnose-rare-childhood-diseases",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Playful Agentic Robot Learning",
+      "summary": "A new research paper explores 'playful' learning strategies for robotic agents, suggesting that unstructured, exploratory interaction can significantly enhance their learning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19419",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Encryption, spyware, and now Mythos: History shows why cyber export control doesn’t work",
+      "summary": "This article argues that historical precedents with encryption and spyware demonstrate the futility of cyber export controls, now extended to AI systems like Mythos, due to the inherent difficulty in restricting digital information.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/19/encryption-spyware-and-now-mythos-history-shows-why-cyber-export-control-doesnt-work/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Improving health intelligence in ChatGPT",
+      "summary": "OpenAI announces advancements in ChatGPT's health intelligence capabilities, aiming to provide more accurate and helpful information for health-related queries.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence",
+      "summary": "New research introduces S-Agent, a model demonstrating that enabling AI agents with spatial tool-use significantly improves their spatial reasoning and intelligence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20515",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "New usage analytics and updated spend controls for enterprises",
+      "summary": "OpenAI rolls out enhanced usage analytics and more granular spend controls for its enterprise customers, offering better management and cost optimization for large-scale AI deployments.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-enterprise-spend-controls",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages",
+      "summary": "Researchers present Multi-LCB, an extension of the LiveCodeBench framework designed to evaluate large language models' code generation and understanding across a broader range of programming languages.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20517",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
+      "summary": "A new paper proposes moving beyond traditional static leaderboards to evaluate LLM agents using predictive validity, offering a more dynamic and realistic assessment of their performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19704",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "FreeStyle: Free Control of Style-Content Dual-Reference Generation from Community LoRA Mining",
+      "summary": "FreeStyle introduces a novel method for image generation that allows for independent control over style and content by leveraging community-mined LoRA models, enhancing creative flexibility.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20506",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AI makes writing code easier. It doesn't make engineering easier.",
+      "summary": "This article argues that while AI significantly streamlines the act of writing code, it does not inherently simplify the complex problem-solving and architectural challenges inherent in software engineering.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dimitrisk_cyclopt/ai-makes-writing-code-easier-it-doesnt-make-engineering-easier-120",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "AI summaries need receipts: how I built evidence-bound reports from comments",
+      "summary": "A developer shares insights on creating AI-powered summary tools that provide verifiable 'receipts' or evidence for their claims, enhancing trustworthiness in AI-generated reports.",
+      "source": "Dev.to",
+      "url": "https://dev.to/woshiliyana/ai-summaries-need-receipts-how-i-built-evidence-bound-reports-from-comments-1c29",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Internmaxxing vs. Old Man Shakes Fist at Cloud",
+      "summary": "This piece humorously contrasts the enthusiasm of new tech talent ('internmaxxing') with the skepticism of seasoned veterans ('old man shakes fist at cloud') regarding the rapid advancements and adoption of AI.",
+      "source": "Dev.to",
+      "url": "https://dev.to/jon_at_backboardio/internmaxxing-vs-old-man-shakes-fist-at-cloud-5bnd",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Deontic Policies for Runtime Governance of Agentic AI Systems",
+      "summary": "This arXiv paper explores the implementation of deontic policies to establish ethical and behavioral rules for the runtime governance of autonomous AI agent systems, crucial for safety and control.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.19464",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
