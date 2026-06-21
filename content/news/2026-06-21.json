@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-21",
+  "items": [
+    {
+      "title": "Nobel Laureate John Jumper Departs DeepMind for Anthropic",
+      "summary": "Nobel laureate John Jumper, a key figure in AlphaFold's development, is reportedly leaving DeepMind to join rival AI research company Anthropic, signaling a significant talent shift in the industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/20/nobel-laureate-john-jumper-is-leaving-deepmind-for-rival-anthropic/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI to Acquire Ona",
+      "summary": "OpenAI has announced its acquisition of Ona, a company focused on data collection and analysis in challenging environments, likely to enhance OpenAI's data capabilities for AI model training and deployment.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-to-acquire-ona/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "DragMesh-2: Physically Plausible Dexterous Hand-Object Interaction with Articulated Objects",
+      "summary": "Researchers introduce DragMesh-2, a new method enabling physically plausible and dexterous hand-object interactions with articulated objects, significantly advancing robotics and virtual reality applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.15133",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Signal's Meredith Whittaker Warns Against Trusting AI Chatbots",
+      "summary": "Meredith Whittaker of Signal cautions users to remember that AI chatbots are not personal friends, emphasizing the importance of privacy and critical evaluation of AI interactions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/20/signals-meredith-whittaker-wants-you-to-remember-that-ai-chatbots-are-not-your-friends/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Goose Offers Free Alternative to Claude Code's $200/Month Service",
+      "summary": "A new service named Goose claims to offer the same functionality as Claude Code, which costs up to $200 a month, entirely for free, potentially disrupting the market for AI coding assistants.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Launches New Academy Courses for AI Application in the Workplace",
+      "summary": "OpenAI has introduced new Academy courses designed to equip individuals with the skills to apply AI effectively in various professional settings, catering to the evolving demands of the modern workforce.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/academy-courses-applying-ai-at-work/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "FlowBender: Feedback-Aware Training for Self-Correcting Conditional Flows",
+      "summary": "FlowBender introduces a novel feedback-aware training mechanism that enables conditional flows to self-correct, promising more robust and adaptable generative models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20404",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "JanusMesh: Fast and Zero-Shot 3D Visual Illusion Generation via Cross-Space Denoising",
+      "summary": "JanusMesh presents a new technique for generating 3D visual illusions rapidly and without prior examples, utilizing cross-space denoising to create compelling visual effects.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20563",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?",
+      "summary": "This research investigates whether World Action Models truly require complex video generation capabilities or if advanced image editing techniques suffice for their operational needs, potentially simplifying model design.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19531",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Current World Models Lack a Persistent State Core",
+      "summary": "A new paper argues that current world models are missing a persistent state core, highlighting a fundamental limitation in their ability to maintain consistent understanding and memory over time.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20545",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "FAPO: Fully Autonomous Prompt Optimization of Multi-Step LLM Pipelines",
+      "summary": "FAPO introduces a method for fully autonomous prompt optimization within multi-step LLM pipelines, aiming to enhance the efficiency and performance of complex AI workflows.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19605",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ENPIRE: Agentic Robot Policy Self-Improvement in the Real World",
+      "summary": "ENPIRE proposes a framework for agentic robot policy self-improvement directly in real-world environments, paving the way for more autonomous and adaptable robotic systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19980",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MaineCoon: Pursuing A Real-Time Audio-Visual Social World Model",
+      "summary": "MaineCoon is a research initiative focused on developing a real-time audio-visual social world model, aiming to create AI systems that can understand and interact with complex social environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17800",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AI Memory Should Be a Product State, Not a Prompt Trick",
+      "summary": "This article argues that AI memory should be integrated as a fundamental product state rather than relying on prompt engineering tricks, advocating for more robust and reliable AI interactions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/woshiliyana/ai-memory-should-be-a-product-state-not-a-prompt-trick-4m20",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Hidden Anchors in Multi-Agent LLM Deliberation",
+      "summary": "New research explores the concept of 'hidden anchors' that influence decision-making in multi-agent LLM deliberation, shedding light on the underlying mechanisms of collective AI reasoning.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.19494",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
