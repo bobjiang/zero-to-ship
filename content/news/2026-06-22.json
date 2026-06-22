@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-22",
+  "items": [
+    {
+      "title": "Beyond Siri: Practical AI Features Coming to iPhone in iOS 27",
+      "summary": "Apple is set to introduce a suite of practical AI features in iOS 27, moving beyond basic voice assistants to enhance user experience on iPhones.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/21/beyond-siri-here-are-the-practical-ai-features-coming-to-your-iphone-in-ios-27/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Trump Administration's Potential Crackdown on Anthropic: Who Benefits?",
+      "summary": "An analysis explores the potential beneficiaries and implications if the Trump administration were to crack down on leading AI firm Anthropic.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/21/when-the-trump-administration-cracks-down-on-anthropic-who-benefits/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Samsung Electronics Integrates ChatGPT and Codex for Employee Use",
+      "summary": "Samsung Electronics has announced the deployment of OpenAI's ChatGPT and Codex to its employees, signaling a major enterprise adoption of advanced AI tools.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "HumanScale: Egocentric Human Video Outperforms Real-Robot Data for Embodied Pretraining",
+      "summary": "New research suggests that using egocentric human video data can be more effective than real-robot data for pretraining embodied AI models, potentially accelerating robot learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20521",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Context-Aware Reinforcement Learning for Agentic and Multimodal LLMs",
+      "summary": "A new paper introduces context-aware reinforcement learning techniques designed to improve the performance and adaptability of agentic and multimodal large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.17053",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Thinking with Visual Grounding: Enhancing AI's Understanding",
+      "summary": "Researchers explore how integrating visual grounding can significantly improve an AI's ability to 'think' and reason about its environment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.16122",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Launches New Academy Courses for Applying AI at Work",
+      "summary": "OpenAI has introduced new courses through its Academy, aimed at equipping professionals with the skills to effectively apply AI in various work environments.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/academy-courses-applying-ai-at-work",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Google Expands AI Infrastructure with New Investments in Alabama",
+      "summary": "Google is strengthening its presence in Alabama with new investments aimed at bolstering its AI infrastructure and supporting local communities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Preply Leverages AI and Human Tutors for Personalized Learning Experiences",
+      "summary": "Preply demonstrates how it combines artificial intelligence with human tutoring to create highly personalized and effective learning pathways for its users.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/preply",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "In the Weights: A New AI-Centric Vanity Search Tool Launched",
+      "summary": "A new service called 'In the Weights' has launched, offering an AI-centric vanity search experience for users interested in their digital footprint.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/20/in-the-weights-is-your-new-ai-centric-vanity-search/",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Goose Offers Free Alternative to Claude Code's $200/Month Service",
+      "summary": "Goose is positioning itself as a free alternative to Claude Code, claiming to provide similar functionalities that typically cost up to $200 per month.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents",
+      "summary": "A new research paper introduces LedgerAgent, a framework that provides structured state management for AI agents to adhere to policies when using external tools.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20529",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Freeing the Law with LOCUS: A Local Ordinance Corpus for the United States",
+      "summary": "Researchers have created LOCUS, a large-scale corpus of local ordinances across the United States, designed to facilitate AI applications in legal research and analysis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19334",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "LegalHalluLens: Auditing and Calibrated Multi-Agent Debate for Trustworthy Legal AI",
+      "summary": "LegalHalluLens proposes a system for auditing and mitigating hallucinations in legal AI through typed hallucination detection and calibrated multi-agent debate, aiming for more trustworthy legal applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18021",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Rethinking Shrinkage Bias in LLM FP4 Pretraining: Geometric Origin, Systemic Impact, and UFP4 Recipe",
+      "summary": "This paper delves into the geometric origins and systemic impact of shrinkage bias in FP4 pretraining for LLMs, proposing a new UFP4 recipe to mitigate its effects.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20381",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
