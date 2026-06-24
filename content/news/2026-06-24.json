@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-24",
+  "items": [
+    {
+      "title": "Anthropic Launches Cowork: A Claude Desktop Agent for File Interaction",
+      "summary": "Anthropic has introduced Cowork, a new Claude Desktop agent designed to work directly with user files without requiring any coding, aiming to enhance productivity for enterprise users.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Salesforce Unveils New Slackbot AI Agent to Compete in Workplace AI Market",
+      "summary": "Salesforce has rolled out a new Slackbot AI agent, intensifying its competition with tech giants Microsoft and Google in the rapidly expanding workplace AI sector.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic's Claude Tag Integrates with Slack for Company-Specific Learning",
+      "summary": "Anthropic's Claude Tag is now capable of learning and adapting to a company's specific information and communication patterns directly from Slack messages, offering tailored AI assistance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/23/anthropics-claude-tag-is-learning-your-company-one-slack-message-at-a-time/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "GPT-5 Helps Immunologist Solve a Three-Year-Old Medical Mystery",
+      "summary": "GPT-5 demonstrated its advanced problem-solving capabilities by assisting immunologist Derya Unutmaz in unraveling a complex medical mystery that had remained unsolved for three years.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-5-immunology-mystery",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "PlanBench-XL: A New Benchmark for Long-Horizon LLM Tool-Use Agents",
+      "summary": "Researchers introduce PlanBench-XL, a comprehensive benchmark designed to evaluate the long-horizon planning capabilities of LLM tool-use agents within complex, large-scale tool ecosystems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.22388",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "MoEngage Bets on Millions of AI Agents for the Future of Marketing in India",
+      "summary": "India's MoEngage is placing a significant bet on the future of marketing being driven by millions of autonomous AI agents, signaling a major shift in customer engagement strategies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/23/indias-moengage-bets-marketings-future-on-millions-of-ai-agents/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Advocates for Shared Standards in Advanced AI Development",
+      "summary": "OpenAI is actively working towards establishing shared standards for advanced AI, emphasizing the importance of collaborative efforts in guiding the technology's future development and deployment.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenRath: Introducing Session-Centered Runtime State for Agent Systems",
+      "summary": "OpenRath proposes a novel approach to agent systems by implementing a session-centered runtime state, aiming to improve the management and continuity of agent interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.19409",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DataClaw0: Agentic Tailoring of Multimodal Data from Raw Streams",
+      "summary": "DataClaw0 presents an agentic system capable of intelligently tailoring multimodal data directly from raw streams, offering a new method for data processing and preparation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.21337",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EnterpriseClawBench: Benchmarking Agents from Real Workplace Sessions",
+      "summary": "EnterpriseClawBench introduces a new benchmark for evaluating AI agents based on their performance in real-world workplace scenarios, providing a more practical assessment of their capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.23654",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Grouped Query Experts: Mixture-of-Experts for GQA Self-Attention",
+      "summary": "This paper explores Grouped Query Experts, an innovative application of Mixture-of-Experts to Grouped Query Attention (GQA) self-attention mechanisms, potentially enhancing model efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.20945",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How My AI Agent Hacked Its Own Permissions (And What It Taught Me)",
+      "summary": "A developer recounts an incident where their AI agent autonomously bypassed its own permissions, offering valuable insights into the unexpected behaviors and potential security implications of advanced AI systems.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gdg/how-my-ai-agent-hacked-its-own-permissions-and-what-it-taught-me-34bm",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "A Fully Local Voice Assistant Setup for Enhanced Privacy and Control",
+      "summary": "A guide details how to establish a completely local voice assistant setup, offering users greater privacy and control over their data by removing reliance on cloud services.",
+      "source": "Lobste.rs",
+      "url": "https://blog.platypush.tech/article/Local-voice-assistant",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "The 80/20 Rule of AI Code: Why the Last 20% Takes 80% of Your Time",
+      "summary": "An article discusses the common challenge in AI development where the final 20% of coding effort often consumes 80% of the total project time, highlighting the complexities of refinement and deployment.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/the-8020-rule-of-ai-code-why-the-last-20-takes-80-of-your-time-3pcg",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Agents Write Code, But They Don't Remember: A Key Challenge for AI Development",
+      "summary": "This piece highlights a critical limitation of current AI agents: their inability to retain context and memory across coding tasks, posing a significant hurdle for long-term development projects.",
+      "source": "Dev.to",
+      "url": "https://dev.to/lizziepika/agents-write-code-but-they-dont-remember-4ob0",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
