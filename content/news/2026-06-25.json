@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-25",
+  "items": [
+    {
+      "title": "OpenAI and Broadcom Unveil LLM-Optimized Inference Chip",
+      "summary": "OpenAI and Broadcom have partnered to introduce a new 'Jalapeno' inference chip specifically designed to optimize performance and efficiency for large language models.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Qwen-AgentWorld: Language World Models for General Agents",
+      "summary": "A new research paper introduces Qwen-AgentWorld, a framework utilizing language world models to enhance the capabilities of general AI agents, achieving strong performance across various benchmarks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.24597",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "NatureBench: Can Coding Agents Match the Published SOTA of Nature-Family Papers?",
+      "summary": "NatureBench evaluates the current state-of-the-art coding agents, questioning if they can autonomously replicate or surpass the performance reported in high-impact scientific publications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.24530",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs secured $69 million in funding following a viral billboard hiring campaign, aiming to expand its AI-powered platform for customer interviews and insights.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Europe Pushes Back on Washington's Chip War",
+      "summary": "European nations are reportedly challenging Washington's aggressive stance in the global chip war, signaling potential shifts in semiconductor supply chain dynamics and AI hardware access.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/24/europe-is-pushing-back-on-washingtons-chip-war/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Cerebras Stock Plunges After Earnings, CEO Cites Misunderstood Margin Outlook",
+      "summary": "AI chip maker Cerebras Systems saw its stock drop significantly after its latest earnings report, with the CEO attributing the decline to a misunderstanding of the company's margin outlook.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/24/cerebras-stock-plunges-after-earnings-as-ceo-says-margin-outlook-was-misunderstood/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+      "summary": "A new benchmark, RIFT-Bench, is introduced to dynamically red-team agentic AI systems, aiming to identify and mitigate potential vulnerabilities and failure modes in complex AI behaviors.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.23927",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Neuro-Symbolic Drive: Rule-Grounded Faithful Reasoning for Driving VLAs",
+      "summary": "Researchers propose Neuro-Symbolic Drive, a method that combines neural networks with symbolic rules to enable faithful and explainable reasoning for Vision-Language Agents in autonomous driving scenarios.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.23938",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "OpenThoughts-Agent: Data Recipes for Agentic Models",
+      "summary": "OpenThoughts-Agent presents a collection of data recipes designed to improve the training and performance of agentic AI models, offering practical guidance for developers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.24855",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AOHP: An Open-Source OS-Level Agent Harness for Personalized, Efficient and Secure Interaction",
+      "summary": "AOHP introduces an open-source, operating system-level agent harness designed to facilitate personalized, efficient, and secure interactions for AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.23449",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning",
+      "summary": "This paper proposes an 'Execute-Distill-Verify' paradigm to help agentic AI systems avoid self-confirmation biases and improve learning from experience.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.24428",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Former Infosys Chief Launches New Startup to Challenge IT Services World",
+      "summary": "A former Infosys CEO has unveiled a new startup aiming to disrupt the traditional IT services industry, likely leveraging advanced AI and automation solutions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/24/former-infosys-chief-has-a-new-startup-that-wants-to-challenge-the-it-services-world/",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Critique of Agent Model",
+      "summary": "This paper offers a critical analysis of current agent models, highlighting their limitations and suggesting directions for future research and development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.23991",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Semantic Browsing: Controllable Diversity for Image Generation",
+      "summary": "Semantic Browsing introduces a novel approach to image generation that allows for controllable diversity by enabling users to semantically browse and refine generated outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.23679",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "FLAT: Feedforward Latent Triangle Splatting for Geometrically Accurate Scene Generation",
+      "summary": "FLAT proposes a new method using feedforward latent triangle splatting to achieve geometrically accurate and high-quality 3D scene generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.24876",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
