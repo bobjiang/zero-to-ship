@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-26",
+  "items": [
+    {
+      "title": "White House Asks OpenAI to Pause New Model Release Over Safety Concerns",
+      "summary": "The White House has reportedly requested OpenAI to delay the release of its upcoming model, citing significant safety concerns.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Patronus AI Secures $50M to Develop 'Digital Worlds' for Stress-Testing AI Agents",
+      "summary": "Patronus AI has raised $50 million to create virtual environments designed to rigorously test and validate the safety and reliability of AI agents.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic's Claude Gains Ground on ChatGPT, Attracting Paid Consumers",
+      "summary": "Anthropic's Claude is increasingly capturing the paid consumer market, challenging ChatGPT's dominance in the competitive landscape of large language models.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google Research's AMIE Shows Promise in Managing Health Conditions",
+      "summary": "New research from Google demonstrates how AMIE, their medical AI, could effectively assist in the management of various health conditions.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Are We Ready For An Agent-Native Memory System?",
+      "summary": "This paper explores the foundational requirements and challenges for developing memory systems specifically designed for AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.24775",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Nous Research Releases NousCoder-14B, an Open-Source Coding Model",
+      "summary": "Nous Research has launched NousCoder-14B, an open-source coding model positioned to compete with proprietary solutions like Claude Code.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "OpenAI Details How AI Agents Are Transforming Workflows",
+      "summary": "OpenAI shares insights into the evolving role of AI agents and their significant impact on transforming various aspects of work.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-agents-are-transforming-work",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "DomainShuttle: Advancing Freeform Open-Domain Subject-Driven Text-to-Video Generation",
+      "summary": "Researchers introduce DomainShuttle, a new method for generating high-quality, subject-driven videos from text prompts across diverse domains.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26058",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Wan-Streamer v0.1: Real-time Interactive Foundation Models for End-to-End Applications",
+      "summary": "Wan-Streamer v0.1 is presented as a new framework enabling end-to-end real-time interaction with foundation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.25041",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Unlimited-OCR: One-shot Long-horizon Optical Character Recognition Released",
+      "summary": "Baidu has open-sourced Unlimited-OCR, a novel system designed for one-shot, long-horizon optical character recognition tasks.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/baidu/Unlimited-OCR",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "ShutterMuse: Capture-Time Photography Guidance with Multimodal Large Language Models",
+      "summary": "ShutterMuse introduces a system that leverages Multimodal Large Language Models to provide real-time guidance for photography during the capture process.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.25763",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Improved Large Language Diffusion Models for Enhanced Generation",
+      "summary": "This paper details advancements in large language diffusion models, leading to improved performance in generative tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.25331",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MVTrack4Gen: Multi-View Point Tracking as Geometric Supervision for 4D Video Generation",
+      "summary": "MVTrack4Gen proposes using multi-view point tracking as a geometric supervision method to improve the generation of 4D videos.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26087",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Thinking Engineer Toolkit Goes Live, Thanks to DEV Community Support",
+      "summary": "The 'Thinking Engineer Toolkit,' a new resource for developers, has been launched following positive engagement and feedback from the DEV community.",
+      "source": "Dev.to",
+      "url": "https://dev.to/javz/thank-you-dev-community-the-thinking-engineer-toolkit-is-live-3762",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Causal-rCM: A Unified Recipe for Autoregressive Diffusion Distillation in Streaming Video Generation",
+      "summary": "Causal-rCM presents a unified approach for autoregressive diffusion distillation, applicable to streaming video generation and interactive world models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.25473",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
