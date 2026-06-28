@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-28",
+  "items": [
+    {
+      "title": "In-Context World Modeling for Robotic Control",
+      "summary": "Researchers introduce a new method for robotic control that utilizes in-context world modeling, allowing robots to learn and adapt more effectively to complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26025",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "SoftBank's CEO Questions Elon Musk's Orbital Data Center Hype",
+      "summary": "SoftBank's CEO joins others in expressing skepticism regarding Elon Musk's ambitious claims about developing an orbital data center, raising questions about its feasibility and impact.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/27/softbanks-ceo-isnt-the-only-one-with-questions-about-elon-musks-orbital-data-center-hype/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Apple Vision Pro Executive Reportedly Joins OpenAI",
+      "summary": "A key executive from Apple's Vision Pro team is reportedly departing to join OpenAI, signaling a significant talent shift towards leading AI research and development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/27/apple-vision-pro-exec-is-reportedly-leaving-for-openai/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "AI Learns the \"Dark Art\" of RF Chip Design",
+      "summary": "AI is now being successfully applied to the highly complex and specialized field of radio frequency (RF) chip design, potentially revolutionizing hardware development.",
+      "source": "Lobste.rs",
+      "url": "https://spectrum.ieee.org/ai-radio-chip-design",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "GUI vs. CLI: Execution Bottlenecks in Screen-Only and Skill-Mediated Computer-Use Agents",
+      "summary": "A new study investigates the performance bottlenecks faced by AI agents when interacting with computers via graphical user interfaces versus command-line interfaces, highlighting challenges in agent design.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.24551",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "V-Zero: Answer-Label-Free On-Policy Distillation for Fine-Grained Visual Reasoning",
+      "summary": "Researchers introduce V-Zero, a novel method for fine-grained visual reasoning that uses answer-label-free on-policy distillation with contrastive evidence gating, improving model efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.25319",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How Omio is Building the Future of Conversational Travel with AI",
+      "summary": "Omio leverages OpenAI's advanced AI to develop conversational travel experiences, aiming to streamline planning and booking for users.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/omio",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "UnityShots: Memory-Driven Multi-Shot Audio-Video Generation",
+      "summary": "A new model called UnityShots enables memory-driven multi-shot audio-video generation with boundary-aware gating, pushing the boundaries of realistic multimedia content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.21661",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Fast LeWorldModel: Efficient World Modeling for AI Agents",
+      "summary": "This paper presents Fast LeWorldModel, an efficient approach to world modeling that allows AI agents to process and understand their environments more quickly.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26217",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How Small Can an Agent Model Get? The Nemotron Floor",
+      "summary": "This article explores the minimum viable size for agent models, discussing the 'Nemotron Floor' and its implications for efficient AI agent deployment.",
+      "source": "Dev.to",
+      "url": "https://dev.to/tessl-io/how-small-can-an-agent-model-get-the-nemotron-floor-5gne",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It",
+      "summary": "Researchers analyze the failure modes in multi-step tool-use reinforcement learning and propose supervisory signals as a solution to enhance stability and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26027",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "LISA: Likelihood Score Alignment for Visual-condition Controllable Generation",
+      "summary": "LISA introduces a novel likelihood score alignment technique for visual-condition controllable generation, offering more precise control over AI-generated visual content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.27192",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Autodata: An Agentic Data Scientist to Create High Quality Synthetic Data",
+      "summary": "Autodata proposes an agentic data scientist system capable of generating high-quality synthetic data, which can significantly benefit machine learning development and privacy-preserving research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.25996",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Information-Aware KV Cache Compression for Long Reasoning in LLMs",
+      "summary": "A new technique for information-aware KV cache compression is introduced, designed to improve the efficiency and capability of Large Language Models in long-context reasoning tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26875",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "5 Things Your LLM Bill Is Hiding From You (And How to Find Them)",
+      "summary": "This practical guide reveals hidden costs in Large Language Model usage bills and provides strategies for identifying and managing them to optimize expenses.",
+      "source": "Dev.to",
+      "url": "https://dev.to/arpitstack/5-things-your-llm-bill-is-hiding-from-you-and-how-to-find-them-5ala",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
