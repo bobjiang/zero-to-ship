@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-29",
+  "items": [
+    {
+      "title": "Ford Rehires 'Gray Beard' Engineers After AI Falls Short in Complex Tasks",
+      "summary": "Ford is reportedly rehiring experienced engineers after encountering limitations with AI solutions in critical areas, highlighting the current challenges of AI deployment in complex industrial settings.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "HP Inc. Launches Frontier Strategic Partnership with OpenAI",
+      "summary": "HP Inc. has announced a new strategic partnership with OpenAI, indicating a significant collaboration that could integrate advanced AI capabilities into HP's product ecosystem.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/hp-frontier-partnership",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Why Wall Street Thinks US Memory Maker Micron is the Next Nvidia",
+      "summary": "Wall Street analysts are increasingly bullish on Micron, suggesting it could follow Nvidia's trajectory due to its critical role in supplying memory for the booming AI hardware market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Running the Gauntlet: Re-evaluating the Capabilities of Agents Beyond Familiar Environments",
+      "summary": "New research explores the performance of AI agents when faced with unfamiliar environments, pushing the boundaries of current agent capabilities and robustness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.14397",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "VP of Nothing: The CEO's Nephew Took Over My AI Platform. The Client Walked Within a Month.",
+      "summary": "A developer recounts a cautionary tale where an AI platform's client was lost after a CEO's unqualified relative took over, highlighting the importance of competent leadership in AI projects.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/vp-of-nothing-the-ceos-nephew-took-over-my-ai-platform-the-client-walked-within-a-month-5dla",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "The Fittest Founder in the Room Got Cancer: How He Used AI to Fight Back",
+      "summary": "A tech founder shares his personal journey of using AI tools and data analysis to inform his treatment strategy and fight cancer, showcasing a powerful real-world application of AI in healthcare.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/27/the-fittest-founder-in-the-room-got-cancer-heres-how-he-used-ai-to-fight-back/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "EBench: Elemental Diagnosis of Generalist Mobile Manipulation Policies",
+      "summary": "Researchers introduce EBench, a new benchmark designed to diagnose and evaluate the fundamental capabilities of generalist AI policies for mobile manipulation tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.18239",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Confidence-Aware Tool Orchestration for Robust Video Understanding",
+      "summary": "A new paper proposes a method for AI systems to orchestrate tools with confidence awareness, leading to more robust and reliable video understanding capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26904",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PhysiFormer: Learning to Simulate Mechanics in World Space",
+      "summary": "This research introduces PhysiFormer, a model capable of learning to simulate complex physical mechanics directly within a world space, advancing AI's understanding of physical interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.27364",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Hallucination in World Models is Predictable and Preventable",
+      "summary": "New findings suggest that hallucinations in AI world models can be predicted and potentially prevented, offering a path towards more reliable and accurate AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.27326",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Neglected Free Lunch from Post-training: Progress Advantage for LLM Agents",
+      "summary": "Research highlights how certain post-training techniques can provide significant, often overlooked, performance advantages for Large Language Model agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26080",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "CoffeeBench: Benchmarking Long-Horizon LLM Agents in Heterogeneous Multi-Agent Economies",
+      "summary": "CoffeeBench is introduced as a new benchmark for evaluating the performance of long-horizon LLM agents operating within complex, multi-agent economic environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.16613",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Look Light, Think Heavy: What Multimodal Chain-of-Thought Reasoning Can and Cannot Do",
+      "summary": "This paper investigates the capabilities and limitations of multimodal chain-of-thought reasoning, providing insights into its effectiveness for complex AI tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.22565",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Discretizing Reward Models",
+      "summary": "A new paper explores the technique of discretizing reward models, which could simplify and improve the training of reinforcement learning agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.21795",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "MAX models can now run on Apple silicon GPUs",
+      "summary": "MAX models, a framework for machine learning, now support execution on Apple silicon GPUs, potentially enabling more efficient local AI development and deployment for Mac users.",
+      "source": "Lobste.rs",
+      "url": "https://forum.modular.com/t/max-models-can-now-run-on-apple-silicon-gpus/3283",
+      "score": 5,
+      "category": "open-source"
+    }
+  ]
+}
