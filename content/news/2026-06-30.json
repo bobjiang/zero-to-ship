@@ -1,0 +1,125 @@
+{
+  "date": "2026-06-30",
+  "items": [
+    {
+      "title": "Gemini's Personalized AI Image Generation Now Free for US Users",
+      "summary": "Google has made its personalized AI image generation feature within Gemini freely available to all users in the United States, expanding access to advanced creative tools.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/29/geminis-personalized-ai-image-generation-is-now-free-for-u-s-users/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "South Korean Tech Giants Pledge Over $550B to Address 'RAMageddon' Memory Shortage",
+      "summary": "Major South Korean tech companies have committed over $550 billion in investments to alleviate the global 'RAMageddon' memory chip shortage, a critical issue impacting AI hardware development and deployment.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/29/south-korean-tech-giants-commit-over-550b-to-ease-ramageddon/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic and California Government Partner for Discounted Claude Access",
+      "summary": "Anthropic has forged a deal with California Governor Newsom, allowing state government entities to utilize the Claude AI model at half its standard price, potentially boosting AI adoption in public services.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "PhysisForcing: Physics-Reinforced World Simulator for Robotic Manipulation",
+      "summary": "Researchers introduce PhysisForcing, a novel physics-reinforced world simulator designed to enhance robotic manipulation tasks by integrating realistic physical constraints into training environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28128",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Mapping Europe’s AI Workforce Opportunity",
+      "summary": "OpenAI has released a report detailing the AI workforce opportunity across Europe, providing insights into job transitions and the skills needed for the evolving AI landscape.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/mapping-ai-jobs-transition-eu/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "What's Next for AI? Exploring Future Trends and Developments",
+      "summary": "An insightful article discusses the upcoming trends and potential breakthroughs in artificial intelligence, offering a forward-looking perspective on the field's evolution.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sylwia-lask/whats-next-for-ai-219i",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs",
+      "summary": "A new paper proposes four axioms to formalize how latent thoughts are represented within Large Language Models, offering a deeper understanding of their internal reasoning processes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.27378",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots",
+      "summary": "This research explores a method for effectively transferring complex manipulation skills from human demonstrations to robots by conceptualizing translation as a bridging action.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28133",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Qwen-Image-2.0-RL Technical Report: Advancements in Image Generation",
+      "summary": "The technical report for Qwen-Image-2.0-RL details significant advancements in image generation models, likely showcasing improved quality and control through reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.27608",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Model Does Not Need Memory. The Situation Does.",
+      "summary": "This article challenges conventional thinking about AI memory, arguing that the 'situation' or context, rather than the model itself, is where memory is truly required for effective AI operation.",
+      "source": "Dev.to",
+      "url": "https://dev.to/marcosomma/the-model-does-not-need-memory-the-situation-does-196g",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Welcome to AI Engineer World’s Fair 2026",
+      "summary": "An announcement welcomes participants to the AI Engineer World's Fair 2026, highlighting a significant event for the AI engineering community to showcase innovations and collaborate.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dailycontext/welcome-to-ai-engineer-worlds-fair-2026-2o09",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "What Actually Happens When You Call an LLM API",
+      "summary": "This piece demystifies the backend processes involved when making a call to a Large Language Model API, providing clarity on the computational steps and interactions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/what-actually-happens-when-you-call-an-llm-api-28l6",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning",
+      "summary": "SingGuard introduces a new multimodal LLM guardrail system that uses dynamic reasoning to adapt its policies, enhancing safety and alignment in complex AI interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.22873",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Towards Automating Scientific Review with Google's Paper Assistant Tool",
+      "summary": "This paper explores the development of Google's Paper Assistant Tool, aiming to automate aspects of scientific review and streamline the academic publishing process using AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28277",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Pragmatism in an Age of Infinite Code and Unavoidable Bottlenecks",
+      "summary": "The article discusses the importance of pragmatic approaches in software development, particularly in the context of AI, where code complexity and operational bottlenecks are increasingly common.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dailycontext/pragmatism-in-an-age-of-infinite-code-and-unavoidable-bottlenecks-1bkd",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
