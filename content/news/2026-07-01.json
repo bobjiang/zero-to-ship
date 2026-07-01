@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-01",
+  "items": [
+    {
+      "title": "AI Agents Learn When to Abstain, Showing Enhanced Reliability",
+      "summary": "A new paper explores 'Agentic Abstention,' demonstrating how AI agents can be trained to recognize when to stop acting, improving their reliability and decision-making.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28733",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Launches Faster, Cheaper Nano Banana 2 Lite Image Generator",
+      "summary": "Google has introduced Nano Banana 2 Lite, a new version of its image generator that promises faster performance and lower costs, making advanced AI image creation more accessible.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/30/google-introduces-a-faster-cheaper-image-generator-with-nano-banana-2-lite/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Railway Secures $100 Million to Build AI-Native Cloud Infrastructure, Challenging AWS",
+      "summary": "Railway has raised $100 million in funding to develop an AI-native cloud infrastructure, positioning itself as a direct competitor to established giants like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenClaw AI Assistant Now Available on Android and iOS",
+      "summary": "OpenClaw, a highly anticipated AI assistant, has officially launched its mobile applications for both Android and iOS devices, expanding its reach to a broader user base.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "DeepMind Poker AI Creators Transition to Quant Hedge Funds, Applying AI to Finance",
+      "summary": "The trio behind DeepMind's successful poker AI are now leveraging their expertise to generate profits for quant hedge funds, showcasing the real-world financial applications of advanced AI.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/06/30/the-deepmind-trio-who-built-a-poker-ai-are-now-making-money-for-quant-hedge-funds/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Redesigns Search Box for First Time in 25 Years, Signaling AI Integration",
+      "summary": "Google has unveiled the first redesign of its iconic search box in 25 years, a move that analysts suggest signifies deeper integration of AI capabilities into its core search experience.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "LiveEdit: Real-Time Diffusion-Based Streaming Video Editing Achieved",
+      "summary": "Researchers introduce LiveEdit, a novel system enabling real-time, diffusion-based editing of streaming video, promising significant advancements in live content creation and manipulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.26740",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AI Agent Achieves Trillion-Parameter Performance with Only 35 Billion Parameters",
+      "summary": "A new research paper demonstrates an AI agent capable of matching the performance of trillion-parameter models using a significantly smaller 35-billion-parameter architecture, indicating major efficiency gains.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.30616",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Goose Offers Free Alternative to Claude Code's $200 Monthly Service",
+      "summary": "A new service named Goose is challenging Claude Code by offering similar AI coding capabilities for free, potentially disrupting the market for developer tools.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "The Future of AI is Local and Open, Advocates Argue",
+      "summary": "A growing sentiment suggests that the next wave of AI innovation will be driven by local, open-source models, emphasizing accessibility and user control over centralized, proprietary solutions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dailycontext/the-future-of-ai-is-local-and-open-522c",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing GeneBench-Pro: OpenAI's New Benchmark for Genetic AI",
+      "summary": "OpenAI has unveiled GeneBench-Pro, a new benchmark designed to evaluate and advance the capabilities of AI models in genetic research and applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-genebench-pro",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "TUA-Bench: A New Benchmark for General-Purpose Terminal-Use AI Agents",
+      "summary": "Researchers have introduced TUA-Bench, a comprehensive benchmark designed to rigorously evaluate the performance and capabilities of general-purpose AI agents interacting with terminal environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28480",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ReFreeKV: A Novel Approach to Threshold-Free KV Cache Compression",
+      "summary": "A new research paper presents ReFreeKV, an innovative method for compressing Key-Value caches without the need for predefined thresholds, potentially improving the efficiency of large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2502.16886",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Internalizing the Future: A Unified Agentic Training Paradigm for World Model Planning",
+      "summary": "This paper proposes a unified training paradigm that enables AI agents to internalize future states, enhancing their ability to plan and interact with complex world models.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2606.27483",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How ChatGPT Adoption Has Expanded Across Industries",
+      "summary": "OpenAI provides insights into the significant expansion of ChatGPT's adoption, detailing its growing presence and impact across various industries and use cases.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
