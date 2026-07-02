@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-02",
+  "items": [
+    {
+      "title": "Anthropic Launches Cowork: A Claude Desktop Agent for File Interaction Without Coding",
+      "summary": "Anthropic has introduced Cowork, a new Claude desktop agent designed to interact directly with user files, enabling advanced AI assistance without requiring any coding skills.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Cloudflare Implements New Policy Requiring AI Companies to Compensate Publishers for Content",
+      "summary": "Cloudflare has introduced a new policy that mandates AI companies to pay publishers for the use of their content, addressing concerns about intellectual property and fair compensation in the AI era.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/01/cloudflares-new-policy-pushes-ai-companies-to-pay-for-publishers-content/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce Rolls Out New Slackbot AI Agent Amidst Workplace AI Competition",
+      "summary": "Salesforce has launched an updated Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly expanding market for workplace AI solutions.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "SpaceX Developing AI Device Prototype with Phone-like Capabilities",
+      "summary": "SpaceX is reportedly working on an AI device prototype that exhibits characteristics similar to a smartphone, hinting at the company's expansion into consumer AI hardware.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/01/spacex-has-an-ai-device-prototype-and-it-sure-sounds-phone-ish/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Orca: A New AI Model Emphasizing Internal World Representation",
+      "summary": "A new paper introduces 'Orca: The World is in Your Mind,' presenting an AI model that focuses on developing a robust internal representation of the world for improved understanding and interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.30534",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Dockerless: An Environment-Free Program Verifier for AI Coding Agents",
+      "summary": "Researchers have developed 'Dockerless,' a novel program verifier that allows AI coding agents to operate and verify code without the need for a containerized environment, streamlining development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28436",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DOPD: Dual On-policy Distillation for Enhanced Reinforcement Learning",
+      "summary": "The paper 'DOPD: Dual On-policy Distillation' proposes a new method to improve reinforcement learning by distilling knowledge from two on-policy agents, leading to more efficient learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.30626",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding",
+      "summary": "BlockPilot introduces an instance-adaptive policy learning approach to enhance diffusion-based speculative decoding, optimizing the efficiency and accuracy of large language model inference.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.31315",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic's 'Mapping Europe’s AI Workforce Opportunity' Report",
+      "summary": "OpenAI's recent report, 'Mapping Europe’s AI Workforce Opportunity,' analyzes the potential impact of AI on the European job market and identifies key areas for workforce transition and growth.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/mapping-ai-jobs-transition-eu",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Google AI Blog Summarizes Latest AI News and Updates from June 2026",
+      "summary": "The Google AI Blog provides a comprehensive overview of all the significant AI news and product announcements made by Google throughout June 2026.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "From Harness Engineering to Evals: Key Trends at AI Engineer Conferences",
+      "summary": "Recent discussions at AI Engineer events highlight a shift in focus from 'harness engineering' to advanced evaluation methodologies, reflecting the evolving challenges in AI development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dailycontext/from-harness-engineering-to-evals-4212",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "GEAR: Guided End-to-End AutoRegression for Image Synthesis",
+      "summary": "GEAR presents a new guided end-to-end autoregressive model for image synthesis, offering improved control and quality in generating complex visual content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.32039",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks",
+      "summary": "This research explores 'Evolution Fine-Tuning,' a method that enables AI models to learn and discover solutions across a vast array of optimization tasks, demonstrating significant adaptability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.29082",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "One-Step Gradient Delay Not a Barrier for Large-Scale Asynchronous Pipeline Parallel LLM Pretraining",
+      "summary": "A new study indicates that a one-step gradient delay does not hinder large-scale asynchronous pipeline parallel pretraining of LLMs, suggesting more flexible training architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.30634",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Google Hosts NYC AI Summit to Shape Future of AI in Classrooms",
+      "summary": "Google recently convened New York City educators and industry leaders at its offices to collaborate on strategies for integrating AI effectively into classroom environments.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/education/nyc-ai-summit/",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
