@@ -1,13 +1,21 @@
-// Vercel's Marketplace Redis integration provisions UPSTASH_REDIS_REST_URL /
-// UPSTASH_REDIS_REST_TOKEN. @vercel/kv only reads KV_REST_API_URL /
-// KV_REST_API_TOKEN, so alias them before the client lazy-initializes.
-// Why: without this, prod throws "@vercel/kv: Missing required environment
-// variables" and every POST to /api/submissions or /api/votes 500s.
-if (!process.env.KV_REST_API_URL && process.env.UPSTASH_REDIS_REST_URL) {
-  process.env.KV_REST_API_URL = process.env.UPSTASH_REDIS_REST_URL;
-}
-if (!process.env.KV_REST_API_TOKEN && process.env.UPSTASH_REDIS_REST_TOKEN) {
-  process.env.KV_REST_API_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
-}
+import { Redis } from '@upstash/redis';
 
-export { kv } from '@vercel/kv';
+// Vercel's older KV integration used KV_REST_* names, while Upstash's Redis
+// client reads UPSTASH_REDIS_REST_*. Accept both so existing envs keep working.
+const url = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
+const token =
+  process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;
+
+export const kv =
+  url && token
+    ? new Redis({ url, token })
+    : (new Proxy(
+        {},
+        {
+          get() {
+            throw new Error(
+              'Missing Upstash Redis env: set UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN'
+            );
+          },
+        }
+      ) as Redis);

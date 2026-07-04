@@ -6,8 +6,9 @@ import { AdminLoginForm } from './AdminLoginForm';
 
 export const dynamic = 'force-dynamic';
 
-export default function AdminPage() {
-  const session = cookies().get(ADMIN_SESSION_COOKIE)?.value;
+export default async function AdminPage() {
+  const cookieStore = await cookies();
+  const session = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;
   const authed = verifySession(session, Date.now());
 
   if (!authed) {
@@ -34,7 +35,9 @@ export default function AdminPage() {
     <section className="py-16 sm:py-20">
       <Container>
         <div className="mx-auto max-w-xl">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Admin</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Admin
+          </h1>
           <p className="mt-3 text-sm text-gray-600">
             Moderate submissions and view ranked voting results.
           </p>

@@ -1,20 +1,23 @@
 # 02Ship
 
-A learning portal for non-programmers to build and ship their ideas using Claude Code and AI tools.
+A learning portal and community site for non-programmers and AI builders using Claude Code and related AI tools.
 
 ## Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
+- **Framework:** Next.js 16 App Router + React 19
+- **Language:** TypeScript strict
 - **Styling:** Tailwind CSS
-- **Content:** JSON (courses) + MDX (blog)
+- **Content:** JSON (courses, news, ships, events) + MDX (blog)
+- **Auth/database:** Supabase Auth + Postgres
+- **Event state:** Upstash Redis
+- **Testing:** Vitest, Testing Library, Playwright
 - **Hosting:** Vercel
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 20.9+ and npm. Node 22 is used in CI and is recommended locally.
 
 ### Installation
 
@@ -57,7 +60,13 @@ npm start
 npm run lint
 
 # Type check
-npx tsc --noEmit
+npm run typecheck
+
+# Run unit tests
+npm run test
+
+# Run the main verification gate
+npm run verify
 ```
 
 ## Project Structure
@@ -69,12 +78,24 @@ zero-to-ship/
 │   ├── components/       # React components
 │   ├── lib/              # Utilities and helpers
 │   └── types/            # TypeScript type definitions
-├── content/              # Course and blog content
+├── content/              # Course, blog, news, ships, and event content
 │   ├── courses/          # Course series and lessons (JSON)
-│   └── blog/             # Blog posts (MDX)
+│   ├── blog/             # Blog posts (MDX)
+│   ├── news/             # Daily AI news JSON
+│   ├── ships/            # Project showcase JSON
+│   └── events/           # Event configuration JSON
+├── supabase/             # Local Supabase config and migrations
 ├── public/               # Static assets
 └── docs/                 # Documentation
 ```
+
+## Product Areas
+
+- **Learning portal:** courses, lessons, blog posts, and daily AI news.
+- **Membership:** Supabase-backed login/signup, member dashboard, bookmarks, and lesson progress.
+- **Ships showcase:** community project profiles under `/ships`.
+- **Events:** Lu.ma event page plus lightning-talk submission, voting, and admin moderation.
+- **Automation:** GitHub Actions generate daily AI news and post summaries to Discord/Telegram.
 
 ## Adding Content
 
@@ -137,8 +158,15 @@ Single-event submission + voting tool under `/submit`, `/vote`, and `/admin`.
 
 **Required env vars** (see `.env.example`):
 
-- `KV_REST_API_URL`, `KV_REST_API_TOKEN` — Vercel KV (run `vercel env pull .env.local` after linking the KV store)
+- `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` — Upstash Redis. Legacy `KV_REST_API_URL` / `KV_REST_API_TOKEN` are still accepted.
 - `ADMIN_TOKEN` — used for admin login and session-cookie signing; generate 32+ random bytes
+- `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` — Supabase Auth/Postgres
+- `NEXT_PUBLIC_SITE_URL` — canonical site URL used by metadata and sitemaps
+- `NEXT_PUBLIC_GA_ID` — optional Google Analytics measurement ID
+
+## Voting Integrity
+
+The lightning-talk voting flow intentionally uses an anonymous `zts_voter` cookie for casual in-room events. Clearing cookies can create a fresh voter identity. If a future event needs stronger integrity, tie voting to Supabase auth or verified email before opening voting.
 
 **Event config:** edit `content/events/lightning-talk.json` and redeploy. Runtime edits are not supported.
 

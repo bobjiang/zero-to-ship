@@ -5,6 +5,7 @@ import { ADMIN_SESSION_COOKIE } from '@/lib/admin';
 export const dynamic = 'force-dynamic';
 
 export async function POST() {
-  cookies().delete(ADMIN_SESSION_COOKIE);
+  const cookieStore = await cookies();
+  cookieStore.delete(ADMIN_SESSION_COOKIE);
   return new NextResponse(null, { status: 204 });
 }

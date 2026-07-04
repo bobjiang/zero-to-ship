@@ -1,14 +1,47 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { unstable_cache } from 'next/cache';
 import type { EventConfig } from '@/types/event';
+import { eventConfigSchema, formatZodError } from '@/lib/content-schemas';
 
-export async function getEventConfig(slug = 'lightning-talk'): Promise<EventConfig> {
-  const file = path.join(process.cwd(), 'content', 'events', `${slug}.json`);
-  const raw = await fs.readFile(file, 'utf-8');
-  return JSON.parse(raw) as EventConfig;
+function cacheContent<Args extends unknown[], Result>(
+  fn: (...args: Args) => Promise<Result>,
+  keyParts: string[],
+  options: { tags: string[] }
+): (...args: Args) => Promise<Result> {
+  if (process.env.NODE_ENV === 'test' || process.env.VITEST) return fn;
+  return unstable_cache(fn, keyParts, options);
 }
 
-export function isWithinWindow(opens: string, closes: string, now: Date): boolean {
+export async function getEventConfig(
+  slug = 'lightning-talk'
+): Promise<EventConfig> {
+  return getEventConfigCached(slug);
+}
+
+const getEventConfigCached = cacheContent(
+  async (slug: string): Promise<EventConfig> => {
+    const file = path.join(process.cwd(), 'content', 'events', `${slug}.json`);
+    const raw = await fs.readFile(file, 'utf-8');
+    let json: unknown;
+    try {
+      json = JSON.parse(raw);
+    } catch (error) {
+      throw new Error(`${file} is not valid JSON: ${(error as Error).message}`);
+    }
+    const parsed = eventConfigSchema.safeParse(json);
+    if (!parsed.success) throw formatZodError(file, parsed.error);
+    return parsed.data;
+  },
+  ['content:event-config'],
+  { tags: ['content', 'content:events'] }
+);
+
+export function isWithinWindow(
+  opens: string,
+  closes: string,
+  now: Date
+): boolean {
   const o = new Date(opens).getTime();
   const c = new Date(closes).getTime();
   const n = now.getTime();
@@ -16,8 +49,7 @@ export function isWithinWindow(opens: string, closes: string, now: Date): boolea
 }
 
 export type BallotValidation =
-  | { ok: true }
-  | { ok: false; error: 'validation' | 'unknown-submission' };
+  { ok: true } | { ok: false; error: 'validation' | 'unknown-submission' };
 
 export function validateBallot(
   submissionIds: unknown,
@@ -30,7 +62,8 @@ export function validateBallot(
   }
   const seen = new Set<string>();
   for (const id of submissionIds) {
-    if (typeof id !== 'string' || id.length === 0) return { ok: false, error: 'validation' };
+    if (typeof id !== 'string' || id.length === 0)
+      return { ok: false, error: 'validation' };
     if (seen.has(id)) return { ok: false, error: 'validation' };
     seen.add(id);
   }
@@ -109,9 +142,12 @@ const submissionKey = (id: string) => `submission:${id}`;
 const submissionsSetKey = (event: string) => `submissions:set:${event}`;
 const voteKey = (event: string, voter: string) => `vote:${event}:${voter}`;
 const votersSetKey = (event: string) => `voters:set:${event}`;
-const submitRateKey = (event: string, cookie: string) => `submit-rate:${event}:${cookie}`;
+const submitRateKey = (event: string, cookie: string) =>
+  `submit-rate:${event}:${cookie}`;
 
-export async function createSubmission(input: Omit<Submission, 'id' | 'status' | 'createdAt'>): Promise<Submission> {
+export async function createSubmission(
+  input: Omit<Submission, 'id' | 'status' | 'createdAt'>
+): Promise<Submission> {
   const id = crypto.randomUUID();
   const submission: Submission = {
     ...input,
@@ -131,23 +167,46 @@ export async function getSubmission(id: string): Promise<Submission | null> {
 export async function listSubmissions(event: string): Promise<Submission[]> {
   const ids = (await kv.smembers(submissionsSetKey(event))) as string[];
   if (ids.length === 0) return [];
-  const results = await Promise.all(ids.map((id) => kv.get<Submission>(submissionKey(id))));
+  const results = await Promise.all(
+    ids.map((id) => kv.get<Submission>(submissionKey(id)))
+  );
   return results.filter((s): s is Submission => s !== null);
 }
 
-export async function setSubmissionStatus(id: string, status: SubmissionStatus): Promise<void> {
+export async function setSubmissionStatus(
+  id: string,
+  status: SubmissionStatus
+): Promise<void> {
   const current = await getSubmission(id);
   if (!current) throw new Error(`submission ${id} not found`);
   await kv.set(submissionKey(id), { ...current, status });
 }
 
-export async function getBallot(event: string, voter: string): Promise<Ballot | null> {
+export async function getBallot(
+  event: string,
+  voter: string
+): Promise<Ballot | null> {
   return (await kv.get<Ballot>(voteKey(event, voter))) ?? null;
 }
 
-export async function writeBallot(event: string, voter: string, ballot: Ballot): Promise<void> {
+export async function writeBallot(
+  event: string,
+  voter: string,
+  ballot: Ballot
+): Promise<void> {
   await kv.set(voteKey(event, voter), ballot);
   await kv.sadd(votersSetKey(event), voter);
+}
+
+export async function writeBallotOnce(
+  event: string,
+  voter: string,
+  ballot: Ballot
+): Promise<'created' | 'exists'> {
+  const created = await kv.set(voteKey(event, voter), ballot, { nx: true });
+  if (created !== 'OK') return 'exists';
+  await kv.sadd(votersSetKey(event), voter);
+  return 'created';
 }
 
 export async function voterCount(event: string): Promise<number> {
@@ -157,15 +216,23 @@ export async function voterCount(event: string): Promise<number> {
 export async function listBallots(event: string): Promise<Ballot[]> {
   const voters = (await kv.smembers(votersSetKey(event))) as string[];
   if (voters.length === 0) return [];
-  const results = await Promise.all(voters.map((v) => kv.get<Ballot>(voteKey(event, v))));
+  const results = await Promise.all(
+    voters.map((v) => kv.get<Ballot>(voteKey(event, v)))
+  );
   return results.filter((b): b is Ballot => b !== null);
 }
 
-export async function getSubmitRate(event: string, cookie: string): Promise<number> {
+export async function getSubmitRate(
+  event: string,
+  cookie: string
+): Promise<number> {
   return (await kv.get<number>(submitRateKey(event, cookie))) ?? 0;
 }
 
-export async function incrSubmitRate(event: string, cookie: string): Promise<number> {
+export async function incrSubmitRate(
+  event: string,
+  cookie: string
+): Promise<number> {
   const key = submitRateKey(event, cookie);
   const n = (await kv.incr(key)) as number;
   if (n === 1) await kv.expire(key, 86400);

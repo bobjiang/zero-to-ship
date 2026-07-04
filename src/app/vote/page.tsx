@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { VOTER_COOKIE } from '@/middleware';
+import { VOTER_COOKIE } from '@/lib/voter-cookie';
 import {
   getBallot,
   getEventConfig,
@@ -18,7 +18,8 @@ export const dynamic = 'force-dynamic';
 export default async function VotePage() {
   const event = await getEventConfig();
   const closed = Date.now() >= new Date(event.votingClosesAt).getTime();
-  const voter = cookies().get(VOTER_COOKIE)?.value;
+  const cookieStore = await cookies();
+  const voter = cookieStore.get(VOTER_COOKIE)?.value;
   const seed = (voter ?? `anon-${Date.now()}`) + ':' + event.slug;
   const [all, existing] = await Promise.all([
     listSubmissions(event.slug),
@@ -35,7 +36,11 @@ export default async function VotePage() {
         <div className="mx-auto max-w-3xl">
           {!closed && <AutoRefresh intervalMs={10000} />}
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            {existing ? 'Your vote is in' : closed ? 'Voting is closed' : 'Vote for talks you want to hear'}
+            {existing
+              ? 'Your vote is in'
+              : closed
+                ? 'Voting is closed'
+                : 'Vote for talks you want to hear'}
           </h1>
 
           <div className="mt-10">
@@ -51,10 +56,16 @@ export default async function VotePage() {
                   voteCount: counts.get(s.id) ?? 0,
                 }));
                 const mine = new Set(existing?.submissionIds ?? []);
-                const byCountDesc = (a: { voteCount: number }, b: { voteCount: number }) =>
-                  b.voteCount - a.voteCount;
-                const yourVotes = cards.filter((c) => mine.has(c.id)).sort(byCountDesc);
-                const otherTalks = cards.filter((c) => !mine.has(c.id)).sort(byCountDesc);
+                const byCountDesc = (
+                  a: { voteCount: number },
+                  b: { voteCount: number }
+                ) => b.voteCount - a.voteCount;
+                const yourVotes = cards
+                  .filter((c) => mine.has(c.id))
+                  .sort(byCountDesc);
+                const otherTalks = cards
+                  .filter((c) => !mine.has(c.id))
+                  .sort(byCountDesc);
                 return (
                   <VotedView
                     yourVotes={yourVotes}
@@ -65,7 +76,9 @@ export default async function VotePage() {
                 );
               })()
             ) : approved.length === 0 ? (
-              <p className="text-gray-600">No talks are available for voting yet.</p>
+              <p className="text-gray-600">
+                No talks are available for voting yet.
+              </p>
             ) : (
               <VoteClient
                 cards={shuffleWithSeed(

@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { marked } from 'marked';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Container } from '@/components/ui/Container';
 import { getShipBySlug, getAllShips } from '@/lib/content';
 
@@ -73,7 +74,9 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.02ship.com';
   const url = `${siteUrl}/ships/${slug}`;
 
-  const demoHref = ship.demoUrl ? withUtmSource(ship.demoUrl, '02ship.com') : null;
+  const demoHref = ship.demoUrl
+    ? withUtmSource(ship.demoUrl, '02ship.com')
+    : null;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -167,8 +170,18 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
                       className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
                     >
                       Live Demo
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      <svg
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                        />
                       </svg>
                     </a>
                   )}
@@ -180,8 +193,18 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
                       className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
                     >
                       GitHub Repo
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      <svg
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                        />
                       </svg>
                     </a>
                   )}
@@ -193,12 +216,11 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
               </div>
 
               {ship.content && (
-                <div
-                  className="prose prose-lg prose-blue mt-8 max-w-none"
-                  dangerouslySetInnerHTML={{
-                    __html: marked.parse(ship.content, { async: false }) as string
-                  }}
-                />
+                <div className="prose prose-lg prose-blue mt-8 max-w-none">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {ship.content}
+                  </ReactMarkdown>
+                </div>
               )}
 
               {ship.tags.length > 0 && (

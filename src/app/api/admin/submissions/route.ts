@@ -16,19 +16,22 @@ function unauthorized() {
   return NextResponse.json({ ok: false }, { status: 401 });
 }
 
-function requireSession(): boolean {
-  const v = cookies().get(ADMIN_SESSION_COOKIE)?.value;
+async function requireSession(): Promise<boolean> {
+  const cookieStore = await cookies();
+  const v = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;
   return verifySession(v, Date.now());
 }
 
 export async function GET(req: Request) {
   try {
-    if (!requireSession()) return unauthorized();
+    if (!(await requireSession())) return unauthorized();
     const url = new URL(req.url);
-    const filter = (url.searchParams.get('status') ?? 'all') as SubmissionStatus | 'all';
+    const filter = (url.searchParams.get('status') ?? 'all') as
+      SubmissionStatus | 'all';
     const event = await getEventConfig();
     const all = await listSubmissions(event.slug);
-    const submissions = filter === 'all' ? all : all.filter((s) => s.status === filter);
+    const submissions =
+      filter === 'all' ? all : all.filter((s) => s.status === filter);
     return NextResponse.json({ submissions });
   } catch (err) {
     console.error('[api/admin/submissions GET] server error', err);
@@ -36,20 +39,33 @@ export async function GET(req: Request) {
   }
 }
 
-const patchSchema = z.object({ status: z.enum(['pending', 'approved', 'rejected']) });
+const patchSchema = z.object({
+  status: z.enum(['pending', 'approved', 'rejected']),
+});
 
 export async function PATCH(req: Request) {
   try {
-    if (!requireSession()) return unauthorized();
+    if (!(await requireSession())) return unauthorized();
     const url = new URL(req.url);
     const id = url.searchParams.get('id');
-    if (!id) return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
+    if (!id)
+      return NextResponse.json(
+        { ok: false, error: 'validation' },
+        { status: 400 }
+      );
     const existing = await getSubmission(id);
-    if (!existing) return NextResponse.json({ ok: false, error: 'not-found' }, { status: 404 });
+    if (!existing)
+      return NextResponse.json(
+        { ok: false, error: 'not-found' },
+        { status: 404 }
+      );
     const json = await req.json().catch(() => null);
     const parsed = patchSchema.safeParse(json);
     if (!parsed.success) {
-      return NextResponse.json({ ok: false, error: 'validation' }, { status: 400 });
+      return NextResponse.json(
+        { ok: false, error: 'validation' },
+        { status: 400 }
+      );
     }
     await setSubmissionStatus(id, parsed.data.status);
     return NextResponse.json({ ok: true });

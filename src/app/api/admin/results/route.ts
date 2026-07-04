@@ -14,7 +14,8 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const session = cookies().get(ADMIN_SESSION_COOKIE)?.value;
+    const cookieStore = await cookies();
+    const session = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;
     if (!verifySession(session, Date.now())) {
       return NextResponse.json({ ok: false }, { status: 401 });
     }
@@ -25,7 +26,9 @@ export async function GET() {
       listBallots(event.slug),
       voterCount(event.slug),
     ]);
-    const approvedIds = new Set(subs.filter((s) => s.status === 'approved').map((s) => s.id));
+    const approvedIds = new Set(
+      subs.filter((s) => s.status === 'approved').map((s) => s.id)
+    );
     const counts = tallyVotes(ballots, approvedIds);
     const totalVotes = ballots.reduce((n, b) => n + b.submissionIds.length, 0);
 

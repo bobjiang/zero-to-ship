@@ -21,7 +21,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false }, { status: 401 });
   }
   const { value, expiresAt } = newSessionCookieValue();
-  cookies().set({
+  const cookieStore = await cookies();
+  cookieStore.set({
     name: ADMIN_SESSION_COOKIE,
     value,
     httpOnly: true,

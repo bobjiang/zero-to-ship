@@ -17,15 +17,15 @@ test.describe('Ships', () => {
     await page.goto('/ships');
     const firstShipLink = page.locator('a[href^="/ships/"]').first();
     const href = await firstShipLink.getAttribute('href');
-    await firstShipLink.click();
-    await expect(page).toHaveURL(href!);
+    await Promise.all([page.waitForURL(href!), firstShipLink.click()]);
     await expect(page.locator('h1').first()).toBeVisible();
   });
 
   test('ship detail page shows project info', async ({ page }) => {
     await page.goto('/ships');
-    await page.locator('a[href^="/ships/"]').first().click();
-    await page.waitForLoadState('networkidle');
+    const firstShipLink = page.locator('a[href^="/ships/"]').first();
+    const href = await firstShipLink.getAttribute('href');
+    await Promise.all([page.waitForURL(href!), firstShipLink.click()]);
     await expect(page.locator('h1').first()).toBeVisible();
   });
 });

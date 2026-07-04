@@ -1,4 +1,10 @@
-import { writeFileSync, readFileSync, readdirSync, existsSync, mkdirSync } from 'fs';
+import {
+  writeFileSync,
+  readFileSync,
+  readdirSync,
+  existsSync,
+  mkdirSync,
+} from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { XMLParser } from 'fast-xml-parser';
@@ -21,7 +27,7 @@ async function fetchHackerNews() {
   const url = `https://hn.algolia.com/api/v1/search_by_date?query=AI+OR+LLM+OR+GPT+OR+Claude+OR+Anthropic&tags=story&numericFilters=points%3E20,created_at_i%3E${threeDaysAgo}&hitsPerPage=30`;
   const res = await fetch(url);
   const data = await res.json();
-  return data.hits.map(hit => ({
+  return data.hits.map((hit) => ({
     title: hit.title,
     url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,
     source: 'Hacker News',
@@ -60,7 +66,7 @@ async function fetchArxiv() {
 async function fetchHuggingFace() {
   const res = await fetch('https://huggingface.co/api/daily_papers?limit=50');
   const data = await res.json();
-  return data.map(paper => ({
+  return data.map((paper) => ({
     title: paper.title || paper.paper?.title || '',
     url: `https://huggingface.co/papers/${paper.paper?.id || paper.id || ''}`,
     source: 'Hugging Face',
@@ -76,12 +82,15 @@ function parseRssItems(xml, source, limit = 15) {
   const channel = parsed?.rss?.channel || parsed?.feed || {};
   const entries = channel?.item || channel?.entry || [];
   const list = Array.isArray(entries) ? entries : [entries];
-  return list.slice(0, limit).map(entry => ({
-    title: (entry.title || '').replace(/\n/g, ' ').trim(),
-    url: entry.link?.href || entry.link || entry.guid || '',
-    source,
-    rawScore: 0,
-  })).filter(item => item.title && item.url);
+  return list
+    .slice(0, limit)
+    .map((entry) => ({
+      title: (entry.title || '').replace(/\n/g, ' ').trim(),
+      url: entry.link?.href || entry.link || entry.guid || '',
+      source,
+      rawScore: 0,
+    }))
+    .filter((item) => item.title && item.url);
 }
 
 async function fetchProductHunt() {
@@ -99,11 +108,14 @@ async function fetchLobsters() {
 }
 
 async function fetchDevTo() {
-  const res = await fetch('https://dev.to/api/articles?tag=ai&top=1&per_page=20', {
-    headers: { 'User-Agent': '02ship-news-bot/1.0' },
-  });
+  const res = await fetch(
+    'https://dev.to/api/articles?tag=ai&top=1&per_page=20',
+    {
+      headers: { 'User-Agent': '02ship-news-bot/1.0' },
+    }
+  );
   const data = await res.json();
-  return (Array.isArray(data) ? data : []).map(article => ({
+  return (Array.isArray(data) ? data : []).map((article) => ({
     title: article.title || '',
     url: article.url || '',
     source: 'Dev.to',
@@ -112,9 +124,12 @@ async function fetchDevTo() {
 }
 
 async function fetchTechCrunch() {
-  const res = await fetch('https://techcrunch.com/category/artificial-intelligence/feed/', {
-    headers: { 'User-Agent': '02ship-news-bot/1.0' },
-  });
+  const res = await fetch(
+    'https://techcrunch.com/category/artificial-intelligence/feed/',
+    {
+      headers: { 'User-Agent': '02ship-news-bot/1.0' },
+    }
+  );
   const xml = await res.text();
   return parseRssItems(xml, 'TechCrunch', 15);
 }
@@ -155,7 +170,7 @@ async function fetchOpenAI() {
 
 function deduplicateByUrl(items) {
   const seen = new Set();
-  return items.filter(item => {
+  return items.filter((item) => {
     if (!item.url || seen.has(item.url)) return false;
     seen.add(item.url);
     return true;
@@ -166,7 +181,10 @@ function loadPreviousDaysUrls(today, lookbackDays = 7) {
   const urls = new Set();
   if (!existsSync(NEWS_DIR)) return urls;
 
-  const files = readdirSync(NEWS_DIR).filter(f => f.endsWith('.json')).sort().reverse();
+  const files = readdirSync(NEWS_DIR)
+    .filter((f) => f.endsWith('.json'))
+    .sort()
+    .reverse();
   for (const file of files) {
     const date = file.replace('.json', '');
     if (date >= today) continue; // skip today if it already exists
@@ -177,7 +195,7 @@ function loadPreviousDaysUrls(today, lookbackDays = 7) {
       for (const item of data.items || []) {
         if (item.url) urls.add(item.url);
       }
-    } catch (e) {
+    } catch {
       // skip corrupted files
     }
   }
@@ -186,7 +204,7 @@ function loadPreviousDaysUrls(today, lookbackDays = 7) {
 }
 
 function removePreviouslySeenItems(items, previousUrls) {
-  const filtered = items.filter(item => !previousUrls.has(item.url));
+  const filtered = items.filter((item) => !previousUrls.has(item.url));
   const removed = items.length - filtered.length;
   if (removed > 0) {
     console.log(`Removed ${removed} items already seen in previous days`);
@@ -216,7 +234,10 @@ function preFilterItems(items, maxItems = 60) {
   }
 
   rest.sort((a, b) => (b.rawScore || 0) - (a.rawScore || 0));
-  const result = [...guaranteed, ...rest.slice(0, maxItems - guaranteed.length)];
+  const result = [
+    ...guaranteed,
+    ...rest.slice(0, maxItems - guaranteed.length),
+  ];
   console.log(`Pre-filtered ${items.length} items down to ${result.length}`);
   return result;
 }
@@ -227,7 +248,14 @@ async function rankWithGemini(items, retries = 2) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
   // Send compact JSON to reduce input token usage
-  const itemsJson = JSON.stringify(items.map(({ title, url, source, rawScore }) => ({ title, url, source, rawScore })));
+  const itemsJson = JSON.stringify(
+    items.map(({ title, url, source, rawScore }) => ({
+      title,
+      url,
+      source,
+      rawScore,
+    }))
+  );
 
   const prompt = `You are an AI news curator. Today's date is ${new Date().toISOString().split('T')[0]}. Given the following list of AI-related news items collected today from various sources, select the top 15 most impactful and interesting stories. Strongly prefer items published within the last 1-2 days. For each selected item:
 
@@ -273,7 +301,7 @@ ${itemsJson}`;
       console.error('Gemini API error:', JSON.stringify(data.error, null, 2));
       if (attempt < retries) {
         console.log(`Retrying (${attempt + 1}/${retries})...`);
-        await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+        await new Promise((r) => setTimeout(r, 2000 * (attempt + 1)));
         continue;
       }
       process.exit(1);
@@ -283,15 +311,21 @@ ${itemsJson}`;
     const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
     // Strip markdown fences if present
-    const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+    const cleaned = text
+      .replace(/```json\n?/g, '')
+      .replace(/```\n?/g, '')
+      .trim();
 
     try {
       return JSON.parse(cleaned);
     } catch (e) {
-      console.error(`Failed to parse Gemini response (attempt ${attempt + 1}, finishReason: ${finishReason}):`, e.message);
+      console.error(
+        `Failed to parse Gemini response (attempt ${attempt + 1}, finishReason: ${finishReason}):`,
+        e.message
+      );
       if (attempt < retries) {
         console.log(`Retrying (${attempt + 1}/${retries})...`);
-        await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+        await new Promise((r) => setTimeout(r, 2000 * (attempt + 1)));
         continue;
       }
       console.error('Raw response:', text.slice(0, 500));
@@ -323,11 +357,16 @@ async function main() {
 
   const results = await Promise.all(
     sources.map(({ name, fn }) =>
-      fn().catch(e => { console.warn(`${name} failed:`, e.message); return []; })
+      fn().catch((e) => {
+        console.warn(`${name} failed:`, e.message);
+        return [];
+      })
     )
   );
 
-  const summary = sources.map(({ name }, i) => `${name}=${results[i].length}`).join(', ');
+  const summary = sources
+    .map(({ name }, i) => `${name}=${results[i].length}`)
+    .join(', ');
   console.log(`Fetched: ${summary}`);
 
   const dedupedItems = deduplicateByUrl(results.flat());
@@ -361,7 +400,7 @@ async function main() {
   console.log(`Written to ${outputPath}`);
 }
 
-main().catch(e => {
+main().catch((e) => {
   console.error('Fatal error:', e);
   process.exit(1);
 });

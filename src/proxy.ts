@@ -1,11 +1,15 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { updateSession } from '@/lib/supabase/middleware';
+import { VOTER_COOKIE } from '@/lib/voter-cookie';
 
-export const VOTER_COOKIE = 'zts_voter';
+const VOTING_PATHS = new Set([
+  '/submit',
+  '/vote',
+  '/api/submissions',
+  '/api/votes',
+]);
 
-const VOTING_PATHS = new Set(['/submit', '/vote', '/api/submissions', '/api/votes']);
-
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Voting paths do not depend on Supabase auth; seed the anonymous voter
