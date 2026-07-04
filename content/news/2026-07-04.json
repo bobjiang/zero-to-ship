@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-04",
+  "items": [
+    {
+      "title": "OpenAI and Broadcom Unveil LLM-Optimized Inference Chip",
+      "summary": "OpenAI and Broadcom have collaborated to introduce a new inference chip specifically designed to optimize the performance and efficiency of large language models.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Mark Zuckerberg Expresses Disappointment in AI Agent Progress",
+      "summary": "Mark Zuckerberg reportedly informed Meta staff that the development of AI agents has not advanced as rapidly as he had initially anticipated.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Listen Labs Secures $69M to Scale AI Customer Interview Platform",
+      "summary": "Listen Labs successfully raised $69 million in funding following a viral billboard campaign, aiming to expand its AI-powered platform for conducting customer interviews.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Program-as-Weights: A Novel Programming Paradigm for Fuzzy Functions",
+      "summary": "Researchers introduce 'Program-as-Weights,' a new programming paradigm that allows fuzzy functions to be represented and manipulated directly as model weights.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02512",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
+      "summary": "A new testbed called AgenticSTS is presented, designed to evaluate the performance of long-horizon LLM agents under constraints of bounded memory.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02255",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EvoPolicyGym: Evaluating Autonomous Policy Evolution in Interactive Environments",
+      "summary": "EvoPolicyGym offers a new framework for evaluating how autonomous policies evolve and adapt within complex interactive environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02440",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception",
+      "summary": "PerceptionRubrics introduces a method to align multimodal AI evaluation metrics more closely with human perceptual judgments, improving assessment accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28322",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Morphing into Hybrid Attention Models for Enhanced Performance",
+      "summary": "This research explores the concept of 'morphing' into hybrid attention models to achieve improved performance in various AI tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.30562",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AgenticDataBench: A Comprehensive Benchmark for Data Agents",
+      "summary": "AgenticDataBench is introduced as a new, comprehensive benchmark specifically designed to evaluate the capabilities and performance of data-centric AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.01647",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving",
+      "summary": "ELDR proposes an expert-locality-aware decode routing mechanism to enhance the serving efficiency of Mixture-of-Experts (MoE) models in PD-disaggregated systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.00466",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
+      "summary": "The Seed2.0 Model Card outlines advancements aimed at pushing the intelligence frontier for AI models to better handle real-world complexities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.00248",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling",
+      "summary": "A novel technique called Multi-Resolution Flow Matching is presented, enabling training-free acceleration of diffusion models through staged sampling.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.01642",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory",
+      "summary": "MemSyco-Bench is a new benchmark designed to measure and analyze sycophantic behaviors in the memory systems of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.01071",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory",
+      "summary": "WorldDirector introduces a method for creating controllable world simulators equipped with persistent dynamic memory, enhancing realism and interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02517",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Built a Trust Firewall for My AI Agent's Memory on Cognee's Four Verbs",
+      "summary": "A developer shares insights on implementing a 'trust firewall' for an AI agent's memory, leveraging Cognee's conceptual framework to enhance reliability.",
+      "source": "Dev.to",
+      "url": "https://dev.to/himanshu_748/i-built-a-trust-firewall-for-my-ai-agents-memory-on-cognees-four-verbs-29g2",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
