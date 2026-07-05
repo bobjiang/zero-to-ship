@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-05",
+  "items": [
+    {
+      "title": "Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning",
+      "summary": "This research introduces a novel framework for multimodal continuous reasoning that leverages asymmetric mutual variational learning to enhance AI's ability to process and understand diverse data types.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.00461",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning",
+      "summary": "A new reinforcement learning approach is proposed to prevent failure cascades in medical multimodal reasoning, improving reliability in critical AI applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.31825",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "ASPIRE: Agentic Skills Discovery for Robotics",
+      "summary": "ASPIRE presents a new method for robots to autonomously discover and acquire skills, potentially accelerating the development of more capable and adaptable robotic systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.00272",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
+      "summary": "Midjourney is pushing Hollywood studios to disclose their specific applications of AI, signaling growing industry scrutiny and potential legal or ethical debates around AI in creative fields.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Alibaba reportedly bans employees from using Claude Code",
+      "summary": "Alibaba has reportedly prohibited its employees from using Claude Code, highlighting internal corporate policies and security concerns surrounding third-party AI coding assistants.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment",
+      "summary": "Nous Research has released NousCoder-14B, an open-source coding model, offering an alternative to proprietary solutions like Claude Code amidst growing demand for transparent and accessible AI development tools.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Logit-Contribution Scoring Identifies Non-Literal Retrieval Heads",
+      "summary": "New research introduces a method called Logit-Contribution Scoring to identify and understand the behavior of non-literal retrieval heads in AI models, offering insights into model interpretability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.01002",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SkillCoach: Self-Evolving Rubrics for Evaluating and Enhancing Agentic Skill-Use",
+      "summary": "SkillCoach proposes self-evolving rubrics to improve the evaluation and development of agentic AI skills, crucial for building more competent and autonomous AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.01874",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Optimizing Visual Generative Models via Distribution-wise Rewards",
+      "summary": "This paper explores optimizing visual generative models using distribution-wise rewards, aiming to produce higher quality and more diverse generated content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02291",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AutoMem: Automated Learning of Memory as a Cognitive Skill",
+      "summary": "AutoMem introduces an automated system for AI to learn and utilize memory as a cognitive skill, potentially leading to more intelligent and context-aware agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.01224",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "GPU Survivors: Can You Survive a 1T Parameter Inference Run?",
+      "summary": "This article discusses the extreme computational challenges and strategies required to perform inference with a trillion-parameter AI model on current GPU hardware.",
+      "source": "Dev.to",
+      "url": "https://dev.to/unitbuilds_cc/gpu-survivors-can-you-survive-a-1t-parameter-inference-run-476d",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "New Google commercial imagines a Declaration of Independence written with help from AI",
+      "summary": "Google's new commercial showcases AI assisting in the drafting of historical documents like the Declaration of Independence, highlighting the potential for AI in creative and foundational tasks.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/04/new-google-commercial-imagines-a-declaration-of-independence-written-with-help-from-ai/",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "How agents are transforming work",
+      "summary": "OpenAI discusses the evolving role of AI agents in various work environments, detailing their impact on productivity and task automation.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-agents-are-transforming-work",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "From SRA to Self-Flow: Data Augmentation or Self-Supervision?",
+      "summary": "This paper investigates the relationship and effectiveness of data augmentation versus self-supervision techniques in AI model training, offering insights into optimal learning strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02508",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Graph-Native Reinforcement Learning Enables Traceable Scientific Hypothesis Generation through Conceptual Recombination",
+      "summary": "Researchers present a graph-native reinforcement learning framework that allows for traceable and interpretable generation of scientific hypotheses by recombining concepts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.00924",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
