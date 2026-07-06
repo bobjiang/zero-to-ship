@@ -25,13 +25,13 @@ describe('Button', () => {
   it('applies secondary variant', () => {
     render(<Button variant="secondary">Secondary</Button>);
     const button = screen.getByRole('button');
-    expect(button.className).toContain('bg-gray-200');
+    expect(button.className).toContain('bg-slate-900');
   });
 
   it('applies outline variant', () => {
     render(<Button variant="outline">Outline</Button>);
     const button = screen.getByRole('button');
-    expect(button.className).toContain('border-2');
+    expect(button.className).toContain('border border-slate-300');
   });
 
   it('applies sm size', () => {
@@ -43,7 +43,7 @@ describe('Button', () => {
   it('applies lg size', () => {
     render(<Button size="lg">Large</Button>);
     const button = screen.getByRole('button');
-    expect(button.className).toContain('text-lg');
+    expect(button.className).toContain('px-6 py-3 text-base');
   });
 
   it('is disabled when disabled prop is set', () => {

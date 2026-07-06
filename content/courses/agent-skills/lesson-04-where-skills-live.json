@@ -13,20 +13,20 @@
   "videos": [
     {
       "title": "Personal Skills: Your Private Toolkit",
-      "description": "Where to store skills that are just for you — your personal AI configuration that follows you across every project.",
+      "description": "Where to store skills that are just for you - your personal AI configuration that follows you across every project.",
       "youtubeId": "",
       "slidesUrl": "/courses/agent-skills/lesson-04-video-01-slides.html",
       "maxLength": "12 minutes",
       "estimatedDuration": "7 minutes",
       "scriptOutline": [
-        "Personal skills live in your home directory — available in every project on your machine.",
+        "Personal skills live in your home directory - available in every project on your machine.",
         "Tour the paths: ~/.claude/skills/ (Claude Code), ~/.copilot/skills/ (Copilot), ~/.agents/skills/ (universal).",
         "When to keep skills personal: style preferences, personal checklists, experimental workflows.",
         "Live demo: install the deploy-checklist as a personal skill, open two different projects, show it works in both.",
-        "Tip: avoid hardcoding machine-specific paths — use relative references."
+        "Tip: avoid hardcoding machine-specific paths - use relative references."
       ],
       "talkingPoints": [
-        "Personal skills are your sandbox — the fastest iteration loop with zero risk to others.",
+        "Personal skills are your sandbox - the fastest iteration loop with zero risk to others.",
         "Great personal skills: your preferred commit format, your documentation voice, your review checklist.",
         "Start here. Always. Move to project-level only after the skill proves its value."
       ]
@@ -39,16 +39,16 @@
       "maxLength": "15 minutes",
       "estimatedDuration": "10 minutes",
       "scriptOutline": [
-        "Project skills live in the repository — shared via git with your entire team.",
+        "Project skills live in the repository - shared via git with your entire team.",
         "Paths: .claude/skills/ (Claude Code), .github/skills/ (Copilot), .agents/skills/ (universal).",
         "When to promote: the skill works consistently AND other people would benefit.",
         "Live demo: move deploy-checklist from ~/.claude/skills/ to .claude/skills/ in the repo.",
-        "Open a pull request — show how the team reviews and improves skills like code.",
+        "Open a pull request - show how the team reviews and improves skills like code.",
         "Priority: project skills override personal skills with the same name.",
         "Running example: deploy-checklist is now a project skill, tracked in git."
       ],
       "talkingPoints": [
-        "Project skills encode team knowledge into the repository — they're living documentation.",
+        "Project skills encode team knowledge into the repository - they're living documentation.",
         "Git gives you review (PRs), history (blame), and rollback (revert) for free.",
         "The promotion signal: when you catch yourself telling a teammate 'use my personal skill for this.'"
       ]
@@ -70,18 +70,18 @@
       "talkingPoints": [
         "You don't have to write every skill from scratch. The community has already built useful ones.",
         "Treat community skills like any software: read the code before running it.",
-        "Fork and adapt rather than editing community skills in place — respect upstream."
+        "Fork and adapt rather than editing community skills in place - respect upstream."
       ]
     }
   ],
   "textSections": [
     {
       "title": "Directory Cheat Sheet",
-      "content": "**Personal skills (just for you — available in all projects):**\n\n| Tool | Path |\n|------|------|\n| Claude Code | `~/.claude/skills/<name>/SKILL.md` |\n| GitHub Copilot | `~/.copilot/skills/<name>/SKILL.md` |\n| Cursor | `~/.cursor/skills/<name>/SKILL.md` |\n| Universal | `~/.agents/skills/<name>/SKILL.md` |\n\n**Project skills (shared via git — available to the team):**\n\n| Tool | Path |\n|------|------|\n| Claude Code | `.claude/skills/<name>/SKILL.md` |\n| GitHub Copilot | `.github/skills/<name>/SKILL.md` |\n| Cursor | `.cursor/skills/<name>/SKILL.md` |\n| Universal | `.agents/skills/<name>/SKILL.md` |\n\n**Note:** GitHub Copilot checks all three project directories. When in doubt, `.agents/skills/` is the most universal."
+      "content": "**Personal skills (just for you - available in all projects):**\n\n| Tool | Path |\n|------|------|\n| Claude Code | `~/.claude/skills/<name>/SKILL.md` |\n| GitHub Copilot | `~/.copilot/skills/<name>/SKILL.md` |\n| Cursor | `~/.cursor/skills/<name>/SKILL.md` |\n| Universal | `~/.agents/skills/<name>/SKILL.md` |\n\n**Project skills (shared via git - available to the team):**\n\n| Tool | Path |\n|------|------|\n| Claude Code | `.claude/skills/<name>/SKILL.md` |\n| GitHub Copilot | `.github/skills/<name>/SKILL.md` |\n| Cursor | `.cursor/skills/<name>/SKILL.md` |\n| Universal | `.agents/skills/<name>/SKILL.md` |\n\n**Note:** GitHub Copilot checks all three project directories. When in doubt, `.agents/skills/` is the most universal."
     },
     {
       "title": "Priority Resolution: What Wins When Names Clash",
-      "content": "When multiple skills share the same name, the most specific one wins:\n\n1. **Project skills** override **personal skills** (team standards beat personal preferences).\n2. **Enterprise skills** override both (organization policies win).\n\n**Example:** You have a personal `code-review` skill. Your project also has a `code-review` skill. The project version is used — because it reflects team conventions, not just yours.\n\n**Tip:** To avoid confusion, use distinct names: `my-code-review` (personal) vs. `code-review` (project)."
+      "content": "When multiple skills share the same name, the most specific one wins:\n\n1. **Project skills** override **personal skills** (team standards beat personal preferences).\n2. **Enterprise skills** override both (organization policies win).\n\n**Example:** You have a personal `code-review` skill. Your project also has a `code-review` skill. The project version is used - because it reflects team conventions, not just yours.\n\n**Tip:** To avoid confusion, use distinct names: `my-code-review` (personal) vs. `code-review` (project)."
     },
     {
       "title": "Promotion Workflow: Personal → Project",
@@ -89,7 +89,7 @@
     },
     {
       "title": "Security Checklist for Community Skills",
-      "content": "Before installing any community skill, check:\n\n- [ ] **Read SKILL.md** — does the description match your use case?\n- [ ] **Audit scripts/** — look for `rm`, `curl`, `wget`, `eval`, or commands that modify files\n- [ ] **Check references/** — no secrets, credentials, or proprietary data\n- [ ] **Verify the source** — active repo? Recent commits? Issues addressed?\n- [ ] **Install to personal first** — test in your sandbox before promoting to project\n- [ ] **Note the commit hash** — document exactly which version you installed\n\nA skill with scripts/ can run commands on your machine. Treat it with the same caution as installing any software."
+      "content": "Before installing any community skill, check:\n\n- [ ] **Read SKILL.md** - does the description match your use case?\n- [ ] **Audit scripts/** - look for `rm`, `curl`, `wget`, `eval`, or commands that modify files\n- [ ] **Check references/** - no secrets, credentials, or proprietary data\n- [ ] **Verify the source** - active repo? Recent commits? Issues addressed?\n- [ ] **Install to personal first** - test in your sandbox before promoting to project\n- [ ] **Note the commit hash** - document exactly which version you installed\n\nA skill with scripts/ can run commands on your machine. Treat it with the same caution as installing any software."
     }
   ],
   "commonMistakes": [
@@ -159,11 +159,11 @@
   ],
   "resources": [
     {
-      "title": "Claude Code Skills — Storage Locations",
+      "title": "Claude Code Skills - Storage Locations",
       "url": "https://code.claude.com/docs/en/skills"
     },
     {
-      "title": "GitHub Copilot — Skill Locations",
+      "title": "GitHub Copilot - Skill Locations",
       "url": "https://docs.github.com/en/copilot/concepts/agents/about-agent-skills"
     },
     {
@@ -179,7 +179,7 @@
     "This lesson bridges 'I can write a skill' and 'my team uses skills.' The promotion workflow is the key moment.",
     "For learners not using git: walk through git add/commit/push basics. This is also a great moment to show how AI tools help with git.",
     "Spend real time on the security checklist. Show what a malicious script looks like vs. a safe one. This builds trust and judgment.",
-    "For solo learners: the promotion exercise still works — create a test repo and commit there.",
+    "For solo learners: the promotion exercise still works - create a test repo and commit there.",
     "Keep a demo repository ready so learners can watch the full promotion workflow end-to-end.",
     "Community skill repos change frequently. Verify the URLs in resources before the session."
   ]

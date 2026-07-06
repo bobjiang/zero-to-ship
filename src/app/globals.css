@@ -3,11 +3,45 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 248 250 252;
+    --foreground: 15 23 42;
+    --brand-blue: 8 145 178;
+    --brand-ink: 15 23 42;
+    --brand-mist: 236 254 255;
+  }
+
+  .dark {
+    --background: 2 6 23;
+    --foreground: 248 250 252;
+    --brand-mist: 15 23 42;
+  }
+
   html {
     @apply antialiased;
   }
 
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-blue-600 text-white;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-blue-600 ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }

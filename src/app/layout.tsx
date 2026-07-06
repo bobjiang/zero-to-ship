@@ -5,7 +5,10 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.02ship.com';
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
@@ -13,7 +16,7 @@ const gaId = process.env.NEXT_PUBLIC_GA_ID;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "02Ship — Sydney's Claude Builder Community",
+    default: "02Ship - Sydney's Claude Builder Community",
     template: '%s | 02Ship',
   },
   description:
@@ -66,7 +69,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: '02Ship',
   url: siteUrl,
-  logo: `${siteUrl}/logo.png`,
+  logo: `${siteUrl}/logo.svg`,
   sameAs: [
     'https://twitter.com/02ship',
     'https://github.com/bobjiang/zero-to-ship',
@@ -112,7 +115,7 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} font-sans`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

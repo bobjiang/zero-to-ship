@@ -24,7 +24,7 @@
         "Mindset shift: Claude as a collaborator, not a magic button"
       ],
       "talkingPoints": [
-        "Think of Claude as a very smart intern who can code — you provide direction, it executes",
+        "Think of Claude as a very smart intern who can code - you provide direction, it executes",
         "You don't need to understand the code; you need to understand what you want",
         "Iteration is key: your first prompt won't be perfect, and that's okay"
       ]
@@ -43,7 +43,7 @@
         "Safety basics: don't share API keys, verify code before running"
       ],
       "talkingPoints": [
-        "You only need a Claude account to get started — nothing else required today",
+        "You only need a Claude account to get started - nothing else required today",
         "Create a simple folder structure: /prompts, /outputs, /projects",
         "Golden rule: always read what Claude generates before running it"
       ]
@@ -66,7 +66,7 @@
       "talkingPoints": [
         "A good prompt has four parts: what you want, what constraints exist, what tech to use, and how you'll know it worked",
         "Real example: '02Ship started with just a simple idea: a portal for everyone to learn AI coding'",
-        "Always ask Claude to 'ask clarifying questions first' — this improves output quality",
+        "Always ask Claude to 'ask clarifying questions first' - this improves output quality",
         "The platform you're using right now was built exactly this way - we'll show you how!",
         "Don't accept the first response; one round of iteration makes a big difference"
       ]
@@ -169,8 +169,8 @@
   ],
   "instructorNotes": [
     "Meta-learning moment: Emphasize that learners are using a platform built exactly the way they're learning to build. This is powerful for showing what's possible!",
-    "For live sessions: Have learners share their app ideas with a partner before writing prompts — peer feedback improves prompt quality.",
-    "Common questions: 'Can Claude actually make my app work?' — Point to 02Ship as proof! Show the GitHub repo and explain it was built following this exact process.",
+    "For live sessions: Have learners share their app ideas with a partner before writing prompts - peer feedback improves prompt quality.",
+    "Common questions: 'Can Claude actually make my app work?' - Point to 02Ship as proof! Show the GitHub repo and explain it was built following this exact process.",
     "Self-paced tip: Encourage learners to screenshot their Claude conversation for later reference. Suggest they compare their results to the actual 02Ship build.",
     "Time check: Exercise 3 often takes longer than expected; consider making it optional homework for time-constrained sessions.",
     "Bonus activity: Show learners the actual GitHub repository (github.com/bobjiang/zero-to-ship) to see what Claude generated."

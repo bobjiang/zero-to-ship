@@ -67,7 +67,7 @@ export function LessonActionsClient({ seriesSlug, lessonSlug }: LessonActionsCli
   };
 
   return (
-    <div className="mt-4 flex items-center gap-3">
+    <div className="mt-6 flex flex-wrap items-center gap-3">
       <Button
         variant={isCompleted ? 'secondary' : 'primary'}
         size="sm"

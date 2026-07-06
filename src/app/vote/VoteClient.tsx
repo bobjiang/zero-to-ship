@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { CheckCircle, WarningCircle } from '@phosphor-icons/react';
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 
 interface Card {
@@ -59,7 +61,7 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
         setMessage('One of your selections is no longer available. Refresh and try again.');
         break;
       case 'server':
-        setMessage('Server error — storage is unreachable. Please contact the organizer.');
+        setMessage('Server error - storage is unreachable. Please contact the organizer.');
         break;
       default:
         setMessage('Could not record your vote. Try again.');
@@ -68,9 +70,14 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
 
   return (
     <div className="space-y-6">
-      <p className="text-sm text-gray-600">
-        Pick up to {voteLimit} talks. <span className="font-medium text-gray-900">{selected.size}/{voteLimit}</span> selected.
-      </p>
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-none border border-slate-200 bg-white p-4 shadow-sm shadow-slate-950/5 dark:border-slate-800 dark:bg-slate-900">
+        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">
+          Pick up to {voteLimit} talks.
+        </p>
+        <span className="rounded-none bg-blue-50 px-3 py-1 text-sm font-black text-blue-700 dark:bg-blue-950/50 dark:text-blue-200">
+          {selected.size}/{voteLimit} selected
+        </span>
+      </div>
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {cards.map((c) => {
           const isSelected = selected.has(c.id);
@@ -82,34 +89,36 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
                 onClick={() => toggle(c.id)}
                 disabled={disabled}
                 aria-pressed={isSelected}
-                className={`group relative flex h-full w-full flex-col rounded-lg border p-5 text-left shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${
+                className={cn(
+                  'group relative flex h-full w-full flex-col rounded-none border p-5 text-left shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus-visible:ring-offset-slate-950',
                   isSelected
-                    ? 'border-blue-600 bg-blue-50 ring-2 ring-blue-600'
-                    : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-md'
-                }`}
+                    ? 'border-blue-600 bg-blue-50 ring-2 ring-blue-600 dark:bg-blue-950/40'
+                    : 'border-slate-200 bg-white hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-800'
+                )}
               >
                 {isSelected && (
-                  <span className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
-                    ✓
+                  <span className="absolute right-4 top-4 flex h-7 w-7 items-center justify-center rounded-none bg-blue-600 text-white">
+                    <CheckCircle className="h-5 w-5" weight="fill" />
                   </span>
                 )}
-                <h3 className="pr-8 text-lg font-semibold text-gray-900">{c.title}</h3>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-gray-500">
+                <h3 className="pr-8 text-lg font-black tracking-tight text-slate-950 dark:text-white">{c.title}</h3>
+                <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                   {c.speakerName}
                 </p>
-                <p className="mt-3 text-sm leading-6 text-gray-600">{c.intro}</p>
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{c.intro}</p>
               </button>
             </li>
           );
         })}
       </ul>
       {status === 'error' && (
-        <p role="alert" className="text-sm font-medium text-red-700">
+        <p role="alert" className="flex items-center gap-2 text-sm font-bold text-red-700 dark:text-red-300">
+          <WarningCircle className="h-5 w-5" weight="fill" />
           {message}
         </p>
       )}
-      <div className="flex flex-col gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-gray-600">
+      <div className="flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
+        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">
           {selected.size === 0
             ? 'Select at least one talk to submit your vote.'
             : `You're voting for ${selected.size} ${selected.size === 1 ? 'talk' : 'talks'}.`}
@@ -121,7 +130,7 @@ export function VoteClient({ cards, voteLimit }: { cards: Card[]; voteLimit: num
           disabled={selected.size === 0 || status === 'submitting' || status === 'success'}
         >
           {status === 'submitting' || status === 'success'
-            ? 'Submitting…'
+            ? 'Submitting...'
             : `Submit vote${selected.size > 0 ? ` (${selected.size})` : ''}`}
         </Button>
       </div>

@@ -21,7 +21,10 @@ export default async function DashboardSettingsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
+      <p className="text-sm font-black uppercase tracking-[0.24em] text-blue-600 dark:text-blue-400">
+        Account
+      </p>
+      <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 dark:text-white">Settings</h1>
       <div className="mt-6">
         <ProfileForm
           initialData={{

@@ -2,7 +2,7 @@
   "date": "2026-03-15",
   "items": [
     {
-      "title": "Sourcetable – AI Spreadsheet and Data Platform",
+      "title": "Sourcetable - AI Spreadsheet and Data Platform",
       "summary": "Sourcetable introduces an AI-powered spreadsheet and data platform designed to simplify data management and analysis.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=41590682",
@@ -10,7 +10,7 @@
       "category": "product"
     },
     {
-      "title": "Innate (YC F24) – Home robots as easy to program as AI agents",
+      "title": "Innate (YC F24) - Home robots as easy to program as AI agents",
       "summary": "Innate aims to make home robots more accessible by allowing users to program them as easily as AI agents.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=42451707",
@@ -26,7 +26,7 @@
       "category": "research"
     },
     {
-      "title": "Dropbase AI – A Prompt-Based Python Web App Builder",
+      "title": "Dropbase AI - A Prompt-Based Python Web App Builder",
       "summary": "Dropbase AI provides a prompt-based system for building Python web applications, streamlining development for users.",
       "source": "Hacker News",
       "url": "https://github.com/DropbaseHQ/dropbase",
@@ -34,7 +34,7 @@
       "category": "open-source"
     },
     {
-      "title": "Vellum (YC W23) – Dev Platform for LLM Apps",
+      "title": "Vellum (YC W23) - Dev Platform for LLM Apps",
       "summary": "Vellum offers a development platform specifically designed to help engineers build and deploy applications powered by large language models.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=35042836",
@@ -42,7 +42,7 @@
       "category": "product"
     },
     {
-      "title": "Inkeep (YC W23) – Copilot for Support (think Cursor for help desks)",
+      "title": "Inkeep (YC W23) - Copilot for Support (think Cursor for help desks)",
       "summary": "Inkeep introduces an AI copilot for support teams, aiming to enhance help desk efficiency and user assistance.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=41697137",
@@ -90,7 +90,7 @@
       "category": "research"
     },
     {
-      "title": "Dedalus Labs (YC S25) – Vercel for Agents",
+      "title": "Dedalus Labs (YC S25) - Vercel for Agents",
       "summary": "Dedalus Labs aims to provide a Vercel-like platform for AI agents, simplifying their deployment and management.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=45054040",
@@ -98,7 +98,7 @@
       "category": "product"
     },
     {
-      "title": "Hyperbrowser MCP Server – Connect AI agents to the web through browsers",
+      "title": "Hyperbrowser MCP Server - Connect AI agents to the web through browsers",
       "summary": "Hyperbrowser MCP Server enables AI agents to interact with the web by connecting them through browser environments.",
       "source": "Hacker News",
       "url": "https://github.com/hyperbrowserai/mcp",

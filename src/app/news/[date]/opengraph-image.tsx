@@ -12,7 +12,7 @@ export default async function Image({ params }: { params: { date: string } }) {
   });
 
   return generateOgImage({
-    title: `AI News — ${formatted}`,
+    title: `AI News - ${formatted}`,
     subtitle: 'Curated daily digest of the most important AI developments.',
     tag: 'Daily AI News',
     date: params.date,

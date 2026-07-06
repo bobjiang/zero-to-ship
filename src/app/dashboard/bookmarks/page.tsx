@@ -4,6 +4,7 @@ import { requireUser } from '@/lib/auth';
 export const dynamic = 'force-dynamic';
 import { createClient } from '@/lib/supabase/server';
 import { BookmarkCard } from '@/components/dashboard/BookmarkCard';
+import { EmptyState } from '@/components/ui/EmptyState';
 
 export const metadata: Metadata = {
   title: 'Bookmarks',
@@ -23,7 +24,10 @@ export default async function DashboardBookmarksPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900">Bookmarks</h1>
+      <p className="text-sm font-black uppercase tracking-[0.24em] text-blue-600 dark:text-blue-400">
+        Saved
+      </p>
+      <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 dark:text-white">Bookmarks</h1>
 
       {rows.length > 0 ? (
         <div className="mt-6 space-y-3">
@@ -38,9 +42,11 @@ export default async function DashboardBookmarksPage() {
           ))}
         </div>
       ) : (
-        <p className="mt-6 text-sm text-gray-500">
-          No bookmarks yet. Bookmark content as you browse to find it later.
-        </p>
+        <EmptyState
+          className="mt-6"
+          title="No bookmarks yet."
+          description="Bookmark content as you browse to find it later."
+        />
       )}
     </div>
   );

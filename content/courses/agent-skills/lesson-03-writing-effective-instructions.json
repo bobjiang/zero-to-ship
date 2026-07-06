@@ -13,16 +13,16 @@
   "videos": [
     {
       "title": "Manager Mindset: Briefing a Literal Genius",
-      "description": "The mindset shift for writing great instructions — you're defining a contract the AI must execute consistently.",
+      "description": "The mindset shift for writing great instructions - you're defining a contract the AI must execute consistently.",
       "youtubeId": "",
       "slidesUrl": "/courses/agent-skills/lesson-03-video-01-slides.html",
       "maxLength": "12 minutes",
       "estimatedDuration": "8 minutes",
       "scriptOutline": [
-        "Your AI is like a brilliant new hire — smart, capable, but doesn't know YOUR preferences yet.",
+        "Your AI is like a brilliant new hire - smart, capable, but doesn't know YOUR preferences yet.",
         "Side-by-side: vague instruction vs. specific instruction, same task, wildly different outputs.",
         "The 'two interpretations' test: if two smart people could read it differently, clarify it.",
-        "Writing for consistency: your skill will run hundreds of times — optimize for repeatability, not a single conversation.",
+        "Writing for consistency: your skill will run hundreds of times - optimize for repeatability, not a single conversation.",
         "Preview the testing loop learners will run today."
       ],
       "talkingPoints": [
@@ -41,14 +41,14 @@
       "scriptOutline": [
         "Trigger: describe the context, files, or command that should activate the skill. Include exclusions.",
         "Workflow: number the steps, include decision points, reference supporting files explicitly.",
-        "Constraints: state what to avoid — destructive commands, off-limit directories, scope creep.",
-        "Output: prescribe exact deliverable format — tables, checklists, JSON, specific headings.",
+        "Constraints: state what to avoid - destructive commands, off-limit directories, scope creep.",
+        "Output: prescribe exact deliverable format - tables, checklists, JSON, specific headings.",
         "Live build: populate all four sections of deploy-checklist/SKILL.md with real instructions.",
         "The 80/20 rule: handle the common case well first. Add edge cases after it works."
       ],
       "talkingPoints": [
         "Every workflow step should start with a verb: Check, Read, Generate, Verify, Return.",
-        "Constraints reduce rework — especially for destructive operations. 'Never run DROP' is cheap insurance.",
+        "Constraints reduce rework - especially for destructive operations. 'Never run DROP' is cheap insurance.",
         "Describe the output like you're writing a contract: 'Return a markdown checklist with these exact columns.'",
         "Start with the 80% case. You can always add handling for edge cases later."
       ]
@@ -81,8 +81,8 @@
       "content": "Use this structure for every skill you write:\n\n```markdown\n## Trigger\nActivate this skill when [specific scenario].\nDo NOT use this skill when [exclusion condition].\n\n## Workflow\n1. [Verb] [specific action with clear details]\n2. [Verb] [next action]\n3. Check that [validation step]\n4. [Verb] [output action]\n\n## Constraints\n- Never [destructive or out-of-scope action]\n- Always [required behavior]\n- If [condition], then [specific response]\n\n## Output\nReturn the result as [specific format].\n\n### Example Output\n[Concrete example showing exactly what good output looks like]\n```"
     },
     {
-      "title": "Good vs. Bad Instructions — Side by Side",
-      "content": "**Bad: Vague and open to interpretation**\n```markdown\nReview the code and suggest improvements.\n```\nThis produces different results every time. The AI doesn't know what to check, how deep to go, or what format to use.\n\n**Good: Specific, structured, and testable**\n```markdown\n## Workflow\n1. Check for unused imports — flag any import not referenced in the file.\n2. Check function length — flag any function exceeding 30 lines.\n3. Check error handling — flag any try/catch that silently swallows errors.\n4. Check naming — flag variables with single-letter names (except loop counters i, j, k).\n\n## Output\nReturn a markdown checklist:\n- [ ] file:line — issue description — suggested fix\n```\nThis produces consistent results because every step is specific and testable.\n\n**Bad: Tries to handle everything**\n```markdown\nHandle all possible code review scenarios including security, performance,\naccessibility, testing, documentation, and style for all programming languages.\n```\n\n**Good: Focused on the 80% case**\n```markdown\n## Trigger\nActivate when reviewing TypeScript pull requests.\n\n## Constraints\n- Focus on code quality only — security and performance are separate skills.\n- Only review changed files, not the entire codebase.\n```"
+      "title": "Good vs. Bad Instructions - Side by Side",
+      "content": "**Bad: Vague and open to interpretation**\n```markdown\nReview the code and suggest improvements.\n```\nThis produces different results every time. The AI doesn't know what to check, how deep to go, or what format to use.\n\n**Good: Specific, structured, and testable**\n```markdown\n## Workflow\n1. Check for unused imports - flag any import not referenced in the file.\n2. Check function length - flag any function exceeding 30 lines.\n3. Check error handling - flag any try/catch that silently swallows errors.\n4. Check naming - flag variables with single-letter names (except loop counters i, j, k).\n\n## Output\nReturn a markdown checklist:\n- [ ] file:line - issue description - suggested fix\n```\nThis produces consistent results because every step is specific and testable.\n\n**Bad: Tries to handle everything**\n```markdown\nHandle all possible code review scenarios including security, performance,\naccessibility, testing, documentation, and style for all programming languages.\n```\n\n**Good: Focused on the 80% case**\n```markdown\n## Trigger\nActivate when reviewing TypeScript pull requests.\n\n## Constraints\n- Focus on code quality only - security and performance are separate skills.\n- Only review changed files, not the entire codebase.\n```"
     },
     {
       "title": "Quality Gates and Acceptance Criteria",
@@ -90,11 +90,11 @@
     },
     {
       "title": "Writing Tips for All Backgrounds",
-      "content": "You don't need to be technical to write great skills. Here are universal tips:\n\n**1. Start with what you know.** If you review documents, manage projects, or write marketing copy — you already have the expertise. Write down your process.\n\n**2. Use everyday language.** 'Check if the summary is under 200 words' is better than trying to sound technical.\n\n**3. Be direct.** 'Do this. Then do that. Never do this.' Politeness is nice in conversation, but clarity wins in instructions.\n\n**4. The 'new colleague' test.** Read your instructions aloud. If a smart new colleague could follow them without questions, they're good enough.\n\n**5. Show, don't tell.** One example of good output eliminates pages of description. Include examples.\n\n**6. Iterate, don't perfect.** Write version 1, test it, fix where the AI deviated. Three rounds of iteration beat one hour of trying to write perfect instructions."
+      "content": "You don't need to be technical to write great skills. Here are universal tips:\n\n**1. Start with what you know.** If you review documents, manage projects, or write marketing copy - you already have the expertise. Write down your process.\n\n**2. Use everyday language.** 'Check if the summary is under 200 words' is better than trying to sound technical.\n\n**3. Be direct.** 'Do this. Then do that. Never do this.' Politeness is nice in conversation, but clarity wins in instructions.\n\n**4. The 'new colleague' test.** Read your instructions aloud. If a smart new colleague could follow them without questions, they're good enough.\n\n**5. Show, don't tell.** One example of good output eliminates pages of description. Include examples.\n\n**6. Iterate, don't perfect.** Write version 1, test it, fix where the AI deviated. Three rounds of iteration beat one hour of trying to write perfect instructions."
     },
     {
       "title": "Testing Log Template",
-      "content": "Keep a lightweight test log as you iterate:\n\n| # | Input/Scenario | Expected | Actual | Deviation | Fix Applied |\n|---|---------------|----------|--------|-----------|-------------|\n| 1 | Deploy with pending migrations | Flag migrations | Missed migration check | Added explicit step: 'List all unapplied migrations' | |\n| 2 | Deploy with failing tests | Stop and report | Attempted to fix tests | Added constraint: 'Do NOT attempt fixes — only report' | |\n| 3 | Re-test after fixes | Both issues caught | Both caught correctly | None — ship it | |\n\nThis log doubles as documentation for why your instructions evolved."
+      "content": "Keep a lightweight test log as you iterate:\n\n| # | Input/Scenario | Expected | Actual | Deviation | Fix Applied |\n|---|---------------|----------|--------|-----------|-------------|\n| 1 | Deploy with pending migrations | Flag migrations | Missed migration check | Added explicit step: 'List all unapplied migrations' | |\n| 2 | Deploy with failing tests | Stop and report | Attempted to fix tests | Added constraint: 'Do NOT attempt fixes - only report' | |\n| 3 | Re-test after fixes | Both issues caught | Both caught correctly | None - ship it | |\n\nThis log doubles as documentation for why your instructions evolved."
     }
   ],
   "commonMistakes": [
@@ -116,7 +116,7 @@
     },
     {
       "mistake": "Not specifying the output format",
-      "explanation": "Without a prescribed format, the AI invents one — differently each time. Specify: 'Return a markdown table with columns: File, Line, Issue, Fix.'"
+      "explanation": "Without a prescribed format, the AI invents one - differently each time. Specify: 'Return a markdown table with columns: File, Line, Issue, Fix.'"
     },
     {
       "mistake": "Testing only once",

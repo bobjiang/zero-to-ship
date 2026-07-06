@@ -26,9 +26,9 @@
         "Real example: building 02Ship with and without Projects"
       ],
       "talkingPoints": [
-        "Without Projects, you start from zero every time — exhausting and inefficient",
+        "Without Projects, you start from zero every time - exhausting and inefficient",
         "Projects remember your tech stack, style preferences, and project goals permanently",
-        "Think of Projects as dedicated workspaces — one per product you're building",
+        "Think of Projects as dedicated workspaces - one per product you're building",
         "Claude Pro required for Projects, but worth it for serious builders",
         "Projects save hours of context-setting over the life of a project"
       ]
@@ -49,11 +49,11 @@
         "Live demo: setting up a Project for a sample app"
       ],
       "talkingPoints": [
-        "Custom instructions are like a contract with Claude — consistent behavior every time",
+        "Custom instructions are like a contract with Claude - consistent behavior every time",
         "Be specific: 'Use TypeScript + React + Tailwind' not 'modern web stack'",
-        "Upload key documents, not everything — quality over quantity",
-        "Test by asking Claude to 'describe this project' — it should reference your instructions",
-        "Update instructions as your project evolves — they're not set in stone"
+        "Upload key documents, not everything - quality over quantity",
+        "Test by asking Claude to 'describe this project' - it should reference your instructions",
+        "Update instructions as your project evolves - they're not set in stone"
       ]
     },
     {
@@ -72,9 +72,9 @@
         "Archiving and managing completed work"
       ],
       "talkingPoints": [
-        "Claude remembers EVERYTHING in a Project — across all conversations",
+        "Claude remembers EVERYTHING in a Project - across all conversations",
         "You can say 'improve the auth system we built last week' and Claude knows",
-        "Start new conversations for new features — keeps history organized",
+        "Start new conversations for new features - keeps history organized",
         "Projects eliminate 90% of context-setting overhead",
         "Archive old conversations when features ship to keep workspace clean"
       ]
@@ -99,7 +99,7 @@
     },
     {
       "title": "Key Definitions",
-      "content": "**Project (Claude):** A workspace with persistent custom instructions, knowledge files, and conversation history\n\n**Custom Instructions:** Standing guidelines Claude follows in every conversation within a Project\n\n**Knowledge Base:** Uploaded files (docs, code, designs) that Claude can reference\n\n**Conversation History:** All past chats within a Project — Claude remembers them\n\n**Context Window:** Amount of text Claude can process at once (Projects help manage this across sessions)\n\n**Artifact:** Code/documents Claude generates (visible across all Project conversations)\n\n**Pro Tier:** Paid Claude subscription required for Projects feature"
+      "content": "**Project (Claude):** A workspace with persistent custom instructions, knowledge files, and conversation history\n\n**Custom Instructions:** Standing guidelines Claude follows in every conversation within a Project\n\n**Knowledge Base:** Uploaded files (docs, code, designs) that Claude can reference\n\n**Conversation History:** All past chats within a Project - Claude remembers them\n\n**Context Window:** Amount of text Claude can process at once (Projects help manage this across sessions)\n\n**Artifact:** Code/documents Claude generates (visible across all Project conversations)\n\n**Pro Tier:** Paid Claude subscription required for Projects feature"
     }
   ],
   "commonMistakes": [
@@ -159,7 +159,7 @@
     },
     {
       "title": "Organize Your Workspace",
-      "description": "Audit and organize your Claude workspace — Projects, conversations, archiving.",
+      "description": "Audit and organize your Claude workspace - Projects, conversations, archiving.",
       "output": "Organization report showing: current Project structure, renamed conversations, archived old work, documented strategy",
       "successCriteria": [
         "Created at least one Project for active work",
@@ -188,11 +188,11 @@
   "instructorNotes": [
     "This lesson is standalone but benefits from artifact/code experience (Lesson 4). Quick recap of 'why context matters' helps.",
     "For live sessions: Screen-share Project setup process. Common confusion: where to find Projects in the UI.",
-    "Common question: 'Do I need Claude Pro?' — Yes for Projects. Offer trial info or suggest pairing with someone who has Pro.",
+    "Common question: 'Do I need Claude Pro?' - Yes for Projects. Offer trial info or suggest pairing with someone who has Pro.",
     "Self-paced tip: Encourage students to migrate existing work into a Project immediately to feel the benefit.",
     "Time check: Exercise 1 setup can take longer if students are perfecting instructions. Remind them: instructions evolve, ship v1.",
     "Bonus: Share your own 02Ship Project setup as real-world example (screenshot or video).",
-    "Key insight: Projects are like workspaces in Figma or branches in Git — organizational tools that save massive time.",
+    "Key insight: Projects are like workspaces in Figma or branches in Git - organizational tools that save massive time.",
     "Platform note: Projects are Claude-specific. ChatGPT has 'GPTs', Gemini has different features. Explain transferable concepts."
   ]
 }

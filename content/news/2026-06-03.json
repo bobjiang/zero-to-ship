@@ -74,7 +74,7 @@
       "category": "research"
     },
     {
-      "title": "Your AI Agent Isn't Failing Because It Hallucinates — It's Failing Because of Rate Limits",
+      "title": "Your AI Agent Isn't Failing Because It Hallucinates - It's Failing Because of Rate Limits",
       "summary": "A developer argues that AI agent failures are often due to API rate limits rather than hallucinations, suggesting practical infrastructure challenges are a major bottleneck.",
       "source": "Dev.to",
       "url": "https://dev.to/p0rt/your-ai-agent-isnt-failing-because-it-hallucinates-its-failing-because-of-rate-limits-2d60",

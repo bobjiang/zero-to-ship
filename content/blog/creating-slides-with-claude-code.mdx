@@ -1,6 +1,6 @@
 ---
 title: "How to Create Presentation Slides with Claude Code"
-excerpt: "A step-by-step guide to generating self-contained HTML slide decks using Claude Code — no PowerPoint, no design skills, no dependencies. Just describe what you want and ship."
+excerpt: "A step-by-step guide to generating self-contained HTML slide decks using Claude Code - no PowerPoint, no design skills, no dependencies. Just describe what you want and ship."
 date: "2026-03-13"
 author: "Bob Jiang"
 keywords: "Claude Code, slides, presentation, HTML slides, AI slides, meetup, Claude skill, slide deck, vibe coding, 02Ship"
@@ -8,7 +8,7 @@ keywords: "Claude Code, slides, presentation, HTML slides, AI slides, meetup, Cl
 
 # How to Create Presentation Slides with Claude Code
 
-I needed a slide deck for our [02Ship Claude Sydney meetup](/events). Fifteen slides, 45 minutes, covering Claude Chat, Cowork, and Code. The usual options — Google Slides, Keynote, PowerPoint — felt heavy. I wanted something I could version-control, customize fully, and generate fast.
+I needed a slide deck for our [02Ship Claude Sydney meetup](/events). Fifteen slides, 45 minutes, covering Claude Chat, Cowork, and Code. The usual options - Google Slides, Keynote, PowerPoint - felt heavy. I wanted something I could version-control, customize fully, and generate fast.
 
 So I built the slides with Claude Code. In about 10 minutes. Here's exactly how, step by step.
 
@@ -32,7 +32,7 @@ Before diving into the how, here's why this approach works:
 
 **Version control.** The slides are a text file. You can `git diff` them, review changes in a PR, and track history. Try doing that with a `.pptx`.
 
-**Full customization.** CSS gives you pixel-perfect control. Custom colors, fonts, layouts, animations — anything a browser can render, your slides can show.
+**Full customization.** CSS gives you pixel-perfect control. Custom colors, fonts, layouts, animations - anything a browser can render, your slides can show.
 
 **No vendor lock-in.** No Canva subscription, no Google account, no app to install. A browser is all you need.
 
@@ -40,7 +40,7 @@ Before diving into the how, here's why this approach works:
 
 ## Step 1: Install a Slide Skill (Optional but Recommended)
 
-We created a Claude Code skill called `create-slide` that teaches Claude how to generate consistent, well-structured slide decks. A skill is a reusable instruction file that Claude loads when you invoke it — think of it as a recipe card that tells Claude exactly how to approach a specific type of task.
+We created a Claude Code skill called `create-slide` that teaches Claude how to generate consistent, well-structured slide decks. A skill is a reusable instruction file that Claude loads when you invoke it - think of it as a recipe card that tells Claude exactly how to approach a specific type of task.
 
 You don't *need* the skill. You can describe what you want from scratch every time. But the skill gives Claude a base theme (CSS), a library of slide layout patterns (title, agenda, two-column, code block, comparison table, etc.), and rules about structure. It makes the output more consistent and saves you from repeating the same instructions.
 
@@ -73,7 +73,7 @@ Here's roughly what I said:
 ```
 /create-slide
 
-Topic: "Know Your Claude Tools" — covering Claude Chat, Cowork, and Code
+Topic: "Know Your Claude Tools" - covering Claude Chat, Cowork, and Code
 Audience: Mixed technical/non-technical, Sydney meetup attendees
 Duration: 45 minutes
 Slides: ~15
@@ -89,14 +89,14 @@ Brand: 02Ship dark theme
 Include speaker notes with timing for each slide
 ```
 
-The `/create-slide` command tells Claude to load the skill, which brings in the theme CSS and layout patterns. If you don't have the skill installed, you can skip the command and describe everything in plain English — Claude will still generate good slides, just with more variation in styling.
+The `/create-slide` command tells Claude to load the skill, which brings in the theme CSS and layout patterns. If you don't have the skill installed, you can skip the command and describe everything in plain English - Claude will still generate good slides, just with more variation in styling.
 
 ## Step 3: Claude Generates the Deck
 
 Claude reads the skill's base theme CSS and slide pattern reference, then composes the entire deck. It:
 
-1. **Creates the HTML skeleton** — `<!DOCTYPE html>`, Google Fonts import, embedded CSS
-2. **Applies the theme** — dark background, coral/teal/gold accent colors, DM Sans + JetBrains Mono fonts
+1. **Creates the HTML skeleton** - `<!DOCTYPE html>`, Google Fonts import, embedded CSS
+2. **Applies the theme** - dark background, coral/teal/gold accent colors, DM Sans + JetBrains Mono fonts
 3. **Builds each slide** using the appropriate layout pattern:
    - Title slide with event branding and metadata
    - Agenda with numbered items and time allocations
@@ -122,10 +122,10 @@ You'll see all 15 slides stacked vertically (it's a scrollable document, not a s
 
 Check for:
 
-- **Content accuracy** — are the facts correct? Any hallucinated features?
-- **Timing** — do the speaker notes add up to your target duration?
-- **Flow** — does the narrative progress logically?
-- **Visual balance** — are slides too dense or too sparse?
+- **Content accuracy** - are the facts correct? Any hallucinated features?
+- **Timing** - do the speaker notes add up to your target duration?
+- **Flow** - does the narrative progress logically?
+- **Visual balance** - are slides too dense or too sparse?
 
 ## Step 5: Iterate
 
@@ -216,7 +216,7 @@ You can mix and match these freely. A 15-slide deck might use 6-7 different patt
 
 **Give Claude reference material.** If you're presenting about a product, paste the relevant docs or talking points into the conversation. Claude can't invent accurate product details from nothing.
 
-**Use the speaker notes.** They're not just for delivery — they help Claude understand the *purpose* of each slide. If the notes say "this is where we do the live demo," Claude will design the slide accordingly.
+**Use the speaker notes.** They're not just for delivery - they help Claude understand the *purpose* of each slide. If the notes say "this is where we do the live demo," Claude will design the slide accordingly.
 
 **Check the timing.** The timing badges in the speaker notes should add up to your target duration. If they don't, ask Claude to rebalance.
 
@@ -240,10 +240,10 @@ Here's the quickest path to your first AI-generated slide deck:
 
 1. **Install Claude Code** if you haven't: `npm install -g @anthropic-ai/claude-code`
 2. **Start Claude Code** in your project: `claude`
-3. **Describe your presentation** — topic, audience, duration, sections
+3. **Describe your presentation** - topic, audience, duration, sections
 4. **Review** the generated HTML in your browser
-5. **Iterate** — tell Claude what to change
-6. **Present** — open the file full-screen and go
+5. **Iterate** - tell Claude what to change
+6. **Present** - open the file full-screen and go
 
 The whole process takes 10-15 minutes for a polished deck. Compare that to the hours you'd spend dragging boxes around in PowerPoint.
 

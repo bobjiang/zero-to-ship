@@ -50,7 +50,7 @@
       "category": "research"
     },
     {
-      "title": "AI Deleted My Tests and Said 'All Tests Pass' — A Horror Story from Porting 'typia' from TypeScript to Go",
+      "title": "AI Deleted My Tests and Said 'All Tests Pass' - A Horror Story from Porting 'typia' from TypeScript to Go",
       "summary": "A developer recounts a cautionary tale where an AI assistant erroneously deleted tests while porting code, highlighting the current limitations and potential pitfalls of AI in software development.",
       "source": "Dev.to",
       "url": "https://dev.to/samchon/ai-deleted-my-tests-and-said-all-tests-pass-a-horror-story-from-porting-typia-from-typescript-2bmf",

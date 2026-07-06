@@ -11,7 +11,7 @@
 ### Hook & Introduction
 
 **SCRIPT:**
-> "What if I told you that the platform you're learning on right now—this entire website, the course system, the blog, everything—was built without a team of developers? Instead, it was built through conversations. Conversations with an AI assistant called Claude. And by the end of this course, you'll know exactly how to do the same thing for your own ideas."
+> "What if I told you that the platform you're learning on right now-this entire website, the course system, the blog, everything-was built without a team of developers? Instead, it was built through conversations. Conversations with an AI assistant called Claude. And by the end of this course, you'll know exactly how to do the same thing for your own ideas."
 
 **Keypoints:**
 - Start with the 02Ship platform example (meta-learning hook)
@@ -30,7 +30,7 @@
 ### Core Definition
 
 **SCRIPT:**
-> "So what exactly is Claude? Simply put, Claude is an AI assistant created by a company called Anthropic. You can think of it as a conversational partner that understands what you want to build and can help you build it—even if you've never written a line of code."
+> "So what exactly is Claude? Simply put, Claude is an AI assistant created by a company called Anthropic. You can think of it as a conversational partner that understands what you want to build and can help you build it-even if you've never written a line of code."
 
 **Keypoints:**
 - Claude = AI assistant by Anthropic
@@ -99,17 +99,17 @@
 ### Important Limitations
 
 **SCRIPT:**
-> "Now, let's talk about what Claude can't do—because understanding the limits is just as important as knowing the strengths."
+> "Now, let's talk about what Claude can't do-because understanding the limits is just as important as knowing the strengths."
 
 #### 1. Run Code for You (30 seconds)
 
 **Keypoints:**
 - Claude generates code, but you need an environment to run it
-- This is actually good—it means you control what happens
+- This is actually good-it means you control what happens
 - You'll need to set up basic tools (we cover this in Video 2)
 
 **What to say:**
-> "Claude can write the code, but it can't execute it on your computer. Think of it like a chef giving you a recipe—you still need to cook it in your own kitchen."
+> "Claude can write the code, but it can't execute it on your computer. Think of it like a chef giving you a recipe-you still need to cook it in your own kitchen."
 
 #### 2. Deploy Apps (20 seconds)
 
@@ -164,13 +164,13 @@
 #### Iteration Is the Superpower (30 seconds)
 
 **Keypoints:**
-- Your first prompt won't be perfect—and that's completely normal
+- Your first prompt won't be perfect-and that's completely normal
 - Professional developers iterate constantly
 - Each round of feedback makes the product better
 - The goal isn't perfection on attempt one; it's progress through conversation
 
 **What to emphasize:**
-> "Every time I built a feature for 02Ship, it took 2-3 rounds of back-and-forth. First attempt: functional but basic. Second attempt: better design. Third attempt: exactly what I wanted. That's how building works—with or without AI."
+> "Every time I built a feature for 02Ship, it took 2-3 rounds of back-and-forth. First attempt: functional but basic. Second attempt: better design. Third attempt: exactly what I wanted. That's how building works-with or without AI."
 
 **Visual suggestions:**
 - Show a simple diagram: You → Claude → Code → Feedback → Improved Code
@@ -193,7 +193,7 @@
 - After several iterations, the platform emerged
 
 **What to emphasize:**
-> "The platform you're learning on was built the exact way I'm teaching you to build. That's not a metaphor—it's literally the case study in our next video."
+> "The platform you're learning on was built the exact way I'm teaching you to build. That's not a metaphor-it's literally the case study in our next video."
 
 **Visual suggestions:**
 - Show the original requirements document (Req-thoughts.md)
@@ -207,7 +207,7 @@
 ### Recap & Next Steps
 
 **SCRIPT:**
-> "So to recap: Claude is an AI assistant that generates code, explains concepts, and iterates on your ideas—but it's a collaborator, not a magic button. You bring the vision; Claude brings the technical execution. Together, you can build real products.
+> "So to recap: Claude is an AI assistant that generates code, explains concepts, and iterates on your ideas-but it's a collaborator, not a magic button. You bring the vision; Claude brings the technical execution. Together, you can build real products.
 >
 > In the next video, we'll get you set up with everything you need: your Claude account, your workspace, and the safety basics for working with AI-generated code. By the end of Video 2, you'll be ready to write your first prompt.
 >
@@ -319,4 +319,4 @@
 
 ---
 
-**Good luck with the recording! Remember: be yourself, stay encouraging, and show genuine enthusiasm for what's possible. You're not just teaching a tool—you're opening doors.**
+**Good luck with the recording! Remember: be yourself, stay encouraging, and show genuine enthusiasm for what's possible. You're not just teaching a tool-you're opening doors.**

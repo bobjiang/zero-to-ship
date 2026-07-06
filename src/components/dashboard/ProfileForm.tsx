@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { CheckCircle, WarningCircle } from '@phosphor-icons/react';
 import { createClient } from '@/lib/supabase/client';
 import { Button } from '@/components/ui/Button';
+import { inputClass, labelClass } from '@/components/ui/formStyles';
 
 interface ProfileFormProps {
   initialData: {
@@ -54,9 +56,9 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-lg space-y-5">
+    <form onSubmit={handleSubmit} className="max-w-2xl space-y-5">
       <div>
-        <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="fullName" className={labelClass}>
           Full name
         </label>
         <input
@@ -65,12 +67,12 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
           required
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className={inputClass}
         />
       </div>
 
       <div>
-        <label htmlFor="bio" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="bio" className={labelClass}>
           Bio
         </label>
         <textarea
@@ -78,13 +80,13 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
           rows={3}
           value={bio}
           onChange={(e) => setBio(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className={inputClass}
           placeholder="Tell us about yourself"
         />
       </div>
 
       <div>
-        <label htmlFor="skills" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="skills" className={labelClass}>
           Skills (comma-separated)
         </label>
         <input
@@ -92,13 +94,13 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
           type="text"
           value={skills}
           onChange={(e) => setSkills(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className={inputClass}
           placeholder="e.g. React, TypeScript, AI"
         />
       </div>
 
       <div>
-        <label htmlFor="building" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="building" className={labelClass}>
           What are you building?
         </label>
         <input
@@ -106,7 +108,7 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
           type="text"
           value={building}
           onChange={(e) => setBuilding(e.target.value)}
-          className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          className={inputClass}
           placeholder="e.g. An AI-powered note-taking app"
         />
       </div>
@@ -116,10 +118,16 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
           {status === 'saving' ? 'Saving...' : 'Save changes'}
         </Button>
         {status === 'saved' && (
-          <span className="text-sm text-green-600">Saved!</span>
+          <span className="inline-flex items-center gap-1.5 text-sm font-bold text-green-700 dark:text-green-300">
+            <CheckCircle className="h-4 w-4" weight="fill" />
+            Saved
+          </span>
         )}
         {status === 'error' && (
-          <span className="text-sm text-red-600">Failed to save. Please try again.</span>
+          <span className="inline-flex items-center gap-1.5 text-sm font-bold text-red-600 dark:text-red-300">
+            <WarningCircle className="h-4 w-4" weight="fill" />
+            Failed to save. Please try again.
+          </span>
         )}
       </div>
     </form>

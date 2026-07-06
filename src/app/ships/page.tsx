@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { RocketLaunch } from '@phosphor-icons/react/dist/ssr';
 import { Container } from '@/components/ui/Container';
 import { getAllShips } from '@/lib/content';
 import { cn, cardSurface, cardHover } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Ships — What Our Members Built',
+  title: 'Ships - What Our Members Built',
   description:
     'Real projects built by 02Ship community members. See what Claude practitioners are building in Sydney.',
   alternates: { canonical: '/ships' },
@@ -14,100 +15,160 @@ export const metadata: Metadata = {
 
 export default async function ShipsPage() {
   const ships = await getAllShips();
+  const featured = ships[0];
+  const rest = ships.slice(1);
 
   return (
-    <div className="py-20">
+    <div className="py-16 sm:py-24">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Ships
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Real projects built by our community
-          </p>
-          <a
-            href="https://github.com/bobjiang/zero-to-ship/issues/new?template=ship-submission.yml"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
-          >
-            Submit Project
-          </a>
+        <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-600">
+              Project Hub
+            </p>
+            <h1 className="mt-4 text-balance text-5xl font-black tracking-tight text-slate-950 dark:text-white sm:text-6xl">
+              Ships
+            </h1>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+              Real projects built by our community, documented with the
+              practical details other builders need.
+            </p>
+          </div>
+          <div className="flex justify-start lg:justify-end">
+            <a
+              href="https://github.com/bobjiang/zero-to-ship/issues/new?template=ship-submission.yml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center justify-center rounded-none bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-sm shadow-blue-950/10 transition hover:bg-blue-700"
+            >
+              Submit Project
+            </a>
+          </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-5xl">
-          {ships.length > 0 ? (
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              {ships.map((ship) => (
-                <Link
-                  key={ship.slug}
-                  href={`/ships/${ship.slug}`}
-                  className={cn(cardSurface, cardHover, 'flex flex-col')}
-                >
-                  {ship.screenshot ? (
-                    <div className="relative h-48 overflow-hidden rounded-t-lg bg-gray-100">
-                      <Image
-                        src={ship.screenshot}
-                        alt={`${ship.title} homepage screenshot`}
-                        fill
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        className="object-cover object-top"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex h-48 items-center justify-center rounded-t-lg bg-gray-100">
-                      <svg
-                        className="h-12 w-12 text-gray-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1}
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                        />
-                      </svg>
+        {featured ? (
+          <div className="mt-14 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+            <Link
+              href={`/ships/${featured.slug}`}
+              className={cn(cardSurface, cardHover, 'group overflow-hidden')}
+            >
+              {featured.screenshot && (
+                <div className="relative overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <Image
+                    src={featured.screenshot}
+                    alt={`${featured.title} homepage screenshot`}
+                    width={1100}
+                    height={720}
+                    sizes="(min-width: 1024px) 60vw, 100vw"
+                    className="aspect-[1.58/1] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                    priority
+                  />
+                </div>
+              )}
+              <div className="p-7">
+                {featured.cohort && (
+                  <span className="inline-flex rounded-none bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">
+                    {featured.cohort}
+                  </span>
+                )}
+                <h2 className="mt-4 text-2xl font-black tracking-tight text-slate-950 dark:text-white">
+                  {featured.title}
+                </h2>
+                <p className="mt-1 text-sm font-semibold text-slate-500 dark:text-slate-400">
+                  by {featured.builder}
+                </p>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 dark:text-slate-300">
+                  {featured.description}
+                </p>
+              </div>
+            </Link>
+
+            <div className="rounded-none border border-slate-200 bg-slate-950 p-7 text-white shadow-xl shadow-slate-950/10 dark:border-slate-800">
+              <RocketLaunch className="h-9 w-9 text-blue-300" weight="duotone" />
+              <h2 className="mt-6 text-2xl font-black tracking-tight">
+                Built, shipped, and explained.
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-slate-300">
+                The hub is meant to show how members turn ideas into working
+                software. Each ship connects the product, the builder, the stack,
+                and the result.
+              </p>
+              <div className="mt-8 grid grid-cols-2 gap-3">
+                <div className="rounded-none border border-white/10 bg-white/5 p-4">
+                  <p className="text-3xl font-black">{ships.length}</p>
+                  <p className="mt-1 text-xs font-semibold text-slate-400">
+                    Listed ships
+                  </p>
+                </div>
+                <div className="rounded-none border border-white/10 bg-white/5 p-4">
+                  <p className="text-3xl font-black">
+                    {new Set(ships.flatMap((ship) => ship.tags)).size}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold text-slate-400">
+                    Tags covered
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="mt-16 rounded-none border border-slate-200 bg-white p-8 text-center text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+            <p>No ships yet - check back soon.</p>
+          </div>
+        )}
+
+        {rest.length > 0 && (
+          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {rest.map((ship) => (
+              <Link
+                key={ship.slug}
+                href={`/ships/${ship.slug}`}
+                className={cn(cardSurface, cardHover, 'group flex flex-col overflow-hidden')}
+              >
+                {ship.screenshot && (
+                  <div className="relative overflow-hidden bg-slate-100 dark:bg-slate-900">
+                    <Image
+                      src={ship.screenshot}
+                      alt={`${ship.title} homepage screenshot`}
+                      width={760}
+                      height={520}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className="aspect-[1.46/1] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-6">
+                  {ship.cohort && (
+                    <span className="mb-3 inline-flex w-fit rounded-none bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">
+                      {ship.cohort}
+                    </span>
+                  )}
+                  <h2 className="text-xl font-black tracking-tight text-slate-950 dark:text-white">
+                    {ship.title}
+                  </h2>
+                  <p className="mt-1 text-sm font-semibold text-slate-500 dark:text-slate-400">
+                    by {ship.builder}
+                  </p>
+                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    {ship.description}
+                  </p>
+                  {ship.tags.length > 0 && (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {ship.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-none bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-900 dark:text-slate-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   )}
-                  <div className="flex flex-1 flex-col p-6">
-                    {ship.cohort && (
-                      <span className="mb-2 inline-block w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-                        {ship.cohort}
-                      </span>
-                    )}
-                    <h2 className="text-xl font-semibold text-gray-900">
-                      {ship.title}
-                    </h2>
-                    <p className="mt-1 text-sm text-gray-500">
-                      by {ship.builder}
-                    </p>
-                    <p className="mt-3 flex-1 text-sm text-gray-600">
-                      {ship.description}
-                    </p>
-                    {ship.tags.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {ship.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center text-gray-600">
-              <p>No ships yet — check back soon.</p>
-            </div>
-          )}
-        </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </Container>
     </div>
   );

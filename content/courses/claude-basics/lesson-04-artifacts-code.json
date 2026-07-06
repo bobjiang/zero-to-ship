@@ -26,15 +26,15 @@
         "Live demo: generating a simple HTML artifact and opening it"
       ],
       "talkingPoints": [
-        "Artifacts are Claude's way of giving you 'finished products' — ready-to-use files",
-        "You don't need to understand every line — you need to know how to use it",
+        "Artifacts are Claude's way of giving you 'finished products' - ready-to-use files",
+        "You don't need to understand every line - you need to know how to use it",
         "Think of artifacts like IKEA furniture: Claude gives you the parts, you assemble",
-        "Artifacts are versioned — Claude updates them when you ask for changes"
+        "Artifacts are versioned - Claude updates them when you ask for changes"
       ]
     },
     {
       "title": "Setting Up Your Dev Environment (The Minimum)",
-      "description": "What tools you actually need to run code locally — no fancy IDE required.",
+      "description": "What tools you actually need to run code locally - no fancy IDE required.",
       "youtubeId": "fpHzo39Kdg4",
       "slidesUrl": "/courses/claude-basics/lesson-04-video-02-slides.html",
       "maxLength": "15 minutes",
@@ -48,9 +48,9 @@
         "Live demo: running a Next.js project Claude generated"
       ],
       "talkingPoints": [
-        "You don't need to be a developer to run code — just follow the recipe",
+        "You don't need to be a developer to run code - just follow the recipe",
         "VS Code is free, beginner-friendly, and handles most projects",
-        "npm install is like 'download the dependencies' — always run it first",
+        "npm install is like 'download the dependencies' - always run it first",
         "localhost:3000 means 'your computer is hosting a website, only you can see it'",
         "If something doesn't work, the error message tells you what's missing"
       ]
@@ -71,9 +71,9 @@
         "Live demo: changing text and colors in a React component"
       ],
       "talkingPoints": [
-        "Code is just text — you can't 'break' it permanently, you can always undo",
-        "Focus on what's in quotes — that's usually content you can edit",
-        "Numbers often control size, spacing, timing — experiment safely",
+        "Code is just text - you can't 'break' it permanently, you can always undo",
+        "Focus on what's in quotes - that's usually content you can edit",
+        "Numbers often control size, spacing, timing - experiment safely",
         "When in doubt, ask Claude: 'How do I change X in this code?'",
         "Save before every change, test after every change"
       ]
@@ -102,7 +102,7 @@
     },
     {
       "title": "Key Definitions",
-      "content": "**Artifact:** A discrete output from Claude (code, document, diagram) shown in a separate panel\n\n**Localhost:** A web address (http://localhost:3000) that means 'this computer' — only you can access it\n\n**npm (Node Package Manager):** Tool for installing JavaScript libraries/dependencies\n\n**Dependencies:** External code libraries your project needs to run\n\n**Terminal/Command Line:** Text-based interface for running commands\n\n**Package.json:** File listing your project's dependencies and scripts\n\n**Source Code (src/):** The folder containing your app's main code\n\n**Dev Server:** A local server that runs your project for testing"
+      "content": "**Artifact:** A discrete output from Claude (code, document, diagram) shown in a separate panel\n\n**Localhost:** A web address (http://localhost:3000) that means 'this computer' - only you can access it\n\n**npm (Node Package Manager):** Tool for installing JavaScript libraries/dependencies\n\n**Dependencies:** External code libraries your project needs to run\n\n**Terminal/Command Line:** Text-based interface for running commands\n\n**Package.json:** File listing your project's dependencies and scripts\n\n**Source Code (src/):** The folder containing your app's main code\n\n**Dev Server:** A local server that runs your project for testing"
     }
   ],
   "commonMistakes": [
@@ -194,8 +194,8 @@
     }
   ],
   "instructorNotes": [
-    "This lesson is standalone — works even if students skipped earlier lessons. Quick recap of 'what is Claude?' may help.",
-    "For live sessions: Screen-share the full setup process. Students WILL have install issues — budget time for troubleshooting.",
+    "This lesson is standalone - works even if students skipped earlier lessons. Quick recap of 'what is Claude?' may help.",
+    "For live sessions: Screen-share the full setup process. Students WILL have install issues - budget time for troubleshooting.",
     "Common anxiety: 'I'll break something.' Emphasize: you can't break your computer, only the project, and Cmd+Z exists!",
     "Self-paced tip: Create a #setup-help channel in Discord where students post error messages. Community often solves faster than instructor.",
     "Time check: Exercise 1 can take 90+ minutes if students hit Node.js install issues on Windows. Consider making this async homework.",

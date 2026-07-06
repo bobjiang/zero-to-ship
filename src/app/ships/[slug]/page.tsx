@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { ArrowLeft, ArrowUpRight, RocketLaunch } from '@phosphor-icons/react/dist/ssr';
 import { Container } from '@/components/ui/Container';
 import { getShipBySlug, getAllShips } from '@/lib/content';
 
@@ -102,37 +103,38 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="py-20">
+      <div className="py-16 sm:py-24">
         <Container>
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-4xl">
             <div className="mb-6">
               <Link
                 href="/ships"
-                className="text-sm font-medium text-blue-600 hover:text-blue-700"
+                className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
               >
-                ← Back to Ships
+                <ArrowLeft className="h-4 w-4" weight="bold" />
+                Back to Ships
               </Link>
             </div>
 
             <article>
               <header className="mb-8">
                 {ship.cohort && (
-                  <span className="mb-3 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+                  <span className="mb-4 inline-flex rounded-none bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">
                     {ship.cohort}
                   </span>
                 )}
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                <h1 className="text-balance text-5xl font-black tracking-tight text-slate-950 dark:text-white sm:text-6xl">
                   {ship.title}
                 </h1>
-                <div className="mt-4 flex items-center gap-2 text-sm text-gray-600">
+                <div className="mt-5 flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-500 dark:text-slate-400">
                   <span>by {ship.builder}</span>
-                  <span>•</span>
+                  <span className="h-1 w-1 rounded-none bg-slate-300 dark:bg-slate-700" aria-hidden="true" />
                   <time dateTime={ship.date}>{ship.date}</time>
                 </div>
               </header>
 
               {ship.screenshot ? (
-                <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-100">
+                <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-none border border-slate-200 bg-slate-100 shadow-xl shadow-slate-950/10 dark:border-slate-800 dark:bg-slate-900">
                   <Image
                     src={ship.screenshot}
                     alt={`${ship.title} homepage screenshot`}
@@ -143,20 +145,8 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
                   />
                 </div>
               ) : (
-                <div className="mb-8 flex h-64 items-center justify-center rounded-xl bg-gray-100">
-                  <svg
-                    className="h-16 w-16 text-gray-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1}
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                    />
-                  </svg>
+                <div className="mb-8 flex h-64 items-center justify-center rounded-none border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900">
+                  <RocketLaunch className="h-16 w-16 text-slate-400" weight="duotone" />
                 </div>
               )}
 
@@ -167,22 +157,10 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
                       href={demoHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                      className="inline-flex min-h-11 items-center gap-2 rounded-none bg-blue-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-blue-700"
                     >
                       Live Demo
-                      <svg
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                        />
-                      </svg>
+                      <ArrowUpRight className="h-4 w-4" weight="bold" />
                     </a>
                   )}
                   {ship.repoUrl && (
@@ -190,33 +168,21 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
                       href={ship.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+                      className="inline-flex min-h-11 items-center gap-2 rounded-none border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-950 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:hover:border-slate-500"
                     >
                       GitHub Repo
-                      <svg
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                        />
-                      </svg>
+                      <ArrowUpRight className="h-4 w-4" weight="bold" />
                     </a>
                   )}
                 </div>
               )}
 
-              <div className="prose prose-lg prose-blue max-w-none">
+              <div className="prose prose-lg prose-blue max-w-none dark:prose-invert">
                 <p>{ship.description}</p>
               </div>
 
               {ship.content && (
-                <div className="prose prose-lg prose-blue mt-8 max-w-none">
+                <div className="prose prose-lg prose-blue mt-8 max-w-none dark:prose-invert">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {ship.content}
                   </ReactMarkdown>
@@ -224,13 +190,13 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
               )}
 
               {ship.tags.length > 0 && (
-                <div className="mt-8 border-t border-gray-200 pt-6">
-                  <h3 className="text-sm font-semibold text-gray-900">Tags</h3>
+                <div className="mt-8 border-t border-slate-200 pt-6 dark:border-slate-800">
+                  <h3 className="text-sm font-bold text-slate-950 dark:text-white">Tags</h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {ship.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-gray-100 px-3 py-1 text-sm text-gray-600"
+                        className="rounded-none bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-600 dark:bg-slate-900 dark:text-slate-300"
                       >
                         {tag}
                       </span>
@@ -240,12 +206,13 @@ export default async function ShipDetailPage({ params }: ShipPageProps) {
               )}
             </article>
 
-            <div className="mt-12 border-t border-gray-200 pt-8">
+            <div className="mt-12 border-t border-slate-200 pt-8 dark:border-slate-800">
               <Link
                 href="/ships"
-                className="text-sm font-medium text-blue-600 hover:text-blue-700"
+                className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
               >
-                ← Back to Ships
+                <ArrowLeft className="h-4 w-4" weight="bold" />
+                Back to Ships
               </Link>
             </div>
           </div>

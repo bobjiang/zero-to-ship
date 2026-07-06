@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Check } from '@phosphor-icons/react';
 import { createClient } from '@/lib/supabase/client';
 import { cn, lessonHref, cleanLessonTitle } from '@/lib/utils';
 
@@ -49,7 +50,7 @@ export function CourseSidebar({ seriesSlug, seriesTitle, lessons }: CourseSideba
     lessons.length > 0 ? Math.round((completedCount / lessons.length) * 100) : 0;
 
   const list = (
-    <ol className="space-y-0.5">
+    <ol className="space-y-1">
       {lessons.map((lesson, i) => {
         const isActive = lesson.slug === activeSlug;
         const isDone = completed.has(lesson.slug);
@@ -59,38 +60,30 @@ export function CourseSidebar({ seriesSlug, seriesTitle, lessons }: CourseSideba
               href={lessonHref(seriesSlug, lesson.slug, i === 0)}
               aria-current={isActive ? 'page' : undefined}
               className={cn(
-                'group flex items-start gap-3 rounded-md px-2 py-2 text-sm transition-colors',
-                isActive ? 'bg-blue-50' : 'hover:bg-gray-50'
+                'group flex items-start gap-3 rounded-none px-2.5 py-2 text-sm transition',
+                isActive
+                  ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-200'
+                  : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-slate-900 dark:hover:text-white'
               )}
             >
               <span
                 className={cn(
-                  'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border',
-                  isDone ? 'border-blue-600 bg-blue-600' : 'border-gray-300'
+                  'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-none border',
+                  isDone ? 'border-blue-600 bg-blue-600' : 'border-slate-300 dark:border-slate-700'
                 )}
                 aria-hidden="true"
               >
                 {isDone && (
-                  <svg className="h-2.5 w-2.5 text-white" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M2.5 6.5l2.5 2.5 4.5-5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Check className="h-2.5 w-2.5 text-white" weight="bold" />
                 )}
               </span>
-              <span className="mt-px shrink-0 text-xs tabular-nums text-gray-400">
+              <span className="mt-px shrink-0 text-xs tabular-nums text-slate-400 dark:text-slate-600">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span
                 className={cn(
                   'leading-snug',
-                  isActive
-                    ? 'font-semibold text-blue-600'
-                    : 'text-gray-700 group-hover:text-gray-900'
+                  isActive ? 'font-bold' : ''
                 )}
               >
                 {cleanLessonTitle(lesson.title)}
@@ -104,23 +97,23 @@ export function CourseSidebar({ seriesSlug, seriesTitle, lessons }: CourseSideba
 
   const heading = (
     <div className="mb-3">
-      <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+      <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
         {seriesTitle}
       </p>
       {isAuthed ? (
         <>
-          <p className="mt-2 text-xs text-gray-500">
+          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
             {completedCount} of {lessons.length} lessons complete
           </p>
-          <div className="mt-1.5 h-1.5 w-full rounded-full bg-gray-200">
+          <div className="mt-1.5 h-1.5 w-full rounded-none bg-slate-200 dark:bg-slate-800">
             <div
-              className="h-1.5 rounded-full bg-blue-600 transition-all"
+              className="h-1.5 rounded-none bg-blue-600 transition-all"
               style={{ width: `${percentage}%` }}
             />
           </div>
         </>
       ) : (
-        <p className="mt-2 text-xs text-gray-500">
+        <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
           {lessons.length} {lessons.length === 1 ? 'lesson' : 'lessons'}
         </p>
       )}
@@ -130,8 +123,8 @@ export function CourseSidebar({ seriesSlug, seriesTitle, lessons }: CourseSideba
   return (
     <aside className="order-first md:order-last">
       {/* Mobile: collapsible */}
-      <details className="rounded-lg border border-gray-200 bg-white p-4 md:hidden">
-        <summary className="cursor-pointer text-sm font-semibold text-gray-900">
+      <details className="rounded-none border border-slate-200 bg-white p-4 shadow-sm shadow-slate-950/5 md:hidden dark:border-slate-800 dark:bg-slate-950">
+        <summary className="cursor-pointer text-sm font-bold text-slate-950 dark:text-white">
           Lessons ({lessons.length})
         </summary>
         <div className="mt-4">

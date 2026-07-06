@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { TelegramLogo } from '@phosphor-icons/react/dist/ssr';
 import { Container } from '@/components/ui/Container';
+import { PageHeader } from '@/components/ui/PageHeader';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { getAllNewsDates } from '@/lib/news';
 import { cn, cardSurface, cardHover } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Daily News — Curated & Ranked',
+  title: 'Daily News - Curated & Ranked',
   description: 'Daily curated AI news from Hacker News, Reddit, arXiv, and Hugging Face, ranked by impact.',
   alternates: { canonical: '/news' },
 };
@@ -14,28 +17,28 @@ export default async function NewsPage() {
   const dates = await getAllNewsDates();
 
   return (
-    <div className="py-20">
+    <div className="py-16 sm:py-24">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            AI News
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Daily curated AI news, ranked by impact
-          </p>
-          <a
-            href="https://t.me/ClauderSydney"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
-          >
-            Subscribe on Telegram
-          </a>
-        </div>
+        <PageHeader
+          eyebrow="Daily briefing"
+          title="AI News"
+          description="Daily curated AI news, ranked by impact."
+          actions={
+            <a
+              href="https://t.me/ClauderSydney"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-2 rounded-none bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-sm shadow-blue-950/10 transition hover:bg-blue-700"
+            >
+              <TelegramLogo className="h-4 w-4" weight="fill" />
+              Subscribe on Telegram
+            </a>
+          }
+        />
 
-        <div className="mx-auto mt-16 max-w-2xl">
+        <div className="mx-auto mt-12 max-w-3xl">
           {dates.length > 0 ? (
-            <div className="space-y-4">
+            <div className="grid gap-3">
               {dates.map((date) => {
                 const formatted = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
                   weekday: 'long',
@@ -47,17 +50,18 @@ export default async function NewsPage() {
                   <Link
                     key={date}
                     href={`/news/${date}`}
-                    className={cn(cardSurface, cardHover, 'block p-4')}
+                    className={cn(cardSurface, cardHover, 'block p-5')}
                   >
-                    <span className="text-lg font-semibold text-gray-900">{formatted}</span>
+                    <span className="text-lg font-black tracking-tight text-slate-950 dark:text-white">{formatted}</span>
                   </Link>
                 );
               })}
             </div>
           ) : (
-            <div className="text-center text-gray-600">
-              <p>No news yet. Check back soon!</p>
-            </div>
+            <EmptyState
+              title="No news yet."
+              description="Check back soon for daily AI briefings."
+            />
           )}
         </div>
       </Container>

@@ -6,6 +6,7 @@ export const dynamic = 'force-dynamic';
 import { createClient } from '@/lib/supabase/server';
 import { ProgressCard } from '@/components/dashboard/ProgressCard';
 import { BookmarkCard } from '@/components/dashboard/BookmarkCard';
+import { EmptyState } from '@/components/ui/EmptyState';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -42,15 +43,18 @@ export default async function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900">
+      <p className="text-sm font-black uppercase tracking-[0.24em] text-blue-600 dark:text-blue-400">
+        Dashboard
+      </p>
+      <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 dark:text-white">
         Welcome back, {displayName}
       </h1>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+      <div className="mt-8 grid gap-6 xl:grid-cols-2">
         <section>
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-900">Recent Progress</h2>
-            <Link href="/dashboard/courses" className="text-sm text-blue-600 hover:text-blue-700">
+            <h2 className="text-lg font-black tracking-tight text-slate-950 dark:text-white">Recent Progress</h2>
+            <Link href="/dashboard/courses" className="text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400">
               View all
             </Link>
           </div>
@@ -66,19 +70,19 @@ export default async function DashboardPage() {
               ))}
             </div>
           ) : (
-            <p className="mt-4 text-sm text-gray-500">
-              No lessons completed yet.{' '}
-              <Link href="/courses" className="text-blue-600 hover:text-blue-700">
-                Browse courses
-              </Link>
-            </p>
+            <EmptyState
+              className="mt-4"
+              title="No lessons completed yet."
+              description="Start a course to see your progress here."
+              action={<Link href="/courses" className="text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400">Browse courses</Link>}
+            />
           )}
         </section>
 
         <section>
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-900">Recent Bookmarks</h2>
-            <Link href="/dashboard/bookmarks" className="text-sm text-blue-600 hover:text-blue-700">
+            <h2 className="text-lg font-black tracking-tight text-slate-950 dark:text-white">Recent Bookmarks</h2>
+            <Link href="/dashboard/bookmarks" className="text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400">
               View all
             </Link>
           </div>
@@ -95,9 +99,11 @@ export default async function DashboardPage() {
               ))}
             </div>
           ) : (
-            <p className="mt-4 text-sm text-gray-500">
-              No bookmarks yet. Bookmark lessons and articles as you browse.
-            </p>
+            <EmptyState
+              className="mt-4"
+              title="No bookmarks yet."
+              description="Bookmark lessons and articles as you browse."
+            />
           )}
         </section>
       </div>

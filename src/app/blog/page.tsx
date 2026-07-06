@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 import { Container } from '@/components/ui/Container';
+import { PageHeader } from '@/components/ui/PageHeader';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { getAllBlogPosts } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Blog — AI Coding Tips & Tutorials',
+  title: 'Blog - AI Coding Tips & Tutorials',
   description:
     'Tips, tutorials, and real build stories about creating projects with Claude Code and AI tools.',
   alternates: { canonical: '/blog' },
@@ -14,44 +17,43 @@ export default async function BlogPage() {
   const posts = await getAllBlogPosts();
 
   return (
-    <div className="py-20">
+    <div className="py-16 sm:py-24">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Blog
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Tips, tutorials, and insights on building with AI tools
-          </p>
-        </div>
+        <PageHeader
+          eyebrow="Build notes"
+          title="Blog"
+          description="Tips, tutorials, and insights on building with AI tools."
+        />
 
-        <div className="mx-auto mt-16 max-w-2xl">
+        <div className="mx-auto mt-12 max-w-3xl">
           {posts.length > 0 ? (
-            <div className="space-y-8">
+            <div className="divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
               {posts.map((post) => (
-                <article key={post.slug} className="border-b border-gray-200 pb-8">
+                <article key={post.slug} className="py-7">
                   <Link href={`/blog/${post.slug}`}>
-                    <h2 className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                    <h2 className="text-2xl font-black tracking-tight text-slate-950 transition-colors hover:text-blue-600 dark:text-white">
                       {post.title}
                     </h2>
                   </Link>
-                  <p className="mt-2 text-sm text-gray-600">
-                    {post.date} • {post.author}
+                  <p className="mt-2 text-sm font-semibold text-slate-500 dark:text-slate-400">
+                    {post.date} / {post.author}
                   </p>
-                  <p className="mt-4 text-gray-600">{post.excerpt}</p>
+                  <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">{post.excerpt}</p>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-700"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
                   >
-                    Read more →
+                    Read more
+                    <ArrowUpRight className="h-4 w-4" weight="bold" />
                   </Link>
                 </article>
               ))}
             </div>
           ) : (
-            <div className="text-center text-gray-600">
-              <p>No blog posts yet. Check back soon!</p>
-            </div>
+            <EmptyState
+              title="No blog posts yet."
+              description="Check back soon for tutorials and build notes."
+            />
           )}
         </div>
       </Container>

@@ -33,7 +33,7 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${origin}/login?error=missing_params`);
   }
 
-  // Check if profile has full_name — redirect to settings if empty
+  // Check if profile has full_name - redirect to settings if empty
   const { data: { user } } = await supabase.auth.getUser();
   if (user) {
     const { data: profile } = await supabase

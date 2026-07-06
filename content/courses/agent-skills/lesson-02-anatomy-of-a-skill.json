@@ -27,7 +27,7 @@
       ],
       "talkingPoints": [
         "A skill name should read like a clear command: 'deploy-checklist', 'meeting-notes', 'code-review'.",
-        "The folder name IS the skill name — they must match exactly.",
+        "The folder name IS the skill name - they must match exactly.",
         "Version control from day one: commit the skeleton so changes are tracked."
       ]
     },
@@ -43,11 +43,11 @@
         "Required fields: name (must match folder name) and description (the AI reads this to decide when to activate).",
         "Optional standard fields: license, compatibility, metadata.",
         "Writing great descriptions: answer 'When should the AI use this?' not 'What does this skill do?'.",
-        "Live demo: weak description vs. strong description — show how activation accuracy changes.",
+        "Live demo: weak description vs. strong description - show how activation accuracy changes.",
         "Running example: write the deploy-checklist frontmatter with a scenario-specific description."
       ],
       "talkingPoints": [
-        "Think of frontmatter as the label on a jar — the AI reads it to decide whether to open the jar.",
+        "Think of frontmatter as the label on a jar - the AI reads it to decide whether to open the jar.",
         "A vague description like 'helps with deployments' is useless. 'Run pre-deploy validations before shipping backend services' is actionable.",
         "The description is the most important line in your entire skill. Spend real time on it."
       ]
@@ -60,7 +60,7 @@
       "maxLength": "12 minutes",
       "estimatedDuration": "8 minutes",
       "scriptOutline": [
-        "Sketch the four default sections (Trigger, Workflow, Constraints, Output) as placeholders — we'll populate them in Lesson 3.",
+        "Sketch the four default sections (Trigger, Workflow, Constraints, Output) as placeholders - we'll populate them in Lesson 3.",
         "Show how markdown headings and numbered lists make instructions parsable for both AI and humans.",
         "Introduce optional directories: scripts/ (automation), references/ (templates/examples), assets/ (data/configs).",
         "Progressive disclosure: AI reads metadata first, loads instructions when activated, reads files on demand.",
@@ -69,7 +69,7 @@
       ],
       "talkingPoints": [
         "Structure before content: even a placeholder skeleton prevents rambling instructions later.",
-        "Supporting directories are appendices — reference them explicitly from SKILL.md.",
+        "Supporting directories are appendices - reference them explicitly from SKILL.md.",
         "Progressive disclosure keeps the AI fast: it only loads what it needs, when it needs it.",
         "Most skills start with just SKILL.md. Don't add directories until you actually need them."
       ]
@@ -78,11 +78,11 @@
   "textSections": [
     {
       "title": "Canonical Skill Layout",
-      "content": "Here's the complete anatomy of a skill:\n\n```\ndeploy-checklist/              # Folder name = skill name (kebab-case)\n├── SKILL.md                   # Required — frontmatter + instructions\n├── references/                # Optional — templates, examples, style guides\n│   ├── template.md\n│   └── example-good.md\n├── scripts/                   # Optional — automation scripts\n│   └── run-sanity-check.sh\n└── assets/                    # Optional — data files, configs, images\n    └── release-matrix.json\n```\n\n**Only SKILL.md is required.** Everything else is optional. Start minimal, add directories when you need them."
+      "content": "Here's the complete anatomy of a skill:\n\n```\ndeploy-checklist/              # Folder name = skill name (kebab-case)\n├── SKILL.md                   # Required - frontmatter + instructions\n├── references/                # Optional - templates, examples, style guides\n│   ├── template.md\n│   └── example-good.md\n├── scripts/                   # Optional - automation scripts\n│   └── run-sanity-check.sh\n└── assets/                    # Optional - data files, configs, images\n    └── release-matrix.json\n```\n\n**Only SKILL.md is required.** Everything else is optional. Start minimal, add directories when you need them."
     },
     {
       "title": "Complete SKILL.md Example: deploy-checklist",
-      "content": "Here is the running example skill we'll build across this course:\n\n```markdown\n---\nname: deploy-checklist\ndescription: Run pre-deploy validations before shipping backend services to production. Checks migrations, tests, environment variables, and team notifications.\n---\n\n# Deploy Checklist\n\n## Trigger\nActivate when the user is about to deploy backend services to production or staging.\nDo NOT activate for frontend-only changes or documentation updates.\n\n## Workflow\n1. Check for pending database migrations — list any unapplied migrations.\n2. Run the test suite — report pass/fail with summary.\n3. Verify environment variables — confirm all required vars are set for the target environment.\n4. Check for uncommitted changes — warn if the working directory is dirty.\n5. Generate a deployment summary for the team notification.\n\n## Constraints\n- Never run destructive commands (DROP, DELETE, rm -rf) during validation.\n- Do not proceed if tests fail — stop and report the failures.\n- Do not modify any source files — this skill only validates and reports.\n\n## Output\nReturn a markdown checklist:\n\n### Deploy Readiness Report\n- [ ] Migrations: [status]\n- [ ] Tests: [pass/fail count]\n- [ ] Env vars: [status]\n- [ ] Clean working directory: [yes/no]\n- [ ] Summary: [one-line description of what's being deployed]\n```\n\nThis is a complete, working skill. We'll refine it over the next five lessons."
+      "content": "Here is the running example skill we'll build across this course:\n\n```markdown\n---\nname: deploy-checklist\ndescription: Run pre-deploy validations before shipping backend services to production. Checks migrations, tests, environment variables, and team notifications.\n---\n\n# Deploy Checklist\n\n## Trigger\nActivate when the user is about to deploy backend services to production or staging.\nDo NOT activate for frontend-only changes or documentation updates.\n\n## Workflow\n1. Check for pending database migrations - list any unapplied migrations.\n2. Run the test suite - report pass/fail with summary.\n3. Verify environment variables - confirm all required vars are set for the target environment.\n4. Check for uncommitted changes - warn if the working directory is dirty.\n5. Generate a deployment summary for the team notification.\n\n## Constraints\n- Never run destructive commands (DROP, DELETE, rm -rf) during validation.\n- Do not proceed if tests fail - stop and report the failures.\n- Do not modify any source files - this skill only validates and reports.\n\n## Output\nReturn a markdown checklist:\n\n### Deploy Readiness Report\n- [ ] Migrations: [status]\n- [ ] Tests: [pass/fail count]\n- [ ] Env vars: [status]\n- [ ] Clean working directory: [yes/no]\n- [ ] Summary: [one-line description of what's being deployed]\n```\n\nThis is a complete, working skill. We'll refine it over the next five lessons."
     },
     {
       "title": "Frontmatter Field Reference",
@@ -90,7 +90,7 @@
     },
     {
       "title": "Progressive Disclosure: How AI Loads Skills",
-      "content": "Your AI doesn't read every skill fully at startup — that would be slow. Instead, it uses **three-stage loading**:\n\n**Stage 1 — Metadata (~100 tokens):** At startup, the AI reads only `name` and `description` from frontmatter. This is how it knows what skills exist.\n\n**Stage 2 — Instructions (<5,000 tokens):** When a task matches a skill's description, the AI loads the full SKILL.md body. Now it has detailed instructions.\n\n**Stage 3 — Resources (on demand):** Only when referenced by the instructions, the AI reads files from `scripts/`, `references/`, or `assets/`.\n\nThis is why a great `description` matters so much — it's the gateway to everything else."
+      "content": "Your AI doesn't read every skill fully at startup - that would be slow. Instead, it uses **three-stage loading**:\n\n**Stage 1 - Metadata (~100 tokens):** At startup, the AI reads only `name` and `description` from frontmatter. This is how it knows what skills exist.\n\n**Stage 2 - Instructions (<5,000 tokens):** When a task matches a skill's description, the AI loads the full SKILL.md body. Now it has detailed instructions.\n\n**Stage 3 - Resources (on demand):** Only when referenced by the instructions, the AI reads files from `scripts/`, `references/`, or `assets/`.\n\nThis is why a great `description` matters so much - it's the gateway to everything else."
     },
     {
       "title": "Supporting Directory Decision Tree",
@@ -167,7 +167,7 @@
       "url": "https://agentskills.io/home"
     },
     {
-      "title": "Claude Code Skills — Structure & Frontmatter",
+      "title": "Claude Code Skills - Structure & Frontmatter",
       "url": "https://code.claude.com/docs/en/skills"
     },
     {
@@ -181,10 +181,10 @@
   ],
   "instructorNotes": [
     "This lesson introduces the most 'technical' concepts (file structure, YAML). Reassure non-tech learners: creating a folder and a text file is something everyone can do.",
-    "If learners find YAML intimidating, compare it to a simple form: 'name: value' — that's all frontmatter is.",
+    "If learners find YAML intimidating, compare it to a simple form: 'name: value' - that's all frontmatter is.",
     "Live demo tip: build the deploy-checklist skeleton in real time, showing each keystroke. Then open your AI tool and show it recognizing the skill immediately.",
     "The complete deploy-checklist example is the anchor for this lesson. Walk through every line and explain the reasoning.",
-    "Progressive disclosure is abstract — use the library analogy: you read the book title first, then the back cover, then open the book only if it's relevant.",
-    "For Exercise 2 (description stress test): this is where learners discover that writing is harder than it looks. Celebrate the struggle — it's the most valuable exercise."
+    "Progressive disclosure is abstract - use the library analogy: you read the book title first, then the back cover, then open the book only if it's relevant.",
+    "For Exercise 2 (description stress test): this is where learners discover that writing is harder than it looks. Celebrate the struggle - it's the most valuable exercise."
   ]
 }

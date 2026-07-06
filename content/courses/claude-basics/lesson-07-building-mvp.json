@@ -13,7 +13,7 @@
   "videos": [
     {
       "title": "MVP Planning: Scope, Tech Stack, and Timeline",
-      "description": "How to plan a minimum viable product that's actually viable — small enough to ship quickly, valuable enough to matter.",
+      "description": "How to plan a minimum viable product that's actually viable - small enough to ship quickly, valuable enough to matter.",
       "youtubeId": "oPdtXCQbgjU",
       "slidesUrl": "/courses/claude-basics/lesson-07-video-01-slides.html",
       "maxLength": "15 minutes",
@@ -27,11 +27,11 @@
         "Real example: planning the 02Ship MVP from scratch"
       ],
       "talkingPoints": [
-        "MVP doesn't mean 'broken' — it means 'focused on one core value'",
+        "MVP doesn't mean 'broken' - it means 'focused on one core value'",
         "If you can't describe your MVP in one sentence, it's too complex",
-        "Tech stack choice matters less than shipping — pick what Claude knows well",
+        "Tech stack choice matters less than shipping - pick what Claude knows well",
         "Week 1 goal: working but imperfect. Month 1 goal: improved based on feedback",
-        "Your first MVP will be nothing like your final product — that's expected"
+        "Your first MVP will be nothing like your final product - that's expected"
       ]
     },
     {
@@ -52,9 +52,9 @@
       ],
       "talkingPoints": [
         "Expect to iterate 3-5 times from first code to 'ready to deploy'",
-        "Test after every major change — don't wait until the end",
-        "First version will have rough edges — that's OK for MVP",
-        "Save iterations in Git commits — your undo button",
+        "Test after every major change - don't wait until the end",
+        "First version will have rough edges - that's OK for MVP",
+        "Save iterations in Git commits - your undo button",
         "When stuck for >30 min, ask in community or start fresh with clearer prompt"
       ]
     },
@@ -75,10 +75,10 @@
         "Celebrating: you're now a builder who ships"
       ],
       "talkingPoints": [
-        "Deployment is scary the first time, routine the 10th time — just do it",
-        "Custom domain makes it feel 'real' — worth the $10-15/year",
-        "Your first users will be forgiving — they know it's new",
-        "Ship before you feel ready — that's when everyone ships",
+        "Deployment is scary the first time, routine the 10th time - just do it",
+        "Custom domain makes it feel 'real' - worth the $10-15/year",
+        "Your first users will be forgiving - they know it's new",
+        "Ship before you feel ready - that's when everyone ships",
         "Feedback from 5 real users beats theory from 500 imaginary ones",
         "Today you become a builder who ships, not just learns"
       ]
@@ -204,13 +204,13 @@
     }
   ],
   "instructorNotes": [
-    "This is the capstone lesson — brings together everything from previous lessons. Emphasize: this is where theory meets practice.",
+    "This is the capstone lesson - brings together everything from previous lessons. Emphasize: this is where theory meets practice.",
     "For live sessions: This can be a multi-week 'build sprint' where students work on MVPs and check in weekly. Not a 3-hour single session.",
     "Common anxiety: 'My idea isn't good enough.' Reframe: MVP is a learning tool, not a billion-dollar product. Ship to learn.",
     "Self-paced tip: Create a #shipped channel in Discord where students share their deployed MVPs. Public accountability helps.",
     "Time check: Exercise 2 (building) takes days, not hours. Set expectation: this is the main work of the course.",
     "Bonus: Feature the best student MVPs on the 02Ship website/blog. Motivation through recognition.",
-    "Celebration moment: Make a big deal about first-time launchers. Certificate, badge, shoutout — something memorable.",
+    "Celebration moment: Make a big deal about first-time launchers. Certificate, badge, shoutout - something memorable.",
     "Real-world connection: Professional builders ship MVPs constantly. Students are now doing what pros do, just faster with AI.",
     "Key mindset: Perfect is the enemy of shipped. Drum this home throughout the lesson.",
     "Support structure: Have instructor or TAs available during build sprint for quick unblocking. Momentum matters."

@@ -1,7 +1,7 @@
 {
   "slug": "analysis-research",
   "title": "Lesson 6 - Analysis and Research with Claude",
-  "description": "Use Claude for data analysis, research synthesis, competitive analysis, and brainstorming — skills that apply to product building and beyond.",
+  "description": "Use Claude for data analysis, research synthesis, competitive analysis, and brainstorming - skills that apply to product building and beyond.",
   "duration": "2-3 hours",
   "order": 6,
   "learningObjectives": [
@@ -28,7 +28,7 @@
       "talkingPoints": [
         "Research that used to take hours now takes minutes with Claude",
         "Claude can't browse the web (yet), so you paste articles/data and it analyzes",
-        "The key: ask Claude to 'synthesize' not just summarize — connect the dots",
+        "The key: ask Claude to 'synthesize' not just summarize - connect the dots",
         "Good research informs every product decision: features, pricing, positioning",
         "Even non-researchers can do quality research with Claude's help"
       ]
@@ -49,11 +49,11 @@
         "When Claude's analysis is enough vs. when you need a human expert"
       ],
       "talkingPoints": [
-        "You don't need to understand statistics to understand your data — Claude translates",
+        "You don't need to understand statistics to understand your data - Claude translates",
         "Paste your spreadsheet data (CSV format works best) and ask: 'What patterns do you see?'",
         "Claude spots things you'd miss: outliers, correlations, surprising trends",
         "For product decisions: 'Based on this data, what should I prioritize?'",
-        "Always sense-check Claude's analysis — it's a tool, not gospel"
+        "Always sense-check Claude's analysis - it's a tool, not gospel"
       ]
     },
     {
@@ -72,18 +72,18 @@
         "Live demo: brainstorming features for a product and picking the best 3"
       ],
       "talkingPoints": [
-        "Claude is a tireless brainstorming partner — generates ideas until you say stop",
+        "Claude is a tireless brainstorming partner - generates ideas until you say stop",
         "Ask for quantity first: '20 feature ideas for my app' then evaluate",
         "Claude can play different roles: skeptic, cheerleader, expert, customer",
         "Use constraints to spark creativity: 'feature ideas that cost $0 to build'",
-        "Your job: evaluate, combine, refine — Claude generates raw material"
+        "Your job: evaluate, combine, refine - Claude generates raw material"
       ]
     }
   ],
   "textSections": [
     {
       "title": "Research Workflow Template",
-      "content": "**Phase 1: Gather Sources**\n- Find 3-5 articles, reports, or data sources on your topic\n- Copy key sections (not entire articles — focus on relevant parts)\n- Paste into Claude with context: 'I'm researching [topic] for [purpose]'\n\n**Phase 2: Summarize**\nPrompt: 'Summarize each of these sources in 3-5 bullet points, focusing on [specific aspect]'\n\nClaude gives you the key points from each source.\n\n**Phase 3: Synthesize**\nPrompt: 'Now synthesize these summaries. What are the common themes? Where do sources disagree? What's missing?'\n\nClaude connects the dots across sources.\n\n**Phase 4: Extract Insights**\nPrompt: 'Based on this research, what are the top 3 insights for someone building [your product]? What should I do next?'\n\nClaude gives you actionable takeaways.\n\n**Example: Researching AI Coding Tools Market**\n\n1. Gather: Articles on GitHub Copilot, Cursor, Replit Agent, market size\n2. Summarize: 'Summarize each article's key points about user adoption and pricing'\n3. Synthesize: 'What do these sources tell us about the AI coding tools market in 2024?'\n4. Insights: 'Based on this, what differentiation strategy should a new AI coding tool use?'\n\nResult: Actionable market insights in 15 minutes."
+      "content": "**Phase 1: Gather Sources**\n- Find 3-5 articles, reports, or data sources on your topic\n- Copy key sections (not entire articles - focus on relevant parts)\n- Paste into Claude with context: 'I'm researching [topic] for [purpose]'\n\n**Phase 2: Summarize**\nPrompt: 'Summarize each of these sources in 3-5 bullet points, focusing on [specific aspect]'\n\nClaude gives you the key points from each source.\n\n**Phase 3: Synthesize**\nPrompt: 'Now synthesize these summaries. What are the common themes? Where do sources disagree? What's missing?'\n\nClaude connects the dots across sources.\n\n**Phase 4: Extract Insights**\nPrompt: 'Based on this research, what are the top 3 insights for someone building [your product]? What should I do next?'\n\nClaude gives you actionable takeaways.\n\n**Example: Researching AI Coding Tools Market**\n\n1. Gather: Articles on GitHub Copilot, Cursor, Replit Agent, market size\n2. Summarize: 'Summarize each article's key points about user adoption and pricing'\n3. Synthesize: 'What do these sources tell us about the AI coding tools market in 2024?'\n4. Insights: 'Based on this, what differentiation strategy should a new AI coding tool use?'\n\nResult: Actionable market insights in 15 minutes."
     },
     {
       "title": "Competitive Analysis Framework",
@@ -95,7 +95,7 @@
     },
     {
       "title": "Brainstorming Prompt Recipes",
-      "content": "**Recipe 1: Feature Brainstorm**\n```\nI'm building [product description]. Generate 20 feature ideas that would make this product more valuable to [target users].\n\nFocus on features that:\n- Solve a real problem\n- Are buildable by a non-technical founder\n- Don't require complex infrastructure\n\nAfter generating, rank the top 5 by: impact, ease, and uniqueness.\n```\n\n**Recipe 2: Name Brainstorm**\n```\nI need a name for [product description].\n\nGenerate 30 name ideas that are:\n- Memorable and easy to pronounce\n- Related to [theme/concept]\n- Available as .com domain (check approximations)\n- Not trademarked (to your knowledge)\n\nGroup by style: playful, professional, descriptive.\n```\n\n**Recipe 3: Problem-Solution Brainstorm**\n```\nProblem: [describe the problem]\n\nGenerate 15 creative solutions. Include:\n- 5 obvious/conventional approaches\n- 5 unconventional/'crazy' ideas\n- 5 that combine elements of the above\n\nThen evaluate: which solution is most feasible for someone with [constraints]?\n```\n\n**Recipe 4: Marketing Angle Brainstorm**\n```\nProduct: [description]\nTarget Audience: [who]\n\nGenerate 10 different marketing angles/value propositions. Each should:\n- Highlight a different benefit\n- Use a distinct emotional appeal\n- Be suitable for [platform: Twitter, LinkedIn, etc.]\n\nExample format: '[Benefit] for [audience] who [pain point]'\n```\n\n**Recipe 5: 'Worst Ideas' Brainstorm**\n```\nGenerate the 10 WORST feature ideas for [product] — ideas that would definitely fail or anger users.\n\nThen, for each bad idea, explain what makes it bad. Finally, invert each one into a good idea.\n```\n\n**Recipe 6: Constraint-Based Brainstorm**\n```\nBrainstorm: [goal]\n\nConstraints:\n- Must be achievable in [timeframe]\n- Budget: [amount] or less\n- No [specific resource] available\n- Must work with [existing system/tool]\n\nGenerate 10 ideas that respect all constraints.\n```"
+      "content": "**Recipe 1: Feature Brainstorm**\n```\nI'm building [product description]. Generate 20 feature ideas that would make this product more valuable to [target users].\n\nFocus on features that:\n- Solve a real problem\n- Are buildable by a non-technical founder\n- Don't require complex infrastructure\n\nAfter generating, rank the top 5 by: impact, ease, and uniqueness.\n```\n\n**Recipe 2: Name Brainstorm**\n```\nI need a name for [product description].\n\nGenerate 30 name ideas that are:\n- Memorable and easy to pronounce\n- Related to [theme/concept]\n- Available as .com domain (check approximations)\n- Not trademarked (to your knowledge)\n\nGroup by style: playful, professional, descriptive.\n```\n\n**Recipe 3: Problem-Solution Brainstorm**\n```\nProblem: [describe the problem]\n\nGenerate 15 creative solutions. Include:\n- 5 obvious/conventional approaches\n- 5 unconventional/'crazy' ideas\n- 5 that combine elements of the above\n\nThen evaluate: which solution is most feasible for someone with [constraints]?\n```\n\n**Recipe 4: Marketing Angle Brainstorm**\n```\nProduct: [description]\nTarget Audience: [who]\n\nGenerate 10 different marketing angles/value propositions. Each should:\n- Highlight a different benefit\n- Use a distinct emotional appeal\n- Be suitable for [platform: Twitter, LinkedIn, etc.]\n\nExample format: '[Benefit] for [audience] who [pain point]'\n```\n\n**Recipe 5: 'Worst Ideas' Brainstorm**\n```\nGenerate the 10 WORST feature ideas for [product] - ideas that would definitely fail or anger users.\n\nThen, for each bad idea, explain what makes it bad. Finally, invert each one into a good idea.\n```\n\n**Recipe 6: Constraint-Based Brainstorm**\n```\nBrainstorm: [goal]\n\nConstraints:\n- Must be achievable in [timeframe]\n- Budget: [amount] or less\n- No [specific resource] available\n- Must work with [existing system/tool]\n\nGenerate 10 ideas that respect all constraints.\n```"
     },
     {
       "title": "Key Definitions",
@@ -109,7 +109,7 @@
     },
     {
       "mistake": "Asking vague analysis questions",
-      "explanation": "Instead of 'analyze this data', ask 'what trends show which features users want most?' — be specific."
+      "explanation": "Instead of 'analyze this data', ask 'what trends show which features users want most?' - be specific."
     },
     {
       "mistake": "Only using Claude for one round of brainstorming",
@@ -192,13 +192,13 @@
     }
   ],
   "instructorNotes": [
-    "This lesson is standalone and highly practical — works great for any student regardless of technical level.",
+    "This lesson is standalone and highly practical - works great for any student regardless of technical level.",
     "For live sessions: Bring real data to analyze together. Students learn best by seeing Claude work on actual (anonymized) business data.",
-    "Common question: 'Can Claude access the internet?' — No (as of Claude 3.5). Students must paste content. Explain this limitation.",
-    "Self-paced tip: Encourage students to use this lesson immediately for real work — research a competitor or analyze existing data.",
+    "Common question: 'Can Claude access the internet?' - No (as of Claude 3.5). Students must paste content. Explain this limitation.",
+    "Self-paced tip: Encourage students to use this lesson immediately for real work - research a competitor or analyze existing data.",
     "Time check: Exercise 1 (competitive research) can expand if students go deep. Suggest timeboxing to 60 min.",
     "Bonus: Create a shared 'Research Library' where students post interesting competitive insights they discovered.",
-    "Key insight: These skills apply beyond coding — research, analysis, and brainstorming are universal product skills.",
+    "Key insight: These skills apply beyond coding - research, analysis, and brainstorming are universal product skills.",
     "Platform note: ChatGPT can browse web (with Plus), Claude cannot (yet). Explain workarounds: paste content, use search first.",
     "Real-world connection: Professional product managers do this exact work. Students are learning PM skills alongside building."
   ]

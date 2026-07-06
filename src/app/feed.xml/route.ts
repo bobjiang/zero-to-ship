@@ -36,7 +36,7 @@ export async function GET() {
       year: 'numeric',
     });
     return `    <item>
-      <title>AI News — ${escapeXml(formatted)}</title>
+      <title>AI News - ${escapeXml(formatted)}</title>
       <link>${siteUrl}/news/${date}</link>
       <guid isPermaLink="true">${siteUrl}/news/${date}</guid>
       <description>Top AI news for ${escapeXml(formatted)}, curated from leading AI research labs, companies, and open-source projects.</description>
@@ -50,7 +50,7 @@ export async function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>02Ship — Sydney&apos;s Claude Builder Community</title>
+    <title>02Ship - Sydney&apos;s Claude Builder Community</title>
     <link>${siteUrl}</link>
     <description>Blog posts, daily AI news, and community updates from Sydney&apos;s Claude builder community.</description>
     <language>en</language>

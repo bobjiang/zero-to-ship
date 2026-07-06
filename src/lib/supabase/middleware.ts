@@ -37,7 +37,7 @@ export async function updateSession(request: NextRequest) {
     },
   });
 
-  // Refresh session — do NOT destructure, must call getUser()
+  // Refresh session - do NOT destructure, must call getUser()
   await supabase.auth.getUser();
 
   return supabaseResponse;

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
+  <title id="title">02Ship logo</title>
+  <desc id="desc">A modular 02 mark with a subtle launch shape inside the zero.</desc>
+  <rect width="192" height="192" rx="0" fill="#020617"/>
+  <rect x="36" y="56" width="32" height="88" rx="0" fill="#f8fafc"/>
+  <rect x="64" y="36" width="52" height="32" rx="0" fill="#f8fafc"/>
+  <rect x="64" y="124" width="52" height="32" rx="0" fill="#2563eb"/>
+  <rect x="112" y="56" width="28" height="88" rx="0" fill="#f8fafc"/>
+  <path d="M90 72.4c10.8 12.8 16.2 24.4 16.2 39.6l-11-4.6L90 135.6l-5.2-28.2-11 4.6c0-15.2 5.4-26.8 16.2-39.6Z" fill="#f8fafc"/>
+  <path d="M90 97.4v57.2" fill="none" stroke="#f8fafc" stroke-width="8.8" stroke-linecap="butt"/>
+  <rect x="132" y="36" width="24" height="32" rx="0" fill="#60a5fa"/>
+  <rect x="132" y="56" width="36" height="24" rx="0" fill="#60a5fa"/>
+  <rect x="144" y="76" width="24" height="24" rx="0" fill="#f8fafc"/>
+  <rect x="128" y="96" width="40" height="24" rx="0" fill="#f8fafc"/>
+  <rect x="120" y="116" width="24" height="24" rx="0" fill="#f8fafc"/>
+  <rect x="120" y="136" width="48" height="24" rx="0" fill="#f8fafc"/>
+</svg>

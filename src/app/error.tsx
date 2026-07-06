@@ -17,11 +17,14 @@ export default function GlobalError({
 
   return (
     <Container>
-      <div className="mx-auto max-w-2xl py-20">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+      <div className="mx-auto max-w-2xl py-20 text-center">
+        <p className="text-sm font-black uppercase tracking-[0.24em] text-blue-600 dark:text-blue-400">
+          Error
+        </p>
+        <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 dark:text-white">
           Something went wrong
         </h1>
-        <p className="mt-3 text-gray-600">
+        <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-slate-600 dark:text-slate-300">
           The page could not be rendered. Try again, or come back later.
         </p>
         <div className="mt-8">

@@ -11,7 +11,7 @@
 ### Hook & Introduction
 
 **SCRIPT:**
-> "Before we can start building anything, we need to get your workspace ready. The good news? You only need one thing to get started today: a Claude account. In this video, I'll walk you through everything—from creating your account to organizing your workspace to keeping yourself safe when working with AI-generated code."
+> "Before we can start building anything, we need to get your workspace ready. The good news? You only need one thing to get started today: a Claude account. In this video, I'll walk you through everything-from creating your account to organizing your workspace to keeping yourself safe when working with AI-generated code."
 
 **Keypoints:**
 - Reassure viewers: setup is simple
@@ -30,7 +30,7 @@
 ### Account Setup Walkthrough
 
 **SCRIPT:**
-> "Step one: let's get you a Claude account. Head to claude.ai—I'll put the link in the description—and click 'Sign Up.' You can sign up with your email or Google account. It's free to start."
+> "Step one: let's get you a Claude account. Head to claude.ai-I'll put the link in the description-and click 'Sign Up.' You can sign up with your email or Google account. It's free to start."
 
 **Keypoints:**
 - Go to claude.ai
@@ -47,12 +47,12 @@
 ### Claude Pro (Optional Upgrade)
 
 **SCRIPT:**
-> "Now, there's an optional upgrade called Claude Pro. It gives you more messages per day and access to the latest models. For this course, the free plan works fine—but if you find yourself hitting message limits during exercises, Pro is worth considering. Don't worry about it now; you can always upgrade later."
+> "Now, there's an optional upgrade called Claude Pro. It gives you more messages per day and access to the latest models. For this course, the free plan works fine-but if you find yourself hitting message limits during exercises, Pro is worth considering. Don't worry about it now; you can always upgrade later."
 
 **Keypoints:**
 - Claude Pro gives extended usage and latest models
 - Free plan is enough to start
-- Upgrade later if needed—no pressure
+- Upgrade later if needed-no pressure
 - Don't let cost be a barrier to starting
 
 **Visual suggestions:**
@@ -72,13 +72,13 @@
 **Keypoints:**
 - Create a main project folder (e.g., `my-ai-projects`)
 - Inside it, create three subfolders:
-  - `/prompts` — where you save your prompts
-  - `/outputs` — where you save Claude's responses
-  - `/projects` — where your actual project files will go
+  - `/prompts` - where you save your prompts
+  - `/outputs` - where you save Claude's responses
+  - `/projects` - where your actual project files will go
 - Use whatever tool you're comfortable with (Finder, File Explorer, etc.)
 
 **SCRIPT (continued):**
-> "Here's what I recommend: create a folder called 'my-ai-projects' somewhere easy to find—your Desktop or Documents folder works great. Inside that, make three folders: 'prompts,' 'outputs,' and 'projects.' That's it. Prompts is where you save what you type into Claude. Outputs is where you save what Claude gives back. And projects is where your actual apps will live."
+> "Here's what I recommend: create a folder called 'my-ai-projects' somewhere easy to find-your Desktop or Documents folder works great. Inside that, make three folders: 'prompts,' 'outputs,' and 'projects.' That's it. Prompts is where you save what you type into Claude. Outputs is where you save what Claude gives back. And projects is where your actual apps will live."
 
 **What to show on screen:**
 - Create the folder structure live on screen
@@ -105,7 +105,7 @@
 **Visual suggestions:**
 - Show creating a sample text file
 - Show a naming convention example
-- On-screen text: "Save your prompts — future you will thank you"
+- On-screen text: "Save your prompts - future you will thank you"
 
 ---
 
@@ -129,7 +129,7 @@
 ### API Keys and Sensitive Information
 
 **SCRIPT:**
-> "Second safety rule: never share your API keys or passwords with anyone, and never paste them into public places. An API key is like a password for a service—if someone gets it, they can use your account and potentially charge you money."
+> "Second safety rule: never share your API keys or passwords with anyone, and never paste them into public places. An API key is like a password for a service-if someone gets it, they can use your account and potentially charge you money."
 
 **Keypoints:**
 - API keys = passwords for services
@@ -150,14 +150,14 @@
 **SCRIPT:**
 > "I know you might be thinking, 'How can I review code if I don't know how to code?' Fair question. Here's a simple checklist for beginners:"
 
-**Keypoints — checklist to show on screen:**
+**Keypoints - checklist to show on screen:**
 1. Does Claude's explanation match what you asked for?
 2. Are there any file operations you didn't request? (deleting files, accessing system folders)
 3. Does the code reference external websites or services you didn't mention?
 4. When in doubt, ask Claude: "Can you explain what this code does step by step?"
 
 **SCRIPT (continued):**
-> "You don't need to be a security expert. Just use common sense. If you asked for a calculator app and Claude's code is trying to access your email, that's a red flag. In practice, this almost never happens—Claude is designed to be helpful and safe—but it's a good habit to build from day one."
+> "You don't need to be a security expert. Just use common sense. If you asked for a calculator app and Claude's code is trying to access your email, that's a red flag. In practice, this almost never happens-Claude is designed to be helpful and safe-but it's a good habit to build from day one."
 
 **Visual suggestions:**
 - Show the checklist as on-screen graphics
@@ -171,7 +171,7 @@
 ### Recap & Next Steps
 
 **SCRIPT:**
-> "That's your setup complete! Let's recap: you've got your Claude account, your workspace is organized, and you know the safety basics—read before you run, protect your keys, and ask Claude to explain anything you don't understand.
+> "That's your setup complete! Let's recap: you've got your Claude account, your workspace is organized, and you know the safety basics-read before you run, protect your keys, and ask Claude to explain anything you don't understand.
 >
 > In the next video, we get to the fun part: writing your first build prompt. I'll show you the exact prompt structure that works, and we'll use the 02Ship platform as our real-world example. You'll go from an idea to a starter app plan in one conversation.
 >

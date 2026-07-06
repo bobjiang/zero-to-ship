@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import { Container } from '@/components/ui/Container';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { LessonContent } from '@/components/courses/LessonContent';
 import { getSeriesBySlug, getAllSeries } from '@/lib/content';
 
@@ -72,9 +74,13 @@ export default async function SeriesPage({ params }: SeriesPageProps) {
       {firstLesson ? (
         <LessonContent series={series} lesson={firstLesson} />
       ) : (
-        <div className="text-gray-600">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900">{series.title}</h1>
-          <p className="mt-4">No lessons available yet. Check back soon!</p>
+        <div className="py-16 sm:py-24">
+          <Container>
+            <EmptyState
+              title={series.title}
+              description="No lessons available yet. Check back soon."
+            />
+          </Container>
         </div>
       )}
     </>

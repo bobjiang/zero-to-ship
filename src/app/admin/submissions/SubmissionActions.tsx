@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 type Status = 'pending' | 'approved' | 'rejected';
 
 const baseBtn =
-  'inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50';
+  'inline-flex min-h-8 items-center rounded-none px-3 py-1 text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus-visible:ring-offset-slate-950';
 
 export function SubmissionActions({ id, current }: { id: string; current: Status }) {
   const router = useRouter();
@@ -46,7 +46,7 @@ export function SubmissionActions({ id, current }: { id: string; current: Status
         type="button"
         disabled={busy || current === 'pending'}
         onClick={() => set('pending')}
-        className={`${baseBtn} border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus-visible:ring-gray-500`}
+        className={`${baseBtn} border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus-visible:ring-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900`}
       >
         Reset
       </button>

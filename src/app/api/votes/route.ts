@@ -70,7 +70,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Re-read right before writing — talks may have changed status
+    // Re-read right before writing - talks may have changed status
     const fresh = await listSubmissions(event.slug);
     const freshApproved = new Set(
       fresh.filter((s) => s.status === 'approved').map((s) => s.id)

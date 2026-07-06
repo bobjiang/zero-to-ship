@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { BookmarkSimple } from '@phosphor-icons/react';
 import { createClient } from '@/lib/supabase/client';
 
 interface BookmarkButtonProps {
@@ -70,22 +71,13 @@ export function BookmarkButton({ contentType, contentSlug, parentSlug = '' }: Bo
     <button
       onClick={toggleBookmark}
       disabled={loading}
-      className="inline-flex items-center gap-1 rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+      className="inline-flex min-h-9 items-center gap-1.5 rounded-none border border-slate-300 bg-white px-3 py-1.5 text-sm font-bold text-slate-700 shadow-sm shadow-slate-950/5 transition hover:border-slate-400 hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:border-slate-500"
       aria-label={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
     >
-      <svg
+      <BookmarkSimple
         className="h-4 w-4"
-        fill={isBookmarked ? 'currentColor' : 'none'}
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-        />
-      </svg>
+        weight={isBookmarked ? 'fill' : 'regular'}
+      />
       {isBookmarked ? 'Bookmarked' : 'Bookmark'}
     </button>
   );

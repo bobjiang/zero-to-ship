@@ -84,7 +84,7 @@ export function generateOgImage({ title, subtitle, tag, date }: OgImageOptions) 
               style={{
                 width: '40px',
                 height: '40px',
-                background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                background: 'linear-gradient(135deg, #0891b2, #22d3ee)',
                 borderRadius: '8px',
                 display: 'flex',
                 alignItems: 'center',

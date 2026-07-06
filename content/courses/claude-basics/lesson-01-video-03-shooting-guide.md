@@ -11,7 +11,7 @@
 ### Hook & Introduction
 
 **SCRIPT:**
-> "This is the video where everything comes together. You've got your Claude account, your workspace is set up, and now it's time to write your first real build prompt—the kind of prompt that turns an idea into a starter app plan. And to make this as practical as possible, I'm going to show you exactly how it was done for the platform you're using right now: 02Ship."
+> "This is the video where everything comes together. You've got your Claude account, your workspace is set up, and now it's time to write your first real build prompt-the kind of prompt that turns an idea into a starter app plan. And to make this as practical as possible, I'm going to show you exactly how it was done for the platform you're using right now: 02Ship."
 
 **Keypoints:**
 - This is the hands-on video viewers have been waiting for
@@ -36,7 +36,7 @@
 #### Part 1: The Goal (30 seconds)
 
 **SCRIPT:**
-> "First, the goal. This is one or two sentences that describe what you want to build and who it's for. Be specific. 'Build me an app' is too vague. 'Build a learning portal that helps non-programmers learn AI coding' — that gives Claude something to work with."
+> "First, the goal. This is one or two sentences that describe what you want to build and who it's for. Be specific. 'Build me an app' is too vague. 'Build a learning portal that helps non-programmers learn AI coding' - that gives Claude something to work with."
 
 **Keypoints:**
 - What are you building?
@@ -68,7 +68,7 @@
 #### Part 3: Tech Preference (30 seconds)
 
 **SCRIPT:**
-> "Third, tech preference. Now, if you're a complete beginner, it's totally fine to say 'no preference' or 'something simple.' But if you know you want a specific technology—maybe because someone recommended it or because a hosting service requires it—include it here."
+> "Third, tech preference. Now, if you're a complete beginner, it's totally fine to say 'no preference' or 'something simple.' But if you know you want a specific technology-maybe because someone recommended it or because a hosting service requires it-include it here."
 
 **Keypoints:**
 - It's okay to say "no preference" or "something simple I can run in a browser"
@@ -109,7 +109,7 @@
 ### "Ask Me Clarifying Questions First"
 
 **SCRIPT:**
-> "Now here's the secret weapon—one line that dramatically improves Claude's output. At the end of your prompt, add this: 'Before generating anything, please ask me clarifying questions.' This single line changes everything. Instead of Claude guessing about things it's unsure about, it will ask you smart questions first. And your answers to those questions make the final output much better."
+> "Now here's the secret weapon-one line that dramatically improves Claude's output. At the end of your prompt, add this: 'Before generating anything, please ask me clarifying questions.' This single line changes everything. Instead of Claude guessing about things it's unsure about, it will ask you smart questions first. And your answers to those questions make the final output much better."
 
 **Keypoints:**
 - This one line improves output quality significantly
@@ -118,7 +118,7 @@
 - It's like a mini consultation before the work begins
 
 **What to emphasize:**
-> "When I used this for 02Ship, Claude asked me things like: 'Do you need user authentication?' and 'How should courses be organized—by difficulty or by topic?' Questions I hadn't even thought about yet. My answers shaped the entire project."
+> "When I used this for 02Ship, Claude asked me things like: 'Do you need user authentication?' and 'How should courses be organized-by difficulty or by topic?' Questions I hadn't even thought about yet. My answers shaped the entire project."
 
 **Visual suggestions:**
 - Show the line highlighted or animated on screen
@@ -127,12 +127,12 @@
 
 ---
 
-## Section 3: Real Example — The 02Ship Prompt (4:30 - 7:00)
+## Section 3: Real Example - The 02Ship Prompt (4:30 - 7:00)
 
 ### Showing the Complete Prompt
 
 **SCRIPT:**
-> "Let's put it all together with a real example. Here's the kind of prompt that started the 02Ship platform—the very platform you're learning on right now."
+> "Let's put it all together with a real example. Here's the kind of prompt that started the 02Ship platform-the very platform you're learning on right now."
 
 **Show the complete prompt on screen:**
 > "I want to build a learning portal that helps non-programmers to learn AI coding and ship their ideas using Claude.
@@ -195,15 +195,15 @@
 **SCRIPT:**
 > "After I answer the clarifying questions, Claude generates a project plan. Let me show you what to look for in the response."
 
-**Keypoints — what to review:**
-1. **Project structure** — Does Claude suggest a logical file/folder organization?
-2. **Feature list** — Does it match what you asked for?
-3. **Technology choices** — Do they align with your tech preference?
-4. **Step-by-step plan** — Is there a clear order of operations?
-5. **Missing pieces** — Did Claude forget anything from your requirements?
+**Keypoints - what to review:**
+1. **Project structure** - Does Claude suggest a logical file/folder organization?
+2. **Feature list** - Does it match what you asked for?
+3. **Technology choices** - Do they align with your tech preference?
+4. **Step-by-step plan** - Is there a clear order of operations?
+5. **Missing pieces** - Did Claude forget anything from your requirements?
 
 **SCRIPT (continued):**
-> "When I review Claude's output, I'm not checking the code line by line—remember, I don't need to understand every technical detail. I'm checking: does this match what I asked for? Did it include everything I mentioned? Is there anything surprising or unexpected? And most importantly: is there anything missing?"
+> "When I review Claude's output, I'm not checking the code line by line-remember, I don't need to understand every technical detail. I'm checking: does this match what I asked for? Did it include everything I mentioned? Is there anything surprising or unexpected? And most importantly: is there anything missing?"
 
 **What to show on screen:**
 - Scroll through Claude's response
@@ -225,7 +225,7 @@
 ### Making One Improvement
 
 **SCRIPT:**
-> "Here's where iteration comes in. No first response is perfect—and it doesn't need to be. Let me show you how to improve Claude's output with one round of feedback."
+> "Here's where iteration comes in. No first response is perfect-and it doesn't need to be. Let me show you how to improve Claude's output with one round of feedback."
 
 **What to demonstrate:**
 - Pick one thing to improve from Claude's response
@@ -239,7 +239,7 @@
 > "Can you add a section for community links (Discord and GitHub Discussions) to the navigation and the footer?"
 
 **SCRIPT (continued):**
-> "Notice how I'm being specific about what I want changed. I'm not saying 'make it better'—that's too vague. I'm saying exactly what to add or adjust. This is the skill of iteration: clear, specific feedback that gives Claude direction."
+> "Notice how I'm being specific about what I want changed. I'm not saying 'make it better'-that's too vague. I'm saying exactly what to add or adjust. This is the skill of iteration: clear, specific feedback that gives Claude direction."
 
 **Keypoints:**
 - Be specific about what to change (not just "make it better")
@@ -250,7 +250,7 @@
 ### Before and After
 
 **SCRIPT:**
-> "Look at the difference between the first version and the updated version. The hero section is now more compelling, lessons have learning objectives, and the community links are integrated. One round of feedback—that's all it took."
+> "Look at the difference between the first version and the updated version. The hero section is now more compelling, lessons have learning objectives, and the community links are integrated. One round of feedback-that's all it took."
 
 **Visual suggestions:**
 - Side-by-side comparison: before and after iteration
@@ -267,10 +267,10 @@
 > "Now it's your turn. I want you to write your own build prompt using the four-part structure we just covered. You have two options:"
 
 **Option A: Your Own Idea**
-> "If you already have an app idea—even a rough one—write a prompt for it. Use the template: goal, constraints, tech preference, success criteria. And don't forget the magic line: 'ask me clarifying questions first.'"
+> "If you already have an app idea-even a rough one-write a prompt for it. Use the template: goal, constraints, tech preference, success criteria. And don't forget the magic line: 'ask me clarifying questions first.'"
 
 **Option B: Practice with 02Ship**
-> "If you don't have an idea yet, that's totally fine. Try rewriting the 02Ship prompt in your own words. Change some details—maybe it's a cooking course platform or a fitness tutorial site. The structure stays the same; only the content changes."
+> "If you don't have an idea yet, that's totally fine. Try rewriting the 02Ship prompt in your own words. Change some details-maybe it's a cooking course platform or a fitness tutorial site. The structure stays the same; only the content changes."
 
 **Show the prompt skeleton on screen:**
 > "I want to build [app type] that helps [user] to [solve problem].
@@ -305,13 +305,13 @@
 ### Recap & Next Steps
 
 **SCRIPT:**
-> "Let's recap what you just learned. A good build prompt has four parts: goal, constraints, tech preference, and success criteria. Always ask Claude for clarifying questions first—it's a game-changer. And remember, iteration is how you get from 'good enough' to 'exactly what I wanted.'
+> "Let's recap what you just learned. A good build prompt has four parts: goal, constraints, tech preference, and success criteria. Always ask Claude for clarifying questions first-it's a game-changer. And remember, iteration is how you get from 'good enough' to 'exactly what I wanted.'
 >
 > You've now completed Lesson 1! You know what Claude is, your workspace is set up, and you've written your first build prompt. That's huge.
 >
 > In Lesson 2, we'll take the next step: actually building your first page with Claude. You'll go from a prompt to a real, visible web page. The ideas are about to become real.
 >
-> Great work today—see you in the next lesson!"
+> Great work today-see you in the next lesson!"
 
 **Keypoints:**
 - Recap the four-part prompt structure
@@ -322,7 +322,7 @@
 **Visual suggestions:**
 - Show your face (excited, proud of the viewer)
 - On-screen text: "Lesson 1 Complete!"
-- End card: "Next: Lesson 2 — Building Your First Page"
+- End card: "Next: Lesson 2 - Building Your First Page"
 
 ---
 
@@ -398,7 +398,7 @@
 **Questions to pose to viewers:**
 - "What's your app idea? Drop your goal statement in the comments!" (comment prompt)
 - "Which part of the prompt structure was most helpful? Let me know below" (engagement)
-- "Share your first prompt in our Discord—we'd love to see what you're building!" (community)
+- "Share your first prompt in our Discord-we'd love to see what you're building!" (community)
 
 ---
 
@@ -428,4 +428,4 @@
 
 ---
 
-**This is the payoff video—viewers go from learning to doing. Make the live demo feel natural, celebrate their first prompt, and get them excited for Lesson 2 where ideas become real.**
+**This is the payoff video-viewers go from learning to doing. Make the live demo feel natural, celebrate their first prompt, and get them excited for Lesson 2 where ideas become real.**

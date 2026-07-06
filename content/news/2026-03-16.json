@@ -2,7 +2,7 @@
   "date": "2026-03-16",
   "items": [
     {
-      "title": "Innate (YC F24) – Home robots as easy to program as AI agents",
+      "title": "Innate (YC F24) - Home robots as easy to program as AI agents",
       "summary": "Innate launches a platform making home robots programmable with the ease of AI agents, potentially revolutionizing domestic robotics.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=42451707",
@@ -18,7 +18,7 @@
       "category": "open-source"
     },
     {
-      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files - no coding required",
       "summary": "Anthropic's new Cowork desktop agent for Claude allows users to interact with and perform tasks on their local files without requiring any coding.",
       "source": "VentureBeat",
       "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
@@ -26,7 +26,7 @@
       "category": "product"
     },
     {
-      "title": "Sourcetable – AI Spreadsheet and Data Platform",
+      "title": "Sourcetable - AI Spreadsheet and Data Platform",
       "summary": "Sourcetable introduces an AI-powered spreadsheet and data platform that enables users to manage and analyze data using natural language.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=41590682",
@@ -34,7 +34,7 @@
       "category": "product"
     },
     {
-      "title": "Dedalus Labs (YC S25) – Vercel for Agents",
+      "title": "Dedalus Labs (YC S25) - Vercel for Agents",
       "summary": "Dedalus Labs is building a platform akin to Vercel, providing infrastructure for deploying and managing AI agents at scale.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=45054040",
@@ -50,7 +50,7 @@
       "category": "industry"
     },
     {
-      "title": "Dropbase AI – A Prompt-Based Python Web App Builder",
+      "title": "Dropbase AI - A Prompt-Based Python Web App Builder",
       "summary": "Dropbase AI is an open-source tool that allows users to build Python web applications by simply providing natural language prompts.",
       "source": "Hacker News",
       "url": "https://github.com/DropbaseHQ/dropbase",
@@ -58,7 +58,7 @@
       "category": "open-source"
     },
     {
-      "title": "Vellum (YC W23) – Dev Platform for LLM Apps",
+      "title": "Vellum (YC W23) - Dev Platform for LLM Apps",
       "summary": "Vellum offers a comprehensive development platform designed to help engineers build, evaluate, and deploy large language model applications.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=35042836",
@@ -106,7 +106,7 @@
       "category": "research"
     },
     {
-      "title": "Inkeep (YC W23) – Copilot for Support (think Cursor for help desks)",
+      "title": "Inkeep (YC W23) - Copilot for Support (think Cursor for help desks)",
       "summary": "Inkeep introduces an AI-powered copilot specifically tailored to enhance productivity and efficiency for support and help desk teams.",
       "source": "Hacker News",
       "url": "https://news.ycombinator.com/item?id=41697137",

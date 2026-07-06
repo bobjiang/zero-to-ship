@@ -2,17 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { ArrowRight, CheckCircle, WarningCircle } from '@phosphor-icons/react';
 import { Button } from '@/components/ui/Button';
+import { helperClass, inputClass, labelClass } from '@/components/ui/formStyles';
 
 interface Props {
   disabled: boolean;
 }
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
-
-const inputClass =
-  'w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 shadow-sm placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 disabled:bg-gray-50 disabled:text-gray-500';
-const labelClass = 'mb-1.5 block text-sm font-medium text-gray-900';
 
 export function SubmissionForm({ disabled }: Props) {
   const [status, setStatus] = useState<Status>('idle');
@@ -56,7 +54,7 @@ export function SubmissionForm({ disabled }: Props) {
         setErrorMsg('Please fill in name, title, intro, and tick the consent box.');
         break;
       case 'server':
-        setErrorMsg('Server error — storage is unreachable. Please contact the organizer.');
+        setErrorMsg('Server error - storage is unreachable. Please contact the organizer.');
         break;
       default:
         setErrorMsg('Something went wrong. Please try again in a moment.');
@@ -65,14 +63,20 @@ export function SubmissionForm({ disabled }: Props) {
 
   if (status === 'success') {
     return (
-      <div className="rounded-lg border border-green-200 bg-green-50 p-6 shadow-sm">
-        <p className="text-lg font-semibold text-green-900">Thanks — your talk is under review.</p>
-        <p className="mt-2 text-sm text-green-800">
+      <div className="rounded-none border border-green-200 bg-green-50 p-6 shadow-sm shadow-green-950/5 dark:border-green-900/60 dark:bg-green-950/30">
+        <div className="flex h-11 w-11 items-center justify-center rounded-none bg-white text-green-700 dark:bg-green-950 dark:text-green-200">
+          <CheckCircle className="h-6 w-6" weight="fill" />
+        </div>
+        <p className="mt-4 text-lg font-black tracking-tight text-green-950 dark:text-green-100">Thanks - your talk is under review.</p>
+        <p className="mt-2 text-sm leading-6 text-green-800 dark:text-green-200">
           You&apos;ll see it on the voting page once organizers approve it.
         </p>
         <div className="mt-5">
           <Link href="/vote">
-            <Button size="lg">Go vote for other talks →</Button>
+            <Button size="lg" className="gap-2">
+              Go vote for other talks
+              <ArrowRight className="h-4 w-4" weight="bold" />
+            </Button>
           </Link>
         </div>
       </div>
@@ -88,7 +92,7 @@ export function SubmissionForm({ disabled }: Props) {
       <label className="block">
         <span className={labelClass}>Talk title</span>
         <input name="title" required maxLength={80} className={inputClass} disabled={disabled} />
-        <span className="mt-1 block text-xs text-gray-500">Up to 80 characters.</span>
+        <span className={helperClass}>Up to 80 characters.</span>
       </label>
       <label className="block">
         <span className={labelClass}>Short intro</span>
@@ -100,12 +104,12 @@ export function SubmissionForm({ disabled }: Props) {
           className={inputClass}
           disabled={disabled}
         />
-        <span className="mt-1 block text-xs text-gray-500">Up to 500 characters.</span>
+        <span className={helperClass}>Up to 500 characters.</span>
       </label>
       <label className="block">
         <span className={labelClass}>GitHub</span>
         <input name="handle" className={inputClass} disabled={disabled} placeholder="@username" />
-        <span className="mt-1 block text-xs text-gray-500">Optional. Not shown publicly.</span>
+        <span className={helperClass}>Optional. Not shown publicly.</span>
       </label>
       <label className="block">
         <span className={labelClass}>Email</span>
@@ -116,15 +120,15 @@ export function SubmissionForm({ disabled }: Props) {
           disabled={disabled}
           placeholder="you@example.com"
         />
-        <span className="mt-1 block text-xs text-gray-500">Optional. Not shown publicly.</span>
+        <span className={helperClass}>Optional. Not shown publicly.</span>
       </label>
-      <label className="flex items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
+      <label className="flex items-start gap-3 rounded-none border border-slate-200 bg-slate-50 p-4 text-sm font-semibold leading-6 text-slate-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
         <input
           type="checkbox"
           name="consent"
           required
           disabled={disabled}
-          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-600"
+          className="mt-1 h-4 w-4 rounded-none border-slate-300 text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-600 dark:border-slate-700"
         />
         <span>
           I understand this is a 5-minute lightning talk and agree my submission can be displayed publicly for
@@ -132,7 +136,8 @@ export function SubmissionForm({ disabled }: Props) {
         </span>
       </label>
       {status === 'error' && (
-        <p role="alert" className="text-sm font-medium text-red-700">
+        <p role="alert" className="flex items-center gap-2 text-sm font-bold text-red-700 dark:text-red-300">
+          <WarningCircle className="h-5 w-5" weight="fill" />
           {errorMsg}
         </p>
       )}
@@ -143,11 +148,11 @@ export function SubmissionForm({ disabled }: Props) {
           disabled={disabled || status === 'submitting'}
           className="w-full sm:w-auto"
         >
-          {status === 'submitting' ? 'Submitting…' : 'Submit talk'}
+          {status === 'submitting' ? 'Submitting...' : 'Submit talk'}
         </Button>
       </div>
       {disabled && (
-        <p className="text-sm text-gray-600">Submissions are closed.</p>
+        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">Submissions are closed.</p>
       )}
     </form>
   );

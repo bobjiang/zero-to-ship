@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 import { Container } from '@/components/ui/Container';
 import { getNewsByDate, getAllNewsDates } from '@/lib/news';
 import { cn, cardSurface, cardHover } from '@/lib/utils';
@@ -26,10 +27,10 @@ export async function generateMetadata({ params }: DailyNewsPageProps) {
   });
 
   return {
-    title: `AI News — ${formatted}`,
+    title: `AI News - ${formatted}`,
     description: `Top AI news for ${formatted}, curated from Hacker News, Reddit, arXiv, and Hugging Face.`,
     openGraph: {
-      title: `AI News — ${formatted}`,
+      title: `AI News - ${formatted}`,
       description: `Top AI news for ${formatted}`,
       type: 'article' as const,
     },
@@ -40,10 +41,10 @@ export async function generateMetadata({ params }: DailyNewsPageProps) {
 }
 
 const categoryColors: Record<NewsCategory, string> = {
-  research: 'bg-purple-100 text-purple-700',
-  product: 'bg-blue-100 text-blue-700',
-  'open-source': 'bg-green-100 text-green-700',
-  industry: 'bg-amber-100 text-amber-700',
+  research: 'bg-purple-100 text-purple-700 dark:bg-purple-950/50 dark:text-purple-200',
+  product: 'bg-blue-100 text-blue-700 dark:bg-blue-950/50 dark:text-blue-200',
+  'open-source': 'bg-green-100 text-green-700 dark:bg-green-950/50 dark:text-green-200',
+  industry: 'bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-200',
 };
 
 export default async function DailyNewsPage({ params }: DailyNewsPageProps) {
@@ -67,48 +68,55 @@ export default async function DailyNewsPage({ params }: DailyNewsPageProps) {
   const olderDate = currentIndex < allDates.length - 1 ? allDates[currentIndex + 1] : null;
 
   return (
-    <div className="py-20">
+    <div className="py-16 sm:py-24">
       <Container>
         <div className="mx-auto max-w-3xl">
-          <div className="mb-6">
+          <div className="mb-8">
             <Link
               href="/news"
-              className="text-sm font-medium text-blue-600 hover:text-blue-700"
+              className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
             >
-              ← Back to AI News
+              <ArrowLeft className="h-4 w-4" weight="bold" />
+              Back to AI News
             </Link>
           </div>
 
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            AI News — {formatted}
-          </h1>
-          <div className="mt-3">
-            <BookmarkButton contentType="news" contentSlug={date} />
-          </div>
+          <header className="border-b border-slate-200 pb-8 dark:border-slate-800">
+            <p className="text-sm font-black uppercase tracking-[0.24em] text-blue-600 dark:text-blue-400">
+              Daily briefing
+            </p>
+            <h1 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-5xl dark:text-white">
+              AI News - {formatted}
+            </h1>
+            <div className="mt-5">
+              <BookmarkButton contentType="news" contentSlug={date} />
+            </div>
+          </header>
 
-          <div className="mt-8 space-y-6">
+          <div className="mt-8 space-y-4">
             {news.items.map((item, i) => (
               <a
                 key={i}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={cn(cardSurface, cardHover, 'block p-5')}
+                className={cn(cardSurface, cardHover, 'group block p-5 sm:p-6')}
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-sm font-bold text-gray-700">
+                <div className="flex items-start gap-4 sm:gap-5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none bg-blue-50 text-sm font-black text-blue-700 dark:bg-blue-950/50 dark:text-blue-200">
                     {item.score}
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-lg font-semibold text-gray-900">
+                    <span className="flex items-start gap-2 text-lg font-black tracking-tight text-slate-950 transition group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
                       {item.title}
+                      <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 opacity-50 transition group-hover:opacity-100" weight="bold" />
                     </span>
-                    <p className="mt-1 text-gray-600">{item.summary}</p>
-                    <div className="mt-2 flex items-center gap-2">
-                      <span className="text-xs font-medium text-gray-500">{item.source}</span>
+                    <p className="mt-2 text-base leading-7 text-slate-600 dark:text-slate-300">{item.summary}</p>
+                    <div className="mt-4 flex flex-wrap items-center gap-2">
+                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">{item.source}</span>
                       <span
                         className={cn(
-                          'rounded-full px-2 py-0.5 text-xs font-medium',
+                          'rounded-none px-2.5 py-1 text-xs font-bold',
                           categoryColors[item.category]
                         )}
                       >
@@ -121,13 +129,14 @@ export default async function DailyNewsPage({ params }: DailyNewsPageProps) {
             ))}
           </div>
 
-          <div className="mt-8 flex justify-between border-t border-gray-200 pt-6">
+          <div className="mt-10 flex justify-between border-t border-slate-200 pt-6 dark:border-slate-800">
             {newerDate ? (
               <Link
                 href={`/news/${newerDate}`}
-                className="text-sm font-medium text-blue-600 hover:text-blue-700"
+                className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
               >
-                ← Newer
+                <ArrowLeft className="h-4 w-4" weight="bold" />
+                Newer
               </Link>
             ) : (
               <span />
@@ -135,9 +144,10 @@ export default async function DailyNewsPage({ params }: DailyNewsPageProps) {
             {olderDate ? (
               <Link
                 href={`/news/${olderDate}`}
-                className="text-sm font-medium text-blue-600 hover:text-blue-700"
+                className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 transition hover:text-blue-700 dark:text-blue-400"
               >
-                Older →
+                Older
+                <ArrowRight className="h-4 w-4" weight="bold" />
               </Link>
             ) : (
               <span />

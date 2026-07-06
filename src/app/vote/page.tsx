@@ -9,6 +9,8 @@ import {
   tallyVotes,
 } from '@/lib/voting';
 import { Container } from '@/components/ui/Container';
+import { EmptyState } from '@/components/ui/EmptyState';
+import { PageHeader } from '@/components/ui/PageHeader';
 import { AutoRefresh } from './AutoRefresh';
 import { VoteClient } from './VoteClient';
 import { VotedView } from './VotedView';
@@ -31,17 +33,21 @@ export default async function VotePage() {
   const ballots = showReadOnly ? await listBallots(event.slug) : [];
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 sm:py-24">
       <Container>
         <div className="mx-auto max-w-3xl">
           {!closed && <AutoRefresh intervalMs={10000} />}
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            {existing
-              ? 'Your vote is in'
-              : closed
-                ? 'Voting is closed'
-                : 'Vote for talks you want to hear'}
-          </h1>
+          <PageHeader
+            eyebrow="Lightning talks"
+            title={
+              existing
+                ? 'Your vote is in'
+                : closed
+                  ? 'Voting is closed'
+                  : 'Vote for talks you want to hear'
+            }
+            description="Pick the community talks you would most like to see live."
+          />
 
           <div className="mt-10">
             {showReadOnly ? (
@@ -76,9 +82,10 @@ export default async function VotePage() {
                 );
               })()
             ) : approved.length === 0 ? (
-              <p className="text-gray-600">
-                No talks are available for voting yet.
-              </p>
+              <EmptyState
+                title="No talks are available for voting yet."
+                description="Approved talks will appear here once organizers publish them."
+              />
             ) : (
               <VoteClient
                 cards={shuffleWithSeed(

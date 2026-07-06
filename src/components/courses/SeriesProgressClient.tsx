@@ -37,13 +37,13 @@ export function SeriesProgressClient({ seriesSlug, totalLessons }: SeriesProgres
 
   return (
     <div className="mt-4">
-      <div className="flex items-center justify-between text-sm text-gray-600">
+      <div className="flex items-center justify-between text-sm font-semibold text-slate-600 dark:text-slate-300">
         <span>{completedCount} of {totalLessons} lessons completed</span>
         <span>{percentage}%</span>
       </div>
-      <div className="mt-1 h-2 w-full rounded-full bg-gray-200">
+      <div className="mt-2 h-2 w-full rounded-none bg-slate-200 dark:bg-slate-800">
         <div
-          className="h-2 rounded-full bg-blue-600 transition-all"
+          className="h-2 rounded-none bg-blue-600 transition-all"
           style={{ width: `${percentage}%` }}
         />
       </div>
