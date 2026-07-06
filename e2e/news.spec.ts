@@ -11,6 +11,16 @@ test.describe('News', () => {
     const links = page.locator('a[href^="/news/"]');
     const count = await links.count();
     expect(count).toBeGreaterThan(0);
+    expect(count).toBeLessThanOrEqual(24);
+  });
+
+  test('news pagination links to older and newer briefings', async ({ page }) => {
+    await page.goto('/news');
+    await expect(page.getByRole('navigation', { name: 'News pagination' })).toBeVisible();
+    await page.getByRole('link', { name: /Older/ }).click();
+    await expect(page).toHaveURL(/\/news\?page=2$/);
+    await page.getByRole('link', { name: /Newer/ }).click();
+    await expect(page).toHaveURL(/\/news$/);
   });
 
   test('clicking a date navigates to daily news', async ({ page }) => {
