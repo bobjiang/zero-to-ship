@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-08",
+  "items": [
+    {
+      "title": "Meta Launches Muse Image AI Generator Amid User Pushback on Photo Use",
+      "summary": "Meta has introduced its new AI image generator, Muse Image, which is already facing criticism from users regarding the utilization of their personal photos for training data.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Microsoft Shifts to In-House AI Models to Cut Costs",
+      "summary": "Microsoft is increasingly relying on its own internally developed AI models to reduce operational expenses, aligning with a broader industry trend towards cost optimization in AI.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/07/microsoft-joins-ai-cost-cutting-trend-by-relying-more-on-its-own-models/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Expands Gemini API with Managed Agents for Background Tasks and Remote MCP",
+      "summary": "Google is enhancing its Gemini API by introducing expanded managed agents, enabling developers to integrate background tasks and remote Multi-Cloud Platform (MCP) capabilities into their AI applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Open Source AI's Rise Not Yet Hurting Anthropic, Report Suggests",
+      "summary": "Despite the growing prominence of open-source AI, a new analysis indicates that it has not yet significantly impacted Anthropic's competitive position or business model.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "OmniOpt: A Comprehensive Taxonomy, Geometry, and Benchmarking of Modern Optimizers",
+      "summary": "Researchers introduce OmniOpt, a new framework providing a detailed taxonomy, geometric analysis, and benchmarking suite for evaluating modern optimization algorithms in AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.04033",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning",
+      "summary": "A new research paper presents UI-MOPD, a method for multi-platform on-policy distillation that enables AI agents to continually learn and adapt to various graphical user interfaces.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.04425",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Australian Payments Plus Accelerates Operations with ChatGPT and Codex Integration",
+      "summary": "Australian Payments Plus is leveraging OpenAI's ChatGPT and Codex to streamline and accelerate its operations, showcasing the practical application of large language models in the financial sector.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/australian-payments-plus",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "MUFG Aims to Become AI-Native Through Strategic Partnership with OpenAI",
+      "summary": "Japanese financial giant MUFG is embarking on a journey to become an AI-native organization by integrating OpenAI technologies across its operations, signaling a major digital transformation.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/mufg",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "PixWorld: Unifying 3D Scene Generation and Reconstruction in Pixel Space",
+      "summary": "PixWorld proposes a novel approach that unifies the tasks of 3D scene generation and reconstruction by operating entirely within the pixel space, offering new possibilities for computer graphics and vision.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.05373",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MANCE: Manifold Aware Concept Erasure for AI Models",
+      "summary": "MANCE introduces a new technique for concept erasure in AI models, allowing for the targeted removal of specific concepts while preserving overall model performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.03973",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AlayaWorld: Enabling Long-Horizon and Playable Video World Generation",
+      "summary": "AlayaWorld presents a breakthrough in AI, allowing for the generation of long-horizon and interactive video worlds, pushing the boundaries of realistic simulation and content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.06291",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "GigaWorld-1: A Roadmap for Building World Models for Robot Policy Evaluation",
+      "summary": "GigaWorld-1 outlines a comprehensive roadmap for developing advanced world models specifically designed to evaluate and improve robot policies, crucial for robust autonomous systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02642",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Vision Pretraining for Dense Spatial Perception Advances Robotics and AR/VR",
+      "summary": "New research explores vision pretraining techniques aimed at improving dense spatial perception, which is critical for applications in robotics, augmented reality, and virtual reality.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.05247",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "EVA-Client: A Unified Framework for Embodied Policies on Real Robots",
+      "summary": "EVA-Client offers a unified framework for data collection, inference, and deployment of embodied AI policies directly onto real-world robots, streamlining the development process.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.02646",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The AI Conversation Shifts from 'What Can It Do' to 'Can We Rely On It'",
+      "summary": "The discourse around artificial intelligence is evolving, moving beyond capabilities to focus on the critical question of reliability and trustworthiness in AI systems.",
+      "source": "Dev.to",
+      "url": "https://dev.to/cyclopt_dimitrisk/the-ai-conversation-is-shifting-from-what-can-it-do-to-can-we-rely-on-it-2ja7",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
