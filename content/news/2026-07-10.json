@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-10",
+  "items": [
+    {
+      "title": "OpenAI Launches GPT-5.6, Now Preferred Model for Microsoft 365 Copilot",
+      "summary": "OpenAI has officially launched its new family of models with GPT-5.6, which is immediately being integrated as the preferred model for Microsoft 365 Copilot, signaling a deepening partnership despite recent 'breakup chatter'.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Fidji Simo Steps Down from OpenAI's No. 2 Role",
+      "summary": "Fidji Simo, a prominent figure, has resigned from her position as OpenAI's second-in-command, marking a significant leadership change within the leading AI research company.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/09/fidji-simo-steps-down-from-openais-no-2-role/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop an AI-native cloud infrastructure platform, aiming to compete directly with established giants like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google Redesigns Search Box for First Time in 25 Years, Signaling AI Integration",
+      "summary": "Google has unveiled the first redesign of its iconic search box in 25 years, a move that is expected to significantly impact user interaction and likely reflects deeper AI integration.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+      "summary": "New research introduces a deep learning approach for accurate, interdisciplinary, and transparent understanding of structure-property relationships, leveraging native structural reasoning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07708",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+      "summary": "Researchers propose a novel architecture incorporating dual latent memory into Vision-Language-Action models to enhance robotic manipulation capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07608",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Vidu S1: A Real-Time Interactive Video Generation Model",
+      "summary": "A new model named Vidu S1 has been introduced, capable of generating real-time interactive video, pushing the boundaries of dynamic content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.03118",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence",
+      "summary": "New research explores scaling Mixture-of-Experts (MoE) models for video pretraining to significantly advance embodied intelligence systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07675",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Claude Code Costs Up to $200/Month While Goose Offers Similar Functionality for Free",
+      "summary": "A new report highlights a significant cost disparity, noting that Claude Code charges up to $200 monthly for services that a competitor, Goose, provides for free.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "ChatGPT Positioned as a Partner for Ambitious Work",
+      "summary": "OpenAI is marketing ChatGPT as an essential partner for users undertaking their most ambitious projects, emphasizing its enhanced capabilities and reliability.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Stratagems #9: AI Suppliers Fight, Logs Show Neither Was Clean",
+      "summary": "An investigative report reveals a conflict between two AI suppliers where analysis of their logs indicated questionable practices from both parties.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/stratagems-9-lena-and-p-watched-two-ai-suppliers-fight-the-logs-said-neither-was-clean-2pj3",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "LLM-as-a-Tutor: Policy-Aware Prompt Adaptation for Non-Verifiable RL",
+      "summary": "Researchers introduce 'LLM-as-a-Tutor,' a method that uses Large Language Models for policy-aware prompt adaptation to improve non-verifiable Reinforcement Learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.04412",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Your Hand-Typed Slop Isn't Honest. It's Just Slower.",
+      "summary": "An opinion piece argues that manual coding, often seen as more 'honest,' is simply less efficient than leveraging AI tools, suggesting a shift in developer mindset.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/your-hand-typed-slop-isnt-honest-its-just-slower-36ei",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "I Deleted 200 Lines of Code I Didn't Write and Learned More Than When I Wrote It...",
+      "summary": "A developer shares an experience of gaining significant insights by refactoring and deleting AI-generated code, highlighting the learning potential in code review over initial creation.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gamya_m/i-deleted-200-lines-of-code-i-didnt-write-and-learned-more-than-when-i-wrote-it-18dd",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "GPT-5.5 Bio Bug Bounty Program Launched by OpenAI",
+      "summary": "OpenAI has initiated a bug bounty program specifically for its GPT-5.5 Bio model, inviting researchers to identify and report vulnerabilities related to biological applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/bio-bug-bounty",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
