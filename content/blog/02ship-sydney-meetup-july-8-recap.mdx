@@ -1,0 +1,130 @@
+---
+title: "TiDB for AI Agents, the Manus Migration & Building Agent Tools Without APIs — 02Ship Sydney Meetup — July 8, 2026"
+excerpt: "5 takeaways from the July 02Ship Sydney meetup: how TiDB runs 1.2M agent databases for Manus, and how AI agents drive software with no API."
+date: "2026-07-08"
+author: "Bob Jiang"
+keywords: "Claude, meetup, Sydney, 02Ship, TiDB, Manus, AI agents, agentic workloads, distributed SQL, vector search, RU billing, no API, browser automation, Golf.ai, recap"
+---
+
+# TiDB for AI Agents, the Manus Migration & Building Agent Tools Without APIs
+
+## TL;DR
+
+- **Manus** needed one database per agent. TiDB now runs **1.2 million databases** for them, most created by agents.
+- **RU (Request Unit) billing** made it affordable: you pay when queries run, not per idle cluster.
+- Agent workloads are different: up to **15,000 state writes per task**, lots of cold history, and schema **branching**.
+- No API? Find the **hidden client-side API** first. Replay auth with CSRF tokens and session cookies.
+- **Browser automation is the last resort.** For AI phone agents, every 100ms counts.
+
+On **Wednesday, July 8**, the 02Ship community met at **Haymarket HQ** (Level 2, 63 Dixon St, Haymarket) for a special edition on **AI memory and data management**, together with **TiDB**.
+
+The theme of the night: getting a prototype working on your laptop is the easy part. Making your AI product remember, retrieve, and stay fast when real users show up is the hard part.
+
+![Tony Huang from TiDB presenting to attendees at the 02Ship Sydney meetup, July 8 2026](/images/02ship-sydney-meetup-july-8-2026-talk1.jpg)
+
+Thanks to **TiDB** for sponsoring the night, and **Haymarket HQ** for hosting us again.
+
+## Talk 1: Is Your Data Infra Ready If Your AI Product Goes Viral? — Tony Huang (TiDB)
+
+[**Tony Huang, Ph.D.**](https://www.linkedin.com/in/chenhao-huang/) is a Solutions Architect at **TiDB (PingCAP)**. TiDB is an open-source, distributed SQL database. It started as a MySQL-compatible scale-out database, and now it also fits agentic AI workloads.
+
+### How TiDB is built
+
+Tony first explained the architecture:
+
+- A **stateless SQL layer** on top, so you can add or remove compute nodes freely.
+- **TiKV**, a key-value storage layer with 3x replication.
+- **TiFlash**, a columnar engine for analytics on the same data.
+
+Every node is both a reader and a writer. This gives true scale-out, instead of the single-writer bottleneck in a classic primary-replica setup. The cloud version adds object storage for cold data, and **RU (Request Unit) billing**.
+
+### The Manus story
+
+The core of the talk was a case study: **Manus**, the AI agent company (they later received an acquisition proposal from Meta).
+
+- Manus went viral in March 2025. The waitlist hit **2 million people**. The backend could not cope.
+- Their core requirement: **one database cluster per agent**. Each agent needs data isolation, and needs to change its own schema without touching others.
+- The cost problem: at competitor pricing of $5 per cluster per month, 1 million clusters would cost **$60M per year**, against about $100M ARR. That does not work.
+- TiDB's RU billing solved it. A cluster that is not running queries costs almost nothing. You only pay when queries actually run.
+- The migration took **2 weeks**, with a 2 a.m. cutover. Zero application rewrite, because TiDB is MySQL-compatible.
+- After migration: **1.2 million databases**, and the majority were created by agents, not humans.
+
+### What agent workloads need from a database
+
+Tony listed the requirements that the Manus case surfaced:
+
+- **One agent, one database** — isolation plus schema flexibility.
+- **Massive throughput** — up to 15,000 state writes in one task.
+- **High cold-to-hot ratio** — conversation history is rarely read, but must be kept.
+- **Branching** — agents try many schema designs in parallel, drop the failures, and keep the winners.
+
+### Pricing and deployment
+
+- Serverless free tier: 25 GB, good for early-stage apps.
+- Dedicated and Premium tiers for compliance and scale.
+- Bring Your Own Cloud: deploy into your own AWS, GCP, or Azure account.
+- No licensing fees. The price difference is only about scale and compliance.
+
+**[Slides for Tony's talk](https://docs.google.com/presentation/d/17MzSR81r5BkWrYsxh5spz7U260z0HPLzigZTmVWG02Y/edit?usp=sharing)**
+
+## Talk 2: No API? No Problem — Kelly Gold (Golf.ai)
+
+[**Kelly Gold**](https://www.linkedin.com/in/kellytgold/) is Head of Product at **Golf.ai**. His team built an API and booking platform across **8,000 golf courses**, and now an AI phone concierge on top of it.
+
+![Kelly Gold presenting "No API? No Problem" at the 02Ship Sydney meetup, July 8 2026](/images/02ship-sydney-meetup-july-8-2026-talk2.jpg)
+
+The problem: about **50% of the revenue** in the $100B golf industry still comes from phone calls. The software vendors behind those courses have patchy APIs, or no APIs at all. So how does an AI agent talk to software that has no API?
+
+### The escalation ladder
+
+Kelly showed a simple "escalation ladder" for when there is no clean API:
+
+1. **Find the hidden client-side API.** Open DevTools, watch the network calls, and replicate the request with curl.
+2. **Handle auth.** Extract CSRF tokens from the page load, capture session cookies, and replay the login flow.
+3. **Drive a real browser** (Playwright, Stagehand, or an AI-controlled browser) — only as a last resort.
+
+The order matters because of speed. For a phone agent, every 100ms counts. A replayed HTTP call is fast. A browser session is slow. So browser automation is a fallback, not a default.
+
+### Live demo: calling a hidden, authenticated API
+
+Kelly ran a live demo against a real booking system:
+
+- He found a public availability endpoint via DevTools, curled it directly, and got JSON back with room pricing.
+- Then the authenticated flow: load the login page to capture the CSRF token, POST credentials plus the token, and save the session cookie to a temp jar.
+- With the authenticated session, the agent could call the guest lookup and full availability endpoints.
+- The result: the agent saw **hidden inventory** (rooms reserved for corporate clients) and correct member pricing — for example **$286 instead of the $349 rack rate**.
+
+He closed with a full agent demo: phone number lookup, 2FA, membership-aware pricing, and an end-to-end booking, run by **Claude Opus**.
+
+### What this means for agent builders
+
+- An **"AI layer on top" beats "rip and replace"** for near-term enterprise adoption. No retraining, no process change. The pitch is simple: make your team more productive with the tools they already use.
+- **Domain expertise is the real moat.** Dynamic pricing, membership tiers, and booking rules are different in every industry.
+- Vendors are more open to API access after the AI boom. Showing what is possible speeds up partnership talks.
+- An agent permissions model is emerging: sandbox environments where each role (engineer, sales) gets a tailored toolset via MCPs.
+- Legal note: public data scraping is common, but always check the ToS. Credentials and sessions must be encrypted and rotated.
+
+**[Slides for Kelly's talk](https://docs.google.com/presentation/d/1vyiavCWR_TmVdLRTHpVXnY6Qyl-jz_2rhZAg-MJNlJ0/edit?usp=sharing)**
+
+## Community Shout-Outs (Open Mic)
+
+Two community members shared their projects during the open mic:
+
+- **Burin Choomnuan** — demoed **Headscale**, an open-source Tailscale alternative. He routed traffic through his home machine to get past a corporate AI block, and showed remote shell access to his home server from a work-blocked network.
+- **Krish Mootoosamy** — **[TribePicks.com](https://tribepicks.com)**, an office and family prediction competition app built around the 2026 World Cup. 104 matches over 5 weeks, from group stage to the final, with live challenges on individual matches.
+
+If you want to share next time, just add your name to the open mic list when you arrive.
+
+## Join the Next Meetup
+
+The next meetup is on **Tuesday, August 11** at **Haymarket HQ** (Level 2, 63 Dixon St, Haymarket). Same time as before (6:00 – 8:30 PM).
+
+It is free. Spots are limited.
+
+**[Register for the August 11 meetup on Luma](https://luma.com/v4tnji0g)**
+
+## Get Involved
+
+Want to speak at a future meetup, sponsor an event, or help shape the community? **[Get involved with 02Ship →](https://www.02ship.com/get-involved)**
+
+See you there.
