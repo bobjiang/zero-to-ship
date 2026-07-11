@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-11",
+  "items": [
+    {
+      "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
+      "summary": "OpenAI announces GPT-5.6, a new frontier intelligence model designed to offer enhanced capabilities and scalability for various applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-5-6",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Apple sues OpenAI over alleged trade secret theft",
+      "summary": "Apple has filed a lawsuit against OpenAI, accusing the AI research company of stealing trade secrets, marking a significant legal escalation in the AI industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/10/apple-sues-openai-over-alleged-trade-secret-theft/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
+      "summary": "Microsoft 365 Copilot has integrated OpenAI's newly released GPT-5.6 as its preferred model, indicating a major upgrade in its AI-powered productivity features.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Meta removes controversial AI feature on Instagram after backlash",
+      "summary": "Meta has removed a controversial AI feature from Instagram following user backlash, highlighting the challenges of integrating AI into social platforms.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/10/meta-removes-controversial-ai-feature-on-instagram-after-backlash/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "summary": "Anthropic introduces Cowork, a new Claude Desktop agent designed to interact directly with user files without requiring any coding, aiming to enhance productivity for a broader audience.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Salesforce rolls out new Slackbot AI agent as it battles Microsoft and Google in workplace AI",
+      "summary": "Salesforce has launched a new Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly expanding workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Open source AI matters more than ever, according to Hugging Face&#8217;s Clem Delangue",
+      "summary": "Clem Delangue, CEO of Hugging Face, emphasizes the increasing importance of open-source AI in the current technological landscape, advocating for collaborative development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/podcast/open-source-ai-matters-more-than-ever-according-to-hugging-faces-clem-delangue/",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Video-Oasis: Rethinking Evaluation of Video Understanding",
+      "summary": "Researchers introduce Video-Oasis, a new framework that re-evaluates and aims to improve the assessment of video understanding models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2603.29616",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Why Can't I Open My Drawer? Mitigating Object-Driven Shortcuts in Zero-Shot Compositional Action Recognition",
+      "summary": "This research explores methods to mitigate object-driven shortcuts in AI models for zero-shot compositional action recognition, improving their ability to understand complex actions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2601.16211",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Every AI provider fails in its own way. I stopped checking status codes and built an error model instead.",
+      "summary": "A developer shares insights on building a robust error model to handle the diverse failure modes of various AI providers, moving beyond simple status code checks.",
+      "source": "Dev.to",
+      "url": "https://dev.to/manolito99/every-ai-provider-fails-in-its-own-way-i-stopped-checking-status-codes-and-built-an-error-model-25do",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Infinite Worlds with Versatile Interactions",
+      "summary": "A new paper introduces a system capable of generating infinite virtual worlds with diverse and versatile interaction possibilities, pushing boundaries in generative AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07534",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
+      "summary": "UniClawBench is presented as a universal benchmark designed to comprehensively evaluate the performance of proactive AI agents in real-world task scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08768",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation",
+      "summary": "This research introduces a benchmark for evaluating AI's ability to reason about scientific lineage and generate new ideas based on historical scientific development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08758",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Make AI Agents See Your Website",
+      "summary": "This article provides guidance on how to optimize websites to be effectively interpreted and utilized by AI agents, enhancing their interaction capabilities.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kumakint/make-ai-agents-see-your-website-1d23",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "LongE2V: Long-Horizon Event-based Video Reconstruction, Prediction, and Frame Interpolation with Video Diffusion Models",
+      "summary": "LongE2V introduces a novel approach using video diffusion models for long-horizon event-based video reconstruction, prediction, and frame interpolation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08770",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
