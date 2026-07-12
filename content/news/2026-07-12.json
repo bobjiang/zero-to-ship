@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-12",
+  "items": [
+    {
+      "title": "Introducing GPT-Live: OpenAI's New Real-Time Conversational AI",
+      "summary": "OpenAI has launched GPT-Live, a new product offering real-time conversational AI capabilities, signaling a significant advancement in interactive AI.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-live",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Bets on Families as ChatGPT Integrates Deeper into Households",
+      "summary": "OpenAI is strategically targeting families, aiming to embed ChatGPT more deeply into daily household life with new features and use cases.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Hugging Face CEO Discusses Shift Away from Renting AI Models",
+      "summary": "The CEO of Hugging Face highlights a growing trend where companies prefer to own and customize their AI models rather than relying solely on rented services.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/10/hugging-faces-ceo-on-why-companies-are-done-renting-their-ai/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs secured $69 million in funding following a viral hiring campaign, which will be used to expand its AI-powered customer interview platform.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "How Deutsche Telekom is Revolutionizing Telecommunications with AI",
+      "summary": "Deutsche Telekom is actively integrating AI across its operations to innovate and enhance its telecommunications infrastructure and services.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/deutsche-telekom",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "SK Hynix Raises $26.5B in Historic IPO, Urged to Build New US Fabs",
+      "summary": "SK Hynix completed the largest foreign IPO in US history, raising $26.5 billion, and faces calls to establish new fabrication plants in the United States.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Helping K–12 Educators Build Practical AI Skills",
+      "summary": "OpenAI is launching initiatives to equip K–12 educators with practical AI skills, fostering AI literacy and integration in classrooms.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/k-12-educators-practical-skills",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "NYC Educators and Industry Leaders Convene to Shape AI's Future in Classrooms",
+      "summary": "An AI summit in New York City brought together educators and industry experts at Google's offices to discuss and define the role of AI in future education.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/education/nyc-ai-summit/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "How to Turn Slack into an AI Teammate for Automated Pull Requests",
+      "summary": "A developer shares a method for integrating AI into Slack to automate the creation and submission of pull requests, streamlining development workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/marrouchi/how-i-turned-slack-into-an-ai-teammate-that-opens-pull-requests-b4p",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "DrugGen 2: A Disease-Aware Language Model for Enhanced Drug Discovery",
+      "summary": "DrugGen 2 introduces a new disease-aware language model designed to significantly improve the efficiency and targeting of drug discovery processes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08404",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Enhancing In-context Panoramic Generation via Geometric-aware Pretraining",
+      "summary": "New research proposes a geometric-aware pretraining method to significantly improve the quality and coherence of in-context panoramic image generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08765",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE",
+      "summary": "Jet-Long presents an innovative approach using dynamic bifocal RoPE to efficiently extend the context window of large language models, improving their ability to handle longer inputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07740",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "JD Oxygen AI Item Center V1: An Industrial-Scale LLM/VLM Solution for Item Understanding",
+      "summary": "JD.com introduces Oxygen AIIC V1, an industrial-scale solution leveraging LLM/VLM for comprehensive item understanding, management, and diverse applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.28070",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Single-Rollout Asynchronous Optimization for Agentic Reinforcement Learning",
+      "summary": "This paper introduces a novel single-rollout asynchronous optimization technique to enhance the training efficiency and performance of agentic reinforcement learning systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07508",
+      "score": 4,
+      "category": "research"
+    },
+    {
+      "title": "See How AI Instructions Decay and Learn to Write Persistent Ones",
+      "summary": "An article explores the phenomenon of AI instruction decay and provides strategies for crafting more robust and enduring prompts for AI models.",
+      "source": "Dev.to",
+      "url": "https://dev.to/cleverhoods/see-how-ai-instructions-decay-then-write-ones-that-hold-k9",
+      "score": 4,
+      "category": "research"
+    }
+  ]
+}
