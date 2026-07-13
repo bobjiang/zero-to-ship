@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-13",
+  "items": [
+    {
+      "title": "OpenAI's GPT 5.6 is the 'preferred model' for Microsoft Copilot 365 amid breakup chatter",
+      "summary": "OpenAI confirms GPT 5.6 as the favored model for Microsoft Copilot 365, amidst ongoing speculation about potential tensions or a 'breakup' between the two AI giants.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/09/openai-says-gpt-5-6-is-the-preferred-model-for-microsoft-copilot-amid-breakup-chatter/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OpenCoF: Learning to Reason Through Video Generation",
+      "summary": "Researchers introduce OpenCoF, a new framework that enables AI models to learn reasoning capabilities by generating videos, marking a significant step towards more intelligent video understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08763",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "An AI agent startup just let its agent run its $100M fundraise",
+      "summary": "A new AI agent startup successfully closed a $100 million funding round, notably allowing its own AI agent to autonomously manage the entire fundraising process.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/09/an-ai-agent-startup-just-let-its-agent-run-its-100-million-fundraise/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI is shutting down Atlas, but its AI browser ambitions are still growing",
+      "summary": "OpenAI is discontinuing its Atlas project, yet simultaneously signals continued and expanding ambitions in the development of AI-powered browser technologies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment",
+      "summary": "Nous Research has released NousCoder-14B, a new open-source coding model that positions itself as a strong competitor in the rapidly evolving landscape of AI-powered code generation, particularly against models like Claude Code.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "CineMobile: On-Device Image-to-Video Diffusion for Cinematic Camera Motion Generation",
+      "summary": "CineMobile introduces an on-device image-to-video diffusion model capable of generating cinematic camera motions, bringing advanced video creation to mobile platforms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.03803",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Simple Benchmark Review: Ollama on Jetson Nano",
+      "summary": "A practical benchmark review evaluates the performance of Ollama, a tool for running large language models locally, on the resource-constrained Jetson Nano device.",
+      "source": "Dev.to",
+      "url": "https://dev.to/annavi11arrea1/simple-benchmark-review-ollama-on-jetson-nano-5gee",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Linear Attention Architectures: Mechanisms, Trade-offs, and Cross-Layer Routing",
+      "summary": "This paper delves into the intricacies of linear attention architectures, analyzing their mechanisms, performance trade-offs, and novel cross-layer routing strategies for improved efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07953",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies",
+      "summary": "RoboDojo presents a new unified benchmark that bridges simulation and real-world environments to thoroughly evaluate generalist robot manipulation policies, advancing the field of robotics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.04434",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Let an AI clear out your false positives without letting it hide a real bug",
+      "summary": "This article explores strategies for leveraging AI to filter out false positives in bug detection while ensuring that genuine software defects are not inadvertently concealed.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws-builders/let-an-ai-clear-out-your-false-positives-without-letting-it-hide-a-real-bug-1akl",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
+      "summary": "Researchers introduce a proactive memory agent designed to enhance the performance of long-horizon AI agents by selectively recalling relevant information when needed.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08716",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Sparse Delta Memory: Scaling the State of Linear RNNs through Sparsity",
+      "summary": "This paper proposes Sparse Delta Memory, a method that leverages sparsity to efficiently scale the state of linear Recurrent Neural Networks, improving their capacity and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07386",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Automating the Design of Embodied Agent Architectures",
+      "summary": "This research focuses on automating the design process for embodied agent architectures, aiming to streamline the development of intelligent systems that interact with physical environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.30111",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "InsightsTrack + Pulse: I taught Claude Desktop to read my web analytics (via MCP)",
+      "summary": "A developer successfully integrated Claude Desktop with web analytics tools (InsightsTrack + Pulse) using an MCP (Multi-modal Control Protocol) to enable the AI to interpret and act on data.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nishikantaray/insightstrack-pulse-i-taught-claude-desktop-to-read-my-web-analytics-via-mcp-13bd",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Scalable Visual Pretraining for Language Intelligence",
+      "summary": "This paper explores scalable visual pretraining techniques designed to significantly enhance the language intelligence capabilities of AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.09657",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
