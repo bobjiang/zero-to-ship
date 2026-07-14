@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-14",
+  "items": [
+    {
+      "title": "Video-generation startup PixVerse raises $439M, valuation soars past $2B",
+      "summary": "Video-generation startup PixVerse has successfully raised $439 million, pushing its valuation past $2 billion, signaling strong investor confidence in the generative AI video market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading",
+      "summary": "Researchers introduce a new benchmark, Long-Horizon-Terminal-Bench, designed to rigorously test the capabilities of AI agents on complex, multi-step terminal tasks using a dense reward system for evaluation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08964",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Video Generation Models are General-Purpose Vision Learners",
+      "summary": "A new paper proposes that video generation models can serve as versatile general-purpose vision learners, capable of understanding and processing visual information beyond just generating video content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.09024",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The Myth of the Post-Documentation Era",
+      "summary": "This article challenges the notion that AI will eliminate the need for documentation, arguing that clear and comprehensive documentation remains crucial for developers despite advancements in AI coding assistants.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ben/the-myth-of-the-post-documentation-era-39al",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Already rich, already successful, why the last wave of tech winners is grinding again",
+      "summary": "TechCrunch explores why established tech leaders and successful entrepreneurs are re-engaging in intense work, often driven by the transformative potential and competitive landscape of the current AI boom.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/13/already-rich-already-successful-why-the-last-wave-of-tech-winners-is-grinding-again/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "AI Surveillance and Social Progress",
+      "summary": "Bruce Schneier discusses the complex relationship between increasing AI surveillance capabilities and their potential impact on social progress, raising critical ethical and societal questions.",
+      "source": "Lobste.rs",
+      "url": "https://www.schneier.com/blog/archives/2026/07/ai-surveillance-and-social-progress.html",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Uber’s product chief on hotels, robotaxis, and why the company doesn’t want to be “everything for everyone”",
+      "summary": "Uber's product chief discusses the company's strategic focus on core services like hotels and robotaxis, emphasizing a deliberate approach rather than expanding into every possible market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/13/ubers-product-chief-on-hotels-robotaxis-and-why-the-company-doesnt-want-to-be-everything-for-everyone/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Stratagems #13: P Posted a Question on a Public Forum. 24 Hours Later, Their Sales Team Called.",
+      "summary": "This article highlights a concerning incident where a user's public forum post was quickly leveraged by a sales team, raising questions about data privacy and aggressive sales tactics in the age of AI-powered monitoring.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/stratagems-13-p-posted-a-question-on-a-public-forum-24-hours-later-their-sales-team-called-29h1",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "KronQ: LLM Quantization via Kronecker-Factored Hessian",
+      "summary": "A new research paper introduces KronQ, a novel method for quantizing Large Language Models (LLMs) using Kronecker-Factored Hessian, aiming to improve efficiency without significant performance loss.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.07964",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Could Review It. I Couldn’t Write It.",
+      "summary": "A developer shares their experience with AI-generated code, noting that while they can effectively review and debug it, they struggle to write similar code from scratch, highlighting a shift in developer skill sets.",
+      "source": "Dev.to",
+      "url": "https://dev.to/adamthedeveloper/i-could-review-it-i-couldnt-write-it-3gfj",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "I Let Claude Code Write 90% of My Code for 30 Days. I'm a Worse Developer Now.",
+      "summary": "A developer recounts their month-long experiment relying on Claude Code for 90% of their coding, concluding that it ultimately degraded their own development skills due to reduced problem-solving practice.",
+      "source": "Dev.to",
+      "url": "https://dev.to/bluelobster_agent/i-let-claude-code-write-90-of-my-code-for-30-days-im-a-worse-developer-now-1f4m",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Porting Gemma-4 (2B / 4B / 12B) to AWS Inferentia2",
+      "summary": "This article details the process and challenges of porting Google's Gemma-4 models (2B, 4B, and 12B parameters) for optimized inference on AWS Inferentia2 hardware.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/porting-gemma-4-2b-4b-12b-to-aws-inferentia2-2jnf",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "AgentLens: Production-Assessed Trajectory Reviews for Coding Agent Evaluation",
+      "summary": "AgentLens introduces a new methodology for evaluating coding agents by reviewing their generated trajectories in a production-like environment, offering a more practical assessment of their performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.06624",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "How to Build a Market Research Agent with ZenRows and LangChain",
+      "summary": "A practical guide demonstrates how to construct an AI-powered market research agent using ZenRows for data extraction and LangChain for orchestrating the LLM interactions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/zenrows/how-to-build-a-market-research-agent-with-zenrows-and-langchain-1mck",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Our AI support agent doesn't use RAG - here's the math",
+      "summary": "This post explains a technical approach to building an AI support agent that foregoes Retrieval-Augmented Generation (RAG), detailing the underlying mathematical principles of their alternative method.",
+      "source": "Dev.to",
+      "url": "https://dev.to/omar_bni_f6856a8bb0e021e9/our-ai-support-agent-doesnt-use-rag-heres-the-math-1n8c",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
