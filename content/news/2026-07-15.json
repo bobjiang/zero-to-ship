@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-15",
+  "items": [
+    {
+      "title": "OpenAI Researcher Miles Wang in Talks to Launch $2B AI Drug Discovery Startup",
+      "summary": "An OpenAI researcher is reportedly in discussions to launch a new AI drug discovery startup, potentially valued at $2 billion, signaling a major move of AI talent into biotech.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Weak-to-Strong Generalization via Direct On-Policy Distillation",
+      "summary": "Researchers propose a novel method for weak-to-strong generalization in AI models using direct on-policy distillation, achieving significant performance improvements.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.05394",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Reportedly Developing a Screenless, Moving Speaker as Its First Hardware Device",
+      "summary": "OpenAI is rumored to be developing its first hardware product, a screenless, movable speaker, indicating a potential expansion into consumer AI devices.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/14/openais-first-hardware-device-is-reportedly-a-screenless-speaker-that-can-move/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "ABot-N1: Toward a General Visual Language Navigation Foundation Model",
+      "summary": "A new paper introduces ABot-N1, a foundational model designed to advance general visual language navigation capabilities for robotic agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.10383",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory",
+      "summary": "Researchers present ABot-AgentOS, a novel operating system for robotic agents featuring lifelong multi-modal memory to enhance general autonomy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.10350",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "How to Manage AI Investments in the Agentic Era",
+      "summary": "OpenAI provides insights and strategies for businesses to effectively manage their AI investments, particularly in the evolving landscape of autonomous AI agents.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "4D Human-Scene Reconstruction from Low-Overlap Captures",
+      "summary": "A new research paper details a method for reconstructing dynamic 4D human-scene interactions even from limited and low-overlap camera captures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.09125",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LightMem-Ego: Your AI Memory for Everyday Life",
+      "summary": "LightMem-Ego is introduced as a concept for a personal AI memory system designed to assist with everyday life by capturing and organizing experiences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.11487",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Trust Region Policy Distillation",
+      "summary": "This paper explores Trust Region Policy Distillation, an advanced technique for improving the stability and performance of reinforcement learning algorithms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.04751",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification",
+      "summary": "Researchers have developed AdvancedMathBench, a new benchmark suite specifically designed to evaluate AI models' capabilities in generating and verifying complex mathematical proofs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.11849",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Metacognition in LLMs: Foundations, Progress, and Opportunities",
+      "summary": "A comprehensive review explores the foundations, current progress, and future opportunities for metacognition in Large Language Models, focusing on their ability to reason about their own knowledge.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.11881",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Your RAG Eval Isn't Flaky. Your Retrieval Is Non-Deterministic.",
+      "summary": "This article highlights that inconsistencies in Retrieval-Augmented Generation (RAG) evaluations often stem from non-deterministic retrieval processes rather than flaky evaluations themselves.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mrviduus/your-rag-eval-isnt-flaky-your-retrieval-is-non-deterministic-42ab",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models",
+      "summary": "A new approach leverages text-to-image models for pixel-space dense prediction, extending their capabilities beyond RGB generation to detailed field readouts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.06553",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning",
+      "summary": "This research investigates the mechanistic reasons behind the failure of memorized knowledge to generalize effectively during the finetuning of Large Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.08393",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation",
+      "summary": "The paper demonstrates that pretrained Multimodal Large Language Models (MLLMs) can function as effective zero-shot reward models for evaluating text-to-image generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.11886",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
