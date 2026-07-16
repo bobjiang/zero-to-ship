@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-16",
+  "items": [
+    {
+      "title": "Microsoft Reportedly Training Salespeople to Undermine OpenAI and Anthropic",
+      "summary": "Microsoft is reportedly instructing its sales teams to downplay competitors OpenAI and Anthropic, indicating intensifying competition in the enterprise AI market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/15/microsoft-is-reportedly-training-salespeople-to-talk-down-openai-and-anthropic/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Launches $230 Keyboard for Codex Amid Hardware Legal Battle",
+      "summary": "OpenAI has released a $230 keyboard designed for its Codex AI, a move that comes amidst an ongoing hardware legal dispute, signaling a potential expansion into AI-specific peripherals.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/15/amid-hardware-legal-battle-openai-releases-a-230-keyboard-for-codex/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+      "summary": "OpenAI introduces GPT-Red, a new framework focused on enabling self-improvement in models to enhance their robustness and reliability.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/unlocking-self-improvement-gpt-red",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Expanding Managed Agents in Gemini API: Background Tasks, Remote MCP, and More",
+      "summary": "Google announces significant enhancements to the Gemini API, including support for background tasks and remote Managed Control Plane (MCP) for more robust and versatile AI agents.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding",
+      "summary": "SynthDocBench introduces a new controlled benchmark designed to rigorously evaluate the performance of models in long-context visual document understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.10400",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The US Advances AI Safety Through State and Federal Action",
+      "summary": "OpenAI highlights ongoing efforts by both state and federal governments in the US to develop and implement policies aimed at ensuring AI safety.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Verifiable AI Inference",
+      "summary": "A new blog post explores the critical need and methods for ensuring verifiable AI inference, addressing trust and transparency in AI systems.",
+      "source": "Lobste.rs",
+      "url": "https://blog.vrypan.net/2026/07/14/verifiable-ai-inference/",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Building an AI Agent That Knows When Not to Guess (Qwen + MCP)",
+      "summary": "This article details a practical approach to developing an AI agent using Qwen and MCP that can identify when it lacks sufficient information, improving reliability.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/building-an-ai-agent-that-knows-when-not-to-guess-qwen-mcp-19kl",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Search Beyond What Can Be Taught: Evolving the Knowledge Boundary in Agentic Visual Generation",
+      "summary": "This paper explores methods for agentic visual generation to expand its knowledge beyond pre-trained data, pushing the boundaries of what AI can create.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.05382",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LLM Evals For Developer Tools: Useful, Correct, Safe",
+      "summary": "The article discusses the importance of robust evaluation methodologies for Large Language Models (LLMs) used in developer tools to ensure they are useful, correct, and safe.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nazar-boyko/llm-evals-for-developer-tools-useful-correct-safe-33jg",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Chatbot Was Easy. The Engineering Wasn't.",
+      "summary": "This piece reflects on the challenges of engineering robust and scalable chatbot solutions, emphasizing that the underlying infrastructure is often more complex than the AI model itself.",
+      "source": "Dev.to",
+      "url": "https://dev.to/surajrkhonde/the-chatbot-was-easy-the-engineering-wasnt-3cod",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "LangSmith vs Traccia: Observe vs Enforce in Production AI Agents",
+      "summary": "An analysis comparing LangSmith and Traccia highlights their different approaches to managing production AI agents, focusing on observation versus enforcement mechanisms.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nehaaaa6/langsmith-vs-traccia-observe-vs-enforce-in-production-ai-agents-517c",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Type-safe LLM Outputs with Zod: Stop Guessing What the Model Returns",
+      "summary": "This guide demonstrates how to use Zod for type-safe validation of LLM outputs, ensuring predictable and reliable data structures from AI models.",
+      "source": "Dev.to",
+      "url": "https://dev.to/thegdsks/type-safe-llm-outputs-with-zod-stop-guessing-what-the-model-returns-544e",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Post-Mortem: Building a Local MCP Server for Codebase Memory using Ollama and ChromaDB",
+      "summary": "A post-mortem details the process and lessons learned from building a local Managed Control Plane (MCP) server for codebase memory, leveraging Ollama and ChromaDB.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kike/post-mortem-building-a-local-mcp-server-for-codebase-memory-using-ollama-and-chromadb-3ilg",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Why Did My Benchmark Stop at N=22? A Debugging Story in Nine Bugs",
+      "summary": "A detailed debugging story recounts the process of identifying and resolving nine different bugs that caused an AI benchmark to halt prematurely.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/why-did-my-benchmark-stop-at-n22-a-debugging-story-in-nine-bugs-3m2l",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
