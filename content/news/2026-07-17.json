@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-17",
+  "items": [
+    {
+      "title": "Google Vids Now Lets Users Star in Their Own AI-Generated Videos",
+      "summary": "Google Vids introduces new features allowing users to create and star in personalized AI-generated videos, enhancing its creative capabilities.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/16/google-vids-now-lets-you-star-in-your-own-ai-videos/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "The Agent Security Gap: Over Half of Enterprises Report AI Agent Incidents",
+      "summary": "A new report reveals that 54% of enterprises have experienced AI agent-related security incidents, with many still allowing agents to share credentials, highlighting critical security vulnerabilities.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Roblox Launches AI-Powered Game Creation Feature on Mobile App",
+      "summary": "Roblox integrates an AI-powered game creation tool directly into its mobile application, democratizing game development for a wider audience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/16/roblox-launches-an-ai-powered-game-creation-feature-in-its-mobile-app/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Google's AI Mode Expands to Link and Interact with Select Apps",
+      "summary": "Google's AI Mode now allows users to connect and interact with various third-party applications, significantly expanding its utility and integration within the Google ecosystem.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/16/googles-ai-mode-now-lets-you-link-and-interact-with-select-apps/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning",
+      "summary": "Researchers propose Ring-Zero, a method to scale Zero Reinforcement Learning to a trillion parameters, aiming to achieve emergent reasoning capabilities in AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.12395",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Enterprises Face AI Compute Gap, Buying Infrastructure Faster Than Measuring Costs",
+      "summary": "Enterprises are rapidly acquiring AI infrastructure without adequate cost measurement, leading to a significant 'AI compute gap' and potential financial inefficiencies.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/the-ai-compute-gap-enterprises-are-buying-infrastructure-faster-than-they-can-measure-what-it-costs/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Harness Handbook: Making Evolving Agent Harnesses Readable, Navigable, and Editable",
+      "summary": "This paper introduces a 'Harness Handbook' to improve the readability, navigability, and editability of evolving agent harnesses, crucial for advanced AI agent development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13285",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation",
+      "summary": "Boogu-Image-0.1 is presented as a new open-source model aimed at significantly advancing unified multimodal understanding and generation capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13125",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "AI Data Centers and the Concentration of Wealth",
+      "summary": "Bruce Schneier discusses how the proliferation of AI data centers contributes to the concentration of wealth, raising concerns about economic and power imbalances.",
+      "source": "Lobste.rs",
+      "url": "https://www.schneier.com/blog/archives/2026/07/ai-data-centers-and-the-concentration-of-wealth.html",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Function-Aware Fill-in-the-Middle for Coding Agent Foundation Models",
+      "summary": "A new mid-training technique called 'Function-Aware Fill-in-the-Middle' is introduced to enhance coding agent foundation models, improving their ability to complete code based on functional context.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.12463",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Why Teens Deserve Access to Safe AI",
+      "summary": "OpenAI publishes an article advocating for safe and responsible AI access for teenagers, emphasizing the importance of tailored safeguards and educational resources.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/why-teens-deserve-access-safe-ai",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Every AI-Generated Line of Code Is a Small Loan — And Eventually, You Have to Pay It Back",
+      "summary": "An opinion piece argues that AI-generated code, while convenient, incurs technical debt that developers will eventually need to address, highlighting the long-term implications of AI assistance in coding.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/every-ai-generated-line-of-code-is-a-small-loan-and-eventually-you-have-to-pay-it-back-30a6",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "KnowAct-GUIClaw: A Personal GUI Assistant with Self-Evolving Memory and Skill",
+      "summary": "KnowAct-GUIClaw is introduced as a personal GUI assistant designed to deeply understand user interactions and perfectly execute tasks, featuring self-evolving memory and skill acquisition.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.12625",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "What is an \"Agentic Harness,\" Actually?",
+      "summary": "This article provides a clear explanation of what an 'agentic harness' is, detailing its role and significance in the development and deployment of AI agents.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/what-is-an-agentic-harness-actually-4oie",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "OvisOCR2 Technical Report",
+      "summary": "The OvisOCR2 Technical Report details advancements in optical character recognition, showcasing improved performance and capabilities for document processing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13639",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
