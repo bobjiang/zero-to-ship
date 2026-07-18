@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-18",
+  "items": [
+    {
+      "title": "VideoChat3: Fully Open Video MLLM for Efficient and Generalist Video Understanding",
+      "summary": "VideoChat3 introduces a new fully open-source video Multi-modal Large Language Model (MLLM) designed for efficient and generalist video understanding, offering significant advancements in the field.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14935",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "Databricks hits $188B valuation, extending its run as AI’s favorite second act",
+      "summary": "Databricks has achieved a staggering $188 billion valuation, solidifying its position as a key player in the AI ecosystem by providing essential data and analytics infrastructure.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/17/databricks-hits-188b-valuation-extending-its-run-as-ais-favorite-second-act/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
+      "summary": "A new report reveals a significant 'agent security gap,' with over half of enterprises experiencing an AI agent-related security incident and many still allowing agents to share sensitive credentials.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget",
+      "summary": "Researchers have developed 'LongStraw,' a new method enabling Reinforcement Learning (RL) to handle contexts exceeding 2 million tokens while operating within a fixed GPU budget, addressing a major limitation in long-sequence processing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14952",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning",
+      "summary": "The SEED framework proposes a novel approach for agentic reinforcement learning that uses self-evolving on-policy distillation to improve learning efficiency and agent performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14777",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The AI compute gap: Enterprises are buying infrastructure faster than they can measure what it costs",
+      "summary": "Enterprises are rapidly acquiring AI compute infrastructure, creating a 'compute gap' where they struggle to accurately measure and manage the associated costs.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/the-ai-compute-gap-enterprises-are-buying-infrastructure-faster-than-they-can-measure-what-it-costs",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration",
+      "summary": "SearchOS-V1 introduces a new framework aimed at fostering robust collaboration among open-domain information-seeking agents, enhancing their ability to work together effectively.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.15257",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Vertu wants executives to pay $6,880 for an AI agent — here’s how it actually performs",
+      "summary": "Vertu is marketing a high-priced AI agent for executives at $6,880, prompting scrutiny into its actual performance and value proposition for business leaders.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/17/vertu-wants-executives-to-pay-6880-for-an-ai-agent-heres-how-it-actually-performs/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Experiments with On-device AI — What building on Gemini Nano actually teaches you",
+      "summary": "This article shares practical insights and lessons learned from developing applications using Google's Gemini Nano, highlighting the realities of on-device AI implementation.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mohanvenkatakrishnan/experiments-with-on-device-ai-what-building-on-gemini-nano-actually-teaches-you-5deo",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "BadWAM: When World-Action Models Dream Right but Act Wrong",
+      "summary": "A new paper explores the phenomenon of 'BadWAM,' where World-Action Models accurately predict outcomes but fail to execute correct actions, highlighting a critical challenge in agentic AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.15207",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OriginBlame: Record- and Token-Level Data Provenance for AI Training Datasets",
+      "summary": "OriginBlame proposes a novel system for tracking data provenance at both record and token levels within AI training datasets, crucial for transparency and accountability.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.13037",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SPINE: Bridging the Cyber-Physical Gap with Agentic AI",
+      "summary": "SPINE presents an innovative approach to bridge the gap between cyber and physical systems using agentic AI, promising more integrated and intelligent control over real-world environments.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.13049",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The AI context gap: Enterprise AI organizations have a trust problem, not a retrieval problem — and most are still building the fix",
+      "summary": "Enterprise AI organizations face a 'context gap' rooted in trust issues rather than retrieval failures, with many still working to implement solutions to build confidence in AI outputs.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/the-ai-context-gap-enterprise-ai-organizations-have-a-trust-problem-not-a-retrieval-problem-and-most-are-still-building-the-fix",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "RoboTTT: Context Scaling for Robot Policies",
+      "summary": "RoboTTT introduces a method for context scaling in robot policies, enabling more complex and adaptable behaviors for robotic systems by handling larger contextual information.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.15275",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Create, edit and star in videos with two Google Vids updates",
+      "summary": "Google Vids has received two new updates, empowering users to create, edit, and feature themselves in videos more easily, leveraging AI for enhanced content creation.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
