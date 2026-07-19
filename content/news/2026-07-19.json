@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-19",
+  "items": [
+    {
+      "title": "AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities",
+      "summary": "A new unified infrastructure is proposed for comprehensively evaluating the capabilities of AI agents, addressing a critical need in agent development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13705",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "PolicyShiftGuard: Benchmarking and Improving Policy-Adaptive Image Guardrails",
+      "summary": "Researchers introduce a new benchmark and methods to improve policy-adaptive image guardrails, enhancing AI safety and alignment with ethical guidelines.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.05910",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
+      "summary": "A new report reveals that over half of enterprises have experienced security incidents involving AI agents, largely due to agents sharing credentials, highlighting a critical vulnerability.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "The agent evaluation gap: Enterprise AI organizations have a reality-alignment problem, not a coverage problem — and most are shipping to production anyway",
+      "summary": "Enterprises are struggling with evaluating AI agents effectively, leading to a disconnect between perceived and actual performance, yet many are still deploying them to production.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/the-agent-evaluation-gap-enterprise-ai-organizations-have-a-reality-alignment-problem-not-a-coverage-problem-and-most-are-shipping-to-production-anyway",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Kimi: Threat or menace?",
+      "summary": "TechCrunch explores the potential impact and implications of the new AI entity 'Kimi,' questioning its role in the evolving AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/18/kimi-threat-or-menace/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "A scorecard for the AI age",
+      "summary": "OpenAI introduces a new framework or 'scorecard' to assess progress and challenges in the development and deployment of AI technologies.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/a-scorecard-for-the-ai-age",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "KeyFrame-Compass: Towards Comprehensive Evaluation of Keyframe-Conditioned Video Generation",
+      "summary": "A new evaluation benchmark, KeyFrame-Compass, is introduced to thoroughly assess the quality and consistency of video generation models conditioned on keyframes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14202",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Neil Rimer thinks the AI money is coming back out",
+      "summary": "Prominent investor Neil Rimer suggests that the significant capital influx into the AI sector may soon begin to recede, signaling a potential shift in investment trends.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/17/neil-rimer-thinks-the-ai-money-is-coming-back-out/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Agentic orchestration: Enterprise AI organizations have a deployment problem, not a platform problem — and most are calling chatbots agents",
+      "summary": "Many enterprises are mislabeling chatbots as advanced AI agents and face significant challenges in orchestrating and deploying true agentic systems, highlighting a gap in understanding and implementation.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/agentic-orchestration-enterprise-ai-organizations-have-a-deployment-problem-not-a-platform-problem-and-most-are-calling-chatbots-agents",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Your PDFs Are Eating Your LLM's Tokens for Breakfast",
+      "summary": "This article highlights how inefficient PDF processing can consume excessive tokens in Large Language Models, impacting performance and cost.",
+      "source": "Dev.to",
+      "url": "https://dev.to/lovestaco/your-pdfs-are-eating-your-llms-tokens-for-breakfast-1k96",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "MetaView: Monocular Novel View Synthesis with Scale-Aware Implicit Geometry Priors",
+      "summary": "Researchers present MetaView, a new method for generating novel views from a single image by incorporating scale-aware implicit geometry priors.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.12000",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MultiRef-Compass: Towards Comprehensive Evaluation of Multi-Reference-to-Audio-Video Generation",
+      "summary": "MultiRef-Compass is introduced as a new benchmark for thoroughly evaluating AI models that generate audio-video content from multiple references.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14189",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Self-Improvements in Modern Agentic Systems: A Survey",
+      "summary": "This survey provides a comprehensive overview of current techniques and challenges in enabling self-improvement capabilities within modern AI agentic systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13104",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How Cars24 scales conversations and builds faster with OpenAI",
+      "summary": "Cars24 shares insights into how they leverage OpenAI's technologies to scale customer conversations and accelerate their development processes.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/cars24",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination",
+      "summary": "RxBrain introduces an embodied cognition foundation model capable of joint language-visual reasoning and imaginative capabilities, pushing boundaries in multimodal AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14187",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
