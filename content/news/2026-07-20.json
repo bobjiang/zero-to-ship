@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-20",
+  "items": [
+    {
+      "title": "Rethinking Interactive World Models as Game Engines: From Pixels to States",
+      "summary": "A new research paper proposes a novel approach to AI world models by conceptualizing them as game engines that operate from pixels to states, potentially advancing interactive AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14076",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Concurrent Image Understanding and Generation with Self-Correcting Coupled Markov Jump Processes",
+      "summary": "New research introduces a method for AI to simultaneously understand and generate images using self-correcting coupled Markov Jump Processes, promising advancements in multimodal AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13188",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Cloud platform Railway has raised $100 million to develop AI-native cloud infrastructure, positioning itself as a significant competitor to established giants like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "UniVR: Unified Visual Reasoning by Thinking in Visual Space",
+      "summary": "Researchers present UniVR, a framework that enables unified visual reasoning by processing information directly within a visual space, aiming to improve AI's understanding of complex visual tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.12800",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Can an Apple Lawsuit Derail OpenAI’s Hardware Plans?",
+      "summary": "A potential lawsuit from Apple could significantly impact OpenAI's ambitions to expand into hardware, raising questions about the future of AI device development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Jensen Huang's Japan Visit: What to Watch For in NVIDIA's AI Strategy",
+      "summary": "Following NVIDIA CEO Jensen Huang's visit to Japan, industry analysts are closely watching for potential new partnerships or strategic announcements that could shape the future of AI hardware and development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Redesigns Search Box for First Time in 25 Years, Signaling Deeper AI Integration",
+      "summary": "Google has unveiled the first redesign of its search box in 25 years, a move that is expected to signify a deeper integration of AI capabilities and a more intelligent user experience.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Christopher Nolan Calls AI an Obvious ‘Trojan Horse’",
+      "summary": "Acclaimed director Christopher Nolan, known for 'Odyssey,' has voiced strong concerns about AI, labeling it an 'obvious Trojan horse' and highlighting potential hidden dangers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/19/odyssey-director-christopher-nolan-calls-ai-an-obvious-trojan-horse/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Deutsche Telekom Rewires Telecommunications with AI Integration",
+      "summary": "Deutsche Telekom is fundamentally transforming its telecommunications infrastructure by extensively integrating AI, aiming to enhance efficiency and service delivery.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/deutsche-telekom",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Expanded Hyper-Connections (xHC) for Enhanced Neural Network Architectures",
+      "summary": "A new paper introduces xHC, a method for expanded hyper-connections, which aims to improve the performance and efficiency of neural network architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14530",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Registers Matter for Pixel-Space Diffusion Transformers",
+      "summary": "New research highlights the critical role of registers in optimizing pixel-space diffusion transformers, suggesting improvements for high-resolution image generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.16147",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Building AI Agents for Social Media with TypeScript and Hono.js",
+      "summary": "A practical guide demonstrates how to develop AI agents for social media platforms using modern web technologies like TypeScript and Hono.js, offering insights into agent development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mayu2008/building-ai-agents-for-social-media-with-typescript-and-honojs-4lgp",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Google AI Updates: The Latest News from June 2026",
+      "summary": "Google's official blog provides a comprehensive summary of its latest AI advancements and product updates announced throughout June 2026, showcasing ongoing innovation.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "One Line of Math Froze My AI Agent Forever: A Debugging Nightmare",
+      "summary": "A developer recounts a frustrating experience where a single mathematical operation caused an AI agent to freeze indefinitely, highlighting critical issues in agent robustness and error handling.",
+      "source": "Dev.to",
+      "url": "https://dev.to/himanshu_748/one-line-of-math-froze-my-ai-agent-forever-the-timeout-watched-and-did-nothing-2dma",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "From Human-Centric to Agentic Code Review: Impact of Generative AI on Review Quality",
+      "summary": "Research explores how different generations of generative AI technology are transforming code review processes from human-centric to agentic, evaluating their impact on review quality.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13196",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
