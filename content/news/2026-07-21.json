@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-21",
+  "items": [
+    {
+      "title": "Anthropic's Landmark $1.5B Copyright Settlement Approved",
+      "summary": "A significant $1.5 billion copyright settlement involving AI company Anthropic has been officially approved, setting a major precedent for intellectual property in the AI industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/20/anthropics-landmark-1-5b-copyright-settlement-is-approved/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Google Developing New AI Chip to Enhance Gemini Efficiency",
+      "summary": "Google is reportedly working on a new proprietary AI chip specifically designed to improve the efficiency and performance of its Gemini AI models.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/20/google-is-working-on-a-new-ai-chip-designed-to-make-gemini-more-efficient/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Trump's Latest AI Czar Resigns Shortly After Appointment",
+      "summary": "The recently appointed AI czar for the Trump administration has already resigned, indicating potential instability or challenges in high-level AI policy leadership.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Addresses Safety and Alignment for Long-Horizon AI Models",
+      "summary": "OpenAI has published insights into its ongoing efforts to ensure safety and alignment for advanced, long-horizon AI models, highlighting critical challenges in future AI development.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/safety-alignment-long-horizon-models",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "RESOURCE2SKILL: Distilling Executable Agent Skills from Multimodal Resources",
+      "summary": "A new research paper introduces RESOURCE2SKILL, a method for distilling executable agent skills directly from human-created multimodal resources, promising more capable AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.29538",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RAGU: A Multi-Step GraphRAG Engine with Compact Domain-Adapted LLM",
+      "summary": "RAGU presents a novel multi-step GraphRAG engine that incorporates a compact, domain-adapted LLM for enhanced retrieval-augmented generation, improving information retrieval accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.11683",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with 100K Hours of Real-World Data",
+      "summary": "Xiaomi-Robotics-1 demonstrates a significant advancement in vision-language-action models by leveraging over 100,000 hours of real-world robotic trajectories for improved performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.15330",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI and Code Ownership: Who is Responsible for Generated Code?",
+      "summary": "This article delves into the complex legal and ethical questions surrounding code ownership and responsibility when AI systems generate software, a growing concern for developers and companies.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nazar-boyko/ai-and-code-ownership-who-is-responsible-for-generated-code-1dnj",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Cura 1T: Specialized Model for Agentic Healthcare",
+      "summary": "Cura 1T introduces a specialized 1-trillion parameter model designed for agentic applications within the healthcare sector, aiming to enhance automated medical tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.15314",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Google Expands App Connectivity to Search for Enhanced User Experience",
+      "summary": "Google is enabling more applications to connect directly with its Search platform, allowing users to find and interact with app content more seamlessly through search queries.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "ReflectionCLI 2.0: Local-First Thinking CLI for AI-Assisted Development",
+      "summary": "ReflectionCLI 2.0 is released as a local-first command-line interface designed to facilitate AI-assisted development with enhanced thinking and reflection capabilities.",
+      "source": "Dev.to",
+      "url": "https://dev.to/javz/reflectioncli-20-a-local-first-thinking-cli-for-ai-assisted-development-5hi3",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "The Smolagents Bug: A Case Study in Agent Retrying Valid Code",
+      "summary": "A developer recounts a frustrating bug in the smolagents framework where an AI agent repeatedly retried the same valid code, highlighting challenges in agent reliability and debugging.",
+      "source": "Dev.to",
+      "url": "https://dev.to/himanshu_748/the-smolagents-bug-that-made-my-agent-retry-the-same-valid-code-three-times-2aka",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Triton Language for Alibaba SAIL Announced",
+      "summary": "Alibaba's T-Head group has announced support for the Triton language within its SAIL platform, potentially boosting high-performance AI kernel development for their hardware.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/t-head/triton-for-sail",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "NYC AI Summit: Educators and Industry Leaders Shape AI's Future in Classrooms",
+      "summary": "New York City hosted a summit where educators and industry leaders collaborated at Google's offices to discuss and shape the integration of AI into future classroom environments.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/education/nyc-ai-summit/",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding",
+      "summary": "S1-Omni introduces a unified multimodal reasoning model designed to enhance scientific understanding, prediction, and generation across various data types.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.15686",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
