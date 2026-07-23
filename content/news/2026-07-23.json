@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-23",
+  "items": [
+    {
+      "title": "Treasury threatens sanctions after White House claims Moonshot distilled Anthropic’s Fable",
+      "summary": "The U.S. Treasury threatens sanctions following White House allegations that Moonshot illegally distilled Anthropic's Fable model, highlighting escalating tensions over AI intellectual property and national security.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/22/treasury-threatens-sanctions-after-white-house-claims-moonshot-distilled-anthropics-fable/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU",
+      "summary": "Researchers introduce ABot-World-0, a novel system enabling infinite interactive world rollouts on a single desktop GPU, pushing the boundaries of accessible large-scale simulation for AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.19191",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "DataFlow-Harness: A Grounded Code-Agent Platform for Constructing Editable LLM Data Pipelines",
+      "summary": "A new platform, DataFlow-Harness, is introduced as an open-source toolkit for building and editing LLM-driven data pipelines, enhancing the practical application of code-agents in enterprise data analysis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.16617",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Google justifies its massive AI spending with a booming cloud business",
+      "summary": "Google reports that its substantial investments in AI are being validated by the rapid growth and success of its cloud business, which is increasingly driven by AI services and infrastructure.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/22/google-justifies-its-massive-ai-spending-with-a-booming-cloud-business/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "SysAdmin: Measuring Instrumental Power-Seeking in Frontier AI",
+      "summary": "This arXiv paper investigates methods for measuring instrumental power-seeking behaviors in frontier AI systems, addressing critical safety and alignment concerns in advanced AI development.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.18239",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "After shocking quarter, IBM insists that AI isn’t killing the mainframe",
+      "summary": "Following a challenging financial quarter, IBM reassures investors that AI advancements are not rendering its mainframe business obsolete, emphasizing continued relevance and integration strategies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/22/after-shocking-quarter-ibm-insists-that-ai-isnt-killing-the-mainframe/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Text Template Tokens Are Implicit Semantic Registers in Diffusion Transformers",
+      "summary": "New research explores how text template tokens function as implicit semantic registers within Diffusion Transformers, offering insights into their internal mechanisms for text generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.19139",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Generative World Renderer at the Speed of Play",
+      "summary": "A new paper introduces a Generative World Renderer capable of creating immersive virtual environments at speeds suitable for real-time interactive play, enhancing possibilities for gaming and simulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.18703",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SLAI T-Rex: Full-Parameter Post-training of the DeepSeek-V4 Family on Ascend SuperPOD",
+      "summary": "This paper details SLAI T-Rex, a method for full-parameter post-training of the DeepSeek-V4 model family on Huawei's Ascend SuperPOD, showcasing advancements in large model optimization on specialized hardware.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20145",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning",
+      "summary": "Open-AoE is presented as an open-source egocentric manipulation dataset and toolchain, providing crucial resources for research in embodied AI and robotic learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.14183",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents",
+      "summary": "AgentDebugX is introduced as an open-source toolkit designed to enhance the debugging process for LLM agents by providing improved observability, failure attribution, and recovery mechanisms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.18754",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Calibrated Selective Fact-Checking via Evidence Chain Evaluation",
+      "summary": "New research proposes a method for calibrated selective fact-checking that evaluates evidence chains, aiming to improve the reliability and trustworthiness of AI-generated information.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.18240",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Substack's New AI Detector Has the Same Blind Spot DEV.to's Did",
+      "summary": "Substack's recently launched AI detector is found to suffer from the same critical blind spots previously identified in DEV.to's similar tool, raising concerns about the efficacy of current AI content detection methods.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/substacks-new-ai-detector-has-the-same-blind-spot-devtos-did-103j",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "AlayaWorld: Interactive Long-Horizon World Modeling -- Full Technical Report",
+      "summary": "The full technical report for AlayaWorld details its interactive long-horizon world modeling capabilities, offering a comprehensive look at its architecture and performance in complex simulations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.18367",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building AI infrastructure with the Effingham County community",
+      "summary": "OpenAI announces a new initiative to build AI infrastructure in partnership with the Effingham County community, emphasizing local engagement and economic development alongside technological expansion.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
