@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-24",
+  "items": [
+    {
+      "title": "OpenAI Launches 'Health in ChatGPT' for Medical Applications",
+      "summary": "OpenAI has officially launched 'Health in ChatGPT,' signaling its expansion into the healthcare sector with new AI capabilities designed for medical use.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/health-in-chatgpt",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "AMD Challenges Nvidia with New Helios AI Rack-Scale System",
+      "summary": "AMD has unveiled its Helios AI rack-scale system, directly competing with Nvidia in the high-performance AI hardware market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/23/amd-takes-on-nvidia-with-its-helios-ai-rack-scale-system/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic Enhances Claude's Voice Mode with More Capable Models",
+      "summary": "Anthropic has updated its Claude AI, introducing more capable models to its voice mode, improving conversational and interactive experiences.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Salesforce Rolls Out New Slackbot AI Agent to Compete in Workplace AI",
+      "summary": "Salesforce has launched a new Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly growing enterprise workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Google Expands Gemini API with Managed Agents for Background Tasks and Remote MCP",
+      "summary": "Google is expanding its Gemini API to include managed agents, enabling background tasks, remote MCP, and other advanced functionalities for developers.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "summary": "A new research paper introduces AREX, an agent designed for deep research that aims for recursive self-improvement, potentially revolutionizing scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21461",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AI Guardrails Impede Offensive Cybersecurity Research, Raising Concerns",
+      "summary": "AI guardrails are reportedly hindering the work of offensive cybersecurity researchers, sparking debate over the balance between safety and security innovation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/23/how-ai-guardrails-are-impeding-the-work-of-offensive-cybersecurity-researchers/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "The Dirty Secret Behind AI Agents (Demo 🚀)",
+      "summary": "A new article and demo reveal a 'dirty secret' about AI agents, likely exposing common limitations or challenges in their current implementations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sylwia-lask/the-dirty-secret-behind-ai-agents-demo--273d",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "FineServe: A Fine-Grained Dataset and Characterization of Global LLM Serving Workloads",
+      "summary": "Researchers introduce FineServe, a new dataset and characterization study offering fine-grained insights into global LLM serving workloads, crucial for optimizing infrastructure.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.19349",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Subliminal Clocks: Latent Time Modelling in Diffusion Language Models",
+      "summary": "New research explores 'Subliminal Clocks,' a method for latent time modeling within diffusion language models, potentially enhancing their temporal understanding and generation capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.01774",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Self Gradient Forcing: Native Long Video Extrapolation",
+      "summary": "A new paper presents 'Self Gradient Forcing,' a novel technique for native long video extrapolation, enabling AI to generate extended video sequences more coherently.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20368",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Stale but Stable: Staleness-Adaptive Trust Regions for Stabilizing Asynchronous Reinforcement Learning",
+      "summary": "This paper introduces staleness-adaptive trust regions to stabilize asynchronous reinforcement learning, addressing challenges in distributed training environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.18722",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How AI Endpoints Change the Traditional API Flow",
+      "summary": "An article discusses how the integration of AI endpoints is fundamentally altering traditional API flows, introducing new paradigms for data processing and interaction.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gramli/how-ai-endpoints-change-the-traditional-api-flow-3773",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Listen Labs Raises $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs secured $69 million in funding following a viral billboard hiring campaign, aiming to scale its AI-powered customer interview platform.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Beyond Relevance-Centric Retrieval: Rubric-Oriented Document Set Selection and Ranking",
+      "summary": "New research proposes a rubric-oriented approach to document set selection and ranking, moving beyond traditional relevance-centric retrieval methods for improved information access.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.19747",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
