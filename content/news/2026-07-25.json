@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-25",
+  "items": [
+    {
+      "title": "Prentis, new AI lab co-founded by Reid Hoffman, Mark Pincus in talks to raise $100M",
+      "summary": "A new AI lab named Prentis, co-founded by prominent tech figures Reid Hoffman and Mark Pincus, is reportedly seeking to raise $100 million, signaling significant investment in the AI research and development space.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/24/prentis-new-ai-lab-co-founded-by-reid-hoffman-mark-pincus-in-talks-to-raise-100m/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic launches Cowork, a Claude Desktop agent that works in your files — no coding required",
+      "summary": "Anthropic has introduced 'Cowork,' a new Claude desktop agent designed to interact directly with user files without requiring any coding, aiming to make advanced AI assistance more accessible for everyday tasks.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Introducing OpenAI Presence",
+      "summary": "OpenAI has officially launched 'OpenAI Presence,' a new initiative or product that is expected to expand their AI capabilities or reach, though specific details are yet to be fully disclosed.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-openai-presence",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B is an open-source coding model landing right in the Claude Code moment",
+      "summary": "Nous Research has released NousCoder-14B, an open-source coding model that directly competes with commercial offerings like Claude Code, providing a free alternative for developers.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Why Cognition bought Poke: AI personality is becoming a competitive advantage",
+      "summary": "Cognition's acquisition of Poke highlights a growing industry trend where developing distinct AI personalities is seen as a crucial competitive differentiator.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/24/why-cognition-bought-poke-ai-personality-is-becoming-a-competitive-advantage/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "I tried out OpenAI’s new AI keypad — which will be fun for some coders and slightly mystifying to everyone else",
+      "summary": "A review of OpenAI's new AI keypad suggests it offers a novel and potentially useful interface for coders, while its appeal to a broader audience remains uncertain.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/24/i-tried-out-openais-new-ai-keypad-which-will-be-fun-for-coders-and-slightly-mystifying-to-everyone-else/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "ReferTrack: Referring Then Tracking for Embodied Visual Tracking",
+      "summary": "Researchers introduce ReferTrack, a new method for embodied visual tracking that first refers to an object and then tracks it, achieving high engagement in the research community.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20061",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Visual Contrastive Self-Distillation",
+      "summary": "A new research paper explores Visual Contrastive Self-Distillation, a technique for improving model efficiency and performance through self-supervised learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21556",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Open Weights and American AI Leadership",
+      "summary": "A discussion from Microsoft's corporate responsibility blog explores the strategic importance of open-weight AI models for maintaining American leadership in artificial intelligence.",
+      "source": "Lobste.rs",
+      "url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/open-weight/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic's Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "summary": "This article highlights a significant cost disparity between Anthropic's Claude Code, priced at up to $200/month, and a free alternative named Goose that offers similar functionalities.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "3 Google updates from Galaxy Unpacked 2026",
+      "summary": "Google announced three new updates at Galaxy Unpacked 2026, likely integrating advanced AI features into Android and Samsung devices to enhance user experience.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Unlocking Britain’s next era of productivity: Building a nation of AI trailblazers",
+      "summary": "Google's blog post outlines strategies for the UK to leverage AI to boost national productivity and foster a new generation of AI innovators.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/unlocking-britains-next-era-of-productivity-building-a-nation-of-ai-trailblazers/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "How news organizations are using AI to advance their vital missions",
+      "summary": "OpenAI's blog details various ways news organizations are adopting AI technologies to enhance their operations and fulfill their core journalistic objectives.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-news-organizations-are-using-ai",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Advancing the next era of national science",
+      "summary": "OpenAI discusses its commitment to advancing scientific research at a national level, likely through collaborations and access to its cutting-edge AI technologies.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/advancing-the-next-era-of-national-science",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Show, Don't Tell: Evaluating Spatial Cognition in Generative Pixels Rather Than LLM Text",
+      "summary": "New research proposes evaluating spatial cognition in AI by analyzing generative pixels instead of relying solely on LLM text outputs, offering a more direct assessment method.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21072",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
