@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-26",
+  "items": [
+    {
+      "title": "Monday.com is the latest tech company to blame AI for layoffs — here are 20 others",
+      "summary": "Monday.com joins a growing list of over 20 tech companies that have cited AI as a reason for recent layoffs, highlighting a significant industry trend.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "One fallen power line exposed a growing AI data center problem. Here’s how to fix it.",
+      "summary": "A single power line failure has brought to light the increasing vulnerability and infrastructure challenges faced by rapidly expanding AI data centers, prompting calls for urgent solutions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/25/one-fallen-power-line-exposed-a-growing-ai-data-center-problem-heres-how-to-fix-it/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Librarians are hosting viral &#8216;Avoiding AI&#8217; workshops for people who are fed up with Big Tech",
+      "summary": "Librarians are gaining traction with popular workshops designed to help individuals navigate and minimize their interaction with AI technologies, reflecting growing public sentiment against Big Tech.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/25/librarians-are-hosting-viral-avoiding-ai-workshops-for-people-who-are-fed-up-with-big-tech/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "NVIDIA-labs OO Agents: Native Python Object-Oriented Agents",
+      "summary": "NVIDIA-labs introduces a new framework for native Python object-oriented agents, offering a structured approach for developing complex AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20709",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "K12-KGraph: A Curriculum-Aligned Knowledge Graph for Benchmarking and Training Educational LLMs",
+      "summary": "Researchers introduce K12-KGraph, a curriculum-aligned knowledge graph designed to benchmark and enhance the training of large language models specifically for educational applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2605.09635",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Create, edit and star in videos with two Google Vids updates",
+      "summary": "Google Vids receives two new updates, enabling users to create, edit, and feature themselves in videos more easily, leveraging AI for enhanced content creation.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
+      "summary": "NTT DATA Group has significantly reduced incident analysis time to just 30 minutes by integrating OpenAI's Codex, demonstrating the practical impact of AI in IT operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/ntt-data",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "SANA-Video 2.0: Hybrid Linear Attention with Attention Residuals for Efficient Video Generation",
+      "summary": "SANA-Video 2.0 introduces a novel hybrid linear attention mechanism with attention residuals, significantly improving the efficiency of video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21553",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction",
+      "summary": "Tencent introduces WorkBuddy Bench, a new multi-domain benchmark for coding agents featuring contamination-resistant task construction to accurately evaluate their performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20911",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "LLMs Get Lost in Evolving User Intent",
+      "summary": "New research indicates that Large Language Models struggle to maintain coherence and effectiveness when user intent evolves during a conversation, highlighting a key challenge in conversational AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20734",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Self-Supervised Learning of Structured Dynamics from Videos",
+      "summary": "A new paper explores self-supervised learning methods to extract structured dynamics directly from video data, advancing the field of AI understanding complex temporal relationships.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21576",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers",
+      "summary": "Researchers propose a streaming multi-agent autoregressive diffusion model that utilizes world state registers to enhance the generation of complex, dynamic environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21594",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "We instrumented an AI agent swarm with SigNoz, and its own telemetry told us we were wrong about almost everything",
+      "summary": "Instrumenting an AI agent swarm with SigNoz revealed unexpected insights from its telemetry, challenging initial assumptions about its behavior and performance.",
+      "source": "Dev.to",
+      "url": "https://dev.to/himanshu_748/we-instrumented-an-ai-agent-swarm-with-signoz-and-its-own-telemetry-told-us-we-were-wrong-about-3fip",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "What is Good? Extracting and Testing Implicit Theories of Literary Quality from LLM Reasoning Traces",
+      "summary": "This research investigates how to extract and test implicit theories of literary quality by analyzing the reasoning traces of Large Language Models.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.20425",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Knowledge Injection Exists in MoE? Exploring Expert-Aware Contrast Decoding in MoE for Mitigating LLMs'Hallucinations",
+      "summary": "A new study explores the phenomenon of knowledge injection in Mixture-of-Experts (MoE) models and proposes an expert-aware contrast decoding method to reduce hallucinations in LLMs.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.20426",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
