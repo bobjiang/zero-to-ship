@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-27",
+  "items": [
+    {
+      "title": "Hugging Face CEO Calls for 'Radical Transparency' After 'Unprecedented' OpenAI Hack",
+      "summary": "The CEO of Hugging Face advocates for greater transparency in the AI industry following a significant security breach at OpenAI, highlighting concerns about data security and ethical practices.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Are Brain Waves the Next Unlock for Physical AI?",
+      "summary": "This article explores the potential of integrating brainwave data to enhance physical AI systems, suggesting a novel direction for human-AI interaction and control.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/26/are-brain-waves-the-next-unlock-for-physical-ai/",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "An Exam for Active Observers",
+      "summary": "New research introduces a novel framework for evaluating AI systems that actively observe and interact with their environment, pushing the boundaries of agentic AI assessment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.16165",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Making Sense of the Panic Over Chinese AI",
+      "summary": "An analysis delves into the current anxieties surrounding China's advancements in artificial intelligence, examining the geopolitical and technological implications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/26/making-sense-of-the-panic-over-chinese-ai/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "David Vélez and Robin Vince Join the Boards of the OpenAI Foundation and OpenAI Group PBC",
+      "summary": "OpenAI announces the appointment of David Vélez and Robin Vince to its Foundation and Group PBC boards, signaling a strengthening of its leadership and governance.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Color Pass-Through via Camera-Display Coupling",
+      "summary": "This paper presents a method for achieving realistic color pass-through in augmented reality systems by tightly integrating camera and display technologies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.12746",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Sample-Efficient Learning from Agent Experience",
+      "summary": "Researchers explore techniques to improve the sample efficiency of AI agents, allowing them to learn more effectively from limited real-world or simulated experiences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21051",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Scaling Laws for Hypernetwork-Based Knowledge Injection in Large Language Models",
+      "summary": "A study investigates the scaling properties of hypernetworks for injecting new knowledge into large language models, offering insights into efficient model adaptation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.19604",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment",
+      "summary": "This paper proposes a finetuning approach for Vision-Language-Action models that enhances generalizability through robust representation anchoring and improved language-action alignment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.13429",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Euclidean Clipping: Overcoming Exploration Collapse in LLM RL via Riemannian Isometric Policy Optimization",
+      "summary": "New research introduces Riemannian Isometric Policy Optimization to address exploration collapse in LLM reinforcement learning, enabling more stable and effective training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.10169",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DocOps: A Verifiable Benchmark for Autonomous Agents in Complex Document Operations",
+      "summary": "A new benchmark, DocOps, is introduced to rigorously evaluate the performance and verifiability of autonomous AI agents tasked with complex document-based operations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.19865",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning",
+      "summary": "Molt is presented as a scalable, PyTorch-native framework designed to streamline the training of agentic reinforcement learning systems, facilitating complex AI development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21653",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "FVAttn: Adaptive Sparse Attention with Runtime Load Balancing for Video Generation",
+      "summary": "This paper introduces FVAttn, an adaptive sparse attention mechanism with runtime load balancing, significantly improving efficiency for high-quality video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.16190",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion",
+      "summary": "ATSplat offers a compact and efficient 3D Gaussian Splatting method using adaptive token expansion, enabling high-fidelity 3D scene representation with reduced computational cost.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20417",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "FinanceComplexQA: Benchmarking Agentic Reasoning on Industrial-grade Financial Documents",
+      "summary": "FinanceComplexQA is a new benchmark designed to evaluate the advanced reasoning capabilities of AI agents when processing and answering questions from complex, industrial-grade financial documents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.19238",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
