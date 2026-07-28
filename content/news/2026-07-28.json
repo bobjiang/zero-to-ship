@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-28",
+  "items": [
+    {
+      "title": "Anthropic's Dario Amodei Responds to Open-Weight Models and Chinese AI Concerns",
+      "summary": "Anthropic CEO Dario Amodei clarifies his stance on open-weight AI models, stating he doesn't oppose them but expresses concerns regarding Chinese AI advancements.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/27/anthropics-dario-amodei-responds-doesnt-oppose-open-weight-models-but-fears-chinese-ai/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Satya Nadella Warns Companies Against Relying on a Single AI for All Needs",
+      "summary": "Microsoft CEO Satya Nadella advises businesses that over-reliance on one AI solution for all operations could jeopardize their survival in the evolving technological landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/27/satya-nadella-says-companies-that-trust-one-ai-for-everything-may-not-survive/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "PSA: Claude Shared Chats and Artifacts Potentially Exposed to Google",
+      "summary": "Users of Anthropic's Claude AI are alerted that their shared chats and 'Artifacts' may have inadvertently been accessible to Google, raising privacy concerns.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "The Junior Developer Pipeline Is Broken... And AI Broke It",
+      "summary": "A widely discussed article argues that the rise of AI tools has significantly disrupted and potentially broken the traditional pipeline for junior software developers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nazar-boyko/the-junior-developer-pipeline-is-broken-and-ai-broke-it-1aai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop an AI-native cloud infrastructure platform, aiming to compete directly with established giants like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+      "summary": "Researchers introduce 'Skill Self-Play,' a novel method that enhances Large Language Model capabilities through the co-evolution of skills, showing significant advancements in agent performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.22529",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DataPrep-Bench: Benchmarking LLMs as Training Data Preparators",
+      "summary": "A new benchmark, DataPrep-Bench, evaluates the effectiveness of Large Language Models in preparing training data, highlighting their potential as automated data preparators.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.20465",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "FlowEvo: Self-Evolving Agents through the Co-Evolution of Workflows and Executable Skills",
+      "summary": "FlowEvo presents a framework for creating self-evolving AI agents that improve by co-evolving their operational workflows and executable skills.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.21596",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Securing Multimodal AI through Internal Information Decomposition",
+      "summary": "This paper proposes a new method for enhancing the security of multimodal AI systems by decomposing internal information to identify and mitigate vulnerabilities.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.21600",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Data Pyramid for Embodied Manipulation",
+      "summary": "A new data pyramid structure is introduced to organize and leverage diverse data types for more effective and generalizable embodied manipulation in robotics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24744",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "StateAct: Program State, before Pixels, for Long-Horizon Computer-Use Agents",
+      "summary": "StateAct proposes that AI agents interacting with computers should prioritize understanding program state over raw pixel data for more robust and long-horizon task execution.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.22798",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "From Proprietary to Open-Source: Bridging the Distribution Gap via Multi-Agent Protocol Distillation in Agentic Search",
+      "summary": "This research explores a method to transfer capabilities from proprietary to open-source agentic search systems using multi-agent protocol distillation, aiming to democratize advanced AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24280",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "JarvisHub: An Open Harness for Canvas-Native Multimodal Creative Agents",
+      "summary": "JarvisHub is introduced as an open-source platform designed to facilitate the development and evaluation of canvas-native multimodal creative AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.23588",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems",
+      "summary": "This paper re-frames agent memory and cost issues as lifecycle and architectural challenges, proposing a new approach to agentic context management for more efficient AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.21503",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Scaling Native Multimodal Pre-Training From Scratch",
+      "summary": "Researchers present a scalable approach to native multimodal pre-training from scratch, addressing the challenges of integrating diverse data types for comprehensive AI understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.22043",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
