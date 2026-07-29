@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-29",
+  "items": [
+    {
+      "title": "Cyera Acquires Oasis Security for $1 Billion to Bolster AI Agent Safeguards",
+      "summary": "Cyera has agreed to acquire Oasis Security for $1 billion, signaling a major investment in securing the rapidly growing ecosystem of AI agents.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Kimi K3: Open Frontier Intelligence Model Released",
+      "summary": "A new 'frontier intelligence' model, Kimi K3, has been released, garnering significant attention for its capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24653",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "Google Redesigns Search Box for First Time in 25 Years, Signaling AI Integration",
+      "summary": "Google has unveiled the first redesign of its search box in 25 years, a move widely interpreted as a foundational change to better integrate AI-powered search experiences.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Bot-Detection Startup Spur Secures $200 Million Investment from Insight",
+      "summary": "Spur, a startup specializing in bot detection, has raised $200 million from Insight, highlighting increasing concerns and investments in combating automated threats.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/28/bot-detection-startup-spur-nabs-200m-from-insight/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Gemini API Managed Agents Updated with 3.6 Flash, Hooks, and New Features",
+      "summary": "Google has announced significant updates to its Gemini API Managed Agents, introducing Gemini 3.6 Flash, new hooks, and other enhancements for developers.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Slopsquatting: A New Supply Chain Attack Weaponizing AI Hallucinations",
+      "summary": "A new cybersecurity threat called 'Slopsquatting' has emerged, exploiting AI hallucinations to launch supply chain attacks.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nazar-boyko/slopsquatting-the-supply-chain-attack-that-weaponizes-ai-hallucinations-2m2",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Explores Scientific Computing in the Age of Agentic AI",
+      "summary": "OpenAI has published insights into how agentic AI is transforming scientific computing, suggesting a future where AI agents play a pivotal role in research and discovery.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/scientific-computing-agentic-ai",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Urgent Warning: Audit AI Agents with Write Access to Public Repositories",
+      "summary": "Developers are being urged to immediately audit any AI agents granted write access to public repositories due to potential security vulnerabilities.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/if-your-ai-agent-has-write-access-to-public-repos-audit-it-now-heres-why-29bb",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "AI Mode in Google Search Offers 5 Ways to Enhance Real-World Experiences",
+      "summary": "Google highlights five practical ways its AI Mode in Search can help users engage more effectively with the real world, from planning to problem-solving.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "A New Role for Relevance: Guiding Corpus Interaction in Agentic Search",
+      "summary": "New research explores how relevance can be redefined to guide AI agents in interacting with information corpora, enhancing agentic search capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24223",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Rethinking Classifier-Free Guidance in On-Policy Diffusion Distillation",
+      "summary": "Researchers are re-evaluating classifier-free guidance techniques within on-policy diffusion distillation, aiming to improve the efficiency and quality of diffusion models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24731",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone",
+      "summary": "New research introduces HiFi-UMI, a method for learning effective robotic manipulation policies solely from high-fidelity unstructured multi-modal interaction (UMI) data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.25895",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Physics of Multi-Turn Long-Horizon Planning in Agentic AI",
+      "summary": "A new paper delves into the underlying 'physics' of multi-turn, long-horizon planning for AI agents, exploring pre-training and post-training via distillation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24720",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+      "summary": "ClinFusion introduces a novel vision-centric multimodal large language model system designed for comprehensive understanding in the medical domain.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24743",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Mage-VL: An Efficient Codec-Native Streaming Multimodal Foundation Model",
+      "summary": "Mage-VL is presented as an efficient, codec-native streaming multimodal foundation model, promising advancements in real-time multimodal processing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24904",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
