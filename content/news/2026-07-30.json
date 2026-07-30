@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-30",
+  "items": [
+    {
+      "title": "Microsoft Intensifies Competition with OpenAI and Anthropic",
+      "summary": "Microsoft is reportedly increasing its direct competition with AI leaders OpenAI and Anthropic, signaling a shift in its strategic partnerships and market approach.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/29/microsoft-is-openly-competing-with-openai-anthropic-more-than-ever/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Mark Zuckerberg Predicts Billions of Personal AI Agents in Five Years",
+      "summary": "Mark Zuckerberg forecasts that personal AI agents will be ubiquitous, reaching billions of users within the next five years, highlighting a future dominated by AI-powered assistants.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/29/mark-zuckerberg-predicts-that-billions-of-people-will-have-personal-ai-agents-in-five-years/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI's GPT-5.6 Achieves Frontier Intelligence and Efficiency",
+      "summary": "OpenAI announces GPT-5.6, a new model that combines cutting-edge intelligence with enhanced efficiency, pushing the boundaries of large language model capabilities.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Microsoft Reports $3.2B from Anthropic Investment, Mixed Results from OpenAI",
+      "summary": "Microsoft has recorded a significant $3.2 billion gain from its investment in Anthropic, while its financial returns from OpenAI partnerships show a more varied performance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/29/microsoft-logs-3-2b-from-anthropic-investment-but-openai-was-a-mixed-bag/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Triples ARC-AGI-3 Benchmark Scores with Two Settings",
+      "summary": "OpenAI reveals that enabling just two specific settings dramatically improved their scores on the challenging ARC-AGI-3 benchmark, indicating significant progress in AI reasoning.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Do Models Fake Alignment Without Clear Consequences?",
+      "summary": "New research investigates whether AI models might feign alignment with human values when there are no immediate negative consequences for misbehavior, raising concerns about true alignment.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.24758",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "CodeNib: A Multi-View Data System for Serving Repository Context to Coding Agents",
+      "summary": "CodeNib introduces a novel multi-view data system designed to provide comprehensive repository context, significantly enhancing the capabilities of AI coding agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.25431",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ReDesign: Recovering Editable Design Structures from Images via Agentic Decomposition",
+      "summary": "ReDesign presents a new method that uses agentic decomposition to recover editable design structures directly from images, streamlining the process of design modification.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.25565",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Kernel Forge: An Agent Harness for LLM-based CUDA Kernel Optimization",
+      "summary": "Kernel Forge introduces an agent-based system that leverages LLMs to generate and optimize CUDA kernels, promising significant advancements in GPU programming efficiency.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.24762",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on RTX 4090 with <1 GB VRAM",
+      "summary": "TurboVLA demonstrates a real-time Vision-Language-Action model capable of operating at 32 Hz on an RTX 4090 with less than 1 GB of VRAM, showcasing remarkable efficiency for embodied AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.27205",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Accelerates Scientific Discovery with ChatGPT for Academic Researchers",
+      "summary": "OpenAI is enhancing scientific discovery by making ChatGPT a more powerful tool for academic researchers, facilitating various stages of the research process.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-for-academic-researchers/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Sol-Attn: Accelerating Video Generation Inference via On-the-Fly Attention Sparsification",
+      "summary": "Sol-Attn proposes a method for accelerating video generation inference by dynamically sparsifying attention mechanisms, leading to faster and more efficient model execution.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24027",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Memory: Templated Substrate for Heterogeneous Collaborative Knowledge Work with LLM Agents",
+      "summary": "This paper explores a templated substrate that enables LLM agents to engage in heterogeneous collaborative knowledge work, moving beyond simple memory functions to complex interactions.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2607.24759",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Keep It InMind: Benchmarking Implicit-Association Blind Spots in Agent Memory",
+      "summary": "Keep It InMind introduces a new benchmark to evaluate and identify implicit-association blind spots within AI agent memory, crucial for developing more unbiased and reliable agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24368",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PerceptionBench: Evaluating Atomic Visual Perception in Multimodal Large Language Models",
+      "summary": "PerceptionBench is introduced as a new benchmark specifically designed to evaluate the atomic visual perception capabilities of Multimodal Large Language Models, addressing a critical gap in MLLM assessment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.24957",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
