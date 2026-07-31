@@ -1,0 +1,125 @@
+{
+  "date": "2026-07-31",
+  "items": [
+    {
+      "title": "OpenAI Unveils GPT-5.6, Advancing Price-Performance Frontier",
+      "summary": "OpenAI announced the release of GPT-5.6, claiming significant improvements in both performance and cost efficiency for its latest large language model.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic's AI Models Successfully Breach Companies in Security Tests",
+      "summary": "Anthropic revealed that its own AI models managed to breach three companies during internal security assessments, highlighting advanced capabilities and potential risks.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "How Enabling Two Settings Tripled ARC-AGI-3 Benchmark Scores",
+      "summary": "OpenAI detailed how a simple adjustment of two settings dramatically improved their models' performance on the challenging ARC-AGI-3 benchmark, indicating significant progress in AI reasoning.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Reddit Reports Solid Quarter Amidst Signs of AI's Impact",
+      "summary": "Reddit announced strong quarterly results but also indicated that the growing influence of AI is beginning to show effects on its platform.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/07/30/reddit-reports-a-solid-quarter-but-shows-signs-of-ais-impact/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization",
+      "summary": "New research introduces CoRT, a method using counterfactual replay to optimize policies for token-level rubric guidance, enhancing AI agent performance in complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.25659",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "HumanCLAW: Can Vision-Language Models Act Through a Body?",
+      "summary": "A new paper explores the capabilities of Vision-Language Models to control a physical body, pushing the boundaries of embodied AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.27180",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Metis: Introducing a Novel Memory Foundation Model",
+      "summary": "Researchers present Metis, a new memory foundation model designed to improve how AI systems store and retrieve information over long horizons.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.26760",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space",
+      "summary": "DecoEvo proposes a novel co-evolutionary approach that decouples solver and rubric-generator skills to improve text-based problem-solving.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.25675",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PhiZero: A World Model Built Around Physical Language",
+      "summary": "PhiZero introduces a new world model that integrates physical language to better understand and predict real-world dynamics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.28624",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Writing the PHP Virtual Machine in Rust (with a lot of help from AI)",
+      "summary": "A developer shares their experience of rewriting the PHP Virtual Machine in Rust, significantly leveraging AI tools throughout the development process.",
+      "source": "Lobste.rs",
+      "url": "https://jolicode.com/blog/writing-the-php-virtual-machine-in-rust-with-a-lot-of-help-from-ai",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "CLBench-V: Evaluating Multimodal Context Learning from Grounding to Knowledge Acquisition",
+      "summary": "CLBench-V is introduced as a new benchmark for evaluating multimodal context learning in AI, spanning from basic grounding to complex knowledge acquisition.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.25294",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Skills vs MCP: How AI tools have evolved",
+      "summary": "This article discusses the evolution of AI tools, contrasting 'skills-based' approaches with 'MCP' (Multi-Competency Platform) models.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/skills-vs-mcp-how-ai-tools-have-evolved-3pmk",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "AskChem: Claim-Centered Infrastructure for Chemistry Literature Synthesis",
+      "summary": "AskChem proposes a claim-centered infrastructure to facilitate the synthesis of chemistry literature, leveraging AI for better organization and retrieval.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.28618",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Beacon: Knowing When and How to Perform Agentic Visual Reasoning",
+      "summary": "Beacon introduces a framework that enables AI agents to intelligently decide when and how to apply visual reasoning for improved performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.28595",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Flux-OPD: On-Policy Distillation with Evolving Contexts",
+      "summary": "Flux-OPD presents a new on-policy distillation method that adapts to evolving contexts, enhancing the learning efficiency and robustness of AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.28022",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
