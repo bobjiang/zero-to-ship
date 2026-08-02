@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-02",
+  "items": [
+    {
+      "title": "Anthropic Launches Cowork, a Claude Desktop Agent for File Interaction",
+      "summary": "Anthropic has introduced Cowork, a new Claude Desktop agent designed to work directly with user files without requiring any coding, enhancing productivity for non-technical users.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Disrupts Major Criminal Scam Operation Leveraging AI",
+      "summary": "OpenAI successfully intervened to disrupt a significant criminal scam operation that was found to be misusing AI technologies for malicious purposes.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Judge Denies xAI's Request to Block Minnesota Ban on 'Nudify' Apps",
+      "summary": "A judge has rejected xAI's attempt to prevent Minnesota from enforcing its ban on 'nudify' applications, setting a precedent for AI content regulation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/01/judge-denies-xais-request-to-block-minnesota-ban-on-nudify-apps/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Nous Research Releases NousCoder-14B, an Open-Source Coding Model",
+      "summary": "Nous Research has launched NousCoder-14B, a new open-source coding model, positioning it as a free alternative in the competitive landscape of AI coding assistants.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "AI Agents Build Java Services Automatically While Developer Sleeps",
+      "summary": "A developer shares a personal account of successfully using AI agents to autonomously build and deploy Java services overnight, highlighting the potential of AI in software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sshenvi/set-it-and-ship-it-how-i-let-ai-agents-build-my-java-services-while-i-sleep-1jhj",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Claude Code's $200 Monthly Cost Contrasted with Free Alternative 'Goose'",
+      "summary": "A new report highlights that while Anthropic's Claude Code costs up to $200 per month, a competitor named Goose offers similar coding assistance functionalities for free.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Sam Altman Continues to Advocate for Parenting with ChatGPT",
+      "summary": "OpenAI CEO Sam Altman reiterates his controversial stance on using ChatGPT as a tool for parenting, sparking ongoing discussions about AI's role in personal life.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/01/sam-altman-is-still-making-the-case-for-parenting-via-chatgpt/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "DistillAlign: A Novel Approach for Autoregressive Video Distillation",
+      "summary": "Researchers introduce DistillAlign, a new method that effectively coordinates mode covering and mode seeking to improve autoregressive video distillation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.26811",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Blog Highlights Ten Advances in Mathematics and Theoretical Computer Science",
+      "summary": "OpenAI's latest blog post details ten significant advancements in the fields of mathematics and theoretical computer science, showcasing foundational progress relevant to AI.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/ten-advances-in-mathematics",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "YouTuber Hank Green Expresses Concern Over His 'Unhealthy' AI Usage",
+      "summary": "Popular YouTuber Hank Green publicly shares his concerns about his personal AI usage, describing it as 'not healthy,' prompting discussions on AI's impact on mental well-being.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/01/youtuber-hank-green-says-his-ai-usage-is-not-healthy/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Workflow Quality Gains Importance Over Complex Requirements in AI Era",
+      "summary": "An article argues that in the age of AI, the quality of workflows has become a more critical factor than the complexity of requirements for successful project outcomes.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ahikmah/complex-requirements-are-not-the-biggest-problem-anymore-why-workflow-quality-matters-more-in-the-33oi",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "MindForge: Teaching Small Language Models Whole-Life-Cycle Software Engineering",
+      "summary": "MindForge presents a novel approach to teaching small language models the entire software engineering life cycle through source-free program synthesis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.27146",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "See2Think: Investigating Intermediate Visual States in Multimodal Models",
+      "summary": "A new research paper, See2Think, explores whether multimodal models genuinely utilize intermediate visual states in their reasoning processes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2607.26769",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "vLLM Now Supports Baidu Kunlun Hardware",
+      "summary": "The vLLM project has announced support for Baidu Kunlun hardware, expanding its compatibility for efficient large language model serving on specialized AI accelerators.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/baidu/vLLM-Kunlun",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Univé Embarks on Building an AI-Ready Workforce",
+      "summary": "Univé, an organization, is actively investing in training and development to cultivate an AI-ready workforce, adapting to the evolving demands of the AI-driven economy.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/unive",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
