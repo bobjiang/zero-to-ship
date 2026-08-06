@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-06",
+  "items": [
+    {
+      "title": "Jeff Dean and other top AI researchers are leaving Google to launch their own startup",
+      "summary": "Several prominent AI researchers, including Google's Jeff Dean, are reportedly departing to establish a new startup, signaling a significant shift in the competitive AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Meta launches Muse Code, an AI agent for large code bases",
+      "summary": "Meta has introduced Muse Code, a new AI agent designed to assist developers in navigating and managing extensive codebases, potentially streamlining software development workflows.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.",
+      "summary": "Google has unveiled its first search box redesign in 25 years, indicating a deeper integration of AI-powered features that could fundamentally change user interaction with search.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Gemini API Managed Agents: 3.6 Flash, hooks, and more",
+      "summary": "Google's Gemini API is expanding its Managed Agents capabilities with new features like 3.6 Flash and hooks, enhancing developer control and performance for AI agent deployment.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling",
+      "summary": "AURORA-LM introduces a novel autoencoding unified representation for continuous-latent diffusion language modeling, achieving high engagement for its potential in advanced language generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.02602",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
+      "summary": "Video-DeepResearch proposes a multimodal deep research agent that integrates video analysis, aiming to revolutionize how AI assists in complex information gathering and synthesis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.03979",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "5 ways AI Mode in Search helps you enjoy the real world",
+      "summary": "Google highlights five ways its new AI Mode in Search can enhance real-world experiences, suggesting a shift towards practical, context-aware AI assistance.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "ToolArtist: Tool-Using Unified Multimodal Models for Agentic Image Generation",
+      "summary": "ToolArtist presents a framework for unified multimodal models that leverage external tools for agentic image generation, pushing the boundaries of creative AI applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.04436",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
+      "summary": "PAST-Bench introduces a new benchmark for evaluating the foundational capabilities of recursive self-improvement in personal AI agents, crucial for developing more autonomous systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.04003",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Review Tax: Why 81% of Developers Are Buried in AI Code Review",
+      "summary": "A new report reveals that 81% of developers are overwhelmed by the 'review tax' of AI-generated code, highlighting challenges in integrating AI into software development workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/the-review-tax-why-81-of-developers-are-buried-in-ai-code-review-9k6",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "The Personalization Mirage: How LLMs Fabricate User Profiles, and Why Self-Monitoring Misleads",
+      "summary": "This research explores how LLMs can fabricate user profiles and how their self-monitoring mechanisms can be misleading, raising concerns about privacy and accuracy in personalized AI experiences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.04570",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "OmniPack: Unified Token Compression for Efficient Omni-modal Large Language Models",
+      "summary": "OmniPack proposes a unified token compression method to enhance the efficiency of omni-modal large language models, addressing computational demands for processing diverse data types.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.03812",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Introducing Kiro Crew: AWS's Open-Source AI Agent Orchestrator",
+      "summary": "AWS has launched Kiro Crew, an open-source orchestrator for AI agents, providing developers with tools to manage and coordinate complex agent-based applications.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sarvar_04/introducing-kiro-crew-awss-open-source-ai-agent-orchestrator-1e63",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Towards Physics of Multimodal Pretraining: Knowledge Flow, Modality Synergy, Early Unification, and Recipes",
+      "summary": "This paper delves into the fundamental physics of multimodal pretraining, exploring knowledge flow, modality synergy, and early unification strategies to improve AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05000",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "LLaDA MoE v2: Scaling Mixture-of-Experts Diffusion Language Models",
+      "summary": "LLaDA MoE v2 introduces advancements in scaling Mixture-of-Experts (MoE) diffusion language models, promising more efficient and powerful large-scale AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.03457",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
