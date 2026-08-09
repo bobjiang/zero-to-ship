@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-09",
+  "items": [
+    {
+      "title": "OpenAI Acquires Presentation Startup NextSlide to Enhance AI Capabilities",
+      "summary": "OpenAI has acquired NextSlide, a presentation startup, signaling a move to integrate AI-powered presentation tools or enhance its existing offerings with NextSlide's technology.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon's Planned Data Center Raises Concerns as Potential Largest US Climate Polluter",
+      "summary": "A proposed Amazon data center is drawing criticism for its massive energy consumption, which could make it the largest single climate polluter in the U.S., highlighting the growing environmental impact of AI infrastructure.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce Rolls Out New Slackbot AI Agent, Intensifying Workplace AI Competition",
+      "summary": "Salesforce has launched an updated Slackbot AI agent, directly challenging Microsoft and Google in the competitive landscape of AI solutions for workplace productivity and collaboration.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Listen Labs Secures $69M to Scale AI Customer Interview Platform After Viral Stunt",
+      "summary": "Listen Labs has raised $69 million in funding, following a successful viral billboard campaign, to expand its AI platform designed for conducting and analyzing customer interviews at scale.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Airbnb Leverages AI to Accelerate Feature Development and Test New Search Functionality",
+      "summary": "Airbnb reports that AI integration is significantly speeding up its feature deployment process, as the company actively tests a new AI-enhanced search function to improve user experience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/07/airbnb-says-ai-is-helping-it-ship-features-faster-as-it-tests-a-new-search-function/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Addresses Critical Cyber Capabilities and AI's Role in Cybersecurity",
+      "summary": "OpenAI discusses the evolving landscape of critical cyber capabilities and outlines its strategies for responding to and leveraging AI in the realm of cybersecurity.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Interpretable MEG Decoding of Perceived Speech Reveals Cortical Sources and Stimulus Features",
+      "summary": "New research demonstrates how MEG signals can be interpreted to decode perceived speech, identifying specific cortical sources and the stimulus features that drive speech retrieval in the brain.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.01481",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ChronoVision Introduces Temporal Reasoning via Latent State Reconstruction for AI",
+      "summary": "ChronoVision presents a novel approach to temporal reasoning in AI systems by reconstructing latent states, enabling more sophisticated understanding and prediction of sequential events.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05631",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Learning from Failures: Retrieval-Centric CoT via Hard Negatives for Unified Multimodal Retrieval",
+      "summary": "A new paper proposes a retrieval-centric Chain-of-Thought (CoT) method that learns from hard negatives to improve unified multimodal retrieval systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06060",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building an AI-Native Second Brain with Multi-RAG, Knowledge Graphs, and MCP",
+      "summary": "This article explores advanced techniques for creating a personal AI-native 'second brain' utilizing Multi-RAG, knowledge graphs, and MCP for enhanced information management and retrieval.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nishikantaray/building-an-ai-native-second-brain-with-multi-rag-knowledge-graphs-and-mcp-fmg",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Model Routing Makes AI Agents Cheaper but Raises Trust Issues",
+      "summary": "Implementing model routing can reduce the cost of running AI agents, but it introduces new challenges related to ensuring their trustworthiness and reliability.",
+      "source": "Dev.to",
+      "url": "https://dev.to/devansh365/model-routing-made-my-ai-agents-cheaper-it-didnt-make-them-easier-to-trust-2oad",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "World-to-Wrist: Task-Conditioned Future Wrist Modeling for Fine-Grained Robot Manipulation",
+      "summary": "Researchers introduce a 'World-to-Wrist' model that uses task-conditioned future wrist modeling to achieve highly precise and fine-grained robot manipulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05369",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Activity Frames: Deterministic Screen-Activity Compilation for Agent Memory and Replay",
+      "summary": "A new paper proposes 'Activity Frames' to deterministically compile screen activities, improving agent memory and enabling more reliable replay for AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05784",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "SmartMage: Dynamic Modality Orchestration for 3D Scene Understanding",
+      "summary": "SmartMage presents a system for dynamically orchestrating multiple modalities to achieve robust and comprehensive 3D scene understanding in AI applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05137",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "DyPES-VLA: Learning Shared Dynamics Priors and Embodiment-Specific Control for Cross-Embodiment Manipulation",
+      "summary": "DyPES-VLA introduces a method for learning shared dynamics priors and embodiment-specific control, enabling more versatile cross-embodiment manipulation for robots.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06374",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
