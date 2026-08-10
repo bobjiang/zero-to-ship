@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-10",
+  "items": [
+    {
+      "title": "Anthropic Turns Claude Code's Auto Mode On by Default, Launches Cowork Desktop Agent",
+      "summary": "Anthropic is making Claude Code's auto mode a default feature and has launched Cowork, a new desktop agent for Claude that operates directly on user files without requiring coding.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Nous Research's NousCoder-14B: An Open-Source Challenger to Claude Code",
+      "summary": "Nous Research has released NousCoder-14B, an open-source coding model that directly competes with commercial offerings like Anthropic's Claude Code, offering a free alternative for developers.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Embattled Hedge Fund Situational Awareness Invests $400M in AI Chip Startup Source Foundry",
+      "summary": "Hedge fund Situational Awareness, despite its own struggles, has made a significant $400 million investment in Source Foundry, a startup focused on developing AI chips.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "PaDoc: Layout-Grounded Parallel Decoding for Document Parsing",
+      "summary": "A new research paper introduces PaDoc, a method for document parsing that uses layout-grounded parallel decoding to improve efficiency and accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06146",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks",
+      "summary": "CalibForge presents a novel approach to adversarial solver calibration, aiming to enhance the scalability and performance of learnable terminal tasks in AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06352",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "KVAE: Family of Tokenizers for Multimodal Generative Models",
+      "summary": "Researchers propose KVAE, a new family of tokenizers designed to improve the performance and flexibility of multimodal generative models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05798",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EffectLearner: World-Aware Object-Effect Reasoning for Real-World Video Object Removal",
+      "summary": "EffectLearner is a new system that leverages world-aware object-effect reasoning to enable realistic and efficient object removal in real-world videos.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05565",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Historian Jill Lepore Criticizes Silicon Valley's Misinterpretation of Science Fiction and Impact on Democracy",
+      "summary": "Historian Jill Lepore argues that Silicon Valley's flawed understanding of science fiction is leading to technological developments that undermine democratic principles.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/09/historian-jill-lepore-says-the-tech-industry-is-led-by-bad-readers-who-are-undermining-democracy/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Vaya: An AI Loan Advisor Prioritizing Affordability",
+      "summary": "Vaya is introduced as an AI-powered loan advisor that uniquely focuses on assessing a user's ability to afford living expenses before recommending loans.",
+      "source": "Dev.to",
+      "url": "https://dev.to/minhlong2605/vaya-an-ai-loan-advisor-that-asks-whether-you-can-still-afford-to-live-gkc",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "MameLoshnLM: Yiddish Language Model and Evaluation Benchmark",
+      "summary": "A new Yiddish language model, MameLoshnLM, has been developed along with an evaluation benchmark, significantly advancing AI capabilities for this minority language.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05850",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Continual Learning in Transition: Adapting AI Models Over Time",
+      "summary": "A new paper explores the challenges and advancements in continual learning, focusing on how AI models can adapt and acquire new knowledge without forgetting old information.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06216",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Invisible Shortcuts: Why Vision Encoders Know Your Camera",
+      "summary": "Research reveals that vision encoders can inadvertently identify the camera model used to capture an image, raising potential privacy and security implications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05424",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MASS: Multiplayer World Models with Authoritative Shared State",
+      "summary": "MASS introduces a framework for multiplayer world models that maintains an authoritative shared state, crucial for developing complex and consistent AI simulations and games.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06257",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "The Optimizer Is the Agent: Reasoning-Driven Search across Prompts, Programs, and ML Workflows",
+      "summary": "This paper proposes a paradigm where the optimizer itself acts as an agent, driving reasoning-based search across various AI artifacts like prompts, programs, and machine learning workflows.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06714",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Modular TTT: Rethinking Test-Time Training as Composable Modules",
+      "summary": "A new research paper re-conceptualizes test-time training by breaking it down into composable modules, potentially simplifying and improving adaptive AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.07110",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
