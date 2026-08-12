@@ -6,22 +6,11 @@ import { cn, cardSurface, cardHover } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'Community — Join Sydney\'s Claude Builder Community',
   description:
-    'Join 100+ builders in Sydney\'s Claude AI community. Monthly meetups, 2-week ship weeks, daily AI news, and hands-on courses. Connect on Discord, X, LinkedIn, GitHub, and Telegram.',
+    'Join 700+ AI enthusiasts in Sydney\'s Claude AI community. Monthly meetups, daily AI news, and hands-on courses. Connect on X, LinkedIn, GitHub, and Telegram.',
   alternates: { canonical: '/community' },
 };
 
 const communities = [
-  {
-    name: 'Discord',
-    description: 'Chat with fellow builders, ask questions, and share your progress.',
-    href: 'https://discord.gg/btqaA3hzKp',
-    members: '100+',
-    icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.947 2.418-2.157 2.418z" />
-      </svg>
-    ),
-  },
   {
     name: 'X',
     description: 'Follow for daily updates, tips, and community highlights.',
@@ -75,11 +64,6 @@ const whatWeDoItems = [
       'In-person meetups in Sydney where members demo what they\'ve built, share Claude tips, and learn from each other. Talks, live demos, and networking.',
   },
   {
-    title: 'Ship Weeks',
-    description:
-      '2-week focused building sprints. Pick a project, build it with AI tools, and ship it. Community support and accountability throughout.',
-  },
-  {
     title: 'Daily AI News',
     description:
       'Curated daily digest of the most important AI developments. Research papers, product launches, and industry moves, delivered every day.',
@@ -95,12 +79,12 @@ const faqItems = [
   {
     question: 'What is 02Ship?',
     answer:
-      '02Ship is Sydney\'s Claude builder community. We run monthly meetups, 2-week ship weeks, free online courses, and publish daily AI news. Our members are builders, designers, product managers, and anyone curious about building with AI tools like Claude Code.',
+      '02Ship is Sydney\'s Claude builder community. We run monthly meetups, free online courses, and publish daily AI news. Our members are builders, designers, product managers, and anyone curious about building with AI tools like Claude Code.',
   },
   {
     question: 'How do I join 02Ship?',
     answer:
-      'Join our Discord server for free at discord.gg/btqaA3hzKp. You can also follow us on X (@zero_to_ship), subscribe to our Telegram channel (@ClauderSydney) for daily news, and attend our monthly meetups in Sydney through Lu.ma.',
+      'Follow us on X (@zero_to_ship), subscribe to our Telegram channel (@ClauderSydney) for daily news, and attend our monthly meetups in Sydney through Lu.ma.',
   },
   {
     question: 'Do I need to know how to code?',
@@ -111,11 +95,6 @@ const faqItems = [
     question: 'Where are the meetups held?',
     answer:
       'Our meetups are held in-person in Sydney, Australia. We typically meet monthly at various locations around Sydney CBD. Check our events page or Lu.ma calendar for upcoming dates and venues.',
-  },
-  {
-    question: 'What is a ship week?',
-    answer:
-      'A ship week is a 2-week focused building sprint. You pick a project, build it using AI coding tools, and ship it by the end of the sprint. The community provides support, feedback, and accountability throughout. It\'s the best way to go from idea to working product.',
   },
   {
     question: 'Is 02Ship free?',
@@ -151,21 +130,12 @@ export default function CommunityPage() {
             Sydney&apos;s Claude Builder Community
           </h1>
           <p className="mt-4 text-lg text-gray-600">
-            100+ builders learning to ship ideas with AI. Monthly meetups,
-            ship weeks, free courses, and daily AI news. No coding experience required.
+            700+ AI enthusiasts learning to ship ideas with AI. Monthly meetups,
+            free courses, and daily AI news. No coding experience required.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <a
-              href="https://discord.gg/btqaA3hzKp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg">Join Discord</Button>
-            </a>
             <a href="/events">
-              <Button size="lg" variant="outline">
-                Upcoming Events
-              </Button>
+              <Button size="lg">Upcoming Events</Button>
             </a>
           </div>
         </div>
@@ -193,7 +163,7 @@ export default function CommunityPage() {
         {/* Connect With Us */}
         <div className="mx-auto mt-20 max-w-4xl">
           <h2 className="text-2xl font-bold text-gray-900">Connect With Us</h2>
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {communities.map((community) => (
               <a
                 key={community.name}
