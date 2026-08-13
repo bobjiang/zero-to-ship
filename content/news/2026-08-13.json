@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-13",
+  "items": [
+    {
+      "title": "AI Coding Startup Cognition Reportedly in Talks for $40B Valuation",
+      "summary": "Cognition, an AI coding startup, is reportedly in discussions to raise capital at a staggering $40 billion valuation, signaling intense investor interest in AI development tools.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon to Train AI on Twitch Streamers' Content by Default, Requiring Opt-Out",
+      "summary": "Amazon will automatically use Twitch streamers' content for AI training unless users actively opt out, raising concerns about data privacy and creator rights.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/12/amazon-will-train-on-twitch-streamers-content-by-default-unless-they-opt-out/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million to develop AI-native cloud infrastructure, aiming to compete directly with established giants like AWS by offering specialized solutions for AI workloads.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "ComBodied Agents: A New Paradigm for Human-Centric Agentic AI",
+      "summary": "A new research paper introduces 'ComBodied Agents,' proposing a novel framework for human-centric agentic AI that emphasizes deeper integration and interaction with human users.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.10915",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Co-Evolution in Agentic Systems: Toward Self-Directed Evolution Beyond Human Design",
+      "summary": "New research explores the concept of 'co-evolution' in agentic AI systems, aiming for self-directed evolutionary capabilities that transcend human design limitations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.10299",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic's New Watermarks Anger Claude Users Over Job and Class Cheating Concerns",
+      "summary": "Some Claude users are expressing frustration over Anthropic's new watermarking feature, fearing it could expose their use of the AI for academic or professional tasks.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Beyond Pixels: From Video Priors to 4D Worlds",
+      "summary": "A new paper introduces a method to generate complex 4D worlds by leveraging video priors, moving beyond traditional pixel-based generation techniques.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.10744",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Mendel Gödel Machine: Recursive Self-Improving Coding Agents via Comparative Evolution",
+      "summary": "Researchers propose the 'Mendel Gödel Machine,' a framework for recursive self-improving coding agents that evolve through comparative analysis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.07645",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Google AI Blog Announces Latest AI News and Updates from July 2026",
+      "summary": "The Google AI Blog provides a comprehensive recap of its latest AI innovations and product updates announced throughout July 2026.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Details How Enterprises Are Putting AI to Work, From Assistance to Execution",
+      "summary": "OpenAI shares insights into how various enterprises are integrating AI into their operations, moving beyond simple assistance to full execution of complex tasks.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Managed Inference on Google Cloud: Pairing Gemini Enterprise Agent Platform with Cloud Run",
+      "summary": "A guide demonstrates how to deploy and manage AI inference using Google's Gemini Enterprise Agent Platform seamlessly integrated with Cloud Run for scalable solutions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gdg/managed-inference-on-google-cloud-pairing-the-gemini-enterprise-agent-platform-with-cloud-run-246j",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "AdvFD: Boosting Visual Generation via Adversarial Fr'echet Distance Loss",
+      "summary": "A new paper introduces AdvFD, an adversarial Fr'echet Distance Loss method designed to significantly enhance the quality and realism of visual generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.11205",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Business Arena: Benchmarking LLM Agents in a Realistic Marketplace",
+      "summary": "Researchers present 'Business Arena,' a new benchmark designed to evaluate the performance of LLM agents in complex, realistic marketplace scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.08621",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VibeLifeBench: Can Your Life Agent Be Proactive and Persistent in a Living World?",
+      "summary": "VibeLifeBench is introduced as a new benchmark to assess whether AI 'life agents' can exhibit proactive and persistent behaviors in dynamic, living environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.10875",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Reference-Free Post-Training of Open Large Language Models for Multilingual Machine Translation",
+      "summary": "New research explores a reference-free post-training method for open large language models, aiming to improve their performance in multilingual machine translation without requiring ground truth references.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.10812",
+      "score": 7,
+      "category": "research"
+    }
+  ]
+}
