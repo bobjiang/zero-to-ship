@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-14",
+  "items": [
+    {
+      "title": "OpenAI Introduces 'Ultrafast' Mode for GPT-5.6 Sol, Boosting Speed by 14x",
+      "summary": "OpenAI has launched 'Ultrafast' mode for its GPT-5.6 Sol model, enabling it to operate at up to 14 times its previous speed, significantly enhancing performance for users and developers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Databricks Secures $5 Billion in Funding at a Staggering $190 Billion Valuation",
+      "summary": "Databricks has closed a $5 billion funding round, valuing the AI and data analytics company at an impressive $190 billion, reflecting strong investor confidence in its market position.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google Redesigns Search Box for the First Time in 25 Years, Signaling AI Integration",
+      "summary": "Google has unveiled the first redesign of its iconic search box in 25 years, a move that is expected to deeply integrate AI capabilities and fundamentally change user interaction with search.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenART: Scaling AI Agent Red Teaming Through Open-Ended Environment Evolution",
+      "summary": "Researchers introduce OpenART, a novel approach that scales AI agent red teaming by evolving open-ended environments to rigorously test and improve agent safety and robustness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.00677",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Spark-to-Paper: End-to-End Research Paper Generation as a Composable AI Skill",
+      "summary": "A new research paper, 'Spark-to-Paper,' demonstrates an AI system capable of end-to-end generation of research papers by composing various AI skills, hinting at future automation in scientific writing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.11924",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Writer Unveils New AI Model and Upgraded Harness to Optimize Token Costs",
+      "summary": "Writer has launched a new AI model alongside an enhanced 'harness' system designed to significantly reduce and contain token costs, offering more efficient AI solutions for enterprises.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/13/writer-introduces-new-ai-model-and-upgraded-harness-to-contain-token-costs/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Google Enhances Gemini API Managed Agents with 3.6 Flash and New Hooks",
+      "summary": "Google has updated its Gemini API Managed Agents, introducing the 3.6 Flash model and new hooks, providing developers with more powerful and flexible tools for building AI applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses",
+      "summary": "New research explores 'AI4AI at Test-Time,' a method for transferring capabilities from strong AI models to weaker ones using harnesses, improving efficiency and adaptability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12307",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Mechanist: AI as a Scientific Instrument for Discovering Mechanisms of Intelligence",
+      "summary": "A new paper introduces 'Mechanist,' proposing AI as a scientific instrument to uncover the underlying mechanisms of intelligence, pushing the boundaries of AI's role in fundamental research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12036",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Appoints Dali Rajic as Chief Revenue Officer to Drive Monetization",
+      "summary": "OpenAI has announced the appointment of Dali Rajic as its new Chief Revenue Officer, signaling a strategic focus on accelerating monetization and scaling the company's commercial operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Google Introduces New AI Tools to Evolve Marketing Strategies",
+      "summary": "Google has released a suite of new AI-powered tools designed to help businesses evolve their marketing strategies, offering advanced analytics and automation for more effective campaigns.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Google Sheets Canvas Brings Spreadsheet Data to Life with Enhanced Visuals",
+      "summary": "Google has launched Sheets canvas, a new feature for Google Sheets that aims to bring spreadsheet data to life with improved visualization and interactive capabilities, likely powered by AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "I Stopped Trusting AI Agents With Tools. So I Built a Gatekeeper.",
+      "summary": "A developer shares their experience of building a 'gatekeeper' system to manage and control AI agents' access to tools, addressing concerns about reliability and safety in autonomous AI operations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/i-stopped-trusting-ai-agents-with-tools-so-i-built-a-gatekeeper-26fb",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries",
+      "summary": "Researchers present SkillZip, a method for compressing graph-based agent skill libraries while preserving critical 'contracts,' enabling more scalable and efficient AI agent systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.05604",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Most Dangerous AI-Generated Code Is the Code That Passes All Tests",
+      "summary": "An article argues that the most insidious threat from AI-generated code comes from code that appears flawless by passing all tests, potentially masking deeper, subtle vulnerabilities or inefficiencies.",
+      "source": "Dev.to",
+      "url": "https://dev.to/harsh2644/the-most-dangerous-ai-generated-code-is-the-code-that-passes-all-tests-10nd",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
