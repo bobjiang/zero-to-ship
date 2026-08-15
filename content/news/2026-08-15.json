@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-15",
+  "items": [
+    {
+      "title": "OpenAI Previews Ultrafast Mode: GPT-5.6 Sol at 14X Speed",
+      "summary": "OpenAI is previewing an 'Ultrafast mode' for its GPT-5.6 Sol model, promising up to 14 times faster inference speeds, which could revolutionize real-time AI applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Releases 'The Builder’s Guide to GPT‑5.6'",
+      "summary": "OpenAI has published a comprehensive guide for developers, detailing how to effectively build applications and leverage the capabilities of their latest GPT-5.6 model.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/builders-guide-to-gpt-5-6",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Alaya-EVOKE: From Linear-Scaling Supervision to Endless World",
+      "summary": "Researchers present Alaya-EVOKE, a novel approach that transitions from linear-scaling supervision to creating an 'endless world' for AI, potentially enabling more expansive and continuous learning environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13546",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Allows Users to Remove Visible Watermarks from AI Generations",
+      "summary": "Google announced that users will now have the option to remove visible watermarks from its AI-generated content, offering more flexibility for creators.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/14/google-will-now-allow-users-to-remove-visible-watermark-from-its-ai-generations/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "LLMRouter: Unified Infrastructure for Developing, Evaluating, and Deploying LLM Routers",
+      "summary": "A new unified infrastructure called LLMRouter has been introduced to streamline the development, evaluation, and deployment of Large Language Model routers, enhancing efficiency and consistency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.06867",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation",
+      "summary": "DreamX-Phi 1.0 introduces an action-conditioned video world model designed to improve robotic manipulation by allowing robots to predict and understand the consequences of their actions in a visual environment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13489",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist",
+      "summary": "OmniScientist is presented as an ambitious AI model designed to function as an 'omni-modal, omni-discipline' scientist, capable of integrating and processing information across various modalities and scientific fields.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13558",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Kog Deepens Efforts to Squeeze More Inference Out of GPUs",
+      "summary": "Kog is reportedly intensifying its research and development to optimize GPU utilization, aiming to extract significantly more inference performance from existing hardware.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/14/kog-is-going-deeper-to-squeeze-more-inference-out-of-gpus/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Intern-S2-Preview: Scientific Agentic Foundation Model",
+      "summary": "Intern-S2-Preview is presented as a scientific agentic foundation model, aiming to provide advanced AI capabilities for scientific research and discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13505",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI Mode in Search: 5 Ways to Enjoy the Real World",
+      "summary": "Google's AI Mode in Search offers five practical tips on how its advanced features can help users engage more with the real world, from planning activities to discovering new places.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Claude Code Costs Up to $200/Month, Goose Does the Same for Free",
+      "summary": "A new report highlights that while Claude Code offers coding assistance at a significant monthly cost, a competitor named Goose provides similar functionalities completely free of charge.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives",
+      "summary": "PlayWorld introduces a new benchmark for evaluating AI world models, focusing on their ability to handle long-horizon objectives through agent-based interactions within simulated environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13552",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Durable Memory: Why Vector Databases Aren't Enough",
+      "summary": "This article argues that traditional vector databases fall short in providing durable and comprehensive memory solutions for advanced AI systems, highlighting the need for more robust architectures.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kenwalger/durable-memory-why-vector-databases-arent-enough-3h8f",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design",
+      "summary": "AutoDesign proposes a meta-harness optimization framework to enhance long-horizon agentic design processes, allowing AI agents to more effectively tackle complex, multi-step design challenges.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13560",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence",
+      "summary": "This research introduces a Spatial Memory Agent equipped with experience-grounded procedural memory, significantly improving its spatial intelligence and navigation capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12743",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
