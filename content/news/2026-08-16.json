@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-16",
+  "items": [
+    {
+      "title": "Woman claims her stepfather used Grok to transform childhood photo into explicit imagery",
+      "summary": "A woman alleges her stepfather utilized Grok AI to manipulate a childhood photograph into explicit content, raising serious concerns about AI misuse, privacy, and ethical boundaries.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/15/woman-claims-her-stepfather-used-grok-to-transform-childhood-photo-into-explicit-imagery/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic shares more details about how Claude’s new watermarks will work",
+      "summary": "Anthropic has provided further specifics on the implementation of new watermarking technology for its Claude AI, aiming to enhance content provenance and combat the spread of AI-generated misinformation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "SpaceX officially closes its Cursor acquisition",
+      "summary": "SpaceX has finalized its acquisition of Cursor, an AI-powered coding assistant, signaling a strategic move to integrate advanced AI development tools into its operations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "DarwinX: Evolving Agent Harnesses Through Natural Selection",
+      "summary": "Researchers introduce DarwinX, a novel framework that uses principles of natural selection to evolve and optimize agent harnesses, enabling more robust and adaptive AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.07545",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Inside our 353,000-person vibe coding course",
+      "summary": "Google shares insights from its massive 353,000-person AI Agents Intensive coding course, highlighting the widespread interest and efforts in training developers on AI agent creation.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "How Can Rhetoric Reward-Hack AI Reviewers? Dissecting Rhetorical Sensitivity in AI-Based Peer Review",
+      "summary": "A new study investigates how rhetorical strategies can 'reward-hack' AI-based peer review systems, exposing potential vulnerabilities in automated content evaluation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.08975",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The \"AI\" Badge Doesn't Measure What You Think It Does",
+      "summary": "An article critiques the common use of 'AI' badges and labels, arguing that they often misrepresent or oversimplify the actual capabilities and impact of AI systems.",
+      "source": "Dev.to",
+      "url": "https://dev.to/pascal_cescato_692b7a8a20/the-ai-badge-doesnt-measure-what-you-think-it-does-3ne9",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Can LLM Agents Stick to the Script? A Benchmark for Long-Horizon Consistency in Interactive Narratives",
+      "summary": "Researchers introduce a new benchmark to evaluate the ability of LLM agents to maintain long-term consistency and adhere to narrative scripts in interactive scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.08160",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "UniSwap: Streaming Audio-Visual Identity Swapping for Talking Videos",
+      "summary": "UniSwap presents a new method for real-time streaming audio-visual identity swapping in talking videos, enabling dynamic deepfake-like capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.11752",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "LiveAnimate: Stable Long-Form Streaming Human Animation in Real-Time",
+      "summary": "LiveAnimate introduces a system capable of stable, long-form, and real-time streaming human animation, pushing the boundaries of virtual character interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.11745",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Massive Activations in Hybrid Linear Attention Large Language Models: Pre-Attention Spikes and Inter-Spike Plateaus",
+      "summary": "A new paper explores the dynamics of massive activations in hybrid linear attention LLMs, identifying distinct pre-attention spikes and inter-spike plateaus that impact model behavior.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12149",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Your Company Has AI Tribes. Send an Engineer as Emissary",
+      "summary": "An article suggests that companies are developing distinct 'AI tribes' and advocates for sending engineers as emissaries to bridge communication and collaboration gaps between these groups.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/your-company-has-ai-tribes-send-an-engineer-as-emissary-4g72",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Self-Evolving Embodied Agents via Skill-Harness Evolution",
+      "summary": "This research proposes a method for creating self-evolving embodied agents that improve their capabilities through a process of skill-harness evolution.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.11350",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation",
+      "summary": "LycheeMemory V2 introduces an efficient long-term memory system for LLM agents that uses semantic segment-level consolidation to improve recall and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12990",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "🛑 \"Beta, Yeh Message Real Hai Kya?\" — How I Built an AI Voice Agent to Protect Families from Scams in 10 Days #VoiceForBharat",
+      "summary": "A developer recounts building an AI voice agent in 10 days designed to help families identify and protect themselves from scams, showcasing rapid AI application development for social good.",
+      "source": "Dev.to",
+      "url": "https://dev.to/jkbedi/beta-yeh-message-real-hai-kya-how-i-built-an-ai-voice-agent-to-protect-families-from-scams-2jdf",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
