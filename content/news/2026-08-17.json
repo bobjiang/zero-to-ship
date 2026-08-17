@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-17",
+  "items": [
+    {
+      "title": "Stripe Reportedly Acquires AI Gateway Startup OpenRouter for $7B+",
+      "summary": "Stripe is reportedly acquiring OpenRouter, an AI gateway startup, for over $7 billion, signaling a major consolidation in the AI infrastructure market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce Rolls Out New Slackbot AI Agent to Compete in Workplace AI",
+      "summary": "Salesforce has launched a new Slackbot AI agent, intensifying its competition with Microsoft and Google in the rapidly expanding workplace AI market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Full-bandwidth transformer: A Novel Architecture for Enhanced AI Performance",
+      "summary": "A new transformer architecture is proposed that utilizes full-bandwidth processing, potentially leading to significant improvements in AI model performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.08888",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "How We Got an LLM to Draw Charts Without Ever Touching a Pixel",
+      "summary": "This article details a novel method for enabling Large Language Models to generate charts purely through symbolic representation, bypassing direct pixel manipulation.",
+      "source": "Dev.to",
+      "url": "https://dev.to/lovestaco/how-we-got-an-llm-to-draw-charts-without-ever-touching-a-pixel-1i21",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic CEO: AI Backlash is 'Fundamentally a Crisis of Trust'",
+      "summary": "Anthropic's CEO attributes the growing AI backlash to a fundamental crisis of trust, emphasizing the importance of ethical considerations and safety in AI development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Listen Labs Raises $69M After Viral Stunt to Scale AI Customer Interviews",
+      "summary": "Listen Labs secured $69 million in funding following a successful viral marketing campaign, aiming to expand its AI-powered customer interview platform.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Why People Aren’t Buying Mark Zuckerberg’s AI Future",
+      "summary": "This article explores the reasons behind public skepticism and the lack of widespread adoption for Mark Zuckerberg's ambitious vision of an AI-driven future.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/16/why-people-arent-buying-mark-zuckerbergs-ai-future/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Self-Geometry: GT-Free and Plug-and-Play Test-Time Adaptation for 3D Vision Models",
+      "summary": "Researchers propose Self-Geometry, a novel test-time adaptation method for 3D vision models that ensures geometric consistency without requiring ground truth data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.10708",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "An AI4AI Framework for Visual Token Pruning to Optimize Visual Models",
+      "summary": "Researchers introduce an AI-driven framework designed to prune visual tokens, aiming to significantly optimize the efficiency and performance of visual models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.07193",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models",
+      "summary": "A new benchmark, H2R-Bench, is introduced to rigorously evaluate the generation of human-to-robot manipulation videos within advanced world models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13049",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Thought-Level Beam Search for Enhanced Reasoning in AI Models",
+      "summary": "A new 'thought-level beam search' method is introduced to significantly improve reasoning capabilities in AI models by exploring multiple, more complex reasoning paths.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.08020",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How RingCentral Builds AI-Native Workflows from Engineering to Operations",
+      "summary": "RingCentral shares insights into its comprehensive strategy for integrating AI natively across its entire operations, from core engineering to operational processes.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/ringcentral",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "What Building an AI-Native Finance Function Taught Me",
+      "summary": "An individual shares practical lessons learned and insights gained from the experience of establishing an AI-native finance function within an organization.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/building-an-ai-native-finance-function",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "AVA-Encoder: Towards Agent-Native Video Representation Learning",
+      "summary": "AVA-Encoder is presented as a significant step towards learning video representations that are inherently suitable and optimized for AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12313",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Maglev: Introducing Sliding Recurrent Memory for Sequential Models",
+      "summary": "Maglev introduces a novel sliding recurrent memory mechanism designed to enhance the efficiency and context handling capabilities of sequential AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.02870",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
