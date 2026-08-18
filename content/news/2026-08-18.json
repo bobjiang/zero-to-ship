@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-18",
+  "items": [
+    {
+      "title": "Anthropic's Annualized Revenue Surges to $65B",
+      "summary": "Anthropic, a leading AI company, has reportedly achieved an astounding $65 billion in annualized revenue, signaling massive growth and market demand for its AI models.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon Accused of Destroying Rare Books to Train AI Models",
+      "summary": "Reports indicate that Amazon, which began as an online bookseller, is now allegedly destroying shipments of rare texts to use their content for training its artificial intelligence models.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Can We Defend Against AI-Generated Video Attacks on Real-World Crisis Events?",
+      "summary": "A systematic evaluation explores the effectiveness of current detectors and generators against AI-generated video attacks targeting real-world crisis events, highlighting the challenges of social dissemination.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14391",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Nous Research Releases NousCoder-14B, an Open-Source Coding Model",
+      "summary": "Nous Research has launched NousCoder-14B, a new open-source coding model positioned to compete with proprietary solutions like Claude Code, marking a significant development in open-source AI for developers.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/nous-researchs-nouscoder-14b-is-an-open-source-coding-model-landing-right-in",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "OpenAI Proposes New Policy Ideas for the Intelligence Age",
+      "summary": "OpenAI has published a new set of policy ideas aimed at guiding the development and deployment of AI in the evolving 'Intelligence Age,' addressing societal and governance challenges.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "AI Automation Startup Relay Shuts Down, Staff Joins Google's Chrome Team",
+      "summary": "AI automation startup Relay has ceased operations, with its team being acquired by Google to join the Chrome division, indicating a trend of talent consolidation in the tech giant.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Self-Supervised Visual On-Policy Distillation Improves Agent Learning",
+      "summary": "A new research paper introduces Self-Supervised Visual On-Policy Distillation, a method designed to enhance the learning efficiency and performance of AI agents through visual self-supervision.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14144",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Defender’s Window: OpenAI's Approach to AI Safety and Security",
+      "summary": "OpenAI details 'The Defender’s Window,' outlining its strategies and initiatives for ensuring the safety and security of its AI systems against potential misuse and vulnerabilities.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/the-defenders-window",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Intern-S2-Mobius: A Foundation Model with Decoupled Knowledge and Reasoning",
+      "summary": "Researchers introduce Intern-S2-Mobius, a novel foundation model architecture that achieves advanced performance by decoupling knowledge acquisition from reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14290",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Using AI to Code Isn't the Risk, Not Understanding What It Shipped Is",
+      "summary": "This article argues that the primary risk in using AI for coding lies not in the AI's ability to generate code, but in developers failing to thoroughly understand and verify the AI-produced output.",
+      "source": "Dev.to",
+      "url": "https://dev.to/cyclopt_dimitrisk/using-ai-to-code-isnt-the-risk-not-understanding-what-it-shipped-is-4n2e",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Modular Cognitive Architecture Emerges in Large Language Models",
+      "summary": "New research suggests that large language models are spontaneously developing modular cognitive architectures, indicating a more structured and potentially interpretable internal organization.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13567",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DFM Mimir v1: An Open HRM Delivering Frontier Performance at 1B Parameters",
+      "summary": "DFM Mimir v1 is presented as an open-source Human-Robot Interaction (HRM) model that achieves frontier performance with only 1 billion parameters, utilizing exclusively permissible post-training data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13517",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "MobileMem: Learning from a Year of Mobile Experiences",
+      "summary": "MobileMem explores the potential of training AI models by leveraging a full year's worth of diverse mobile user experiences, aiming to create more context-aware and helpful mobile AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13606",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Marionette: Predicting World States, Rendering Geometry, Painting Appearance",
+      "summary": "Marionette introduces a new generative AI model capable of predicting complex world states, rendering detailed 3D geometry, and painting realistic appearances, pushing the boundaries of virtual world creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14530",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "SimpleOPD: Tokenizer-Agnostic On-Policy Distillation for Long-Context Reasoning",
+      "summary": "SimpleOPD proposes a novel tokenizer-agnostic on-policy distillation method designed to improve long-context reasoning capabilities in language models, simplifying the training process.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14277",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
