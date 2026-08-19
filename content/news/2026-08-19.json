@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-19",
+  "items": [
+    {
+      "title": "StateM: Achieving 95.3% Raw Accuracy on Terminal-Bench 2.1 with Harness Scaling",
+      "summary": "A new paper introduces StateM, a method that achieves a high raw accuracy of 95.3% on the Terminal-Bench 2.1 benchmark, demonstrating significant progress in AI efficiency assessment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.15089",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Institutes New Safeguards Following Hugging Face Breach",
+      "summary": "OpenAI has implemented enhanced security measures after a recent breach at Hugging Face, highlighting ongoing concerns about AI platform security and data integrity.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/18/openai-institutes-new-safeguards-after-hugging-face-breach/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic Launches Cowork: A Claude Desktop Agent for File Interaction Without Coding",
+      "summary": "Anthropic has released Cowork, a new Claude desktop agent designed to interact directly with user files and perform tasks without requiring any coding, aiming to make AI more accessible for everyday productivity.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/anthropic-launches-cowork-a-claude-desktop-agent-that-works-in-your-files-no",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Etched's Valuation Soars to $21 Billion in One Month",
+      "summary": "AI hardware startup Etched has seen its valuation double to an astonishing $21 billion within a single month, signaling intense investor confidence and rapid growth in the specialized AI chip market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Cursor Launches Rival Hosting Platform, Capitalizing on GitHub Frustration",
+      "summary": "Cursor has introduced a new code hosting platform, positioning itself as a direct competitor to GitHub by addressing developer frustrations and aiming to attract users with AI-enhanced features.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "HarnessEval-W: A New Framework for Agentifying the Evaluation of Visual Worlds",
+      "summary": "Researchers introduce HarnessEval-W, a novel evaluation framework designed to 'agentify' the assessment of visual worlds, providing a more dynamic and interactive approach to benchmarking AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.16859",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Amazon AI Training Facility Tracked Receiving Shipment of Rare Books",
+      "summary": "An investigation revealed that a shipment of rare books was tracked to an Amazon AI training facility, raising questions about data acquisition practices for large language models.",
+      "source": "Lobste.rs",
+      "url": "https://simonwillison.net/2026/Aug/17/we-tracked-a-shipment-of-rare-books-it-ended-at-an-amazon-ai-tra/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Blog Post: Pacing Model Development in an Era of Cyber-Critical Capabilities",
+      "summary": "OpenAI discusses the critical need for careful pacing in AI model development, especially as capabilities become increasingly relevant to cybersecurity and national security.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "VibeWorlding: Multimodal Agents Construct 3D Open Worlds End-to-End",
+      "summary": "A new research paper explores the capability of multimodal AI agents to construct complex 3D open worlds from end-to-end, pushing the boundaries of generative AI in virtual environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.15265",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "COSP: A Prompting Trick Enabling LLMs to Grade Their Own Homework",
+      "summary": "COSP introduces a novel prompting technique that allows Large Language Models to self-evaluate and 'grade their own homework,' potentially improving their learning and refinement processes.",
+      "source": "Dev.to",
+      "url": "https://dev.to/lovestaco/cosp-the-prompting-trick-where-your-llm-grades-its-own-homework-40lf",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Large Discovery Models: Empirically-grounded Model-Based Open-Ended Search",
+      "summary": "This paper introduces Large Discovery Models (LDMs) that leverage empirically-grounded, model-based open-ended search to explore and generate novel solutions or data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.15669",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization",
+      "summary": "A new method called Saturation Aware Advantage Reweighting is proposed to optimize multi-reward policies by focusing learning on less-mastered aspects, improving efficiency in complex reinforcement learning tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.16072",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "UI-Mate: Advancing Open-Weight Foundation GUI Agents with In-Context Demonstrations",
+      "summary": "UI-Mate presents a significant step forward for open-weight foundation GUI agents by enhancing their capabilities through in-context demonstrations, making them more adaptable to various user interfaces.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.15930",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "MOSS-VL Technical Report: A New Multimodal Open-Source Vision-Language Model",
+      "summary": "The MOSS-VL Technical Report details a new multimodal open-source vision-language model, contributing to the growing ecosystem of publicly available advanced AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.15045",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "OpenAI Partners with CodeAI to Prepare the First AI Generation",
+      "summary": "OpenAI has announced a partnership with CodeAI, focusing on educational initiatives to prepare the next generation for an AI-driven future, emphasizing skills and understanding in artificial intelligence.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/partnering-with-codeai/",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
