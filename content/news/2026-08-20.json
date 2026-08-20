@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-20",
+  "items": [
+    {
+      "title": "OpenAI Enhances Customer Privacy with Zero Data Retention for Frontier Models",
+      "summary": "OpenAI introduces a new zero data retention policy for its frontier models, allowing enterprise customers to ensure their data is not used for training or retained beyond processing, directly challenging Anthropic's privacy offerings.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Google's AMIE Medical AI System Demonstrates Real-Time Clinical Video Consultations",
+      "summary": "Google's research medical AI system, AMIE, has successfully demonstrated real-time clinical video consultation capabilities in a groundbreaking study, showcasing its potential for healthcare applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Expands ChatGPT Ads Across Europe",
+      "summary": "OpenAI is significantly expanding its ChatGPT advertising platform across Europe, indicating a major push to monetize its popular AI chatbot and broaden its market reach.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Replit Integrates GPT-5.6 Luna to Advance Software Creation",
+      "summary": "Replit has expanded access to software creation tools by integrating OpenAI's GPT-5.6 Luna, aiming to enhance the capabilities of its AI-powered coding platform for developers.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/replit",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "ASI-Bench: A New Benchmark for Artificial Superintelligence Evaluation",
+      "summary": "Researchers introduce ASI-Bench, a novel benchmark designed to evaluate the capabilities of AI systems at the cusp of artificial superintelligence, pushing the boundaries of current assessment methods.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.17271",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Seeks to Outpace Anthropic with New Customer Privacy Protections",
+      "summary": "OpenAI is reportedly enhancing its customer privacy protections in an effort to gain a competitive edge over Anthropic, signaling an escalating battle for enterprise trust in the AI market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Demystifying Agent Skills: Why They Work—Until They Don't",
+      "summary": "New research explores the underlying mechanisms of AI agent skills, identifying critical factors that determine their effectiveness and pinpointing common failure modes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14036",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Agentic ESOpt: Fine-Tuning Long-Horizon LLM Agents with Minimal GPU Requirements",
+      "summary": "A new method, Agentic ESOpt, allows for efficient fine-tuning of long-horizon LLM agents with significantly reduced GPU requirements, making advanced agent development more accessible.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.17310",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Stripe's OpenRouter Acquisition Not Driven by 'Singularity' Claims",
+      "summary": "TechCrunch reports that Stripe's acquisition of OpenRouter was not primarily motivated by speculative 'singularity' aspirations, clarifying the strategic rationale behind the deal.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/19/stripe-didnt-really-buy-openrouter-because-of-the-singularity/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Cognition CEO Denies SpaceX Acquisition Rumors",
+      "summary": "The CEO of Cognition has publicly denied recent reports suggesting that SpaceX attempted to acquire the AI startup, quashing speculation about a major industry consolidation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/19/cognition-ceo-denies-report-that-spacex-tried-to-acquire-the-startup/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Embodied-Navigator: Efficient Navigation for AI Agents with Point, Think, Memorize, and Align Strategy",
+      "summary": "Embodied-Navigator proposes a new strategy for AI agents to achieve efficient navigation by integrating point-based thinking, memory, and alignment mechanisms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.17512",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing",
+      "summary": "EDITBRIDGE presents a new approach for faithful and efficient ultra-high-resolution image editing, addressing key challenges in generative image manipulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.18063",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Write Less Code Than I Used To. That May Be the Point.",
+      "summary": "A developer reflects on how the increasing adoption of AI tools has led to writing less manual code, suggesting this shift might be a positive evolution in software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/marcosomma/i-write-less-code-than-i-used-to-that-may-be-the-point-3kk",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "VentureBeat Appoints Rob Strechay as First Lead Analyst for Enterprise AI Research",
+      "summary": "VentureBeat has named Rob Strechay as its inaugural Lead Analyst, signaling an expansion of its dedicated research efforts into the rapidly growing enterprise AI sector.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "I Tested 5 AI Engines On My Own Sites. None Agreed.",
+      "summary": "A developer recounts testing five different AI engines on their personal websites, finding a lack of consensus and significant discrepancies in their outputs.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/i-tested-5-ai-engines-on-my-own-sites-none-agreed-4013",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
