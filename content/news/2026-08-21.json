@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-21",
+  "items": [
+    {
+      "title": "AI Data Startup Micro1 Reaches $500M Gross Run Rate Amid Training Boom",
+      "summary": "AI data startup Micro1 has achieved a $500 million gross run rate, highlighting the significant demand for data in the rapidly expanding AI training market.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/20/ai-data-startup-micro1-reaches-500m-gross-run-rate-amid-ai-training-boom/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Gaining on Anthropic with Business Users, New Data Indicates",
+      "summary": "New data suggests OpenAI is increasing its market share among business users, closing the gap with competitor Anthropic in the enterprise AI space.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "ChatGPT Can Now Send Texts with New Apple Messages Plug-in",
+      "summary": "ChatGPT has introduced a new plug-in for Apple Messages, enabling users to send text messages directly through the AI assistant.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/20/chatgpt-can-now-send-texts-for-you-with-new-apple-messages-plugin/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Railway Secures $100 Million to Challenge AWS with AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million to develop AI-native cloud infrastructure, positioning itself as a direct competitor to established players like AWS.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing AI Futures: OpenAI's New Initiative for Long-Term AI Development",
+      "summary": "OpenAI has launched 'AI Futures,' a new initiative focused on exploring and shaping the long-term trajectory and societal impact of advanced AI.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-ai-futures",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation",
+      "summary": "Researchers introduce SemComp-Bench, a new benchmark designed to rigorously evaluate the ability of AI models to complete semantic tasks within video generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.17426",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Zetta ζ: An Efficient Closed-Loop Embodied Harness for Self-Evolving Physical Intelligence",
+      "summary": "A new paper presents Zetta ζ, an efficient closed-loop embodied harness designed to facilitate the self-evolution of physical intelligence in AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.16590",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SemaPLC: A Project-Grounded, Verification-Gated Agent Harness for PLC Code Generation",
+      "summary": "SemaPLC introduces a novel agent harness that generates PLC code, grounded in project requirements and gated by verification for enhanced reliability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.18565",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Position: Collusion Risks Among AI Reasoning Agents Justify Certification Requirements for Making Market Decisions",
+      "summary": "A position paper argues that the inherent risks of collusion among AI reasoning agents necessitate certification requirements, especially when these agents make market decisions.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18078",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Large Language Models in Mental Health: A Systematic Review of Applications, Innovations, and Ethical Challenges",
+      "summary": "A systematic review explores the applications, innovations, and critical ethical challenges associated with deploying large language models in mental health contexts.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.18080",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Co-RL: Unsupervised Reasoning Emerges from Diverse Cohort in Multi-agent RL",
+      "summary": "Co-RL demonstrates that unsupervised reasoning capabilities can emerge within multi-agent reinforcement learning systems when trained with a diverse cohort of agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.17253",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "FreeToken: Efficient Edge-Native MoE Serving with Bandwidth-Adaptive Execution",
+      "summary": "FreeToken proposes an efficient edge-native Mixture-of-Experts (MoE) serving system that adapts execution based on available bandwidth for optimized performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.16157",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "summary": "SPADE introduces a new framework for self-play within adaptive synthetic executable environments, enhancing AI agent training and capability development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.19197",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Reasoning Ledger: Remembering Decisions, Not Just Data",
+      "summary": "The Reasoning Ledger proposes a new approach for AI systems to remember and track decisions, rather than just raw data, to improve transparency and accountability.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kenwalger/the-reasoning-ledger-remembering-decisions-not-just-data-56gm",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "I wrote a test for prompt injection. It passed while the attack worked.",
+      "summary": "A developer recounts building a prompt injection test that deceptively passed, even as the underlying attack successfully exploited the AI system.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mk023/i-wrote-a-test-for-prompt-injection-it-passed-while-the-attack-worked-kc9",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
