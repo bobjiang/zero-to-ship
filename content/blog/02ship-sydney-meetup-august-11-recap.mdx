@@ -1,0 +1,126 @@
+---
+title: "AI-Enabled SDLC, 600 Deploys in 18 Weeks & an HSC Math Question Indexer — 02Ship Sydney Meetup — August 11, 2026"
+excerpt: "5 takeaways from the August 02Ship Sydney meetup: 600 deploys in 18 weeks with AI agents, and a LaTeX pipeline that makes HSC math searchable."
+date: "2026-08-11"
+author: "Bob Jiang"
+keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, AI-enabled SDLC, AI agents, code review agents, test coverage, HSC math, LaTeX, PDF pipeline, embeddings, UMAP, CloudBridge, recap"
+---
+
+# AI-Enabled SDLC, 600 Deploys in 18 Weeks & an HSC Math Question Indexer
+
+## TL;DR
+
+- Steve McGowan shipped **~600 production deploys and 1,300 commits in 18 weeks**, solo, with AI agents.
+- His rule: **finish things, not start things**. Limit work in progress, keep PR cycles short.
+- **100% coverage is enforced**, and every PR is reviewed by agents before merge.
+- Jono turned **100+ HSC exam PDFs into searchable LaTeX**, with three layers of quality checks.
+- Store the **raw transcription separately** from the interpreted output. It makes debugging and model upgrades much cheaper.
+
+On **Tuesday, August 11**, the 02Ship community met again at **Haymarket HQ** (Level 2, 63 Dixon St, Haymarket). This is our monthly meetup, running since March.
+
+The format was the same as usual: two talks, then open mic demos, then food and networking until 8:30 PM.
+
+Thanks to **CloudBridge** for sponsoring the night, and **Haymarket HQ** for hosting us.
+
+## Talk 1: AI-Enabled SDLC — Steve McGowan
+
+Steve has been a software developer and founder for 18 years. He now works as an AI architect in enterprise.
+
+He is also building **Trolley Relay**. It syncs point-of-sale data to online stores for independent Australian liquor stores using Shopfront. He has one paying customer, and more in the pipeline.
+
+### 18 weeks of numbers
+
+Steve tracks his own delivery data. After 18 weeks:
+
+- About **600 production deployments** and **1,300 commits**.
+- **More test code than production code.**
+- PR cycle times are getting shorter.
+- Fewer things in flight at the same time.
+
+That last point is his core idea. The goal is to **finish things, not to start things**. Work-in-progress limits still matter, even when AI writes most of the code. It is easy to start ten things with agents. Finishing them is the hard part.
+
+### Five phases of maturity
+
+Steve described his progress in five phases. He started with basic agent use. Then he added quality gates, then lifecycle controls, then more autonomy. He is now in phase five: code history and learning.
+
+### How the agents are set up
+
+His architecture has three layers. Humans at the top, AI agents in the middle, automation at the bottom.
+
+Some details:
+
+- He added a **"product manager" persona**. Its job is to push back on the architect's decisions from the customer point of view.
+- **Grailma** is his most obnoxious, high-detail coach. It forces every ambiguity to be resolved before any action starts.
+- **Judgment models** handle the fuzzy checks. Not everything can be a strict pass or fail rule, so a model gives a qualitative call instead.
+
+### Quality built in from day one
+
+- **100% code coverage is enforced**, including docs. If coverage drops, the PR is blocked.
+- **Every PR is reviewed by automated agents** before merge.
+- After each workstream, a **durable close-out document** is written.
+
+He also tracks identity and attribution. Who or what made each change. He said this turned out to be more useful than he expected, even for a solo builder.
+
+### Phase 5: learning from history
+
+The next step is storing chat transcripts next to the code history. Then the agents can look back at past decisions and learn from them.
+
+Steve is publishing an article series about this. The first post is live on LinkedIn and on his website. He is also applying the same approach as an AI coach at an enterprise financial and insurance client.
+
+## Talk 2: HSC Math Question Indexer — Jono
+
+Jono is a statistician and a math tutor. He built this as a weekend project.
+
+The idea came from a student. The student wanted targeted practice on one topic, across many years of past HSC exam questions.
+
+The problem: there are 100+ PDFs. Many are ugly scans. Some solutions are handwritten. None of it is searchable.
+
+### The pipeline
+
+He built a PDF ingestion pipeline. It converts questions and solutions into LaTeX and stores them in a database you can query. You can filter and search by topic, subtopic, difficulty, and stream.
+
+One design choice he called out: **separate observation from interpretation**. The raw transcription is stored on its own, and the interpreted output is stored separately. This makes debugging easier. It also means he can upgrade the model later without reprocessing everything from scratch.
+
+### Three layers of quality checks
+
+About **15–20% of the questions had broken LaTeX**. So he added three checks:
+
+1. **Compile failure** — deterministic, cheap, catches the obvious breaks.
+2. **Visual shape check** — a vision model looks at the rendered output.
+3. **Correctness check** — a 3.5-level model checks the content.
+
+He ran out of API token budget partway through, so he moved some checks to a **local 7B model**. He said it was surprisingly capable for this job.
+
+### Search
+
+For search, he reduced the question embeddings with **UMAP**. The result is a visual map where questions cluster into "archipelagos" by topic. He also uses **cosine similarity** for semantic search across questions.
+
+## Community Shout-Outs (Open Mic)
+
+Five community members demoed their projects:
+
+- **Burin Choomnuan** — a game engine written in C with a Lisp-based language. He also built a screenshot and UI automation tool so he does not have to test by hand. He plans to open source it.
+- **Scott** — multiplayer chess in the terminal, with Claude as a move advisor. This was his first Claude project. It is live at **[groundcontrol.pt.space](https://groundcontrol.pt.space)**.
+- **Juan** — a non-coder founder building a startup on his own with **[Gstack](https://github.com/garrytan/gstack)** (by Garry Tan). He said it guided him through architecture, security, and QA.
+- **Mac Kay** — a YouTube credibility checker. Four independent agents (two Grok, one Sonnet, one ChatGPT) read a transcript, score its credibility, and flag claims that are not supported.
+- **Nishant** — an ETF comparison tool, built with Claude acting as both PM and developer. It compares ETF performance, projects portfolio growth, and answers common questions for new investors.
+
+If you want to share next time, just add your name to the open mic list when you arrive.
+
+## Sponsor
+
+Thanks again to **CloudBridge**. They offered up to **$100K in AWS cloud credits** to builders in the room, and shared a QR code at the event. If you missed it, come to the next meetup and ask.
+
+## Join the Next Meetup
+
+The next meetup is on **Tuesday, September 15** at **Haymarket HQ** (Level 2, 63 Dixon St, Haymarket). Same time as before (6:00 – 8:30 PM).
+
+It is free. Spots are limited.
+
+**[Register for the September 15 meetup on Luma](https://luma.com/i17q1x7w)**
+
+## Get Involved
+
+Want to speak at a future meetup, sponsor an event, or help shape the community? **[Get involved with 02Ship →](https://www.02ship.com/get-involved)**
+
+See you there.
