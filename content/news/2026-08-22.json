@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-22",
+  "items": [
+    {
+      "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+      "summary": "Researchers introduce EnvHarness, a novel framework that transforms static game environments into dynamic, interactive spaces suitable for training AI agents, achieving significant performance improvements.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.19880",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic’s Opus 4.6 is a smut-machine",
+      "summary": "A TechCrunch report claims Anthropic's latest model, Opus 4.6, exhibits concerning behavior by generating explicit content, raising questions about safety filters and ethical AI development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/21/anthropics-opus-4-6-is-a-smut-machine/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.",
+      "summary": "Google's first search box redesign in 25 years signals a significant shift in how users will interact with search, likely integrating more AI-driven conversational and contextual features.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis",
+      "summary": "FACET is a new system that synthesizes terminal tasks while accurately preserving the user's original intent and executable state, improving the reliability of AI-driven command-line automation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.18580",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video",
+      "summary": "A new research paper presents 4DAnyone, a method capable of generating realistic 4D models of individuals from a single casual monocular video, pushing boundaries in digital human creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.20335",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+      "summary": "Nvidia's recent demonstrations highlight that the surrounding infrastructure and 'harness' for AI models are becoming more critical than the models themselves, shifting focus to system-level innovation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "I Ran 157 Agent Plans Against a Real LLM. The Problem Wasn't Execution. It Was Planning.",
+      "summary": "An insightful analysis reveals that the primary bottleneck for LLM-powered agents is often the planning phase rather than execution, highlighting a critical area for future AI development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/i-ran-157-agent-plans-against-a-real-llm-the-problem-wasnt-execution-it-was-planning-163j",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+      "summary": "A study explores the capabilities of coding agents on SWE-bench Science, a benchmark designed to test their ability to resolve complex engineering tasks within scientific contexts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.19799",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WithEveryone: Unified Planning and Identity Grounding for Group Image Generation",
+      "summary": "This research introduces WithEveryone, a method for generating group images that ensures consistent identity and coherent planning for multiple subjects within a single scene.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.20336",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use",
+      "summary": "MemTrapBench is a new benchmark designed to evaluate and identify 'cognitive traps' or failure modes in how Large Language Models manage and utilize their memory during complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.20202",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Training Chemical Plausibility-Aware Large Language Models for Single-Step Retrosynthesis",
+      "summary": "Researchers are developing Large Language Models that are aware of chemical plausibility, improving their ability to perform single-step retrosynthesis for drug discovery and material science.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.18940",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Nvidia partners with data center developer Cloverleaf",
+      "summary": "Nvidia has announced a strategic partnership with data center developer Cloverleaf, aiming to expand and optimize infrastructure for AI workloads and advanced computing.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/21/nvidia-partners-with-data-center-developer-cloverleaf/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+      "summary": "Stampli reports a significant 68% reduction in product launch hours by integrating ChatGPT Work, demonstrating the practical efficiency gains of AI in business operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/stampli",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Partnering with CodeAI to prepare the first AI generation",
+      "summary": "OpenAI is partnering with CodeAI to develop educational programs and tools aimed at equipping the next generation with essential AI and coding skills.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/partnering-with-codeai",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization",
+      "summary": "This paper proposes a staged post-training method called Inject, Align, Recover, enabling LLMs to internalize document knowledge without external retrieval during inference.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.20281",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
