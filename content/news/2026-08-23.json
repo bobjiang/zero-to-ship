@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-23",
+  "items": [
+    {
+      "title": "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist",
+      "summary": "Researchers introduce OmniScientist, an AI capable of performing scientific tasks across multiple modalities and disciplines, marking a significant step towards general AI in scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13558",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Inherent, founded by DeepMind alumni, says its AI 'teammate' just outperformed Anthropic and OpenAI at replicating research",
+      "summary": "Startup Inherent, founded by DeepMind alumni, claims its AI 'teammate' has surpassed models from Anthropic and OpenAI in the complex task of replicating scientific research.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI says California should strengthen its AI safety bill",
+      "summary": "OpenAI has publicly advocated for California to enact a stronger AI safety bill, emphasizing the need for robust regulation in the rapidly evolving field.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/22/openai-says-california-should-strengthen-its-ai-safety-bill/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
+      "summary": "OpenAI has launched a new version of ChatGPT specifically designed for teenagers, focusing on educational use cases and incorporating enhanced safety protections.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-for-teens",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "I'm 12. I don't have a laptop. I built a full-stack AI SaaS on my Android phone.",
+      "summary": "A 12-year-old developer successfully built and launched a full-stack AI SaaS application using only an Android phone, demonstrating remarkable resourcefulness and the accessibility of AI development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/koda2026/im-12-i-dont-have-a-laptop-i-built-a-full-stack-ai-saas-on-my-android-phone-2o2l",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback",
+      "summary": "SkillEvo proposes a novel method for AI agents to continuously improve their skills through self-renewing evolution gradients derived from multi-turn interaction feedback.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.13120",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Harvard’s $699 startup bootcamp offers AI avatars of its instructors",
+      "summary": "Harvard's new $699 startup bootcamp is incorporating AI avatars of its instructors to enhance the learning experience and provide personalized guidance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/22/harvards-699-startup-bootcamp-offers-ai-avatars-of-its-instructors/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
+      "summary": "A new service named Goose is offering code generation capabilities comparable to Anthropic's Claude Code, but at no cost, potentially disrupting the market for AI coding assistants.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "I Built an AI That Auto-Replies to Your Instagram DMs (No Login Required)",
+      "summary": "A developer created an AI tool that automatically replies to Instagram DMs without requiring users to log in, offering a convenient and privacy-conscious solution.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nandan_das_369/i-built-an-ai-that-auto-replies-to-your-instagram-dms-no-login-required-1b07",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Repo0: Design-Driven Zero-to-All Code Generation",
+      "summary": "Repo0 introduces a novel design-driven approach to code generation, aiming to create entire software projects from initial design specifications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.19854",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "5 new ways to level up your learning with Search",
+      "summary": "Google has introduced five new AI-powered features within Search designed to enhance learning and study tools for students and users.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "The Planner Made the Same 3 Mistakes Every Time. A Bigger Model Didn't Fix It.",
+      "summary": "This article discusses how simply scaling up an AI model did not resolve persistent planning errors, highlighting the need for qualitative improvements beyond model size.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/the-planner-made-the-same-3-mistakes-every-time-a-bigger-model-didnt-fix-it-3170",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models",
+      "summary": "This paper presents ForgeWM, a new approach for training video world models that can predict future frames based on actions, focusing on few-step causal progression.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14022",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The More Popular, The Harder to Forget: Adaptive Popularity for LLM Unlearning",
+      "summary": "This research explores the challenge of 'unlearning' information in Large Language Models, proposing an adaptive popularity mechanism to address the difficulty of forgetting more popular data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14229",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Training Leaves Traces: Centered Residual Signatures for Language Model Lineage Verification",
+      "summary": "Researchers introduce Centered Residual Signatures as a method to verify the training lineage of language models, providing a way to trace their development and potential influences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.14929",
+      "score": 7,
+      "category": "research"
+    }
+  ]
+}
