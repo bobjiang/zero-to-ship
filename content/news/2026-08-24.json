@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-24",
+  "items": [
+    {
+      "title": "FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving",
+      "summary": "A new research paper introduces FlashPrefill V2, an optimized block-sparse prefill attention mechanism designed to significantly improve the efficiency of serving long-context Large Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.19758",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Looped Language Models Improve Compositional Tool Calling",
+      "summary": "Research demonstrates that integrating 'looped' mechanisms into language models enhances their ability to perform complex, compositional tool-calling tasks, leading to more sophisticated AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.18171",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "FM-Bench: A Benchmark for Long-Horizon Management with Competing Agents",
+      "summary": "A new benchmark called FM-Bench is proposed to evaluate the performance of AI agents in long-horizon management scenarios involving multiple competing agents, addressing a critical gap in current AI evaluation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.18423",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Strengthening democratic oversight in national security",
+      "summary": "OpenAI publishes a blog post discussing the critical need for strengthening democratic oversight mechanisms as AI capabilities increasingly intersect with national security applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/strengthening-democratic-oversight-in-national-security",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Pacing model development in an era of cyber-critical capabilities",
+      "summary": "OpenAI addresses the challenge of responsibly pacing AI model development, particularly concerning cyber-critical capabilities, to ensure safety and prevent misuse.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Who's behind the new ‘stealth model’ Ox Alpha?",
+      "summary": "TechCrunch reports on the emergence of 'Ox Alpha,' a new AI model operating in stealth mode, prompting speculation and investigation into its developers and capabilities.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/23/whos-behind-the-new-stealth-model-ox-alpha/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Decision-Metric Alignment in Latent World Models: Diagnostics and Action-Conditioned Objectives for MPC Planning",
+      "summary": "New research explores how to align decision metrics within latent world models, providing diagnostics and action-conditioned objectives crucial for effective Model Predictive Control (MPC) planning in AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.18746",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Flock CEO calls for ‘compromise’ as surveillance company faces growing backlash",
+      "summary": "The CEO of AI surveillance company Flock calls for compromise amidst increasing public and regulatory backlash over its technologies and their implications for privacy and civil liberties.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/23/flock-ceo-calls-for-compromise-as-surveillance-company-faces-growing-backlash/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "How NVIDIA scales expertise with ChatGPT Work",
+      "summary": "OpenAI highlights how NVIDIA is leveraging ChatGPT Work to scale internal expertise and enhance productivity across its operations, showcasing a real-world enterprise AI adoption.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/nvidia/chatgpt-work",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "τ_0-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation",
+      "summary": "Researchers introduce τ_0-VLA, a hierarchical robot foundation model that uses a world model to guide test-time computation, promising more robust and adaptable robotic systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.16885",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Thinking in a Low-Resource Language: What SFT Builds, What RL Fixes, What Accuracy Cannot See",
+      "summary": "A study investigates the challenges and nuances of developing LLMs for low-resource languages, distinguishing the effects of Supervised Fine-Tuning (SFT) and Reinforcement Learning (RL) beyond simple accuracy metrics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.17744",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Embedder's Dilemma: LLMs Are Better, but at What Cost?",
+      "summary": "This paper explores the trade-offs and hidden costs associated with using increasingly powerful Large Language Models, prompting a critical examination of their real-world implications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12875",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Linkdaze’s smart calendar is built to run a household, not just track a schedule",
+      "summary": "Linkdaze introduces a new smart calendar product leveraging AI to manage complex household operations beyond simple scheduling, aiming to become a central hub for domestic organization.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/23/linkdazes-smart-calendar-is-built-to-run-a-household-not-just-track-a-schedule/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Get closer to the game with Gemini and Pixel",
+      "summary": "Google announces new integrations between its Gemini AI and Pixel devices, enhancing fan engagement and experiences related to football club partnerships.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
+      "summary": "A new framework for hierarchical self-improvement is proposed, enabling AI agents to evolve and adapt their capabilities for specific tasks through a structured learning process.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.08466",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
