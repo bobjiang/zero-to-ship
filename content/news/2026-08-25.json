@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-25",
+  "items": [
+    {
+      "title": "Situational Awareness AI Hedge Fund Probed by SEC After Near Implosion",
+      "summary": "Situational Awareness, a prominent AI hedge fund that recently faced near collapse, is now under investigation by the SEC, highlighting growing regulatory scrutiny in the AI finance sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Salesforce Launches New Slackbot AI Agent to Compete in Workplace AI Market",
+      "summary": "Salesforce has introduced a new Slackbot AI agent, intensifying its competition with tech giants Microsoft and Google in the rapidly expanding workplace AI solutions market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/salesforce-rolls-out-new-slackbot-ai-agent-as-it-battles-microsoft-and",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Enhances GPT-5.6 in Kiro for Improved Developer Price-Performance",
+      "summary": "OpenAI announces advancements to its GPT-5.6 model within the Kiro platform, focusing on optimizing price-performance for developers building AI applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-5-6-in-kiro",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Listen Labs Secures $69M to Scale AI Customer Interviews After Viral Stunt",
+      "summary": "Listen Labs has raised $69 million in funding, following a viral billboard hiring campaign, to expand its AI-powered platform for conducting customer interviews at scale.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/listen-labs-raises-usd69m-after-viral-billboard-hiring-stunt-to-scale-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Compute-Efficient Hyperparameter Transfer for Large-Scale Mixture-of-Experts Models",
+      "summary": "New research proposes a compute-efficient method for hyperparameter transfer, significantly improving the training process for large-scale Mixture-of-Experts (MoE) models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.20061",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Graph Engineering for LLM Agents: Advancing from Individual to System Intelligence",
+      "summary": "A paper explores the critical role of graph engineering in developing advanced LLM agents, shifting focus from individual agent intelligence to more complex system-level intelligence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.21156",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "InfinityEdit: Infinite Video Editing with a Lightweight Edit-Ignition Adapter",
+      "summary": "Researchers introduce InfinityEdit, a novel system enabling infinite video editing capabilities through a lightweight 'edit-ignition' adapter, promising new possibilities for creative content generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.20910",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Google Sheets Canvas Brings AI-Powered Features to Spreadsheet Data",
+      "summary": "Google rolls out 'Sheets canvas' for Google Sheets, integrating new AI capabilities to help users visualize and interact with their spreadsheet data more dynamically.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Your Agent Doesn't Have a Reasoning Problem, It Has a Memory Problem",
+      "summary": "An article argues that many issues with AI agent performance stem from inadequate memory management rather than fundamental reasoning flaws, suggesting new directions for agent development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/royanannya/your-agent-doesnt-have-a-reasoning-problem-it-has-a-memory-problem-49me",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ParaTempo: Efficient Parallel Reasoning via Temporal Confidence for LLMs",
+      "summary": "A new research paper introduces ParaTempo, a method for achieving efficient parallel reasoning in large language models by leveraging temporal confidence mechanisms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.16425",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OmniAssistBench: A New Benchmark for Assistant-Style Interaction in Omni-LLMs",
+      "summary": "Researchers present OmniAssistBench, a comprehensive benchmark designed to evaluate and improve assistant-style interaction capabilities across various Omni-LLMs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.21360",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Tests Passed. The Contract Was Wrong: AI in Software Development",
+      "summary": "This piece explores a critical challenge in AI-assisted software development where tests might pass, but the underlying contract or specification generated by AI is fundamentally flawed.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kenielzep97/the-tests-passed-the-contract-was-wrong-mp0",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs",
+      "summary": "New research emphasizes the need to benchmark and align not just correctness but also the behavioral aspects of responses from Hybrid-Thinking Multimodal Large Language Models (MLLMs).",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12781",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Almost Shipped a RAG Assistant That Lied About APIs That Don't Exist",
+      "summary": "A developer shares a cautionary tale about nearly deploying a Retrieval-Augmented Generation (RAG) assistant that hallucinated non-existent APIs, highlighting practical challenges in AI agent development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/i-almost-shipped-a-rag-assistant-that-lied-about-apis-that-dont-exist-3426",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "I Tried to Prompt-Inject My Own Agent Engine. It Didn't Work. Here's Why.",
+      "summary": "An engineer recounts an attempt to prompt-inject their own AI agent engine and explains the underlying security and robustness mechanisms that prevented the attack from succeeding.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/i-tried-to-prompt-inject-my-own-agent-engine-it-didnt-work-heres-why-57m0",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
