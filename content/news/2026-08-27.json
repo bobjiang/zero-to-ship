@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-27",
+  "items": [
+    {
+      "title": "Nvidia closes in on Hugging Face acquisition",
+      "summary": "Nvidia is reportedly nearing a deal to acquire Hugging Face, signaling a major consolidation in the AI infrastructure and open-source model ecosystem.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Viral AI startup Instinct has raised $350M at a $2.5B valuation",
+      "summary": "AI startup Instinct has secured $350 million in new funding, pushing its valuation to $2.5 billion amidst growing investor interest in rapidly scaling AI ventures.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Amazon just tripled its order of Nvidia chips over 'surging demand'",
+      "summary": "Amazon has significantly increased its order for Nvidia chips, tripling its previous commitment to meet the escalating demand for AI computing resources.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "The Hugging Face incident and the road ahead",
+      "summary": "OpenAI addresses a recent 'incident' involving Hugging Face, outlining its perspective and future plans, likely in response to the ongoing acquisition news or related events.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "GigaBrain-0.7: Scaling Embodied Foundation Models to Emergent Capabilities with a Three-System Architecture",
+      "summary": "Researchers introduce GigaBrain-0.7, an embodied foundation model that achieves emergent capabilities through a novel three-system architecture, pushing the boundaries of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.15875",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "FrontierChallenge: Evaluating Scientific Workflow Completion",
+      "summary": "FrontierChallenge proposes a new benchmark for evaluating the ability of AI systems to complete complex scientific workflows, highlighting a critical area for AI advancement.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.24979",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Annotations as Rollouts: Efficient and Scalable Reinforcement Learning for Video MLLMs",
+      "summary": "A new method called 'Annotations as Rollouts' is presented, enabling more efficient and scalable reinforcement learning for multimodal large language models (MLLMs) processing video data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.20492",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "VoiceMem: Streaming Dual-Brain Memory for Real-Time Interaction",
+      "summary": "VoiceMem introduces a novel streaming dual-brain memory system designed to facilitate real-time interaction with AI, enhancing responsiveness and continuity in conversational agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26005",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Bill Gates - The turbulent AI era is here",
+      "summary": "Bill Gates shares his perspective on the current 'turbulent' era of AI, emphasizing critical choices humanity must make to ensure AI benefits everyone.",
+      "source": "Lobste.rs",
+      "url": "https://www.gatesnotes.com/work/make-ai-work-for-everyone/reader/a-turbulent-ai-era-and-critical-choices-to-make?WT.mc_id=20260826_ai-overture-2026-med-med",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+      "summary": "OpenAI is expanding the availability of ChatGPT for Teachers to additional U.S. school districts, aiming to integrate AI tools further into educational settings.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "WarpSAC: Towards the Pinnacle of Scalable Off-policy RL by Rethinking Exploration and Exploitation",
+      "summary": "WarpSAC proposes a new approach to scalable off-policy reinforcement learning by fundamentally rethinking the balance between exploration and exploitation strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.24479",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LLM Agents Perform Controlled Experiments Using Simulation Models",
+      "summary": "New research demonstrates how large language model agents can autonomously conduct controlled experiments by interacting with simulation models, advancing agentic capabilities.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2608.23622",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Orchestration is the new challenge for CX in the age of AI agents",
+      "summary": "The rise of AI agents is shifting the focus in customer experience (CX) to orchestration, as businesses grapple with coordinating multiple AI and human touchpoints.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/orchestration/orchestration-is-the-new-challenge-for-cx-in-the-age-of-ai-agents",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Inside our 353,000-person vibe coding course",
+      "summary": "Google provides an inside look at its massive 'vibe coding' course, which has attracted 353,000 participants, showcasing the growing interest in AI-assisted development.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Learning never stops: How AI makes learning continuous",
+      "summary": "OpenAI explores how artificial intelligence is transforming education by enabling continuous and personalized learning experiences for individuals.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/learning-never-stops",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
