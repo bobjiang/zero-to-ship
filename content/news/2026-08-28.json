@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-28",
+  "items": [
+    {
+      "title": "OpenAI, Anthropic, Google, and 100+ Companies Unite to Address Rogue AI Risks",
+      "summary": "Over 100 leading AI companies, including OpenAI, Anthropic, and Google, have issued a joint call for action to establish safeguards against the potential risks of rogue AI systems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Google's AMIE Medical AI System Demonstrates Real-Time Clinical Video Consultation Capabilities",
+      "summary": "Google Research's AMIE medical AI system has showcased its ability to conduct real-time clinical video consultations in a groundbreaking study, advancing AI's role in healthcare diagnostics.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Barret Zoph, Former Thinking Machines Co-founder, Joins Google After OpenAI Stint",
+      "summary": "Barret Zoph, a co-founder of Thinking Machines who briefly joined OpenAI, has now moved to Google, marking a significant talent shift in the competitive AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/27/barret-zoph-the-thinking-machines-co-founder-who-defected-to-openai-is-now-at-google/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic and OpenAI Confirmed for AI Stage at TechCrunch Disrupt 2026",
+      "summary": "Key representatives from leading AI companies Anthropic and OpenAI are set to speak on the AI stage at TechCrunch Disrupt 2026, signaling major announcements or discussions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/27/anthropic-and-openai-are-joining-the-ai-stage-at-techcrunch-disrupt-2026/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "PAWBench: Evaluating Probabilistic Alignment in World Modeling for AI Agents",
+      "summary": "A new benchmark, PAWBench, has been introduced to assess how close AI models are to achieving probabilistically aligned world modeling, crucial for robust agent behavior.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27345",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VGI-Bench: A New Benchmark for Probing Visual Intelligence in Video Generation Models",
+      "summary": "Researchers introduce VGI-Bench, a comprehensive benchmark designed to evaluate and understand the visual intelligence capabilities of advanced video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.19583",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Expands Global Footprint with New Presence in Brazil",
+      "summary": "OpenAI announces its expansion into Brazil, aiming to foster AI innovation and collaboration within the Latin American region.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/expanding-our-presence-in-brazil/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Enterprise AI's True Risk Lies in Inter-Agent Complexity, Not Autonomy",
+      "summary": "A new analysis suggests that the primary risk in enterprise AI deployments stems from the intricate complexity and interactions between autonomous agents, rather than the agents' individual autonomy.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/enterprise-ais-real-risk-isn't-autonomous-agents-its-the-complexity-between-them",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "JIT-Agent: Enhancing Harness Intelligence through Just-in-Time Harness Evolution",
+      "summary": "JIT-Agent proposes a novel method for scaling AI harness intelligence by enabling just-in-time evolution of the harness itself, improving adaptability and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.25593",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "What Defines Good Agentic Data? An ACE Lens on Data Generation for LLM Agents",
+      "summary": "This paper explores the characteristics of effective data for training LLM agents, proposing an ACE (Action, Context, Evaluation) lens for better data generation strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27260",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Google Search Introduces New AI-Powered Features for Travel Planning and Booking",
+      "summary": "Google Search has rolled out three new AI-enhanced features designed to streamline and improve the user experience for planning and booking travel.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Velocidade de entrega e custo de manutenção pós IA (Delivery Speed and Maintenance Cost Post-AI)",
+      "summary": "This article discusses the impact of AI on software development, specifically focusing on how it affects delivery speed and post-deployment maintenance costs.",
+      "source": "Dev.to",
+      "url": "https://dev.to/he4rt/velocidade-de-entrega-e-custo-de-manutencao-pos-ia-5gei",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "TTPO: Test-Time Policy Optimization for Improved AI Agent Performance",
+      "summary": "Test-Time Policy Optimization (TTPO) is introduced as a method to refine AI agent policies dynamically during testing, leading to enhanced performance in real-world scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27448",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Supports Thailand's Next Generation of AI Startups",
+      "summary": "OpenAI announces initiatives to support and nurture the emerging AI startup ecosystem in Thailand, fostering local innovation and talent.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents",
+      "summary": "Researchers present 'PILOT in the Loop,' a system enabling long-horizon AI agents to achieve live self-improvement through continuous feedback and adaptation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26530",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
