@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-29",
+  "items": [
+    {
+      "title": "Anthropic Researcher Hints at Breakthroughs in Self-Improving AI",
+      "summary": "An Anthropic researcher provided a glimpse into the development of self-improving AI, suggesting significant progress in autonomous learning capabilities.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Neocloud Lambda Secures $1B in Debt to Acquire More AI Chips",
+      "summary": "Neocloud Lambda has raised $1 billion in debt financing to expand its hardware infrastructure, signaling continued high demand for AI computing resources.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/28/neocloud-lambda-secures-1b-in-debt-to-buy-more-chips/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Agentic Game Development as a Verifiable Trajectory Data Engine for Scaling World Models",
+      "summary": "New research proposes using agentic game development as a method to generate verifiable trajectory data, crucial for scaling and improving AI world models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.25518",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "How a Strands Agent Boosted Claude Opus 5's ARC-AGI-3 Performance from 30% to 99.95%",
+      "summary": "A Strands agent dramatically improved Claude Opus 5's performance on the ARC-AGI-3 benchmark, achieving near-perfect scores from an initial 30%.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws/how-a-strands-agent-took-claude-opus-5-from-30-to-9995-on-arc-agi-3-4kel",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Open-Weight AI Companies Emerge as Prime Acquisition Targets in Silicon Valley",
+      "summary": "The trend of open-weight AI companies becoming highly sought-after acquisition targets highlights a strategic shift in the AI industry's competitive landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/28/open-weight-ai-companies-are-the-valleys-hottest-acquisition-targets/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Clarifies Stance on Cursor Following SpaceX Acquisition",
+      "summary": "OpenAI has issued a statement regarding its position on Cursor, a code AI tool, after its recent acquisition by SpaceX, addressing potential implications for the AI ecosystem.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "UrbanGround: Advancing AI Agents from Local Perception to Spatial Agency in Real-Scale Cities",
+      "summary": "Researchers introduce UrbanGround, a framework enabling AI agents to transition from basic local perception to sophisticated spatial agency within complex, real-scale urban environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27456",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Enterprise AI's True Risk Lies in the Complexity Between Autonomous Agents",
+      "summary": "The real challenge for enterprise AI is not the agents themselves, but managing the intricate interactions and dependencies that arise between multiple autonomous systems.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/ai/enterprise-ais-real-risk-isnt-autonomous-agents-its-the-complexity-between-them",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Governance for Autonomous Agents Must Reside in the Data Layer",
+      "summary": "As AI agents gain autonomy, effective governance and control mechanisms must be embedded directly within the data layer to ensure responsible operation.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/security/when-agents-act-on-their-own-governance-has-to-live-in-the-data-layer",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Enhances Gemini API Managed Agents with 3.6 Flash and New Hooks",
+      "summary": "Google has updated its Gemini API Managed Agents, introducing the 3.6 Flash model and new hooks to provide developers with more advanced and flexible agent capabilities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Self-OPD: On-Policy Distillation for Flow Matching Models Without a Teacher",
+      "summary": "A novel method called Self-OPD allows for on-policy distillation in flow matching models without the need for a pre-trained teacher model, simplifying training processes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26872",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Your AI Remembers Everything and Trusts All of It: A Critical Look at AI Memory",
+      "summary": "This article explores the implications of AI systems remembering all past interactions and implicitly trusting that information, raising concerns about bias and reliability.",
+      "source": "Dev.to",
+      "url": "https://dev.to/marcosomma/your-ai-remembers-everything-and-trusts-all-of-it-4gg",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "GameWAM: A World Action Model for Video Games",
+      "summary": "Researchers introduce GameWAM, a new world action model designed to enhance AI understanding and interaction within complex video game environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26200",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+      "summary": "WikiSkill proposes a method for agents to compile their experiences into persistent knowledge, enabling continuous skill evolution and adaptation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27454",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "CritICL: Inference-Time Weak-to-Strong Generalization from Small Language Model Failure Modes",
+      "summary": "CritICL explores how to achieve weak-to-strong generalization during inference by analyzing failure modes of smaller language models, aiming to improve larger models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27455",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
