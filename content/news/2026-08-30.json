@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-30",
+  "items": [
+    {
+      "title": "Sony Music, Warner Sue Anthropic Over Alleged IP Theft",
+      "summary": "Sony Music and Warner Music have filed a lawsuit against AI firm Anthropic, accusing them of a 'brazen campaign' of intellectual property theft, marking a significant legal challenge in the AI industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Nvidia's AI Advantage Extends Beyond GPUs to Full-Stack Solutions",
+      "summary": "Nvidia's strategic focus is shifting beyond just hardware, as its AI advantage now encompasses a broader ecosystem of software and services, solidifying its position in the evolving AI landscape.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report",
+      "summary": "A new technical report details TaoLive's approach to training digital avatar agents that can dynamically evolve alongside their operational environments, showcasing advancements in adaptive AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.15763",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Railway Secures $100 Million to Compete with AWS in AI-Native Cloud Infrastructure",
+      "summary": "Railway has raised $100 million in funding to develop an AI-native cloud infrastructure, aiming to directly challenge established giants like AWS in the rapidly growing market.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google Redesigns Search Box for First Time in 25 Years, Signaling Deeper AI Integration",
+      "summary": "Google has unveiled the first redesign of its iconic search box in 25 years, a move that hints at deeper AI integration and a significant shift in how users will interact with search.",
+      "source": "VentureBeat",
+      "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Is Next-Chunk Reasoning RL Really Better than SFT? Revisiting Training Strategies under no-CoT Data",
+      "summary": "Researchers investigate whether Reinforcement Learning with next-chunk reasoning truly outperforms Supervised Fine-Tuning when training language models without Chain-of-Thought data, re-evaluating core LLM training strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.23256",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Long-Horizon Audio-Visual Generation for Persistent Stories and Interactive Worlds",
+      "summary": "New research explores techniques for generating extended, consistent audio-visual content, paving the way for more immersive and interactive digital stories and virtual worlds.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.23383",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation",
+      "summary": "A new paper introduces Open-MOPD, a method for diagnosing and resolving capability imbalances in multi-teacher on-policy distillation, improving the effectiveness of complex reinforcement learning systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.19098",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "StreamPI: Streaming Multimodal Temporal Modeling for Vision-Language-Action Models",
+      "summary": "StreamPI presents a novel approach to streaming multimodal temporal modeling, enhancing the capabilities of Vision-Language-Action models for real-time understanding and interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26067",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization",
+      "summary": "Zero-WAM introduces a method for in-context world-action modeling derived from human videos, enabling AI agents to achieve better generalization across open-ended tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26103",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Understanding Evolution Strategies for LLM Reasoning: Broader Reasoning Coverage than GRPO",
+      "summary": "This research delves into evolution strategies for Large Language Model reasoning, demonstrating that they can achieve broader reasoning coverage compared to traditional GRPO methods.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27351",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Video-IFBench: Evaluating Instruction Following of Multimodal LLMs in Video Understanding Scenarios",
+      "summary": "Video-IFBench introduces a new benchmark for rigorously evaluating how well multimodal Large Language Models follow instructions in complex video understanding scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.25529",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "V-Rubrics: Visual Faithfulness via Rubric-Based Reinforcement Learning",
+      "summary": "V-Rubrics proposes a novel method for achieving visual faithfulness in AI-generated content by employing rubric-based reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.25580",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SWE Refactor Bench: Can Coding Agents Complete a Long-Horizon, Whole-Repository Stack Migration?",
+      "summary": "SWE Refactor Bench evaluates the capability of coding agents to perform complex, long-horizon tasks such as migrating an entire repository's technology stack, pushing the boundaries of autonomous software engineering.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.23564",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Thought My Multi-Agent Debate Engine Was Broken. The Real Bug Was the Prompt.",
+      "summary": "A developer shares insights into debugging a multi-agent debate engine, discovering that the core issue wasn't a code bug but a flawed prompt design, highlighting the criticality of prompt engineering.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/i-thought-my-multi-agent-debate-engine-was-broken-the-real-bug-was-the-prompt-17m9",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
