@@ -1,0 +1,125 @@
+{
+  "date": "2026-08-31",
+  "items": [
+    {
+      "title": "J-Zero: Unified Challenger--Solver--Judge Co-Evolution from Zero Data",
+      "summary": "Researchers introduce J-Zero, a novel framework enabling AI agents to co-evolve as challengers, solvers, and judges without initial data, pushing the boundaries of autonomous learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26582",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Code as Worlds: Agentic Discovery of Executable World Representations for Physical Reasoning",
+      "summary": "A new research paper details how AI agents can autonomously discover executable world representations through code, significantly advancing physical reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27549",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "The U.S. is building barriers around drones and robots, but China has scale to get around them",
+      "summary": "The U.S. is implementing regulatory barriers for drones and robots, but China's vast scale and different approach may allow it to circumvent these restrictions and maintain its lead in the sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "ContextPilot: Teaching Agents for Proactive Context Management via Fine-grained RL",
+      "summary": "This paper presents ContextPilot, an innovative approach using fine-grained reinforcement learning to teach AI agents proactive context management, improving their adaptability and decision-making.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.28476",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "StepGuard: Learning Step-Level Guardrails with Scalable Supervision and Safety-Utility Balancing",
+      "summary": "New research introduces StepGuard, a method for learning robust, step-level guardrails for AI systems, balancing safety and utility through scalable supervision.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.24777",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Data Scaling: Representation-Centric Continued Pre-training for Vision-Language-Action Models",
+      "summary": "This paper explores a representation-centric approach to continued pre-training for Vision-Language-Action models, moving beyond simple data scaling to enhance model performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27550",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Blind Men and the Elephant: Probing the Epistemic Myopia of LLMs under Long-Tail Divergent Knowledge",
+      "summary": "A new study investigates the 'epistemic myopia' of Large Language Models, revealing their limitations in handling long-tail and divergent knowledge scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.28478",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Caterpillar is bringing to AI deployment what it learned from automating mining",
+      "summary": "Caterpillar is leveraging its extensive experience in automating mining operations to inform and accelerate its AI deployment strategies across various industrial applications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Tell Me About You",
+      "summary": "This article explores personal reflections on AI's role in daily life and its evolving capabilities, highlighting individual interactions and perceptions.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kenielzep97/tell-me-about-you-1hi4",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "The Handoff Tax: Continuing Non-Native Trajectories in LLM Agents",
+      "summary": "Researchers investigate the 'handoff tax' phenomenon, analyzing the challenges and inefficiencies when LLM agents continue tasks initiated by non-native trajectories.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.24358",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Luce: Relightable Gaussians for 3D Asset Generation",
+      "summary": "Luce introduces a novel technique for generating 3D assets using relightable Gaussians, offering enhanced realism and flexibility in virtual environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.23943",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Procedura: Agentic 3D Modeling with Procedural Control",
+      "summary": "Procedura presents an agentic approach to 3D modeling, leveraging procedural control to enable more autonomous and efficient creation of complex virtual objects.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26238",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Rubrics as Visual-Repair Context for Self-Evolving UI-to-Code Generation",
+      "summary": "This research explores using rubrics as a visual-repair context to facilitate self-evolving UI-to-code generation, improving the accuracy and adaptability of automated development tools.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.24138",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "CPU, GPU, TPU, NPU, DPU, QPU: six chips, one question",
+      "summary": "This article provides a comprehensive overview of various specialized processing units (CPU, GPU, TPU, NPU, DPU, QPU), explaining their roles and implications for AI and computing.",
+      "source": "Dev.to",
+      "url": "https://dev.to/lovestaco/cpu-gpu-tpu-npu-dpu-qpu-six-chips-one-question-438b",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "I gave an AI agent a production rollback button — then spent the hackathon trying to trick it into pressing it",
+      "summary": "A developer recounts their experience giving an AI agent a production rollback button and the subsequent efforts to test its safety and robustness by attempting to trick it.",
+      "source": "Dev.to",
+      "url": "https://dev.to/prince_panchani_f971a20ec/i-gave-an-ai-agent-a-production-rollback-button-then-spent-the-hackathon-trying-to-trick-it-into-2cha",
+      "score": 7,
+      "category": "product"
+    }
+  ]
+}
