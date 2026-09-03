@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-03",
+  "items": [
+    {
+      "title": "Qwen-Drive-1.0: A Vision-Language Foundation Model for Autonomous Driving",
+      "summary": "Researchers introduce Qwen-Drive-1.0, a new vision-language foundation model designed to enhance autonomous driving capabilities by integrating visual and linguistic understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.00111",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Palo Alto Networks Acquires Thrive-backed Console for $500M",
+      "summary": "Palo Alto Networks reportedly acquired Console, a Thrive-backed company, for $500 million, signaling significant consolidation in the cybersecurity sector, potentially leveraging AI for defense.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "TechCrunch Disrupt 2026 to Feature 'Real World AI Stage' with Nvidia and Robotics",
+      "summary": "TechCrunch Disrupt 2026 will introduce a new 'Real World AI Stage' showcasing advancements from Nvidia, robotics, and discussions on AI's practical applications, highlighting the growing focus on tangible AI solutions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/02/techcrunch-disrupt-2026s-new-real-world-ai-stage-features-nvidia-robots-and-extinct-animals/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Distilling GitHub Repositories Into AI4AI Skills with Repo-To-Skill",
+      "summary": "Repo-To-Skill proposes a method to distill complex GitHub repositories into discrete AI-for-AI skills, potentially streamlining the development and integration of AI components.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.02749",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers",
+      "summary": "New research on SMELT explores scaling laws for Mixture-of-Experts (MoE) looped transformers, offering insights into more efficient and powerful large language model architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.01343",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SolarWM: Open Data and Scalable Training for Long-Horizon Video World Models",
+      "summary": "SolarWM introduces open data and scalable training techniques for long-horizon video world models, pushing the boundaries of AI's ability to understand and predict complex visual sequences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.02886",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "H3-World: Turning Language Understanding into World Control",
+      "summary": "H3-World presents a novel approach to translate language understanding directly into control over simulated or real-world environments, advancing the field of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.01560",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building a Self-Hosted LLM That Covers Corporate Request Mix from Production Traffic",
+      "summary": "This paper details a practical approach to building and fine-tuning a self-hosted Large Language Model (LLM) using real-world production traffic to meet specific corporate needs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.01572",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control",
+      "summary": "Researchers evaluate multimodal LLMs as versatile agents for drone control, demonstrating their potential in complex tasks like commanding, approaching, tracking, and searching.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.01404",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "EarlyEval: Cheaper Agent Evaluation via Early Outcome Prediction",
+      "summary": "EarlyEval proposes a method for more cost-effective AI agent evaluation by predicting outcomes earlier in the process, potentially accelerating development cycles.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.02783",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Language Models Can Control Their Own Attention",
+      "summary": "New research demonstrates that language models can be designed to control their own attention mechanisms, offering a path towards more interpretable and efficient AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.02737",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Tried Pair Programming With Three Different AI Tools For a Month",
+      "summary": "A developer shares their month-long experience pair programming with three different AI tools, offering practical insights into the current state and effectiveness of AI in software development workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/elsie-rainee/i-tried-pair-programming-with-three-different-ai-tools-for-a-month-2nnc",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Execution Trees, Not More Logs: A Better Debugging Model for AI Agents",
+      "summary": "This article advocates for 'execution trees' as a superior debugging model for AI agents compared to traditional logs, promising clearer insights into agent behavior and decision-making.",
+      "source": "Dev.to",
+      "url": "https://dev.to/raju_dandigam/execution-trees-not-more-logs-a-better-debugging-model-for-ai-agents-3d4g",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Proactive Cyber Defense for Governments and Enterprises with Google's Fairwind Program",
+      "summary": "Google's AI Blog introduces the Fairwind program, focusing on proactive cyber defense strategies powered by AI for government and enterprise clients to enhance security.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "How AI-Native Companies Turn Workflows into Operating Capability",
+      "summary": "OpenAI explores how companies built around AI are transforming their internal workflows into core operating capabilities, showcasing best practices for leveraging AI at an organizational level.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/ai-native-company-workflows",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
