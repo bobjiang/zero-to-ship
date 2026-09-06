@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-06",
+  "items": [
+    {
+      "title": "AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities in a first-of-its-kind study.",
+      "summary": "Google's research medical AI system, AMIE, has successfully demonstrated real-time clinical video consultation abilities in a groundbreaking study, showcasing its potential for healthcare applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Knowing When Not to Reuse: Conditional Experience Transfer in Autonomous LLM Post-Training",
+      "summary": "Researchers introduce a novel method for LLMs to conditionally transfer learned experiences, improving efficiency and performance in autonomous post-training by knowing when to apply or discard past knowledge.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.26730",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Seattle Times and Newsday are the latest publications to sue OpenAI and Microsoft",
+      "summary": "The Seattle Times and Newsday have joined other news organizations in suing OpenAI and Microsoft, alleging copyright infringement over the use of their content for training AI models.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "RoboTok: An Internet-Scale Data Engine for Human Demonstration Retrieval and Dexterous Manipulation Learning",
+      "summary": "A new internet-scale data engine, RoboTok, is presented to facilitate the retrieval of human demonstrations, significantly advancing dexterous manipulation learning for robotics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.03199",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI confirms ‘wiki incident,’ says it’s ‘working on a framework’ for more disclosure",
+      "summary": "OpenAI has acknowledged a 'wiki incident' and announced plans to develop a new framework for increased transparency and disclosure regarding its AI models and operations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Researchers use AI to ‘democratize’ 3D printing of crucial metal alloy",
+      "summary": "Researchers have leveraged AI to make 3D printing of a critical metal alloy more accessible and efficient, potentially democratizing advanced manufacturing processes.",
+      "source": "Lobste.rs",
+      "url": "https://news.wsu.edu/news/2026/08/24/researchers-use-ai-to-democratize-3d-printing-of-crucial-metal-alloy/",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Hikers rescued after using Google Gemini for planning",
+      "summary": "A group of hikers required rescue after relying on Google Gemini for their trip planning, highlighting potential risks and limitations of AI in critical real-world scenarios.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/05/hikers-rescued-after-using-google-gemini-for-planning/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "The Missing Temporal Link: Temporal Context Routing for Script-Driven Audio-Video Generation",
+      "summary": "A new research paper addresses the challenge of generating coherent audio-video by introducing temporal context routing, enabling script-driven creation with improved consistency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.02367",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Retrieval: Progressive Latent Memory Evolution for Streaming Video Understanding",
+      "summary": "This paper introduces a method for streaming video understanding that uses progressive latent memory evolution, moving beyond simple retrieval to better process continuous visual data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.04131",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "NeoMME: A Single-Tower Multimodal-Native Multilingual Foundation Encoder for Efficient Fine-Tuning and Inference",
+      "summary": "NeoMME presents a new single-tower foundation encoder designed for efficient fine-tuning and inference across multimodal and multilingual tasks, streamlining AI development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.01657",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RealSWE: A Compositional Evaluation of Coding Agents under Realistic User Requests",
+      "summary": "RealSWE offers a new compositional evaluation framework for coding agents, assessing their performance against realistic user requests to better understand their capabilities and limitations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.27831",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WHALE: A Simple Recipe for Joint Harness-Weight Optimization",
+      "summary": "WHALE proposes a straightforward method for jointly optimizing harness and weight in machine learning models, leading to more efficient and effective training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.00196",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Tree of Thoughts and MCTS for LLMs: What Happens When You Stop Making the Model Guess Once",
+      "summary": "This article explores the application of Tree of Thoughts and Monte Carlo Tree Search (MCTS) to LLMs, demonstrating how these techniques can improve reasoning by moving beyond single-shot guessing.",
+      "source": "Dev.to",
+      "url": "https://dev.to/shrsv/tree-of-thoughts-and-mcts-for-llms-what-happens-when-you-stop-making-the-model-guess-once-3dmm",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
+      "summary": "The ATV Big Air Tour team dramatically reduced their workload from three days to three hours by integrating ChatGPT into their operations, showcasing significant productivity gains.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/atv-big-air-tour",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "How law firm Gilbert + Tobin governs and scales AI with OpenAI",
+      "summary": "Law firm Gilbert + Tobin details its strategy for governing and scaling AI solutions using OpenAI technologies, providing insights into enterprise AI adoption and management.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gilbert-tobin",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
