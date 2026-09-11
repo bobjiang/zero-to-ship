@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-11",
+  "items": [
+    {
+      "title": "Scaling Automatic Research Agents via World Models",
+      "summary": "This paper introduces a new approach to scale automatic research agents by integrating world models, demonstrating significant advancements in autonomous scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.12564",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI puts Pro subscriptions on hold due to Astra demand",
+      "summary": "OpenAI has temporarily halted new Pro subscriptions, citing overwhelming demand for its latest AI model, Astra, indicating rapid user adoption and growth.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Jensen Huang explains why Nvidia will grow an astounding 70% next year",
+      "summary": "Nvidia CEO Jensen Huang projects an impressive 70% growth for the company next year, driven by continued demand for AI infrastructure and specialized hardware.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/10/jensen-huang-explains-why-nvidia-will-grow-an-astounding-70-next-year/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "AgentGrad: Intervention-guided Prompt Optimization for Multi Agent Systems",
+      "summary": "Researchers propose AgentGrad, a novel method for optimizing prompts in multi-agent systems using intervention-guided techniques, enhancing collaboration and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.08572",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction",
+      "summary": "A new technical report explores the development of latent space language models using next concept prediction, aiming for more efficient and powerful AI architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.10715",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Programmable World Model",
+      "summary": "A new paper introduces a programmable world model, offering a flexible framework for AI agents to understand and interact with complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.10540",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Introducing ChatGPT for Financial Services",
+      "summary": "OpenAI announces the launch of ChatGPT for Financial Services, a specialized version designed to meet the unique demands and regulatory requirements of the finance industry.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "AI Is Already Better at Coding Than Most Software Developers",
+      "summary": "A new article argues that AI has surpassed most human software developers in coding proficiency, highlighting the rapid advancement and impact of AI in programming.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sylwia-lask/ai-is-already-better-at-coding-than-most-software-developers-4hno",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
+      "summary": "SenseNova-U1.5 is introduced as a step towards native unified visual intelligence, aiming to integrate various visual tasks into a single, cohesive AI system.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11929",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "T1: Terminal Agent Reinforcement Learning for Long-Horizon Tasks",
+      "summary": "This paper presents T1, a new reinforcement learning framework for terminal agents designed to tackle complex, long-horizon tasks more effectively.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11042",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+      "summary": "SWE-Bench Pro Verified is introduced as a robust and reliable benchmark for evaluating the performance of AI agents in software engineering tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.08149",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SAEScientist-Bench: Can AI Agents Conduct Autonomous SAE Interpretability Research?",
+      "summary": "SAEScientist-Bench explores the capability of AI agents to autonomously conduct research in SAE (Sparse Autoencoder) interpretability, pushing the boundaries of AI-driven scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.09113",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Scores Alone Do Not Prove Discovery: The Discovery Certification Protocol for Auditing AI Research Agents",
+      "summary": "A new protocol, Discovery Certification, is proposed to rigorously audit AI research agents, emphasizing that raw scores alone are insufficient to validate scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.09219",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Subagents vs Agent Skills: Executing Reusable Knowledge for Long-Horizon Agentic Tasks",
+      "summary": "This research investigates the effectiveness of subagents versus agent skills in executing reusable knowledge for long-horizon agentic tasks, aiming to improve AI task completion.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2609.09233",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Adaptive Entangled Game Modules in Artificial General Intelligence",
+      "summary": "A new paper explores adaptive entangled game modules as a foundational component for Artificial General Intelligence, suggesting a novel path for developing more versatile AI systems.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2609.09226",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
