@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-13",
+  "items": [
+    {
+      "title": "OpenAI’s Sam Altman says it would be &#8216;ill-advised&#8217; to go public in 2026",
+      "summary": "Sam Altman, CEO of OpenAI, stated that an initial public offering (IPO) for the company in 2026 would be 'ill-advised,' indicating a continued focus on growth over immediate public market entry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/12/openais-sam-altman-says-it-would-be-ill-advised-to-go-public-in-2026/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic CEO outlines plan to slow AI development",
+      "summary": "Anthropic CEO Dario Amodei published a post titled 'We Must Pace the Frontier,' advocating for a measured and cautious approach to advanced AI development to ensure safety and societal alignment.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/12/anthropic-ceo-outlines-plan-to-pace-the-frontier/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing ChatGPT for Financial Services",
+      "summary": "OpenAI has launched a specialized version of ChatGPT tailored for the financial services industry, aiming to provide advanced AI capabilities for banking, investment, and other financial applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation",
+      "summary": "New research introduces X-AuT, a method for significantly compressing audio encoders in speech LLMs using cross-scale distillation, promising more efficient and deployable models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11412",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+      "summary": "Researchers propose a novel approach called 'Memory as Plans' that integrates memory-grounded planning into world-action modeling, enhancing AI agents' ability to understand and interact with complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11561",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "We Must Pace the Frontier",
+      "summary": "Anthropic CEO Dario Amodei published a detailed post advocating for a cautious and deliberate pace in developing frontier AI models to address potential risks and ensure responsible advancement.",
+      "source": "Lobste.rs",
+      "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics",
+      "summary": "A new paper details an 'open recipe' for training the Nemotron model to achieve high performance in International Mathematical Olympiad (IMO) problems, showcasing AI's growing mathematical reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.10712",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "I read 500 'AI will replace developers' posts. They all make the same 3 mistakes.",
+      "summary": "An analysis of numerous articles predicting AI will replace developers identifies three common flaws in their arguments, offering a more nuanced perspective on AI's role in software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/infoinlet1/i-read-500-ai-will-replace-developers-posts-they-all-make-the-same-3-mistakes-3819",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Recursive Code World Models: Building Complex Worlds through Recursive Scene Programs",
+      "summary": "This research introduces Recursive Code World Models, a method for constructing intricate virtual worlds by generating recursive scene programs, advancing AI's ability to create and understand complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11499",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "World in World: Explore the World with World Models",
+      "summary": "A new paper presents 'World in World,' a framework that enables AI agents to explore and understand complex environments more effectively by leveraging nested world models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11548",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Negative Self-Distillation: Learning to Reason by Avoiding Flaws",
+      "summary": "Researchers introduce Negative Self-Distillation, a novel training technique that teaches AI models to improve their reasoning abilities by actively identifying and avoiding common flaws in their own outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11699",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "RAG Without Vectors? Meet Vectorless RAG",
+      "summary": "A new article explores the concept of 'Vectorless RAG,' proposing alternative methods for Retrieval-Augmented Generation that do not rely on traditional vector embeddings, potentially simplifying RAG implementations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rijultp/rag-without-vectors-meet-vectorless-rag-4ikb",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Now everyone can put data to work",
+      "summary": "OpenAI announces new tools and features aimed at making data utilization more accessible for a broader audience, empowering more users to leverage AI for data analysis and insights.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/put-data-to-work",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "Retrospectively Reverse-Engineering Apple's Neural Engine",
+      "summary": "A technical deep-dive details the retrospective reverse-engineering efforts to understand the architecture and functionality of Apple's proprietary Neural Engine.",
+      "source": "Lobste.rs",
+      "url": "https://eiln.github.io/posts/ane.html",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+      "summary": "An OpenAI blog post highlights how a researcher is effectively utilizing AI models like Codex and ChatGPT to accelerate the discovery process for novel antimicrobial molecules, demonstrating AI's impact in scientific research.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
