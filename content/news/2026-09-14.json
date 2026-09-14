@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-14",
+  "items": [
+    {
+      "title": "OpenAI Introduces ChatGPT for Financial Services, Targeting Industry-Specific AI Solutions",
+      "summary": "OpenAI has launched a specialized version of ChatGPT tailored for the financial services sector, aiming to provide advanced AI capabilities for industry-specific applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Expands AI Access and Cyber Defense Capabilities for US Government Agencies",
+      "summary": "OpenAI is broadening access to its AI technologies and enhancing cyber defense offerings for federal, state, local, and tribal governments across the United States.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/expanding-ai-access-us-government",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Unveils GPT-Live-1 in API for More Natural Voice Experiences",
+      "summary": "OpenAI has released GPT-Live-1 in its API, enabling developers to build more natural and responsive voice-based AI applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Obama Urges Democrats to Develop a Clear Plan for AI Safeguards",
+      "summary": "Former President Obama has called on Democrats to formulate a concrete strategy for implementing AI safeguards, highlighting growing concerns about the technology's societal impact.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/13/obama-urges-democrats-to-have-a-clear-plan-for-ai-safeguards/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "AI Industry's Latest Warnings of Doom: An Analysis",
+      "summary": "TechCrunch explores the underlying reasons and implications behind the recent surge in dire warnings from leaders within the artificial intelligence industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/13/whats-behind-the-ai-industrys-latest-warnings-of-doom/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Occamy-1.0: A New Open-Source 35B LLM for Collaborative AI Workflows",
+      "summary": "Researchers introduce Occamy-1.0, an open-source 35-billion parameter language model designed to achieve Pareto-frontier intelligence for co-working applications.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2609.11977",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "FreeFlow: A Bias-free Hierarchical Transformer for Enhanced Optical Flow Estimation",
+      "summary": "A new research paper presents FreeFlow, a hierarchical transformer model that significantly improves optical flow estimation by mitigating biases.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11486",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MetroLLM-Bench: A New Benchmark for Evaluating LLMs as Transit Kiosk Runtimes",
+      "summary": "MetroLLM-Bench is introduced as a novel benchmark designed to assess the performance and reliability of large language models when deployed as interactive transit kiosk runtimes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.10016",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Harness or Model? Isolating the Harness Effect in Agentic Coding with Contamination-Controlled Suite",
+      "summary": "New research investigates the 'harness effect' in agentic coding by using a contamination-controlled private suite to distinguish between the performance of the harness and the underlying model.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2609.11987",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Reading the Whole Heart: Latent-Attention Masked Autoencoders for Multimodal Cardiac Representation Learning",
+      "summary": "A new paper proposes Latent-Attention Masked Autoencoders to learn comprehensive multimodal cardiac representations, aiming for a holistic understanding of heart health from diverse data.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2609.12035",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Studying Image Tokenizers as Visual Languages in Unified Multimodal Models",
+      "summary": "Researchers are exploring image tokenizers as fundamental visual languages to enhance the capabilities and understanding within unified multimodal AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.09143",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Solver Verdicts: Generative Reward Models for Autoformalization",
+      "summary": "This paper introduces generative reward models to move beyond simple solver verdicts, improving the process of autoformalization by providing richer feedback.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11085",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning",
+      "summary": "Research highlights data mixing as a crucial technique for improving generalization and in-language reasoning capabilities in multilingual AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.10445",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Benchmark Radar: A Living Database and Search Engine for AI Benchmarks and Evaluation",
+      "summary": "Benchmark Radar is presented as a dynamic database and search engine designed to provide comprehensive access to AI benchmarks and evaluation metrics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11115",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Generative Late-Interaction Embeddings For Visual Document Retrieval",
+      "summary": "A new method using generative late-interaction embeddings is proposed to enhance the accuracy and efficiency of visual document retrieval systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11808",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
