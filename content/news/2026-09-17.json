@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-17",
+  "items": [
+    {
+      "title": "Continual Learning Mechanisms Compose for Long-Horizon Memorization",
+      "summary": "Researchers introduce a novel approach where continual learning mechanisms are composed to achieve long-horizon memorization, addressing a critical challenge in AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.06986",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Build real-time voice applications with Gemini 3.8 Live and 3.5 Transcribe",
+      "summary": "Google AI announces new capabilities with Gemini 3.8 Live and 3.5 Transcribe, enabling developers to create real-time voice applications with enhanced accuracy and speed.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/build-real-time-voice-applications-with-gemini-38-live-and-35-transcribe-4nb5",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Your startup’s next teammate might be an AI agent: Gusto, Insight Partners, and Leland explain what that changes at TechCrunch Disrupt 2026",
+      "summary": "Industry leaders at TechCrunch Disrupt 2026 discuss the growing trend of AI agents becoming integral team members in startups and the implications for business operations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/16/your-startups-next-teammate-might-be-an-ai-agent-gusto-insight-partners-and-leland-explain-what-that-changes-at-techcrunch-disrupt-2026/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "AI for Games in the Foundation Model Era",
+      "summary": "This paper explores the transformative potential of foundation models in revolutionizing AI applications within the gaming industry, from NPC behavior to content generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.16679",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "StepAudio 3 Realtime Technical Report",
+      "summary": "A technical report details StepAudio 3, showcasing advancements in real-time audio generation that could significantly impact creative and interactive applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.14005",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement",
+      "summary": "This paper delves into the theoretical and practical challenges of building AI capable of genuine recursive self-improvement, potentially leading to advanced general intelligence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.11873",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+      "summary": "ScienceIDE proposes transforming the global scientific codebase into learnable environments for AI agents, aiming to accelerate scientific discovery and research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.19134",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "openarm: A fully open-source humanoid arm for physical AI research and deployment in contact-rich environments",
+      "summary": "The openarm project releases a fully open-source humanoid arm designed for physical AI research and deployment, particularly in environments requiring complex physical interaction.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/enactic/OpenArm",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Al Gore says the real AI risk isn’t data centers",
+      "summary": "Al Gore offers a nuanced perspective on AI risks, suggesting that the primary concerns lie beyond the environmental impact of data centers, hinting at broader societal implications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/16/al-gore-has-a-surprisingly-calm-take-on-the-ai-data-center-backlash/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "StepAudio 3 Music Technical Report",
+      "summary": "A companion technical report for StepAudio 3 focuses specifically on its capabilities for music generation, detailing new methods and results.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.16034",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Grouped Value Attention: Efficient KV Caching via On-Demand Key Reconstruction",
+      "summary": "Researchers propose Grouped Value Attention, an efficient KV caching mechanism that uses on-demand key reconstruction to improve performance in large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.13285",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Generalized Agent Iteration: One Formal Framework for Iterative Policy Improvement and Recursive Self-Improvement",
+      "summary": "A new formal framework, Generalized Agent Iteration, is introduced to unify iterative policy improvement and recursive self-improvement, advancing the theoretical understanding of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.13406",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "LynnReal-Omni: Native multi-modal Video Generation for Agentic Visual Workflows",
+      "summary": "LynnReal-Omni presents a new approach to native multi-modal video generation, specifically designed to support agentic visual workflows with high fidelity.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.15863",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI for Societal Impact",
+      "summary": "Google AI outlines its initiatives and research focus on leveraging artificial intelligence to address pressing societal challenges and create positive global impact.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Helping older adults use AI in everyday life",
+      "summary": "OpenAI details its efforts and strategies to make AI more accessible and beneficial for older adults, integrating AI tools into their daily routines.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+      "score": 7,
+      "category": "industry"
+    }
+  ]
+}
