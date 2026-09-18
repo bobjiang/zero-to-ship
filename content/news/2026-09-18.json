@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-18",
+  "items": [
+    {
+      "title": "Crusoe raises $3.9B to build massive data centers and small modular 'AI factories'",
+      "summary": "Crusoe Energy Systems has secured $3.9 billion to significantly expand its infrastructure for AI, focusing on building large data centers and smaller, modular 'AI factories' to meet growing computational demands.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/17/crusoe-raises-3-9b-to-build-massive-data-centers-and-small-modular-ai-factories/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Google DeepMind launches institute to widen the AGI debate",
+      "summary": "Google DeepMind has established a new institute dedicated to fostering a broader public and academic discussion around the development and implications of Artificial General Intelligence (AGI).",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/17/google-deepmind-launches-institute-to-widen-the-agi-debate/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "PrismML hopes its tiny LLM will change how we all use AI",
+      "summary": "PrismML is developing a compact Large Language Model (LLM) with the ambition of revolutionizing everyday AI interactions through its efficiency and accessibility.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/17/prismml-hopes-its-tiny-llm-could-change-how-we-all-use-ai/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
+      "summary": "Researchers introduce LimiX-2, a novel contextual mechanism network designed to advance general intelligence in processing and understanding structured data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.17488",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Introducing Astra for Law",
+      "summary": "OpenAI announces Astra for Law, a new specialized AI product designed to assist legal professionals with various tasks, enhancing efficiency and accuracy in the legal sector.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/astra-for-law",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Reimagining advertising with AI",
+      "summary": "OpenAI explores how AI can fundamentally transform the advertising industry, offering new tools and strategies for more effective and personalized campaigns.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/reimagining-advertising-with-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "How Cooley is accelerating IPO work with ChatGPT",
+      "summary": "Law firm Cooley is leveraging ChatGPT to streamline and accelerate the complex processes involved in initial public offerings (IPOs), demonstrating practical AI application in legal services.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/cooley-gopublic",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Rethinking Critic Learning in PPO: Understanding and Mitigating Value Flattening",
+      "summary": "This research paper delves into the challenges of critic learning in Proximal Policy Optimization (PPO) and proposes methods to understand and alleviate the issue of value flattening.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.18708",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Confidence Comes from Experience: Experiential Confidence Estimation from Reasoning to Agents",
+      "summary": "A new paper explores how AI agents can develop and estimate their confidence based on past experiences, improving their reasoning and decision-making capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.17708",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ProgramDistill: From Interactive Web Apps to Verifiable Reference-Guided SWE Tasks",
+      "summary": "ProgramDistill introduces a method to convert interactive web applications into verifiable, reference-guided software engineering tasks, enhancing automated code generation and verification.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.18805",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Making global data easier to explore",
+      "summary": "Google is enhancing its AI capabilities to make global datasets more accessible and easier to explore, facilitating insights and research across various domains.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Building AI to accelerate science and improve lives",
+      "summary": "Google highlights its ongoing efforts to develop AI applications specifically designed to accelerate scientific discovery and improve human well-being across diverse fields.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "AI for everyone in every language",
+      "summary": "Google is committed to making AI universally accessible by expanding its capabilities to support every language, aiming for inclusive AI experiences worldwide.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Agora: Git as Shared Memory for Collective AutoResearch",
+      "summary": "Agora proposes using Git as a shared memory system to facilitate collective autonomous research, enabling multiple AI agents to collaborate more effectively on scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.18094",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Show a model your old code and it writes your old bugs: 32 runs, 0% reuse",
+      "summary": "An experiment reveals that AI coding models, when exposed to old code, tend to replicate existing bugs rather than learning from them, highlighting challenges in code reuse and error propagation.",
+      "source": "Dev.to",
+      "url": "https://dev.to/remdore/show-a-model-your-old-code-and-it-writes-your-old-bugs-32-runs-0-reuse-2epm",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
