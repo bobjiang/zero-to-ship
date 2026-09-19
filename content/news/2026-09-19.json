@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-19",
+  "items": [
+    {
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+      "summary": "Researchers introduce DeepSeek-V4.1-Flash, a new method significantly improving KV cache compression for large language models, enhancing efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.19969",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "A startup that builds other startups raised $100M and is all-in on physical AI",
+      "summary": "A new startup focused on developing and launching other companies has secured $100 million in funding, with a strategic emphasis on advancing physical AI technologies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/18/a-startup-that-builds-other-startups-raised-100m-and-is-all-in-on-physical-ai/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
+      "summary": "A new paper details SoL-Pi, a system that uses recursive auto-research loops to create more efficient and capable AI agents, pushing the boundaries of autonomous research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20519",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
+      "summary": "Hex announces a new integration with OpenAI's GPT-6 Astra, enabling users to transform complex data analyses into intuitive visual reports with advanced AI assistance.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/hex-gpt-6-astra",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Our framework for reporting model misalignment",
+      "summary": "OpenAI has released a new framework outlining its approach to reporting and addressing instances of AI model misalignment, emphasizing safety and ethical development.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/model-misalignment-reporting-framework",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models",
+      "summary": "This research proposes ActionPiece, a novel approach to action tokenization designed to improve the performance and understanding of autoregressive vision-language-action models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.18487",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "An Empirical Study of Harness Design for Coding Agents",
+      "summary": "A new empirical study investigates various harness designs to optimize the effectiveness and reliability of AI coding agents, providing insights for practical deployment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20804",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "New experts join Google’s AI & Economy team",
+      "summary": "Google's AI & Economy team has expanded with the addition of new experts, reinforcing the company's commitment to understanding and shaping the economic impact of AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "New insights from Google’s AI & Economy ATLAS",
+      "summary": "Google shares fresh insights from its AI & Economy ATLAS initiative, offering a deeper understanding of AI's evolving influence on global economic landscapes.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "EvolveTrade: Experience-Driven Policy Refinement for Self-Evolving LLM Trading Agents",
+      "summary": "EvolveTrade introduces a novel method for refining policies in LLM-based trading agents through experience-driven learning, enabling them to self-evolve and adapt.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.17632",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Zing-0.5: Toward Playable Worlds with Real-Time Joint Action and Text Control",
+      "summary": "Zing-0.5 is presented as a step towards creating playable virtual worlds that allow for real-time joint action and text-based control, enhancing interactive AI environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.17909",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How to connect AI usage to business value",
+      "summary": "OpenAI provides guidance on effectively linking AI implementation to tangible business value, offering strategies for organizations to maximize their AI investments.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "VC-Attention: Value Smoothing and Softmax Casting for Low-bit Attention",
+      "summary": "Researchers present VC-Attention, a technique that employs value smoothing and softmax casting to enable efficient low-bit attention mechanisms in AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.15810",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation",
+      "summary": "This paper explores the phenomenon of length inflation in on-policy distillation, specifically when End-Of-Sequence tokens exhibit disagreement, impacting model efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20511",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Tilly Norwood’s press tour is going about as well as you’d expect for an AI",
+      "summary": "The press tour for AI personality Tilly Norwood is reportedly facing challenges, highlighting the complexities and public perception issues surrounding advanced AI interfaces.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/18/tilly-norwoods-press-tour-is-going-about-as-well-as-youd-expect-for-an-ai/",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
