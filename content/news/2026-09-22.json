@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-22",
+  "items": [
+    {
+      "title": "OpenAI Forms Math Advisory Group as AI Resolves Over 100 Open Problems",
+      "summary": "OpenAI has established a new advisory group focused on mathematics, highlighting its AI's recent achievement of solving more than 100 previously open mathematical problems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/openai-forms-math-advisory-group-as-its-ai-resolves-more-than-100-open-problems/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Higgsfield AI Ships New Video Features in a Day with GPT-6 Astra",
+      "summary": "Higgsfield AI rapidly developed and deployed new video features, showcasing the impressive speed and capability of OpenAI's GPT-6 Astra model in production environments.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts",
+      "summary": "A new research paper introduces IntBMoE, a method for integrating block-level conditioning into Mixture-of-Experts models to improve their efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.21346",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Grounded Skill Synthesis from Code at Scale for Agentic Intelligence",
+      "summary": "Researchers propose a method for synthesizing grounded skills from code at scale, aiming to enhance the capabilities of agentic AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.05571",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Building Standards for the Next Phase of AI",
+      "summary": "OpenAI discusses the critical need for developing robust standards to guide the responsible and effective evolution of artificial intelligence.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/building-standards-next-phase-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "What If Your AI Agent Never Had to Leave the Browser? (Demo 🚀)",
+      "summary": "A new demo explores the concept of AI agents operating entirely within a web browser, potentially simplifying deployment and enhancing user interaction.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sylwia-lask/what-if-your-ai-agent-never-had-to-leave-the-browser-demo--5g",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents",
+      "summary": "RecreationWorld introduces new scalable and verifiable environments designed for training and evaluating hybrid AI agents that interact with computers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.22000",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+      "summary": "A new paper presents Regularized Recursive Self-Improvement (RRSI), a technique for enhancing AI agents through iterative self-improvement of their control mechanisms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24972",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Man Who Built Apple's Stores Doesn't Buy Silicon Valley's Bet on AI Shopping",
+      "summary": "The former head of Apple's retail strategy expresses skepticism about Silicon Valley's current enthusiasm for AI-driven shopping experiences.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/the-man-who-built-apples-stores-doesnt-buy-silicon-valleys-bet-on-ai-shopping/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "ChatGPT Now Knows What You Do on Other Websites via Ad Collector",
+      "summary": "Reports indicate that ChatGPT may be collecting user data from other websites through an ad collector, raising privacy concerns among users.",
+      "source": "Lobste.rs",
+      "url": "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "OmniVChat: Synthesizing, Benchmarking, and Training for Native Audio-Visual Dialogue",
+      "summary": "OmniVChat introduces a new framework for synthesizing, benchmarking, and training models capable of native audio-visual dialogue, advancing multimodal AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.21465",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Paint-Anything: Unified Any-Color Control for Image Generation and Editing",
+      "summary": "A new research paper presents Paint-Anything, a unified approach that allows for flexible, any-color control in both image generation and editing tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20816",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Transferring the Intelligence of VLMs to Robotic Control",
+      "summary": "Researchers explore methods for effectively transferring the intelligence and capabilities of Vision-Language Models (VLMs) to enhance robotic control systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.22966",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How to Stop AI from Confidently Shipping Broken Code (A Pattern That Actually Works)",
+      "summary": "An article proposes a practical pattern to prevent AI from generating and confidently deploying faulty code, addressing a common challenge in AI-assisted development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/infoinlet1/how-to-stop-ai-from-confidently-shipping-broken-code-a-pattern-that-actually-works-2gn7",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "A Continual Learning Model Trained from Scratch on 8GB VRAM Laptop with Batch-1 Stream of Data",
+      "summary": "A developer demonstrates a continual learning model capable of training from scratch on a modest 8GB VRAM laptop using a single-batch data stream, highlighting efficient AI development.",
+      "source": "Lobste.rs",
+      "url": "https://github.com/volotat/mini-AGI/",
+      "score": 5,
+      "category": "open-source"
+    }
+  ]
+}
