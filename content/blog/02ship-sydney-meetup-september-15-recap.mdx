@@ -1,0 +1,185 @@
+---
+title: "AI Agents That Act and Pay & Building Dashboards with Claude and Supabase — 02Ship Sydney Meetup — September 15, 2026"
+excerpt: "5 takeaways from the September 02Ship Sydney meetup: AI agents that browse and pay for services, and replacing Tableau with Claude and Supabase."
+date: "2026-09-15"
+author: "Bob Jiang"
+keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, AI agents, Woodpecker, Supabase, dashboards, Tableau, Power BI, gstack, buy or build, recap"
+---
+
+# AI Agents That Act and Pay, and Building Dashboards with Claude and Supabase
+
+## TL;DR
+
+- The bottleneck moved. It is no longer **"can we build it?"** It is **"is this the right thing to build?"**
+- An agent that finishes a whole job needs to **pay for tools and ask permission**, not just write code.
+- A **PRD is where clarity becomes buildable**. Let AI draft it. You read it, challenge it, and approve it.
+- Keep the architecture **boring**. A small chain of reliable parts beats a big platform.
+- **"The distance from 'we pay' to 'we built' has collapsed."** But not every dashboard should be rebuilt.
+
+On **Tuesday, September 15**, about 98 people came to **Haymarket HQ** for the September 02Ship Sydney meetup.
+
+The night had two talks. One was about AI agents that do non-coding work, including paying for the services they need. The other was about replacing paid dashboard tools with Claude and Supabase.
+
+Thanks to **Haymarket HQ** for hosting us again. They offer a 3-day free trial of the space. Mention the Zero to Ship community when you sign up.
+
+![Juan presenting his Claude and Supabase dashboard talk to a full room at the 02Ship Sydney meetup, Haymarket HQ, September 15 2026](/images/02ship-sydney-meetup-september-15-2026.jpg)
+
+## Sponsor Talk: Community and Tech Stack — Theo (CloudBridge)
+
+Theo is the APAC Director at **CloudBridge**, an AWS Premier Tier Services Partner.
+
+His message was short. Community and network decide a lot of startup outcomes.
+
+- Working alone, or watching YouTube, does not produce the same thinking as being in a room with other builders.
+- Your network is where you find co-founders, first hires, and investors.
+- Investors look closely at your technology choices. A weak stack makes them disengage. A strong stack lets them focus on go-to-market and returns instead.
+
+CloudBridge builds on **AWS Bedrock** and helps startups get access to AI infrastructure. He gave one example. A Sydney founder, one year in, is already billing over $500K.
+
+AWS cloud credits are available, up to **$100K**. Apply at [aws.cloud-bridge.au](https://aws.cloud-bridge.au), or talk to Gil or Henny.
+
+## Talk 1: Beyond Coding — When AI Agents Can Act and Pay — Vivi (Woodpecker)
+
+Vivi leads Developer Relations at **Woodpecker**. She is ex-Twitter and a lawyer by training. She joined us remotely.
+
+### The problem: AI gives you pieces, not the finished job
+
+Today AI gives you scattered pieces. A script here, an image there, a video, a voiceover. You still have to stitch them together across many tools. The job is not finished until a human does the assembly work.
+
+### The bottleneck has moved
+
+Her key point: the hard part used to be "can we build it?". Now it is "is this the right thing to build?".
+
+AI can execute. But judgement about which problems matter still belongs to humans.
+
+### What Woodpecker does
+
+Woodpecker is a personal agent that completes a whole job, not one step.
+
+You state the goal. Woodpecker then plans the steps, picks the tools, and asks for your approval before it spends money on paid resources. That last part matters. An agent that works on the open web needs to pay for APIs, data and services, and it needs to know when to stop and ask.
+
+### The demo
+
+She showed a prototype video for **PawPal**, a dog-walking app. Woodpecker generated it.
+
+The video covered trust, the booking flow, a live map, the walk report, and a $29 per month subscription tier.
+
+The target is to turn an early idea into a believable prototype video in **1 to 2 hours**, instead of days.
+
+### Try it
+
+There is an early access WhatsApp group. Woodpecker also ran a workshop at the end of September with free tokens and credits for builders. Bring an early-stage idea and prototype it with them.
+
+## Talk 2: Build a Dashboard with Claude and Supabase — Juan (Red InnCol)
+
+[**Juan**](https://www.linkedin.com/in/juanossa1948/) is the founder of **Red InnCol**, an organisation working to close the gap between public and private education. He uses AI across software development, cloud infrastructure, marketing and operations. He builds and maintains the systems he showed us himself.
+
+He opened with a question: **"When did a number last change what you did?"**
+
+One number. One decision. If a dashboard does not change a decision, it is decoration.
+
+### Dashboard overhead hides in plain sight
+
+Manual updates, tool licences, and customer frustration accumulate quietly. Nobody adds them up.
+
+His starting point was Google Looker Studio and Tableau dashboards. They needed weekly manual updates, or an expensive Tableau Server account.
+
+He called it the **weekly dashboard treadmill**: Export, Prepare, Publish, Repeat. The work was repetitive. And it depended on one person.
+
+### Three things were non-negotiable
+
+- **Experience** — clear for every customer.
+- **Privacy** — each customer sees only their own information.
+- **Automation** — data stays fresh without chasing files.
+
+### Buy or build is a practical choice, not an ideology
+
+He put the real prices on screen:
+
+- **Power BI Pro** — AU$21 per user, monthly, paid yearly, GST excluded.
+- **Tableau Cloud / Creator** — AU$75 per user, monthly. That is AU$900 per user, per year.
+
+### A newsletter made the first move
+
+The idea came from a newsletter post in [The Rollout](https://www.therollout.io), called "The power of dashboards - Now everyone has one". It showed a practical path from existing data to a working dashboard.
+
+### The PRD is where clarity becomes buildable
+
+AI drafts the PRD. You read it, challenge it, and approve it. Do not skip the reading.
+
+His checklist for the PRD:
+
+- Problem defined.
+- Data boundaries clear.
+- Success measurable.
+
+### gstack gives a non-developer a process
+
+Juan is not a professional developer. He used [gstack](https://github.com/garrytan/gstack) to get a process instead:
+
+- **Office Hours** — challenge the why.
+- **Plan Engineering Review** — stress-test the plan.
+- **Third-party review** — check the work.
+
+### Validated scripts do the repetitive work
+
+The daily loop is small: **Query source, Validate, Sync, Refresh**. Every day. No weekly ritual.
+
+### Keep the architecture boring
+
+A small, reliable chain beats a complicated platform:
+
+Source database → reviewed Python sync → **Supabase** → secure UI → **Netlify**.
+
+### What it looks like in production
+
+He showed the real dashboards he now serves to partner organisations under the RedSaber brand:
+
+- A school dashboard with student results by subject, average accuracy, and CSV download.
+- An NPS and user feedback dashboard with survey segmentation and open responses.
+- An SEO and AI visibility panel tracking Google clicks, impressions, and AI bot reads.
+
+The replacement refreshes itself daily, puts confidential data behind a secured login, and adds nothing to the monthly bill beyond the Claude subscription.
+
+### First dashboard now, more automation later
+
+His roadmap has three steps, in order:
+
+1. **Dashboard** — useful and secure.
+2. **AI insights** — find important changes.
+3. **Agent actions** — act, with approval.
+
+AI insights and agents are optional next steps. They come after the dashboard works.
+
+### Not every dashboard should be rebuilt
+
+He was clear that specialised tools still have a place.
+
+- **Build when** it is part of your core offer, and the benefits outweigh the cost.
+- **Buy when** you are restricted by corporate rules, or you have cybersecurity concerns.
+
+His closing line: **"The distance from 'we pay' to 'we built' has collapsed."** Start with one useful, secure dashboard.
+
+## Community Shout-Outs (Open Mic)
+
+We did not record names properly this time, so apologies to everyone who shared.
+
+One thing worth passing on: someone pointed the room to **[AI Hero](https://aihero.dev/)** by Matt Pocock. It teaches an engineering process for working with coding agents like Claude Code, from an idea to shipped and reviewed code. There is a free email course and a set of free skills. His argument is that engineering fundamentals are not obsolete. They are now your biggest advantage, because agents make codebases worse without careful guidance.
+
+If you want to share next time, just add your name to the open mic list when you arrive.
+
+## Get Involved
+
+Want to speak at a future meetup, sponsor an event, or help shape the community? **[Get involved with 02Ship →](https://www.02ship.com/get-involved)**
+
+You can also apply to speak directly: [speaker application form](https://forms.gle/CuhvaFTHKip9R1At9). One talk slot for next month is already confirmed. One is still open.
+
+## Join the Next Meetup
+
+The next meetup is on **Tuesday, October 20** at **Haymarket HQ**. Same time as before (6:00 to 8:30 PM).
+
+It is free. Spots are limited.
+
+**[Register for the October 20 meetup on Luma](https://luma.com/qjlzh6oz)**
+
+See you there.
