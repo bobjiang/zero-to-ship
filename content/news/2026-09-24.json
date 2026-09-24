@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-24",
+  "items": [
+    {
+      "title": "The Tasteful Agent: Measuring and Improving Taste in Long-Horizon Tasks",
+      "summary": "Researchers introduce a new framework for evaluating and enhancing an AI agent's 'taste' or aesthetic judgment in complex, multi-step tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.25804",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Meta Unveils Major Updates for its AI Agent Muse",
+      "summary": "Meta announces significant new features and capabilities for its Muse AI agent, expanding its functionality and user interaction.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/23/everything-new-coming-to-metas-ai-agent-muse/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Meta Launches Tamagotchi-like Wearable for Muse AI Agent",
+      "summary": "Meta introduces a new wearable device designed to interact with its Muse AI agent, offering a Tamagotchi-like experience for users.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Meta Debuts Camera-Free AI Glasses",
+      "summary": "Meta reveals new AI-powered glasses that operate without a camera, focusing on privacy-preserving augmented reality and AI assistance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/23/meta-introduces-camera-free-ai-glasses/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "GAE: Learning a Geometry-Native Latent Space for 3D-Consistent World Generation",
+      "summary": "A new research paper introduces GAE, a method for learning a latent space that enables the generation of 3D-consistent virtual worlds.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24981",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Per-Agent Cost Tracking for Multi-Agent AI on AWS",
+      "summary": "A guide details how to implement effective cost tracking for multi-agent AI systems deployed on Amazon Web Services.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sarvar_04/per-agent-cost-tracking-for-multi-agent-ai-on-aws-10eg",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Extends Cyber Access to Ukraine for Civilian Defense",
+      "summary": "OpenAI announces the expansion of its cyber access initiatives to Ukraine, supporting civilian defense efforts with advanced AI capabilities.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Sam Altman Addresses United Nations Security Council on AI",
+      "summary": "OpenAI CEO Sam Altman delivers remarks at the UN Security Council, discussing the implications and governance of artificial intelligence.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "All-in-One Multilingual Scene Text Recognition with Script-aware Mixture-of-Experts",
+      "summary": "Researchers present a novel approach for robust multilingual scene text recognition that utilizes a script-aware mixture-of-experts model.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24058",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Google Beam Expands with New Regions, Partners, and Customers",
+      "summary": "Google announces the expansion of its Beam service, bringing its advanced AI capabilities to new geographical regions and welcoming more partners and customers.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Ovis-Embedding: Pushing the Frontiers of Universal Omni-Modal Embeddings",
+      "summary": "A new paper introduces Ovis-Embedding, a significant advancement in creating universal embeddings that can process and represent information across all modalities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.25165",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Two Years of OpenAI Academy Celebrated",
+      "summary": "OpenAI marks the second anniversary of its Academy program, highlighting its impact on AI education and community development.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/two-years-of-openai-academy",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Circuit Hypernetworks for Quantum-Augmented Diffusion Language Models",
+      "summary": "This research explores the integration of quantum computing concepts with diffusion language models through circuit hypernetworks to enhance their capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24657",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "JEV-as-a-Judge: Accept When Confident, Escalate When Unsure",
+      "summary": "Researchers propose JEV-as-a-Judge, an AI system designed to make decisions by accepting confident outputs and escalating uncertain ones for human review.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.26550",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "StableVQ: Practical Guidelines for Stable Vector-Quantized Tokenizer Training",
+      "summary": "A new paper provides practical guidelines and insights for achieving stable training of vector-quantized tokenizers, crucial for efficient AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.26774",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
