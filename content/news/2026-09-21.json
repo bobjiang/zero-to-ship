@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-21",
+  "items": [
+    {
+      "title": "RetireOPD: Self-Retiring On-Policy Distillation for Agentic Reinforcement Learning",
+      "summary": "This research introduces a novel method for agentic reinforcement learning that allows on-policy distillation to self-retire, improving efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20784",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "How OpenAI Used Its Own LLMs to Design Its Jalapeño Chip",
+      "summary": "OpenAI leveraged its own large language models to assist in the design process of a new hardware chip, showcasing a practical application of AI in engineering.",
+      "source": "Lobste.rs",
+      "url": "https://spectrum.ieee.org/llms-for-chip-design",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "World model companies are keeping a lot of secrets",
+      "summary": "This article discusses the increasing trend of secrecy among leading AI model development companies, raising concerns about transparency and open research.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/20/world-model-companies-are-keeping-a-lot-of-secrets/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Is the AI industry really ready to slow down?",
+      "summary": "An analysis questions the industry's willingness to decelerate AI development amidst calls for caution and regulation, highlighting the ongoing race for innovation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/20/is-the-ai-industry-really-ready-to-slow-down/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "WeVisDoc: From Coverage to Capability for Robust End-to-End Document Parsing",
+      "summary": "New research presents WeVisDoc, a method aimed at enhancing the robustness and capability of end-to-end document parsing systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20423",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VABench: Measuring Embodied Spatial Intelligence through Visual Demonstrations, Active Perception, and Metric Control",
+      "summary": "VABench is introduced as a new benchmark designed to evaluate embodied spatial intelligence in AI agents using visual demonstrations and active perception.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.19554",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Laya — 33ms Multilingual System 1 Decision Engine",
+      "summary": "Laya is announced as a new multilingual decision engine boasting an impressive 33-millisecond response time, indicating advancements in real-time AI processing.",
+      "source": "Lobste.rs",
+      "url": "https://laya.convaiinnovations.com/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+      "summary": "This paper explores CodeMidas, a framework for scaling reinforcement learning environments for agentic coding directly from existing codebases.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.22068",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EvoOntology: A Self-Evolving Ontology Layer for Data Agents",
+      "summary": "Researchers propose EvoOntology, a self-evolving ontology layer designed to enhance the knowledge representation and adaptability of data agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.15779",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "When2Think: Learning Difficulty-Aware Length Control for Efficient Hybrid Reasoning Models",
+      "summary": "This research introduces a method for hybrid reasoning models to learn difficulty-aware length control, optimizing efficiency without sacrificing accuracy.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.19671",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "UFO: Chain-of-Evaluation for Omni-Condition Alignment in Multi-Modal Image Generation",
+      "summary": "UFO presents a novel chain-of-evaluation approach to achieve omni-condition alignment, significantly improving multi-modal image generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.12397",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Sample Count Is Not Enough: Candidate-Generation Strategy Shapes the Energy and Performance of LLM Test-Time Scaling",
+      "summary": "A study reveals that the candidate-generation strategy, not just sample count, critically influences the energy consumption and performance of LLM scaling during testing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.19499",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL",
+      "summary": "This paper investigates how observation supervision fundamentally alters exploration strategies for agents in reinforcement learning environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20715",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Introducing the Australian Youth Safety Blueprint",
+      "summary": "OpenAI has unveiled the Australian Youth Safety Blueprint, outlining strategies and commitments to ensure safer AI interactions for young people.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/australian-youth-safety-blueprint",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Architecting a Resilient DevSecOps Pipeline for Enterprise AI Agents",
+      "summary": "This article provides guidance on building robust and secure DevSecOps pipelines specifically tailored for the deployment and management of enterprise AI agents.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/architecting-a-resilient-devsecops-pipeline-for-enterprise-ai-agents-on4",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-20",
+  "items": [
+    {
+      "title": "Google's Gemini AI Model Demonstrates Hacking Capabilities Against Other Companies",
+      "summary": "Google's Gemini AI model has reportedly been used to hack other companies, raising significant concerns about AI security and ethical deployment.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/19/googles-gemini-is-the-latest-ai-model-to-hack-other-companies/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "MiniMax-H3 Evaluates Omni-Modal Generative Model's Physical World Reasoning",
+      "summary": "A new paper evaluates MiniMax-H3, an omni-modal generative model, on its ability to reason about the physical world, showing advancements in AI's understanding of real-world physics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.18323",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Trump Proposes AI Rebranding and Creation of an 'AI Force'",
+      "summary": "Former President Trump suggests rebranding AI with a new name and announces plans to establish an 'AI Force,' indicating a potential shift in national AI strategy and terminology.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/19/trump-suggests-rebranding-ai-with-a-new-name-says-hes-also-creating-an-ai-force/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "JEPA-Anything: Learning Predictive Models Across Diverse Environments",
+      "summary": "Researchers introduce JEPA-Anything, a novel approach for learning predictive models that can generalize and adapt across various simulated or real-world environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20800",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AI in Interviews: Applicant Rejected for AI Use, Interviewer Uses It",
+      "summary": "A developer recounts being rejected from an interview for using AI, only to observe the interviewer subsequently using AI themselves, highlighting a double standard in the industry.",
+      "source": "Dev.to",
+      "url": "https://dev.to/infoinlet1/i-got-rejected-for-using-ai-in-an-interview-then-i-watched-the-interviewer-do-it-31d0",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "AI Is Finding Vulnerabilities Faster Than Humans Can Patch Them – A Security Crisis",
+      "summary": "The rapid pace at which AI discovers software vulnerabilities is outpacing human patching capabilities, creating a growing security crisis across industries.",
+      "source": "Dev.to",
+      "url": "https://dev.to/robertadam987_/ai-is-finding-vulnerabilities-faster-than-humans-can-patch-them-and-thats-becoming-a-security-1j04",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Verifiable Social Reasoning for LLM Assistants",
+      "summary": "A new study explores methods for enabling LLM assistants to perform verifiable social reasoning, enhancing their reliability and trustworthiness in complex human interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.17496",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Flock Reportedly Attempts Workforce Reduction Through Employee Buyouts",
+      "summary": "AI startup Flock is reportedly offering employee buyouts in an effort to shrink its workforce, signaling potential challenges or strategic shifts within the company.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/19/flock-reportedly-tries-to-shrink-workforce-with-employee-buyouts/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Co-creating the Future of Fashion with Google AI",
+      "summary": "Google announces collaborations to integrate AI into the fashion industry, aiming to co-create future trends and design processes.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "I Let AI Write My Tests for 6 Months: What Survived Production",
+      "summary": "A developer shares insights from six months of using AI to write tests, detailing which AI-generated tests proved robust enough for production environments.",
+      "source": "Dev.to",
+      "url": "https://dev.to/speaklouder/i-let-ai-write-my-tests-for-6-months-here-is-what-actually-survived-production-4h2",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "RiskChainBench: A Benchmark for Obfuscated Message Restoration and Web Investigation",
+      "summary": "Researchers introduce RiskChainBench, a new benchmark designed to evaluate AI models' ability to restore obfuscated platform messages and conduct evidence-grounded web investigations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.16900",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Self-Evolving Search Index Proposed for Dynamic Information Retrieval",
+      "summary": "A new paper presents the concept of a self-evolving search index, which dynamically adapts and improves its structure to enhance information retrieval efficiency over time.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.19656",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Reflect, Revise, Reuse: Training-Free Skill Evolution for GUI Agents",
+      "summary": "A new research paper introduces a training-free method for GUI agents to evolve their skills through a process of reflection, revision, and reuse, improving adaptability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.17653",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PACT: Can Enterprise AI Assistants Be Trusted Under Pressure?",
+      "summary": "Research investigates the trustworthiness of enterprise AI assistants when operating under high-pressure scenarios, assessing their reliability and decision-making capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.18605",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Video DeltaNet: A Video-Native Hybrid Attention for Livestream Video Generation",
+      "summary": "Video DeltaNet is proposed as a novel video-native hybrid attention model designed to improve the quality and efficiency of livestream video generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.20744",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-23",
+  "items": [
+    {
+      "title": "OpenAI Introduces GPT-6 Sol and Luna, Enhancing Frontier AI Capabilities",
+      "summary": "OpenAI has officially launched GPT-6 Sol and Luna, marking a significant advancement in their frontier AI models with new capabilities.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Snorkel AI's Valuation Triples to $3.5B Amid Surging Demand for AI Training Data",
+      "summary": "Snorkel AI has seen its valuation triple to $3.5 billion, reflecting the booming market demand for high-quality AI training data.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Qualcomm Unveils New AI-Focused Smartphone Chips",
+      "summary": "Qualcomm has released two new smartphone chips, placing a strong emphasis on enhanced AI processing capabilities for mobile devices.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OmniEdu: Open Foundation Models Revolutionize Learning and Teaching",
+      "summary": "OmniEdu introduces open foundation models designed to transform educational practices for both learning and teaching.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.23088",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "WorldCrafter: Consistent Video World Model with Implicit 3D-aware Memory",
+      "summary": "WorldCrafter proposes a novel video world model that achieves consistent generation through implicit 3D-aware memory.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24984",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "GameHorizon Suite: Multi-Horizon Data and Evaluation for Advanced Gameplay AI",
+      "summary": "GameHorizon Suite provides comprehensive multi-horizon data and evaluation tools to advance AI research in gameplay.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.25001",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DeepSeek Elastic Compute (DSec): Sandbox Infrastructure for Scalable Agentic Training",
+      "summary": "DeepSeek Elastic Compute (DSec) offers a sandbox infrastructure designed for effective and scalable agentic AI training.",
+      "source": "Lobste.rs",
+      "url": "https://arxiv.org/abs/2609.22978",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Better Prompt Caching for GPT-6 Improves Efficiency",
+      "summary": "OpenAI announces improvements to prompt caching for GPT-6, aiming to enhance the efficiency and speed of the model.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Parallel Cuts Research Time and Cost in Half with GPT-6 Astra",
+      "summary": "GPT-6 Astra is enabling Parallel Cuts to halve their research time and costs, demonstrating significant efficiency gains in scientific workflows.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Realtime-Venus: A Full-Duplex Interaction System with Asynchronous Delegation",
+      "summary": "Realtime-Venus introduces a novel full-duplex interaction system that utilizes asynchronous delegation for more natural and efficient AI communication.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.13814",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Document Retrieval-Aware Chunking (D-RAC): Universal Ingestion of Enterprise Documents",
+      "summary": "D-RAC offers a universal method for ingesting enterprise documents into retrieval systems through PDF normalization and multimodal markdown conversion.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24220",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Grounded Action Model: 3D Grounding as a Foundation for Robotics",
+      "summary": "This research proposes a Grounded Action Model that uses 3D grounding as a foundational element for advanced robotics applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.23863",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "VideoGen-Agent: Reinforcing Video Generation Agents for Improved Performance",
+      "summary": "VideoGen-Agent explores methods to reinforce video generation agents, leading to enhanced performance and more realistic video outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24997",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "RULER: Instance-aware Rubric Rewards for SVG Generation",
+      "summary": "RULER introduces instance-aware rubric rewards to improve the quality and control of SVG generation processes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.25270",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "onPanda: Efficient Annotation of On-Policy Alignment Data for LLMs and Agents",
+      "summary": "onPanda presents an efficient method for annotating on-policy alignment data for Large Language Models and agents using token-level correction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24983",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
