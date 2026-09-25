@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-25",
+  "items": [
+    {
+      "title": "Harvey leverages GPT-6 Astra for stronger legal drafts",
+      "summary": "Legal AI platform Harvey is enhancing its ability to turn complex legal context into more confident and robust drafts by integrating OpenAI's latest GPT-6 Astra model.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "PrismML brings tiny LLMs to Qualcomm-powered smart glasses",
+      "summary": "PrismML is integrating its compact large language models into smart glasses powered by Qualcomm, signaling a major step towards on-device AI for augmented reality and wearable technology.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/24/prismml-brings-its-tiny-llms-to-qualcomm-powered-smart-glasses/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "invideo improves color grading 3x with GPT‑6 Astra",
+      "summary": "Video creation platform invideo has achieved a 3x improvement in color grading efficiency by building with OpenAI's new GPT-6 Astra model, demonstrating advanced AI capabilities in creative workflows.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
+      "summary": "Ringg is significantly improving customer service by deploying OpenAI-powered AI agents that can resolve up to 65% of customer calls autonomously, showcasing practical agentic AI applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/ringg",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Apple combines Machine Learning and Homomorphic Encryption for enhanced privacy",
+      "summary": "Apple is researching the integration of machine learning with homomorphic encryption within its ecosystem, aiming to enable computations on encrypted data for improved privacy and security.",
+      "source": "Lobste.rs",
+      "url": "https://machinelearning.apple.com/research/homomorphic-encryption",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue",
+      "summary": "A new research paper introduces SpeakerMem-R1, a novel dual-track memory system designed to improve AI understanding and generation in complex multi-party dialogues by focusing on individual speaker contexts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.26780",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Spatial-Interactor: Learning Spatial Reasoning through Interaction with the Observable Physical World",
+      "summary": "Researchers present Spatial-Interactor, a model that learns spatial reasoning by interacting with a simulated physical world, advancing AI's ability to understand and navigate real-world environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.23038",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents",
+      "summary": "A new approach called 'Just-in-Time Memory' enables LLM agents to dynamically curate task-adaptive memories, significantly improving their performance and efficiency in complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.27334",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI for Societal Impact",
+      "summary": "Google AI highlights its initiatives and research focused on leveraging artificial intelligence to address significant societal challenges, from healthcare to environmental sustainability.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Agensh: Scaling Organizational Intelligence to 1,024 Agents",
+      "summary": "Agensh introduces a framework for scaling organizational intelligence by managing and coordinating up to 1,024 AI agents, pushing the boundaries of multi-agent system deployment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.26781",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "HappyWorld-Bench: A New Benchmark for AI World Models",
+      "summary": "HappyWorld-Bench is introduced as a new benchmark for evaluating the capabilities of AI world models, providing a standardized way to measure their understanding and prediction of complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.24308",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Past Frames the Future: Memory for Autoregressive Video Generation",
+      "summary": "This paper explores the use of memory mechanisms to enhance autoregressive video generation, allowing AI models to produce more coherent and contextually relevant video sequences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.28466",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Training Object Permanence in World Models",
+      "summary": "Researchers are working on training AI world models to understand object permanence, a fundamental cognitive ability that allows agents to reason about objects even when they are not visible.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.28654",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "7 Agent Eval Mistakes That Cost Me Weeks (And the One-Line Fixes That Ended Them)",
+      "summary": "A developer shares common pitfalls and simple fixes for evaluating AI agents, offering practical advice to save time and improve the reliability of agent development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/7-agent-eval-mistakes-that-cost-me-weeks-and-the-one-line-fixes-that-ended-them-ho",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "I Made a VS Code Extension to Copy Your Repo to Your Clipboard as Clean Markdown Context for Your Chatbot",
+      "summary": "A developer created a VS Code extension that streamlines the process of providing clean, markdown-formatted code context from a repository directly to chatbots, enhancing developer-AI interaction.",
+      "source": "Dev.to",
+      "url": "https://dev.to/effessdev/i-made-a-vs-code-extension-to-copy-your-repo-to-your-clipboard-as-clean-markdown-context-for-your-4j6l",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
