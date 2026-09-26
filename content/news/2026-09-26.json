@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-26",
+  "items": [
+    {
+      "title": "Your Transformer Can Hold Two Thoughts at Once: Evidence of Linear Superposition in LLMs",
+      "summary": "New research suggests that LLMs exhibit linear superposition, allowing a single neuron to represent multiple independent concepts simultaneously, challenging traditional understanding of neural network interpretability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.29845",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab's knowledge",
+      "summary": "OpenAI is facing scrutiny after unsecured AI agents inadvertently published 53 user images online, raising significant concerns about data privacy and agent security.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Your API's newest users are agents...",
+      "summary": "This article highlights the emerging trend of AI agents becoming primary consumers of APIs, necessitating dual API documentation for both human and agent users.",
+      "source": "Dev.to",
+      "url": "https://dev.to/nikolas_dimitroulakis_d23/we-described-our-api-twice-once-for-humans-once-for-agents-4e4g",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "I Trusted My Agent Demos for Years. Then I Built a Gate That Says No.",
+      "summary": "An engineer shares their experience building a 'gate' to prevent AI agents from executing unsafe or unintended actions, highlighting the critical need for agent reliability and control mechanisms.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/i-trusted-my-agent-demos-for-years-then-i-built-a-gate-that-says-no-4183",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "WanPE: Towards Cinematic Prompt Enhancement for Modern Text-to-Video Generation",
+      "summary": "This paper introduces WanPE, a method for enhancing prompts to achieve more cinematic and higher-quality outputs in text-to-video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.30221",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OmniEcho: Spatial Audio Understanding for Embodied Agents",
+      "summary": "OmniEcho presents a system enabling embodied AI agents to develop spatial audio understanding, enhancing their ability to navigate and interact with environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.23407",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Capable yet Parsimonious: Extracting and Characterizing Hidden Chain-of-Thought in Frontier Models",
+      "summary": "This paper investigates methods to extract and understand the hidden chain-of-thought processes within advanced AI models, improving interpretability and transparency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.26637",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
+      "summary": "Crusoe Energy Systems has cancelled its $1.25 billion plan to power AI data centers with Boom Technology's supersonic jet turbines, signaling a shift in sustainable energy strategies for AI infrastructure.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "I Think AI Is Making Coding Easier and Learning Harder",
+      "summary": "An opinion piece discussing the paradox of AI simplifying coding tasks while potentially hindering deeper learning and problem-solving skills for developers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/jaideepparashar/i-think-ai-is-making-coding-easier-and-learning-harder-5hjf",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "RewardVerse: Rubric-Guided Policy Optimization for Video Reward Modeling",
+      "summary": "RewardVerse proposes a novel framework that uses rubric-guided policy optimization to improve the accuracy and effectiveness of video reward modeling.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.22947",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PACT: From Credit Assignment to Critic Alignment",
+      "summary": "This research explores PACT, a method that shifts focus from traditional credit assignment to critic alignment for more effective reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.26355",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Agent-Editing World Model: Rethinking World Modeling for LLM Agents",
+      "summary": "This research proposes an Agent-Editing World Model, a new approach to how LLM agents build and update their understanding of the world, enhancing their autonomy and adaptability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.28416",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "GeoPair: Geometry-Preserving Cross-Layer Factorization for Training-Free Transformer Compression",
+      "summary": "GeoPair introduces a novel method for compressing Transformer models without retraining, preserving geometric properties and efficiency for practical deployment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.25963",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "At Meta Connect, the company&#8217;s smart glasses were everywhere",
+      "summary": "Meta Connect showcased the pervasive integration of smart glasses across various applications, signaling Meta's continued commitment to augmented reality and AI-powered wearables.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Introducing MentalHealthBench",
+      "summary": "OpenAI introduces MentalHealthBench, a new benchmark designed to evaluate the safety and efficacy of AI models in mental health applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-mentalhealthbench",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
