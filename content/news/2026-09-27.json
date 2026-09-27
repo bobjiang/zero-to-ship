@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-27",
+  "items": [
+    {
+      "title": "Rufus-Air: An Open LLM Post-Training Recipe",
+      "summary": "This paper introduces Rufus-Air, an open-source recipe for post-training large language models, offering a valuable resource for researchers and developers to enhance LLM performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.29421",
+      "score": 9,
+      "category": "open-source"
+    },
+    {
+      "title": "Airbnb widens access to GPT-6 Astra and OpenAI frontier models",
+      "summary": "Airbnb is expanding its integration of OpenAI's advanced GPT-6 Astra and other frontier models, indicating a growing trend of major companies leveraging cutting-edge AI for enhanced services.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/airbnb-gpt-6-astra",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Everyone's learning to prompt better. That's the wrong skill.",
+      "summary": "This article argues that focusing solely on prompt engineering is a misguided effort, suggesting that the future of AI interaction lies beyond simple prompting.",
+      "source": "Dev.to",
+      "url": "https://dev.to/infoinlet1/everyones-learning-to-prompt-better-thats-the-wrong-skill-544o",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+      "summary": "Google is piloting a new feature in India that allows users to make purchases directly from Flipkart via Gemini and its AI Mode, integrating AI into e-commerce workflows.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
+      "summary": "OpenAI is expanding its ChatGPT Ads platform to Southeast Asia and Taiwan, indicating a strategic move to monetize its popular AI chatbot in new international markets.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "A Field Guide to AI Documentation: Model Cards, Eval Reports, Agent Cards, and More",
+      "summary": "This guide provides a comprehensive overview of essential documentation practices for AI systems, including model cards and evaluation reports, crucial for transparency and responsible AI development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/james_anderson_h/a-field-guide-to-ai-documentation-model-cards-eval-reports-agent-cards-and-more-5h0f",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Insurers claim AI is already increasing healthcare costs",
+      "summary": "Insurance companies are reporting that the adoption of AI technologies is already contributing to a rise in healthcare expenditures, raising concerns about the economic impact of AI in the sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Verifiable Hidden Dynamics Play: Generating Agentic RL Environments from Solved Mechanisms",
+      "summary": "This research explores a novel method for generating complex, agentic reinforcement learning environments by leveraging solved mechanisms, enhancing the development of more sophisticated AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.27321",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PackLab: A Comprehensive Framework for Developing, Training, and Evaluating MLLMs in Robotic Bin Packing",
+      "summary": "PackLab introduces a robust framework designed to facilitate the development, training, and evaluation of Multi-modal Large Language Models specifically for robotic bin packing tasks, advancing AI in logistics and automation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.23784",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MemBodied: Recurrent Associative Memory for Vision-Language-Action Models",
+      "summary": "This paper presents MemBodied, a new approach incorporating recurrent associative memory into Vision-Language-Action models to improve their ability to learn and perform complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.28256",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents",
+      "summary": "Qwen-Planner-Agent proposes a closed-loop framework for creating real-world mobile planner agents, enabling AI systems to autonomously plan and execute tasks in dynamic environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.29892",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Building AI to accelerate science and improve lives",
+      "summary": "Google highlights its commitment to developing AI applications that can significantly accelerate scientific discovery and improve various aspects of human life.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "I Built a VS Code Extension to Paste Your Project into Free Chatbots and Apply the Diffs in One Click! 🔥",
+      "summary": "A developer created a VS Code extension that streamlines the process of integrating project code with free chatbots for analysis and applying suggested changes with a single click.",
+      "source": "Dev.to",
+      "url": "https://dev.to/effessdev/i-built-a-vs-code-extension-to-paste-your-project-into-free-chatbots-and-apply-the-diffs-in-one-5enn",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Hunyuan-A13B Technical Report",
+      "summary": "This technical report details the architecture and performance of Hunyuan-A13B, a new large language model, contributing to the growing landscape of powerful AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.27284",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "New experts join Google’s AI & Economy team",
+      "summary": "Google has expanded its AI & Economy research team by adding new experts, signaling a continued investment in understanding and shaping the economic implications of AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
