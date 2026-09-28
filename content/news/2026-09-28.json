@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-28",
+  "items": [
+    {
+      "title": "Anthropic’s CEO is about to have dinner with President Trump",
+      "summary": "Dario Amodei, CEO of leading AI firm Anthropic, is scheduled to meet with President Trump, signaling growing high-level engagement between AI industry leaders and political figures.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "FuseReg: Regularizing Layer Fusion Mitigates the Reconstruction-Generation Gap in Representation Autoencoders",
+      "summary": "A new research paper introduces FuseReg, a method that uses layer fusion regularization to reduce the gap between reconstruction and generation in representation autoencoders, improving their performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.31620",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Prompt Injection Is the New SQL Injection (and We're Not Ready)",
+      "summary": "This article warns that prompt injection poses a security threat to AI systems comparable to SQL injection, highlighting a critical vulnerability that the industry is currently unprepared to handle.",
+      "source": "Dev.to",
+      "url": "https://dev.to/james_anderson_h/prompt-injection-is-the-new-sql-injection-and-were-not-ready-4ea4",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Chain-of-Thought Faithfulness: Toggling 'Reasoning Mode' Made One Model 5x More Likely to Follow Its Own Mistakes",
+      "summary": "Research indicates that simply toggling a 'reasoning mode' in an AI model can significantly increase its tendency to repeat its own errors, raising concerns about the faithfulness of chain-of-thought reasoning.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dj29/chain-of-thought-faithfulness-toggling-reasoning-mode-made-one-model-5x-more-likely-to-follow-39b3",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "InternW0-Δ: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data",
+      "summary": "A new world action model, InternW0-Δ, is introduced, leveraging over 20,000 hours of open data to bridge predictive dynamics and actions, advancing embodied AI capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.31394",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Just Ask Jev: Reinforcement Learning for Calibrated Decisions as a Zero-Shot Detector of AI Alignment Failures",
+      "summary": "A new method called 'Just Ask Jev' uses reinforcement learning to enable calibrated decisions, serving as a zero-shot detector for identifying AI alignment failures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.29429",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AI for everyone in every language",
+      "summary": "Google announces new initiatives aimed at making AI accessible and useful to everyone, regardless of their language, emphasizing global inclusivity in AI development.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "I Tried to Prompt a 3D DEV Library Into Existence. Then I Had to Build My Own Level Editor.",
+      "summary": "A developer recounts the challenges of using AI to generate a 3D development library, ultimately leading to the necessity of building a custom level editor due to AI limitations.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mikachu/i-tried-to-prompt-a-3d-dev-library-into-existence-then-i-had-to-build-my-own-level-editor-37gf",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Learning to Discover Interesting Mathematics",
+      "summary": "A new paper explores how AI systems can be trained to discover and identify interesting mathematical concepts, potentially accelerating mathematical research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.28603",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ExplorationBench: Measuring AI Systems' Exploration in Verifiable Alien Worlds",
+      "summary": "ExplorationBench is presented as a new benchmark designed to measure and evaluate the exploratory capabilities of AI systems within complex, verifiable simulated environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.30199",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Block Sparse Attention with Log-Linear Complexity",
+      "summary": "Researchers introduce a novel block sparse attention mechanism that achieves log-linear complexity, offering significant efficiency improvements for large-scale transformer models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.31093",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PUBG Ally: A Conversational Embodied Agent as an AI Teammate",
+      "summary": "A new paper introduces PUBG Ally, a conversational embodied AI agent designed to function as an intelligent teammate within the popular game PUBG, enhancing player experience.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.29837",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "summary": "Proaction reports a 60% increase in sales and over 75 hours saved by integrating OpenAI's Codex into their operations, demonstrating significant business impact.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/proaction",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Can Muse overcome Meta’s trust issues?",
+      "summary": "This article questions whether Meta's new AI initiative, Muse, can succeed in gaining public trust given the company's past controversies and challenges.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/27/can-muse-overcome-metas-trust-issues/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Co-creating the future of fashion with Google",
+      "summary": "Google announces a collaboration to integrate AI into the fashion industry, aiming to co-create future trends and design processes.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
