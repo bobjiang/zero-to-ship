@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-30",
+  "items": [
+    {
+      "title": "Introducing GPT-6.1 Sol",
+      "summary": "OpenAI announces GPT-6.1 Sol, a significant advancement in their large language model series, promising enhanced capabilities and performance.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI DevDay 2026 Recap",
+      "summary": "OpenAI provides a comprehensive recap of its 2026 DevDay, highlighting key announcements, new features, and developer tools.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/devday-2026-recap",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Introduces 'Dots' for Enhanced AI Interaction",
+      "summary": "OpenAI unveils 'dots', a new feature designed to revolutionize how users interact with AI models, potentially simplifying complex tasks.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-dots",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI's Latest Features Take Direct Aim at the App Store Model",
+      "summary": "OpenAI's recent product announcements, including 'dots' and new developer tools, signal a strategic move to challenge traditional app store ecosystems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "The Internet is Convinced Elon Musk's xAI Trolled OpenAI's 'Dots' Launch",
+      "summary": "Social media buzzes with speculation that Elon Musk's xAI intentionally timed an announcement to overshadow or mock OpenAI's new 'dots' feature launch.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/29/the-internet-is-convinced-elon-musks-xai-trolled-openais-dots-launch/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "MaLiang-Harness: A Programmable Path to Image and Video Generation",
+      "summary": "Researchers introduce MaLiang-Harness, a new framework offering a programmable and flexible approach to advanced image and video generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.34309",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Raven: The Harness of Harnesses for Composable Agentic Intelligence",
+      "summary": "Raven is presented as a meta-harness designed to facilitate composable agentic intelligence, enabling more complex and adaptable AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.33439",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI Agent Governance on AWS: Block Agents, Prove EU AI Act Compliance",
+      "summary": "A guide on implementing AI agent governance on AWS to block unwanted agent behavior and ensure compliance with the upcoming EU AI Act.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws-builders/ai-agent-governance-on-aws-block-agents-prove-eu-ai-act-compliance-1829",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "What Makes World Action Models Generalize? An Empirical Study of Test-Time Future Modeling",
+      "summary": "A new study investigates the factors contributing to the generalization capabilities of world action models, focusing on their ability to predict future states during testing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.34981",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Beyond the Timeline: Augmenting Long-Video Memory with Grounded Entity Biographies",
+      "summary": "This research proposes a method to enhance long-video memory in AI systems by augmenting it with grounded entity biographies, improving understanding and recall.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.38155",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SAKI: Maximal-Coupling-Routed Teacher Supervision for On-Policy Distillation",
+      "summary": "SAKI introduces a novel approach using maximal-coupling-routed teacher supervision to improve on-policy distillation in reinforcement learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.36601",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "OmniTaskonomy: When Does Visual Generation Improve Visual Understanding?",
+      "summary": "OmniTaskonomy explores the conditions under which visual generation tasks can effectively contribute to and enhance visual understanding in AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.38079",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Learning Beyond What You Sample: Off-Policy-Aware Cross-Model Trajectory Exchange for RLVR",
+      "summary": "This paper presents a new method for reinforcement learning with verifiable rewards (RLVR) that leverages off-policy-aware cross-model trajectory exchange to learn more efficiently.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.37868",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Anisotropic Representations Improve Planning in JEPA World Models",
+      "summary": "Research demonstrates that utilizing anisotropic representations can significantly enhance planning capabilities within Joint Embedding Predictive Architecture (JEPA) world models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.37441",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "VoxMem: Benchmarking Multimodal Memory in Large Audio Language Models",
+      "summary": "VoxMem introduces a new benchmark for evaluating and understanding multimodal memory capabilities in large audio language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.32607",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
