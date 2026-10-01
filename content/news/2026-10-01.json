@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-01",
+  "items": [
+    {
+      "title": "Google releases Gemini 4 Argon, its most powerful model yet",
+      "summary": "Google has announced the release of Gemini 4 Argon, touting it as their most powerful AI model to date, signaling a significant advancement in their competitive AI offerings.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Valor, Atreides, and Sequoia back AI startup Flow Engineering at $750M valuation",
+      "summary": "AI startup Flow Engineering has secured a substantial investment from prominent venture capital firms Valor, Atreides, and Sequoia, pushing its valuation to an impressive $750 million.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/valor-atreides-and-sequoia-back-ai-startup-flow-engineering-at-750m-valuation/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI's Jev clone could help the frontier lab stop its swarming agents",
+      "summary": "OpenAI is reportedly developing a 'Jev clone' as an internal tool to manage and potentially control the behavior of its increasingly complex and autonomous AI agents.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Scaling Properties of Same-Family On-Policy Distillation",
+      "summary": "New research explores the scaling properties of on-policy distillation within the same model family, providing insights into efficient model training and performance improvements.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.32722",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Disrupting a coordinated model-distillation campaign",
+      "summary": "OpenAI details its efforts to detect and disrupt a coordinated campaign aimed at illicitly distilling their proprietary AI models, highlighting ongoing security challenges in the AI space.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Periodic Weak Spots: Phase Sensitivity from Chunked KV-Cache Compression",
+      "summary": "A new paper identifies 'periodic weak spots' in large language models arising from phase sensitivity in chunked KV-cache compression, impacting model stability and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.36322",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The Teacher Is a Direction, Not a Destination: Extrapolating RL-Induced Representation Residuals in On-Policy Distillation",
+      "summary": "Researchers propose a novel method for on-policy distillation that extrapolates RL-induced representation residuals, treating the teacher model as a directional guide rather than a fixed target.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.36484",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "1 in 5 Packages Your AI Suggests Don't Exist. Attackers Know Which Ones.",
+      "summary": "A report reveals a 'slopsquatting' vulnerability where AI-generated code suggestions for non-existent packages are exploited by attackers, posing a supply chain security risk.",
+      "source": "Dev.to",
+      "url": "https://dev.to/james_anderson_h/slopsquatting-your-ai-invented-a-package-and-an-attacker-was-waiting-1g67",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Helping small businesses put AI to work",
+      "summary": "OpenAI announces new initiatives aimed at making AI tools more accessible and practical for small businesses, fostering broader adoption and innovation.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Making global data easier to explore",
+      "summary": "Google introduces a new AI-powered platform designed to simplify the exploration and understanding of complex global datasets, enhancing accessibility for researchers and the public.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery",
+      "summary": "EvoDuet introduces a novel bilevel co-evolutionary system where AI agents simultaneously optimize web searching and task-solving strategies to accelerate scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.40340",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
+      "summary": "Researchers present WorldAuditBench, a benchmark for interactive 3D world auditing using multimodal AI agents, pushing the boundaries of autonomous environment analysis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.40325",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "UniEvo-VL: An On-policy Self-Distillation Training Recipe for Multimodal Model Self-improvement",
+      "summary": "UniEvo-VL proposes a new self-distillation training recipe that enables multimodal models to continuously improve their performance through on-policy learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.38721",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Learning Meta-Skills for Agent Harness Design in Test-Time AI4AI",
+      "summary": "New research explores how AI can learn meta-skills to design better 'harnesses' for other AI agents during test-time, advancing the field of AI for AI (AI4AI).",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.38143",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "I've been a developer for 10 years. AI just showed me I only had one real skill.\"",
+      "summary": "A veteran developer reflects on how AI's rapid advancements have highlighted a singular, core skill as their most valuable, prompting a re-evaluation of traditional development roles.",
+      "source": "Dev.to",
+      "url": "https://dev.to/infoinlet1/ive-been-a-developer-for-10-years-ai-just-showed-me-i-only-had-one-real-skill-38p",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
