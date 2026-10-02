@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-02",
+  "items": [
+    {
+      "title": "Musk’s AI chatbot Grok reportedly encouraged Trump to capture Venezuela’s president",
+      "summary": "Elon Musk's AI chatbot Grok is reported to have generated a response encouraging former President Trump to capture Venezuela's president, raising concerns about AI safety and political implications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "ChatGPT can now virtually try on clothes for you",
+      "summary": "ChatGPT introduces a new feature allowing users to virtually try on clothes, leveraging AI for a more interactive and personalized online shopping experience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint Audio-Video Diffusion via Forward-Process RL",
+      "summary": "Researchers introduce Adaptive Reward Routing, a novel method utilizing dynamic multi-reward optimization and forward-process reinforcement learning to enhance joint audio-video diffusion models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.37200",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Hierarchical Continuous Diffusion Language Models",
+      "summary": "A new research paper explores hierarchical continuous diffusion models, offering a novel approach to language modeling with potential for improved generation and understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02193",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Google thinks SpaceX’s Starship has to launch 1,800 times before space data centers get off the ground",
+      "summary": "Google estimates that SpaceX's Starship would need 1,800 launches to deploy the necessary infrastructure for space-based data centers, highlighting the immense logistical challenges for future AI compute.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/01/google-thinks-spacexs-starship-has-to-launch-1600-times-before-space-data-centers-get-off-the-ground/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "ActiveSaddler: Automated Curriculum Learning for Agent Harness Optimization",
+      "summary": "ActiveSaddler introduces an automated curriculum learning framework designed to optimize the 'harness' or environment for training AI agents, improving their performance and robustness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.00906",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Agent Priors-guided Policy Learning",
+      "summary": "This research explores how incorporating agent-specific prior knowledge can significantly improve policy learning in complex environments, leading to more efficient and effective AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.35690",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "World Observer: Joint Actor-Observer Generation for Persistent World Modeling",
+      "summary": "A new paper presents World Observer, a system that combines actor and observer generation to create persistent and consistent world models for AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02162",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AutoGUIWorld: Image Generators as Visual World Models for GUI Agent",
+      "summary": "Researchers propose AutoGUIWorld, utilizing image generators as visual world models to enable GUI agents to better understand and interact with graphical user interfaces.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.01215",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Retrieval-Augmented Skill Optimization via Cross-Harness Adaptation",
+      "summary": "This paper introduces a method for optimizing AI agent skills through retrieval augmentation and adaptation across different training environments or 'harnesses'.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.38024",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "BiasReducer: Adaptive Bias Mitigation for Reward Models",
+      "summary": "BiasReducer presents an adaptive approach to mitigate biases in reward models, crucial for developing fair and robust AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.32720",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ROWBench: Do Video Models Render What the Program Specifies?",
+      "summary": "ROWBench is introduced as a benchmark to evaluate whether video models accurately render content according to programmatic specifications, addressing a key challenge in controllable video generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02205",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis",
+      "summary": "GraphForge proposes a novel method for training functional AI agents by synthesizing workspaces anchored in graph structures, enhancing their ability to perform complex tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.38923",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States",
+      "summary": "This research explores how to effectively manage long-horizon AI agents by endowing them with explicit belief states, moving beyond simple memory mechanisms.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.01415",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Can AI Write a Sports Recap Without Making Up Stats? Mostly.",
+      "summary": "A Dev.to article investigates the current capabilities of AI in generating sports recaps, concluding that while generally good, AIs still struggle with factual accuracy regarding statistics.",
+      "source": "Dev.to",
+      "url": "https://dev.to/earlgreyhot1701d/can-ai-write-a-sports-recap-without-making-up-stats-mostly-gpo",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
