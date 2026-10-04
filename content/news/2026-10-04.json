@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-04",
+  "items": [
+    {
+      "title": "OpenAI Safety Employee Resigns, Citing 'Broken Culture'",
+      "summary": "A safety employee at OpenAI has reportedly resigned, publicly stating that the company's culture is 'broken,' raising concerns about internal dynamics at the leading AI firm.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Survey of Post-Training and Alignment Techniques for Video Generation Models",
+      "summary": "A new survey paper provides a comprehensive overview of post-training and alignment methods crucial for improving the performance and safety of video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.00812",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "InterEvolve: Test-Time Evolution of Reward Programs for Humanoid Loco-Manipulation",
+      "summary": "Researchers introduce InterEvolve, a novel method enabling test-time evolution of reward programs to enhance humanoid robot loco-manipulation capabilities, improving adaptability in complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02196",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Google Summarizes September 2026 AI Innovations and Updates",
+      "summary": "Google's AI blog provides a roundup of its key artificial intelligence announcements and advancements made throughout September 2026, highlighting ongoing progress in various AI domains.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "X-Tree: Tokenizing Reusable Experience for Efficient Agent Generalization",
+      "summary": "A new paper proposes X-Tree, a method for tokenizing reusable experience to significantly improve the efficiency and generalization capabilities of AI agents across diverse tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.32993",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "All the AI Agents That Can Live in Your Text Messages",
+      "summary": "TechCrunch explores the growing landscape of AI agents designed to integrate directly into text messaging platforms, offering users various automated services and interactions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Decentralized Master-Mind: Joint Action Refinement in Multi-Agent Pathfinding",
+      "summary": "This research introduces Decentralized Master-Mind, a system for joint action refinement through iterative intent denoising, optimizing multi-agent pathfinding in complex scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.32019",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Persona Dosing: Calibrated Activation Steering for Graded Trait Control",
+      "summary": "Researchers present Persona Dosing, a technique for calibrated activation steering that allows for fine-grained control over specific traits in AI models, enabling more nuanced persona generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.36388",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Chatham Financial Scales Capital Markets Expertise with OpenAI",
+      "summary": "Chatham Financial announces its collaboration with OpenAI to enhance its capital markets expertise, leveraging advanced AI to streamline operations and improve financial insights.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatham-financial/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
+      "summary": "SILSA is introduced as a new method utilizing sliding-window slice latents to achieve topology-preserving high-resolution 3D object generation, addressing challenges in 3D content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02201",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Decoding Looped Transformers Better for (Almost) Free",
+      "summary": "A new paper presents an efficient method to improve the decoding performance of looped transformers with minimal computational overhead, offering practical benefits for AI model deployment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02185",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Ego2Act: Evaluating Goal-Directed Manipulation in Egocentric Video Generation",
+      "summary": "Ego2Act proposes a new benchmark for evaluating the effectiveness of goal-directed manipulation in egocentric video generation, crucial for developing more capable embodied AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.01092",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Omni-Embed-Mini: Binding Modalities Without Forgetting via Dense Distillation",
+      "summary": "Omni-Embed-Mini introduces a dense distillation technique that enables models to bind multiple modalities without experiencing catastrophic forgetting, improving multimodal learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02148",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "PhysVista: Benchmarking Physical Intelligence in VLMs via a Perception-Reasoning-Assessment Loop",
+      "summary": "PhysVista offers a new benchmark to evaluate the physical intelligence of Vision-Language Models (VLMs) through a comprehensive perception-reasoning-assessment loop.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.00559",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Smaller Models, Better Rejects: Preference Distillation Scaling",
+      "summary": "This research explores how preference distillation can be scaled to create smaller models that are more effective at rejecting undesirable outputs, enhancing AI safety and control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.38987",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
