@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-05",
+  "items": [
+    {
+      "title": "Google Freezes Open Source Bug Bounty Program Due to Surge in AI Submissions",
+      "summary": "Google has temporarily halted its open-source bug bounty program after experiencing a significant increase in AI-generated vulnerability submissions, raising concerns about the quality and volume of AI-assisted security research.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Trump Unveils New 'Super Intelligence Force' Initiative",
+      "summary": "Former President Trump announced the formation of a 'Super Intelligence Force,' a new initiative focused on advancing AI capabilities, signaling a growing political emphasis on national AI strategy.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Predicting Nocturnal Hypoglycemia with Prior Labs TabPFN for Diabetes Management",
+      "summary": "A developer built an AI model using Prior Labs TabPFN to accurately predict nocturnal hypoglycemia, offering a practical application for improving diabetes patient safety.",
+      "source": "Dev.to",
+      "url": "https://dev.to/emmasofia/before-the-alarm-screams-at-3-am-predicting-liams-nocturnal-hypoglycemia-with-prior-labs-tabpfn-25mn",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Removing Backdoors in LLMs via Weight Orthogonalisation",
+      "summary": "Researchers propose a novel method called 'Weight Orthogonalisation' to effectively remove backdoors from Large Language Models, enhancing their security and trustworthiness.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.00348",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Can 'Super Intelligence' and Non-Binding Safety Pacts Address AI's Public Image?",
+      "summary": "The article questions whether the concept of 'super intelligence' and voluntary safety agreements are sufficient to alleviate public concerns and improve the perception of AI development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Chatham Financial Scales Capital Markets Expertise with OpenAI Integration",
+      "summary": "Chatham Financial is leveraging OpenAI's advanced AI capabilities to enhance its capital markets expertise, demonstrating a significant enterprise adoption of large language models in finance.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatham-financial",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Albertsons Companies Reimagines Retail Operations with AI from OpenAI",
+      "summary": "Albertsons Companies is utilizing OpenAI's AI solutions to innovate and streamline its retail operations, showcasing AI's transformative potential within the grocery and retail sector.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/albertsons-reimagining-retail",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Architect-Ant: Editable Automatic Furnishing of Architectural Floor Plans",
+      "summary": "A new research paper introduces Architect-Ant, an AI system capable of automatically furnishing architectural floor plans with editable layouts, offering significant potential for design automation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2606.10953",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Source Preference in the Wild: How LLM Agents Favor Items and How to Mitigate It",
+      "summary": "A study investigates how LLM agents exhibit bias towards specific information sources and explores strategies to reduce this preference for more balanced information retrieval.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.03195",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "My Mom Reads Bengali, Not English: An Open-Weight Gemma-Based Scam Reader",
+      "summary": "A developer created a Bengali-language scam reader using an open-weight Gemma model, enabling non-English speaking users to identify fraudulent content.",
+      "source": "Dev.to",
+      "url": "https://dev.to/codeswithroh/my-mom-reads-bengali-not-english-so-i-built-her-a-reader-that-catches-scams-on-open-weight-gemma-47ef",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Generalization Is Stability, Not Accuracy: Multi-Axis Evaluation of LLMs",
+      "summary": "A paper proposes a multi-axis evaluation framework for LLMs, arguing that generalization should be measured by stability across diverse conditions rather than just accuracy on specific benchmarks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.01428",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "New Experts Join Google's AI & Economy Research Team",
+      "summary": "Google is expanding its AI & Economy research team with new experts, signaling a continued focus on understanding and shaping the broader economic implications of artificial intelligence.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "AI for Societal Impact: Google's Latest Initiatives",
+      "summary": "Google highlights its ongoing commitment to developing AI technologies that address significant societal challenges and contribute positively to global communities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "OriginTrace: Protecting DEV Community from Content Theft with Sanity Context MCP",
+      "summary": "A new tool, OriginTrace, is introduced to safeguard the DEV Community against content theft by leveraging Sanity Context MCP for robust content provenance and protection.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dj29/origintrace-protecting-the-dev-community-from-content-theft-using-sanity-context-mcp-j5c",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Scaling Trajectories for Complex Tasks through Recursive Self-Rewrite",
+      "summary": "New research explores 'Recursive Self-Rewrite' as a method for scaling AI trajectories to handle more complex tasks, potentially improving autonomous agent capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.02826",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
