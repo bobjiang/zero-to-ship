@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-09",
+  "items": [
+    {
+      "title": "Fired OpenAI Safety Researchers Dispute Misconduct Claims, Warn of Chilling Effect",
+      "summary": "Former OpenAI safety researchers are challenging misconduct allegations and expressing concerns that such actions could discourage future critical safety work within the AI community.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "From Traces to Agentic Worlds: Agentic Language World Models for Interactive Environment Simulation",
+      "summary": "Researchers introduce Agentic Language World Models that enable the creation of interactive environment simulations by learning from agent traces, advancing the development of more sophisticated AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.06100",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+      "summary": "A new method called Self-Retrospection Distillation allows AI agents to convert their past experiences into proactive foresight, significantly improving their decision-making capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.08077",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "AI for Everyone in Every Language",
+      "summary": "Google announces advancements aimed at making AI accessible and functional across all languages, broadening its global reach and utility.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "SuperNav: An Agentic Navigation System for Any Task in Any Scene",
+      "summary": "SuperNav introduces an agentic navigation system designed to autonomously perform diverse tasks within any given environment, showcasing progress in embodied AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12126",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+      "summary": "TokenRouter presents an efficient serving system that optimizes LLM inference by routing requests at the token level, leading to improved performance and resource utilization.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12242",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How Oracle Turns Days of Work into Minutes with ChatGPT and Codex",
+      "summary": "Oracle details how it leverages OpenAI's ChatGPT and Codex to dramatically accelerate development workflows, transforming tasks that once took days into mere minutes.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/oracle",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Whistle: Speech to Text in 16.9 MB",
+      "summary": "Whistle introduces an incredibly compact speech-to-text model, weighing in at just 16.9 MB, which promises highly efficient and lightweight transcription capabilities.",
+      "source": "Lobste.rs",
+      "url": "https://cactuscompute.com/blog/whistle",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+      "summary": "Learn2Play Bench evaluates the ability of LLM agents to learn and adapt effectively from experience in novel and unfamiliar environments, highlighting current strengths and limitations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.08215",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction",
+      "summary": "This research introduces a multi-agent egocentric world model that enables fine-grained embodied interaction, enhancing AI's understanding and operation within complex shared environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12299",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AgentGarten: Code Worlds for Evolving Agents",
+      "summary": "AgentGarten proposes a framework for creating 'code worlds' that serve as dynamic environments for the development and evolution of AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12374",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DreamTrue: Action-Faithful Robot World Model with Counterfactual Post-Training",
+      "summary": "DreamTrue presents a robot world model that achieves action-faithful predictions through counterfactual post-training, improving robotic planning and execution reliability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12468",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How Our Engineering Team Uses AI, Part II: Meat Proxies",
+      "summary": "An engineering team shares insights into their practical application of AI, specifically detailing their use of 'meat proxies' to enhance workflows and efficiency.",
+      "source": "Dev.to",
+      "url": "https://dev.to/metalbear/how-our-engineering-team-uses-ai-part-ii-meat-proxies-148g",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Burn 0.22.0: Faster Builds, Easier Extensions, and Smarter Autotuning",
+      "summary": "Burn, an AI framework, releases version 0.22.0, featuring significant improvements in build speed, extensibility, and intelligent autotuning for enhanced performance.",
+      "source": "Lobste.rs",
+      "url": "https://tracel.ai/blog/release-0.22.0/",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "TouchGrass: The Open-AI Agent That Succeeds When You Stop Using It",
+      "summary": "A novel open-source AI agent named TouchGrass is introduced, designed with the unique goal of promoting user disengagement by achieving its objectives and encouraging users to step away.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rajan_mishra_a9f78ad216b4/touchgrass-the-open-ai-agent-that-succeeds-when-you-stop-using-it-3k1e",
+      "score": 5,
+      "category": "open-source"
+    }
+  ]
+}
