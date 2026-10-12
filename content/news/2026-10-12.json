@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-12",
+  "items": [
+    {
+      "title": "TerraPulse: The Screenless Outdoor & Trail Agent",
+      "summary": "TerraPulse introduces a screenless AI agent designed for outdoor and trail activities, offering a novel approach to wearable technology for nature enthusiasts.",
+      "source": "Dev.to",
+      "url": "https://dev.to/ritik_ahirwar_8168/terrapulse-the-screenless-outdoor-trail-agent-4e46",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Georgian Language Benchmark: Two Biggest AI Labs Clash in a Language That Doesn't Play by Anyone's Rules",
+      "summary": "A new benchmark for the Georgian language highlights the challenges and competitive efforts of major AI labs in developing models for less common, complex languages.",
+      "source": "Dev.to",
+      "url": "https://dev.to/georgekobaidze/georgian-language-benchmark-two-biggest-ai-labs-clash-in-a-language-that-doesnt-play-by-anyones-5b22",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "ProgramGym: Scaling Training Environments for Long-Horizon Program Reproduction Agents",
+      "summary": "Researchers introduce ProgramGym, a new framework designed to scale training environments for AI agents capable of reproducing complex, long-horizon programs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13395",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VisionWeave: Weaving Elastic Visual Representations as a Native Capability of MLLMs",
+      "summary": "VisionWeave proposes a method to integrate elastic visual representations directly into Multimodal Large Language Models (MLLMs), enhancing their native visual understanding capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.07987",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EmbodiedCLBench: Evaluating Continual Learning for Self-Evolving Embodied Agents",
+      "summary": "EmbodiedCLBench is introduced as a new benchmark for evaluating the continual learning abilities of self-evolving embodied AI agents in dynamic environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13021",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "I Replaced My Entire Dev Workflow With AI Agents — Here's What Actually Worked",
+      "summary": "A developer shares a practical account of successfully integrating AI agents into their entire development workflow, detailing the benefits and challenges encountered.",
+      "source": "Dev.to",
+      "url": "https://dev.to/infoinlet1/i-replaced-my-entire-dev-workflow-with-ai-agents-heres-what-actually-worked-f9g",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "RSI-Anything: Unlocking Recursive Self-Improvement with World Models",
+      "summary": "RSI-Anything introduces a framework that leverages world models to enable recursive self-improvement in AI systems, pushing towards more autonomous and capable agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13912",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How 8-bit quantization shrinks an LLM to a quarter of its size — and why a single outlier weight can quietly ruin it",
+      "summary": "An article explains the benefits of 8-bit quantization for reducing LLM size and highlights the critical issue of outlier weights that can severely degrade model performance.",
+      "source": "Dev.to",
+      "url": "https://dev.to/susheem-k/how-8-bit-quantization-shrinks-an-llm-to-a-quarter-of-its-size-and-why-a-single-outlier-weight-3fa9",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station",
+      "summary": "This paper investigates the potential of AI agents to perform open-ended scientific discovery, presenting evidence from a system named Station.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.08927",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SoloQ: Calibration-Free Quantization for Diffusion Language Models",
+      "summary": "SoloQ presents a novel calibration-free quantization technique specifically designed to optimize Diffusion Language Models, making them more efficient without sacrificing performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.07121",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Pumpire: Unified Benchmark for Metric Distance Estimation",
+      "summary": "Pumpire offers a unified benchmark for evaluating and comparing different methods of metric distance estimation, crucial for various machine learning applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12423",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Continually Post-training Small Models via Synthetic Self-distillation",
+      "summary": "This research explores a method for continually post-training smaller AI models using synthetic self-distillation, enabling them to adapt and improve over time efficiently.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13113",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DiffusionART: Efficient, Stable and Scalable Reinforcement of Diffusion Models",
+      "summary": "DiffusionART proposes a new technique for efficiently, stably, and scalably reinforcing diffusion models, enhancing their performance in generative tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12572",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SepGen: Multi-Stem Audio-Video Separation and Generation in a Single Model",
+      "summary": "SepGen presents a unified model capable of both separating and generating multi-stem audio and video content, streamlining complex multimedia tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.11361",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Reflex: Visually Grounded Reactive Humanoid Control",
+      "summary": "Reflex introduces a system for visually grounded reactive control of humanoid robots, allowing them to respond dynamically to their environment based on visual input.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12772",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
