@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-13",
+  "items": [
+    {
+      "title": "Meta Unveils Muse Wonder, Its First Frontier AI Model",
+      "summary": "Meta has officially launched Muse Wonder, marking its entry into the frontier AI model space, signaling a significant advancement in its AI capabilities.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "S-Space: Exploring Spatial Workspace in Multimodal Language Models",
+      "summary": "Researchers introduce S-Space, a novel approach to integrate and explore spatial workspace concepts within multimodal language models, enhancing their understanding of physical environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13527",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "SoftwareGym: Scaling Computer-Use Agent Training with Diverse Synthesized Software Environments",
+      "summary": "SoftwareGym presents a new method for training AI agents to use computers more effectively by leveraging diverse synthesized software environments, addressing a key challenge in agentic AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12611",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Scaling Agentic Data for Long-Horizon Terminal Intelligence",
+      "summary": "This paper investigates strategies for scaling agentic data to achieve long-horizon terminal intelligence, crucial for developing more autonomous and capable AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13166",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Honeyjar Offers AI Tools to Enhance PR and Communications for Businesses",
+      "summary": "Honeyjar has launched new AI-powered tools designed to significantly improve public relations and communication strategies across various companies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/12/honeyjar-offers-ai-tools-to-improve-pr-and-comms-at-every-company/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "WindBorne Secures Major US Air Force Contract for Balloon Data Technology",
+      "summary": "WindBorne has been awarded a substantial contract by the US Air Force for its innovative balloon-based data collection technology, highlighting its potential for defense applications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "GroundingPI: A Foundation Model for Physical Intelligence with Visual Primitives",
+      "summary": "GroundingPI introduces a new grounding foundation model aimed at achieving physical intelligence by integrating visual primitives, enabling more robust interaction with the real world.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2609.39601",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Can AI Agents Learn Their Way to the Top? Evaluating Heuristic Learning in a Long-Running Game Agent Competition",
+      "summary": "This research evaluates the effectiveness of heuristic learning in AI agents within a long-running game competition, shedding light on their adaptive capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12341",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Work2Skill: Capturing Human GUI Experience for Reusable Agent Skill Induction",
+      "summary": "Work2Skill proposes a method to capture human GUI experience, allowing for the induction of reusable skills in AI agents, making them more proficient in user interface interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12984",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+      "summary": "AgentSWE explores the capability of coding agents to autonomously develop other agents, questioning the effectiveness and alignment of their generated solutions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13361",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Contextual Correction of Parallel Drafts for Speculative Decoding",
+      "summary": "This paper introduces a technique for contextual correction of parallel drafts to improve the efficiency and accuracy of speculative decoding in language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12570",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Humanity's Sixth Sense: Benchmarking Intuitive Visual Reasoning in Multimodal Models",
+      "summary": "Researchers are benchmarking multimodal models on intuitive visual reasoning tasks, aiming to understand if they can replicate a 'sixth sense' for visual understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.08966",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Can a Local LLM Replace Claude Code? The Benchmark Everyone Quotes Is the Wrong One.",
+      "summary": "This article challenges common benchmarks used to compare local LLMs against models like Claude Code, arguing for more relevant evaluation metrics.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rudratosh/can-a-local-llm-replace-claude-code-the-benchmark-everyone-quotes-is-the-wrong-one-2kna",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Every 'No AI Contributions' Policy Is a Level 0 Control",
+      "summary": "This piece argues that policies prohibiting AI contributions are rudimentary controls that fail to address the deeper implications and integration of AI in development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/slabb/every-no-ai-contributions-policy-is-a-level-0-control-1a99",
+      "score": 4,
+      "category": "industry"
+    },
+    {
+      "title": "I Have Four Controls for AI Agents. Each One Stops Measuring the Moment People Know It's There.",
+      "summary": "An author discusses four control mechanisms for AI agents, noting that their effectiveness diminishes once human users become aware of their presence.",
+      "source": "Dev.to",
+      "url": "https://dev.to/mickyarun/i-have-four-controls-for-ai-agents-each-one-stops-measuring-the-moment-people-know-its-there-ne7",
+      "score": 4,
+      "category": "industry"
+    }
+  ]
+}
