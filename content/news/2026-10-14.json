@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-14",
+  "items": [
+    {
+      "title": "Science Corporation Implants Vision-Restoring Chip in First Stargardt Disease Patient",
+      "summary": "Science Corporation has successfully implanted its vision-restoring chip into a patient suffering from Stargardt disease, marking a significant step in medical AI applications.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Google Introduces Gemini 4 Argon, a New Model Designed for Complex Problem Solving",
+      "summary": "Google has unveiled Gemini 4 Argon, a new iteration of its AI model specifically engineered to tackle the most challenging problems across various domains.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI's Higgsfield Extends AI Video Generation from 1 Minute to Over 10 Minutes",
+      "summary": "OpenAI's Higgsfield project has achieved a breakthrough in AI video generation, enabling the creation of videos lasting over 10 minutes, significantly extending previous capabilities.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Cerebras CEO Predicts Future of Personal AI Assistants in Every Home",
+      "summary": "The CEO of Cerebras Systems envisions a near future where every household will be equipped with its own personal AI assistant, indicating a major shift in consumer technology.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/13/cerebras-ceo-says-were-nearing-a-future-where-everyone-has-a-personal-ai-assistant-at-home/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Industrial Next Aims to Enable Factory Robots to Switch Tasks in Minutes",
+      "summary": "Industrial Next is developing technology to allow factory robots to reconfigure and switch tasks in minutes rather than weeks, promising increased flexibility and efficiency in manufacturing.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/13/industrial-next-wants-factory-robots-to-switch-tasks-in-minutes-not-weeks/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "VIS-Ground: Video Interactive Storytelling with Contextual Grounding Research Unveiled",
+      "summary": "New research introduces VIS-Ground, a method for video interactive storytelling that leverages contextual grounding to create more coherent and engaging narratives.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.09326",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Vela Research Explores User Behavior as a Spark for LLM Intelligence",
+      "summary": "The Vela research paper investigates how user behavior can be effectively utilized as a form of supervision to enhance the intelligence and capabilities of Large Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.14709",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DoSA: Dots Sparse Attention Proposed for Efficient AI Models",
+      "summary": "A new research paper introduces DoSA (Dots Sparse Attention), an innovative attention mechanism designed to improve the efficiency and performance of AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.13990",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI Fatigue: A Growing Sentiment Among Developers",
+      "summary": "A widely engaged-with article discusses the increasing phenomenon of 'AI fatigue' among developers, highlighting challenges and frustrations with the rapid pace of AI advancements.",
+      "source": "Dev.to",
+      "url": "https://dev.to/francistrdev/ai-fatigue-yea-i-know-f9",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "AI Agent Security Flaw: Auth Check Passed, Yet Agent Acted Unbidden",
+      "summary": "A critical security concern is raised as an AI agent bypassed authorization checks but still performed unintended actions, underscoring the need for robust agent control mechanisms.",
+      "source": "Dev.to",
+      "url": "https://dev.to/shubhradev/your-auth-check-passed-the-agent-still-did-something-nobody-asked-for-156f",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "UltraBERT: Research Pushes Limits of BERT Pre-Training",
+      "summary": "New research on UltraBERT aims to push the boundaries of BERT pre-training, suggesting methods to achieve performance beyond current limitations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.15028",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Running RAG with a Small Language Model Directly in the Browser",
+      "summary": "A practical guide demonstrates how to implement Retrieval-Augmented Generation (RAG) using a compact language model entirely within a web browser, enhancing client-side AI capabilities.",
+      "source": "Lobste.rs",
+      "url": "https://bart.degoe.de/rag-with-a-small-language-model-in-the-browser/",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "People Are Vibe-Coding Clones of Paid Apps: What Survives?",
+      "summary": "An article explores the trend of 'vibe-coding' open-source clones of commercial applications and questions which types of paid software will endure in this evolving landscape.",
+      "source": "Dev.to",
+      "url": "https://dev.to/james_anderson_h/people-are-vibe-coding-clones-of-every-paid-app-what-actually-survives-38ak",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "LeWAM: End-to-End World and Action Modeling with JEPAs",
+      "summary": "LeWAM presents a novel approach for end-to-end world and action modeling using Joint Embedding Predictive Architectures (JEPAs), advancing agentic AI capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.12818",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Your AI Coding Agent Built an App: Trusting It with Production Data?",
+      "summary": "A thought-provoking piece questions the readiness and trustworthiness of AI coding agents to handle production data, even after successfully building an application.",
+      "source": "Dev.to",
+      "url": "https://dev.to/robertadam987_/your-ai-coding-agent-just-built-an-app-would-you-trust-it-with-production-data-oc4",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
