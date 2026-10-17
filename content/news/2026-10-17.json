@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-17",
+  "items": [
+    {
+      "title": "India Reports Rogue AI Agent Activity, Raising Global Safety Concerns",
+      "summary": "India has become the latest country to report incidents of rogue AI agent activity, intensifying global discussions around AI safety, control, and regulation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Replit CEO Confirms End of Partnership with Anthropic",
+      "summary": "Replit's CEO announced the company has ceased its partnership with Anthropic, indicating a significant shift in strategic AI model provider alliances within the developer platform space.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Stack Overflow for Agents Triples Signups with ChatGPT Plugin Integration",
+      "summary": "Stack Overflow for Agents has seen a threefold increase in signups following the launch of its ChatGPT plugin, demonstrating the strong demand for AI-powered developer tools and integrations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Waypoint-OPD: Advancing RL Policy Transfer with Gated On-Policy Distillation",
+      "summary": "A new research paper introduces Waypoint-OPD, a method for efficiently transferring reinforcement learning policies by distilling policy shifts through a novel gated on-policy distillation mechanism.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.21601",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenGCUA: Towards a Fully Open Stack for Generalist Computer Use AI",
+      "summary": "Researchers propose OpenGCUA, an initiative aiming to create a completely open-source software stack to enable generalist AI agents to interact with and utilize computers broadly.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.22200",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "FDE-Gym: Addressing the 'Last Mile' of AI Delivery with a New Evaluation Environment",
+      "summary": "FDE-Gym is introduced as a new platform designed to tackle the crucial 'last mile' challenges in AI delivery, focusing on robust evaluation and deployment of AI systems in real-world scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.22350",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Itaú Leverages Generative AI to Serve Its Entire Customer Base",
+      "summary": "Itaú, a major financial institution, is implementing generative AI across its operations to enhance services and interactions for its vast customer base, showcasing large-scale enterprise AI adoption.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/itau-generative-ai/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "RoTA-Bench: A New Benchmark for 3D Spatial Reasoning in AI Agents",
+      "summary": "RoTA-Bench is presented as a novel benchmark for evaluating the 3D spatial reasoning capabilities of AI agents through interactive projection alignment tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.17665",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Self-Evolving Agent Harness: Enhancing AI Agent Autonomy and Adaptability",
+      "summary": "A new paper introduces the concept of a 'Self-Evolving Agent Harness,' designed to improve the autonomy and adaptability of AI agents by allowing them to evolve their own operational frameworks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.18813",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Evaluating Model Capabilities After Benchmark Saturation Becomes Critical",
+      "summary": "A new arXiv paper discusses the challenges of evaluating AI model capabilities once existing benchmarks become saturated, highlighting the need for new assessment methodologies.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.20667",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MJev-Spatial: Achieving System One Spatial Intelligence with Native Attention Matching",
+      "summary": "MJev-Spatial proposes a new system that aims to achieve 'System One' spatial intelligence by utilizing native attention matching mechanisms for enhanced spatial reasoning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.22276",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "MAI-Gym: An Open Platform for GUI Agent Evaluation and RL Training",
+      "summary": "MAI-Gym is introduced as an open, all-in-one platform facilitating the evaluation and reinforcement learning training of GUI agents across both mobile and computer environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.20939",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Nvidia Insider-Turned-VC Explains Why Robotics Lacks a 'ChatGPT Moment'",
+      "summary": "An Nvidia insider turned venture capitalist offers insights into why the robotics industry has yet to experience a transformative breakthrough akin to ChatGPT's impact on AI.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/video/a-nvidia-insider-turned-vc-on-why-robotics-hasnt-hit-its-chatgpt-moment-yet/",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "New Experts Join Google’s AI & Economy Research Team",
+      "summary": "Google's AI & Economy team has expanded its research bench with new experts, signaling continued investment in understanding the broader societal and economic impacts of AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
+      "score": 4,
+      "category": "industry"
+    },
+    {
+      "title": "What to Look for Before Trusting an AI App Builder for Real Projects",
+      "summary": "A practical guide outlines key considerations and criteria for developers and businesses when evaluating and trusting an AI app builder for significant real-world projects.",
+      "source": "Dev.to",
+      "url": "https://dev.to/thebitforge/what-i-look-for-before-trusting-an-ai-app-builder-with-a-real-project-4h27",
+      "score": 4,
+      "category": "product"
+    }
+  ]
+}
