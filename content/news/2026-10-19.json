@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-19",
+  "items": [
+    {
+      "title": "Has GPT-6-Astra Achieved Embodied Intelligence?",
+      "summary": "A new paper explores the capabilities of GPT-6-Astra, raising questions about its potential to demonstrate embodied intelligence and interact with the physical world.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.22471",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Pack Light, CarryOn: Building Object-Oriented Context for Long-Horizon Agents",
+      "summary": "Researchers introduce 'Pack Light, CarryOn,' a new method for building object-oriented context that significantly enhances the performance of long-horizon AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.18784",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Anthropic says it’s committing 5% of its shares to a ‘public benefit fund’",
+      "summary": "Anthropic has announced it will allocate 5% of its company shares to a public benefit fund, signaling a commitment to ethical AI development and societal impact.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/18/anthropic-says-it%E2%80%99s-committing-5-of-its-shares-to-a-public-benefit-fund/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Disney agrees to hire the majority of Character.AI’s workforce",
+      "summary": "Disney has reached an agreement to hire most of Character.AI's employees, indicating a strategic move to bolster its AI capabilities and talent pool.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "BizBench: Unveiling Hidden Challenges in Deploying Long-Horizon Agents for Real-World Business",
+      "summary": "A new benchmark, BizBench, highlights the practical difficulties and hidden challenges encountered when deploying long-horizon AI agents in complex real-world business scenarios.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.20424",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+      "summary": "A new study focuses on benchmarking AI agents by evaluating their performance and capabilities when tackling complex, open-ended problems in scientific research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.19159",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "How Itaú is building generative AI for its entire customer base",
+      "summary": "Itaú, a major financial institution, is implementing generative AI solutions to serve its entire customer base, aiming to enhance user experience and operational efficiency.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/itau-generative-ai",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Physical AI is more than robots, says the Nvidia veteran now investing in it",
+      "summary": "A former Nvidia veteran, now an investor, argues that the concept of 'Physical AI' extends far beyond traditional robotics, encompassing broader interactions with the real world.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/podcast/physical-ai-is-more-than-robots-says-the-nvidia-veteran-now-investing-in-it/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Fine-Tuning Qwen3-8B with Tinker: From 50% to 76% Accuracy, and Burning Through My Budget",
+      "summary": "A developer shares their experience fine-tuning the Qwen3-8B model with Tinker, achieving significant accuracy improvements but also incurring substantial computational costs.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gramli/fine-tuning-qwen3-8b-with-tinker-from-50-to-76-accuracy-and-burning-through-my-budget-48mh",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "HexaShell: A Thin Harness for Exploring the Limits of VLM Agents as Robot Coding Agents",
+      "summary": "Researchers introduce HexaShell, a lightweight framework designed to test the boundaries of Vision-Language Model (VLM) agents in their capacity as robot coding agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.23479",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenMobile-2: Building Versatile Mobile Agents with Scalable Environments and App-Native Tools",
+      "summary": "OpenMobile-2 presents advancements in creating adaptable mobile AI agents by leveraging scalable environments and integrating app-native tools for enhanced versatility.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.14157",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Google Beam expands with new regions, partners, and customers",
+      "summary": "Google Beam, an AI-powered service, is expanding its reach by adding new operational regions, forging new partnerships, and acquiring more customers.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "summary": "Stack Overflow for Agents has seen a threefold increase in signups, attributed to the successful integration and adoption of its ChatGPT plugin.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "My AI Experiment Was Going Great Until My Client Replied 😂",
+      "summary": "An AI experiment went awry when a client's unexpected reply exposed the limitations or humorous misinterpretations of the AI system.",
+      "source": "Dev.to",
+      "url": "https://dev.to/hanzla/my-ai-experiment-was-going-great-until-my-client-replied-17kd",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Tree-Aware Posterior Distillation for Long-Horizon Agentic Reinforcement Learning",
+      "summary": "A new research paper introduces Tree-Aware Posterior Distillation, a novel technique designed to improve long-horizon agentic reinforcement learning by leveraging tree-structured knowledge.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.23181",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
