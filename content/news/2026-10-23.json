@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-23",
+  "items": [
+    {
+      "title": "OpenAI Seeks $30 Billion Raise at $1.25 Trillion Valuation Ahead of IPO",
+      "summary": "OpenAI is reportedly working on a new funding round aiming for a $30 billion raise at an astounding $1.25 trillion valuation, signaling a potential IPO in the near future.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "SpatialScout: VLM Agents Actively Explore and Map 3D Scenes",
+      "summary": "Researchers introduce SpatialScout, a system enabling Vision-Language Model (VLM) agents to actively explore and create detailed 3D maps of environments, pushing boundaries in autonomous navigation and understanding.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.26659",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "World Models as Verifiers for GUI Agents: Ensuring Correct Transitions",
+      "summary": "A new research paper explores using world models as verifiers to ensure that GUI agents make correct transitions, addressing a critical challenge in reliable autonomous system interaction.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.11942",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Uber Rival inDrive Plans 2027 Robotaxi Tests in Central Asia with Pony.ai and Nvidia",
+      "summary": "Ride-hailing competitor inDrive announces plans to commence robotaxi trials in Central Asia by 2027, collaborating with autonomous driving leaders Pony.ai and Nvidia.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "AI Agents Left Alone Begin Playing, Demonstrating Emergent Behavior",
+      "summary": "A new observation reveals that when AI agents are left without specific tasks, they spontaneously engage in play, highlighting emergent behaviors in autonomous systems.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Don't Be a Proxy Between Me and Your AI: Advocating for Direct AI Interaction",
+      "summary": "An opinion piece argues against unnecessary intermediaries between users and AI systems, advocating for more direct and transparent interaction methods.",
+      "source": "Dev.to",
+      "url": "https://dev.to/adamthedeveloper/dont-be-a-proxy-between-me-and-your-ai-mcn",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "PrismaCoder: Open Multimodal Code Intelligence through Decomposed Rubric Synthesis",
+      "summary": "PrismaCoder introduces a new approach to open multimodal code intelligence, leveraging decomposed rubric synthesis to advance the understanding and generation of code from various inputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.20538",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Deep Search in Real-World Web Environments",
+      "summary": "A new paper explores advanced techniques for deep search capabilities within complex, real-world web environments, improving how AI agents can navigate and extract information.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30181",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation",
+      "summary": "Researchers present a method to enhance cinematic video generation by making Multimodal Large Language Model (MLLM) latents more effective through factor-aware predictive learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30926",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Hidden Bugs Behind Duplicate API Requests in AI Systems",
+      "summary": "This article delves into the often-overlooked bugs that lead to duplicate API requests, a common issue in AI system development that can impact performance and cost.",
+      "source": "Dev.to",
+      "url": "https://dev.to/hanzla/the-hidden-bugs-behind-duplicate-api-requests-1npb",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Retrieval Augmented Generation Compositionality: Enhancing LLM Capabilities",
+      "summary": "A new study investigates the compositionality of Retrieval Augmented Generation (RAG) to improve the ability of Large Language Models (LLMs) to synthesize information from multiple sources.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.29722",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks",
+      "summary": "Policy-Mask introduces a novel method for budget-aware adaptation of diffusion features, allowing for more efficient application to discriminative tasks without sacrificing performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.28889",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Deep Fusion Memory: A Chunk-Level Parametric Memory for Large Language Models",
+      "summary": "Researchers propose Deep Fusion Memory, a new chunk-level parametric memory architecture designed to enhance the long-term memory and contextual understanding of Large Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.25100",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "\"I'm 93% confident\" is a string, not a probability: Understanding AI Confidence",
+      "summary": "This piece highlights the crucial distinction between an AI's stated 'confidence' level and actual mathematical probability, urging developers and users to interpret AI outputs carefully.",
+      "source": "Dev.to",
+      "url": "https://dev.to/cyclopt_dimitrisk/im-93-confident-is-a-string-not-a-probability-2ndc",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research",
+      "summary": "Quant-Arena presents a new benchmark for evaluating Large Language Model (LLM) agents specifically in the domain of quantitative trading research, aiming to standardize performance assessment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30113",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
