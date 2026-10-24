@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-24",
+  "items": [
+    {
+      "title": "OpenAI Halts Training AI Models on Live Internet Due to 'Significant Risks'",
+      "summary": "OpenAI announced it will no longer train its AI models on the live internet, citing significant risks associated with the practice, marking a major shift in data acquisition strategies for frontier AI.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "EU Member States Approve 'Digital Expropriation' for AI Companies, Raising Privacy Concerns",
+      "summary": "EU Member States have reportedly approved measures allowing for the 'digital expropriation' of European data for AI companies, sparking significant privacy and data rights concerns.",
+      "source": "Lobste.rs",
+      "url": "https://noyb.eu/en/ai-eu-member-states-approve-digital-expropriation-europeans-ai-companies",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "NVIDIA Open-Sources Runtime for Secure AI Agents, Preventing API Key Exposure",
+      "summary": "NVIDIA has open-sourced a new runtime designed to enforce security by preventing AI agents from directly holding API keys, addressing a critical vulnerability in agentic LLM systems.",
+      "source": "Dev.to",
+      "url": "https://dev.to/slabb/agents-should-never-hold-your-api-keys-nvidia-just-open-sourced-the-runtime-that-enforces-it-3jm4",
+      "score": 8,
+      "category": "open-source"
+    },
+    {
+      "title": "Google Launches 'Playground' Experimental Gaming Platform with AI Integration",
+      "summary": "Google introduced 'Playground,' an experimental gaming platform that allows users to create and play custom games, likely leveraging AI for dynamic content generation and interactive experiences.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "WeVisOne-VL: A New Model for Unified Visual Perception from Objects to Pixels",
+      "summary": "Researchers introduce WeVisOne-VL, a novel model aiming to achieve unified visual perception by integrating understanding from both object-level and pixel-level data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.31329",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "NVIDIA CEO Showcases Microduck Robots, Selling 20,000 as a Potential Hot Christmas Toy",
+      "summary": "NVIDIA's CEO demonstrated adorable Microduck robots, which quickly sold 20,000 units, hinting at a potential breakthrough in consumer robotics and AI-powered toys for the holiday season.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI Partners with Poland’s NASK to Enhance AI Safety and Security",
+      "summary": "OpenAI announced a partnership with Poland's National Research Institute (NASK) to collaborate on advancing AI safety and security research and practices.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "How to Run Turing-Complete Malware in PyTorch's Backward Pass",
+      "summary": "A new report details a method to execute Turing-complete malware within PyTorch's backward pass, highlighting a significant security vulnerability in deep learning frameworks.",
+      "source": "Lobste.rs",
+      "url": "https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass/",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Editing Images into Reusable Layers via Compositional Edit-Prior Distillation",
+      "summary": "A new research paper introduces a method for editing images into reusable layers, leveraging compositional edit-prior distillation to enhance flexibility and efficiency in image manipulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.24738",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+      "summary": "IQuest-Q1 is presented as a new development aimed at enhancing the foundational capabilities of agentic command-line interface (CLI) systems, improving their autonomy and functionality.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30949",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Toward Recursive Self-Improvement in Physical AI",
+      "summary": "New research explores the path toward achieving recursive self-improvement in physical AI systems, a critical step for developing more autonomous and capable robots.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.29677",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Rapidly Scaling Online Storage to Serve Over 1 Billion ChatGPT Users (Part II)",
+      "summary": "OpenAI details the second part of its strategy for rapidly scaling online storage infrastructure to support over one billion ChatGPT users, addressing the immense demands of its growing user base.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Securing OpenAI's Frontier Model Training Environment",
+      "summary": "OpenAI shares insights into the measures and strategies employed to secure its frontier model training environment, emphasizing the importance of robust security for advanced AI development.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Building a Multimodal, Suggestion-Based AI Writing Coach with Gemini and Google Docs",
+      "summary": "A developer shares insights on creating a multimodal, suggestion-based AI writing coach by integrating Google's Gemini AI with Google Docs, offering enhanced writing assistance.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/building-a-multimodal-suggestion-based-ai-writing-coach-with-gemini-and-google-docs-ea4",
+      "score": 5,
+      "category": "product"
+    },
+    {
+      "title": "How to Make RAG Show Its Evidence: Claim Verification at 15M-Document Scale",
+      "summary": "A new method is presented to improve Retrieval-Augmented Generation (RAG) systems by enabling them to explicitly show evidence for their claims, enhancing trustworthiness and accuracy at a large scale.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rudratosh/a-correct-answer-and-a-confident-lie-look-identical-heres-how-i-made-rag-tell-them-apart-2n45",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
