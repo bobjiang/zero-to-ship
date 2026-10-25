@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-25",
+  "items": [
+    {
+      "title": "Unlocking Fine-Grained Understanding in Unified Multimodal Models",
+      "summary": "New research introduces a method called 'What Generation Knows' to enhance fine-grained understanding in unified multimodal AI models, improving their ability to interpret complex data.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.23987",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Scaling Latent World Models with Natural Language Actions (LaLa-World)",
+      "summary": "Researchers present LaLa-World, a novel approach to scale latent world models by integrating natural language actions, enabling more intuitive and powerful AI system control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.27851",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Block's New Voice Model Sounds Eerily Human",
+      "summary": "Block (formerly Square) has unveiled a new voice AI model that is remarkably lifelike, pushing the boundaries of synthetic speech generation.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Self-Distilling Future Video Representations for World Action Models",
+      "summary": "A new paper explores self-distilling future video representations to improve world action models, allowing AI to better predict and understand future events in video sequences.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30320",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Uber Rolls Out ChatGPT Work to All Employees with OpenAI Partnership",
+      "summary": "Uber is expanding its partnership with OpenAI to integrate ChatGPT Work across all its employees, aiming to enhance productivity and internal communication.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "AI Rewrites Software Security Clock: Hours, Not Weeks",
+      "summary": "AI is dramatically accelerating software security processes from weeks to hours, though smaller teams risk falling behind without proper adoption.",
+      "source": "Dev.to",
+      "url": "https://dev.to/james_anderson_h/security-changed-with-ai-and-small-teams-are-falling-behind-5ebg",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "The AI Graveyard: A Running List of Projects and Startups That Didn't Make It",
+      "summary": "TechCrunch compiles a sobering list of AI projects and startups that have failed, highlighting the volatile nature of the rapidly evolving AI industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Grok's AI Model Chooses Republicans, OpenAI's Picks Democrats in Political Alignment Test",
+      "summary": "A recent test reveals a partisan lean in leading AI models, with Grok's AI favoring Republicans and OpenAI's model leaning towards Democrats when forced to choose.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Code2Video-Compass: A Benchmark for General-Purpose Code-Based Video Generation",
+      "summary": "A new comprehensive benchmark, Code2Video-Compass, is introduced to evaluate general-purpose code-based video generation across various tasks like text-to-video and image-to-video.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.28416",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
+      "summary": "FilmFlow presents an agentic system designed for 3D virtual film cinematography, automating complex camera movements and scene compositions for virtual productions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30753",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Meta Expert: Cross-Layer Expert Sharing for Efficient MoE Models",
+      "summary": "Meta Expert proposes a novel method for cross-layer expert sharing to achieve storage- and retrieval-efficient Mixture-of-Experts (MoE) models, improving their scalability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.27598",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Introduces Decisions API for More Responsive Apps",
+      "summary": "OpenAI has launched the Decisions API, enabling developers to build more responsive applications by integrating advanced decision-making capabilities into their AI systems.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/decisions-api",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Agent Mosaic: Recognizing Confidentiality Leaks in Agentic LLM Systems",
+      "summary": "New research introduces Agent Mosaic, a system designed to detect confidentiality leaks within complex agentic LLM systems, addressing critical security concerns.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30418",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Heartbeat Thinking: Speculative Reasoning in Realtime Voice Agents",
+      "summary": "Heartbeat Thinking enables real-time voice agents to perform speculative reasoning and tool execution while listening, significantly improving responsiveness and interaction fluidity.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.26233",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Is Complex Agentic Memory Always Needed? Naive RAG Is Stronger Than We Thought",
+      "summary": "A study challenges the assumption that complex agentic memory is always superior, suggesting that naive Retrieval-Augmented Generation (RAG) can be surprisingly effective.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.30755",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
