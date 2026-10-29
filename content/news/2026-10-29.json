@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-29",
+  "items": [
+    {
+      "title": "Microsoft Recorded $10 Billion in Revenue from OpenAI Partnership",
+      "summary": "Microsoft announced it has generated $10 billion in revenue from its partnership with OpenAI, highlighting the significant commercial success of their collaboration.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "The Trinity: Capability-Driven Recursive Self-Improvement for Multimodal Agents",
+      "summary": "New research introduces \"The Trinity,\" a framework enabling multimodal AI agents to recursively self-improve their capabilities, pushing the boundaries of autonomous AI development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.36077",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Expands AI Search Ads Globally Amid Slowing Core Ad Growth",
+      "summary": "Google is expanding its AI-powered search advertisements worldwide as the growth of its traditional ad business decelerates, signaling a major strategic shift towards AI monetization.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Microsoft Shares Azure's Actual Revenue: $33.2 Billion",
+      "summary": "Microsoft disclosed Azure's revenue reached $33.2 billion, underscoring the massive scale and financial success of its cloud computing platform, heavily driven by AI services.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+      "summary": "This paper presents a novel multiscale policy optimization technique designed to improve the performance of LLM agents in complex tasks requiring long-horizon planning and execution.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.35013",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI and ServiceNow Expand Partnership Across Enterprise Workflows",
+      "summary": "OpenAI and ServiceNow announced an expanded partnership aimed at integrating advanced AI capabilities into a broader range of enterprise workflows, accelerating AI adoption in businesses.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Why and How to Do Science When AI Is Better at It: A Framework Grounded in Human Understanding and Direction",
+      "summary": "A new arXiv paper proposes a framework for human scientific endeavor in an era where AI increasingly surpasses human capabilities in scientific discovery, emphasizing human understanding and direction.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2610.36116",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DTCA: Denoising Token Credit Assignment for Reinforcement Learning in Diffusion Language Models",
+      "summary": "New research introduces Denoising Token Credit Assignment (DTCA), a method to improve reinforcement learning in diffusion language models by more effectively attributing credit to individual tokens.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.35201",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+      "summary": "This paper analyzes the computational and performance trade-offs associated with incorporating memory into AI agents, providing insights into its true value and cost.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.34073",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Legora is Building the Agentic Operating System for Legal Work",
+      "summary": "OpenAI highlights Legora, a new venture focused on developing an agentic operating system specifically designed to automate and streamline various legal workflows.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/legora",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation",
+      "summary": "VibeVideoBench is introduced as a new benchmark for rigorously evaluating the capabilities of multimodal AI agents in generating videos based on code-driven instructions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.35864",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "summary": "This research presents PDRVLA, a novel vision-language-action model that incorporates physical dynamics representations to enable more realistic and effective interaction with the real world.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.37381",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "How to Cut Your AI Agent's Input Tokens: What Worked, What Failed, and a Bench to Measure Yours",
+      "summary": "A practical guide offers insights and a benchmarking tool for developers to efficiently reduce the input token count for their AI agents, optimizing performance and cost.",
+      "source": "Dev.to",
+      "url": "https://dev.to/anis_meziani_52aab42304a4a/how-to-cut-your-ai-agents-input-tokens-what-worked-what-failed-and-a-bench-to-measure-yours-f90",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Mercury 3: When AI Is Fast Enough to Stay in the Loop",
+      "summary": "The article discusses Mercury 3, an AI system demonstrating the capability to operate at speeds sufficient for real-time human-AI collaboration, enabling AI to remain actively involved in dynamic processes.",
+      "source": "Dev.to",
+      "url": "https://dev.to/maximsaplin/mercury-3-when-ai-is-fast-enough-to-stay-in-the-loop-3oe5",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?",
+      "summary": "This paper investigates whether evolving an AI's memory during testing can yield better results for scientific discovery than traditional test-time training methods.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.32046",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
