@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-02",
+  "items": [
+    {
+      "title": "Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?",
+      "summary": "This research paper explores the hypothesis that the path to AGI scaling is critically dependent on how System-1 processes enable and interact with System-2 execution.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.39497",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI might rebrand its data centers as ‘AI compute campuses’",
+      "summary": "OpenAI is reportedly considering rebranding its massive data centers as 'AI compute campuses,' signaling a strategic shift in how it communicates its infrastructure and capabilities.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "R^2Orch: Recursive Self-Improvement for Agent Orchestration via Self-Play within a Skill-Internalization Loop",
+      "summary": "A new framework, R^2Orch, is introduced that enables AI agents to recursively self-improve their orchestration capabilities through self-play and a skill-internalization loop.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.22740",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "WeVisCut: The Whole Editing Room in One Agent From Narration to Long-Form Video",
+      "summary": "WeVisCut proposes an AI agent capable of automating the entire long-form video editing process, from initial narration to the final cut.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.38352",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "How to Run Turing-Complete Malware in PyTorch's Backward Pass",
+      "summary": "A concerning discovery reveals a method to execute Turing-complete malware within PyTorch's backward pass, highlighting a significant security vulnerability in AI frameworks.",
+      "source": "Lobste.rs",
+      "url": "https://elonlit.com/scrivings/how-to-run-turing-complete-malware-in-pytorchs-backward-pass/",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Your AI Agent Trusts Everything It Reads — A Field Guide to Hijacking Claude, GPT, Gemini & Copilot",
+      "summary": "This guide details how AI agents can be easily hijacked due to their inherent trust in input, providing insights into vulnerabilities across major LLM platforms.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rudratosh/your-ai-agent-trusts-everything-it-reads-a-field-guide-to-hijacking-claude-gpt-gemini-copilot-1l6k",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "The future of the firm",
+      "summary": "OpenAI shares its perspective on how AI will fundamentally reshape the structure and operations of businesses and organizations in the coming years.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/the-future-of-the-firm",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "HairDeck: Animation-Ready Stylized Hair Cards from a Single Image",
+      "summary": "HairDeck introduces a novel technique for generating animation-ready stylized hair cards directly from a single image, significantly streamlining 3D character design workflows.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.40599",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Co-Design Bench: Multimodal Collaborative Coding Evaluation for Agentic Models",
+      "summary": "Co-Design Bench is presented as a new benchmark specifically designed to evaluate the multimodal collaborative coding capabilities of advanced agentic AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.35138",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Multi-Token Prediction Done Right",
+      "summary": "This paper explores and proposes improved methodologies for multi-token prediction, aiming to enhance the efficiency and accuracy of language model generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.38331",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "IntReal: A Real-World Dataset and Benchmark for Multimodal Interleaved Generation",
+      "summary": "IntReal introduces a new real-world dataset and benchmark specifically tailored for evaluating multimodal interleaved generation tasks, pushing the boundaries of generative AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.38425",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "CEPO: A General Framework for Improving Prompt Optimization in Multi-Agent Systems",
+      "summary": "CEPO is introduced as a general framework designed to significantly enhance prompt optimization strategies within complex multi-agent AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.34722",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AI can make tech CEOs’ lives easier. What about everyone else?",
+      "summary": "This article discusses the uneven impact of AI, questioning whether its benefits for tech CEOs translate into improvements for the broader workforce and society.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "An easy way to try local AI with braindead-local-intelligence",
+      "summary": "A new tool, 'braindead-local-intelligence,' offers a simplified approach for users to experiment with and run AI models locally on their machines.",
+      "source": "Lobste.rs",
+      "url": "https://dataswamp.org/~solene/2026-11-01-braindead-local-intelligence.html",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Let’s Build a Brain",
+      "summary": "This article explores the conceptual and practical challenges of building an artificial brain, delving into the complexities of neural networks and cognitive architectures.",
+      "source": "Lobste.rs",
+      "url": "https://aatishb.com/myriad/lets-build-a-brain/",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
