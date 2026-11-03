@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-03",
+  "items": [
+    {
+      "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights",
+      "summary": "A new paradigm, 'Weight-Space Programming,' explores the ability of Large Language Models to directly manipulate and understand neural network weights.",
+      "source": "Lobste.rs",
+      "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Google takes Dreambeans to India in bid to bring AI-generated personal stories to the masses",
+      "summary": "Google is expanding its Dreambeans AI platform to India, aiming to democratize access to AI-generated personal stories for a broad audience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+      "summary": "A new technique called Wave Forcing aims to achieve extremely fast, streaming video generation, pushing the boundaries of real-time content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.00859",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Y Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
+      "summary": "Y Combinator CEO Garry Tan reveals significant annual spending on AI agent tokens, highlighting the growing operational costs and adoption of advanced AI in business.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Apple may try to increase revenue by doing something with third-party AI apps",
+      "summary": "Apple is reportedly exploring new strategies to generate revenue from third-party AI applications, signaling a potential shift in its App Store policies for AI.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/apple-may-try-to-increase-revenue-by-doing-something-with-third-party-ai-apps/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control",
+      "summary": "Researchers introduce REA, a novel runtime for embodied agents that mimics brain-cerebellum control for asynchronous operations, enhancing robotic intelligence.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.42053",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Introducing the Grid Protectors Program",
+      "summary": "OpenAI launches the Grid Protectors Program, an initiative focused on enhancing the security and resilience of AI systems against emerging threats.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/grid-protectors-program",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Rewarding defenders with bigger bug bounties",
+      "summary": "OpenAI announces increased bug bounties to incentivize security researchers and ethical hackers to identify and report vulnerabilities in their AI models and systems.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use",
+      "summary": "A preview of Apriel Voice 27B is released, an open model designed for advanced capabilities in speech processing, complex reasoning, and effective tool utilization.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.40738",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "FrameForge: Harnessing Priors of Video Foundation Models for Unified Image Generation",
+      "summary": "FrameForge leverages video foundation models to unify and improve image generation by utilizing their inherent priors, leading to more coherent visual outputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.36545",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement",
+      "summary": "This research explores the integration of video generation with AI agent harnesses, enabling agentic video creation, world modeling, and recursive self-improvement.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.40191",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
+      "summary": "Researchers propose a unified harness with open models to democratize the development and deployment of robot-use agents, making advanced robotics more accessible.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.01560",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Scaling Git at OpenAI",
+      "summary": "OpenAI shares insights into their strategies and challenges in scaling Git infrastructure to support their rapidly growing AI development and research efforts.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/scaling-git-at-openai",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "My Agent Gave the Right Answer. Then It Wrote Down That It Was Wrong.",
+      "summary": "A developer recounts a perplexing incident where an AI agent correctly solved a problem but then self-corrected with an incorrect answer, highlighting agent reliability issues.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kenielzep97/my-agent-gave-the-right-answer-then-it-wrote-down-that-it-was-wrong-311d",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "NorthCUA Technical Report: Turbocharging Computer-Use Agents through Experience at Scale",
+      "summary": "The NorthCUA technical report details methods for significantly enhancing computer-use agents by leveraging extensive experience and scaled learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.02102",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
