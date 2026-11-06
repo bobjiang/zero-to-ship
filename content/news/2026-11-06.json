@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-06",
+  "items": [
+    {
+      "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
+      "summary": "Airbnb announces plans to launch an AI-powered travel agent in early 2027, aiming to revolutionize trip planning and booking experiences.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+      "summary": "Google introduces Gemini Omni 1.2 Flash, a new model variant designed for faster and more cost-effective processing of longer video clips.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+      "summary": "OpenAI announces GPT-6 Cyber, a new initiative focused on developing advanced and aligned AI agents for enhanced cybersecurity applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit",
+      "summary": "This research introduces a novel approach to reinforcement learning for streaming video, improving agent performance by assigning credit at the turn-level.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.06728",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+      "summary": "New research explores the development of vision-language-action policies, enabling AI agents to interpret visual information and perform actions more naturally.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.06918",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Meta says US users can now video chat with their Muse AI avatar",
+      "summary": "Meta expands its Muse AI avatar capabilities, allowing US users to engage in video chats with their personalized AI companions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Meta warns that election backlash against data centers could make AI expansion harder",
+      "summary": "Meta expresses concern that public backlash against data centers, potentially fueled by election-related issues, could impede future AI infrastructure expansion.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Congrats to the Kaggle Benchmarking Challenge Winners!",
+      "summary": "Kaggle announces the winners of its latest benchmarking challenge, highlighting advancements in competitive AI model performance.",
+      "source": "Dev.to",
+      "url": "https://dev.to/devteam/congrats-to-the-kaggle-benchmarking-challenge-winners-2moh",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "WebMCP Attack Lab: Can an E-Shop Hijack Your AI Agent?",
+      "summary": "This article explores potential vulnerabilities where malicious e-shops could hijack AI agents, raising concerns about agent security and trust.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gramli/webmcp-attack-lab-can-an-e-shop-hijack-your-ai-agent-4oe5",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
+      "summary": "A new paper introduces FrontierPhysics, a framework designed to evaluate AI agents capable of conducting end-to-end research in physics.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.06910",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?",
+      "summary": "This paper investigates the specific benefits and improvements that multi-turn reinforcement learning brings to the capabilities of Large Language Model agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.06483",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "One Markdown File Can Hijack Your AI Coding Agent: The Hidden Cost of Blindly Trusting AGENTS.md",
+      "summary": "This piece warns about the security risks of blindly trusting `AGENTS.md` files, demonstrating how a single markdown file can compromise an AI coding agent.",
+      "source": "Dev.to",
+      "url": "https://dev.to/johnnylemonny/one-markdown-file-can-hijack-your-ai-coding-agent-the-hidden-cost-of-blindly-trusting-agentsmd-167n",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+      "summary": "New research introduces VFlash, a method for fast and accurate visual planning that utilizes flash primitive decoding to enhance AI agent efficiency.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.08449",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "An AI Testing Presentation Became the Final Push for Organizational Change at My Company",
+      "summary": "A developer shares how an AI testing presentation catalyzed significant organizational change within their company, emphasizing the growing importance of AI in development workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/an-ai-testing-presentation-became-the-final-push-for-organizational-change-at-my-company-12ag",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Don't Write Markdown Files for Your Coding Agent. Write Scripts.",
+      "summary": "An article advises developers to use scripts instead of markdown files for instructing AI coding agents, suggesting a more robust and reliable approach.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/dont-write-markdown-files-for-your-coding-agent-write-scripts-j00",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
