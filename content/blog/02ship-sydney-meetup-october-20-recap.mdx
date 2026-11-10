@@ -1,0 +1,134 @@
+---
+title: "AI News and Shipping a Paid AI Car Recommendation Platform — 02Ship Sydney Meetup — October 20, 2026"
+excerpt: "5 lessons from the October 02Ship Sydney meetup: monthly AI news, and how a small team shipped a paid AI car platform with Claude Code in 3 months."
+date: "2026-10-20"
+author: "Bob Jiang"
+keywords: "Claude, meetup, Sydney, 02Ship, Claude Code, Claude API, Haiku, Sonnet, AI news, AI recommendation engine, LLM evaluation, golden prompt set, Korea, Azure, recap"
+---
+
+# AI News and Shipping a Paid AI Car Recommendation Platform
+
+## TL;DR
+
+- Use the LLM to **understand the user**, not to make the final pick. Keep the **recommendation deterministic**.
+- AI can fill data gaps, but a **human admin approves** new data before users see it.
+- Build a **golden prompt set** and rerun it every time you change the model or the prompt.
+- AI is **overly agreeable** and has no common sense without context. Tell it about **concurrency and throughput** upfront.
+- With AI coding, a job estimated at **28 weeks** shipped in about **12 weeks**.
+
+On **Tuesday, October 20**, builders came to **Haymarket HQ** for the October 02Ship Sydney meetup.
+
+The night had a monthly AI news update, a real client project shipped with Claude, and a long round of community shout-outs.
+
+![Speaker presenting to a full room of builders at the October 02Ship Sydney meetup, Haymarket HQ, October 20 2026](/images/02ship-sydney-meetup-october-20-2026.jpg)
+
+Thanks to **Haymarket HQ** for hosting us again.
+
+## Talk 1: AI Monthly Update — Bob Jiang (02Ship)
+
+I opened with a quick round of AI news from the past month.
+
+### OpenAI
+
+- **o3** — capable at personal agent work.
+- **o4-mini** — flagship-level capability at a lower price.
+- **UltraFast** — a faster processing tier inside ChatGPT. It costs more. It is not a model upgrade.
+- **Responses API** — lets your app route decisions, similar to function calling.
+- **CodeSandbox Cloud** — background coding in the cloud. You come back later and review the work.
+- **Intelligent UI** — interactive, non-text answers. Rolled out on October 7 for paid users and October 8 for free users.
+
+### Anthropic
+
+- The new **Claude 5.5 family**: **Haiku** for fast and scalable work, **Sonnet** for product development, **Opus** for complex tasks.
+- **Claude Code Modes** — custom panels, rules, and reusable workflows you can share with your team.
+- **Claude-managed agents** — scheduled, recurring tasks that run in the cloud.
+
+### Personal AI assistants
+
+I grouped them into three types:
+
+- **Work-focused** assistants.
+- **Personal** assistants for email, subscriptions, and daily coordination: Muse, Instinct, Epoch.
+- **Home automation**: Ball, Ollie.
+
+At the end I asked the room if they want the AI news segment to continue. Most people voted yes, so it stays.
+
+## Talk 2: Shipping a Paid AI Car Recommendation Platform with Claude
+
+This talk was a real client project. The platform was built for a **Korean fintech client**. It is paid, and it is live in production on **Azure**. It was delivered in September.
+
+The team was small and split between Australia and Korea. The speaker worked from Sydney with IT and marketing staff on the Korea side.
+
+### How it works
+
+1. The user types what they want in plain language.
+2. **Claude Haiku** extracts the intent using a 7-point rubric. Examples: fuel efficiency, brand origin, car type.
+3. The system scores cars from a **Postgres** database and returns the **top 3**. This scoring is deterministic.
+4. **Claude Sonnet** writes the description for each car.
+
+### Key design decisions
+
+- **The LLM extracts intent only.** It does not choose the car. The same input gives the same result.
+- **An AI research agent fills data gaps.** It searches the web for missing car data. But a human admin must approve the data before it is served.
+- **Guardrails.** The user prompt is wrapped in a context layer before it reaches the Anthropic or OpenAI API.
+
+### Why not just use ChatGPT?
+
+- The data is grounded in a real database.
+- The output is structured.
+- Invoicing and financing are in scope for phase 2.
+
+### How they test it
+
+They keep a **golden prompt set**. Each prompt has an expected output. AI or a human scores the result. The pass threshold is about **95 to 98%**.
+
+They rerun the full set on every model change and every prompt change.
+
+### Timeline and tools
+
+- Active work was about **3 months**, between May and September.
+- Without AI, the estimate was **28 weeks**. AI coding saved about **16 weeks**.
+- Tools: **Claude CLI, Claude Code, Claude API (Haiku and Sonnet)**, ComfyUI, ChatGPT, Gemini, ElevenLabs.
+- The promotional video was made with **ComfyUI** animation plus an HTML overlay written by Claude.
+
+The platform launched on **September 28**. In 2 days, 10 to 12 Korean media outlets covered it.
+
+### Lessons learned
+
+- **AI has no common sense without enough context.**
+- **AI is overly agreeable.** One example: when the user's budget was too low, it suggested secondhand cars instead of saying no.
+- **Say concurrency and throughput upfront.** AI will not think about them on its own.
+- **AI changed how the team works**, not just how fast. Testing, communication, and coding all changed.
+
+## Community Shout-Outs (Open Mic)
+
+- **Johannes (Amnells)** — built an on-device text-to-speech app with no technical background. It has passed **1,000 installs**.
+- **Richard (GlideStack)** — an AI job application tracker. It matches your CV to a job description, writes cover letters, finds skill gaps, and shows all applications in one dashboard.
+- **Hongyi ([Popwiz](https://popwiz.ai))** — AI image and video production for fashion brands. Works with Shein and 10+ other brands. Has 12,000+ followers on Little Red Book. Finalist (6 of 109) in the Meitu competition, with possible investment.
+- **A real estate platform builder (Thailand)** — looking for software ideas and collaborators.
+- **Shrini (FutureStream)** — a product roadmap tool for teams that build AI agents. Targets agent builders in healthcare, legal, and real estate.
+- **A healthcare AI builder** — works on clinical decision support and radiology image recognition. Looking to connect with GPs and doctors.
+
+If you want to share next time, add your name to the open mic list when you arrive.
+
+## New This Month: Linky NFC Cards
+
+Everyone got a **Linky NFC card** at registration. Tap it on a phone and it opens your LinkedIn profile. If you did not give your LinkedIn when you signed up, the card was blank.
+
+The cards were free to use on the night. You can buy one to keep.
+
+## Get Involved
+
+Want to speak at a future meetup, sponsor an event, or help shape the community? **[Get involved with 02Ship →](https://www.02ship.com/get-involved)**
+
+Speaker application form: https://forms.gle/CuhvaFTHKip9R1At9
+
+## Join the Next Meetup
+
+The next meetup is at **Haymarket HQ**. Same time as before (6:00 to 8:30 PM).
+
+It is free. Spots are limited.
+
+**[See upcoming 02Ship meetups on Luma](https://luma.com/02ship)**
+
+See you there.
