@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-10",
+  "items": [
+    {
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "summary": "Google introduces Gemini 4 Argon, a new AI model designed to tackle complex challenges, signaling advancements in AI capabilities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic reportedly plans to move forward with IPO plans",
+      "summary": "Anthropic, a leading AI research company, is reportedly moving ahead with its initial public offering plans, indicating significant growth and market confidence in the AI sector.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "ChatGPT Enterprise now available in AWS Marketplace",
+      "summary": "OpenAI announces the availability of ChatGPT Enterprise in the AWS Marketplace, making its advanced AI capabilities more accessible to businesses leveraging AWS infrastructure.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Qwenputer: a fully functioning, deterministic RISC-V CPU inside Qwen3.5",
+      "summary": "Researchers have successfully embedded a fully functional, deterministic RISC-V CPU within the Qwen3.5 AI model, showcasing a novel integration of hardware architecture within a language model.",
+      "source": "Lobste.rs",
+      "url": "https://divagr.com/blog/qwenputer",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Jensen Huang reportedly engaged a PR firm with a history of handling high-profile sex scandals a year ago",
+      "summary": "Nvidia CEO Jensen Huang reportedly hired a PR firm known for managing high-profile sex scandals a year prior, raising questions amid recent controversies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/jensen-huang-reportedly-engaged-a-pr-firm-with-a-history-of-handling-high-profile-sex-scandals-a-year-ago/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "A short seller flagged Nvidia CEO’s ties to a suspected Chinese spy six months before the scandal",
+      "summary": "A short seller had reportedly alerted authorities to Nvidia CEO's alleged connections with a suspected Chinese spy half a year before the current scandal erupted.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/a-short-seller-flagged-nvidia-ceos-ties-to-a-suspected-chinese-spy-six-months-before-the-scandal/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+      "summary": "OpenAI introduces 'Control Room,' a centralized system designed to monitor and halt model workloads across its research infrastructure, enhancing safety and operational control.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/control-room",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Everyone Is Building AI to Replace Developers. Nobody Is Building the Plan for What Comes After.",
+      "summary": "This article discusses the prevalent focus on AI replacing developers, highlighting a critical gap in planning for the future roles and societal implications post-automation.",
+      "source": "Dev.to",
+      "url": "https://dev.to/thebitforge/everyone-is-building-ai-to-replace-developers-nobody-is-building-the-plan-for-what-comes-after-4a5o",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
+      "summary": "Confucius4-R2T2 is introduced as a new streaming Automatic Speech Recognition (ASR) model that achieves real real-time transcription with stable prefixes, improving latency and accuracy for live applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.06043",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes",
+      "summary": "SplatAnything proposes a novel Gaussian Spacing Normalization technique to enable efficient feed-forward 3D Gaussian Splatting across diverse scenes, enhancing 3D reconstruction and rendering.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.08264",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Toward the Era of Agentic Embodied Intelligence",
+      "summary": "This paper explores the emerging field of agentic embodied intelligence, discussing the challenges and opportunities in developing AI agents that can interact with and learn from the physical world.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.09124",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "WorldFoundry: Towards Unified Infrastructure for World Intelligence",
+      "summary": "WorldFoundry proposes a unified infrastructure aimed at fostering 'world intelligence' by integrating diverse AI capabilities to build more comprehensive and interactive simulated environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.10771",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PCBRouteAgent: How Close Are LLM Agents to Becoming PCB Routing Engineers?",
+      "summary": "This research investigates the current capabilities of Large Language Model (LLM) agents in performing complex PCB routing tasks, assessing their potential to automate electronic design.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.08175",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "LowRAM: Low-Rank Keys and Amortised Values for Composable KV Cache Compression at Test-Time",
+      "summary": "LowRAM introduces a method for compressing KV caches at test-time using low-rank keys and amortized values, significantly reducing memory footprint for large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.07025",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "LLMs Don't Know What They Know: Benchmarking Temporal Self-Knowledge for Financial Backtesting",
+      "summary": "This study benchmarks the temporal self-knowledge of LLMs in financial backtesting, revealing limitations in their understanding of information timeliness and its impact on decision-making.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.06808",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
