@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-11",
+  "items": [
+    {
+      "title": "OpenAI, Anthropic Face New Oversight as New York’s AI Safety Law Takes Effect",
+      "summary": "OpenAI and Anthropic are now subject to new oversight as New York's AI safety law officially comes into effect, increasing regulatory pressure on leading AI companies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Google Cloud Launches Gemini for Healthcare",
+      "summary": "Google Cloud has launched Gemini for healthcare, offering specialized AI capabilities to transform medical operations and patient care.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Gemini Intelligence: New Features, On More Devices",
+      "summary": "Google is rolling out new Gemini Intelligence features across more devices, enhancing its AI capabilities for a broader user base.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Adobe’s Creative and Productivity Tools Integrate with Google Apps",
+      "summary": "Google and Adobe are deepening their partnership to integrate Adobe's creative and productivity tools more closely with Google's everyday applications.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Acquires Odessia, Travel Startup Created by Sonder Founder",
+      "summary": "OpenAI has acquired Odessia, a travel startup founded by the creator of Sonder, signaling its expansion into new application domains.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/10/openai-acquires-odessia-travel-startup-created-by-sonder-founder/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+      "summary": "Researchers are developing methods for learning diverse tactile representations to enable more general and dexterous manipulation capabilities in robots.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.12806",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "All 7 Anthropic Founders to Cash Out $250M Each in IPO",
+      "summary": "All seven founders of Anthropic are set to cash out approximately $250 million each following the company's initial public offering.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/10/all-7-anthropic-founders-will-each-cash-out-about-250m-in-ipo/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Sage-Taiyi: A Metacognitive Architecture for Scientific Discovery",
+      "summary": "A new metacognitive AI architecture, Sage-Taiyi, is proposed to enhance and accelerate the process of scientific discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.12762",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Detecting Flaky Tests and Finding Their Root Causes with Strands Agents and Gemini",
+      "summary": "This article explores how Strands Agents and Gemini can be utilized to effectively detect and diagnose the root causes of flaky tests in software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/m4rri4nne/detecting-flaky-tests-and-finding-their-root-causes-with-strands-agents-and-gemini-4kan",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Auditable Human-Agent Teams for Autonomous X-ray Experimentation",
+      "summary": "Researchers are developing auditable human-agent teams to enable autonomous X-ray experimentation, enhancing transparency and reliability in scientific processes.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.12933",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "EarthRecord: Multimodal Agents for Land Change Analysis Over Four Decades of Satellite Imagery",
+      "summary": "EarthRecord introduces multimodal agents that analyze four decades of satellite imagery to track and understand land change from pixels to comprehensive insights.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.12934",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Gilbert + Tobin Rethinks the Business of Law with AI",
+      "summary": "Law firm Gilbert + Tobin is leveraging AI to innovate and rethink its business operations, demonstrating AI's growing impact in the legal sector.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning",
+      "summary": "Reframe proposes a novel multi-teacher on-policy distillation method aligned with observations to improve agentic visual reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.12886",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Building Fine-Grained Version Control for Agents with Rust and Durable Objects",
+      "summary": "This article details the creation of a fine-grained version control system for AI agents, utilizing Rust and Cloudflare's Durable Objects for robust state management.",
+      "source": "Lobste.rs",
+      "url": "https://delta.dev/blog/fine-grained-version-control-for-agents",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "ChatGPT Plus for Veterans and Servicemembers",
+      "summary": "OpenAI is offering ChatGPT Plus subscriptions to veterans and servicemembers, expanding access to its advanced AI capabilities for this community.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
