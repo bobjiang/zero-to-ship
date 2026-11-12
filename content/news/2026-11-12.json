@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-12",
+  "items": [
+    {
+      "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+      "summary": "Nvidia's stock has fallen sharply amid reports that its board is preparing to remove CEO Jensen Huang following a major scandal.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "The unfolding Jensen Huang scandal: a timeline",
+      "summary": "A detailed timeline outlines the events surrounding the alleged affair between Nvidia CEO Jensen Huang and a suspected Chinese spy, leading to calls for his ouster.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/11/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "We Keep Hearing About AI Productivity. The QA Group Chat Told a Different Story.",
+      "summary": "Despite widespread claims of AI boosting productivity, a QA team's internal discussions reveal a more complex reality, highlighting challenges and unexpected issues.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/we-keep-hearing-about-ai-productivity-the-qa-group-chat-told-a-different-story-2nma",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+      "summary": "Google introduces the Gemini Decisions API, designed to provide fast, calibrated multimodal decision-making capabilities for developers.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Introducing Businesses in ChatGPT",
+      "summary": "OpenAI launches 'Businesses in ChatGPT,' a new offering tailored to help companies integrate and leverage ChatGPT for various business operations.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-businesses-chatgpt",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Few-Step Streaming Video Generation via Condition Shifting",
+      "summary": "Researchers present a novel method for generating streaming video in just a few steps by effectively shifting conditions, promising more efficient video synthesis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.14033",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Who could replace Jensen Huang? A highly unscientific list of possible successors",
+      "summary": "As speculation mounts about Jensen Huang's potential departure, TechCrunch offers a speculative list of individuals who might step in as Nvidia's next CEO.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+      "summary": "Google Labs unveils Tabletop, a new platform offering customizable and collaborative virtual spaces for groups to plan, play, and work together using AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "summary": "JioStar's chief architect shares insights into the challenges and successes of implementing AI discovery systems for a massive user base of 500 million.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/jiostar-vijay-seshadri",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
+      "summary": "A new research paper introduces Tree-Ising, a method that uses bit-level Ising edits to effectively repair and improve the performance of large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.14210",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "World In-Context Learning for Agentic Robot Manipulation",
+      "summary": "New research explores how agentic robots can achieve advanced manipulation tasks through 'world in-context learning,' improving their adaptability and skill acquisition.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.12885",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
+      "summary": "A study proposes using evidence-linked memory to mitigate performance degradation in LLM agents, ensuring more reliable and accurate responses by grounding information.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.14320",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Helping caregivers use AI in everyday life",
+      "summary": "OpenAI highlights initiatives and tools designed to empower caregivers by integrating AI solutions into their daily routines for support and efficiency.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "AI Code Is Unmaintainable? So Is Ours.",
+      "summary": "This article provocatively argues that while AI-generated code often faces criticism for being unmaintainable, human-written code frequently suffers from similar issues.",
+      "source": "Dev.to",
+      "url": "https://dev.to/dannwaneri/ai-code-is-unmaintainable-so-is-ours-3mek",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "dNaViT: Discrete Codes are General-Purpose Visual Representations",
+      "summary": "Researchers introduce dNaViT, demonstrating that discrete codes can serve as effective general-purpose visual representations, simplifying and unifying visual processing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.12426",
+      "score": 7,
+      "category": "research"
+    }
+  ]
+}
