@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-13",
+  "items": [
+    {
+      "title": "Democrats Launch Nvidia Investigation Over Alleged 'Scheme' with Trump",
+      "summary": "Democrats have initiated an investigation into Nvidia, sending a scathing letter to CEO Jensen Huang regarding an alleged scheme involving the company and former President Trump.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Google Search Gets Major Upgrade with Gemini 4 Hydrogen Integration",
+      "summary": "Google Search has received a significant enhancement through the integration of Gemini 4 Hydrogen, promising advanced AI capabilities for search queries.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "The Unfolding Jensen Huang Scandal: A Detailed Timeline",
+      "summary": "A comprehensive timeline details the unfolding scandal surrounding Nvidia CEO Jensen Huang, highlighting its potential implications for the tech industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
+      "summary": "New research explores methods for scaling the supervision of mathematical proofs by leveraging structured textbook data, aiming to improve AI's reasoning capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.40394",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Incentivizing Self-Learning in Large Language Models via Reinforcement Learning",
+      "summary": "A new paper proposes using reinforcement learning to incentivize self-learning behaviors in large language models, potentially leading to more autonomous and capable AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2610.39671",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Your MCP Servers Are Silently Draining Your Context Window: The Hidden Cost of Tool-Heavy AI Agents",
+      "summary": "An article highlights how tool-heavy AI agents can inadvertently consume significant context window resources, leading to performance issues and hidden costs for MCP servers.",
+      "source": "Dev.to",
+      "url": "https://dev.to/necoz/your-mcp-servers-are-silently-draining-your-context-window-the-hidden-cost-of-tool-heavy-ai-agents-fkl",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Muse Now Offers Paid Calling to US Businesses",
+      "summary": "The AI assistant Muse has expanded its capabilities to include placing calls to U.S. businesses, a feature now available to paying subscribers.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation, Imputation, and Prediction",
+      "summary": "Researchers introduce a new benchmark to evaluate generalist tabular models across diverse tasks including data generation, imputation, and prediction, providing a comprehensive assessment of their capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.13001",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+      "summary": "A new technique called SteerDistill is proposed for quantizing LLM agents, utilizing closed-loop teacher steering to maintain performance while reducing model size.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.13410",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations",
+      "summary": "MACaQ presents a fast and model-agnostic calibrated quantization method designed for low-precision weights and activations, enhancing efficiency in AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.10649",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+      "summary": "BirdDreams introduces a novel approach for generating videos from both bird's-eye view (BEV) and first-person perspectives, creating a plausible and reactive world model for autonomous driving simulations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.14815",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VS Code Extension Transforms Any Free Chatbot Website into an AI Agent",
+      "summary": "A new VS Code extension allows users to convert virtually any free chatbot website into a functional AI agent, offering a novel way to leverage existing conversational AI tools.",
+      "source": "Dev.to",
+      "url": "https://dev.to/effessdev/a-vs-code-extension-to-turn-any-free-chatbot-website-into-an-ai-agent-kind-of-1jfb",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "The Surprising Effectiveness of Deleting Weights in LLM Post-Training",
+      "summary": "Research reveals the unexpected effectiveness of strategically deleting weights in large language models after initial training, leading to potential efficiency gains without significant performance loss.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.10866",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
+      "summary": "Duo introduces a reciprocal world model designed to enable full-duplex interaction in AI systems, allowing for more natural and continuous communication.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.15131",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Read Less, Solve More: Token-Efficient Sparse Reading of External Content for AI Agents",
+      "summary": "A new paper proposes a token-efficient sparse reading mechanism for AI agents to process external content, enabling them to solve tasks more effectively with fewer computational resources.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2608.22237",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
