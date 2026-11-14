@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-14",
+  "items": [
+    {
+      "title": "Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say",
+      "summary": "The departure of Nvidia CEO Jensen Huang is reportedly creating significant uncertainty and a funding gap for AI startups, according to venture capitalists and founders.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+      "summary": "A new benchmark, SO-Arena, is introduced to evaluate the capabilities and reliability of 'System One' AI models, which are designed for rapid, intuitive responses.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.15777",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "AI agent startup LangChain hits $3B valuation",
+      "summary": "AI agent development platform LangChain has achieved a significant milestone, reaching a $3 billion valuation in its latest funding round.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!",
+      "summary": "Reports indicate that export-restricted Nvidia chips are still being utilized to power China's most advanced AI models, raising concerns about trade regulations.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing ChatGPT Wallet",
+      "summary": "OpenAI has launched ChatGPT Wallet, a new feature designed to integrate financial transactions and services directly within the ChatGPT platform.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-chatgpt-wallet",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "PhysLoop: Harnessing LLMs' Physics Awareness for Self-Improving Video Generation Models",
+      "summary": "Researchers propose PhysLoop, a method that leverages Large Language Models' understanding of physics to enable self-improvement in video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.16748",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Congrats to the Hacktoberfest Open-Source AI Challenge Week 4: Ghost in the Machine Winners!",
+      "summary": "The winners of the Hacktoberfest Open-Source AI Challenge Week 4, focusing on 'Ghost in the Machine' themes, have been announced, celebrating community contributions to open-source AI.",
+      "source": "Dev.to",
+      "url": "https://dev.to/devteam/congrats-to-the-hacktoberfest-open-source-ai-challenge-week-4-ghost-in-the-machine-winners-nok",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
+      "summary": "A new technique called G-STAR is introduced to achieve deeply compressed autoregressive generation by efficiently scaling token capacity.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.13004",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
+      "summary": "Open Vision Banana presents a comprehensive and open-source framework for generative visual perception, offering a new recipe for the community.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.15844",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents",
+      "summary": "This research explores the different roles and decision-making processes within long-horizon AI agents, categorizing them as actors, judges, or teachers.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17167",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "remove.bg Is Shutting Down — Here's a Free, No-Upload Alternative",
+      "summary": "The popular image background removal service remove.bg is shutting down, prompting the community to share free, privacy-focused alternatives that don't require uploading images.",
+      "source": "Dev.to",
+      "url": "https://dev.to/akhourianmolkumar/removebg-is-shutting-down-heres-a-free-no-upload-alternative-4ebo",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Ropedia Xperience 2: A Gold Standard for Scaling Physical AI Environments and Behaviors",
+      "summary": "Ropedia Xperience 2 is introduced as a new benchmark and environment for effectively scaling physical AI simulations and complex agent behaviors.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17060",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "On the Design of Hyper-Connections: Simplification, Stability, and Scalability",
+      "summary": "A new paper investigates the fundamental design principles of hyper-connections in neural networks, focusing on simplification, stability, and scalability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.05984",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models",
+      "summary": "TTB (Test-time Baking) is proposed as an efficient rendering technique for decoder-only view synthesis models, improving performance during inference.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17331",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Can't Beat Free: Gemma 4 31B on AMD Token Lab, with a Local Chat Page and an ADK Agent",
+      "summary": "A guide demonstrates how to run the Gemma 4 31B model on AMD Token Lab for free, including setting up a local chat interface and an ADK agent.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/cant-beat-free-gemma-4-31b-on-amd-token-lab-with-a-local-chat-page-and-an-adk-agent-c5b",
+      "score": 6,
+      "category": "open-source"
+    }
+  ]
+}
