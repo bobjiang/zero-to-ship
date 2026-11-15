@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-15",
+  "items": [
+    {
+      "title": "Rethinking Criteria Exposure in Embodied Self-Improvement for AI Agents",
+      "summary": "A new research paper explores whether AI agents learn the task itself or merely the verifier's criteria, proposing a re-evaluation of self-improvement methods in embodied AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.08318",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Introduces Gemini Omni 1.2 Flash for Faster, Cost-Effective Video Processing",
+      "summary": "Google announces Gemini Omni 1.2 Flash, a new model designed for faster and more cost-effective processing of longer video clips, enhancing its multimodal capabilities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "WorldDraft: Can Video Models Render Worlds from Code?",
+      "summary": "WorldDraft introduces a novel concept where video models are explored for their potential to render entire virtual worlds based on code, similar to how code builds software.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.16217",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Nvidia Faces Scrutiny Over Security Lapses and Leadership Changes",
+      "summary": "TechCrunch reports on questions surrounding Nvidia's security team and a petition signed by prominent tech executives, including Elon Musk, calling for Jensen Huang's reinstatement, indicating potential internal turmoil or external pressure.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Unbundling Multimodal Vision Encoding for Improved AI Understanding",
+      "summary": "New research delves into 'unbundling' multimodal vision encoding, aiming to improve how AI models process and understand information from diverse visual inputs.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17334",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Practical Guidelines for Integrating AI Coding Agents into Repositories",
+      "summary": "A developer shares practical advice on setting up AI coding agents with '10 Lines' of instructions to ensure safe and effective interaction with existing code repositories.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/10-lines-to-give-your-coding-agent-before-it-touches-your-repo-2ab9",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Factored One-sided Adam-Moment: A Scalable Optimization Method for AI",
+      "summary": "A new paper introduces 'Factored One-sided Adam-Moment (SOAP)', an optimization algorithm promising practical and scalable performance for AI model training.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.16905",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The AI Graveyard: A Growing List of Failed Projects and Startups",
+      "summary": "TechCrunch compiles a running list of AI projects and startups that have ceased operations, highlighting the high-risk nature and competitive landscape of the AI industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Customer Stories Highlight AI's Impact on Business Productivity",
+      "summary": "OpenAI shares new customer success stories, demonstrating how companies like Shield and Amplitude are leveraging OpenAI's models to streamline workflows, improve product development, and double revenue.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/business/customer-stories/shield",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Evaluating Visual Interaction Models with Interactive Visual Gym",
+      "summary": "Researchers introduce 'Interactive Visual Gym,' a new framework for evaluating visual interaction models by simulating users within interactive virtual environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.08286",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AI Coding Agents: The Hidden Details in Summaries and the Review Bottleneck",
+      "summary": "Developers discuss the limitations of AI coding agents, noting how they can omit crucial details in summaries and contribute to a 'review bottleneck' as code generation becomes cheap but judgment remains critical.",
+      "source": "Dev.to",
+      "url": "https://dev.to/debashish_ghosal/your-ai-coding-agent-wrote-a-600-word-summary-what-it-skipped-is-in-the-fine-print-1h7d",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "UniSpark: Exploring Hybrid Attention for Multimodal Understanding and Generation",
+      "summary": "UniSpark proposes a hybrid attention mechanism to advance multimodal understanding and generation in AI models, improving their ability to process and create content across different data types.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.16517",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Evolving Infra: Scaling LLM Serving for Agent-Adaptive Systems",
+      "summary": "New research explores 'Evolving Infra,' a method for agent-adaptive LLM serving at scale, addressing the infrastructure challenges of deploying large language models for dynamic AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.12304",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AI-Powered Jira Checks for Enhanced Software Development Workflow",
+      "summary": "A developer shares how they integrated AI to make Jira proactively check for completion, preventing bugs and improving the reliability of 'done' statuses in software development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/wst2002rk/jira-said-done-it-wasnt-and-the-bug-showed-up-later-so-i-made-jira-check-first-9ed",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction",
+      "summary": "This paper investigates 'Who Remembers What?' by proposing a multi-granularity memory extraction technique to improve understanding and interaction in complex multi-user, multi-agent AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.10439",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
