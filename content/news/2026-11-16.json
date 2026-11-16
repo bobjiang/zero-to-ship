@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-16",
+  "items": [
+    {
+      "title": "Apple Launches New App to Study AI's Role in Health",
+      "summary": "Apple has introduced a new application designed to research how individuals utilize AI technologies for managing and improving their health, marking a significant step into AI-driven health data collection.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+      "summary": "A new paper explores the future of robotics, highlighting the emergence of agentic robotic systems that promise a transformative impact across various industries.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.18359",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Indian Chip Startup Bharat Semi Secures $24M Seed Round for Global AI Sensor Market",
+      "summary": "Indian semiconductor startup Bharat Semi has successfully raised a $24 million seed round, aiming to expand its presence in the global market for AI-powered sensors.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Is Bad News for Jensen Huang Also Bad News for the AI Industry?",
+      "summary": "An analysis questions whether potential setbacks for NVIDIA CEO Jensen Huang could signal broader challenges for the entire artificial intelligence industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agents",
+      "summary": "Researchers introduce 'Gamer,' a new foundation model capable of understanding vision, language, and actions to create generalist AI agents for complex, long-horizon tasks in real-time gaming environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.18397",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Emergent Biological Capabilities in a Foundation Model for Molecular Interactions",
+      "summary": "A new foundation model demonstrates emergent capabilities in understanding molecular interactions, hinting at significant advancements for AI applications in biology and drug discovery.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.14504",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Explores Foundational Physics with New Research on Standard Model on a Lattice",
+      "summary": "OpenAI has published new research detailing a step toward defining the Standard Model of particle physics on a lattice, indicating a deeper dive into scientific computing with AI.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/step-toward-defining-the-standard-model",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "How Amplitude Ships Product Improvements in 1–2 Days with OpenAI",
+      "summary": "Amplitude shares insights into how they leverage OpenAI's technologies to rapidly iterate and deploy product improvements, significantly accelerating their development cycle.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/business/customer-stories/amplitude",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Does the Ranking Hold? Auditing Hallucination Detectors on Small, Quantized, On-Device LLMs",
+      "summary": "A practitioner-focused audit investigates the effectiveness of hallucination detectors when applied to small, quantized, and on-device large language models, crucial for real-world deployment.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.17339",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "When Should LLM Agents Forget? Memory Filtering Under Query-Critical Resolver Errors",
+      "summary": "New research addresses the critical challenge of memory management in LLM agents, proposing strategies for memory filtering to mitigate errors in query resolution.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.17338",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Agent-R^2: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
+      "summary": "This research introduces Agent-R^2, a method for scaling AI agents to perform realistic productivity tasks by synthesizing data from real-world sources, enhancing their practical applicability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.08219",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MEM-SQL: Memory-Empowered Text-to-SQL",
+      "summary": "A new approach called MEM-SQL enhances text-to-SQL capabilities by integrating memory mechanisms, allowing for more robust and context-aware database querying through natural language.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.18338",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "HALO: Human-Aligned Data Collection for WhoLe-body MObile Manipulation",
+      "summary": "HALO presents a novel framework for collecting human-aligned data specifically designed for whole-body mobile manipulation, crucial for developing more intuitive and capable robotic systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.16439",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "MCP, A2A, UCP, AP2... Confused? A Simple Map of AI Agent Protocols (November 2026)",
+      "summary": "A helpful guide provides a clear overview and map of the increasingly complex landscape of AI agent protocols, simplifying understanding for developers and practitioners.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/mcp-a2a-ucp-ap2-confused-a-simple-map-of-ai-agent-protocols-november-2026-3ph",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "One Model Gateway Across Clouds: LiteLLM on Cloud Run and Azure with Zero API Keys",
+      "summary": "A practical guide demonstrates how to deploy LiteLLM as a unified model gateway across Google Cloud Run and Azure, enabling secure, API key-less access to various AI models.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/one-model-gateway-across-clouds-litellm-on-cloud-run-and-azure-with-zero-api-keys-3ma7",
+      "score": 6,
+      "category": "product"
+    }
+  ]
+}
