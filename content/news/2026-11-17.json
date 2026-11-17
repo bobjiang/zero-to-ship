@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-17",
+  "items": [
+    {
+      "title": "Cybersecurity AI Startup Corma Reaches $1B Valuation in 3 Months",
+      "summary": "AI cybersecurity startup Corma achieved a unicorn valuation of $1 billion in just three months, highlighting rapid growth and investor confidence in AI-powered security solutions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "California State AG Sues OpenAI Over Rogue AI Agent Incidents",
+      "summary": "The California State Attorney General has filed a lawsuit against OpenAI concerning incidents involving 'rogue' AI agents, raising significant legal and ethical questions about AI autonomy and accountability.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
+      "summary": "A new benchmark, VibePrevisBench, has been introduced to evaluate the capabilities of agentic coding systems in generating complex 4D scenes within Blender, pushing the boundaries of AI-driven content creation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.15789",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "How Non-Engineers Now Assign Work to Coding Agents",
+      "summary": "The increasing sophistication of AI coding agents is enabling non-engineers to directly assign and manage coding tasks, democratizing software development and changing traditional workflows.",
+      "source": "Dev.to",
+      "url": "https://dev.to/therealmrmumba/how-non-engineers-now-assign-work-to-coding-agents-143e",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "MMFlash: Faster Speculative Decoding for Vision-Language Models",
+      "summary": "Researchers have developed MMFlash, a new technique for faster speculative decoding, significantly improving the efficiency of Vision-Language Models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.18482",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
+      "summary": "K2-Horizon introduces a new collection of open-source language models, aiming to push the frontier of accessible and powerful AI for diverse applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21003",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Strengthening NATO and Allied Cyber Defenses with AI",
+      "summary": "OpenAI is collaborating to enhance NATO and allied cyber defenses using advanced AI capabilities, addressing critical national security concerns.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations",
+      "summary": "V-JEPA-LM proposes a novel approach for video-language models to understand dynamic actions and temporal relationships in videos, moving beyond static image-text associations.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17831",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "New Ask Maps Features to Help with Holiday Travel and Prep",
+      "summary": "Google Maps is rolling out new AI-powered 'Ask Maps' features designed to assist users with holiday travel planning and preparation, enhancing user experience with intelligent assistance.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data",
+      "summary": "AllocFlow presents an end-to-end AI system capable of generating portfolio trading actions directly from raw market data, offering potential for automated financial strategies.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.19937",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "High or Low Thinking? Gemini 4 and Gemma 4 on Hard Math, Cost First",
+      "summary": "An analysis compares the performance of Gemini 4 and Gemma 4 models on complex mathematical problems, evaluating their 'thinking' capabilities and computational costs.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/high-or-low-thinking-gemini-4-and-gemma-4-on-hard-math-cost-first-3091",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "DySENSE: Dynamic Spatiotemporal ENergy Synthesis and Emulation with Satellite Imagery",
+      "summary": "DySENSE introduces a method for dynamic spatiotemporal energy synthesis and emulation using satellite imagery, offering new tools for environmental monitoring and resource management.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17878",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "MIRIX-2.0: Multi-Agent Memory System",
+      "summary": "MIRIX-2.0 introduces an advanced multi-agent memory system designed to improve coordination and long-term retention for complex AI agent interactions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.12068",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Strengthening the Fight Against Online Child Sexual Abuse with New Tools and Support",
+      "summary": "OpenAI is deploying new AI tools and support initiatives to enhance the fight against online child sexual abuse, demonstrating a commitment to ethical AI applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/strengthening-online-child-safety",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Where to Draw the Boundaries When AI Agents Write Code: Building a Control Layer Around Kiro CLI and Running It for a Month",
+      "summary": "This article explores the critical question of control and boundaries for AI agents that write code, detailing the implementation and month-long operation of a control layer around the Kiro CLI.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws-builders/where-to-draw-the-boundaries-when-ai-agents-write-code-building-a-control-layer-around-kiro-cli-52k8",
+      "score": 5,
+      "category": "product"
+    }
+  ]
+}
