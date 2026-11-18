@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-18",
+  "items": [
+    {
+      "title": "Nvidia is abandoning China after Jensen Huang’s ouster",
+      "summary": "Nvidia is reportedly abandoning the Chinese market following the o ouster of CEO Jensen Huang, signaling a major shift in global AI hardware supply chains.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing GPT-6.2 Astra and Sol",
+      "summary": "OpenAI unveils its latest flagship models, GPT-6.2 Astra and Sol, promising significant advancements in AI capabilities and performance.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
+      "summary": "Nvidia's venture capital investments in AI startups have reached $65 billion, but the departure of Jensen Huang raises uncertainty about the company's future investment strategy.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Introducing ChatGPT for Sales",
+      "summary": "OpenAI launches ChatGPT for Sales, a specialized AI tool designed to enhance sales processes and improve customer engagement for businesses.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
+      "summary": "A new paper details the development of TeleChat to Xing4, showcasing advancements in frontier agentic models optimized for domestic chips and frameworks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.22115",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Put Gemini to work for you",
+      "summary": "Google highlights new features for Gemini, enabling users to integrate the AI assistant more deeply into their daily tasks and workflows.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Astra for Law leads in legal intelligence",
+      "summary": "OpenAI announces Astra for Law, a new specialized version of its GPT-6.2 model tailored to provide advanced legal intelligence and support for the legal sector.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/astra-law-6-2",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Nvidia promises that revenue will keep soaring — for now",
+      "summary": "Despite recent leadership changes, Nvidia assures investors that its revenue growth trajectory is expected to continue its upward trend in the near future.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Sage S2.1 Flash Technical Report",
+      "summary": "A new technical report introduces Sage S2.1 Flash, detailing performance improvements and new capabilities for this AI model.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21072",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs",
+      "summary": "AscendGYM is introduced as a new benchmark for optimizing kernel performance on Ascend NPUs, focusing on cost-awareness for real-world AI workloads.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17621",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "InclusionMed: Benchmarking AI for Inclusive Healthcare",
+      "summary": "InclusionMed is presented as a new benchmark designed to evaluate AI models for their ability to provide inclusive and equitable healthcare solutions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21218",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
+      "summary": "SWE-CoWork proposes a new benchmark to evaluate the performance of coding agents as digital employees within organizational software development workflows.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.20218",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "AI agents open 17 million pull requests a month. I built a gate that rejects the ones that lie.",
+      "summary": "A developer shares their experience building a 'gate' to filter out deceptive pull requests generated by AI agents, which are now opening millions monthly.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws-builders/ai-agents-open-17-million-pull-requests-a-month-i-built-a-gate-that-rejects-the-ones-that-lie-46n7",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
+      "summary": "ScaleVLA introduces a new approach to scaling Vision-Language-Action models, achieving an impressive 552 billion parameters for enhanced embodied AI capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21607",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Weight-Space Programming Doesn't Need Transformers",
+      "summary": "This paper explores an alternative programming paradigm, 'Weight-Space Programming,' arguing that it can achieve powerful results without relying on transformer architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.22055",
+      "score": 4,
+      "category": "research"
+    }
+  ]
+}
