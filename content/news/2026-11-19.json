@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-19",
+  "items": [
+    {
+      "title": "Amidst fears of AI cyberattacks, Satya Nadella says lots of critical infrastructure is &#8216;unpatchable&#8217;",
+      "summary": "Microsoft CEO Satya Nadella highlights the alarming vulnerability of critical infrastructure to AI-powered cyberattacks, noting that much of it cannot be patched.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Is Coding with AI Actually Faster and Cheaper?",
+      "summary": "This article explores the practical implications and effectiveness of using AI tools in software development, questioning if they truly deliver on promises of speed and cost reduction.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sylwia-lask/is-coding-with-ai-actually-faster-and-cheaper-2810",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Gemini Intelligence: New features, on more devices",
+      "summary": "Google announces new features and broader availability for its Gemini AI, including support for lower-memory Android devices, expanding its reach and capabilities.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Elon Musk says ousting Jensen Huang is like &#8216;kicking Michael Jordan off your team&#8217;",
+      "summary": "Elon Musk publicly expresses strong support for NVIDIA CEO Jensen Huang, emphasizing his irreplaceable value to the AI industry amidst hypothetical scenarios.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/18/elon-musk-says-ousting-jensen-huang-is-like-kicking-michael-jordan-off-your-team/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Beyond Answering: Learning to Speak First and Act in Streaming Video",
+      "summary": "New research introduces a model capable of proactively speaking and acting in real-time streaming video environments, moving beyond simple question-answering to more interactive AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17048",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "PROLA: Principal-Orthogonal Low-rank Adaptation for Predictive Spatiotemporal Weather Downscaling",
+      "summary": "Researchers propose PROLA, a novel low-rank adaptation method, to improve the efficiency and accuracy of predictive spatiotemporal weather downscaling using AI models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.11318",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "VideoNexus: Video Perception Beyond the Reasoning Context",
+      "summary": "This paper introduces VideoNexus, a new approach to video perception that allows AI models to understand and interpret video content beyond immediate reasoning contexts.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21392",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Jeveration: System One Models Now Generate",
+      "summary": "A new paper introduces Jeveration, a system that enables 'System One' type AI models to generate content, potentially bridging intuitive and deliberative AI capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.24738",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "The Resolution Hypothesis: Agent Evolution's Key Is Identifying Improvements",
+      "summary": "This paper proposes the Resolution Hypothesis, suggesting that the evolution of AI agents is fundamentally driven by their ability to identify and implement improvements.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.23068",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "From Repositories to Training Environments: Scaling Long-Horizon Coding Agents with Environment Evolution Loop",
+      "summary": "Researchers present a method for scaling long-horizon coding agents by evolving training environments, enabling more complex and sustained AI-driven software development.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21152",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "ALIVE: Making Streaming Video Models Interactive",
+      "summary": "ALIVE presents a new approach to make streaming video models interactive, allowing for real-time engagement and manipulation of video content by AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21366",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Game2Player: Scaling Gameplay Experience for Visual Agents through Environment-Player Co-Development",
+      "summary": "This research explores a co-development paradigm where AI agents and game environments evolve together to scale gameplay experiences for visual AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.24154",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Retrieval Ran First. Was Its Result Actually Ready?",
+      "summary": "This article discusses challenges in AI systems where retrieval components might execute prematurely, leading to suboptimal or incomplete results before the system is fully prepared.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/retrieval-ran-first-was-its-result-actually-ready-4oc2",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "WorldRuler: Interactive World Modeling under Configurable Rules",
+      "summary": "WorldRuler introduces an interactive world modeling framework that allows AI systems to simulate and interact with environments based on user-configurable rules.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.24869",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "FMT: Lossless Image Compression in a Fixed Number of Parallel Steps",
+      "summary": "This research introduces FMT, a novel method for lossless image compression that operates efficiently in a fixed number of parallel steps, promising faster processing.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.23108",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
