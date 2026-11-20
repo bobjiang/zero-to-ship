@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-20",
+  "items": [
+    {
+      "title": "Apple May Be Developing Its Own AI Agent to Control Your Mac",
+      "summary": "Apple is reportedly working on a proprietary AI agent designed to operate and manage tasks directly on macOS, signaling a deeper integration of AI into its ecosystem.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "Anthropic Founders Cash Out Nearly $2B in Record-Breaking IPO",
+      "summary": "Anthropic's seven founders collectively sold close to $2 billion in shares during the company's recent IPO, marking a significant financial milestone for the AI safety-focused firm.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Meta's New Muse Charm Wearable AI Device May Cost $300",
+      "summary": "Meta's upcoming Muse Charm, a new AI-powered wearable device, is rumored to launch with a price tag of $300, indicating Meta's continued push into consumer AI hardware.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Introducing Tool Retrieval in the Gemini API",
+      "summary": "Google has launched Tool Retrieval capabilities within the Gemini API, enabling developers to more effectively integrate external tools and services with their AI agents.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "How OpenAI's Performance Factory Keeps ChatGPT Fast",
+      "summary": "OpenAI details its 'Performance Factory' approach, a systematic method for continuously optimizing and maintaining the speed and efficiency of ChatGPT at scale.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "The Gemini App Now Available on Lower-Memory Android Devices",
+      "summary": "Google has expanded the availability of its Gemini AI app to Android devices with lower memory specifications, increasing accessibility for a broader user base.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "After the Thirty-Six Stratagems: Three Questions for AI Strategy",
+      "summary": "This article explores three critical questions regarding AI strategy, drawing parallels to ancient Chinese military tactics to guide modern AI development and deployment.",
+      "source": "Dev.to",
+      "url": "https://dev.to/xulingfeng/after-the-thirty-six-stratagems-three-questions-gb1",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "What Team-Wide AI Adoption Actually Takes",
+      "summary": "This piece delves into the practical challenges and necessary steps for successful, widespread AI adoption across an entire team or organization, beyond just individual use cases.",
+      "source": "Dev.to",
+      "url": "https://dev.to/peter/what-team-wide-ai-adoption-actually-takes-1gbh",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Everybody Has an AI Apocalypse Story. Almost Nobody Reads the Fine Print.",
+      "summary": "The article critiques the prevalent narratives of AI apocalypse, urging readers to look beyond sensationalism and understand the nuanced realities and underlying details of AI development.",
+      "source": "Dev.to",
+      "url": "https://dev.to/kenielzep97/everybody-has-an-ai-apocalypse-story-almost-nobody-reads-the-fine-print-43hm",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning",
+      "summary": "Researchers introduce CurvDelta, a novel modeling approach that uses low-curvature delta representations to enhance learning and 'unlearning' processes in surgical AI applications.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.24654",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "HINT-WAM: Hindsight-Informed Training for World Action Models",
+      "summary": "HINT-WAM proposes a new training methodology that leverages hindsight information to improve the performance and robustness of World Action Models, crucial for advanced AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.24789",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "WeVisForensics: Self-Evolving Agent for Omni AI-Generated Video Detection",
+      "summary": "WeVisForensics presents a self-evolving AI agent designed for comprehensive detection of AI-generated videos across various modalities, addressing the growing challenge of deepfakes.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21373",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Introducing LightTAR: Light and Fast Target-Aware Representations for Multimodal Tabular Learning",
+      "summary": "LightTAR offers a new method for creating lightweight and efficient target-aware representations, significantly improving multimodal tabular learning tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.17600",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Stop Paying LLM Prices for an if Statement: A Field Guide to Decision Models in Late 2026",
+      "summary": "This guide advises on optimizing costs by using simpler decision models for straightforward tasks instead of expensive LLMs, outlining strategies for efficient AI implementation in 2026.",
+      "source": "Dev.to",
+      "url": "https://dev.to/amananandrai/stop-paying-llm-prices-for-an-if-statement-a-field-guide-to-decision-models-in-late-2026-4d24",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "Can a Plain Table Hijack an AI Agent?",
+      "summary": "This article explores potential vulnerabilities where seemingly innocuous data, like a plain table, could be exploited to manipulate or 'hijack' the behavior of an AI agent.",
+      "source": "Dev.to",
+      "url": "https://dev.to/edbrdi/can-a-plain-table-hijack-an-ai-agent-2pde",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
