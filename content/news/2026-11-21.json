@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-21",
+  "items": [
+    {
+      "title": "Google Search Upgraded with Gemini 4 Hydrogen for Enhanced Capabilities",
+      "summary": "Google announces a significant upgrade to its Search product, integrating the advanced Gemini 4 Hydrogen model to deliver more powerful and intelligent search results.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "AI Claims Solution to Riemann Hypothesis, Alongside Human Breakthrough",
+      "summary": "An AI system has reportedly claimed a solution to the 167-year-old Riemann hypothesis, coinciding with a human researcher also announcing a potential breakthrough, highlighting AI's growing capabilities in complex mathematics.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Google Introduces Gemini Decisions API for Fast, Calibrated Multimodal Decisions",
+      "summary": "Google launches the Gemini Decisions API, offering developers a new tool for making rapid and accurate multimodal decisions, expanding the practical applications of AI.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Daniel Ek Backs AI Researcher's Fusion Power Startup",
+      "summary": "Spotify CEO Daniel Ek invests in an AI researcher's new startup focused on fusion power, signaling a significant venture capital interest in AI-driven energy solutions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "The Sleep Framework: A New Approach for LLMs to Retain Knowledge in Continual Learning",
+      "summary": "Google Research introduces 'The Sleep Framework,' a novel method designed to enable large language models to better retain knowledge and prevent catastrophic forgetting during continual learning processes.",
+      "source": "Lobste.rs",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "OpenAI Introduces MedChemBench to Aid Drug Discovery",
+      "summary": "OpenAI unveils MedChemBench, a new initiative aimed at leveraging AI to help scientists more efficiently identify promising drug candidates, accelerating pharmaceutical research.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-medchembench/",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hebbia Improves Financial Research with OpenAI's GPT-6 Astra",
+      "summary": "Financial research firm Hebbia reports significant advancements in its operations by integrating OpenAI's latest large language model, GPT-6 Astra, demonstrating real-world enterprise application of cutting-edge AI.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/business/customer-stories/hebbia/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Mind2Act World: A Diagnostic Benchmark for Embodied AI in Robotic Manipulation",
+      "summary": "Researchers introduce Mind2Act World, a new diagnostic benchmark designed to evaluate embodied AI's ability to integrate mind, physical action, and their composition in complex robotic manipulation tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26444",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Probing 'Conscious' Mind: Selective Access and Global Workspace in Vision-Language Models",
+      "summary": "New research explores the concept of 'consciousness' in Vision-Language Models by investigating selective access and global workspace mechanisms, shedding light on how these models process and integrate information.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26590",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WeMM-Video: Advancing Open-Source Omni-Modal Video Understanding",
+      "summary": "WeMM-Video pushes the boundaries of open-source AI, offering a new framework for comprehensive omni-modal video understanding that integrates various data types for richer analysis.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26409",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Agentic Engineering of Smart Home Energy System with Antigravity and Gemini 4",
+      "summary": "A new project demonstrates the use of agentic engineering with Antigravity and Gemini 4 to create an intelligent smart home energy system, showcasing practical AI applications for energy management.",
+      "source": "Dev.to",
+      "url": "https://dev.to/googleai/agentic-engineering-a-smart-home-energy-system-with-antigravity-and-gemini-4-53md",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Coda-DaVinci: Reimagining Video Generation with Code2Video",
+      "summary": "Coda-DaVinci introduces an innovative Code2Video approach, fundamentally reimagining how video content can be generated through programmatic instructions, offering new creative possibilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26595",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Posterior Matching Distillation for Enhanced Model Training",
+      "summary": "A new research paper introduces Posterior Matching Distillation, a technique aimed at improving the efficiency and performance of model training by aligning posterior distributions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26629",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Depth Pro 2: Achieving Sharp and Temporally Consistent Metric Monocular Depth",
+      "summary": "Depth Pro 2 presents advancements in monocular depth estimation, delivering sharper and more temporally consistent metric depth maps from a single camera input, crucial for robotics and AR.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26603",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "The Mask Is Not the Object: Volumetric Supervision for 3D Gaussian Segmentation",
+      "summary": "This research proposes a novel method for 3D Gaussian segmentation using volumetric supervision, addressing challenges where traditional mask-based approaches fall short in complex 3D environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21383",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
