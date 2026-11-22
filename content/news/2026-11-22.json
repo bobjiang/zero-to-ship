@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-22",
+  "items": [
+    {
+      "title": "AI Supply Chain Privacy Disaster: Researcher Plants 2M Canaries, Exposing Secret User Data",
+      "summary": "A researcher uncovered a significant privacy vulnerability in the AI supply chain by embedding 2 million 'canaries' that revealed widespread exposure of secret user data.",
+      "source": "Lobste.rs",
+      "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+      "score": 10,
+      "category": "industry"
+    },
+    {
+      "title": "Signal Restricts Mobile Screenshots Amid 'Existential Threat' of AI Surveillance",
+      "summary": "Signal has implemented restrictions on mobile screenshots, citing the growing 'existential threat' posed by advanced AI surveillance technologies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI's GPT-6 Astra Drives Improvements in Financial Research for Hebbia",
+      "summary": "Hebbia, a financial research firm, reports significant advancements in its operations by leveraging OpenAI's latest large language model, GPT-6 Astra.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/business/customer-stories/hebbia/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Can AI Help Scientists Identify Promising Drug Candidates? OpenAI Introduces MedChemBench",
+      "summary": "OpenAI introduces MedChemBench, a new initiative exploring how AI can accelerate the identification of promising drug candidates in scientific research.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-medchembench/",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "A Tale of Two Nvidias: Analyzing the Divergent Paths of the AI Giant",
+      "summary": "An analysis delves into the contrasting aspects and strategic directions shaping Nvidia's current position and future in the AI industry.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
+      "score": 7,
+      "category": "industry"
+    },
+    {
+      "title": "Combatting Adversarial Distillation: OpenAI's Latest Research on AI Safety",
+      "summary": "OpenAI shares new research on 'combatting adversarial distillation,' focusing on methods to enhance the robustness and safety of AI models against malicious attacks.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/combatting-adversarial-distillation",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Google Labs Introduces Tabletop: Customizable, Collaborative Spaces for Groups",
+      "summary": "Google Labs unveils Tabletop, a new platform offering customizable and collaborative digital spaces designed for groups to plan, play, and work together more effectively.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Here Are the Top AI Agents That Can Live in Your Text Messages",
+      "summary": "A roundup highlights the leading AI agents currently available that can integrate directly into text messaging platforms for various user interactions.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "HiUni: Harmonizing Understanding and Generation in Shared Visual Space",
+      "summary": "New research introduces HiUni, a model designed to improve multimodal AI by harmonizing both understanding and generation capabilities within a shared visual space.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26107",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "EgoCaptioner: Towards Comprehensive and Fine-Grained Egocentric Video Captioning",
+      "summary": "EgoCaptioner presents a novel approach aimed at generating more comprehensive and finely detailed captions for egocentric video content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26380",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+      "summary": "AltRA-Test proposes a new method for evaluating LLM judges that does not require shared annotators, offering a potentially more efficient and independent assessment.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26073",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "A VS Code Extension to Turn ANY Free Chatbot Website into an AI Agent",
+      "summary": "A new VS Code extension allows users to convert any free chatbot website into a functional AI agent, expanding the utility of existing online conversational tools.",
+      "source": "Dev.to",
+      "url": "https://dev.to/effessdev/a-vs-code-extension-to-turn-any-free-chatbot-website-into-an-ai-agent-kind-of-1n21",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Energy-Based Reasoners: Your Recurrent Reasoner Should Be an Energy-Based Model",
+      "summary": "This research advocates for the adoption of energy-based models as the foundation for recurrent reasoners, suggesting a new paradigm for AI reasoning architectures.",
+      "source": "Lobste.rs",
+      "url": "https://energy-based-reasoners.github.io/",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "TuringSpace: Grounding Spatial Intelligence in Action with Interactive CAPTCHAs",
+      "summary": "TuringSpace explores grounding spatial intelligence in AI through interactive CAPTCHAs, aiming to improve models' understanding of physical space and action.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.25387",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "ZeroVLN: Learning to Navigate without Supervised Fine-Tuning of the VLM Brain",
+      "summary": "ZeroVLN introduces a method for vision-language models to learn navigation tasks effectively without the need for extensive supervised fine-tuning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26414",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
