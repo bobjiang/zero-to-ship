@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-23",
+  "items": [
+    {
+      "title": "How Notable Capital, GIC, and Baillie Gifford Bet Big on Anthropic Before Its IPO",
+      "summary": "Major investment firms Notable Capital, GIC, and Baillie Gifford made significant investments in Anthropic ahead of its anticipated IPO, signaling strong market confidence in the AI company.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI’s Chief Scientist Shares Insights on Limiting AI Development",
+      "summary": "OpenAI's chief scientist has publicly shared their perspective on potential strategies and considerations for limiting the scope and risks of advanced AI development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Perplexity and Intelligence: An OpenAI Blog Post",
+      "summary": "OpenAI's latest blog post delves into the fundamental concepts of perplexity and intelligence, offering insights into how these metrics relate to the capabilities and evaluation of AI models.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/perplexity-and-intelligence",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "cmHC: Balancing Stream Mixing in Hyper-Connections via Geometric Contraction",
+      "summary": "A new research paper introduces cmHC, a method that uses geometric contraction to efficiently balance stream mixing in hyper-connections, potentially improving data flow in complex AI architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.27193",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Non-penetrating World Models Introduced for Enhanced AI Simulation",
+      "summary": "Researchers present 'Non-penetrating World Models,' a novel approach designed to create more realistic and physically consistent simulations by preventing objects from interpenetrating.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.27963",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Clover-35B-A3B-Preview Technical Report Released",
+      "summary": "The technical report for Clover-35B-A3B-Preview has been published, detailing the architecture, training, and performance of this new large language model.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.24636",
+      "score": 7,
+      "category": "open-source"
+    },
+    {
+      "title": "Language Models Can Rewrite Their Own Weights",
+      "summary": "A new paper explores the intriguing capability of language models to modify and rewrite their own internal weights, suggesting a path towards more adaptive and self-improving AI systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.21885",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Hebbia Improves Financial Research with GPT-6 Astra Integration",
+      "summary": "Hebbia, a financial research platform, reports significant enhancements in its capabilities by integrating OpenAI's advanced GPT-6 Astra model.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/business/customer-stories/hebbia",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Can AI Help Scientists Identify Promising Drug Candidates? Introducing MedChemBench",
+      "summary": "OpenAI introduces MedChemBench, a new initiative exploring how AI can accelerate the identification of promising drug candidates in pharmaceutical research.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-medchembench",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "I Built AI Agents That Apply to Jobs, Finding Forms Harder Than the AI",
+      "summary": "A developer shares their experience building AI agents for job applications, highlighting that navigating complex online forms proved more challenging than the AI's core task.",
+      "source": "Dev.to",
+      "url": "https://dev.to/hirescoot/i-built-ai-agents-that-apply-to-jobs-the-forms-were-harder-than-the-ai-37h4",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Duopra: From Full-Duplex Conversation to Full-Duplex Agency",
+      "summary": "This research introduces Duopra, a system designed to extend full-duplex conversational capabilities into full-duplex agency, enabling more dynamic and interactive AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.25773",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+      "summary": "New research suggests that reinforcement learning applied after training in diffusion transformers primarily functions as activation steering, influencing model behavior through internal states.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26627",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Training Vision Models for LLM-Driven Weight-Space Programming",
+      "summary": "A paper explores methods for training vision models that can be programmed by large language models directly in their weight space, enabling more flexible multimodal AI.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26408",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
+      "summary": "Researchers propose MemOnce, a scalable memory architecture designed to enhance the efficiency and capacity of memory management in large language models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.27973",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Coding Agents Won't Replace You, But They're Changing What 'Senior' Means",
+      "summary": "An article discusses how the rise of AI coding agents is redefining the role and expectations of 'senior' developers, emphasizing collaboration and higher-level problem-solving.",
+      "source": "Dev.to",
+      "url": "https://dev.to/amananandrai/coding-agents-wont-replace-you-but-theyre-changing-what-senior-means-18a4",
+      "score": 5,
+      "category": "industry"
+    }
+  ]
+}
