@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-24",
+  "items": [
+    {
+      "title": "Anthropic Launches Claude Ship for AI-Powered Code Review and Fixes",
+      "summary": "Anthropic has launched Claude Ship, a new tool enabling AI agents to autonomously review, fix, and approve code changes, significantly advancing automated software development.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+      "score": 10,
+      "category": "product"
+    },
+    {
+      "title": "Supertake Raises $20M to Power AI Agents for Stock Portfolio Management",
+      "summary": "Supertake has secured $20 million in funding to develop AI agents that can transform market predictions into actionable stock portfolios, bringing advanced AI to financial investment strategies.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Jensen Huang Reinstated at Nvidia Amidst Scandal, Drawing Praise from Industry Leaders",
+      "summary": "Nvidia CEO Jensen Huang has been reinstated following a recent scandal, a move celebrated by prominent figures like Elon Musk, signaling stability for the AI chip giant.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/23/elon-musk-and-others-rejoice-as-jensen-huang-is-reinstated-at-nvidia-amid-scandal/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Google Search Introduces More Tailored, Personalized Intelligence Features",
+      "summary": "Google is rolling out new features for Search, offering a more personalized experience that leverages AI to provide uniquely tailored results and intelligence to individual users.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+      "score": 9,
+      "category": "product"
+    },
+    {
+      "title": "OpenAI and Cisco Partner to Introduce Shirudo, Enhancing AI Security",
+      "summary": "OpenAI and Cisco have announced a partnership to launch Shirudo, a new initiative aimed at bolstering AI security and trust in enterprise applications.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/introducing-shirudo",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+      "summary": "Motion Mamba 2.0 introduces an autoregressive diffusion Mamba model, significantly improving long-horizon control for humanoid robots with enhanced stability and realism.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.29897",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Embo-Harness: Understanding Frontier-Model-as-Policy Harness for AI Agents",
+      "summary": "New research explores Embo-Harness, a framework designed to better understand how frontier AI models can be effectively used as policy-making agents in complex environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.31201",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce",
+      "summary": "WeMM-Ecom presents a new approach to enhance multimodal content understanding specifically tailored for WeChat's e-commerce platform, improving product discovery and user experience.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.30662",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "3AGameFactory-Motion: Agentic Rigging and Reliable Complex Motion Generation for Diverse 3D Assets",
+      "summary": "This paper introduces 3AGameFactory-Motion, a system for agentic rigging and generating reliable, complex motions for a wide range of 3D assets, streamlining game development and animation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.30013",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ViDecide: Teaching Video Diffusion Models to Reason and Plan Step by Step",
+      "summary": "ViDecide proposes a novel method to enable video diffusion models to reason and plan actions sequentially, enhancing their ability to generate coherent and purposeful video content.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26389",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Proofreader vs. Rewriter vs. Prompt API: Testing AI Task Performance",
+      "summary": "An article discusses the importance of testing AI tasks directly, rather than relying on demos, by comparing the performance of proofreader, rewriter, and prompt API functionalities.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/proofreader-vs-rewriter-vs-prompt-api-test-the-task-not-the-demo-pi9",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "WorldLeague: A New Benchmark for Physical Agency in AI",
+      "summary": "WorldLeague introduces a new benchmark designed to rigorously evaluate the physical agency of AI systems, pushing the boundaries of embodied AI research.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.30989",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "AutoPILOT: A Visual Agent Harness for Real-Time Gameplay",
+      "summary": "AutoPILOT presents a visual agent harness that enables AI to control and interact with real-time gameplay, offering new avenues for AI in gaming and simulation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.28202",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Plan4D: Generative Plannable 4D Worlds for AI Simulation",
+      "summary": "Plan4D introduces a framework for generating plannable 4D worlds, providing rich and dynamic environments for training and testing AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.26516",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
+      "summary": "This research provides insights into training Vision-Language Models (VLMs) to serve as foundational models for robotic manipulation, bridging the gap between perception and action.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.29338",
+      "score": 6,
+      "category": "research"
+    }
+  ]
+}
