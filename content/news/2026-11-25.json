@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-25",
+  "items": [
+    {
+      "title": "GPT-6 Models Demonstrate Intrinsic Protein-Design Capabilities",
+      "summary": "OpenAI announces that its latest GPT-6 models are capable of intrinsically designing proteins, marking a significant advancement in AI's application to biotechnology and drug discovery.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Matrix Multiplication Exponent Proven to be Θ(n^2.25)",
+      "summary": "A groundbreaking mathematical preprint claims to have reduced the theoretical exponent for matrix multiplication to Θ(n^2.25), a fundamental breakthrough with vast implications for computational efficiency across many fields, including AI.",
+      "source": "Lobste.rs",
+      "url": "https://raw.githubusercontent.com/openai/math/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+      "score": 10,
+      "category": "research"
+    },
+    {
+      "title": "Yale's Sonnenfeld Calls Nvidia a 'Detriment' to US Industrial Might",
+      "summary": "Yale's Jeffrey Sonnenfeld controversially states that Nvidia, despite its success, is a 'detriment' to U.S. industrial strength, sparking debate on the long-term economic impact of AI hardware dominance.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Jensen Huang Reaffirms Stance Against Succession Plans, Citing Unnecessary Hierarchy",
+      "summary": "Nvidia CEO Jensen Huang reiterated his belief that a formal succession plan creates unnecessary hierarchy, offering insight into the company's unique leadership philosophy.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/24/jensen-huang-still-thinks-a-succession-plan-creates-unnecessary-hierarchy/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI's Astra Assists in Searching for Distant Planets",
+      "summary": "OpenAI announces 'Astra,' a new AI application designed to aid in the search for distant planets, showcasing AI's growing role in astronomical research.",
+      "source": "OpenAI Blog",
+      "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "MOZAIC: A New Audio-Video Deepfake Benchmark for Detection",
+      "summary": "Researchers introduce MOZAIC, a novel audio-video deepfake benchmark designed to improve the accuracy and robustness of systems for identifying synthetic media.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.31301",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "Nemotron-Labs-VisualCreation: Pixel as Code for Agentic Visual Creation",
+      "summary": "A new paper introduces Nemotron-Labs-VisualCreation, a framework that treats pixels as code to enable agentic AI systems for advanced visual content generation.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.31358",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ACAP: Asynchronous Coding Agents for Efficient Robot Control",
+      "summary": "A new research paper presents ACAP, a system of asynchronous coding agents designed to significantly improve the efficiency and responsiveness of robot control.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.31205",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Google Gemini Transforms Golden State's Organization and Fan Engagement",
+      "summary": "Google highlights how its Gemini AI is being leveraged by the Golden State Warriors to revolutionize their organizational operations and enhance fan experiences.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "New Ask Maps Features Enhance Holiday Travel and Preparation with AI",
+      "summary": "Google Maps rolls out new 'Ask Maps' features powered by AI to assist users with holiday travel planning and preparation, offering more intelligent navigation and information.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "score": 7,
+      "category": "product"
+    },
+    {
+      "title": "Why AI Release Notes Hallucinate: Addressing the 'Why vs What' Problem in Git History",
+      "summary": "An article explores the common issue of AI-generated release notes 'hallucinating' due to the inherent 'why vs what' problem in processing Git commit history, offering insights into improving AI summarization.",
+      "source": "Dev.to",
+      "url": "https://dev.to/necoz/why-your-ai-release-notes-hallucinate-the-why-vs-what-problem-in-git-history-5ch0",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Rewirable Circuits in Transformers with Loom Attention Proposed",
+      "summary": "New research introduces 'Loom Attention' to create rewirable circuits within transformer models, potentially leading to more flexible and interpretable AI architectures.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.30634",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Embodied AI Fails the Mirror Test: Simple Reflection Breaks Robot Policies",
+      "summary": "A study reveals a surprising limitation of embodied AI, demonstrating that a simple mirror can disrupt robot policies and cause failures in task execution, highlighting challenges in spatial reasoning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.33010",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "PartAgent: Agentic 3D Part Segmentation via Expert Integration",
+      "summary": "PartAgent is introduced as a new method for agentic 3D part segmentation, leveraging expert integration and closed-loop refinement for more accurate and robust object decomposition.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.32554",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Lazy Agents Answer Against Their Own Beliefs with Verifiable Reinforcement Learning",
+      "summary": "Research explores how reinforcement learning with verifiable beliefs can teach 'lazy agents' to act based on their true beliefs, even when it contradicts their initial, less effortful responses.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.32884",
+      "score": 5,
+      "category": "research"
+    }
+  ]
+}
