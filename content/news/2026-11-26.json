@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-26",
+  "items": [
+    {
+      "title": "S&P Considers Nvidia Credit Downgrade Over Governance and 'Key Man' Risks",
+      "summary": "S&P Global is reportedly considering a credit downgrade for Nvidia, citing concerns over corporate governance and the significant reliance on CEO Jensen Huang, which could impact the company's financial stability.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI Merges Chat and Work, Warns Heavy ChatGPT Users May Hit Limits Sooner",
+      "summary": "OpenAI is integrating its ChatGPT consumer and enterprise offerings, which may lead to heavy users encountering usage limits more quickly as the platforms converge.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "Put Gemini to Work for You: New Features for Task Management",
+      "summary": "Google's Gemini AI assistant is rolling out new features designed to help users manage tasks more effectively, enhancing its utility for productivity.",
+      "source": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+      "score": 8,
+      "category": "product"
+    },
+    {
+      "title": "PyRUA-Dex: Learning Programmatic Policies for Dexterous Bimanual Manipulation with Coding Agents",
+      "summary": "Researchers introduce PyRUA-Dex, a novel approach enabling coding agents to learn and execute complex programmatic policies for dexterous bimanual robot manipulation tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.33144",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Sage-Med: Scaling Medical Multimodal Intelligence",
+      "summary": "Sage-Med presents a new framework for advancing medical multimodal AI, aiming to scale intelligence across diverse medical data types for improved diagnostic and analytical capabilities.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34575",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "VibeVideoAgent: Closing the Perceptual Loop for Code-Driven Video Generation",
+      "summary": "VibeVideoAgent introduces a system that closes the perceptual loop in code-driven video generation, allowing AI agents to iteratively refine video content based on visual feedback.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34237",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Context Scaling: A New Frontier of AI Scaling",
+      "summary": "This arXiv paper explores 'Context Scaling' as a novel paradigm for AI development, focusing on expanding the contextual understanding capabilities of models beyond traditional scaling methods.",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2611.33160",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Inside APIC: A Free On-Device Photo Editor & Background Remover Teardown",
+      "summary": "An engineering teardown reveals the inner workings of APIC, a free photo editor and background remover that operates entirely on-device, showcasing efficient local AI processing.",
+      "source": "Dev.to",
+      "url": "https://dev.to/akhouri-systems/inside-apic-the-full-engineering-teardown-of-a-free-photo-editor-background-remover-that-runs-5h33",
+      "score": 6,
+      "category": "open-source"
+    },
+    {
+      "title": "Improving and Expanding Video Editing Capabilities Without Videos",
+      "summary": "A new research paper explores methods to enhance and broaden video editing functionalities by leveraging techniques that do not require direct video input, potentially streamlining the editing process.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34941",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Stop AI Agents Acting on Bluffs? A Strands Decider 2B Tool Gate Test",
+      "summary": "This article discusses a 'Strands Decider 2B Tool Gate Test' designed to prevent AI agents from acting on unreliable or 'bluff' information, enhancing their decision-making robustness.",
+      "source": "Dev.to",
+      "url": "https://dev.to/aws-builders/stop-ai-agents-acting-on-bluffs-a-strands-decider-2b-tool-gate-test-5004",
+      "score": 6,
+      "category": "research"
+    },
+    {
+      "title": "Mixture-of-Loops Transformer",
+      "summary": "Researchers introduce the Mixture-of-Loops Transformer, a novel architecture that integrates looped mechanisms within transformer models to potentially improve efficiency and performance.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34923",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "ICLWorld: Benchmarking In-Context Learning of Agents from Digital to Physical Worlds",
+      "summary": "ICLWorld proposes a new benchmark for evaluating the in-context learning abilities of AI agents, spanning both digital simulations and real-world physical environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.32649",
+      "score": 5,
+      "category": "research"
+    },
+    {
+      "title": "Gemma 4 Function Calls on an 8 GB RTX 3050: The Setting Matters More Than the Size",
+      "summary": "This article demonstrates that optimizing settings allows Gemma 4 to effectively handle function calls on an 8 GB RTX 3050, highlighting the importance of configuration over raw hardware power for local AI deployment.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/gemma-4-function-calls-on-an-8-gb-rtx-3050-the-setting-matters-more-than-the-size-53a5",
+      "score": 5,
+      "category": "open-source"
+    },
+    {
+      "title": "Jensen Huang Broke Nvidia's Code of Conduct, and His Employees May Not Forget It",
+      "summary": "Reports suggest Nvidia CEO Jensen Huang has violated the company's code of conduct, potentially leading to internal repercussions and impacting employee morale.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/",
+      "score": 5,
+      "category": "industry"
+    },
+    {
+      "title": "How to Design and Test AI Phone Support Handoffs",
+      "summary": "This practical guide offers insights into effectively designing and rigorously testing the handoff process between AI-powered phone support systems and human agents.",
+      "source": "Dev.to",
+      "url": "https://dev.to/rajni_walia_e6082454c67a9/how-to-design-and-test-ai-phone-support-handoffs-68l",
+      "score": 4,
+      "category": "industry"
+    }
+  ]
+}
