@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-28",
+  "items": [
+    {
+      "title": "Stable Gated DeltaNet-2: Understanding and Mitigating Recurrent State Instability",
+      "summary": "This research paper introduces Stable Gated DeltaNet-2, a novel approach to address and reduce recurrent state instability in neural networks, improving model reliability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34051",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms",
+      "summary": "Researchers present OS-Omni, a new benchmark designed to evaluate the performance of generalist AI agents in complex, multi-step computer-based tasks across various operating systems.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34232",
+      "score": 9,
+      "category": "research"
+    },
+    {
+      "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+      "summary": "Nvidia has temporarily halted chip shipments to Southeast Asia, a move that could significantly impact the region's burgeoning AI and tech industries.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+      "score": 9,
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’",
+      "summary": "Dario Amodei, CEO of Anthropic, publicly refutes claims that his company's AI development path involves relinquishing human control, emphasizing safety and alignment.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/",
+      "score": 8,
+      "category": "industry"
+    },
+    {
+      "title": "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+      "summary": "A new paper suggests that AI coding agents, by leveraging programmatic reasoning, can outperform traditional video models in complex visual reasoning tasks.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34813",
+      "score": 8,
+      "category": "research"
+    },
+    {
+      "title": "What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models",
+      "summary": "This paper introduces a forecasting leaderboard and resolution reporting methodology to better evaluate zero-shot time-series models, enhancing transparency and comparability.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.31619",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+      "summary": "Researchers introduce ProxyGenBench, a new benchmark for evaluating the quality and effectiveness of proxy-guided video generation models.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34457",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts",
+      "summary": "The Entangle framework proposes a method for scaling human-video in-context world-action models to perform effectively across a wide range of novel tasks and environments.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.28732",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
+      "summary": "StateWeaver presents a novel system for multi-agent coordination that enables coherent and long-horizon video generation by managing story-state transitions.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34290",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "Let Vision-Language Models Generate Images through Their Representations",
+      "summary": "This research explores a new technique allowing vision-language models to generate images directly from their internal representations, bypassing traditional generative pipelines.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.31237",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+      "summary": "DRBench Pro is introduced as a new knowledge-centric benchmark specifically designed to evaluate the capabilities of professional deep research AI agents.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.34852",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "DexEngine: Scaling Human Demonstrations into Physically Executable Whole-Robot Data",
+      "summary": "DexEngine offers a method to scale human demonstrations into comprehensive, physically executable datasets for whole-robot control, advancing robotic learning.",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/papers/2611.33579",
+      "score": 7,
+      "category": "research"
+    },
+    {
+      "title": "The Zombie Ticket: Deleting a Chatbot Conversation Doesn't Delete It",
+      "summary": "This article highlights a critical privacy concern where deleting chatbot conversations may not fully erase the data, raising questions about data retention policies.",
+      "source": "Dev.to",
+      "url": "https://dev.to/sheen_417f0f3a7f4/the-zombie-ticket-deleting-a-chatbot-conversation-doesnt-delete-it-l75",
+      "score": 6,
+      "category": "industry"
+    },
+    {
+      "title": "Under the Hood of Google Cloud Data Agent Kit: MCP Tools, SKILL.md Playbooks & Custom Guardrails",
+      "summary": "A deep dive into Google Cloud's Data Agent Kit reveals its architecture, including MCP Tools, SKILL.md Playbooks, and custom guardrails for robust data agent deployment.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/under-the-hood-of-google-cloud-data-agent-kit-mcp-tools-skillmd-playbooks-custom-guardrails-4568",
+      "score": 6,
+      "category": "product"
+    },
+    {
+      "title": "Your On-Device AI Works Offline. Does Your Web App?",
+      "summary": "This piece explores the growing trend of on-device AI capabilities and challenges developers to ensure their web applications can also function effectively offline.",
+      "source": "Dev.to",
+      "url": "https://dev.to/gde/your-on-device-ai-works-offline-does-your-web-app-38kj",
+      "score": 6,
+      "category": "industry"
+    }
+  ]
+}
